@@ -3,7 +3,6 @@
 namespace App\Livewire;
 
 use App\Livewire\Forms\OrderForm;
-use App\Models\Order as ModelsOrder;
 use Livewire\Component;
 
 class Order extends Component
@@ -12,13 +11,9 @@ class Order extends Component
 
     public function save()
     {
-        $this->validate();
+        $this->form->store();
 
-        // ModelsOrder::create(
-        //     $this->form->all()
-        // );
-
-        return $this->redirect('/');
+        session()->flash('success');
     }
 
     public function render()

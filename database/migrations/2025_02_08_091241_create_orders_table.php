@@ -1,5 +1,7 @@
 <?php
 
+use App\Enums\OrderStatus;
+use App\Enums\ServiceEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('contact');
             $table->text('text')->nullable();
-            $table->enum('status', ['new', 'viewed', 'done'])->default('new');
+            $table->enum('service', ServiceEnum::values());
+            $table->enum('status', OrderStatus::values())->default(OrderStatus::NEW);
             $table->timestamps();
         });
     }

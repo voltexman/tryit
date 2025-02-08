@@ -18,9 +18,9 @@
                         <a href="#services">
                             <x-button class="py-4 px-5 uppercase">Ознайомитись з послугами</x-button>
                         </a>
-                        <a href="#top">
+                        {{-- <a href="#top">
                             <x-button class="py-4 px-5 uppercase">Переглянути товари</x-button>
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
                 <div class="hidden lg:block col-span-2 bg-white/90 rounded-xl w-full p-10">
@@ -36,7 +36,7 @@
 @endsection
 
 @section('content')
-    <x-section class="bg-tryit-cream/20" id="top">
+    <x-section class="bg-tryit-cream/20 -mt-20 pt-24" id="top">
         {{-- <x-slot:caption>
             Три кроки до чистоти
         </x-slot> --}}

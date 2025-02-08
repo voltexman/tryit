@@ -7,8 +7,8 @@
             id="pm-dropdown" aria-haspopup="true" x-bind:aria-expanded="open" x-on:click="open = true">
             <span>{{ $label }}</span>
             <span class="ms-auto">
-                <i data-lucide="chevron-down" x-show="!open"></i>
-                <i data-lucide="chevron-up" x-show="open"></i>
+                <x-lucide-chevron-down x-show="!open" class="size-5" />
+                <x-lucide-chevron-up x-show="open" class="size-5" />
             </span>
         </button>
 
@@ -16,7 +16,8 @@
             x-transition:enter-start="opacity-0 -translate-y-3" x-transition:enter-end="opacity-100 translate-y-0"
             x-transition:leave="transition ease-in duration-75" x-transition:leave-start="opacity-100 translate-y-0"
             x-transition:leave-end="opacity-0 translate-y-10" x-on:click.outside="open = false" role="menu"
-            aria-labelledby="pm-dropdown" class="absolute start-0 z-10 mt-2 w-full origin-top-right rounded-lg shadow-xl">
+            aria-labelledby="pm-dropdown"
+            class="absolute start-0 z-10 mt-2 w-full origin-top-right rounded-lg shadow-xl">
             <div class="divide-y divide-zinc-100 rounded-lg bg-stone-300 ring-1 ring-black/5">
                 <div class="px-2.5 py-3">
                     {{ $slot }}
