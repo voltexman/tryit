@@ -1,11 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @source '../views/';
 
 @theme {
-    --font-sans: Figtree, ui-sans-serif, system-ui, sans-serif,
+    --font-sans: Raleway, ui-sans-serif, system-ui, sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
+    --color-tryit-dark: #454649;
+    --color-tryit-orange: #fc4c02;
+    --color-tryit-cream: #d5c3a7;
+    /* --font-display: "Raleway", "sans-serif"; */
 }
 
 /*
@@ -23,5 +28,13 @@
     ::backdrop,
     ::file-selector-button {
         border-color: var(--color-gray-200, currentColor);
+    }
+
+    body {
+        @apply text-lg font-medium text-gray-900;
+    }
+
+    p {
+        @apply mb-5 last:mb-0;
     }
 }
