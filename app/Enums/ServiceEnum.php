@@ -12,7 +12,7 @@ enum ServiceEnum: string
     case OFFICE_CLEANING = 'Комплексне та підтримуюче прибирання офісу';
     case INDUSTRIAL_ALPINISM = 'Промисловий альпінізм';
 
-    public static function values(): array
+    public static function all(): array
     {
         return array_column(self::cases(), 'value');
     }

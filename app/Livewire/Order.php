@@ -7,11 +7,11 @@ use Livewire\Component;
 
 class Order extends Component
 {
-    public OrderForm $form;
+    public OrderForm $order;
 
     public function save()
     {
-        $this->form->store();
+        $this->order->store();
 
         session()->flash('success');
     }

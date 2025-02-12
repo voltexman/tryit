@@ -2,13 +2,46 @@
 
 namespace App\Enums;
 
-enum OrderStatus: string
-{
-    const NEW = 'new';
-    const VIEWED = 'viewed';
-    const DONE = 'done';
+use Filament\Support\Contracts\HasColor;
+use Filament\Support\Contracts\HasIcon;
+use Filament\Support\Contracts\HasLabel;
 
-    public static function values(): array
+enum OrderStatus: string implements HasLabel, HasColor, HasIcon
+{
+    case NEW = 'new';
+
+    case VIEWED = 'viewed';
+
+    case DONE = 'done';
+
+    public function getIcon(): ?string
+    {
+        return match ($this) {
+            self::NEW => 'heroicon-m-magnifying-glass',
+            self::VIEWED => 'heroicon-m-eye',
+            self::DONE => 'heroicon-m-check',
+        };
+    }
+
+    public function getColor(): ?string
+    {
+        return match ($this) {
+            self::NEW => 'danger',
+            self::VIEWED => 'info',
+            self::DONE => 'success',
+        };
+    }
+
+    public function getLabel(): ?string
+    {
+        return match ($this) {
+            self::NEW => 'Нове',
+            self::VIEWED => 'Переглянуто',
+            self::DONE => 'Завершене',
+        };
+    }
+
+    public static function all(): array
     {
         return array_column(self::cases(), 'value');
     }

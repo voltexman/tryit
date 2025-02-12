@@ -17,9 +17,9 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
 
 @section('content')
     <x-section>
-        <div class="grid grid-cols-5 gap-10">
-            <div class="col-span-2"><img src="https://picsum.photos/400" alt=""></div>
-            <div class="col-span-3">
+        <div class="lg:grid lg:grid-cols-5 gap-10">
+            <div class="lg:col-span-2"><img src="https://picsum.photos/400" alt=""></div>
+            <div class="lg:col-span-3">
                 <p><x-marker>Чисті вікна та фасади</x-marker> – це не лише естетика, а й імідж вашого бізнесу чи житлового
                     комплексу. Забруднення, пил, дощові патьоки та міський смог з часом роблять будівлю тьмяною, зменшуючи
                     її привабливість. Ми пропонуємо професійне миття фасадів і вікон на висоті за допомогою сучасної
@@ -104,13 +104,5 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
                 Оперативність – швидке виконання замовлень у зручний для вас час.
             </x-list.item>
         </x-list>
-
-        <x-alert>
-            <p>Вам потрібно професійне миття фасадів чи вікон? Ми готові взятися за будь-яке завдання, незалежно від
-                складності Залиште заявку на сайті або зателефонуйте нам, і ми надамо вам безкоштовну консультацію та
-                розрахуємо вартість послуг.</p>
-
-            <p>Обирайте якість, безпеку та бездоганний сервіс! ✨</p>
-        </x-alert>
     </x-section>
 @endsection

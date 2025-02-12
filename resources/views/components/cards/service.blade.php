@@ -4,8 +4,11 @@
     <div @class([
         'lg:order-1' => $orientation === 'left',
         'lg:order-2' => $orientation === 'right',
-        'lg:col-span-2',
+        'lg:col-span-2 relative',
     ])>
+        {{-- <img src="{{ Vite::asset('resources/images/klax.svg') }}"
+            class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 size-full" alt=""> --}}
+
         <img src="{{ $image }}" class="rounded-2xl" alt="">
     </div>
     <div @class([
@@ -16,7 +19,7 @@
         <div class="text-2xl lg:text-4xl font-bold">
             {{ $name }}
         </div>
-        <div class="lg:text-xl relative">
+        <div class="lg:text-xl">
             <div>{{ $description }}</div>
             <div class="mt-5 flex gap-x-5">
                 <a href="{{ route($link) }}">
@@ -25,7 +28,7 @@
                         <span>Детальніше...</span>
                     </x-button>
                 </a>
-                <x-button>Замовити</x-button>
+                {{-- <x-button>Замовити</x-button> --}}
             </div>
         </div>
     </div>

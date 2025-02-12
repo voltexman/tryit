@@ -4,26 +4,33 @@
     <div class="bg-[url(https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg)] bg-cover bg-center h-dvh"
         style="clip-path: polygon(100% 0%, 0% 0% , 0.00% 99.27%, 1.67% 99.16%, 3.33% 99.01%, 5.00% 98.82%, 6.67% 98.59%, 8.33% 98.33%, 10.00% 98.05%, 11.67% 97.75%, 13.33% 97.44%, 15.00% 97.12%, 16.67% 96.82%, 18.33% 96.52%, 20.00% 96.24%, 21.67% 96.00%, 23.33% 95.78%, 25.00% 95.60%, 26.67% 95.47%, 28.33% 95.38%, 30.00% 95.34%, 31.67% 95.34%, 33.33% 95.40%, 35.00% 95.51%, 36.67% 95.66%, 38.33% 95.85%, 40.00% 96.07%, 41.67% 96.33%, 43.33% 96.62%, 45.00% 96.92%, 46.67% 97.23%, 48.33% 97.54%, 50.00% 97.85%, 51.67% 98.15%, 53.33% 98.42%, 55.00% 98.67%, 56.67% 98.89%, 58.33% 99.07%, 60.00% 99.20%, 61.67% 99.29%, 63.33% 99.33%, 65.00% 99.32%, 66.67% 99.27%, 68.33% 99.16%, 70.00% 99.01%, 71.67% 98.82%, 73.33% 98.59%, 75.00% 98.33%, 76.67% 98.05%, 78.33% 97.75%, 80.00% 97.44%, 81.67% 97.12%, 83.33% 96.82%, 85.00% 96.52%, 86.67% 96.24%, 88.33% 96.00%, 90.00% 95.78%, 91.67% 95.60%, 93.33% 95.47%, 95.00% 95.38%, 96.67% 95.34%, 98.33% 95.34%, 100.00% 95.40%);">
         <div class="flex items-center size-full backdrop-blur-xs bg-orange-950/40">
-            <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-15 px-5 lg:px-0 lg:items-center">
+            <div class="max-w-xl xl:max-w-7xl mx-auto grid xl:grid-cols-5 gap-15 px-5 xl:px-0 xl:items-center">
                 <div class="col-span-3 flex flex-col gap-y-10">
-                    <h1
-                        class="text-4xl uppercase text-center lg:text-left lg:normal-case lg:text-6xl text-white font-bold drop-shadow-lg">
+                    <h1 class="text-4xl uppercase text-center xl:text-left lx:normal-case xl:text-5xl text-white font-bold drop-shadow-lg animate-in duration-500"
+                        x-intersect="$el.classList.add('xl:slide-in-from-left', 'zoom-in')">
                         Ідеальна <span class="text-tryit-orange font-black">чистота</span> без зайвих турбот!
                     </h1>
-                    <div class="text-white text-xl text-center lg:text-left lg:text-2xl">
+                    <div class="text-white text-xl text-center xl:text-left lg:text-2xl animate-in duration-750"
+                        x-intersect="$el.classList.add('xl:slide-in-from-left', 'zoom-in')">
                         Шукаєте надійну клінінгову компанію? Ми подбаємо про чистоту вашого офісу, виробництва чи
                         будинку на найвищому рівні!
                     </div>
-                    <div class="flex flex-col lg:flex-row gap-5 mx-auto lg:mx-0">
-                        <a href="#services">
-                            <x-button class="py-4 px-5 uppercase">Ознайомитись з послугами</x-button>
+                    <div class="flex flex-col lg:flex-row gap-5 mx-auto xl:mx-0">
+                        <a href="#services" class="relative inline-block group animate-in duration-1000"
+                            x-intersect="$el.classList.add('xl:slide-in-from-left', 'zoom-in')">
+                            <span
+                                class="absolute inset-0 animate-ping bg-tryit-orange opacity-75 scale-75 rounded-lg group-hover:hidden"></span>
+                            <x-button class="relative py-4 px-5 uppercase text-white rounded-lg">
+                                Ознайомитись з послугами
+                            </x-button>
                         </a>
                         {{-- <a href="#top">
                             <x-button class="py-4 px-5 uppercase">Переглянути товари</x-button>
                         </a> --}}
                     </div>
                 </div>
-                <div class="hidden lg:block col-span-2 bg-white/90 rounded-xl w-full p-10">
+                <div class="hidden xl:block col-span-2 bg-white/90 rounded-xl w-full p-10 opacity-0 scale-75 duration-500"
+                    x-intersect="$el.classList.add('opacity-100', 'scale-100')">
                     @livewire('order')
                 </div>
             </div>
@@ -36,46 +43,72 @@
 @endsection
 
 @section('content')
-    <x-section class="bg-tryit-cream/20 -mt-20 pt-24" id="top">
-        {{-- <x-slot:caption>
-            Три кроки до чистоти
-        </x-slot> --}}
+    <x-section class="bg-tryit-cream/20 border-b border-tryit-orange/5 -mt-20 pt-24" id="top">
+        <div class="grid lg:grid-cols-2 gap-10">
+            <div class="flex flex-col">
+                <div class="relative">
+                    <h2 class="text-center text-xl mb-5 font-black text-gray-600 uppercase drop-shadow-lg">
+                        Про нас
+                    </h2>
+                    <div class="mb-5">Наша клінінгова компанія – це <x-marker>професійний</x-marker>сервіс з
+                        прибирання, який допомагає підтримувати чистоту у вашому домі чи офісі. Ми використовуємо
+                        <x-marker>сучасні методи</x-marker>, екологічні засоби та відповідально ставимося до кожного
+                        замовлення.
+                    </div>
 
-        <div class="grid lg:grid-cols-3 gap-10">
-            <div class="flex flex-col gap-y-5">
-                <div
-                    class="rounded-full flex items-center justify-center mx-auto bg-tryit-orange/5 border-2 border-dashed border-tryit-orange size-28">
-                    <x-icons.main-grade />
+                    <div class="mb-10">Ми пропонуємо широкий спектр послуг: від генерального
+                        <x-marker>прибирання</x-marker> до
+                        спеціалізованого <x-marker>догляду</x-marker> за меблями та покриттями. Наша мета – зробити ваш
+                        простір ідеально чистим та комфортним.
+                    </div>
+                    <img src="{{ Vite::asset('resources/images/cleaning-6.png') }}"
+                        class="w-24 opacity-5 absolute right-0 bottom-0" alt="">
                 </div>
-                <div class="text-2xl text-center font-black uppercase">Замовлення</div>
-                <div class="text-center">
-                    Створення замовлення відбувається через просту форму. Ви вибираєте потрібні товари та послуги, після
-                    чого підтверджуєте свою заявку.
-                </div>
+                <div>@livewire('callback')</div>
             </div>
+            <div class="grid lg:flex-col gap-5">
+                <h2 class="text-center text-xl mb-2.5 font-black text-gray-600 uppercase drop-shadow-lg">
+                    Три кроки до чистоти
+                </h2>
 
-            <div class="flex flex-col gap-y-5">
-                <div
-                    class="rounded-full flex items-center justify-center mx-auto bg-tryit-orange/5 border-2 border-dashed border-tryit-orange size-28">
-                    <x-icons.main-price />
-                </div>
-                <div class="text-2xl text-center font-black uppercase">Оцінка</div>
-                <div class="text-center">
-                    Після отримання замовлення здійснюється оцінка вартості, враховуючи всі деталі. Це дозволяє визначити
-                    кінцеву суму для оплати.
-                </div>
-            </div>
+                <ol class="relative lg:border-s lg:border-dashed lg:border-tryit-orange/30">
+                    <li class="mb-5 lg:ms-10 flex flex-col">
+                        <span
+                            class="lg:absolute flex items-center justify-center size-7 bg-tryit-orange -start-3.5 ring-8 ring-tryit-orange rounded-full mb-5">
+                            <x-lucide-file-text class="size-10 lg:size-8 stroke-white" stroke-width="1.2" />
+                        </span>
+                        <span class="flex items-center lg:mb-2.5 text-lg font-semibold text-gray-900 uppercase">
+                            1. Замовлення послуги
+                        </span>
+                        <p class="mb-5 text-base font-medium text-gray-600">
+                            Створення замовлення відбувається через просту форму. Ви вибираєте потрібні товари та послуги,
+                            після чого підтверджуєте свою заявку.</p>
+                    </li>
 
-            <div class="flex flex-col gap-y-5">
-                <div
-                    class="rounded-full flex items-center justify-center mx-auto bg-tryit-orange/5 border-2 border-dashed border-tryit-orange size-28">
-                    <x-icons.main-work />
-                </div>
-                <div class="text-2xl text-center font-black uppercase">Виконання</div>
-                <div class="text-center">
-                    Після підтвердження замовлення ми приступаємо до його виконання. Усі етапи виконання проходять згідно з
-                    планом та без затримок.
-                </div>
+                    <li class="mb-5 lg:ms-10 flex flex-col">
+                        <span
+                            class="lg:absolute flex items-center justify-center size-7 bg-tryit-orange -start-3.5 ring-8 ring-tryit-orange rounded-full mb-5">
+                            <x-lucide-circle-dollar-sign class="size-10 lg:size-8 stroke-white" stroke-width="1.2" />
+                        </span>
+                        <span class="flex items-center lg:mb-2.5 text-lg font-semibold text-gray-900 uppercase">
+                            2. Оцінка вартості
+                        </span>
+                        <p class="mb-5 text-base font-medium text-gray-600">Після отримання замовлення здійснюється оцінка
+                            вартості, враховуючи всі деталі. Це дозволяє визначити кінцеву суму для оплати.</p>
+                    </li>
+
+                    <li class="lg:mb-5 lg:ms-10 flex flex-col">
+                        <span
+                            class="lg:absolute flex items-center justify-center size-7 bg-tryit-orange -start-3.5 ring-8 ring-tryit-orange rounded-full mb-5">
+                            <x-lucide-file-text class="size-10 lg:size-6 stroke-white" stroke-width="1.2" />
+                        </span>
+                        <span class="flex items-center lg:mb-2.5 text-lg font-semibold text-gray-900 uppercase">
+                            3. Виконання роботи
+                        </span>
+                        <p class="mb-5 text-base font-medium text-gray-600">Після підтвердження замовлення ми приступаємо до
+                            його виконання. Усі етапи виконання проходять згідно з планом та без затримок.</p>
+                    </li>
+                </ol>
             </div>
         </div>
     </x-section>
@@ -86,7 +119,7 @@
         </x-slot>
         <div class="max-w-5xl mx-auto flex flex-col gap-y-20">
             <x-cards.service orientation="left" link="services.myttia-fasadu-ta-vikon-na-vysoti"
-                image="https://picsum.photos/500/500">
+                image="{{ Vite::asset('resources/images/clean-1.jpeg') }}">
                 <x-slot:name>
                     Миття фасадів та вікон на висоті (WFP-система)
                 </x-slot>
@@ -99,7 +132,7 @@
             </x-cards.service>
 
             <x-cards.service orientation="right" link="services.myika-ta-ochyshchennia-soniachnykh-panelei"
-                image="https://picsum.photos/500/500">
+                image="{{ Vite::asset('resources/images/clean-2.jpeg') }}">
                 <x-slot:name>
                     Мийка та очищення сонячних панелей
                 </x-slot>
@@ -112,7 +145,7 @@
             </x-cards.service>
 
             <x-cards.service orientation="left" link="services.pisliabudivelne-prybyrannia"
-                image="https://picsum.photos/500/500">
+                image="{{ Vite::asset('resources/images/clean-3.jpeg') }}">
                 <x-slot:name>
                     Післябудівельне прибирання
                 </x-slot>
@@ -159,8 +192,6 @@
                         підтримувати порядок без відволікання на дрібниці.</p>
                     <p>Ми подбаємо про чистоту робочих місць, санвузлів і
                         загальних зон. Працюйте продуктивно, а про чистоту подбаємо ми!</p>
-                    <img src="{{ Vite::asset('resources/images/cleaning-6.png') }}"
-                        class="w-24 opacity-5 absolute right-0 bottom-0" alt="">
                 </x-slot>
             </x-cards.service>
 
@@ -176,22 +207,5 @@
                 </x-slot>
             </x-cards.service>
         </div>
-    </x-section>
-
-    <x-section>
-        <x-slot:caption>
-            <div id="services" class="snap-start scroll-mt-40">Товари</div>
-        </x-slot>
-
-        <x-cards.product>
-            <x-slot:name>
-                name of product
-            </x-slot>
-            <x-slot:description>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, totam? Praesentium dolore eius
-                cupiditate quos harum illum labore, optio quisquam, enim delectus nemo architecto, et obcaecati aperiam
-                exercitationem iusto numquam?
-            </x-slot>
-        </x-cards.product>
     </x-section>
 @endsection

@@ -11,29 +11,29 @@
         <div class="flex flex-col gap-y-5">
             <div class="text-xl text-center text-tryit-dark font-black uppercase">Замовити послугу</div>
 
-            <x-forms.input wire:model="form.name" placeholder="Ваше ім'я" />
-            @error('form.name')
+            <x-forms.input wire:model="order.name" maxLength="40" placeholder="Ваше ім'я" />
+            @error('order.name')
                 <x-forms.error class="-mt-4" :message="$message" />
             @enderror
 
-            <x-forms.input wire:model="form.contact" placeholder="Пошта або телефон" />
-            @error('form.contact')
+            <x-forms.input wire:model="order.contact" maxLength="40" placeholder="Пошта або телефон" />
+            @error('order.contact')
                 <x-forms.error class="-mt-4" :message="$message" />
             @enderror
 
-            <x-dropdown :label="$form->service ?: 'Оберіть послугу'">
-                @foreach (\App\Enums\ServiceEnum::values() as $service)
-                    <x-dropdown.item wire:click="$set('form.service', '{{ $service }}')">
+            <x-dropdown :label="$order->service ?: 'Оберіть послугу'">
+                @foreach (\App\Enums\ServiceEnum::all() as $service)
+                    <x-dropdown.item wire:click="$set('order.service', '{{ $service }}')">
                         {{ $service }}
                     </x-dropdown.item>
                 @endforeach
 
             </x-dropdown>
-            @error('form.service')
-                <x-forms.error class="-mt-4" :message="$message" />
+            @error('order.service')
+                <x-forms.error class="-mt-4" maxLength="1200" :message="$message" />
             @enderror
 
-            <x-forms.textarea wire:model="form.text" placeholder="Вкажіть додатково опис" />
+            <x-forms.textarea wire:model="order.text" placeholder="Вкажіть додатково опис" />
 
             <x-button type="submit" wire:target="save" wire:loading.attr="disabled" class="ms-auto flex gap-x-1.5">
                 <span wire:target="save" wire:loading.remove>Замовити</span>

@@ -2,6 +2,8 @@
 
 namespace App\Livewire\Forms;
 
+use App\Enums\OrderStatus;
+use App\Enums\ServiceEnum;
 use App\Models\Order;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
@@ -16,7 +18,7 @@ class OrderForm extends Form
     #[Validate('min:5', message: 'Занадто мало символів')]
     public $contact = '';
 
-    #[Validate('required', message: 'Необхідно вказати послугу')]
+    #[Validate('required', message: 'Необхідно обрати послугу')]
     public $service = '';
 
     #[Validate('max:1200', message: 'Занадто багато символів')]

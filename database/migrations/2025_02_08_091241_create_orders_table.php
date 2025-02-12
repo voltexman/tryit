@@ -14,12 +14,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id()->from(10504);
+            $table->id()->startingValue(10504);
             $table->string('name');
             $table->string('contact');
             $table->text('text')->nullable();
-            $table->enum('service', ServiceEnum::values());
-            $table->enum('status', OrderStatus::values())->default(OrderStatus::NEW);
+            $table->enum('service', ServiceEnum::all());
+            $table->enum('status', OrderStatus::all())->default(OrderStatus::NEW);
+            $table->text('comment')->nullable();
             $table->timestamps();
         });
     }
