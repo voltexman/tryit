@@ -2,8 +2,6 @@
 
 namespace App\Livewire\Forms;
 
-use App\Enums\OrderStatus;
-use App\Enums\ServiceEnum;
 use App\Models\Order;
 use Livewire\Attributes\Validate;
 use Livewire\Form;

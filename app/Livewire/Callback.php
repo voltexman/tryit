@@ -8,7 +8,9 @@ class Callback extends Component
 {
     public function send()
     {
-        sleep(500);
+        sleep(2);
+
+        session()->flash('success');
     }
 
     public function render()

@@ -3,7 +3,7 @@
 <div class="flex w-full">
     <div x-data="{ open: false }" x-on:keydown.esc.prevent.stop="open = false" class="relative w-full">
         <button type="button"
-            class="inline-flex items-center gap-2 w-full cursor-pointer rounded-lg bg-stone-300 p-4 font-medium text-stone-500/80 text-sm hover:bg-stone-400/45 focus:outline-hidden focus:ring-2 focus:ring-tryit-orange/60 transition-all duration-300 focus:ring-offset-2"
+            class="inline-flex items-center gap-2 w-full cursor-pointer rounded-lg bg-stone-300 p-4 font-medium text-stone-500/80 text-sm hover:bg-stone-400/45 focus:outline-hidden focus:ring-2 focus:ring-tryit-green/80 transition-all duration-300 focus:ring-offset-2"
             id="pm-dropdown" aria-haspopup="true" x-bind:aria-expanded="open" x-on:click="open = true">
             <span>{{ $label }}</span>
             <span class="ms-auto">

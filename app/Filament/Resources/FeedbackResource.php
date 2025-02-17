@@ -6,18 +6,18 @@ use App\Filament\Resources\FeedbackResource\Pages;
 use App\Models\Feedback;
 use Filament\Forms\Form;
 use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Support\Enums\MaxWidth;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Infolists\Infolist;
 
 class FeedbackResource extends Resource
 {
     protected static ?string $model = Feedback::class;
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 4;
 
     protected static ?string $label = 'Зворотній зв`язок';
 

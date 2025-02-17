@@ -2,8 +2,8 @@
     <div class="h-96 flex items-center justify-center">
         <div class="flex flex-col items-center">
             <x-lucide-circle-check class="size-24 stroke-1 text-tryit-orange mb-5" />
-            <span class="font-semibold">Дякуємо, Ваша заявка відправлена</span>
-            <span class="font-medium">Ми зв'яжемось з Вами найближчим часом</span>
+            <span class="font-semibold">Дякуємо, заявка відправлена</span>
+            <span class="text-sm font-medium">Ми зв'яжемось з Вами найближчим часом</span>
         </div>
     </div>
 @else
@@ -35,7 +35,8 @@
 
             <x-forms.textarea wire:model="order.text" placeholder="Вкажіть додатково опис" />
 
-            <x-button type="submit" wire:target="save" wire:loading.attr="disabled" class="ms-auto flex gap-x-1.5">
+            <x-button type="submit" wire:target="save" wire:loading.attr="disabled"
+                class="ms-auto flex items-center gap-x-1.5">
                 <span wire:target="save" wire:loading.remove>Замовити</span>
                 <span wire:target="save" wire:loading>Відправка</span>
                 <x-lucide-loader-2 wire:target="save" wire:loading class="size-4 animate-spin" />

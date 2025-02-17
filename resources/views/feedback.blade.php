@@ -1,7 +1,8 @@
 @extends('layouts.base')
 
 @section('header')
-    <x-page-header image="https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg">
+    <x-page-header
+        image="https://www.searchenginejournal.com/wp-content/uploads/2022/09/email-marketing-6331b0ee98b47-sej.png">
         <x-slot:title>
             Зворотрій зв'язок
         </x-slot>
@@ -10,12 +11,77 @@
 
 @section('content')
     <x-section>
-        <div class="grid lg:grid-cols-5 gap-15 min-h-screen">
-            <div class="col-span-3">Ми цінуємо вашу думку та завжди раді допомогти. Якщо у вас є
-                запитання, пропозиції або відгуки, будь ласка, надішліть повідомлення – і наша команда зв’яжеться з вами
-                якнайшвидше. Ми прагнемо зробити наш сервіс ще кращим, і ваша підтримка для нас дуже важлива. Дякуємо, що
-                обираєте нас!"</div>
-            <div class="col-span-2">@livewire('feedback')</div>
+        <div class="gap-10 flex flex-col xl:grid xl:grid-cols-5 xl:gap-15 min-h-screen">
+            <div class="max-w-xl flex flex-col gap-y-10 mx-auto xl:col-span-3">
+                <div>Ми цінуємо вашу думку та завжди раді допомогти. Якщо у вас є
+                    запитання, пропозиції або відгуки, будь ласка, надішліть повідомлення. Ми прагнемо зробити наш сервіс ще
+                    кращим, і ваша думка для нас дуже важлива. Дякуємо, що обираєте нас!
+                </div>
+
+                <div class="grid grid-cols-2">
+                    <div class="flex flex-col gap-y-5">
+                        <div class="flex gap-x-5 items-center">
+                            <div class="flex border items-center justify-center size-14 rounded-full border-tryit-orange">
+                                <x-lucide-user-round class="size-6 stroke-tryit-orange" stroke-width="1.5" />
+                            </div>
+                            <div class="grid">
+                                <span class="text-sm font-semibold">Контактне лице</span>
+                                <span class="text-sm">Руслан Мамай</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-x-5 items-center">
+                            <div class="flex border items-center justify-center size-14 rounded-full border-tryit-orange">
+                                <x-lucide-phone class="size-6 stroke-tryit-orange" stroke-width="1.5" />
+                            </div>
+                            <div class="grid">
+                                <span class="text-sm font-semibold">Номер телефону</span>
+                                <span class="text-sm">+380 (97) 87-78-667</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-x-5 items-center">
+                            <div class="flex border items-center justify-center size-14 rounded-full border-tryit-orange">
+                                <x-lucide-mail class="size-6 stroke-tryit-orange" stroke-width="1.5" />
+                            </div>
+                            <div class="grid">
+                                <span class="text-sm font-semibold">Поштова адреса</span>
+                                <span class="text-sm">examplemail@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-y-5">
+                        <div class="flex gap-x-5 items-center">
+                            <div
+                                class="flex flex-none border items-center justify-center size-14 rounded-full border-tryit-orange">
+                                <x-lucide-instagram class="size-6 stroke-tryit-orange" stroke-width="1.5" />
+                            </div>
+                            <div class="grid">
+                                <span class="text-sm font-semibold">Ми в Instagram</span>
+                                <a href="https://www.instagram.com/d3h5hu87hnxpth654njkzd/"
+                                    class="text-sm flex items-center space-x-1.5 text-tryit-orange/60 hover:text-tryit-orange transition duration-300 line-clamp-1">
+                                    <x-lucide-link class="size-4 flex-none" />
+                                    <span class="truncate">www.instagram.com/d3h5hu87hnxpth654njkzd/</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex gap-x-5 items-center">
+                            <div
+                                class="flex flex-none border items-center justify-center size-14 rounded-full border-tryit-orange">
+                                <x-lucide-facebook class="size-6 stroke-tryit-orange" stroke-width="1.5" />
+                            </div>
+                            <div class="grid">
+                                <span class="text-sm font-semibold">Ми на Facebook</span>
+                                <a href="https://www.facebook.com/d3h5hu87hnxpth654njkzd/"
+                                    class="text-sm flex items-center space-x-1.5 text-tryit-orange/60 hover:text-tryit-orange transition duration-300 line-clamp-1">
+                                    <x-lucide-link class="size-4 flex-none" />
+                                    <span class="truncate">www.facebook.com/d3h5hu87hnxpth654njkzd/</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="xl:col-span-2 mx-auto w-full max-w-md">@livewire('feedback')</div>
         </div>
     </x-section>
 @endsection

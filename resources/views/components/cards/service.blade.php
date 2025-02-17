@@ -4,18 +4,19 @@
     <div @class([
         'lg:order-1' => $orientation === 'left',
         'lg:order-2' => $orientation === 'right',
-        'lg:col-span-2 relative',
-    ])>
-        {{-- <img src="{{ Vite::asset('resources/images/klax.svg') }}"
-            class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 size-full" alt=""> --}}
-
-        <img src="{{ $image }}" class="rounded-2xl" alt="">
+        'lg:col-span-2 relative animate-in duration-1000',
+    ]) x-intersect="$el.classList.add('zoom-in')">
+        <x-slider :images="[
+            'https://picsum.photos/500/500?random=1',
+            'https://picsum.photos/500/500?random=2',
+            'https://picsum.photos/500/500?random=3',
+        ]" class="rounded-2xl inset-shadow-lg max-h-96 group" />
     </div>
     <div @class([
         'lg:order-2' => $orientation === 'left',
         'lg:order-1' => $orientation === 'right',
-        'flex flex-col lg:col-span-3 gap-y-5',
-    ])>
+        'flex flex-col lg:col-span-3 gap-y-5 animate-in duration-1000',
+    ]) x-intersect="$el.classList.add('zoom-in')">
         <div class="text-2xl lg:text-4xl font-bold">
             {{ $name }}
         </div>

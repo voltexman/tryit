@@ -8,16 +8,14 @@ use App\Models\Order;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
+use Filament\Support\Enums\MaxWidth;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Infolists\Infolist;
-use Filament\Support\Enums\MaxWidth;
-use Illuminate\Support\HtmlString;
 
 class OrderResource extends Resource
 {
@@ -77,25 +75,6 @@ class OrderResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make()
                     ->modalHeading('Перегляд замовлення'),
-                // Tables\Actions\Action::make('Обробка')
-                //     ->form([
-                //         Select::make('status')->options(OrderStatus::class)
-                //             ->native(false),
-                //         Textarea::make('comment')
-                //             ->rows(5)
-                //             ->autosize()
-                //             ->minLength(10)
-                //             ->maxLength(1200)
-                //     ])
-                //     ->action(function (array $data, Order $record): void {
-                //         $record->update([
-                //             'status' => $data['status'],
-                //             'comment' => $data['comment'],
-                //         ]);
-                //     })
-                //     ->modalWidth(MaxWidth::Medium)
-                //     ->modalHeading('Обробка замовлення')
-                //     ->icon('heroicon-s-rectangle-stack'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
