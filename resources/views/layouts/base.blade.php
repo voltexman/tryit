@@ -98,7 +98,7 @@
                 </div>
                 <div class="text-tryit-cream flex items-center gap-x-2">
                     <x-lucide-mail class="size-5" />
-                    <span class="text-tryit-cream text-sm font-semibold text-center">examplemail@gmail.com</span>
+                    <span class="text-tryit-cream text-sm font-semibold text-center">info@tryit.com.ua</span>
                 </div>
             </div>
 
