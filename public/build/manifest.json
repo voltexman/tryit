@@ -24,6 +24,30 @@
     "file": "assets/cleaning-6-pl8vzgpZ.png",
     "src": "resources/images/cleaning-6.png"
   },
+  "resources/images/icons/footer-instagram.svg": {
+    "file": "assets/footer-instagram-h8ZCbTru.svg",
+    "src": "resources/images/icons/footer-instagram.svg"
+  },
+  "resources/images/icons/footer-telegram.svg": {
+    "file": "assets/footer-telegram-BO_wUGfw.svg",
+    "src": "resources/images/icons/footer-telegram.svg"
+  },
+  "resources/images/icons/footer-viber.svg": {
+    "file": "assets/footer-viber-KSZdEHqt.svg",
+    "src": "resources/images/icons/footer-viber.svg"
+  },
+  "resources/images/icons/instagram.svg": {
+    "file": "assets/instagram-BrfVUyH9.svg",
+    "src": "resources/images/icons/instagram.svg"
+  },
+  "resources/images/icons/telegram.svg": {
+    "file": "assets/telegram-BuSzoMNN.svg",
+    "src": "resources/images/icons/telegram.svg"
+  },
+  "resources/images/icons/viber.svg": {
+    "file": "assets/viber-DEEbfu3A.svg",
+    "src": "resources/images/icons/viber.svg"
+  },
   "resources/images/klax copy.svg": {
     "file": "assets/klax copy-QbJOxKj8.svg",
     "src": "resources/images/klax copy.svg"

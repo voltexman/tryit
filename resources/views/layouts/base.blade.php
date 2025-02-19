@@ -106,13 +106,13 @@
                 <div class="flex items-center mx-auto gap-x-5">
                     <a href="https://www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr"
                         target="_blank">
-                        <img src="{{ Vite::asset('resources/icons/footer-instagram.svg') }}" class="size-6" />
+                        <img src="{{ Vite::asset('resources/images/icons/footer-instagram.svg') }}" class="size-6" />
                     </a>
                     <a href="#">
-                        <img src="{{ Vite::asset('resources/icons/footer-telegram.svg') }}" class="size-6" />
+                        <img src="{{ Vite::asset('resources/images/icons/footer-telegram.svg') }}" class="size-6" />
                     </a>
                     <a href="#">
-                        <img src="{{ Vite::asset('resources/icons/footer-viber.svg') }}" class="size-6" />
+                        <img src="{{ Vite::asset('resources/images/icons/footer-viber.svg') }}" class="size-6" />
                     </a>
                 </div>
             </div>

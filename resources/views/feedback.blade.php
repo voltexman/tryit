@@ -52,7 +52,7 @@
                     <div class="flex flex-col gap-y-5">
                         <div class="flex gap-x-5 items-center">
                             <div class="flex flex-none items-center justify-center">
-                                <img src="{{ Vite::asset('resources/icons/instagram.svg') }}" class="size-9" />
+                                <img src="{{ Vite::asset('resources/images/icons/instagram.svg') }}" class="size-9" />
                             </div>
                             <div class="grid">
                                 <span class="text-sm font-semibold">Ми в Instagram</span>
@@ -67,7 +67,7 @@
                         </div>
                         <div class="flex gap-x-5 items-center">
                             <div class="flex flex-none items-center justify-center">
-                                <img src="{{ Vite::asset('resources/icons/telegram.svg') }}" class="size-9" />
+                                <img src="{{ Vite::asset('resources/images/icons/telegram.svg') }}" class="size-9" />
                             </div>
                             <div class="grid">
                                 <span class="text-sm font-semibold">Наш Telegram</span>
@@ -79,7 +79,7 @@
                         </div>
                         <div class="flex gap-x-5 items-center">
                             <div class="flex flex-none items-center justify-center">
-                                <img src="{{ Vite::asset('resources/icons/viber.svg') }}" class="size-9" />
+                                <img src="{{ Vite::asset('resources/images/icons/viber.svg') }}" class="size-9" />
                             </div>
                             <div class="grid">
                                 <span class="text-sm font-semibold">Наш Viber</span>
