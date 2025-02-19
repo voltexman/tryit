@@ -32,16 +32,16 @@
 
                         <x-slot:body>
                             <x-navigation class="lg:hidden">
-                                <x-navigation.item :link="route('feedback')" icon="hand-platter">
+                                <x-navigation.item :link="route('main')" icon="home" :active="request()->routeIs('main')">
+                                    Головна
+                                </x-navigation.item>
+                                <x-navigation.item :link="route('services')" icon="hand-platter" :active="request()->routeIs('services')">
                                     Послуги
                                 </x-navigation.item>
-                                <x-navigation.item :link="route('feedback')" icon="message-circle-more">
-                                    Товари
-                                </x-navigation.item>
-                                <x-navigation.item :link="route('gallery')" icon="image">
+                                <x-navigation.item :link="route('gallery')" icon="image" :active="request()->routeIs('gallery')">
                                     Галерея
                                 </x-navigation.item>
-                                <x-navigation.item :link="route('feedback')" icon="book-user">
+                                <x-navigation.item :link="route('feedback')" icon="book-user" :active="request()->routeIs('feedback')">
                                     Контакти
                                 </x-navigation.item>
                             </x-navigation>
@@ -54,16 +54,16 @@
                 </div>
 
                 <x-navigation class="hidden lg:flex">
-                    <x-navigation.item :link="route('feedback')">
+                    <x-navigation.item :link="route('main')" icon="book-user" :active="request()->routeIs('main')">
+                        <x-lucide-home class="size-4" />
+                    </x-navigation.item>
+                    <x-navigation.item :link="route('services')" :active="request()->routeIs('services')">
                         Послуги
                     </x-navigation.item>
-                    <x-navigation.item :link="route('gallery')">
-                        Товари
-                    </x-navigation.item>
-                    <x-navigation.item :link="route('gallery')">
+                    <x-navigation.item :link="route('gallery')" :active="request()->routeIs('gallery')">
                         Галерея
                     </x-navigation.item>
-                    <x-navigation.item :link="route('feedback')">
+                    <x-navigation.item :link="route('feedback')" :active="request()->routeIs('feedback')">
                         Контакти
                     </x-navigation.item>
                 </x-navigation>
@@ -102,11 +102,18 @@
                 </div>
             </div>
 
-            <div class="mx-auto flex flex-col justify-center gap-y-2.5">
+            <div class="mx-auto flex flex-col justify-center">
                 <div class="flex items-center mx-auto gap-x-5">
-                    <x-lucide-instagram class="size-6 stroke-tryit-cream" />
-                    <x-lucide-facebook class="size-6 stroke-tryit-cream" />
-                    <x-lucide-youtube class="size-6 stroke-tryit-cream" />
+                    <a href="https://www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr"
+                        target="_blank">
+                        <img src="{{ Vite::asset('resources/icons/footer-instagram.svg') }}" class="size-6" />
+                    </a>
+                    <a href="#">
+                        <img src="{{ Vite::asset('resources/icons/footer-telegram.svg') }}" class="size-6" />
+                    </a>
+                    <a href="#">
+                        <img src="{{ Vite::asset('resources/icons/footer-viber.svg') }}" class="size-6" />
+                    </a>
                 </div>
             </div>
 

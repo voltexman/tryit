@@ -51,30 +51,41 @@
 
                     <div class="flex flex-col gap-y-5">
                         <div class="flex gap-x-5 items-center">
-                            <div
-                                class="flex flex-none border items-center justify-center size-14 rounded-full border-tryit-orange">
-                                <x-lucide-instagram class="size-6 stroke-tryit-orange" stroke-width="1.5" />
+                            <div class="flex flex-none items-center justify-center">
+                                <img src="{{ Vite::asset('resources/icons/instagram.svg') }}" class="size-9" />
                             </div>
                             <div class="grid">
                                 <span class="text-sm font-semibold">Ми в Instagram</span>
-                                <a href="https://www.instagram.com/d3h5hu87hnxpth654njkzd/"
+                                <a href="http://www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr"
+                                    target="_blank"
                                     class="text-sm flex items-center space-x-1.5 text-tryit-orange/60 hover:text-tryit-orange transition duration-300 line-clamp-1">
                                     <x-lucide-link class="size-4 flex-none" />
-                                    <span class="truncate">www.instagram.com/d3h5hu87hnxpth654njkzd/</span>
+                                    <span
+                                        class="truncate">www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr</span>
                                 </a>
                             </div>
                         </div>
                         <div class="flex gap-x-5 items-center">
-                            <div
-                                class="flex flex-none border items-center justify-center size-14 rounded-full border-tryit-orange">
-                                <x-lucide-facebook class="size-6 stroke-tryit-orange" stroke-width="1.5" />
+                            <div class="flex flex-none items-center justify-center">
+                                <img src="{{ Vite::asset('resources/icons/telegram.svg') }}" class="size-9" />
                             </div>
                             <div class="grid">
-                                <span class="text-sm font-semibold">Ми на Facebook</span>
-                                <a href="https://www.facebook.com/d3h5hu87hnxpth654njkzd/"
-                                    class="text-sm flex items-center space-x-1.5 text-tryit-orange/60 hover:text-tryit-orange transition duration-300 line-clamp-1">
-                                    <x-lucide-link class="size-4 flex-none" />
-                                    <span class="truncate">www.facebook.com/d3h5hu87hnxpth654njkzd/</span>
+                                <span class="text-sm font-semibold">Наш Telegram</span>
+                                <a href="#"
+                                    class="text-sm text-tryit-orange/60 hover:text-tryit-orange transition duration-300 line-clamp-1">
+                                    <span class="truncate">6423463464</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex gap-x-5 items-center">
+                            <div class="flex flex-none items-center justify-center">
+                                <img src="{{ Vite::asset('resources/icons/viber.svg') }}" class="size-9" />
+                            </div>
+                            <div class="grid">
+                                <span class="text-sm font-semibold">Наш Viber</span>
+                                <a href="#"
+                                    class="text-sm text-tryit-orange/60 hover:text-tryit-orange transition duration-300 line-clamp-1">
+                                    <span class="truncate">462436234636</span>
                                 </a>
                             </div>
                         </div>

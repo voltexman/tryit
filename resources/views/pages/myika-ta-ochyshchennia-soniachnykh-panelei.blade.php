@@ -34,27 +34,25 @@ name('services.myika-ta-ochyshchennia-soniachnykh-panelei');
             </div>
         </div>
 
-        <div class="lg:grid lg:grid-cols-5 gap-20 mt-10">
+        <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 mt-10">
             <x-list class="col-span-3">
-                <x-list>
-                    <x-slot:caption>
-                        Чому важливо регулярно очищати сонячні панелі?
-                    </x-slot>
-                    <x-list.item>
-                        Збільшення продуктивності – чисті панелі поглинають більше сонячного світла, що підвищує їхню
-                        ефективність.
-                    </x-list.item>
-                    <x-list.item>
-                        Подовження терміну служби – відсутність забруднень зменшує ризик перегріву та пошкодження
-                        батарей.
-                    </x-list.item>
-                    <x-list.item>
-                        Запобігання корозії – своєчасне очищення запобігає появі нальоту, який може пошкодити панелі.
-                    </x-list.item>
-                    <x-list.item>
-                        Зниження витрат на ремонт – регулярний догляд дозволяє уникнути дорогих поломок.
-                    </x-list.item>
-                </x-list>
+                <x-slot:caption>
+                    Чому важливо регулярно очищати сонячні панелі?
+                </x-slot>
+                <x-list.item>
+                    Збільшення продуктивності – чисті панелі поглинають більше сонячного світла, що підвищує їхню
+                    ефективність.
+                </x-list.item>
+                <x-list.item>
+                    Подовження терміну служби – відсутність забруднень зменшує ризик перегріву та пошкодження
+                    батарей.
+                </x-list.item>
+                <x-list.item>
+                    Запобігання корозії – своєчасне очищення запобігає появі нальоту, який може пошкодити панелі.
+                </x-list.item>
+                <x-list.item>
+                    Зниження витрат на ремонт – регулярний догляд дозволяє уникнути дорогих поломок.
+                </x-list.item>
             </x-list>
             <div class="col-span-2 perspective-near perspective-origin-bottom-right">
                 <img src="https://picsum.photos/400?random=3"
@@ -62,7 +60,7 @@ name('services.myika-ta-ochyshchennia-soniachnykh-panelei');
             </div>
         </div>
 
-        <div class="lg:grid lg:grid-cols-5 gap-20 mt-10">
+        <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 mt-10">
             <div class="col-span-2 perspective-near perspective-origin-bottom-left">
                 <img src="https://picsum.photos/400?random=4"
                     class="rounded-xl rotate-x-6 -rotate-z-6 shadow-2xl shadow-black/50" alt="">
@@ -86,7 +84,7 @@ name('services.myika-ta-ochyshchennia-soniachnykh-panelei');
             </x-list>
         </div>
 
-        <div class="lg:grid lg:grid-cols-5 gap-20 mt-10">
+        <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 mt-10">
             <x-list class="col-span-3">
                 <x-slot:caption>
                     Які об'єкти ми обслуговуємо?
@@ -113,7 +111,7 @@ name('services.myika-ta-ochyshchennia-soniachnykh-panelei');
             </div>
         </div>
 
-        <div class="lg:grid lg:grid-cols-5 gap-20 mt-10">
+        <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 mt-10">
             <div class="col-span-2 perspective-near perspective-origin-bottom-left">
                 <img src="https://picsum.photos/400?random=6"
                     class="rounded-xl rotate-x-6 -rotate-z-6 shadow-2xl shadow-black/50" alt="">

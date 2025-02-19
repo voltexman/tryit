@@ -8,7 +8,8 @@
                 <div class="col-span-3 flex flex-col gap-y-10">
                     <h1 class="text-4xl uppercase text-center xl:text-left lx:normal-case xl:text-5xl text-white font-bold drop-shadow-lg animate-in duration-500"
                         x-intersect="$el.classList.add('xl:slide-in-from-left', 'zoom-in')">
-                        Ідеальна <span class="text-tryit-orange font-black">чистота</span> без зайвих турбот!
+                        <span class="text-tryit-orange font-black">Чистота</span>, яку варто спробувати
+                        <span class="text-tryit-orange font-black">сьогодні</span>!
                     </h1>
                     <div class="text-white text-xl text-center xl:text-left lg:text-2xl animate-in duration-750"
                         x-intersect="$el.classList.add('xl:slide-in-from-left', 'zoom-in')">
