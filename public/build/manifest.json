@@ -1,0 +1,45 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app--JbDESnx.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/images/clean-1.jpeg": {
+    "file": "assets/clean-1-D82xgECv.jpeg",
+    "src": "resources/images/clean-1.jpeg"
+  },
+  "resources/images/clean-2.jpeg": {
+    "file": "assets/clean-2-BTL7hiuG.jpeg",
+    "src": "resources/images/clean-2.jpeg"
+  },
+  "resources/images/clean-3.jpeg": {
+    "file": "assets/clean-3-Y624XFGt.jpeg",
+    "src": "resources/images/clean-3.jpeg"
+  },
+  "resources/images/clean-7.webp": {
+    "file": "assets/clean-7-CZoCrKLW.webp",
+    "src": "resources/images/clean-7.webp"
+  },
+  "resources/images/cleaning-6.png": {
+    "file": "assets/cleaning-6-pl8vzgpZ.png",
+    "src": "resources/images/cleaning-6.png"
+  },
+  "resources/images/klax copy.svg": {
+    "file": "assets/klax copy-QbJOxKj8.svg",
+    "src": "resources/images/klax copy.svg"
+  },
+  "resources/images/klax.svg": {
+    "file": "assets/klax-C3yrtJC7.svg",
+    "src": "resources/images/klax.svg"
+  },
+  "resources/images/logo.png": {
+    "file": "assets/logo-DX72VlMl.png",
+    "src": "resources/images/logo.png"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-CqflisoM.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
