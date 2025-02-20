@@ -44,7 +44,7 @@
                             </div>
                             <div class="grid">
                                 <span class="text-sm font-semibold">Поштова адреса</span>
-                                <span class="text-sm">examplemail@gmail.com</span>
+                                <span class="text-sm">info@tryit.com.ua</span>
                             </div>
                         </div>
                     </div>
