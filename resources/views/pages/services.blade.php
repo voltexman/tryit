@@ -32,7 +32,7 @@ name('services');
             </x-cards.service>
 
             <x-cards.service orientation="right" link="services.myika-ta-ochyshchennia-soniachnykh-panelei"
-                image="{{ Vite::asset('resources/images/clean-2.jpeg') }}">
+                image="https://www.telegraf.in.ua/uploads/posts/2024-03/1711798407_klining.jpg">
                 <x-slot:name>
                     Мийка та очищення сонячних панелей
                 </x-slot>
@@ -45,7 +45,7 @@ name('services');
             </x-cards.service>
 
             <x-cards.service orientation="left" link="services.pisliabudivelne-prybyrannia"
-                image="{{ Vite::asset('resources/images/clean-3.jpeg') }}">
+                image="https://www.telegraf.in.ua/uploads/posts/2024-03/1711798407_klining.jpg">
                 <x-slot:name>
                     Післябудівельне прибирання
                 </x-slot>
@@ -96,7 +96,7 @@ name('services');
             </x-cards.service>
 
             <x-cards.service orientation="left" link="services.promyslovyi-alpinizm"
-                image="{{ Vite::asset('resources/images/clean-7.webp') }}">
+                image="https://www.telegraf.in.ua/uploads/posts/2024-03/1711798407_klining.jpg">
                 <x-slot:name>
                     Промисловий альпінізм
                 </x-slot>

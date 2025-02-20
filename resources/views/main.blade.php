@@ -63,7 +63,7 @@
                         <x-marker>прибирання</x-marker> до спеціалізованого <x-marker>догляду</x-marker> за меблями та
                         покриттями. Наша мета – зробити ваш простір ідеально чистим та комфортним.
                     </div>
-                    <img src="{{ Vite::asset('resources/images/cleaning-6.png') }}"
+                    <img src="https://www.telegraf.in.ua/uploads/posts/2024-03/1711798407_klining.jpg"
                         class="w-24 opacity-5 absolute right-0 bottom-0" alt="">
                 </div>
                 <div>@livewire('callback')</div>
@@ -134,7 +134,7 @@
             </x-cards.service>
 
             <x-cards.service orientation="right" link="services.myika-ta-ochyshchennia-soniachnykh-panelei"
-                image="{{ Vite::asset('resources/images/clean-2.jpeg') }}">
+                image="https://www.telegraf.in.ua/uploads/posts/2024-03/1711798407_klining.jpg">
                 <x-slot:name>
                     Мийка та очищення сонячних панелей
                 </x-slot>
@@ -147,7 +147,7 @@
             </x-cards.service>
 
             <x-cards.service orientation="left" link="services.pisliabudivelne-prybyrannia"
-                image="{{ Vite::asset('resources/images/clean-3.jpeg') }}">
+                image="https://www.telegraf.in.ua/uploads/posts/2024-03/1711798407_klining.jpg">
                 <x-slot:name>
                     Післябудівельне прибирання
                 </x-slot>
@@ -198,7 +198,7 @@
             </x-cards.service>
 
             <x-cards.service orientation="left" link="services.promyslovyi-alpinizm"
-                image="{{ Vite::asset('resources/images/clean-7.webp') }}">
+                image="https://www.telegraf.in.ua/uploads/posts/2024-03/1711798407_klining.jpg">
                 <x-slot:name>
                     Промисловий альпінізм
                 </x-slot>
