@@ -36,28 +36,29 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
         </div>
 
         <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 mt-10">
-            <x-list class="lg:col-span-3 order-2 lg:order-1">
+            <x-list class="lg:col-span-3 order-2 lg:order-1" type="number">
                 <x-slot:caption>
                     Завдяки цьому:
                 </x-slot>
-                <x-list.item>
+                <x-list.item index="1">
                     Вода розчиняє бруд, залишаючи поверхню ідеально чистою без застосування хімічних засобів.
                 </x-list.item>
-                <x-list.item>
+                <x-list.item index="2">
                     Вікна та фасади висихають природним чином без розводів.
                 </x-list.item>
-                <x-list.item>
+                <x-list.item index="3">
                     Метод безпечний для людей, оскільки не потребує використання підйомників або промислового
                     альпінізму на середніх висотах.
                 </x-list.item>
-                <x-list.item>
+                <x-list.item index="4">
                     Це екологічний спосіб очищення, адже не залишає хімічних слідів на поверхні та в повітрі.
                 </x-list.item>
             </x-list>
             <div
                 class="lg:col-span-2 flex justify-center perspective-near perspective-origin-bottom-right px-10 2xl:px-0 order-1 lg:order-2">
                 <img src="https://picsum.photos/400?random=3"
-                    class="rounded-xl rotate-x-6 rotate-z-6 shadow-2xl shadow-black/50 object-cover max-h-96" alt="">
+                    class="rounded-xl rotate-x-6 rotate-z-6 shadow-2xl shadow-black/50 object-cover max-h-96"
+                    alt="">
             </div>
         </div>
 
@@ -65,9 +66,10 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
             <div
                 class="lg:col-span-2 flex justify-center perspective-near perspective-origin-bottom-left px-10 2xl:px-0 order-2 lg:order-1">
                 <img src="https://picsum.photos/400?random=4"
-                    class="rounded-xl rotate-x-6 -rotate-z-6 shadow-2xl shadow-black/50 object-cover max-h-96" alt="">
+                    class="rounded-xl rotate-x-6 -rotate-z-6 shadow-2xl shadow-black/50 object-cover max-h-96"
+                    alt="">
             </div>
-            <x-list class="lg:col-span-3 order-2 lg:order-1">
+            <x-list class="lg:col-span-3 order-2 lg:order-1" type="check">
                 <x-slot:caption>
                     Для яких об’єктів підходить ця послуга?
                 </x-slot>
@@ -81,56 +83,56 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
         </div>
 
         <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 lg:mt-10">
-            <x-list class="lg:col-span-3 order-2 lg:order-1">
+            <x-list class="lg:col-span-3 order-2 lg:order-1" type="number">
                 <x-slot:caption>
                     Як відбувається процес миття?
                 </x-slot>
-                <x-list.item>
+                <x-list.item index="1">
                     Оцінка об’єкта – наші фахівці виїжджають на місце для визначення рівня забруднення, типу поверхні та
-                    підбору
-                    оптимальної технології очищення.
+                    підбору оптимальної технології очищення.
                 </x-list.item>
-                <x-list.item>
+                <x-list.item index="2">
                     Підготовка обладнання – використовуємо карбонові штанги з подачею демінералізованої води для
-                    ефективного
-                    очищення.
+                    ефективного очищення.
                 </x-list.item>
-                <x-list.item>
+                <x-list.item index="3">
                     Миття поверхонь – видаляємо бруд, пил, залишки смогу та водяних патьоків.
                 </x-list.item>
-                <x-list.item>
+                <x-list.item index="4">
                     Контроль якості – перевіряємо результат, щоб кожне вікно та фасад були ідеально чистими.
                 </x-list.item>
             </x-list>
             <div
                 class="lg:col-span-2 flex justify-center perspective-near perspective-origin-bottom-right px-10 2xl:px-0 order-1 lg:order-2">
                 <img src="https://picsum.photos/400?random=5"
-                    class="rounded-xl rotate-x-6 rotate-z-6 shadow-2xl shadow-black/50 object-cover max-h-96" alt="">
+                    class="rounded-xl rotate-x-6 rotate-z-6 shadow-2xl shadow-black/50 object-cover max-h-96"
+                    alt="">
             </div>
         </div>
 
         <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 lg:mt-10">
             <div class="lg:col-span-2 flex justify-center perspective-near perspective-origin-bottom-left px-10 2xl:px-0">
                 <img src="https://picsum.photos/400?random=6"
-                    class="rounded-xl rotate-x-6 -rotate-z-6 shadow-2xl shadow-black/50 object-cover max-h-96" alt="">
+                    class="rounded-xl rotate-x-6 -rotate-z-6 shadow-2xl shadow-black/50 object-cover max-h-96"
+                    alt="">
             </div>
-            <x-list class="lg:col-span-3">
+            <x-list class="lg:col-span-3" type="number">
                 <x-slot:caption>
                     Чому варто обрати нас?
                 </x-slot>
-                <x-list.item>
+                <x-list.item index="1">
                     Безпека та якість – досвідчені фахівці та сертифіковане обладнання.
                 </x-list.item>
-                <x-list.item>
+                <x-list.item index="2">
                     Екологічність – використовуємо тільки очищену воду без хімічних засобів.
                 </x-list.item>
-                <x-list.item>
+                <x-list.item index="3">
                     Гарантія результату – чистота без розводів і слідів.
                 </x-list.item>
-                <x-list.item>
+                <x-list.item index="4">
                     Доступні ціни – індивідуальний підхід та гнучка система знижок для корпоративних клієнтів.
                 </x-list.item>
-                <x-list.item>
+                <x-list.item index="5">
                     Оперативність – швидке виконання замовлень у зручний для вас час.
                 </x-list.item>
             </x-list>

@@ -34,7 +34,7 @@ name('services.pisliabudivelne-prybyrannia');
         </div>
 
         <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 mt-10">
-            <x-list class="col-span-3">
+            <x-list class="col-span-3" type="check">
                 <x-slot:caption>
                     Що входить у післябудівельне прибирання?
                 </x-slot>
@@ -71,7 +71,7 @@ name('services.pisliabudivelne-prybyrannia');
                 <img src="https://picsum.photos/400?random=4"
                     class="rounded-xl rotate-x-6 -rotate-z-6 shadow-2xl shadow-black/50" alt="">
             </div>
-            <x-list class="col-span-3">
+            <x-list class="col-span-3" type="check">
                 <x-slot:caption>
                     Кому потрібна ця послуга?
                 </x-slot>
@@ -94,7 +94,7 @@ name('services.pisliabudivelne-prybyrannia');
         </div>
 
         <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 mt-10">
-            <x-list class="col-span-3">
+            <x-list class="col-span-3" type="check">
                 <x-slot:caption>
                     Як ми працюємо?
                 </x-slot>
@@ -122,7 +122,7 @@ name('services.pisliabudivelne-prybyrannia');
                 <img src="https://picsum.photos/400?random=6"
                     class="rounded-xl rotate-x-6 -rotate-z-6 shadow-2xl shadow-black/50" alt="">
             </div>
-            <x-list class="col-span-3">
+            <x-list class="col-span-3" type="check">
                 <x-slot:caption>
                     Чому варто обрати нас?
                 </x-slot>

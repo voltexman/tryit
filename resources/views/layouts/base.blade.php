@@ -17,14 +17,14 @@
             {{-- x-bind:class="(isScrolled || navIsOpen) ?
             'bg-tryit-green/85 backdrop-blur-xl shadow-lg shadow-black/20 h-16' : 'h-20'" --}} @scroll.window="scrolled" x-cloak>
             <div class="flex justify-between h-full max-w-7xl mx-auto items-center">
-                <a href="{{ route('main') }}">
-                    <img src="{{ Vite::asset('resources/images/logo.png') }}" class="h-12  ">
+                <a href="{{ route('main') }}" aria-label="Перейти на головну сторінку натиснувши на логотип">
+                    <img src="{{ Vite::asset('resources/images/logo.png') }}" class="h-12" alt="Логотип компанії" />
                 </a>
 
                 <div class="lg:hidden">
                     <x-sidebar>
                         <x-slot:trigger>
-                            <button type="button" x-on:click="open = true">
+                            <button type="button" aria-label="Відкрити головне меню" x-on:click="open = true">
                                 <x-lucide-menu class="size-6 stroke-white" />
                             </button>
                         </x-slot>
@@ -106,13 +106,16 @@
                 <div class="flex items-center mx-auto gap-x-5">
                     <a href="https://www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr"
                         target="_blank">
-                        <img src="{{ Vite::asset('resources/images/icons/footer-instagram.svg') }}" class="size-6" />
+                        <img src="{{ Vite::asset('resources/images/icons/footer-instagram.svg') }}" class="size-6"
+                            alt="" />
                     </a>
                     <a href="#">
-                        <img src="{{ Vite::asset('resources/images/icons/footer-telegram.svg') }}" class="size-6" />
+                        <img src="{{ Vite::asset('resources/images/icons/footer-telegram.svg') }}" class="size-6"
+                            alt="" />
                     </a>
                     <a href="#">
-                        <img src="{{ Vite::asset('resources/images/icons/footer-viber.svg') }}" class="size-6" />
+                        <img src="{{ Vite::asset('resources/images/icons/footer-viber.svg') }}" class="size-6"
+                            alt="" />
                     </a>
                 </div>
             </div>

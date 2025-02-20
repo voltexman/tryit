@@ -21,7 +21,8 @@
                             x-intersect="$el.classList.add('xl:slide-in-from-left', 'zoom-in')">
                             <span
                                 class="absolute inset-0 animate-ping bg-tryit-green opacity-75 scale-75 rounded-lg group-hover:hidden"></span>
-                            <x-button class="relative py-4 px-5 uppercase text-white rounded-lg">
+                            <x-button class="relative py-4 px-5 uppercase text-white rounded-lg"
+                                aria-label="Перейти до розділу з нашими послугами">
                                 Ознайомитись з послугами
                             </x-button>
                         </a>
@@ -37,7 +38,8 @@
             </div>
         </div>
         <a href="#top"
-            class="absolute bottom-16 left-1/2 -translate-x-1/2 cursor-pointer size-12 flex items-center justify-center rounded-full">
+            class="absolute bottom-16 left-1/2 -translate-x-1/2 cursor-pointer size-12 flex items-center justify-center rounded-full"
+            aria-label="Прокрутити сторінку нижче">
             <x-lucide-move-down class="size-6 text-white animate-bounce" />
         </a>
     </div>
