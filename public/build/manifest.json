@@ -1,12 +1,12 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-D1fUy73o.css",
+    "file": "assets/app-BKRVWmxp.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
-  "resources/images/cleaning-6.png": {
-    "file": "assets/cleaning-6-pl8vzgpZ.png",
-    "src": "resources/images/cleaning-6.png"
+  "resources/images/cleaning.png": {
+    "file": "assets/cleaning-pl8vzgpZ.png",
+    "src": "resources/images/cleaning.png"
   },
   "resources/images/icons/footer-instagram.svg": {
     "file": "assets/footer-instagram-h8ZCbTru.svg",

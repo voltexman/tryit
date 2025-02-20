@@ -16,13 +16,14 @@
             <div class="text-xl text-center text-tryit-dark font-black uppercase">Надішліть повідомлення</div>
 
             <x-forms.input wire:model="feedback.name" placeholder="Ваше ім'я" />
-            @error('feedback.name')
+
+            <x-forms.textarea wire:model="feedback.text" placeholder="Напишіть повідомлення" />
+            @error('feedback.text')
                 <x-forms.error class="-mt-4" :message="$message" />
             @enderror
 
-            <x-forms.textarea wire:model="feedback.text" placeholder="Напишіть повідомлення" />
-
-            <x-button type="submit" wire:target="save" wire:loading.attr="disabled" class="ms-auto flex items-center gap-x-1.5">
+            <x-button type="submit" wire:target="save" wire:loading.attr="disabled"
+                class="ms-auto flex items-center gap-x-1.5">
                 <span wire:target="save" wire:loading.remove>Надіслати</span>
                 <span wire:target="save" wire:loading>Відправка</span>
                 <x-lucide-loader-2 wire:target="save" wire:loading class="size-4 animate-spin" />

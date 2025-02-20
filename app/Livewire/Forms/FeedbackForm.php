@@ -8,10 +8,10 @@ use Livewire\Form;
 
 class FeedbackForm extends Form
 {
-    #[Validate('required', message: 'Вкажіть як до Вас звертатись')]
     #[Validate('min:2', message: 'Занадто мало символів')]
     public $name = '';
 
+    #[Validate('required', message: 'Напишіть листа')]
     #[Validate('max:1500', message: 'Занадто багато символів')]
     public $text = '';
 

@@ -47,7 +47,7 @@
 
 @section('content')
     <section class="bg-tryit-cream/20 border-b border-tryit-orange/5 -mt-20 pt-32 pb-15 px-5" id="top">
-        <div class="md:max-w-6xl 2xl:max-w-7xl mx-auto grid lg:grid-cols-2 gap-y-15 gap-x-32">
+        <div class="md:max-w-6xl 2xl:max-w-7xl mx-auto grid lg:grid-cols-2 gap-y-15 gap-x-10 xl:gap-x-32">
             <div class="flex flex-col">
                 <div class="relative">
                     <h2 class="text-center text-xl mb-5 font-black text-gray-600 uppercase drop-shadow-lg">
@@ -63,7 +63,7 @@
                         <x-marker>прибирання</x-marker> до спеціалізованого <x-marker>догляду</x-marker> за меблями та
                         покриттями. Наша мета – зробити ваш простір ідеально чистим та комфортним.
                     </div>
-                    <img src="https://www.telegraf.in.ua/uploads/posts/2024-03/1711798407_klining.jpg"
+                    <img src="{{ Vite::asset('resources/images/cleaning.png') }}"
                         class="w-24 opacity-5 absolute right-0 bottom-0" alt="">
                 </div>
                 <div>@livewire('callback')</div>

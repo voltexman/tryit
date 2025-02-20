@@ -22,7 +22,7 @@
                     <div class="flex flex-col gap-y-5">
                         <div class="flex gap-x-5 items-center">
                             <div
-                                class="flex flex-none border items-center justify-center size-14 rounded-full border-tryit-orange">
+                                class="flex flex-none border border-dashed bg-tryit-orange/5 items-center justify-center size-14 rounded-full border-tryit-orange">
                                 <x-lucide-user-round class="size-6 stroke-tryit-orange" stroke-width="1.5" />
                             </div>
                             <div class="grid">
@@ -32,7 +32,7 @@
                         </div>
                         <div class="flex gap-x-5 items-center">
                             <div
-                                class="flex flex-none border items-center justify-center size-14 rounded-full border-tryit-orange">
+                                class="flex flex-none border border-dashed bg-tryit-orange/5 items-center justify-center size-14 rounded-full border-tryit-orange">
                                 <x-lucide-phone class="size-6 stroke-tryit-orange" stroke-width="1.5" />
                             </div>
                             <div class="grid">
@@ -42,7 +42,7 @@
                         </div>
                         <div class="flex gap-x-5 items-center">
                             <div
-                                class="flex flex-none border items-center justify-center size-14 rounded-full border-tryit-orange">
+                                class="flex flex-none border border-dashed bg-tryit-orange/5 items-center justify-center size-14 rounded-full border-tryit-orange">
                                 <x-lucide-mail class="size-6 stroke-tryit-orange" stroke-width="1.5" />
                             </div>
                             <div class="grid">
