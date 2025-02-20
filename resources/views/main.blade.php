@@ -121,7 +121,7 @@
         </x-slot>
         <div class="max-w-5xl mx-auto flex flex-col gap-y-20">
             <x-cards.service orientation="left" link="services.myttia-fasadu-ta-vikon-na-vysoti"
-                image="{{ Vite::asset('resources/images/clean-1.jpeg') }}">
+                image="https://www.telegraf.in.ua/uploads/posts/2024-03/1711798407_klining.jpg">
                 <x-slot:name>
                     Миття фасадів та вікон на висоті (WFP-система)
                 </x-slot>
