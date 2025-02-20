@@ -135,7 +135,7 @@
         </div>
 
         <div class="py-2.5 border-t border-tryit-cream/5">
-            <div class="mx-auto max-w-md text-xs text-tryit-cream/80 font-normal text-center">
+            <div class="mx-auto max-w-md text-xs text-tryit-cream/60 font-normal text-center">
                 {{ date('Y') }} &copy; {{ env('APP_NAME') }}. Всі права застережено
             </div>
         </div>

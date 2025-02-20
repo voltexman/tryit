@@ -1,24 +1,8 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-pVhKnPzi.css",
+    "file": "assets/app-D1fUy73o.css",
     "src": "resources/css/app.css",
     "isEntry": true
-  },
-  "resources/images/clean-1.jpeg": {
-    "file": "assets/clean-1-D82xgECv.jpeg",
-    "src": "resources/images/clean-1.jpeg"
-  },
-  "resources/images/clean-2.jpeg": {
-    "file": "assets/clean-2-BTL7hiuG.jpeg",
-    "src": "resources/images/clean-2.jpeg"
-  },
-  "resources/images/clean-3.jpeg": {
-    "file": "assets/clean-3-Y624XFGt.jpeg",
-    "src": "resources/images/clean-3.jpeg"
-  },
-  "resources/images/clean-7.webp": {
-    "file": "assets/clean-7-CZoCrKLW.webp",
-    "src": "resources/images/clean-7.webp"
   },
   "resources/images/cleaning-6.png": {
     "file": "assets/cleaning-6-pl8vzgpZ.png",
@@ -47,10 +31,6 @@
   "resources/images/icons/viber.svg": {
     "file": "assets/viber-DEEbfu3A.svg",
     "src": "resources/images/icons/viber.svg"
-  },
-  "resources/images/klax copy.svg": {
-    "file": "assets/klax copy-QbJOxKj8.svg",
-    "src": "resources/images/klax copy.svg"
   },
   "resources/images/klax.svg": {
     "file": "assets/klax-C3yrtJC7.svg",
