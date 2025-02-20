@@ -18,10 +18,11 @@
                     кращим, і ваша думка для нас дуже важлива. Дякуємо, що обираєте нас!
                 </div>
 
-                <div class="grid grid-cols-2">
+                <div class="grid md:grid-cols-2 gap-y-10">
                     <div class="flex flex-col gap-y-5">
                         <div class="flex gap-x-5 items-center">
-                            <div class="flex border items-center justify-center size-14 rounded-full border-tryit-orange">
+                            <div
+                                class="flex flex-none border items-center justify-center size-14 rounded-full border-tryit-orange">
                                 <x-lucide-user-round class="size-6 stroke-tryit-orange" stroke-width="1.5" />
                             </div>
                             <div class="grid">
@@ -30,7 +31,8 @@
                             </div>
                         </div>
                         <div class="flex gap-x-5 items-center">
-                            <div class="flex border items-center justify-center size-14 rounded-full border-tryit-orange">
+                            <div
+                                class="flex flex-none border items-center justify-center size-14 rounded-full border-tryit-orange">
                                 <x-lucide-phone class="size-6 stroke-tryit-orange" stroke-width="1.5" />
                             </div>
                             <div class="grid">
@@ -39,7 +41,8 @@
                             </div>
                         </div>
                         <div class="flex gap-x-5 items-center">
-                            <div class="flex border items-center justify-center size-14 rounded-full border-tryit-orange">
+                            <div
+                                class="flex flex-none border items-center justify-center size-14 rounded-full border-tryit-orange">
                                 <x-lucide-mail class="size-6 stroke-tryit-orange" stroke-width="1.5" />
                             </div>
                             <div class="grid">
@@ -73,7 +76,7 @@
                                 <span class="text-sm font-semibold">Наш Telegram</span>
                                 <a href="#"
                                     class="text-sm text-tryit-orange/60 hover:text-tryit-orange transition duration-300 line-clamp-1">
-                                    <span class="truncate">6423463464</span>
+                                    <span class="truncate">@ExampleName</span>
                                 </a>
                             </div>
                         </div>

@@ -121,7 +121,7 @@
             </div>
 
             <div class="hidden xl:flex flex-col gap-y-1.5 lg:items-start lg:justify-end">
-                <a href="{{ route('privacy-policy') }}"
+                <a href="{{ route('feedback') }}"
                     class="flex gap-x-1.5 text-tryit-cream text-center items-center text-sm">
                     <x-lucide-message-circle-more class="size-5" />
                     <span class="">Зворотній зв'язок</span>
