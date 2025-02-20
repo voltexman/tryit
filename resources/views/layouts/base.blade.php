@@ -105,15 +105,15 @@
             <div class="mx-auto flex flex-col justify-center">
                 <div class="flex items-center mx-auto gap-x-5">
                     <a href="https://www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr"
-                        target="_blank">
+                        target="_blank" aria-label="Відкрити нашу сторінку Instagram">
                         <img src="{{ Vite::asset('resources/images/icons/footer-instagram.svg') }}" class="size-6"
                             alt="" />
                     </a>
-                    <a href="#">
+                    <a href="#" aria-label="Перейти до нашого Telegram">
                         <img src="{{ Vite::asset('resources/images/icons/footer-telegram.svg') }}" class="size-6"
                             alt="" />
                     </a>
-                    <a href="#">
+                    <a href="#" aria-label="Перейти до нашого Viber">
                         <img src="{{ Vite::asset('resources/images/icons/footer-viber.svg') }}" class="size-6"
                             alt="" />
                     </a>

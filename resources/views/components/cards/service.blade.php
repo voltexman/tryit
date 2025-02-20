@@ -24,7 +24,7 @@
             <div>{{ $description }}</div>
             <div class="mt-5 flex gap-x-5">
                 <a href="{{ route($link) }}">
-                    <x-button class="flex gap-x-1.5">
+                    <x-button class="flex gap-x-1.5" aria-label="Відкрити сторінку з детальним описом послуги">
                         <x-lucide-scroll-text class="size-5" />
                         <span>Детальніше...</span>
                     </x-button>
