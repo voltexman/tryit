@@ -67,6 +67,10 @@
                         Контакти
                     </x-navigation.item>
                 </x-navigation>
+                <div class="text-white text-xl font-semibold flex items-center gap-2.5">
+                    <x-lucide-phone class="size-6" />
+                    <span>+380 (97) 87-78-667</span>
+                </div>
             </div>
         </nav>
         @yield('header')
