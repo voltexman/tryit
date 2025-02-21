@@ -88,10 +88,10 @@
     <footer class="bg-tryit-dark pt-10">
         <div class="max-w-5xl mx-auto mb-10 px-5 flex flex-col lg:flex-row gap-y-5 justify-between">
             <div class="flex flex-col items-center lg:items-start gap-y-1.5">
-                <div class="text-tryit-cream flex items-center gap-x-2">
+                {{-- <div class="text-tryit-cream flex items-center gap-x-2">
                     <x-lucide-user-round class="size-5" />
                     <span class="text-tryit-cream text-sm font-semibold text-center">Руслан Мамай</span>
-                </div>
+                </div> --}}
                 <div class="text-tryit-cream flex items-center gap-x-2">
                     <x-lucide-phone class="size-5" />
                     <span class="text-tryit-cream text-sm font-semibold text-center">+380 (97) 87-78-667</span>
