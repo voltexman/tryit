@@ -17,7 +17,7 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
 
 @section('content')
     <x-section>
-        <div class="lg:grid lg:grid-cols-5 gap-10">
+        <div class="grid lg:grid-cols-5 agp-5 lg:gap-10">
             <div class="lg:col-span-2 flex justify-center">
                 <x-before-after before="https://picsum.photos/500?random=1" after="https://picsum.photos/500?random=2" />
             </div>

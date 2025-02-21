@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Page;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,14 +14,13 @@ return new class extends Migration
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('title')->nullable();
+            $table->string('label');
+            $table->text('description')->nullable();
+            $table->string('robots')->default('index, follow');
             $table->text('content')->nullable();
             $table->timestamps();
         });
-
-        Page::insert([
-            'name' => 'privacy-policy',
-            'content' => '',
-        ]);
     }
 
     /**
