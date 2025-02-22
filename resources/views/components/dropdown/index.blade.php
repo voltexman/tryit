@@ -1,6 +1,6 @@
 @props(['label'])
 
-<div class="flex w-full">
+<div class="flex w-full disabled:opacity-50" {{ $attributes }}>
     <div x-data="{ open: false }" x-on:keydown.esc.prevent.stop="open = false" class="relative w-full">
         <button type="button"
             class="inline-flex items-center gap-2 w-full cursor-pointer rounded-lg bg-stone-300 p-4 font-medium text-stone-500/80 text-sm hover:bg-stone-400/45 focus:outline-hidden focus:ring-2 focus:ring-tryit-green/80 transition-all duration-300 focus:ring-offset-2"

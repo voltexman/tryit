@@ -23,20 +23,10 @@
                         <div class="flex gap-x-5 items-center">
                             <div
                                 class="flex flex-none border border-dashed bg-tryit-orange/5 items-center justify-center size-14 rounded-full border-tryit-orange">
-                                <x-lucide-user-round class="size-6 stroke-tryit-orange" stroke-width="1.5" />
-                            </div>
-                            <div class="grid">
-                                <span class="text-sm font-semibold">Контактне лице</span>
-                                <span class="text-sm">Руслан Мамай</span>
-                            </div>
-                        </div>
-                        <div class="flex gap-x-5 items-center">
-                            <div
-                                class="flex flex-none border border-dashed bg-tryit-orange/5 items-center justify-center size-14 rounded-full border-tryit-orange">
                                 <x-lucide-phone class="size-6 stroke-tryit-orange" stroke-width="1.5" />
                             </div>
                             <div class="grid">
-                                <span class="text-sm font-semibold">Номер телефону</span>
+                                <span class="text-sm font-semibold">Питання та замовлення</span>
                                 <span class="text-sm">+380 (97) 87-78-667</span>
                             </div>
                         </div>

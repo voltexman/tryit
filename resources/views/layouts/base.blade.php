@@ -17,9 +17,14 @@
             {{-- x-bind:class="(isScrolled || navIsOpen) ?
             'bg-tryit-green/85 backdrop-blur-xl shadow-lg shadow-black/20 h-16' : 'h-20'" --}} @scroll.window="scrolled" x-cloak>
             <div class="flex justify-between h-full max-w-7xl mx-auto items-center">
-                <a href="{{ route('main') }}" aria-label="Перейти на головну сторінку натиснувши на логотип">
-                    <img src="{{ Vite::asset('resources/images/logo.png') }}" class="h-12" alt="Логотип компанії" />
-                </a>
+                <div class="relative w-96 mt-5">
+                    <img src="{{ Vite::asset('resources/images/logo-klax.png') }}"
+                        class="absolute -top-7 -left-20 z-0 w-56" alt="" />
+                    <a href="{{ route('main') }}" aria-label="Перейти на головну сторінку натиснувши на логотип">
+                        <img src="{{ Vite::asset('resources/images/logo.png') }}"
+                            class="relative top-0 left-0 h-10 z-50" alt="Логотип компанії" />
+                    </a>
+                </div>
 
                 <div class="lg:hidden">
                     <x-sidebar>
