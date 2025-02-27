@@ -43,7 +43,7 @@ class PageResource extends Resource
                     ->columnSpanFull()->rows(4)->autosize()->label('Опис сторінки'),
 
                 RichEditor::make('content')->columnSpanFull()->label('Матеріал сторінки')
-                    ->visible(fn(Page $record) => $record->name === 'privacy-policy'),
+                    ->visible(fn (Page $record) => $record->name === 'privacy-policy'),
             ]);
     }
 

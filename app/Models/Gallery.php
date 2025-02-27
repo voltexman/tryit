@@ -11,8 +11,8 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Gallery extends Model implements HasMedia
 {
-    use InteractsWithMedia;
     use HasFactory;
+    use InteractsWithMedia;
 
     protected $fillable = ['title', 'description', 'is_active'];
 

@@ -6,7 +6,7 @@
         <div class="flex items-center size-full backdrop-blur-xs bg-orange-950/40">
             <div class="max-w-xl xl:max-w-7xl mx-auto grid xl:grid-cols-5 gap-15 px-5 xl:px-0 xl:items-center">
                 <div class="col-span-3 flex flex-col gap-y-10">
-                    <h1 class="text-4xl uppercase text-center xl:text-left lx:normal-case xl:text-5xl text-white font-bold drop-shadow-lg animate-in duration-500"
+                    <h1 class="text-3xl uppercase text-center xl:text-left lx:normal-case xl:text-5xl text-white font-bold drop-shadow-lg animate-in duration-500"
                         x-intersect="$el.classList.add('xl:slide-in-from-left', 'zoom-in')">
                         <span class="text-tryit-orange font-black">Чистота</span>, яку варто спробувати
                         <span class="text-tryit-orange font-black">сьогодні</span>!
@@ -47,7 +47,7 @@
 
 @section('content')
     <section class="bg-tryit-cream/20 border-b border-tryit-orange/5 -mt-20 pt-32 pb-15 px-5" id="top">
-        <div class="md:max-w-6xl 2xl:max-w-7xl mx-auto grid lg:grid-cols-2 gap-y-15 gap-x-10 xl:gap-x-32">
+        <div class="md:max-w-6xl 2xl:max-w-7xl mx-auto grid lg:grid-cols-2 gap-y-15 gap-x-10 xl:gap-x-20">
             <div class="flex flex-col">
                 <div class="relative">
                     <h2 class="text-center text-xl mb-5 font-black text-gray-600 uppercase drop-shadow-lg">
@@ -121,7 +121,7 @@
         </x-slot>
         <div class="max-w-5xl mx-auto flex flex-col gap-y-20">
             <x-cards.service orientation="left" link="services.myttia-fasadu-ta-vikon-na-vysoti"
-                image="https://www.telegraf.in.ua/uploads/posts/2024-03/1711798407_klining.jpg">
+                images="{{ Vite::asset('resources/images/service-1.jpg') }}">
                 <x-slot:name>
                     Миття фасадів та вікон на висоті (WFP-система)
                 </x-slot>
@@ -134,7 +134,7 @@
             </x-cards.service>
 
             <x-cards.service orientation="right" link="services.myika-ta-ochyshchennia-soniachnykh-panelei"
-                image="https://www.telegraf.in.ua/uploads/posts/2024-03/1711798407_klining.jpg">
+                images="{{ Vite::asset('resources/images/service-2.jpg') }}">
                 <x-slot:name>
                     Мийка та очищення сонячних панелей
                 </x-slot>
@@ -147,7 +147,7 @@
             </x-cards.service>
 
             <x-cards.service orientation="left" link="services.pisliabudivelne-prybyrannia"
-                image="https://www.telegraf.in.ua/uploads/posts/2024-03/1711798407_klining.jpg">
+                images="{{ Vite::asset('resources/images/service-3.jpg') }}">
                 <x-slot:name>
                     Післябудівельне прибирання
                 </x-slot>
@@ -160,19 +160,20 @@
             </x-cards.service>
 
             <x-cards.service orientation="right" link="services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva"
-                image="https://picsum.photos/500/500">
+                images="{{ Vite::asset('resources/images/service-4.jpg') }}">
                 <x-slot:name>
                     Генеральне прибирання цехів та виробництва
                 </x-slot>
                 <x-slot:description>
-                    <p>Чистота на виробництві – це не лише порядок, а й безпека! Проводимо комплексне прибирання цехів,
-                        складів та виробничих приміщень.</p>
+                    <p><b>Чистота на виробництві</b> – це не лише порядок, а й безпека! Проводимо комплексне прибирання
+                        цехів, складів та виробничих приміщень.</p>
                     <p>Видаляємо пил, бруд, масло та інші забруднення з обладнання та підлоги.
                         Забезпечте комфортні умови для роботи з нашими клінінговими рішеннями!</p>
                 </x-slot>
             </x-cards.service>
 
-            <x-cards.service orientation="left" link="services.khimchystka" image="https://picsum.photos/500/500">
+            <x-cards.service orientation="left" link="services.khimchystka"
+                images="{{ Vite::asset('resources/images/service-5.jpg') }}">
                 <x-slot:name>
                     Хімчистка
                 </x-slot>
@@ -185,7 +186,7 @@
             </x-cards.service>
 
             <x-cards.service orientation="right" link="services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu"
-                image="https://picsum.photos/500/500">
+                images="{{ Vite::asset('resources/images/service-6.jpg') }}">
                 <x-slot:name>
                     Комплексне та підтримуюче прибирання офісу
                 </x-slot>
@@ -198,12 +199,12 @@
             </x-cards.service>
 
             <x-cards.service orientation="left" link="services.promyslovyi-alpinizm"
-                image="https://www.telegraf.in.ua/uploads/posts/2024-03/1711798407_klining.jpg">
+                images="{{ Vite::asset('resources/images/service-7.jpg') }}">
                 <x-slot:name>
                     Промисловий альпінізм
                 </x-slot>
                 <x-slot:description>
-                    <p>Будь-які висотні роботи – професійно та безпечно! Наші фахівці виконують миття вікон, фасадів,
+                    <p><b>Будь-які висотні роботи</b> – професійно та безпечно! Наші фахівці виконують миття вікон, фасадів,
                         монтажні та ремонтні роботи на висоті.</p>
                     <p>Використовуємо сертифіковане спорядження та перевірені методи. Довірте
                         складні завдання справжнім експертам!</p>

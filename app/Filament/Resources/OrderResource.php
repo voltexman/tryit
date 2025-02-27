@@ -2,17 +2,12 @@
 
 namespace App\Filament\Resources;
 
-use App\Enums\OrderStatus;
 use App\Filament\Resources\OrderResource\Pages;
 use App\Models\Order;
-use Filament\Actions\Action;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Form;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
-use Filament\Support\Enums\MaxWidth;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;

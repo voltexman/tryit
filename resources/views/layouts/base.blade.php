@@ -43,9 +43,6 @@
                                 <x-navigation.item :link="route('services')" icon="hand-platter" :active="request()->routeIs('services')">
                                     Послуги
                                 </x-navigation.item>
-                                <x-navigation.item :link="route('gallery')" icon="image" :active="request()->routeIs('gallery')">
-                                    Галерея
-                                </x-navigation.item>
                                 <x-navigation.item :link="route('feedback')" icon="book-user" :active="request()->routeIs('feedback')">
                                     Контакти
                                 </x-navigation.item>
@@ -65,16 +62,13 @@
                     <x-navigation.item :link="route('services')" :active="request()->routeIs('services')">
                         Послуги
                     </x-navigation.item>
-                    <x-navigation.item :link="route('gallery')" :active="request()->routeIs('gallery')">
-                        Галерея
-                    </x-navigation.item>
                     <x-navigation.item :link="route('feedback')" :active="request()->routeIs('feedback')">
                         Контакти
                     </x-navigation.item>
                 </x-navigation>
                 <div class="hidden lg:flex text-white text-xl font-semibold items-center gap-2.5">
                     <x-lucide-phone class="size-6" />
-                    <span>+380 (97) 87-78-667</span>
+                    <span>+380 (97) 877-866-7</span>
                 </div>
             </div>
         </nav>
@@ -103,7 +97,7 @@
                 </div> --}}
                 <div class="text-tryit-cream flex items-center gap-x-2">
                     <x-lucide-phone class="size-5" />
-                    <span class="text-tryit-cream text-sm font-semibold text-center">+380 (97) 87-78-667</span>
+                    <span class="text-tryit-cream text-sm font-semibold text-center">+380 (97) 877-866-7</span>
                 </div>
                 <div class="text-tryit-cream flex items-center gap-x-2">
                     <x-lucide-mail class="size-5" />

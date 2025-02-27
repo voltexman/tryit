@@ -22,10 +22,13 @@ class OrderForm extends Form
     #[Validate('max:1200', message: 'Занадто багато символів')]
     public $text = '';
 
+    // #[Validate(['images.*' => 'image|max:2048'])]
+    // public $images = [];
+
     public function store()
     {
         $this->validate();
 
-        Order::create($this->all());
+        return Order::create($this->all());
     }
 }

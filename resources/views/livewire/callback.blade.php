@@ -15,7 +15,7 @@
                     class="pl-12 !bg-stone-300/50" placeholder="Вкажіть номер телефону" />
                 <x-lucide-phone class="size-5 absolute top-1/2 -translate-y-1/2 left-4 stroke-stone-600" />
                 <x-button type="submit" variant="icon" class="absolute top-1/2 -translate-y-1/2 right-2">
-                    <x-lucide-send wire:loading.remove class="size-5 stroke-stone-600" />
+                    <x-lucide-bell-ring wire:loading.remove class="size-5 stroke-stone-600" />
                     <x-lucide-loader-2 wire:loading class="size-5 animate-spin stroke-stone-600" />
                 </x-button>
             </form>

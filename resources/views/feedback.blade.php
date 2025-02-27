@@ -27,7 +27,7 @@
                             </div>
                             <div class="grid">
                                 <span class="text-sm font-semibold">Питання та замовлення</span>
-                                <span class="text-sm">+380 (97) 87-78-667</span>
+                                <span class="text-sm">+380 (97) 877-866-7</span>
                             </div>
                         </div>
                         <div class="flex gap-x-5 items-center">

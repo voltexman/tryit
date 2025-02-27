@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-DSnoZ0fH.css",
+    "file": "assets/app-BPihnP5S.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -44,8 +44,36 @@
     "file": "assets/logo-DX72VlMl.png",
     "src": "resources/images/logo.png"
   },
+  "resources/images/service-1.jpg": {
+    "file": "assets/service-1-CK1_oBol.jpg",
+    "src": "resources/images/service-1.jpg"
+  },
+  "resources/images/service-2.jpg": {
+    "file": "assets/service-2-BF0DbPE7.jpg",
+    "src": "resources/images/service-2.jpg"
+  },
+  "resources/images/service-3.jpg": {
+    "file": "assets/service-3-B46rLH6d.jpg",
+    "src": "resources/images/service-3.jpg"
+  },
+  "resources/images/service-4.jpg": {
+    "file": "assets/service-4-BTD9UH8T.jpg",
+    "src": "resources/images/service-4.jpg"
+  },
+  "resources/images/service-5.jpg": {
+    "file": "assets/service-5-HeRrD7LF.jpg",
+    "src": "resources/images/service-5.jpg"
+  },
+  "resources/images/service-6.jpg": {
+    "file": "assets/service-6-vfKHD1Ij.jpg",
+    "src": "resources/images/service-6.jpg"
+  },
+  "resources/images/service-7.jpg": {
+    "file": "assets/service-7-CLQ6xYdb.jpg",
+    "src": "resources/images/service-7.jpg"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-CqflisoM.js",
+    "file": "assets/app-D03Ay3w-.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
