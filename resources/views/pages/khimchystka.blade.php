@@ -16,21 +16,23 @@ name('services.khimchystka');
 @endsection
 
 @section('content')
-    <x-section>
-        <div class="lg:grid lg:grid-cols-5 gap-10">
+    <section class="bg-tryit-cream/20 border-b border-tryit-orange/5 -mt-20 pt-32 pb-15 px-5">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-5 lg:gap-10">
             <div class="lg:col-span-2">
                 <x-before-after before="https://picsum.photos/500?random=1" after="https://picsum.photos/500?random=2" />
             </div>
-            <div class="col-span-3">
+            <div class="lg:col-span-3">
                 <p>Звичайне прибирання не завжди здатне впоратися зі складними плямами, пилом і неприємними запахами.
-                    Тканинні поверхні, меблі, килими та автомобільні салони потребують глибокого очищення, яке усуне не лише
-                    забруднення, а й бактерії та алергени.</p>
+                    Тканинні поверхні, меблі, килими та автомобільні салони потребують глибокого очищення, яке усуне не
+                    лише забруднення, а й бактерії та алергени.</p>
 
                 <p>Ми пропонуємо професійну хімчистку, яка поверне вашим речам первозданну чистоту та свіжість.
                     Використовуємо безпечні мийні засоби, що не шкодять тканинам та навколишньому середовищу.</p>
             </div>
         </div>
+    </section>
 
+    <x-section class="pt-0">
         <x-list type="check">
             <x-slot:caption>
                 Що <span class="font-bold">входить</span> у <span class="text-tryit-orange">послугу</span>?

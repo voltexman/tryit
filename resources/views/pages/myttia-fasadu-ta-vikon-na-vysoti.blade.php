@@ -16,25 +16,30 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
 @endsection
 
 @section('content')
-    <x-section>
-        <div class="grid lg:grid-cols-5 agp-5 lg:gap-10">
+    <section class="bg-tryit-cream/20 border-b border-tryit-orange/5 -mt-20 pt-32 pb-15 px-5">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-5 lg:gap-10">
             <div class="lg:col-span-2 flex justify-center">
                 <x-before-after before="https://picsum.photos/500?random=1" after="https://picsum.photos/500?random=2" />
             </div>
             <div class="lg:col-span-3">
-                <p><x-marker>Чисті вікна та фасади</x-marker> – це не лише естетика, а й імідж вашого бізнесу чи житлового
-                    комплексу. Забруднення, пил, дощові патьоки та міський смог з часом роблять будівлю тьмяною, зменшуючи
+                <p><x-marker>Чисті вікна та фасади</x-marker> – це не лише естетика, а й імідж вашого бізнесу чи
+                    житлового
+                    комплексу. Забруднення, пил, дощові патьоки та міський смог з часом роблять будівлю тьмяною,
+                    зменшуючи
                     її привабливість. Ми пропонуємо професійне миття фасадів і вікон на висоті за допомогою сучасної
                     WFP-системи (Water-Fed Pole), що забезпечує бездоганний результат без розводів і слідів.</p>
 
                 <p><span class="font-bold">Що таке WFP-система та чому вона ефективна?</span><br>
                     <x-marker>WFP-система</x-marker> – це інноваційна технологія миття вікон і фасадів без використання
-                    драбин або підйомників. Вона складається з телескопічних карбонових штанг, через які подається очищена
+                    драбин або підйомників. Вона складається з телескопічних карбонових штанг, через які подається
+                    очищена
                     демінералізована вода під тиском.
                 </p>
             </div>
         </div>
+    </section>
 
+    <x-section class="pt-0">
         <x-list type="number">
             <x-slot:caption>
                 Завдяки цьому

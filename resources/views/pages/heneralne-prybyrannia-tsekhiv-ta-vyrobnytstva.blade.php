@@ -16,22 +16,24 @@ name('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva');
 @endsection
 
 @section('content')
-    <x-section>
-        <div class="lg:grid lg:grid-cols-5 gap-10">
+    <section class="bg-tryit-cream/20 border-b border-tryit-orange/5 -mt-20 pt-32 pb-15 px-5">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-5 lg:gap-10">
             <div class="lg:col-span-2">
                 <x-before-after before="https://picsum.photos/500?random=1" after="https://picsum.photos/500?random=2" />
             </div>
-            <div class="col-span-3">
+            <div class="lg:col-span-3">
                 <p><x-marker>Чистота на виробництві</x-marker> – це не лише естетика, а й безпека, ефективність роботи
                     обладнання та відповідність санітарним нормам. В умовах постійного виробничого процесу накопичуються
                     пил, жир, технічні забруднення, що можуть впливати на працездатність персоналу та обладнання.</p>
 
                 <p>Ми пропонуємо професійне генеральне прибирання промислових приміщень, цехів, складів та фабрик. Наша
-                    команда має досвід роботи на підприємствах різних галузей та використовує спеціальне обладнання і мийні
-                    засоби для очищення навіть найскладніших забруднень.</p>
+                    команда має досвід роботи на підприємствах різних галузей та використовує спеціальне обладнання і
+                    мийні засоби для очищення навіть найскладніших забруднень.</p>
             </div>
         </div>
+    </section>
 
+    <x-section class="pt-0">
         <x-list type="check">
             <x-slot:caption>
                 Що <span class="font-bold">входить</span> у <span class="text-tryit-orange">послугу</span>?

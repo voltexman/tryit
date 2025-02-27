@@ -16,22 +16,24 @@ name('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu');
 @endsection
 
 @section('content')
-    <x-section>
-        <div class="lg:grid lg:grid-cols-5 gap-10">
+    <section class="bg-tryit-cream/20 border-b border-tryit-orange/5 -mt-20 pt-32 pb-15 px-5">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-5 lg:gap-10">
             <div class="lg:col-span-2">
                 <x-before-after before="https://picsum.photos/500?random=1" after="https://picsum.photos/500?random=2" />
             </div>
-            <div class="col-span-3">
+            <div class="lg:col-span-3">
                 <p><x-marker>Чистий і доглянутий офіс</x-marker> – це не лише приємна атмосфера для співробітників, а й
                     важливий іміджевий фактор для клієнтів та партнерів. Регулярне прибирання допомагає підтримувати
-                    порядок, свіжість повітря та гігієну робочого простору, що сприяє підвищенню продуктивності та комфорту
-                    працівників.</p>
+                    порядок, свіжість повітря та гігієну робочого простору, що сприяє підвищенню продуктивності та
+                    комфорту працівників.</p>
 
-                <p>Ми пропонуємо комплексне та підтримуюче прибирання офісних приміщень, яке включає в себе всі необхідні
-                    послуги для забезпечення чистоти та затишку в вашому робочому просторі.</p>
+                <p>Ми пропонуємо комплексне та підтримуюче прибирання офісних приміщень, яке включає в себе всі
+                    необхідні послуги для забезпечення чистоти та затишку в вашому робочому просторі.</p>
             </div>
         </div>
+    </section>
 
+    <x-section class="pt-0">
         <x-list type="check">
             <x-slot:caption>
                 Що <span class="font-bold">входить</span> у <span class="text-tryit-orange">послугу</span>?
