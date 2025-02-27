@@ -8,9 +8,9 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
 @extends('layouts.base')
 
 @section('header')
-    <x-page-header image="https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg">
+    <x-page-header image="{{ Vite::asset('resources/images/service-1.jpg') }}">
         <x-slot:title>
-            Миття фасадів та вікон на висоті <br><i>(WFP-система)</i>
+            Миття фасадів<br class="md:hidden">та вікон на висоті <br><i>(WFP-система)</i>
         </x-slot>
     </x-page-header>
 @endsection

@@ -12,14 +12,11 @@
 
 <body x-data="{ loading: true }" class="font-sans antialiased">
     <header class="relative overflow-hidden">
-        <nav x-data="navbar" x-init="scrolled"
-            class="absolute bg-transparent h-20 w-full top-0 z-50 px-5 xl:px-0 transition-all duration-300"
-            {{-- x-bind:class="(isScrolled || navIsOpen) ?
-            'bg-tryit-green/85 backdrop-blur-xl shadow-lg shadow-black/20 h-16' : 'h-20'" --}} @scroll.window="scrolled" x-cloak>
+        <nav class="absolute bg-transparent h-20 w-full top-0 z-50 px-5 xl:px-0 transition-all duration-300">
             <div class="flex justify-between h-full max-w-7xl mx-auto items-center">
-                <div class="relative w-96 mt-5">
+                <div class="relative w-auto mt-5">
                     <img src="{{ Vite::asset('resources/images/logo-klax.png') }}"
-                        class="absolute -top-7 -left-20 z-0 w-56" alt="" />
+                        class="absolute -top-4 -left-10 z-0 w-80 block" alt="" />
                     <a href="{{ route('main') }}" aria-label="Перейти на головну сторінку натиснувши на логотип">
                         <img src="{{ Vite::asset('resources/images/logo.png') }}"
                             class="relative top-0 left-0 h-10 z-50" alt="Логотип компанії" />
@@ -66,6 +63,7 @@
                         Контакти
                     </x-navigation.item>
                 </x-navigation>
+
                 <div class="hidden lg:flex text-white text-xl font-semibold items-center gap-2.5">
                     <x-lucide-phone class="size-6" />
                     <span>+380 (97) 877-866-7</span>
@@ -146,17 +144,6 @@
 
     <script>
         document.addEventListener('alpine:init', () => {
-            Alpine.data('navbar', () => ({
-                navIsOpen: false,
-                isScrolled: false,
-                navToggle() {
-                    this.navIsOpen = !this.navIsOpen;
-                },
-                scrolled() {
-                    this.isScrolled = window.pageYOffset >= 80 ? true : false;
-                },
-            }));
-
             Alpine.data('orderModal', () => ({
                 isVisible: false,
                 showModal() {

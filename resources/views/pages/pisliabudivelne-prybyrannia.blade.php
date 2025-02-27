@@ -8,7 +8,7 @@ name('services.pisliabudivelne-prybyrannia');
 @extends('layouts.base')
 
 @section('header')
-    <x-page-header image="https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg">
+    <x-page-header image="{{ Vite::asset('resources/images/service-3.jpg') }}">
         <x-slot:title>
             Післябудівельне прибирання
         </x-slot>
@@ -21,7 +21,7 @@ name('services.pisliabudivelne-prybyrannia');
             <div class="lg:col-span-2">
                 <x-before-after before="https://picsum.photos/500?random=1" after="https://picsum.photos/500?random=2" />
             </div>
-            <div class="col-span-3">
+            <div class="col-span-3 self-center">
                 <p><x-marker>Будівництво чи ремонт</x-marker> – це завжди оновлення простору, але після завершення робіт
                     залишаються пил, будівельне сміття, залишки фарби, цементний наліт та інші забруднення. Післябудівельне
                     прибирання потребує професійного підходу, адже стандартні методи часто не дають бажаного результату.</p>
