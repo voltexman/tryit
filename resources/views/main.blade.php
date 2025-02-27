@@ -47,7 +47,7 @@
 
 @section('content')
     <section class="bg-tryit-cream/20 border-b border-tryit-orange/5 -mt-20 pt-32 pb-15 px-5" id="top">
-        <div class="md:max-w-6xl 2xl:max-w-7xl mx-auto grid lg:grid-cols-2 gap-y-15 gap-x-10 xl:gap-x-20">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-y-15 gap-x-10 xl:gap-x-20">
             <div class="flex flex-col">
                 <div class="relative">
                     <h2 class="text-center text-xl mb-5 font-black text-gray-600 uppercase drop-shadow-lg">
@@ -119,7 +119,7 @@
         <x-slot:caption>
             <div id="services" class="snap-start scroll-mt-15">Наші послуги</div>
         </x-slot>
-        <div class="max-w-5xl mx-auto flex flex-col gap-y-20">
+        <div class="max-w-7xl mx-auto flex flex-col gap-y-20">
             <x-cards.service orientation="left" link="services.myttia-fasadu-ta-vikon-na-vysoti"
                 images="{{ Vite::asset('resources/images/service-1.jpg') }}">
                 <x-slot:name>

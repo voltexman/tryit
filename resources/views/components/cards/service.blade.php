@@ -6,7 +6,7 @@
         'lg:order-2' => $orientation === 'right',
         'lg:col-span-2 relative animate-in duration-1000',
     ]) x-intersect="$el.classList.add('zoom-in')">
-        <x-slider :images="[$images]" class="rounded-2xl inset-shadow-lg max-h-96 group" />
+        <x-slider :images="[$images]" class="rounded-2xl inset-shadow-lg size-96 group" />
     </div>
     <div @class([
         'lg:order-2' => $orientation === 'left',

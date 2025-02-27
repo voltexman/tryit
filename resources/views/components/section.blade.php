@@ -6,5 +6,5 @@
             <span>{{ $caption }}</span>
         </h2>
     @endisset
-    <div class="max-w-7xl mx-auto mt10 px-5">{{ $slot }}</div>
+    <div class="max-w-7xl mx-auto px-5">{{ $slot }}</div>
 </section>

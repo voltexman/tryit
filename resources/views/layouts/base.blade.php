@@ -89,7 +89,7 @@
     </x-modal>
 
     <footer class="bg-tryit-dark pt-10">
-        <div class="max-w-5xl mx-auto mb-10 px-5 flex flex-col lg:flex-row gap-y-5 justify-between">
+        <div class="max-w-7xl mx-auto mb-10 px-5 flex flex-col lg:flex-row gap-y-5 justify-between">
             <div class="flex flex-col items-center lg:items-start gap-y-1.5">
                 {{-- <div class="text-tryit-cream flex items-center gap-x-2">
                     <x-lucide-user-round class="size-5" />
