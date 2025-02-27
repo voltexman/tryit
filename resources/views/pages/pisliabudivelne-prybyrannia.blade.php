@@ -33,116 +33,92 @@ name('services.pisliabudivelne-prybyrannia');
             </div>
         </div>
 
-        <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 mt-10">
-            <x-list class="col-span-3" type="check">
-                <x-slot:caption>
-                    Що входить у післябудівельне прибирання?
-                </x-slot>
-                <x-list.item>
-                    Видалення будівельного пилу з усіх поверхонь (стіни, стеля, підлога, меблі)
-                </x-list.item>
-                <x-list.item>
-                    Очищення вікон, рам, підвіконь від пилу, фарби та клейких слідів
-                </x-list.item>
-                <x-list.item>
-                    Вивіз будівельного сміття (за домовленістю)
-                </x-list.item>
-                <x-list.item>
-                    Видалення плям цементу, фарби, клею та монтажної піни
-                </x-list.item>
-                <x-list.item>
-                    Очищення сантехніки, кухонних поверхонь, освітлювальних приладів
-                </x-list.item>
-                <x-list.item>
-                    Глибоке миття підлог та полірування покриттів
-                </x-list.item>
-                <x-list.item>
-                    Дезінфекція приміщення
-                </x-list.item>
-            </x-list>
-            <div class="col-span-2 perspective-near perspective-origin-bottom-right">
-                <img src="https://picsum.photos/400?random=3"
-                    class="rounded-xl rotate-x-6 rotate-z-6 shadow-2xl shadow-black/50" alt="">
-            </div>
-        </div>
+        <x-list type="check">
+            <x-slot:caption>
+                Що <span class="font-bold">входить</span> у <span class="text-tryit-orange">післябудівельне прибирання</span>?
+            </x-slot>
+            <x-list.item>
+                Видалення будівельного пилу з усіх поверхонь (стіни, стеля, підлога, меблі)
+            </x-list.item>
+            <x-list.item>
+                Очищення вікон, рам, підвіконь від пилу, фарби та клейких слідів
+            </x-list.item>
+            <x-list.item>
+                Вивіз будівельного сміття (за домовленістю)
+            </x-list.item>
+            <x-list.item>
+                Видалення плям цементу, фарби, клею та монтажної піни
+            </x-list.item>
+            <x-list.item>
+                Очищення сантехніки, кухонних поверхонь, освітлювальних приладів
+            </x-list.item>
+            <x-list.item>
+                Глибоке миття підлог та полірування покриттів
+            </x-list.item>
+            <x-list.item>
+                Дезінфекція приміщення
+            </x-list.item>
+        </x-list>
 
-        <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 mt-10">
-            <div class="col-span-2 perspective-near perspective-origin-bottom-left">
-                <img src="https://picsum.photos/400?random=4"
-                    class="rounded-xl rotate-x-6 -rotate-z-6 shadow-2xl shadow-black/50" alt="">
-            </div>
-            <x-list class="col-span-3" type="check">
-                <x-slot:caption>
-                    Кому потрібна ця послуга?
-                </x-slot>
-                <x-list.item>
-                    Власникам квартир і будинків після ремонту
-                </x-list.item>
-                <x-list.item>
-                    Бізнес-центрам і офісам після реконструкції
-                </x-list.item>
-                <x-list.item>
-                    Магазинам, ресторанам, салонам після оновлення інтер'єру
-                </x-list.item>
-                <x-list.item>
-                    Будівельним компаніям перед здачею об'єкта замовнику
-                </x-list.item>
-                <x-list.item>
-                    Орендодавцям, які готують приміщення до заселення
-                </x-list.item>
-            </x-list>
-        </div>
+        <x-list type="check">
+            <x-slot:caption>
+                Кому <span class="font-bold">потрібна</span> ця <span class="text-tryit-orange">послуга</span>?
+            </x-slot>
+            <x-list.item>
+                Власникам квартир і будинків після ремонту
+            </x-list.item>
+            <x-list.item>
+                Бізнес-центрам і офісам після реконструкції
+            </x-list.item>
+            <x-list.item>
+                Магазинам, ресторанам, салонам після оновлення інтер'єру
+            </x-list.item>
+            <x-list.item>
+                Будівельним компаніям перед здачею об'єкта замовнику
+            </x-list.item>
+            <x-list.item>
+                Орендодавцям, які готують приміщення до заселення
+            </x-list.item>
+        </x-list>
 
-        <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 mt-10">
-            <x-list class="col-span-3" type="check">
-                <x-slot:caption>
-                    Як ми працюємо?
-                </x-slot>
-                <x-list.item>
-                    Безкоштовна консультація – уточнюємо обсяг робіт та особливості приміщення.
-                </x-list.item>
-                <x-list.item>
-                    Професійний підбір засобів – використовуємо безпечну хімію, яка не пошкоджує поверхні.
-                </x-list.item>
-                <x-list.item>
-                    Глибоке очищення – прибираємо пил, будівельне сміття та складні плями.
-                </x-list.item>
-                <x-list.item>
-                    Контроль якості – перевіряємо кожен куточок, щоб усе було ідеально чистим.
-                </x-list.item>
-            </x-list>
-            <div class="col-span-2 perspective-near perspective-origin-bottom-right">
-                <img src="https://picsum.photos/400?random=5"
-                    class="rounded-xl rotate-x-6 rotate-z-6 shadow-2xl shadow-black/50" alt="">
-            </div>
-        </div>
+        <x-list type="check">
+            <x-slot:caption>
+                <span class="font-bold">Як</span> ми <span class="text-tryit-orange">працюємо</span>?
+            </x-slot>
+            <x-list.item>
+                Безкоштовна консультація – уточнюємо обсяг робіт та особливості приміщення.
+            </x-list.item>
+            <x-list.item>
+                Професійний підбір засобів – використовуємо безпечну хімію, яка не пошкоджує поверхні.
+            </x-list.item>
+            <x-list.item>
+                Глибоке очищення – прибираємо пил, будівельне сміття та складні плями.
+            </x-list.item>
+            <x-list.item>
+                Контроль якості – перевіряємо кожен куточок, щоб усе було ідеально чистим.
+            </x-list.item>
+        </x-list>
 
-        <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 mt-10">
-            <div class="col-span-2 perspective-near perspective-origin-bottom-left">
-                <img src="https://picsum.photos/400?random=6"
-                    class="rounded-xl rotate-x-6 -rotate-z-6 shadow-2xl shadow-black/50" alt="">
-            </div>
-            <x-list class="col-span-3" type="check">
-                <x-slot:caption>
-                    Чому варто обрати нас?
-                </x-slot>
-                <x-list.item>
-                    Повний комплекс робіт – не залишаємо жодної пилинки після ремонту!
-                </x-list.item>
-                <x-list.item>
-                    Безпечні миючі засоби – екологічні та безпечні для здоров'я.
-                </x-list.item>
-                <x-list.item>
-                    Сучасне обладнання – потужні пилососи, пароочисники, професійна хімія.
-                </x-list.item>
-                <x-list.item>
-                    Швидкість та якість – прибирання виконується максимально оперативно.
-                </x-list.item>
-                <x-list.item>
-                    Гарантія чистоти – ваш простір буде готовий до комфортного використання!
-                </x-list.item>
-            </x-list>
-        </div>
+        <x-list type="check">
+            <x-slot:caption>
+                Чому <span class="font-bold">варто</span> обрати <span class="text-tryit-orange">нас</span>?
+            </x-slot>
+            <x-list.item>
+                Повний комплекс робіт – не залишаємо жодної пилинки після ремонту!
+            </x-list.item>
+            <x-list.item>
+                Безпечні миючі засоби – екологічні та безпечні для здоров'я.
+            </x-list.item>
+            <x-list.item>
+                Сучасне обладнання – потужні пилососи, пароочисники, професійна хімія.
+            </x-list.item>
+            <x-list.item>
+                Швидкість та якість – прибирання виконується максимально оперативно.
+            </x-list.item>
+            <x-list.item>
+                Гарантія чистоти – ваш простір буде готовий до комфортного використання!
+            </x-list.item>
+        </x-list>
 
         <p>Замовте післябудівельне прибирання вже зараз!</p>
         <p>Не витрачайте свій час і сили на прибирання після ремонту – довірте це професіоналам! Залиште заявку на

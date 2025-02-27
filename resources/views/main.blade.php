@@ -123,7 +123,7 @@
             <x-cards.service orientation="left" link="services.myttia-fasadu-ta-vikon-na-vysoti"
                 images="{{ Vite::asset('resources/images/service-1.jpg') }}">
                 <x-slot:name>
-                    Миття фасадів та вікон на висоті (WFP-система)
+                    Миття фасадів та вікон на висоті <i>(WFP-система)</i>
                 </x-slot>
                 <x-slot:description>
                     <p>Забезпечимо ідеальну чистоту вікон та фасадів безпечно та ефективно! Використовуємо сучасну

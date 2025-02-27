@@ -32,107 +32,83 @@ name('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu');
             </div>
         </div>
 
-        <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 mt-10">
-            <x-list class="col-span-3" type="check">
-                <x-slot:caption>
-                    Що входить у послугу?
-                </x-slot>
-                <x-list.item>
-                    Щоденне або планове прибирання – підмітання, вологе миття підлоги, видалення пилу
-                </x-list.item>
-                <x-list.item>
-                    Очищення офісних меблів та техніки – протирання столів, стільців, шаф, оргтехніки
-                </x-list.item>
-                <x-list.item>
-                    Винесення сміття – заміна сміттєвих пакетів, сортування відходів
-                </x-list.item>
-                <x-list.item>
-                    Мийка вікон та скляних перегородок – без розводів і пилу
-                </x-list.item>
-                <x-list.item>
-                    Дезінфекція санвузлів та кухонної зони – чистота та гігієна в місцях загального користування
-                </x-list.item>
-                <x-list.item>
-                    Полив та догляд за офісними рослинами (за бажанням)
-                </x-list.item>
-            </x-list>
-            <div class="col-span-2 perspective-near perspective-origin-bottom-right">
-                <img src="https://picsum.photos/400?random=3"
-                    class="rounded-xl rotate-x-6 rotate-z-6 shadow-2xl shadow-black/50" alt="">
-            </div>
-        </div>
+        <x-list type="check">
+            <x-slot:caption>
+                Що <span class="font-bold">входить</span> у <span class="text-tryit-orange">послугу</span>?
+            </x-slot>
+            <x-list.item>
+                Щоденне або планове прибирання – підмітання, вологе миття підлоги, видалення пилу
+            </x-list.item>
+            <x-list.item>
+                Очищення офісних меблів та техніки – протирання столів, стільців, шаф, оргтехніки
+            </x-list.item>
+            <x-list.item>
+                Винесення сміття – заміна сміттєвих пакетів, сортування відходів
+            </x-list.item>
+            <x-list.item>
+                Мийка вікон та скляних перегородок – без розводів і пилу
+            </x-list.item>
+            <x-list.item>
+                Дезінфекція санвузлів та кухонної зони – чистота та гігієна в місцях загального користування
+            </x-list.item>
+            <x-list.item>
+                Полив та догляд за офісними рослинами (за бажанням)
+            </x-list.item>
+        </x-list>
 
-        <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 mt-10">
-            <div class="col-span-2 perspective-near perspective-origin-bottom-left">
-                <img src="https://picsum.photos/400?random=4"
-                    class="rounded-xl rotate-x-6 -rotate-z-6 shadow-2xl shadow-black/50" alt="">
-            </div>
-            <x-list class="col-span-3" type="check">
-                <x-slot:caption>
-                    Кому підходить ця послуга?
-                </x-slot>
-                <x-list.item>
-                    Офісам, бізнес-центрам та коворкінгам
-                </x-list.item>
-                <x-list.item>
-                    Магазинам, салонам краси, клінікам
-                </x-list.item>
-                <x-list.item>
-                    Державним установам та навчальним закладам
-                </x-list.item>
-                <x-list.item>
-                    Приватним кабінетам, студіям та агентствам
-                </x-list.item>
-            </x-list>
-        </div>
+        <x-list type="check">
+            <x-slot:caption>
+                Кому <span class="font-bold">підходить</span> ця <span class="text-tryit-orange">послуга</span>?
+            </x-slot>
+            <x-list.item>
+                Офісам, бізнес-центрам та коворкінгам
+            </x-list.item>
+            <x-list.item>
+                Магазинам, салонам краси, клінікам
+            </x-list.item>
+            <x-list.item>
+                Державним установам та навчальним закладам
+            </x-list.item>
+            <x-list.item>
+                Приватним кабінетам, студіям та агентствам
+            </x-list.item>
+        </x-list>
 
-        <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 mt-10">
-            <x-list class="col-span-3" type="check">
-                <x-slot:caption>
-                    Як ми працюємо?
-                </x-slot>
-                <x-list.item>
-                    Консультація та вибір графіка – підлаштовуємо прибирання під ваш розклад
-                </x-list.item>
-                <x-list.item>
-                    Прибирання з урахуванням особливостей офісу – дбайливо чистимо техніку, меблі, поверхні
-                </x-list.item>
-                <x-list.item>
-                    Використання екологічних засобів – безпечних для людей та довкілля
-                </x-list.item>
-                <x-list.item>
-                    Контроль якості – кожне прибирання виконується на вищому рівні
-                </x-list.item>
-            </x-list>
-            <div class="col-span-2 perspective-near perspective-origin-bottom-right">
-                <img src="https://picsum.photos/400?random=5"
-                    class="rounded-xl rotate-x-6 rotate-z-6 shadow-2xl shadow-black/50" alt="">
-            </div>
-        </div>
+        <x-list type="check">
+            <x-slot:caption>
+                <span class="font-bold">Як</span> ми <span class="text-tryit-orange">працюємо</span>?
+            </x-slot>
+            <x-list.item>
+                Консультація та вибір графіка – підлаштовуємо прибирання під ваш розклад
+            </x-list.item>
+            <x-list.item>
+                Прибирання з урахуванням особливостей офісу – дбайливо чистимо техніку, меблі, поверхні
+            </x-list.item>
+            <x-list.item>
+                Використання екологічних засобів – безпечних для людей та довкілля
+            </x-list.item>
+            <x-list.item>
+                Контроль якості – кожне прибирання виконується на вищому рівні
+            </x-list.item>
+        </x-list>
 
-        <div class="grid lg:grid-cols-5 gap-10 lg:gap-20 mt-10 mb-20">
-            <div class="col-span-2 perspective-near perspective-origin-bottom-left">
-                <img src="https://picsum.photos/400?random=6"
-                    class="rounded-xl rotate-x-6 -rotate-z-6 shadow-2xl shadow-black/50" alt="">
-            </div>
-            <x-list class="col-span-3" type="check">
-                <x-slot:caption>
-                    Чому обирають нас?
-                </x-slot>
-                <x-list.item>
-                    Гнучкий графік роботи – щоденне, разове або генеральне прибирання
-                </x-list.item>
-                <x-list.item>
-                    Професійні засоби та обладнання – безпечні та ефективні миючі засоби
-                </x-list.item>
-                <x-list.item>
-                    Досвідчені співробітники – акуратність, швидкість, відповідальність
-                </x-list.item>
-                <x-list.item>
-                    Гарантія чистоти – ваш офіс завжди виглядатиме ідеально
-                </x-list.item>
-            </x-list>
-        </div>
+        <x-list type="check">
+            <x-slot:caption>
+                Чому <span class="font-bold">обирають</span> <span class="text-tryit-orange">нас</span>?
+            </x-slot>
+            <x-list.item>
+                Гнучкий графік роботи – щоденне, разове або генеральне прибирання
+            </x-list.item>
+            <x-list.item>
+                Професійні засоби та обладнання – безпечні та ефективні миючі засоби
+            </x-list.item>
+            <x-list.item>
+                Досвідчені співробітники – акуратність, швидкість, відповідальність
+            </x-list.item>
+            <x-list.item>
+                Гарантія чистоти – ваш офіс завжди виглядатиме ідеально
+            </x-list.item>
+        </x-list>
 
         <p>Замовте професійне прибирання офісу вже сьогодні!</p>
         <p>Не витрачайте час співробітників на прибирання – довірте це професіоналам! Ми подбаємо про ідеальний порядок
