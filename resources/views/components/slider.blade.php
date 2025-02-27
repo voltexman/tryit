@@ -23,8 +23,8 @@
     <div class="relative min-h-[50svh] w-full">
         <template x-for="(slide, index) in slides">
             <div x-show="currentSlideIndex == index + 1" class="absolute inset-0" x-transition.opacity.duration.1000ms>
-                <img class="absolute w-full h-full inset-0 object-cover text-on-surface" :src="slide"
-                    alt="" />
+                <img class="absolute rounded-2xl w-full h-full inset-0 object-cover text-on-surface"
+                    :src="slide" alt="" />
             </div>
         </template>
     </div>

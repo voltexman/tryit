@@ -1,12 +1,12 @@
 @props(['orientation' => 'left', 'link', 'images' => []])
 
-<div class="grid lg:grid-cols-5 gap-10 items-center">
+<div class="grid lg:grid-cols-5 lg:gap-10 items-center">
     <div @class([
         'lg:order-1' => $orientation === 'left',
         'lg:order-2' => $orientation === 'right',
         'lg:col-span-2 relative animate-in duration-1000',
     ]) x-intersect="$el.classList.add('zoom-in')">
-        <x-slider :images="[$images]" class="rounded-2xl inset-shadow-lg size-96 group" />
+        <x-slider :images="[$images]" class="rounded-2xl overflow-hidden size-96 group" />
     </div>
     <div @class([
         'lg:order-2' => $orientation === 'left',
