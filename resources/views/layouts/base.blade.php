@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Клінінгова компанія - TryIt</title>
+    <link rel="shortcut icon" href="favicon.ico">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
