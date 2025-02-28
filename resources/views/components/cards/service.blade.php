@@ -13,8 +13,11 @@
         'lg:order-1' => $orientation === 'right',
         'flex flex-col lg:col-span-3 gap-y-5 animate-in duration-1000',
     ]) x-intersect="$el.classList.add('zoom-in')">
-        <div class="text-2xl lg:text-3xl border-s-4 border-tryit-orange ps-2.5 font-light uppercase">
-            {{ $name }}
+        <div
+            class="text-2xl lg:text-3xl border-s-4 border-tryit-orange ps-2.5 font-light uppercase hover:ps-5 transition-all duration-300">
+            <a href="{{ route($link) }}">
+                {{ $name }}
+            </a>
         </div>
         <div class="">
             <div>{{ $description }}</div>
