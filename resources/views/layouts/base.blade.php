@@ -92,10 +92,6 @@
     <footer class="bg-tryit-dark pt-10">
         <div class="max-w-7xl mx-auto mb-10 px-5 flex flex-col lg:flex-row gap-y-5 justify-between">
             <div class="flex flex-col items-center lg:items-start gap-y-1.5">
-                {{-- <div class="text-tryit-cream flex items-center gap-x-2">
-                    <x-lucide-user-round class="size-5" />
-                    <span class="text-tryit-cream text-sm font-semibold text-center">Руслан Мамай</span>
-                </div> --}}
                 <div class="text-tryit-cream flex items-center gap-x-2">
                     <x-lucide-phone class="size-5" />
                     <span class="text-tryit-cream text-sm font-semibold text-center">+380 (97) 877-866-7</span>
@@ -111,15 +107,15 @@
                     <a href="https://www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr"
                         target="_blank" aria-label="Відкрити нашу сторінку Instagram">
                         <img src="{{ Vite::asset('resources/images/icons/footer-instagram.svg') }}" class="size-6"
-                            alt="" />
+                            loading="lazy" alt="" />
                     </a>
                     <a href="#" aria-label="Перейти до нашого Telegram">
                         <img src="{{ Vite::asset('resources/images/icons/footer-telegram.svg') }}" class="size-6"
-                            alt="" />
+                            loading="lazy" alt="" />
                     </a>
                     <a href="#" aria-label="Перейти до нашого Viber">
                         <img src="{{ Vite::asset('resources/images/icons/footer-viber.svg') }}" class="size-6"
-                            alt="" />
+                            loading="lazy" alt="" />
                     </a>
                 </div>
             </div>
@@ -139,7 +135,7 @@
         </div>
 
         <div class="py-2.5 border-t border-tryit-cream/5">
-            <div class="mx-auto max-w-md text-xs text-tryit-cream/60 font-normal text-center">
+            <div class="mx-auto max-w-md text-xs text-tryit-cream/70 font-normal text-center">
                 {{ date('Y') }} &copy; {{ env('APP_NAME') }}. Всі права застережено
             </div>
         </div>
