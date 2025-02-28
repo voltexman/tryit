@@ -22,7 +22,8 @@
                         class="absolute -top-4 -left-10 z-0 w-80 block" alt="" />
                     <a href="{{ route('main') }}" aria-label="Перейти на головну сторінку натиснувши на логотип">
                         <img src="{{ Vite::asset('resources/images/logo.png') }}"
-                            class="relative top-0 left-0 h-10 z-50" alt="Логотип компанії" />
+                            class="relative top-0 left-0 h-10 z-50" width="120" height="40"
+                            alt="Логотип компанії" />
                     </a>
                 </div>
 
