@@ -50,10 +50,10 @@
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-y-15 gap-x-10 xl:gap-x-20">
             <div class="flex flex-col">
                 <div class="relative">
-                    <h2 class="text-center text-xl mb-5 font-black text-gray-600 uppercase drop-shadow-lg">
+                    <h2 class="text-center text-xl mb-5 font-black text-gray-700 tracking-wide uppercase drop-shadow-lg">
                         Про нас
                     </h2>
-                    <div class="mb-5">Наша клінінгова компанія – це <x-marker>професійний</x-marker>сервіс з
+                    <div class="mb-5 text-gray-900">Наша клінінгова компанія – це <x-marker>професійний</x-marker>сервіс з
                         прибирання, який допомагає підтримувати чистоту у вашому домі чи офісі. Ми використовуємо
                         <x-marker>сучасні методи</x-marker>, екологічні засоби та відповідально ставимося до кожного
                         замовлення.
@@ -69,7 +69,7 @@
                 <div>@livewire('callback')</div>
             </div>
             <div class="grid lg:flex-col gap-5">
-                <h2 class="text-center text-xl mb-2.5 font-black text-gray-600 uppercase drop-shadow-lg">
+                <h2 class="text-center text-xl mb-2.5 font-black text-gray-700 tracking-wide uppercase drop-shadow-lg">
                     Три кроки до чистоти
                 </h2>
 
@@ -82,7 +82,7 @@
                         <span class="flex items-center lg:mb-2.5 text-lg font-semibold text-gray-900 uppercase">
                             1. Замовлення послуги
                         </span>
-                        <p class="mb-5 text-base font-medium text-gray-600">
+                        <p class="mb-5 text-base font-medium text-gray-700">
                             Створення замовлення відбувається через просту форму. Ви вибираєте потрібні товари та послуги,
                             після чого підтверджуєте свою заявку.</p>
                     </li>
@@ -95,7 +95,7 @@
                         <span class="flex items-center lg:mb-2.5 text-lg font-semibold text-gray-900 uppercase">
                             2. Оцінка вартості
                         </span>
-                        <p class="mb-5 text-base font-medium text-gray-600">Після отримання замовлення здійснюється оцінка
+                        <p class="mb-5 text-base font-medium text-gray-700">Після отримання замовлення здійснюється оцінка
                             вартості, враховуючи всі деталі. Це дозволяє визначити кінцеву суму для оплати.</p>
                     </li>
 
@@ -107,7 +107,7 @@
                         <span class="flex items-center lg:mb-2.5 text-lg font-semibold text-gray-900 uppercase">
                             3. Виконання роботи
                         </span>
-                        <p class="mb-5 text-base font-medium text-gray-600">Після підтвердження замовлення ми приступаємо до
+                        <p class="mb-5 text-base font-medium text-gray-700">Після підтвердження замовлення ми приступаємо до
                             його виконання. Усі етапи виконання проходять згідно з планом та без затримок.</p>
                     </li>
                 </ol>

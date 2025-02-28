@@ -2,6 +2,9 @@
 
 use function Laravel\Folio\name;
 
+$meta_title = 'Професійне прибирання офісів та чистота, комфорт, порядок';
+$meta_description = 'Прибирання офісів: регулярне, генеральне, разове. Очищення меблів, техніки, вікон, санвузлів. Гнучкий графік, екозасоби, гарантія чистоти.';
+
 name('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu');
 ?>
 

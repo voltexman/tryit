@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Клінінгова компанія - TryIt</title>
+    <title>{{ $meta_title ?? config('app.name') }}</title>
+    <meta name="description" content="{{ $meta_description ?? 'Опис за замовчуванням' }}">
+
     <link rel="shortcut icon" href="favicon.ico">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
