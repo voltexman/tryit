@@ -87,7 +87,9 @@
                 <x-lucide-list-todo class="size-6 stroke-white" stroke-width="1.5" />
             </button>
         </x-slot>
-        <x-slot:body>@livewire('order')</x-slot>
+        <x-slot:body>
+            <livewire:order lazy />
+        </x-slot>
     </x-modal>
 
     <footer class="bg-tryit-dark pt-10">
