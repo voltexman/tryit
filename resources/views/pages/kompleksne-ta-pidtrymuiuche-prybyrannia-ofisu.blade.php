@@ -11,7 +11,7 @@ name('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu');
 @extends('layouts.base')
 
 @section('header')
-    <x-page-header image="https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg">
+    <x-page-header image="{{ Vite::asset('resources/images/service-6.jpg') }}">
         <x-slot:title>
             Комплексне та підтримуюче прибирання офісу
         </x-slot>
@@ -22,9 +22,11 @@ name('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu');
     <section class="bg-tryit-cream/20 border-b border-tryit-orange/5 -mt-20 pt-32 pb-15 px-5">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-5 lg:gap-10">
             <div class="lg:col-span-2">
-                <x-before-after before="https://picsum.photos/500?random=1" after="https://picsum.photos/500?random=2" />
+                <img src="{{ Vite::asset('resources/images/service-6.jpg') }}"
+                    class="size-full object-cover rounded-tl-xl rounded-br-xl rounded-tr-4xl rounded-bl-4xl shadow-xl"
+                    width="300" height="300" alt="">
             </div>
-            <div class="lg:col-span-3">
+            <div class="lg:col-span-3 self-center">
                 <p><x-marker>Чистий і доглянутий офіс</x-marker> – це не лише приємна атмосфера для співробітників, а й
                     важливий іміджевий фактор для клієнтів та партнерів. Регулярне прибирання допомагає підтримувати
                     порядок, свіжість повітря та гігієну робочого простору, що сприяє підвищенню продуктивності та

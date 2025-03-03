@@ -88,7 +88,7 @@
             </button>
         </x-slot>
         <x-slot:body>
-            <livewire:order lazy />
+            <livewire:order />
         </x-slot>
     </x-modal>
 

@@ -11,7 +11,7 @@ name('services.promyslovyi-alpinizm');
 @extends('layouts.base')
 
 @section('header')
-    <x-page-header image="https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg">
+    <x-page-header image="{{ Vite::asset('resources/images/service-7.jpg') }}">
         <x-slot:title>
             Промисловий альпінізм
         </x-slot>
@@ -22,9 +22,11 @@ name('services.promyslovyi-alpinizm');
     <section class="bg-tryit-cream/20 border-b border-tryit-orange/5 -mt-20 pt-32 pb-15 px-5">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-5 lg:gap-10">
             <div class="lg:col-span-2 flex justify-center">
-                <x-before-after before="https://picsum.photos/500?random=1" after="https://picsum.photos/500?random=2" />
+                <img src="{{ Vite::asset('resources/images/service-7.jpg') }}"
+                    class="h-72 w-full object-cover object-top rounded-tl-xl rounded-br-xl rounded-tr-4xl rounded-bl-4xl shadow-xl"
+                    width="300" height="300" alt="">
             </div>
-            <div class="lg:col-span-3">
+            <div class="lg:col-span-3 self-center">
                 <p>Деякі види робіт на висоті неможливо виконати звичайними методами – саме тоді на допомогу приходять
                     фахівці з промислового альпінізму. Висотні роботи вимагають професіоналізму, досвіду та спеціального
                     обладнання, адже вони проводяться на великій висоті без застосування будівельних лісів чи

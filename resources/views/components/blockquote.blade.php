@@ -1,6 +1,6 @@
 <blockquote {{ $attributes->class('relative border-s-4 ps-4 sm:ps-6') }}>
-    <div class="text-gray-700 text-base">
-        <em class="[&>*]:mb-2.5">{{ $slot }}</em>
+    <div class="text-gray-700 text-sm">
+        <em class="[&>*]:mb-1.5">{{ $slot }}</em>
     </div>
 
     <footer class="mt-4">

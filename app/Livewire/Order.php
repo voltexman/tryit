@@ -25,20 +25,9 @@ class Order extends Component
         //     );
         // }
 
-        Mail::to(env('ADMIN_MAIL'))
-            ->send(new OrderShipped($this->order));
+        Mail::to(env('ADMIN_MAIL'))->send(new OrderShipped($this->order));
 
         session()->flash('success');
-    }
-
-    public function placeholder()
-    {
-        return <<<'HTML'
-        <div>
-            <!-- Loading spinner... -->
-            <svg>...</svg>
-        </div>
-        HTML;
     }
 
     public function render()
