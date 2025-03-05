@@ -1,12 +1,16 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-20L9EbVp.css",
+    "file": "assets/app-5PIFyRzy.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/images/cleaning.png": {
     "file": "assets/cleaning-fdbXvyGX.png",
     "src": "resources/images/cleaning.png"
+  },
+  "resources/images/header.webp": {
+    "file": "assets/header-D7Evp8KQ.webp",
+    "src": "resources/images/header.webp"
   },
   "resources/images/icons/footer-instagram.svg": {
     "file": "assets/footer-instagram-h8ZCbTru.svg",
