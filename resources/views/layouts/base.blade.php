@@ -8,6 +8,8 @@
     <title>{{ $meta_title ?? config('app.name') }}</title>
     <meta name="description" content="{{ $meta_description ?? 'Опис за замовчуванням' }}">
 
+    <meta name="google-site-verification" content="fsrylmGFBJ7d7DJ_JlXie1uxWstE-InnV6R0eFJKphE" />
+
     <link rel="shortcut icon" href="favicon.ico">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
