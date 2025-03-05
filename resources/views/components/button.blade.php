@@ -10,7 +10,6 @@
 @endphp
 
 <button
-    {{ $attributes->merge(['type' => 'button', 'class' => "$baseClasses " . ($variantClasses[$variant] ?? $variantClasses['default'])]) }}
-    aria-hidden="true">
+    {{ $attributes->merge(['type' => 'button', 'class' => "$baseClasses " . ($variantClasses[$variant] ?? $variantClasses['default'])]) }}>
     {{ $slot }}
 </button>
