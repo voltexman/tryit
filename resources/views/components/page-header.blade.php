@@ -7,7 +7,7 @@
             {{ $title }}
         </h1>
         @isset($description)
-            <span class="text-sm text-white text-center max-w-sm mt-5">
+            <span class="text-sm text-white text-center max-w-md mt-5">
                 {{ $description }}
             </span>
         @endisset
