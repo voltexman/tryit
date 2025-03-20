@@ -20,8 +20,6 @@
         <nav class="absolute bg-transparent h-20 w-full top-0 z-50 px-5 xl:px-0 transition-all duration-300">
             <div class="flex justify-between h-full max-w-7xl mx-auto items-center">
                 <div class="relative w-auto mt-5">
-                    <img src="{{ Vite::asset('resources/images/logo-klax.png') }}"
-                        class="absolute -top-4 -left-10 z-0 w-80 block" alt="" />
                     <a href="{{ route('main') }}" aria-label="Перейти на головну сторінку натиснувши на логотип">
                         <img src="{{ Vite::asset('resources/images/logo.png') }}"
                             class="relative top-0 left-0 h-10 z-50" width="120" height="40"
@@ -118,7 +116,7 @@
                         <img src="{{ Vite::asset('resources/images/icons/footer-telegram.svg') }}" class="size-6"
                             loading="lazy" alt="" />
                     </a>
-                    <a href="#" aria-label="Перейти до нашого Viber">
+                    <a href="viber://chat?number=380978778667" aria-label="Написати нам у Viber">
                         <img src="{{ Vite::asset('resources/images/icons/footer-viber.svg') }}" class="size-6"
                             loading="lazy" alt="" />
                     </a>

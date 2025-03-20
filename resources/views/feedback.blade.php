@@ -76,9 +76,9 @@
                             </div>
                             <div class="grid">
                                 <span class="text-sm font-semibold">Наш Viber</span>
-                                <a href="#"
+                                <a href="viber://call?number=380978778667"
                                     class="text-sm text-tryit-orange/60 hover:text-tryit-orange transition duration-300 line-clamp-1">
-                                    <span class="truncate">462436234636</span>
+                                    <span class="truncate">+380978778667</span>
                                 </a>
                             </div>
                         </div>
