@@ -3,32 +3,48 @@
 namespace App\Livewire\Forms;
 
 use App\Models\Order;
+use Livewire\Attributes\Session;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
 class OrderForm extends Form
 {
-    #[Validate('required', message: 'Вкажіть як до Вас звертатись')]
-    #[Validate('min:2', message: 'Занадто мало символів')]
+    #[Session]
+    #[Validate('string|min:2|max:50')]
     public $name = '';
 
-    #[Validate('required', message: 'Вкажіть будь-який контакт')]
-    #[Validate('min:5', message: 'Занадто мало символів')]
+    #[Session]
+    #[Validate('required|min:5|max:100')]
     public $contact = '';
 
-    #[Validate('required', message: 'Необхідно обрати послугу')]
+    #[Session]
+    #[Validate('string|min:5|max:200')]
+    public $address = '';
+
+    // #[Validate('')]
     public $service = '';
 
-    #[Validate('max:1200', message: 'Занадто багато символів')]
+    #[Session]
+    #[Validate('string|min:5|max:1500')]
     public $text = '';
 
-    // #[Validate(['images.*' => 'image|max:2048'])]
-    // public $images = [];
+    #[Validate(['photos.*' => 'image|max:1024'])]
+    public $photos = [];
+
+    // #[Validate('')]
+    public $options = [
+        'clean_type' => null,
+        'office_type' => null,
+        'rope_type' => null,
+        'building_type' => null,
+        'surface_type' => null,
+        'facade_access' => null,
+    ];
 
     public function store()
     {
         $this->validate();
 
-        return Order::create($this->all());
+        // Order::create($this);
     }
 }

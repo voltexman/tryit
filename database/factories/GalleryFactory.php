@@ -5,16 +5,8 @@ namespace Database\Factories;
 use App\Models\Gallery;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Gallery>
- */
 class GalleryFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [
@@ -26,7 +18,7 @@ class GalleryFactory extends Factory
     public function configure(): static
     {
         return $this->afterMaking(function (Gallery $gallery) {
-            $gallery->addMediaFromUrl('https://picsum.photos/1024/768')
+            $gallery->addMediaFromUrl('https://placehold.co/1024x768.png')
                 ->toMediaCollection('gallery');
         });
     }

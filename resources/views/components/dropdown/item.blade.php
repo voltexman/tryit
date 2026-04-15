@@ -1,4 +1,4 @@
 <div @click="open = !open"
-    {{ $attributes->class('flex items-center justify-between group cursor-pointer gap-2.5 rounded-lg px-4 py-2.5 text-sm font-semibold text-zinc-600 hover:bg-zinc-100/75 hover:text-zinc-950') }}>
+    {{ $attributes->class('flex items-center justify-between group cursor-pointer gap-2.5 rounded-full px-5 py-2.5 text-sm font-medium text-tryit-orange hover:bg-tryit-orange/75 hover:text-white') }}>
     <span class="grow">{{ $slot }}</span>
 </div>

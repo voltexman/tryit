@@ -1,4 +1,4 @@
-@props(['trigger', 'title', 'body'])
+@props(['trigger', 'title', 'body', 'footer'])
 
 <div x-data="{
     open: false,
@@ -46,14 +46,14 @@
             x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0" x-bind:aria-hidden="!open" tabindex="-1" role="dialog"
             aria-labelledby="pm-offcanvas-title"
-            class="fixed inset-0 overflow-hidden bg-zinc-700/75 backdrop-blur-xs z-50">
+            class="fixed inset-0 overflow-hidden lg:bg-zinc-700/75 backdrop-blur-xs z-50">
             <!-- Offcanvas Sidebar -->
             <div x-cloak x-show="open" x-on:click.away="open = false" x-bind="transitionClasses"
                 x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-end="translate-x-0 translate-y-0"
                 x-transition:leave="transition ease-in duration-200"
                 x-transition:leave-start="translate-x-0 translate-y-0" role="document"
-                class="absolute flex w-full flex-col bg-white shadow-lg will-change-transform"
+                class="absolute flex w-full flex-col bg-white/80 backdrop-blur-md shadow-lg will-change-transform"
                 x-bind:class="{
                     'h-dvh top-0 end-0': position === 'end',
                     'h-dvh top-0 start-0': position === 'start',
@@ -67,9 +67,12 @@
                     'sm:max-w-xl': size === 'xl' && !(position === 'top' || position === 'bottom'),
                     'max-w-72': !mobileFullWidth && !(position === 'top' || position === 'bottom'),
                 }">
-                <div class="flex min-h-16 flex-none items-center justify-between border-b border-zinc-100 px-5 md:px-7">
+                <div id="offcanvas-title" @class([
+                    'flex min-h-16 flex-none items-center justify-between border-zinc-100 px-5 md:px-7',
+                    'border-b' => isset($title),
+                ])>
                     @isset($title)
-                        <span id="pm-offcanvas-title" class="py-5 font-semibold">
+                        <span class="py-5 font-semibold">
                             {{ $title }}
                         </span>
                     @endisset
@@ -78,13 +81,18 @@
                     </button>
                 </div>
 
-                <div class="flex grow flex-col overflow-y-auto p-5">
-                    <div class="flex h-full flex-col items-center justify-between gap-5">
-                        @isset($body)
-                            {{ $body }}
-                        @endisset
+                @isset($body)
+                    <div
+                        {{ $body->attributes->merge(['class' => 'flex grow flex-col overflow-y-auto p-5 h-full items-center gap-5', 'id' => 'offcanvas-body']) }}>
+                        {{ $body }}
                     </div>
-                </div>
+                @endisset
+
+                @isset($footer)
+                    <div {{ $footer->attributes->merge(['class' => 'flex p-5 w-full', 'id' => 'offcanvasfooter']) }}>
+                        {{ $footer }}
+                    </div>
+                @endisset
             </div>
         </div>
     </template>

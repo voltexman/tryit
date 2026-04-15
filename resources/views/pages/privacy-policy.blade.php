@@ -2,7 +2,7 @@
 
 use function Laravel\Folio\name;
 
-name('privacy-policy');
+name("privacy-policy");
 ?>
 
 @extends('layouts.base')

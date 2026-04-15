@@ -1,15 +1,14 @@
 @props(['index' => null])
 
-<li
-    class="flex items-start gap-x-2.5 py-2.5 border-b border-dashed border-tryit-green/30 xl:hover:bg-tryit-green/5 transition duration-300 last:border-0">
-    <span class="hidden bg-tryit-green/10 size-7 text-sm rounded-full flex-none md:flex items-center justify-center">
+<li class="flex items-start gap-x-2.5 my-1.5 transition duration-300 last:border-0">
+    <span class="bg-tryit-green size-5 text-sm rounded-full flex-none flex items-center justify-center">
         @isset($index)
-            <span class="hidden lg:block font-semibold text-sm text-tryit-green">{{ $index }}</span>
+            <span class="font-semibold text-xs text-white">{{ $index }}</span>
         @else
-            <x-lucide-check class="size-4 flex-none text-tryit-green lg:group-data-[type=check]:block" />
+            <x-lucide-check class="size-3 flex-none text-white lg:group-data-[type=check]:block" stroke-width="4" />
         @endisset
     </span>
-    <span class="text-gray-700 font-normal">
+    <span class="text-tryit-dark font-medium">
         {{ $slot }}
     </span>
 </li>

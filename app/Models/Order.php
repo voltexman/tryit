@@ -11,7 +11,7 @@ class Order extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'contact', 'text', 'service', 'status', 'comment'];
+    protected $fillable = ['name', 'contact', 'service', 'text', 'status', 'comment'];
 
     protected $casts = [
         'service' => ServiceEnum::class,

@@ -1,85 +1,23 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-DqshZORF.css",
+    "file": "assets/app-B1MPownn.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
     "src": "resources/css/app.css",
     "isEntry": true
   },
-  "resources/images/cleaning.png": {
-    "file": "assets/cleaning-fdbXvyGX.png",
-    "src": "resources/images/cleaning.png"
-  },
-  "resources/images/header.webp": {
-    "file": "assets/header-D7Evp8KQ.webp",
-    "src": "resources/images/header.webp"
-  },
-  "resources/images/icons/footer-instagram.svg": {
-    "file": "assets/footer-instagram-h8ZCbTru.svg",
-    "src": "resources/images/icons/footer-instagram.svg"
-  },
-  "resources/images/icons/footer-telegram.svg": {
-    "file": "assets/footer-telegram-BO_wUGfw.svg",
-    "src": "resources/images/icons/footer-telegram.svg"
-  },
-  "resources/images/icons/footer-viber.svg": {
-    "file": "assets/footer-viber-KSZdEHqt.svg",
-    "src": "resources/images/icons/footer-viber.svg"
-  },
-  "resources/images/icons/instagram.svg": {
-    "file": "assets/instagram-BrfVUyH9.svg",
-    "src": "resources/images/icons/instagram.svg"
-  },
-  "resources/images/icons/telegram.svg": {
-    "file": "assets/telegram-BuSzoMNN.svg",
-    "src": "resources/images/icons/telegram.svg"
-  },
-  "resources/images/icons/viber.svg": {
-    "file": "assets/viber-DEEbfu3A.svg",
-    "src": "resources/images/icons/viber.svg"
-  },
-  "resources/images/klax.svg": {
-    "file": "assets/klax-C3yrtJC7.svg",
-    "src": "resources/images/klax.svg"
-  },
-  "resources/images/logo-klax.png": {
-    "file": "assets/logo-klax-DMG5ucPO.png",
-    "src": "resources/images/logo-klax.png"
-  },
-  "resources/images/logo.png": {
-    "file": "assets/logo-DX72VlMl.png",
-    "src": "resources/images/logo.png"
-  },
-  "resources/images/service-1.jpg": {
-    "file": "assets/service-1-CK1_oBol.jpg",
-    "src": "resources/images/service-1.jpg"
-  },
-  "resources/images/service-2.jpg": {
-    "file": "assets/service-2-BF0DbPE7.jpg",
-    "src": "resources/images/service-2.jpg"
-  },
-  "resources/images/service-3.jpg": {
-    "file": "assets/service-3-B46rLH6d.jpg",
-    "src": "resources/images/service-3.jpg"
-  },
-  "resources/images/service-4.jpg": {
-    "file": "assets/service-4-BTD9UH8T.jpg",
-    "src": "resources/images/service-4.jpg"
-  },
-  "resources/images/service-5.jpg": {
-    "file": "assets/service-5-HeRrD7LF.jpg",
-    "src": "resources/images/service-5.jpg"
-  },
-  "resources/images/service-6.jpg": {
-    "file": "assets/service-6-vfKHD1Ij.jpg",
-    "src": "resources/images/service-6.jpg"
-  },
-  "resources/images/service-7.jpg": {
-    "file": "assets/service-7-CLQ6xYdb.jpg",
-    "src": "resources/images/service-7.jpg"
-  },
   "resources/js/app.js": {
-    "file": "assets/app-DNxiirP_.js",
+    "file": "assets/app-DGlete9Q.js",
     "name": "app",
     "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/services.js": {
+    "file": "assets/services-DcokrWBf.js",
+    "name": "services",
+    "src": "resources/js/services.js",
     "isEntry": true
   }
 }

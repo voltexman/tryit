@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id()->startingValue(10504);
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('contact');
             $table->text('text')->nullable();
             $table->enum('service', ServiceEnum::all());

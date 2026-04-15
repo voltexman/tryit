@@ -1,2 +1,3 @@
 import "./bootstrap";
-import.meta.glob(["../images/**", "../fonts/**"]);
+import "preline";
+import.meta.glob(["../images/**", "../fonts/**", { eager: true }]);
