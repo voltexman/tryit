@@ -2,7 +2,7 @@
 
 use function Laravel\Folio\name;
 
-$meta_title = 'Висотні роботи та промисловий альпінізм та Безпека та якість';
+$meta_title = 'Висотні роботи та промисловий альпінізм — безпека та якість';
 $meta_description = 'Промисловий альпінізм: мийка фасадів, монтаж вивісок, герметизація швів, очищення дахів. Сертифіковані фахівці, безпечні технології, оперативне виконання';
 
 name('services.promyslovyi-alpinizm');
@@ -12,121 +12,171 @@ name('services.promyslovyi-alpinizm');
 
 @section('header')
     <x-page-header image="{{ Vite::asset('resources/images/service-7.jpg') }}">
-        <x-slot:title>
-            Промисловий альпінізм
-        </x-slot>
+        <x-slot:title>Промисловий альпінізм</x-slot>
+        <x-slot:description>Висотні роботи будь-якої складності з гарантією безпеки</x-slot>
     </x-page-header>
 @endsection
 
 @section('content')
-    <section class="bg-tryit-cream/20 border-b border-tryit-orange/5 -mt-20 pt-32 pb-15 px-5">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-5 lg:gap-10">
-            <div class="lg:col-span-2 flex justify-center">
-                <img src="{{ Vite::asset('resources/images/service-7.jpg') }}"
-                    class="h-72 w-full object-cover object-top rounded-tl-xl rounded-br-xl rounded-tr-4xl rounded-bl-4xl shadow-xl"
-                    width="300" height="300" alt="">
-            </div>
-            <div class="lg:col-span-3 self-center">
-                <p>Деякі види робіт на висоті неможливо виконати звичайними методами – саме тоді на допомогу приходять
-                    фахівці з промислового альпінізму. Висотні роботи вимагають професіоналізму, досвіду та спеціального
-                    обладнання, адже вони проводяться на великій висоті без застосування будівельних лісів чи
-                    підйомників.
-                </p>
-
-                <p>Наша команда кваліфікованих альпіністів виконує широкий спектр робіт: мийка фасадів, монтаж і
-                    демонтаж конструкцій, герметизація швів, очищення дахів від снігу та криги. Ми гарантуємо високу якість,
-                    безпеку та оперативність виконання завдань.</p>
+    {{-- Intro --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <span class="font-display text-sm font-semibold text-tryit-orange uppercase tracking-wider">Висотні
+                        роботи</span>
+                    <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-5">Професійні рішення на
+                        будь-якій висоті</h2>
+                    <p class="text-gray-600 leading-relaxed">Деякі види робіт на висоті неможливо виконати звичайними
+                        методами — саме тоді на допомогу приходять фахівці з промислового альпінізму. Висотні роботи
+                        вимагають професіоналізму, досвіду та спеціального обладнання.</p>
+                    <p class="text-gray-600 leading-relaxed">Наша команда кваліфікованих альпіністів виконує широкий спектр
+                        робіт: мийка фасадів, монтаж і демонтаж конструкцій, герметизація швів, очищення дахів від снігу та
+                        криги. Ми гарантуємо високу якість, безпеку та оперативність.</p>
+                </div>
+                <div class="relative">
+                    <img src="{{ Vite::asset('resources/images/service-7.jpg') }}"
+                        class="w-full rounded-2xl shadow-lg object-cover aspect-4/3" alt="Промисловий альпінізм"
+                        loading="lazy" />
+                </div>
             </div>
         </div>
     </section>
 
-    <x-section class="pt-0">
-        <x-list type="check">
-            <x-slot:caption>
-                Що <span class="font-bold">входить</span> у <span class="text-tryit-orange">послугу</span>?
-            </x-slot>
-            <x-list.item>
-                <b>Мийка фасадів та вікон на висоті</b> – без розводів, пилу та забруднень
-            </x-list.item>
-            <x-list.item>
-                Монтаж та демонтаж рекламних банерів, вивісок, кондиціонерів
-            </x-list.item>
-            <x-list.item>
-                <b>Герметизація міжпанельних швів</b> – захист від вологи та холоду
-            </x-list.item>
-            <x-list.item>
-                <b>Очищення дахів від снігу та бурульок</b> – безпечно та швидко
-            </x-list.item>
-            <x-list.item>
-                <b>Фарбування та ремонт фасадів</b> – оновлення зовнішнього вигляду будівлі
-            </x-list.item>
-        </x-list>
+    <section class="mt-10">
+        <div class="max-w-5xl mx-auto px-5">
 
-        <x-list type="check">
-            <x-slot:caption>
-                Кому <span class="font-bold">підходить</span> ця <span class="text-tryit-orange">послуга</span>?
-            </x-slot>
-            <x-list.item>
-                Офісним центрам та бізнес-комплексам
-            </x-list.item>
-            <x-list.item>
-                Торгово-розважальним центрам та магазинам
-            </x-list.item>
-            <x-list.item>
-                Будівельним компаніям, житловим комплексам
-            </x-list.item>
-            <x-list.item>
-                Державним установам, лікарням, навчальним закладам
-            </x-list.item>
-        </x-list>
+            @include('partials.services-standarts')
 
-        <x-list type="check">
-            <x-slot:caption>
-                <span class="font-bold">Як</span> ми <span class="text-tryit-orange">працюємо</span>?
-            </x-slot>
-            <x-list.item>
-                <b>Аналіз об’єкта</b> – визначаємо особливості будівлі та підбираємо обладнання
-            </x-list.item>
-            <x-list.item>
-                <b>Підготовка та встановлення страхувальних систем</b> – забезпечуємо безпеку
-            </x-list.item>
-            <x-list.item>
-                <b>Виконання робіт на висоті</b> – чітко, швидко та з гарантією якості
-            </x-list.item>
-            <x-list.item>
-                <b>Перевірка результату та фінальна очистка</b> – залишаємо об'єкт у ідеальному стані
-            </x-list.item>
-        </x-list>
+            <x-table class="mt-15" striped>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Максимальна висота</x-table.cell>
+                    <x-table.cell>до 100 м <i>(залежно від об'єкта та умов)</i></x-table.cell>
+                </x-table.row>
 
-        <x-list type="check">
-            <x-slot:caption>
-                Чому <span class="font-bold">варто</span> обрати <span class="text-tryit-orange">нас</span>?
-            </x-slot>
-            <x-list.item>
-                <span class="font-semibold">Сертифіковані альпіністи</span> – досвідчені майстри з відповідними
-                допусками
-            </x-list.item>
-            <x-list.item>
-                <span class="font-semibold">Безпечні технології</span> – дотримуємось усіх норм безпеки
-            </x-list.item>
-            <x-list.item>
-                <span class="font-semibold">Висока якість послуг</span> – навіть у важкодоступних місцях
-            </x-list.item>
-            <x-list.item>
-                <span class="font-semibold">Гнучкість у виконанні робіт</span> – працюємо швидко та без шкоди для
-                бізнесу
-            </x-list.item>
-            <x-list.item>
-                <span class="font-semibold">Конкурентні ціни</span> – доступні тарифи без прихованих витрат
-            </x-list.item>
-        </x-list>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Об’єкти</x-table.cell>
+                    <x-table.cell>Фасади, дахи, міжпанельні шви, конструкції, банери, вивіски</x-table.cell>
+                </x-table.row>
 
-        <x-blockquote class="mt-10">
-            <p>Замовте послугу промислового альпінізму вже сьогодні!</p>
-            <p>Ми допоможемо вирішити будь-яке висотне завдання швидко, безпечно та якісно.
-                Залиште заявку або зателефонуйте – і ми підготуємо для вас найкращу пропозицію!</p>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Тип робіт</x-table.cell>
+                    <x-table.cell>Мийка, герметизація, монтаж/демонтаж, очищення дахів, фарбування</x-table.cell>
+                </x-table.row>
 
-            <p>Промисловий альпінізм – безпечні рішення на висоті!</p>
-        </x-blockquote>
-    </x-section>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Безпека</x-table.cell>
+                    <x-table.cell>Страхувальні системи, сертифіковані альпіністи</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Обладнання</x-table.cell>
+                    <x-table.cell>Вертикальні страхувальні системи, мотузки, карабіни, спецодяг</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Продуктивність</x-table.cell>
+                    <x-table.cell>10–50 м² фасаду/год (залежно від типу роботи)</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Час виконання</x-table.cell>
+                    <x-table.cell>~1–8 годин/завдання залежно від складності</x-table.cell>
+                </x-table.row>
+            </x-table>
+        </div>
+    </section>
+
+    {{-- What's included --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Що входить у <span
+                    class="text-tryit-orange">послугу</span></h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                @foreach ([['icon' => 'droplets', 'title' => 'Мийка фасадів та вікон', 'desc' => 'Очищення фасадів і вікон на висоті — без розводів, пилу та забруднень'], ['icon' => 'monitor', 'title' => 'Монтаж конструкцій', 'desc' => 'Встановлення та демонтаж рекламних банерів, вивісок, кондиціонерів'], ['icon' => 'shield-check', 'title' => 'Герметизація швів', 'desc' => 'Захист міжпанельних швів від вологи, холоду та протікань'], ['icon' => 'snowflake', 'title' => 'Очищення дахів', 'desc' => 'Безпечне та швидке видалення снігу, криги та бурульок'], ['icon' => 'paintbrush', 'title' => 'Фарбування фасадів', 'desc' => 'Оновлення та ремонт зовнішнього вигляду будівлі на висоті']] as $item)
+                    <div class="bg-white rounded-xl p-5 shadow-sm">
+                        <div class="size-10 rounded-lg bg-tryit-green/10 flex items-center justify-center mb-3">
+                            <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-green" stroke-width="1.5" />
+                        </div>
+                        <h3 class="font-display font-bold text-gray-900 text-sm mb-1.5">{{ $item['title'] }}</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $item['desc'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- For whom --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Кому <span
+                    class="text-tryit-orange">підходить</span> послуга</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                @foreach ([['icon' => 'building-2', 'text' => 'Офісним центрам та бізнес-комплексам'], ['icon' => 'store', 'text' => 'Торгово-розважальним центрам'], ['icon' => 'building', 'text' => 'Будівельним компаніям та ЖК'], ['icon' => 'landmark', 'text' => 'Державним установам та лікарням']] as $item)
+                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl p-4">
+                        <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-orange shrink-0"
+                            stroke-width="1.5" />
+                        <span class="text-sm text-gray-700">{{ $item['text'] }}</span>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- How we work --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Як ми <span
+                    class="text-tryit-orange">працюємо</span></h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                @foreach ([['step' => '01', 'title' => 'Аналіз об\'єкта', 'desc' => 'Визначаємо особливості будівлі та підбираємо обладнання', 'icon' => 'scan-search'], ['step' => '02', 'title' => 'Підготовка', 'desc' => 'Встановлюємо страхувальні системи та забезпечуємо безпеку', 'icon' => 'hard-hat'], ['step' => '03', 'title' => 'Виконання робіт', 'desc' => 'Чітко, швидко та з гарантією якості на будь-якій висоті', 'icon' => 'mountain'], ['step' => '04', 'title' => 'Контроль та здача', 'desc' => 'Перевіряємо результат та залишаємо об\'єкт в ідеальному стані', 'icon' => 'check-circle']] as $step)
+                    <div class="relative bg-white rounded-xl p-5 shadow-sm">
+                        <span
+                            class="font-display text-3xl font-black text-tryit-orange/10 absolute top-3 right-4">{{ $step['step'] }}</span>
+                        <div class="size-10 rounded-lg bg-tryit-orange/10 flex items-center justify-center mb-3">
+                            <x-dynamic-component :component="'lucide-' . $step['icon']" class="size-5 text-tryit-orange" stroke-width="1.5" />
+                        </div>
+                        <h3 class="font-display font-bold text-gray-900 text-sm mb-1.5">{{ $step['title'] }}</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $step['desc'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- Why us --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Чому <span
+                    class="text-tryit-orange">ми</span></h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                @foreach ([['icon' => 'award', 'title' => 'Сертифіковані альпіністи', 'desc' => 'Досвідчені майстри з відповідними допусками та дозволами'], ['icon' => 'shield-check', 'title' => 'Безпечні технології', 'desc' => 'Дотримуємось усіх норм безпеки на висоті'], ['icon' => 'target', 'title' => 'Висока якість', 'desc' => 'Бездоганний результат навіть у важкодоступних місцях'], ['icon' => 'zap', 'title' => 'Гнучкість виконання', 'desc' => 'Працюємо швидко та без шкоди для вашого бізнесу'], ['icon' => 'wallet', 'title' => 'Конкурентні ціни', 'desc' => 'Доступні тарифи без прихованих витрат']] as $item)
+                    <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="size-10 rounded-lg bg-tryit-green/10 flex items-center justify-center shrink-0">
+                            <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-green" stroke-width="1.5" />
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-gray-900 text-sm mb-1">{{ $item['title'] }}</h3>
+                            <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $item['desc'] }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- CTA --}}
+    <section class="py-12 md:py-16 bg-tryit-green">
+        <div class="max-w-3xl mx-auto px-5 text-center">
+            <x-lucide-phone-call class="size-8 text-white/80 mx-auto mb-4" stroke-width="1.5" />
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-white mb-3">Замовте висотні роботи сьогодні</h2>
+            <p class="text-white/70 text-sm mb-6">Ми допоможемо вирішити будь-яке висотне завдання швидко, безпечно та
+                якісно</p>
+            <a href="tel:+380978778667"
+                class="inline-flex items-center gap-2 bg-white text-tryit-green font-display font-bold text-sm px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors">
+                <x-lucide-phone class="size-4" stroke-width="2" />
+                +380 (97) 877-866-7
+            </a>
+        </div>
+    </section>
 @endsection

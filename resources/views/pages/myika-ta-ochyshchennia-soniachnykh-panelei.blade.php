@@ -12,122 +12,187 @@ name('services.myika-ta-ochyshchennia-soniachnykh-panelei');
 
 @section('header')
     <x-page-header image="{{ Vite::asset('resources/images/service-2.jpg') }}">
-        <x-slot:title>
-            Мийка та очищення сонячних панелей
-        </x-slot>
+        <x-slot:title>Мийка та очищення сонячних панелей</x-slot>
+        <x-slot:description>Безпечне очищення для максимальної продуктивності вашої електростанції</x-slot>
     </x-page-header>
 @endsection
 
 @section('content')
-    <section class="bg-tryit-cream/20 border-b border-tryit-orange/5 -mt-20 pt-32 pb-15 px-5">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-5 lg:gap-10">
-            <div class="lg:col-span-2">
-                <img src="{{ Vite::asset('resources/images/service-2.jpg') }}"
-                    class="size-full object-cover rounded-tl-xl rounded-br-xl rounded-tr-4xl rounded-bl-4xl shadow-xl"
-                    width="300" height="300" alt="">
-            </div>
-            <div class="lg:col-span-3">
-                <p><x-marker>Сонячні панелі</x-marker> – це вигідна інвестиція в екологічну енергію, але їх ефективність
-                    напряму залежить від чистоти. Пил, бруд, пташиний послід, дощові сліди та сажа можуть знижувати
-                    продуктивність сонячних батарей до 30%. Регулярне очищення допоможе зберегти максимальну
-                    ефективність і продовжити термін служби вашої системи.
-                </p>
-
-                <p>Ми пропонуємо професійне миття сонячних панелей із використанням безпечних технологій, що не
-                    пошкоджують їхню поверхню. Наші спеціалісти знають, як правильно очищати фотоелементи, щоб уникнути
-                    подряпин та механічних пошкоджень.</p>
+    {{-- Intro --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <span class="font-display text-sm font-semibold text-tryit-orange uppercase tracking-wider">Зелена
+                        енергія</span>
+                    <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-5">До 30% більше енергії з
+                        чистих панелей</h2>
+                    <p class="text-gray-600 leading-relaxed">Сонячні панелі — це вигідна інвестиція в екологічну енергію, але
+                        їх ефективність напряму залежить від чистоти. Пил, бруд, пташиний послід, дощові сліди та сажа
+                        можуть знижувати продуктивність сонячних батарей до 30%.</p>
+                    <p class="text-gray-600 leading-relaxed">Ми пропонуємо професійне миття сонячних панелей із використанням
+                        безпечних технологій, що не пошкоджують поверхню. Наші спеціалісти знають, як правильно очищати
+                        фотоелементи, щоб уникнути подряпин та механічних пошкоджень.</p>
+                </div>
+                <div class="relative">
+                    <img src="{{ Vite::asset('resources/images/service-2.jpg') }}"
+                        class="w-full rounded-2xl shadow-lg object-cover aspect-4/3" alt="Мийка сонячних панелей"
+                        loading="lazy" />
+                </div>
             </div>
         </div>
     </section>
 
-    <x-section class="pt-0">
-        <x-list type="number">
-            <x-slot:caption>
-                Чому важливо <span class="font-bold">регулярно</span> очищати <span class="text-tryit-orange">сонячні
-                    панелі</span>?
-            </x-slot>
-            <x-list.item index="1">
-                <b>Збільшення продуктивності</b> – чисті панелі поглинають більше сонячного світла, що підвищує їхню
-                ефективність.
-            </x-list.item>
-            <x-list.item index="2">
-                <b>Подовження терміну служби</b> – відсутність забруднень зменшує ризик перегріву та пошкодження
-                батарей.
-            </x-list.item>
-            <x-list.item index="3">
-                <b>Запобігання корозії</b> – своєчасне очищення запобігає появі нальоту, який може пошкодити панелі.
-            </x-list.item>
-            <x-list.item index="4">
-                <b>Зниження витрат на ремонт</b> – регулярний догляд дозволяє уникнути дорогих поломок.
-            </x-list.item>
-        </x-list>
+    <section class="mt-10">
+        <div class="max-w-5xl mx-auto px-5">
 
-        <x-list type="check">
-            <x-slot:caption>
-                <span class="font-bold">Як</span> ми <span class="text-tryit-orange">працюємо</span>?
-            </x-slot>
-            <x-list.item>
-                <b>Діагностика стану</b> – оцінюємо рівень забруднення та визначаємо найбільш ефективний метод очищення.
-            </x-list.item>
-            <x-list.item>
-                <b>Миття панелей</b> – використовуємо демінералізовану воду та м’які щітки, що не залишають подряпин.
-            </x-list.item>
-            <x-list.item>
-                <b>Перевірка результату</b> – контролюємо якість очищення, щоб гарантувати максимальну ефективність панелей.
-            </x-list.item>
-            <x-list.item>
-                <b>Рекомендації щодо догляду</b> – даємо поради щодо частоти миття та профілактичного обслуговування.
-            </x-list.item>
-        </x-list>
+            @include('partials.services-standarts')
 
-        <x-list type="check">
-            <x-slot:caption>
-                Які <span class="font-bold">об'єкти</span> ми <span class="text-tryit-orange">обслуговуємо</span>?
-            </x-slot>
-            <x-list.item>
-                Приватні будинки та дачі
-            </x-list.item>
-            <x-list.item>
-                Бізнес-центри та офіси
-            </x-list.item>
-            <x-list.item>
-                Промислові підприємства
-            </x-list.item>
-            <x-list.item>
-                Сільськогосподарські комплекси
-            </x-list.item>
-            <x-list.item>
-                Автономні сонячні станції
-            </x-list.item>
-        </x-list>
+            <x-table class="mt-15" striped>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Тип очищення</x-table.cell>
+                    <x-table.cell>Безконтактне/м’які щітки</x-table.cell>
+                </x-table.row>
 
-        <x-list type="number">
-            <x-slot:caption>
-                <span class="font-bold">Чому</span> варто обрати <span class="text-tryit-orange">нас</span>?
-            </x-slot>
-            <x-list.item index="1">
-                <b>Безконтактне та безпечне очищення</b> – не використовуємо абразиви та агресивну хімію.
-            </x-list.item>
-            <x-list.item index="2">
-                <b>Сучасне обладнання</b> – м'які щітки, очищена вода та професійні інструменти.
-            </x-list.item>
-            <x-list.item index="3">
-                <b>Досвідчені спеціалісти</b> – знаємо всі особливості догляду за сонячними батареями.
-            </x-list.item>
-            <x-list.item index="4">
-                <b>Гарантований результат</b> – максимальне видалення забруднень без шкоди для покриття.
-            </x-list.item>
-            <x-list.item index="5">
-                <b>Гнучкий графік</b> – працюємо у зручний для вас час, без відключення електростанції.
-            </x-list.item>
-        </x-list>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Вода</x-table.cell>
+                    <x-table.cell>0 ppm, без хімії</x-table.cell>
+                </x-table.row>
 
-        <x-blockquote class="mt-10">
-            <p>Замовте очищення сонячних панелей вже зараз! Подбайте про максимальну ефективність ваших сонячних батарей –
-                залиште заявку на сайті або зателефонуйте нам, і ми розрахуємо вартість послуги спеціально для вас.
-            </p>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Макс. площа/год</x-table.cell>
+                    <x-table.cell>150–200 м²</x-table.cell>
+                </x-table.row>
 
-            <p>Ваші панелі працюватимуть на 100% – довірте їх очищення професіоналам!</p>
-        </x-blockquote>
-    </x-section>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Тип панелей</x-table.cell>
+                    <x-table.cell>Монокристалічні, полікристалічні, тонкоплівкові</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Рекомендована частота</x-table.cell>
+                    <x-table.cell>2–4 рази/рік</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Температура</x-table.cell>
+                    <x-table.cell>0–40°C</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Мінімальне замовлення</x-table.cell>
+                    <x-table.cell>1 година роботи</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Тиск води</x-table.cell>
+                    <x-table.cell>2–3 бар</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Споживання води</x-table.cell>
+                    <x-table.cell>0.5–1.0 л/м²</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Висота робочої зони</x-table.cell>
+                    <x-table.cell>1–3 м (залежно від установки)</x-table.cell>
+                </x-table.row>
+            </x-table>
+        </div>
+    </section>
+
+    {{-- Why clean --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Чому важливо <span
+                    class="text-tryit-orange">очищати</span> панелі</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                @foreach ([['icon' => 'sun', 'title' => 'Більше енергії', 'desc' => 'Чисті панелі поглинають більше сонячного світла та підвищують ефективність'], ['icon' => 'clock', 'title' => 'Довший термін служби', 'desc' => 'Відсутність забруднень зменшує ризик перегріву та пошкодження'], ['icon' => 'shield-check', 'title' => 'Захист від корозії', 'desc' => 'Своєчасне очищення запобігає появі нальоту, який може пошкодити панелі'], ['icon' => 'piggy-bank', 'title' => 'Менше витрат', 'desc' => 'Регулярний догляд дозволяє уникнути дорогих поломок та ремонтів']] as $item)
+                    <div class="bg-white rounded-xl p-5 shadow-sm">
+                        <div class="size-10 rounded-lg bg-tryit-green/10 flex items-center justify-center mb-3">
+                            <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-green" stroke-width="1.5" />
+                        </div>
+                        <h3 class="font-display font-bold text-gray-900 text-sm mb-1.5">{{ $item['title'] }}</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $item['desc'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- For whom --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Які об'єкти ми <span
+                    class="text-tryit-orange">обслуговуємо</span></h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                @foreach ([['icon' => 'home', 'text' => 'Приватні будинки та дачі'], ['icon' => 'building-2', 'text' => 'Бізнес-центри та офіси'], ['icon' => 'factory', 'text' => 'Промислові підприємства'], ['icon' => 'tractor', 'text' => 'Сільськогосподарські комплекси'], ['icon' => 'zap', 'text' => 'Автономні сонячні станції']] as $item)
+                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl p-4">
+                        <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-orange shrink-0"
+                            stroke-width="1.5" />
+                        <span class="text-sm text-gray-700">{{ $item['text'] }}</span>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- How we work --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Як ми <span
+                    class="text-tryit-orange">працюємо</span></h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                @foreach ([['step' => '01', 'title' => 'Діагностика', 'desc' => 'Оцінюємо рівень забруднення та визначаємо найефективніший метод очищення', 'icon' => 'scan-search'], ['step' => '02', 'title' => 'Миття панелей', 'desc' => 'Демінералізована вода та м\'які щітки — без подряпин та пошкоджень', 'icon' => 'droplets'], ['step' => '03', 'title' => 'Перевірка', 'desc' => 'Контролюємо якість очищення для максимальної ефективності панелей', 'icon' => 'check-circle'], ['step' => '04', 'title' => 'Рекомендації', 'desc' => 'Даємо поради щодо частоти миття та профілактичного обслуговування', 'icon' => 'clipboard-list']] as $step)
+                    <div class="relative bg-white rounded-xl p-5 shadow-sm">
+                        <span
+                            class="font-display text-3xl font-black text-tryit-orange/10 absolute top-3 right-4">{{ $step['step'] }}</span>
+                        <div class="size-10 rounded-lg bg-tryit-orange/10 flex items-center justify-center mb-3">
+                            <x-dynamic-component :component="'lucide-' . $step['icon']" class="size-5 text-tryit-orange" stroke-width="1.5" />
+                        </div>
+                        <h3 class="font-display font-bold text-gray-900 text-sm mb-1.5">{{ $step['title'] }}</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $step['desc'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- Why us --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Чому <span
+                    class="text-tryit-orange">ми</span></h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                @foreach ([['icon' => 'hand', 'title' => 'Безконтактне очищення', 'desc' => 'Не використовуємо абразиви та агресивну хімію'], ['icon' => 'wrench', 'title' => 'Сучасне обладнання', 'desc' => 'М\'які щітки, очищена вода та професійні інструменти'], ['icon' => 'award', 'title' => 'Досвідчені спеціалісти', 'desc' => 'Знаємо всі особливості догляду за сонячними батареями'], ['icon' => 'badge-check', 'title' => 'Гарантований результат', 'desc' => 'Максимальне видалення забруднень без шкоди для покриття'], ['icon' => 'calendar-check', 'title' => 'Гнучкий графік', 'desc' => 'Працюємо у зручний для вас час, без відключення електростанції']] as $item)
+                    <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="size-10 rounded-lg bg-tryit-green/10 flex items-center justify-center shrink-0">
+                            <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-green" stroke-width="1.5" />
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-gray-900 text-sm mb-1">{{ $item['title'] }}</h3>
+                            <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $item['desc'] }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- CTA --}}
+    <section class="py-12 md:py-16 bg-tryit-green">
+        <div class="max-w-3xl mx-auto px-5 text-center">
+            <x-lucide-phone-call class="size-8 text-white/80 mx-auto mb-4" stroke-width="1.5" />
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-white mb-3">Подбайте про ефективність ваших панелей
+            </h2>
+            <p class="text-white/70 text-sm mb-6">Залиште заявку або зателефонуйте — і ми розрахуємо вартість очищення для
+                вашого об'єкта</p>
+            <a href="tel:+380978778667"
+                class="inline-flex items-center gap-2 bg-white text-tryit-green font-display font-bold text-sm px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors">
+                <x-lucide-phone class="size-4" stroke-width="2" />
+                +380 (97) 877-866-7
+            </a>
+        </div>
+    </section>
 @endsection

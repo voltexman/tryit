@@ -1,6 +1,10 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-DqshZORF.css",
+    "file": "assets/app-DBpMqK2b.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -13,7 +17,7 @@
     "src": "resources/images/header.webp"
   },
   "resources/images/icons/footer-instagram.svg": {
-    "file": "assets/footer-instagram-h8ZCbTru.svg",
+    "file": "assets/footer-instagram-DedDsU8h.svg",
     "src": "resources/images/icons/footer-instagram.svg"
   },
   "resources/images/icons/footer-telegram.svg": {
@@ -77,7 +81,7 @@
     "src": "resources/images/service-7.jpg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-DNxiirP_.js",
+    "file": "assets/app-DqWblADW.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true

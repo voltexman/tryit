@@ -12,117 +12,173 @@ name('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu');
 
 @section('header')
     <x-page-header image="{{ Vite::asset('resources/images/service-6.jpg') }}">
-        <x-slot:title>
-            Комплексне та підтримуюче прибирання офісу
-        </x-slot>
+        <x-slot:title>Комплексне та підтримуюче прибирання офісу</x-slot>
+        <x-slot:description>Чистота, комфорт і продуктивність вашого робочого простору</x-slot>
     </x-page-header>
 @endsection
 
 @section('content')
-    <section class="bg-tryit-cream/20 border-b border-tryit-orange/5 -mt-20 pt-32 pb-15 px-5">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-5 lg:gap-10">
-            <div class="lg:col-span-2">
-                <img src="{{ Vite::asset('resources/images/service-6.jpg') }}"
-                    class="size-full object-cover rounded-tl-xl rounded-br-xl rounded-tr-4xl rounded-bl-4xl shadow-xl"
-                    width="300" height="300" alt="">
-            </div>
-            <div class="lg:col-span-3 self-center">
-                <p><x-marker>Чистий і доглянутий офіс</x-marker> – це не лише приємна атмосфера для співробітників, а й
-                    важливий іміджевий фактор для клієнтів та партнерів. Регулярне прибирання допомагає підтримувати
-                    порядок, свіжість повітря та гігієну робочого простору, що сприяє підвищенню продуктивності та
-                    комфорту працівників.</p>
-
-                <p>Ми пропонуємо комплексне та підтримуюче прибирання офісних приміщень, яке включає в себе всі
-                    необхідні послуги для забезпечення чистоти та затишку в вашому робочому просторі.</p>
+    {{-- Intro --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <span class="font-display text-sm font-semibold text-tryit-orange uppercase tracking-wider">Офісний
+                        клінінг</span>
+                    <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-5">Чистий офіс — продуктивна
+                        робота</h2>
+                    <p class="text-gray-600 leading-relaxed">Чистий і доглянутий офіс — це не лише приємна атмосфера для
+                        співробітників, а й важливий іміджевий фактор для клієнтів та партнерів. Регулярне прибирання
+                        підтримує порядок, свіжість повітря та гігієну робочого простору.</p>
+                    <p class="text-gray-600 leading-relaxed">Ми пропонуємо комплексне та підтримуюче прибирання офісних
+                        приміщень — від щоденного догляду до генеральних прибирань.</p>
+                </div>
+                <div>
+                    <img src="{{ Vite::asset('resources/images/service-6.jpg') }}"
+                        class="w-full rounded-2xl shadow-lg object-cover aspect-4/3" alt="Прибирання офісу" loading="lazy" />
+                </div>
             </div>
         </div>
     </section>
 
-    <x-section class="pt-0">
-        <x-list type="check">
-            <x-slot:caption>
-                Що <span class="font-bold">входить</span> у <span class="text-tryit-orange">послугу</span>?
-            </x-slot>
-            <x-list.item>
-                Щоденне або планове прибирання – підмітання, вологе миття підлоги, видалення пилу
-            </x-list.item>
-            <x-list.item>
-                Очищення офісних меблів та техніки – протирання столів, стільців, шаф, оргтехніки
-            </x-list.item>
-            <x-list.item>
-                Винесення сміття – заміна сміттєвих пакетів, сортування відходів
-            </x-list.item>
-            <x-list.item>
-                Мийка вікон та скляних перегородок – без розводів і пилу
-            </x-list.item>
-            <x-list.item>
-                Дезінфекція санвузлів та кухонної зони – чистота та гігієна в місцях загального користування
-            </x-list.item>
-            <x-list.item>
-                Полив та догляд за офісними рослинами (за бажанням)
-            </x-list.item>
-        </x-list>
+    <section class="mt-10">
+        <div class="max-w-5xl mx-auto px-5">
 
-        <x-list type="check">
-            <x-slot:caption>
-                Кому <span class="font-bold">підходить</span> ця <span class="text-tryit-orange">послуга</span>?
-            </x-slot>
-            <x-list.item>
-                Офісам, бізнес-центрам та коворкінгам
-            </x-list.item>
-            <x-list.item>
-                Магазинам, салонам краси, клінікам
-            </x-list.item>
-            <x-list.item>
-                Державним установам та навчальним закладам
-            </x-list.item>
-            <x-list.item>
-                Приватним кабінетам, студіям та агентствам
-            </x-list.item>
-        </x-list>
+            @include('partials.services-standarts')
 
-        <x-list type="check">
-            <x-slot:caption>
-                <span class="font-bold">Як</span> ми <span class="text-tryit-orange">працюємо</span>?
-            </x-slot>
-            <x-list.item>
-                Консультація та вибір графіка – підлаштовуємо прибирання під ваш розклад
-            </x-list.item>
-            <x-list.item>
-                Прибирання з урахуванням особливостей офісу – дбайливо чистимо техніку, меблі, поверхні
-            </x-list.item>
-            <x-list.item>
-                Використання екологічних засобів – безпечних для людей та довкілля
-            </x-list.item>
-            <x-list.item>
-                Контроль якості – кожне прибирання виконується на вищому рівні
-            </x-list.item>
-        </x-list>
+            <x-table class="mt-15" striped>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Об’єкти</x-table.cell>
+                    <x-table.cell>Офіси, бізнес-центри, коворкінги, магазини, студії</x-table.cell>
+                </x-table.row>
 
-        <x-list type="check">
-            <x-slot:caption>
-                Чому <span class="font-bold">обирають</span> <span class="text-tryit-orange">нас</span>?
-            </x-slot>
-            <x-list.item>
-                Гнучкий графік роботи – щоденне, разове або генеральне прибирання
-            </x-list.item>
-            <x-list.item>
-                Професійні засоби та обладнання – безпечні та ефективні миючі засоби
-            </x-list.item>
-            <x-list.item>
-                Досвідчені співробітники – акуратність, швидкість, відповідальність
-            </x-list.item>
-            <x-list.item>
-                Гарантія чистоти – ваш офіс завжди виглядатиме ідеально
-            </x-list.item>
-        </x-list>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Частота</x-table.cell>
+                    <x-table.cell>Щоденно, 2–3 рази на тиждень або за графіком</x-table.cell>
+                </x-table.row>
 
-        <x-blockquote class="mt-10">
-            <p>Замовте професійне прибирання офісу вже сьогодні!</p>
-            <p>Не витрачайте час співробітників на прибирання – довірте це професіоналам! Ми подбаємо про ідеальний порядок
-                у вашому офісі.</p>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Зони очищення</x-table.cell>
+                    <x-table.cell>Підлоги, меблі, техніка, санвузли, кухні, вікна</x-table.cell>
+                </x-table.row>
 
-            <p>Чистий офіс – продуктивна робота!</p>
-        </x-blockquote>
-    </x-section>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Засоби</x-table.cell>
+                    <x-table.cell>Еко-сертифіковані, безпечні для людей та обладнання</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Час виконання</x-table.cell>
+                    <x-table.cell>30–120 хв/100 м² залежно від площі та складності</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Винесення сміття</x-table.cell>
+                    <x-table.cell>Регулярна заміна пакетів, сортування, вивіз за домовленістю</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Контроль якості</x-table.cell>
+                    <x-table.cell>Перевірка після кожного прибирання керівником бригади</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Продуктивність</x-table.cell>
+                    <x-table.cell>100–300 м²/год залежно від типу приміщення</x-table.cell>
+                </x-table.row>
+            </x-table>
+        </div>
+    </section>
+
+    {{-- What's included --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Що <span
+                    class="text-tryit-orange">входить</span> у послугу</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                @foreach ([['icon' => 'spray-can', 'title' => 'Щоденне прибирання', 'desc' => 'Підмітання, вологе миття підлоги, видалення пилу з усіх поверхонь'], ['icon' => 'monitor', 'title' => 'Очищення меблів і техніки', 'desc' => 'Протирання столів, стільців, шаф, оргтехніки'], ['icon' => 'trash-2', 'title' => 'Винесення сміття', 'desc' => 'Заміна сміттєвих пакетів та сортування відходів'], ['icon' => 'panel-top', 'title' => 'Мийка вікон', 'desc' => 'Очищення вікон та скляних перегородок без розводів'], ['icon' => 'bath', 'title' => 'Дезінфекція санвузлів', 'desc' => 'Чистота та гігієна в місцях загального користування'], ['icon' => 'flower-2', 'title' => 'Догляд за рослинами', 'desc' => 'Полив та догляд за офісними рослинами за бажанням']] as $item)
+                    <div class="bg-white rounded-xl p-5 shadow-sm">
+                        <div class="size-10 rounded-lg bg-tryit-green/10 flex items-center justify-center mb-3">
+                            <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-green" stroke-width="1.5" />
+                        </div>
+                        <h3 class="font-display font-bold text-gray-900 text-sm mb-1.5">{{ $item['title'] }}</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $item['desc'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- For whom --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Кому <span
+                    class="text-tryit-orange">підходить</span></h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                @foreach ([['icon' => 'building-2', 'text' => 'Офісам, бізнес-центрам та коворкінгам'], ['icon' => 'store', 'text' => 'Магазинам, салонам краси, клінікам'], ['icon' => 'landmark', 'text' => 'Державним установам та навчальним закладам'], ['icon' => 'briefcase', 'text' => 'Приватним кабінетам, студіям та агентствам']] as $item)
+                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl p-4">
+                        <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-orange shrink-0"
+                            stroke-width="1.5" />
+                        <span class="text-sm text-gray-700">{{ $item['text'] }}</span>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- How we work --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Як ми <span
+                    class="text-tryit-orange">працюємо</span></h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                @foreach ([['step' => '01', 'title' => 'Консультація', 'desc' => 'Підлаштовуємо графік прибирання під ваш розклад', 'icon' => 'calendar'], ['step' => '02', 'title' => 'Прибирання', 'desc' => 'Дбайливо чистимо техніку, меблі та поверхні', 'icon' => 'sparkles'], ['step' => '03', 'title' => 'Екозасоби', 'desc' => 'Безпечні для людей та навколишнього середовища', 'icon' => 'leaf'], ['step' => '04', 'title' => 'Контроль якості', 'desc' => 'Кожне прибирання виконується на вищому рівні', 'icon' => 'check-circle']] as $step)
+                    <div class="relative bg-white rounded-xl p-5 shadow-sm">
+                        <span
+                            class="font-display text-3xl font-black text-tryit-orange/10 absolute top-3 right-4">{{ $step['step'] }}</span>
+                        <div class="size-10 rounded-lg bg-tryit-orange/10 flex items-center justify-center mb-3">
+                            <x-dynamic-component :component="'lucide-' . $step['icon']" class="size-5 text-tryit-orange" stroke-width="1.5" />
+                        </div>
+                        <h3 class="font-display font-bold text-gray-900 text-sm mb-1.5">{{ $step['title'] }}</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $step['desc'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- Why us --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Чому <span
+                    class="text-tryit-orange">обирають нас</span></h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                @foreach ([['icon' => 'clock', 'title' => 'Гнучкий графік', 'desc' => 'Щоденне, разове або генеральне прибирання'], ['icon' => 'spray-can', 'title' => 'Професійні засоби', 'desc' => 'Безпечні та ефективні миючі засоби та обладнання'], ['icon' => 'users', 'title' => 'Досвідчена команда', 'desc' => 'Акуратність, швидкість та відповідальність'], ['icon' => 'badge-check', 'title' => 'Гарантія чистоти', 'desc' => 'Ваш офіс завжди виглядатиме ідеально']] as $item)
+                    <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="size-10 rounded-lg bg-tryit-green/10 flex items-center justify-center shrink-0">
+                            <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-green" stroke-width="1.5" />
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-gray-900 text-sm mb-1">{{ $item['title'] }}</h3>
+                            <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $item['desc'] }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- CTA --}}
+    <section class="py-12 md:py-16 bg-tryit-green">
+        <div class="max-w-3xl mx-auto px-5 text-center">
+            <x-lucide-phone-call class="size-8 text-white/80 mx-auto mb-4" stroke-width="1.5" />
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-white mb-3">Замовте прибирання офісу</h2>
+            <p class="text-white/70 text-sm mb-6">Довірте чистоту професіоналам — ми подбаємо про ідеальний порядок</p>
+            <a href="tel:+380978778667"
+                class="inline-flex items-center gap-2 bg-white text-tryit-green font-display font-bold text-sm px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors">
+                <x-lucide-phone class="size-4" stroke-width="2" />
+                +380 (97) 877-866-7
+            </a>
+        </div>
+    </section>
 @endsection

@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             FeedbackSeeder::class,
             ProductSeeder::class,
             GallerySeeder::class,
+            PostSeeder::class,
         ]);
 
         // User::factory(10)->create();

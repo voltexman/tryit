@@ -12,130 +12,176 @@ name('services.pisliabudivelne-prybyrannia');
 
 @section('header')
     <x-page-header image="{{ Vite::asset('resources/images/service-3.jpg') }}">
-        <x-slot:title>
-            Післябудівельне прибирання
-        </x-slot>
+        <x-slot:title>Післябудівельне прибирання</x-slot>
+        <x-slot:description>Комплексне очищення приміщень після ремонту та будівництва</x-slot>
     </x-page-header>
 @endsection
 
 @section('content')
-    <section class="bg-tryit-cream/20 border-b border-tryit-orange/5 -mt-20 pt-32 pb-15 px-5">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-5 lg:gap-10">
-            <div class="lg:col-span-2">
-                <img src="{{ Vite::asset('resources/images/service-3.jpg') }}"
-                    class="h-80 w-full object-cover rounded-tl-xl rounded-br-xl rounded-tr-4xl rounded-bl-4xl shadow-xl"
-                    width="300" height="300" alt="">
-            </div>
-            <div class="lg:col-span-3 self-center">
-                <p><x-marker>Будівництво чи ремонт</x-marker> – це завжди оновлення простору, але після завершення робіт
-                    залишаються пил, будівельне сміття, залишки фарби, цементний наліт та інші забруднення.
-                    Післябудівельне прибирання потребує професійного підходу, адже стандартні методи часто не дають бажаного
-                    результату.
-                </p>
-
-                <p>Ми пропонуємо комплексне та глибоке очищення приміщень після ремонту та будівництва. Наші фахівці
-                    мають необхідне обладнання та засоби, щоб видалити навіть найстійкіші забруднення, не пошкодивши нові
-                    покриття та поверхні.
-                </p>
+    {{-- Intro --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <span class="font-display text-sm font-semibold text-tryit-orange uppercase tracking-wider">Після
+                        ремонту</span>
+                    <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-5">Чистий простір після
+                        будь-якого ремонту</h2>
+                    <p class="text-gray-600 leading-relaxed">Будівництво чи ремонт — це завжди оновлення простору, але після
+                        завершення робіт залишаються пил, будівельне сміття, залишки фарби, цементний наліт та інші
+                        забруднення. Стандартні методи часто не дають бажаного результату.</p>
+                    <p class="text-gray-600 leading-relaxed">Ми пропонуємо комплексне та глибоке очищення приміщень після
+                        ремонту. Наші фахівці мають необхідне обладнання та засоби, щоб видалити навіть найстійкіші
+                        забруднення, не пошкодивши нові покриття та поверхні.</p>
+                </div>
+                <div class="relative">
+                    <img src="{{ Vite::asset('resources/images/service-3.jpg') }}"
+                        class="w-full rounded-2xl shadow-lg object-cover aspect-4/3" alt="Післябудівельне прибирання"
+                        loading="lazy" />
+                </div>
             </div>
         </div>
     </section>
 
-    <x-section class="pt-0">
-        <x-list type="check">
-            <x-slot:caption>
-                Що <span class="font-bold">входить</span> у <span class="text-tryit-orange">післябудівельне
-                    прибирання</span>?
-            </x-slot>
-            <x-list.item>
-                Видалення будівельного пилу з усіх поверхонь <i>(стіни, стеля, підлога, меблі)</i>
-            </x-list.item>
-            <x-list.item>
-                Очищення вікон, рам, підвіконь від пилу, фарби та клейких слідів
-            </x-list.item>
-            <x-list.item>
-                Вивіз будівельного сміття <i>(за домовленістю)</i>
-            </x-list.item>
-            <x-list.item>
-                Видалення плям цементу, фарби, клею та монтажної піни
-            </x-list.item>
-            <x-list.item>
-                Очищення сантехніки, кухонних поверхонь, освітлювальних приладів
-            </x-list.item>
-            <x-list.item>
-                Глибоке миття підлог та полірування покриттів
-            </x-list.item>
-            <x-list.item>
-                Дезінфекція приміщення
-            </x-list.item>
-        </x-list>
+    <section class="mt-10">
+        <div class="max-w-5xl mx-auto px-5">
 
-        <x-list type="check">
-            <x-slot:caption>
-                Кому <span class="font-bold">потрібна</span> ця <span class="text-tryit-orange">послуга</span>?
-            </x-slot>
-            <x-list.item>
-                Власникам квартир і будинків після ремонту
-            </x-list.item>
-            <x-list.item>
-                Бізнес-центрам і офісам після реконструкції
-            </x-list.item>
-            <x-list.item>
-                Магазинам, ресторанам, салонам після оновлення інтер'єру
-            </x-list.item>
-            <x-list.item>
-                Будівельним компаніям перед здачею об'єкта замовнику
-            </x-list.item>
-            <x-list.item>
-                Орендодавцям, які готують приміщення до заселення
-            </x-list.item>
-        </x-list>
+            @include('partials.services-standarts')
 
-        <x-list type="check">
-            <x-slot:caption>
-                <span class="font-bold">Як</span> ми <span class="text-tryit-orange">працюємо</span>?
-            </x-slot>
-            <x-list.item>
-                <b>Безкоштовна консультація</b> – уточнюємо обсяг робіт та особливості приміщення.
-            </x-list.item>
-            <x-list.item>
-                <b>Професійний підбір засобів</b> – використовуємо безпечну хімію, яка не пошкоджує поверхні.
-            </x-list.item>
-            <x-list.item>
-                <b>Глибоке очищення</b> – прибираємо пил, будівельне сміття та складні плями.
-            </x-list.item>
-            <x-list.item>
-                <b>Контроль якості</b> – перевіряємо кожен куточок, щоб усе було ідеально чистим.
-            </x-list.item>
-        </x-list>
+            <x-table class="mt-15" striped>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Площа/год</x-table.cell>
+                    <x-table.cell>100–200 м²</x-table.cell>
+                </x-table.row>
 
-        <x-list type="check">
-            <x-slot:caption>
-                Чому <span class="font-bold">варто</span> обрати <span class="text-tryit-orange">нас</span>?
-            </x-slot>
-            <x-list.item>
-                <b>Повний комплекс робіт</b> – не залишаємо жодної пилинки після ремонту!
-            </x-list.item>
-            <x-list.item>
-                <b>Безпечні миючі засоби</b> – екологічні та безпечні для здоров'я.
-            </x-list.item>
-            <x-list.item>
-                <b>Сучасне обладнання</b> – потужні пилососи, пароочисники, професійна хімія.
-            </x-list.item>
-            <x-list.item>
-                <b>Швидкість та якість</b> – прибирання виконується максимально оперативно.
-            </x-list.item>
-            <x-list.item>
-                <b>Гарантія чистоти</b> – ваш простір буде готовий до комфортного використання!
-            </x-list.item>
-        </x-list>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Мінімальне замовлення</x-table.cell>
+                    <x-table.cell>1–2 години роботи</x-table.cell>
+                </x-table.row>
 
-        <x-blockquote class="mt-10">
-            <p>Замовте післябудівельне прибирання вже зараз!</p>
-            <p>Не витрачайте свій час і сили на прибирання після ремонту – довірте це професіоналам! Залиште заявку на
-                сайті або телефонуйте, і ми швидко приведемо ваше приміщення до ладу.</p>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Тип поверхонь</x-table.cell>
+                    <x-table.cell>Стінові покриття, підлоги, скляні та металеві поверхні</x-table.cell>
+                </x-table.row>
 
-            <p>Ваше приміщення засяє чистотою – залиште всі турботи нам!</p>
-        </x-blockquote>
-    </x-section>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Обладнання</x-table.cell>
+                    <x-table.cell>Потужні пилососи, пароочисники, миючі машини</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Засоби</x-table.cell>
+                    <x-table.cell>Професійна хімія для будівельних забруднень</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Видалення сміття</x-table.cell>
+                    <x-table.cell>Так, організований вивіз <i>(за домовленістю)</i></x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Температура виконання</x-table.cell>
+                    <x-table.cell>5–35°C <i>(залежно від внутрішніх умов)</i></x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Вологість поверхні</x-table.cell>
+                    <x-table.cell>до 60% перед нанесенням хімії</x-table.cell>
+                </x-table.row>
+            </x-table>
+        </div>
+    </section>
+
+    {{-- What's included --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Що входить у <span
+                    class="text-tryit-orange">прибирання</span></h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                @foreach ([['icon' => 'wind', 'title' => 'Видалення пилу', 'desc' => 'Повне очищення стін, стелі, підлоги та меблів від будівельного пилу'], ['icon' => 'square-asterisk', 'title' => 'Вікна та рами', 'desc' => 'Очищення вікон, рам, підвіконь від пилу, фарби та клейких слідів'], ['icon' => 'trash-2', 'title' => 'Вивіз сміття', 'desc' => 'Збір та вивіз будівельного сміття за домовленістю'], ['icon' => 'eraser', 'title' => 'Видалення плям', 'desc' => 'Очищення від цементу, фарби, клею та монтажної піни'], ['icon' => 'bath', 'title' => 'Сантехніка та кухня', 'desc' => 'Очищення сантехніки, кухонних поверхонь та освітлювальних приладів'], ['icon' => 'sparkles', 'title' => 'Полірування підлог', 'desc' => 'Глибоке миття підлог, полірування покриттів та дезінфекція']] as $item)
+                    <div class="bg-white rounded-xl p-5 shadow-sm">
+                        <div class="size-10 rounded-lg bg-tryit-green/10 flex items-center justify-center mb-3">
+                            <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-green" stroke-width="1.5" />
+                        </div>
+                        <h3 class="font-display font-bold text-gray-900 text-sm mb-1.5">{{ $item['title'] }}</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $item['desc'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- For whom --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Для яких <span
+                    class="text-tryit-orange">об'єктів</span></h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                @foreach ([['icon' => 'home', 'text' => 'Квартири та будинки після ремонту'], ['icon' => 'building-2', 'text' => 'Бізнес-центри після реконструкції'], ['icon' => 'store', 'text' => 'Магазини та ресторани після оновлення'], ['icon' => 'hard-hat', 'text' => 'Об\'єкти перед здачею замовнику'], ['icon' => 'key', 'text' => 'Приміщення перед заселенням орендарів']] as $item)
+                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl p-4">
+                        <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-orange shrink-0"
+                            stroke-width="1.5" />
+                        <span class="text-sm text-gray-700">{{ $item['text'] }}</span>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- How we work --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Як ми <span
+                    class="text-tryit-orange">працюємо</span></h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                @foreach ([['step' => '01', 'title' => 'Консультація', 'desc' => 'Уточнюємо обсяг робіт та особливості приміщення безкоштовно', 'icon' => 'message-circle'], ['step' => '02', 'title' => 'Підбір засобів', 'desc' => 'Використовуємо безпечну хімію, яка не пошкоджує нові поверхні', 'icon' => 'flask-conical'], ['step' => '03', 'title' => 'Глибоке очищення', 'desc' => 'Прибираємо пил, будівельне сміття та складні плями', 'icon' => 'sparkles'], ['step' => '04', 'title' => 'Контроль якості', 'desc' => 'Перевіряємо кожен куточок, щоб усе було ідеально чистим', 'icon' => 'check-circle']] as $step)
+                    <div class="relative bg-white rounded-xl p-5 shadow-sm">
+                        <span
+                            class="font-display text-3xl font-black text-tryit-orange/10 absolute top-3 right-4">{{ $step['step'] }}</span>
+                        <div class="size-10 rounded-lg bg-tryit-orange/10 flex items-center justify-center mb-3">
+                            <x-dynamic-component :component="'lucide-' . $step['icon']" class="size-5 text-tryit-orange" stroke-width="1.5" />
+                        </div>
+                        <h3 class="font-display font-bold text-gray-900 text-sm mb-1.5">{{ $step['title'] }}</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $step['desc'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- Why us --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Чому <span
+                    class="text-tryit-orange">ми</span></h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                @foreach ([['icon' => 'layers', 'title' => 'Повний комплекс', 'desc' => 'Не залишаємо жодної пилинки після ремонту'], ['icon' => 'leaf', 'title' => 'Безпечні засоби', 'desc' => 'Екологічні та безпечні для здоров\'я миючі засоби'], ['icon' => 'cpu', 'title' => 'Сучасне обладнання', 'desc' => 'Потужні пилососи, пароочисники, професійна хімія'], ['icon' => 'zap', 'title' => 'Швидкість та якість', 'desc' => 'Прибирання виконується максимально оперативно'], ['icon' => 'badge-check', 'title' => 'Гарантія чистоти', 'desc' => 'Ваш простір буде готовий до комфортного використання']] as $item)
+                    <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="size-10 rounded-lg bg-tryit-green/10 flex items-center justify-center shrink-0">
+                            <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-green" stroke-width="1.5" />
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-gray-900 text-sm mb-1">{{ $item['title'] }}</h3>
+                            <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $item['desc'] }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- CTA --}}
+    <section class="py-12 md:py-16 bg-tryit-green">
+        <div class="max-w-3xl mx-auto px-5 text-center">
+            <x-lucide-phone-call class="size-8 text-white/80 mx-auto mb-4" stroke-width="1.5" />
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-white mb-3">Замовте прибирання після ремонту</h2>
+            <p class="text-white/70 text-sm mb-6">Не витрачайте час і сили — довірте очищення після будівництва
+                професіоналам</p>
+            <a href="tel:+380978778667"
+                class="inline-flex items-center gap-2 bg-white text-tryit-green font-display font-bold text-sm px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors">
+                <x-lucide-phone class="size-4" stroke-width="2" />
+                +380 (97) 877-866-7
+            </a>
+        </div>
+    </section>
 @endsection

@@ -12,119 +12,165 @@ name('services.khimchystka');
 
 @section('header')
     <x-page-header image="{{ Vite::asset('resources/images/service-5.jpg') }}">
-        <x-slot:title>
-            Хімчистка
-        </x-slot>
+        <x-slot:title>Хімчистка меблів, килимів та авто</x-slot>
+        <x-slot:description>Глибоке очищення тканин з відновленням свіжості та кольору</x-slot>
     </x-page-header>
 @endsection
 
 @section('content')
-    <section class="bg-tryit-cream/20 border-b border-tryit-orange/5 -mt-20 pt-32 pb-15 px-5">
-        <div class="max-w-7xl mx-auto grid lg:grid-cols-5 gap-5 lg:gap-10">
-            <div class="lg:col-span-2">
-                <img src="{{ Vite::asset('resources/images/service-5.jpg') }}"
-                    class="h-64 w-full object-cover rounded-tl-xl rounded-br-xl rounded-tr-4xl rounded-bl-4xl shadow-xl"
-                    width="300" height="300" alt="">
-            </div>
-            <div class="lg:col-span-3 self-center">
-                <p>Звичайне прибирання не завжди здатне впоратися зі складними плямами, пилом і неприємними запахами.
-                    Тканинні поверхні, меблі, килими та автомобільні салони потребують глибокого очищення, яке усуне не
-                    лише забруднення, а й бактерії та алергени.</p>
-
-                <p>Ми пропонуємо професійну хімчистку, яка поверне вашим речам первозданну чистоту та свіжість.
-                    Використовуємо безпечні мийні засоби, що не шкодять тканинам та навколишньому середовищу.</p>
+    {{-- Intro --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <span class="font-display text-sm font-semibold text-tryit-orange uppercase tracking-wider">Екстракційна
+                        технологія</span>
+                    <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-5">Друге життя для ваших
+                        меблів та килимів</h2>
+                    <p class="text-gray-600 leading-relaxed">Звичайне прибирання не завжди здатне впоратися зі складними
+                        плямами, пилом і неприємними запахами. Тканинні поверхні, меблі, килими та автомобільні салони
+                        потребують глибокого очищення, яке усуне не лише забруднення, а й бактерії та алергени.</p>
+                    <p class="text-gray-600 leading-relaxed">Ми пропонуємо професійну хімчистку, яка поверне вашим речам
+                        первозданну чистоту та свіжість. Використовуємо безпечні мийні засоби, що не шкодять тканинам та
+                        навколишньому середовищу.</p>
+                </div>
+                <div class="relative">
+                    <img src="{{ Vite::asset('resources/images/service-5.jpg') }}"
+                        class="w-full rounded-2xl shadow-lg object-cover aspect-4/3" alt="Хімчистка" loading="lazy" />
+                </div>
             </div>
         </div>
     </section>
 
-    <x-section class="pt-0">
-        <x-list type="check">
-            <x-slot:caption>
-                Що <span class="font-bold">входить</span> у <span class="text-tryit-orange">послугу</span>?
-            </x-slot>
-            <x-list.item>
-                <b>Хімчистка меблів</b> – диванів, крісел, матраців, офісних стільців
-            </x-list.item>
-            <x-list.item>
-                <b>Хімчистка килимів та килимових покриттів</b> – видалення плям, пилу, пилових кліщів
-            </x-list.item>
-            <x-list.item>
-                <b>Хімчистка автомобільного салону</b> – очищення сидінь, оббивки, килимків
-            </x-list.item>
-            <x-list.item>
-                <b>Чистка текстильних виробів</b> – штор, гардин, пледів
-            </x-list.item>
-            <x-list.item>
-                <b>Антиалергенна обробка</b> – знищення пилових кліщів, бактерій, грибків
-            </x-list.item>
-            <x-list.item>
-                <b>Безпечні засоби</b> – екологічна чистка без агресивних хімікатів
-            </x-list.item>
-        </x-list>
+    <section class="mt-10">
+        <div class="max-w-5xl mx-auto px-5">
 
-        <x-list type="check">
-            <x-slot:caption>
-                Кому <span class="font-bold">потрібна</span> ця <span class="text-tryit-orange">послуга</span>?
-            </x-slot>
-            <x-list.item>
-                <b>Власникам будинків і квартир</b> – для підтримання свіжості та чистоти
-            </x-list.item>
-            <x-list.item>
-                <b>Офісам, ресторанам, готелям</b> – для догляду за меблями та килимовими покриттями
-            </x-list.item>
-            <x-list.item>
-                <b>Автовласникам</b> – для очищення салону автомобіля від пилу, плям і запахів
-            </x-list.item>
-            <x-list.item>
-                <b>Алергікам</b> – для зменшення пилу та алергенів у приміщенні
-            </x-list.item>
-        </x-list>
+            @include('partials.services-standarts')
 
-        <x-list type="check">
-            <x-slot:caption>
-                <span class="font-bold">Як</span> ми <span class="text-tryit-orange">працюємо</span>?
-            </x-slot>
-            <x-list.item>
-                <b>Оцінка стану виробу</b> – визначаємо тип забруднень та підбираємо відповідний метод чищення.
-            </x-list.item>
-            <x-list.item>
-                <b>Попередня обробка</b> – нанесення спеціальних засобів для розчинення складних плям.
-            </x-list.item>
-            <x-list.item>
-                <b>Глибоке очищення</b> – екстракційна або пінна чистка професійним обладнанням.
-            </x-list.item>
-            <x-list.item>
-                <b>Сушка та провітрювання</b> – швидке висихання без залишкової вологи та запахів.
-            </x-list.item>
-        </x-list>
+            <x-table class="mt-15" striped>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Об’єкти</x-table.cell>
+                    <x-table.cell>Меблі, килими, штори, пледи, салони авто</x-table.cell>
+                </x-table.row>
 
-        <x-list type="check">
-            <x-slot:caption>
-                Чому <span class="font-bold">обирають</span> <span class="text-tryit-orange">нас</span>?
-            </x-slot>
-            <x-list.item>
-                <b>Глибоке очищення</b> – видаляємо навіть найскладніші плями та запахи
-            </x-list.item>
-            <x-list.item>
-                <b>Швидке висихання</b> – меблі та килими готові до використання вже через кілька годин
-            </x-list.item>
-            <x-list.item>
-                <b>Безпечні засоби</b> – не шкодять здоров’ю та підходять для алергіків
-            </x-list.item>
-            <x-list.item>
-                <b>Збереження кольору та текстури</b> – ваші речі залишаться яскравими та м’якими
-            </x-list.item>
-            <x-list.item>
-                Доступні ціни та індивідуальний підхід
-            </x-list.item>
-        </x-list>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Метод очищення</x-table.cell>
+                    <x-table.cell>Екстракційний, пінний, ручний</x-table.cell>
+                </x-table.row>
 
-        <x-blockquote class="mt-10">
-            <p>Замовте хімчистку вже сьогодні!</p>
-            <p>Подаруйте вашим меблям, килимам і автомобілю друге життя! Оформіть заявку на сайті або зателефонуйте, і ми
-                повернемо вашим речам ідеальну чистоту та свіжість.</p>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Час виконання</x-table.cell>
+                    <x-table.cell>30–120 хв залежно від об’єкта</x-table.cell>
+                </x-table.row>
 
-            <p>Чистота, комфорт і здоров'я – це просто!</p>
-        </x-blockquote>
-    </x-section>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Сушка</x-table.cell>
+                    <x-table.cell>Швидка, 1–3 години без запаху</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Продуктивність</x-table.cell>
+                    <x-table.cell>~1–3 м²/год <i>(залежно від типу поверхні)</i></x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Мінімальне замовлення</x-table.cell>
+                    <x-table.cell>1 одиниця об’єкта або від 30 хв роботи</x-table.cell>
+                </x-table.row>
+            </x-table>
+        </div>
+    </section>
+
+    {{-- What's included --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Що входить у <span
+                    class="text-tryit-orange">послугу</span></h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                @foreach ([['icon' => 'sofa', 'title' => 'Хімчистка меблів', 'desc' => 'Дивани, крісла, матраци, офісні стільці — видаляємо плями та запахи'], ['icon' => 'grid-2x2', 'title' => 'Килими та покриття', 'desc' => 'Видалення плям, пилу, пилових кліщів із килимових покриттів'], ['icon' => 'car', 'title' => 'Автомобільний салон', 'desc' => 'Очищення сидінь, оббивки, килимків від бруду та запахів'], ['icon' => 'blinds', 'title' => 'Текстильні вироби', 'desc' => 'Штори, гардини, пледи — делікатне очищення та відновлення'], ['icon' => 'shield-check', 'title' => 'Антиалергенна обробка', 'desc' => 'Знищення пилових кліщів, бактерій, грибків для здорового повітря'], ['icon' => 'leaf', 'title' => 'Безпечні засоби', 'desc' => 'Екологічна чистка без агресивних хімікатів, безпечно для дітей']] as $item)
+                    <div class="bg-white rounded-xl p-5 shadow-sm">
+                        <div class="size-10 rounded-lg bg-tryit-green/10 flex items-center justify-center mb-3">
+                            <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-green" stroke-width="1.5" />
+                        </div>
+                        <h3 class="font-display font-bold text-gray-900 text-sm mb-1.5">{{ $item['title'] }}</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $item['desc'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- For whom --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Кому <span
+                    class="text-tryit-orange">потрібна</span> послуга</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                @foreach ([['icon' => 'home', 'text' => 'Власникам будинків і квартир'], ['icon' => 'building-2', 'text' => 'Офісам, ресторанам, готелям'], ['icon' => 'car', 'text' => 'Автовласникам'], ['icon' => 'heart-pulse', 'text' => 'Алергікам та сім\'ям з дітьми']] as $item)
+                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl p-4">
+                        <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-orange shrink-0"
+                            stroke-width="1.5" />
+                        <span class="text-sm text-gray-700">{{ $item['text'] }}</span>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- How we work --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Як ми <span
+                    class="text-tryit-orange">працюємо</span></h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                @foreach ([['step' => '01', 'title' => 'Оцінка стану', 'desc' => 'Визначаємо тип забруднень та підбираємо відповідний метод чищення', 'icon' => 'search'], ['step' => '02', 'title' => 'Попередня обробка', 'desc' => 'Наносимо спеціальні засоби для розчинення складних плям', 'icon' => 'flask-conical'], ['step' => '03', 'title' => 'Глибоке очищення', 'desc' => 'Екстракційна або пінна чистка професійним обладнанням', 'icon' => 'sparkles'], ['step' => '04', 'title' => 'Сушка', 'desc' => 'Швидке висихання без залишкової вологи та неприємних запахів', 'icon' => 'wind']] as $step)
+                    <div class="relative bg-white rounded-xl p-5 shadow-sm">
+                        <span
+                            class="font-display text-3xl font-black text-tryit-orange/10 absolute top-3 right-4">{{ $step['step'] }}</span>
+                        <div class="size-10 rounded-lg bg-tryit-orange/10 flex items-center justify-center mb-3">
+                            <x-dynamic-component :component="'lucide-' . $step['icon']" class="size-5 text-tryit-orange" stroke-width="1.5" />
+                        </div>
+                        <h3 class="font-display font-bold text-gray-900 text-sm mb-1.5">{{ $step['title'] }}</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $step['desc'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- Why us --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Чому <span
+                    class="text-tryit-orange">ми</span></h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                @foreach ([['icon' => 'sparkles', 'title' => 'Глибоке очищення', 'desc' => 'Видаляємо навіть найскладніші плями та запахи'], ['icon' => 'timer', 'title' => 'Швидке висихання', 'desc' => 'Меблі та килими готові до використання вже через кілька годин'], ['icon' => 'shield-check', 'title' => 'Безпечні засоби', 'desc' => 'Не шкодять здоров\'ю та підходять для алергіків'], ['icon' => 'palette', 'title' => 'Збереження кольору', 'desc' => 'Ваші речі залишаться яскравими та м\'якими'], ['icon' => 'wallet', 'title' => 'Доступні ціни', 'desc' => 'Індивідуальний підхід та прозоре ціноутворення']] as $item)
+                    <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="size-10 rounded-lg bg-tryit-green/10 flex items-center justify-center shrink-0">
+                            <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-green" stroke-width="1.5" />
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-gray-900 text-sm mb-1">{{ $item['title'] }}</h3>
+                            <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $item['desc'] }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- CTA --}}
+    <section class="py-12 md:py-16 bg-tryit-green">
+        <div class="max-w-3xl mx-auto px-5 text-center">
+            <x-lucide-phone-call class="size-8 text-white/80 mx-auto mb-4" stroke-width="1.5" />
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-white mb-3">Подаруйте речам друге життя</h2>
+            <p class="text-white/70 text-sm mb-6">Замовте хімчистку сьогодні — і ми повернемо вашим меблям, килимам та
+                автомобілю ідеальну чистоту</p>
+            <a href="tel:+380978778667"
+                class="inline-flex items-center gap-2 bg-white text-tryit-green font-display font-bold text-sm px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors">
+                <x-lucide-phone class="size-4" stroke-width="2" />
+                +380 (97) 877-866-7
+            </a>
+        </div>
+    </section>
 @endsection

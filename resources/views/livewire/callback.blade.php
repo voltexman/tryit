@@ -8,7 +8,7 @@
     </div>
 @else
     <div class="flex flex-col">
-        <div class="text-lg font-semibold">Передзвоніть мені</div>
+        <div class="text-lg font-display font-semibold">Передзвоніть мені</div>
         <div class="relative">
             <form wire:submit="send">
                 <x-forms.input x-mask="+380 (99) 999-99-99" wire:model="callback.phone" wire:loading.attr="disabled"

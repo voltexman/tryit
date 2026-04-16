@@ -9,7 +9,7 @@
 @else
     <form wire:submit.prevent="save">
         <div class="flex flex-col gap-y-5">
-            <div class="text-xl text-center text-tryit-dark font-black uppercase">Замовити послугу</div>
+            <div class="text-xl text-center text-tryit-dark font-display font-black uppercase">Замовити послугу</div>
 
             <x-forms.input wire:model="order.name" maxLength="40" placeholder="Ваше ім'я" wire:target="save"
                 wire:loading.attr="disabled" />
