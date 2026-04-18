@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\FeedbackResource\Pages;
+namespace App\Filament\Resources\Feedback\Pages;
 
-use App\Filament\Resources\FeedbackResource;
+use App\Filament\Resources\Feedback\FeedbackResource;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateFeedback extends CreateRecord

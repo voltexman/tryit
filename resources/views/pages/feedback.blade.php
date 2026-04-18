@@ -1,3 +1,8 @@
+<?php
+use function Laravel\Folio\name;
+name('feedback');
+?>
+
 @extends('layouts.base')
 
 @section('header')

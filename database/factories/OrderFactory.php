@@ -4,10 +4,11 @@ namespace Database\Factories;
 
 use App\Enums\OrderStatus;
 use App\Enums\ServiceEnum;
+use App\Models\Order;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Order>
+ * @extends Factory<Order>
  */
 class OrderFactory extends Factory
 {

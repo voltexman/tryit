@@ -1,7 +1,5 @@
 <?php
-
 use function Laravel\Folio\name;
-
 name('legal.privacy-policy');
 ?>
 
@@ -93,7 +91,7 @@ name('legal.privacy-policy');
                     <h2 class="font-display text-lg md:text-xl font-bold text-gray-900 mb-3">Файли cookie та технології</h2>
                     <div class="text-sm text-gray-600 leading-relaxed space-y-2">
                         <p class="mb-0">Ми використовуємо файли cookie для збору аналітичної інформації та покращення роботи сайту. Ви можете змінити налаштування браузера для відмови від використання cookie, проте це може вплинути на функціональність сайту.</p>
-                        <p class="mb-0">Детальніше — на сторінці <a href="{{ route('cookie-policy') }}" class="text-tryit-green font-semibold hover:underline">Політика cookies</a>.</p>
+                        <p class="mb-0">Детальніше — на сторінці <a href="{{ route('legal.cookie-policy') }}" class="text-tryit-green font-semibold hover:underline">Політика cookies</a>.</p>
                     </div>
                 </x-policy-section>
 

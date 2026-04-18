@@ -89,19 +89,6 @@
 
     @yield('content')
 
-    <x-modal>
-        <x-slot:trigger>
-            <button x-data="orderModal" x-show="isVisible" @scroll.window="showModal" x-init="showModal"
-                type="button" x-on:click="open = true" x-transition.opacity.duration.500ms x-cloak
-                class="flex justify-center items-center fixed bottom-5 right-5 lg:bottom-8 lg:right-8 rounded-full size-14 bg-tryit-orange/80 cursor-pointer shadow-lg hover:bg-tryit-orange transition duration-300">
-                <x-lucide-list-todo class="size-6 stroke-white" stroke-width="1.5" />
-            </button>
-        </x-slot>
-        <x-slot:body>
-            <livewire:order />
-        </x-slot>
-    </x-modal>
-
     <footer class="bg-tryit-dark">
         {{-- Main footer --}}
         <div class="max-w-7xl mx-auto px-5 pt-14 pb-10">
@@ -110,23 +97,29 @@
                 {{-- Column 1: Brand --}}
                 <div class="lg:col-span-1">
                     <a href="{{ route('main') }}" class="inline-block mb-4">
-                        <img src="{{ Vite::asset('resources/images/logo.png') }}" class="h-10" width="120" height="40" alt="Логотип Try It" loading="lazy" />
+                        <img src="{{ Vite::asset('resources/images/logo.png') }}" class="h-10" width="120"
+                            height="40" alt="Логотип Try It" loading="lazy" />
                     </a>
                     <p class="text-tryit-cream/60 text-sm leading-relaxed mb-5">
-                        Професійна клінінгова компанія. Чистота вашого офісу, виробництва та дому &mdash; наша відповідальність.
+                        Професійна клінінгова компанія. Чистота вашого офісу, виробництва та дому &mdash; наша
+                        відповідальність.
                     </p>
                     <div class="flex items-center gap-3">
-                        <a href="https://www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr" target="_blank" aria-label="Instagram"
+                        <a href="https://www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr"
+                            target="_blank" aria-label="Instagram"
                             class="size-9 rounded-full bg-white/5 hover:bg-tryit-orange/20 flex items-center justify-center transition-colors duration-300">
-                            <img src="{{ Vite::asset('resources/images/icons/footer-instagram.svg') }}" class="size-4" loading="lazy" alt="" />
+                            <img src="{{ Vite::asset('resources/images/icons/footer-instagram.svg') }}" class="size-4"
+                                loading="lazy" alt="" />
                         </a>
                         <a href="#" aria-label="Telegram"
                             class="size-9 rounded-full bg-white/5 hover:bg-tryit-orange/20 flex items-center justify-center transition-colors duration-300">
-                            <img src="{{ Vite::asset('resources/images/icons/footer-telegram.svg') }}" class="size-4" loading="lazy" alt="" />
+                            <img src="{{ Vite::asset('resources/images/icons/footer-telegram.svg') }}" class="size-4"
+                                loading="lazy" alt="" />
                         </a>
                         <a href="viber://chat?number=380978778667" aria-label="Viber"
                             class="size-9 rounded-full bg-white/5 hover:bg-tryit-orange/20 flex items-center justify-center transition-colors duration-300">
-                            <img src="{{ Vite::asset('resources/images/icons/footer-viber.svg') }}" class="size-4" loading="lazy" alt="" />
+                            <img src="{{ Vite::asset('resources/images/icons/footer-viber.svg') }}" class="size-4"
+                                loading="lazy" alt="" />
                         </a>
                     </div>
                 </div>
@@ -135,12 +128,24 @@
                 <div>
                     <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Послуги</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="{{ route('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu') }}" class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Прибирання офісів</a></li>
-                        <li><a href="{{ route('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva') }}" class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Прибирання виробництв</a></li>
-                        <li><a href="{{ route('services.myttia-fasadu-ta-vikon-na-vysoti') }}" class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Миття фасадів та вікон</a></li>
-                        <li><a href="{{ route('services.khimchystka') }}" class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Хімчистка</a></li>
-                        <li><a href="{{ route('services.pisliabudivelne-prybyrannia') }}" class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Післябудівельне прибирання</a></li>
-                        <li><a href="{{ route('services') }}" class="text-tryit-orange text-sm font-semibold hover:text-tryit-orange/80 transition-colors">Всі послуги &rarr;</a></li>
+                        <li><a href="{{ route('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu') }}"
+                                class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Прибирання
+                                офісів</a></li>
+                        <li><a href="{{ route('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva') }}"
+                                class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Прибирання
+                                виробництв</a></li>
+                        <li><a href="{{ route('services.myttia-fasadu-ta-vikon-na-vysoti') }}"
+                                class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Миття
+                                фасадів та вікон</a></li>
+                        <li><a href="{{ route('services.khimchystka') }}"
+                                class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Хімчистка</a>
+                        </li>
+                        <li><a href="{{ route('services.pisliabudivelne-prybyrannia') }}"
+                                class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Післябудівельне
+                                прибирання</a></li>
+                        <li><a href="{{ route('services') }}"
+                                class="text-tryit-orange text-sm font-semibold hover:text-tryit-orange/80 transition-colors">Всі
+                                послуги &rarr;</a></li>
                     </ul>
                 </div>
 
@@ -148,15 +153,29 @@
                 <div>
                     <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Компанія</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="{{ route('blog') }}" class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Блог</a></li>
-                        <li><a href="{{ route('gallery') }}" class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Галерея</a></li>
-                        <li><a href="{{ route('feedback') }}" class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Зворотній зв'язок</a></li>
-                        <li class="pt-2 border-t border-white/5">
-                            <a href="{{ route('legal.privacy-policy') }}" class="text-tryit-cream/40 text-xs hover:text-tryit-cream/70 transition-colors">Політика конфіденційності</a>
+                        <li><a href="{{ route('blog') }}"
+                                class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Блог</a>
                         </li>
-                        <li><a href="{{ route('legal.terms-of-service') }}" class="text-tryit-cream/40 text-xs hover:text-tryit-cream/70 transition-colors">Умови надання послуг</a></li>
-                        <li><a href="{{ route('legal.guarantee-policy') }}" class="text-tryit-cream/40 text-xs hover:text-tryit-cream/70 transition-colors">Гарантії та повернення</a></li>
-                        <li><a href="{{ route('legal.cookie-policy') }}" class="text-tryit-cream/40 text-xs hover:text-tryit-cream/70 transition-colors">Політика cookies</a></li>
+                        <li><a href="{{ route('gallery') }}"
+                                class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Галерея</a>
+                        </li>
+                        <li><a href="{{ route('feedback') }}"
+                                class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Зворотній
+                                зв'язок</a></li>
+                        <li class="pt-2 border-t border-white/5">
+                            <a href="{{ route('legal.privacy-policy') }}"
+                                class="text-tryit-cream/40 text-xs hover:text-tryit-cream/70 transition-colors">Політика
+                                конфіденційності</a>
+                        </li>
+                        <li><a href="{{ route('legal.terms-of-service') }}"
+                                class="text-tryit-cream/40 text-xs hover:text-tryit-cream/70 transition-colors">Умови
+                                надання послуг</a></li>
+                        <li><a href="{{ route('legal.guarantee-policy') }}"
+                                class="text-tryit-cream/40 text-xs hover:text-tryit-cream/70 transition-colors">Гарантії
+                                та повернення</a></li>
+                        <li><a href="{{ route('legal.cookie-policy') }}"
+                                class="text-tryit-cream/40 text-xs hover:text-tryit-cream/70 transition-colors">Політика
+                                cookies</a></li>
                     </ul>
                 </div>
 
@@ -166,18 +185,23 @@
                     <ul class="space-y-3">
                         <li>
                             <a href="tel:+380978778667" class="flex items-center gap-2.5 group">
-                                <div class="size-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-tryit-orange/20 transition-colors">
+                                <div
+                                    class="size-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-tryit-orange/20 transition-colors">
                                     <x-lucide-phone class="size-4 text-tryit-cream/70" stroke-width="1.5" />
                                 </div>
-                                <span class="text-tryit-cream/80 text-sm font-semibold group-hover:text-white transition-colors">+380 (97) 877-866-7</span>
+                                <span
+                                    class="text-tryit-cream/80 text-sm font-semibold group-hover:text-white transition-colors">+380
+                                    (97) 877-866-7</span>
                             </a>
                         </li>
                         <li>
                             <a href="mailto:info@tryit.com.ua" class="flex items-center gap-2.5 group">
-                                <div class="size-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-tryit-orange/20 transition-colors">
+                                <div
+                                    class="size-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-tryit-orange/20 transition-colors">
                                     <x-lucide-mail class="size-4 text-tryit-cream/70" stroke-width="1.5" />
                                 </div>
-                                <span class="text-tryit-cream/80 text-sm group-hover:text-white transition-colors">info@tryit.com.ua</span>
+                                <span
+                                    class="text-tryit-cream/80 text-sm group-hover:text-white transition-colors">info@tryit.com.ua</span>
                             </a>
                         </li>
                         <li>
@@ -186,8 +210,10 @@
                                     <x-lucide-clock class="size-4 text-tryit-cream/70" stroke-width="1.5" />
                                 </div>
                                 <div class="text-sm">
-                                    <span class="text-tryit-cream/80 font-semibold">Пн–Пт:</span> <span class="text-tryit-cream/60">08:00 – 20:00</span><br>
-                                    <span class="text-tryit-cream/80 font-semibold">Сб–Нд:</span> <span class="text-tryit-cream/60">09:00 – 18:00</span>
+                                    <span class="text-tryit-cream/80 font-semibold">Пн–Пт:</span> <span
+                                        class="text-tryit-cream/60">08:00 – 20:00</span><br>
+                                    <span class="text-tryit-cream/80 font-semibold">Сб–Нд:</span> <span
+                                        class="text-tryit-cream/60">09:00 – 18:00</span>
                                 </div>
                             </div>
                         </li>

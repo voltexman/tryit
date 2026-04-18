@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Filament\Resources\FeedbackResource\Pages;
+namespace App\Filament\Resources\Feedback\Pages;
 
-use App\Filament\Resources\FeedbackResource;
-use Filament\Actions;
+use App\Filament\Resources\Feedback\FeedbackResource;
+use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
 class EditFeedback extends EditRecord
@@ -13,7 +13,7 @@ class EditFeedback extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            DeleteAction::make(),
         ];
     }
 }

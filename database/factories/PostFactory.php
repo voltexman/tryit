@@ -25,7 +25,7 @@ class PostFactory extends Factory
         $title = fake()->unique()->randomElement($titles);
 
         $paragraphs = fake()->paragraphs(rand(6, 12));
-        $body = implode("\n\n", array_map(fn($p) => '<p>' . $p . '</p>', $paragraphs));
+        $body = implode("\n\n", array_map(fn ($p) => '<p>'.$p.'</p>', $paragraphs));
 
         $coverImages = [
             'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200',

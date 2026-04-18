@@ -23,59 +23,23 @@ name('gallery');
 @endsection
 
 @section('content')
-    <x-section>
-        <div x-data="{
-            images: {{ collect($images)->map(fn($image) => ['url' => $image->getFirstMediaUrl('gallery', 'preview'), 'description' => $image->description, 'title' => $image->title]) }},
-            currentIndex: 0,
-            showLightbox: false
-        }" class="grid grid-cols-2 lg:grid-cols-5 gap-5 justify-center"
-            @keydown.left.window="currentIndex = (currentIndex - 1 + images.length) % images.length"
-            @keydown.right.window="currentIndex = (currentIndex + 1) % images.length" x-cloak>
-
-            <!-- Image thumbnails -->
-            <template x-for="(image, index) in images" :key="index">
-                <img :src="image.url"
-                    class="rounded-lg shadow-md cursor-pointer transform transition duration-300 hover:scale-105 hover:rotate-4 hover:shadow-xl shadow-black/30 lg:sepia-50 hover:sepia-0"
-                    @click="currentIndex = index; showLightbox = true">
-            </template>
-
-            <!-- Lightbox modal -->
-            <div x-show="showLightbox"
-                class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50"
-                x-transition:leave="transition ease-in duration-250" x-transition:leave-start="opacity-100"
-                x-transition:leave-end="opacity-0" @keyup.esc.window="showLightbox = false" x-init="$watch('showLightbox', value => document.body.style.overflow = value ? 'hidden' : '')">
-
-                <!-- Close button -->
-                <span class="absolute top-5 right-5 text-white text-3xl cursor-pointer" @click="showLightbox = false">
-                    <x-lucide-x class="size-8" />
-                </span>
-
-                <!-- Left arrow -->
-                <span
-                    class="absolute rounded-full size-12 hover:bg-tryit-orange/5 hover:border border-white/30 flex items-center justify-center left-0 lg:left-5 text-white text-3xl cursor-pointer"
-                    @click.stop="currentIndex = (currentIndex - 1 + images.length) % images.length">
-                    <x-lucide-chevron-left class="size-8" />
-                </span>
-
-                <!-- Image -->
-                <div class="max-w-[80%] max-h-[80%] flex flex-col lg:flex-row" @click.outside="showLightbox = false">
-                    <div class="grow overflow-hidden rounded-xl">
-                        <img :src="images[currentIndex].url" class="transition-opacity duration-500">
-                    </div>
-                    <div x-show="images[currentIndex].title || images[currentIndex].description"
-                        class="w-full grow max-w-sm lg:ps-10 mt-5 lg:mt-0 flex flex-col">
-                        <span class="text-white text-lg font-bold mb-5" x-text="images[currentIndex].title"></span>
-                        <span class="text-white font-normal" x-text="images[currentIndex].description"></span>
-                    </div>
+    <main class="max-w-7xl mx-auto px-4 pb-20">
+        <div class="mt-20 bg-[#2D6A4F] rounded-3xl p-8 md:p-12 text-center text-white shadow-xl relative overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="text-3xl font-bold mb-4">Бажаєте такий самий результат?</h2>
+                <p class="text-blue-100 mb-8 text-lg">Залиште заявку сьогодні та отримайте знижку 10% на перше замовлення!
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#"
+                        class="bg-white text-[#2D6A4F] px-8 py-4 rounded-xl font-bold hover:bg-blue-50 transition">
+                        Замовити прибирання
+                    </a>
+                    <a href="#"
+                        class="bg-[#2D6A4F] text-white border border-white px-8 py-4 rounded-xl font-bold hover:bg-[#2D6A4F] transition">Консультація</a>
                 </div>
-
-                <!-- Right arrow -->
-                <span
-                    class="absolute rounded-full size-12 hover:bg-tryit-orange/5 hover:border border-white/30 flex items-center justify-center right-0 lg:right-5 text-white text-3xl cursor-pointer"
-                    @click.stop="currentIndex = (currentIndex + 1) % images.length">
-                    <x-lucide-chevron-right class="size-8" />
-                </span>
             </div>
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-green-500 rounded-full opacity-50"></div>
+            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-green-700 rounded-full opacity-50"></div>
         </div>
-    </x-section>
+    </main>
 @endsection
