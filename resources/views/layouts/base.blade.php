@@ -13,6 +13,8 @@
     <link rel="shortcut icon" href="favicon.ico">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    @livewireStyles
 </head>
 
 <body x-data="{ loading: true }" class="font-sans antialiased">
@@ -89,9 +91,9 @@
 
     @yield('content')
 
-    <footer class="bg-tryit-dark">
+    <footer class="bg-stone-900">
         {{-- Main footer --}}
-        <div class="max-w-7xl mx-auto px-5 pt-14 pb-10">
+        <div class="max-w-6xl mx-auto px-5 pt-14 pb-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
 
                 {{-- Column 1: Brand --}}
@@ -125,7 +127,7 @@
                 </div>
 
                 {{-- Column 2: Services --}}
-                <div>
+                <div class="hidden lg:block">
                     <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Послуги</h4>
                     <ul class="space-y-2.5">
                         <li><a href="{{ route('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu') }}"
@@ -232,27 +234,18 @@
 
         {{-- Bottom bar --}}
         <div class="border-t border-white/5">
-            <div class="max-w-7xl mx-auto px-5 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
+            <div class="max-w-7xl mx-auto px-5 py-5 flex flex-col md:flex-row items-center justify-between gap-0.5">
                 <span class="text-xs text-tryit-cream/40 text-center">
                     &copy; {{ date('Y') }} {{ config('app.name') }}. Всі права застережено.
                 </span>
                 <span class="text-xs text-tryit-cream/30">
-                    Розробка сайту &mdash; Try It Team
+                    Розробка сайту &mdash; <a href="#" class="">LEV</a>
                 </span>
             </div>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('alpine:init', () => {
-            Alpine.data('orderModal', () => ({
-                isVisible: false,
-                showModal() {
-                    this.isVisible = window.pageYOffset >= 550 ? true : false;
-                }
-            }));
-        });
-    </script>
+    @livewireScripts
 </body>
 
 </html>

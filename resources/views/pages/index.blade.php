@@ -55,11 +55,11 @@ name('main');
 
                 <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a href="#"
-                        class="w-full sm:w-auto px-8 py-4 bg-emerald-600 text-white font-bold rounded-2xl shadow-lg shadow-emerald-200 hover:bg-emerald-700 hover:-translate-y-1 transition-all">
+                        class="font-display w-full sm:w-auto px-8 py-4 bg-emerald-600 text-white font-bold rounded-full shadow-lg shadow-emerald-200 hover:bg-emerald-700 hover:-translate-y-1 transition-all">
                         Замовити прибирання
                     </a>
                     <a href="#"
-                        class="w-full sm:w-auto px-8 py-4 bg-tryit-orange text-white font-bold rounded-2xl border border-slate-200 hover:bg-slate-50 transition-all">
+                        class="font-display w-full sm:w-auto px-8 py-4 bg-tryit-orange text-white font-bold rounded-full hover:bg-amber-600 transition-all">
                         Наші послуги
                     </a>
                 </div>
@@ -726,35 +726,282 @@ name('main');
         </div>
     </section>
 
+    <section x-data="{ scroll: 0 }" x-init="window.addEventListener('scroll', () => { scroll = window.scrollY })"
+        class="relative overflow-hidden shadow-inner bg-cover bg-no-repeat bg-fixed"
+        :style="`background-image: url('{{ Vite::asset('resources/images/header.webp') }}');`">
 
-    <style>
-        @keyframes float {
-            0% {
-                transform: translateY(0px) rotate(var(--tw-rotate, 0deg));
-            }
+        <div class="absolute inset-0 bg-emerald-950/90 z-0"></div>
 
-            50% {
-                transform: translateY(-20px) rotate(var(--tw-rotate, 0deg));
-            }
 
-            100% {
-                transform: translateY(0px) rotate(var(--tw-rotate, 0deg));
-            }
-        }
+        <div class="absolute top-0 right-0 size-64 bg-emerald-500/10 blur-[100px] rounded-full z-10"></div>
 
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-    </style>
+        <div class="max-w-4xl mx-auto py-20 px-5 relative z-20">
+            <div class="flex flex-col items-center">
+                <span
+                    class="inline-flex items-center px-3 py-1 rounded-full bg-slate-900/30 text-emerald-400 text-[10px] font-bold uppercase tracking-tighter border border-slate-700/50">
+                    Про компанію
+                </span>
+
+                <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tighter leading-tight text-slate-50">
+                    Чому обирають <span class="text-emerald-400">нас</span>?
+                </h2>
+
+                <div class="space-y-4 text-emerald-50 leading-relaxed text-center text-balance font-light mt-5">
+                    <p>
+                        Наша клінінгова компанія — це професійний сервіс, який допомагає підтримувати чистоту у вашому
+                        домі чи офісі. Ми використовуємо сучасні методи та відповідально ставимося до кожного
+                        замовлення.
+                    </p>
+                    <p>
+                        Від генерального прибирання до спеціалізованого догляду за меблями. Наша мета — зробити ваш
+                        простір ідеально чистим, де кожен вдих приносить задоволення.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-10">
+                    <div>
+                        <div class="size-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                            <x-lucide-award class="size-7 stroke-emerald-500" />
+                        </div>
+                        <h4 class="text-emerald-400 font-bold mb-2">12+ років досвіду</h4>
+                        <p class="text-emerald-100/60 text-base leading-normal">
+                            Понад десятиліття допомагаємо підтримувати чистоту, відточуючи кожну деталь сервісу.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="size-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                            <x-lucide-users class="size-7 stroke-emerald-500" />
+                        </div>
+                        <h4 class="text-emerald-400 font-bold mb-2">300+ задоволених клієнтів</h4>
+                        <p class="text-emerald-100/60 text-base leading-normal">
+                            Нам довіряють і рекомендують — більшість клієнтів повертаються до нас знову.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="size-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
+                            <x-lucide-badge-check class="size-7 stroke-emerald-500" />
+                        </div>
+                        <h4 class="text-emerald-400 font-bold mb-2">100% гарантія якості</h4>
+                        <p class="text-emerald-100/60 text-base leading-normal">
+                            Ми впевнені у результаті: якщо щось не влаштує — безкоштовно виправимо.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white relative overflow-hidden">
+        <div
+            class="absolute top-1/2 left-0 w-full h-1 bg-linear-to-r from-transparent via-emerald-100 to-transparent -translate-y-1/2 hidden lg:block">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-5 relative">
+            {{-- Subtle Background Image --}}
+            <div class="absolute inset-0 opacity-30 pointer-events-none z-0">
+                <img src="https://demo2.pavothemes.com/cetro/wp-content/uploads/2025/07/h1-asked.png"
+                    class="size-full object-cover grayscale-100 opacity-40 scale-75" alt="">
+            </div>
+            <div class="text-center mb-10 lg:mb-20">
+                <span class="text-emerald-600 font-extrabold tracking-[0.3em] uppercase text-xs">Алгоритм затишку</span>
+                <h2 class="text-3xl lg:text-5xl font-black text-slate-900 mt-4 tracking-tighter text-balance">
+                    Ваш час занадто <span class="text-emerald-500">дорогий</span>, <br>
+                    щоб <span class="text-emerald-500">витрачати</span> його на бруд
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-10 relative">
+
+                <div class="group relative pt-5">
+                    <div
+                        class="absolute top-0 left-0 text-[10rem] font-black text-slate-50 leading-none select-none z-0 transition-colors">
+                        01</div>
+
+                    <div
+                        class="relative z-10 bg-slate-100 p-8 rounded-3xl border border-slate-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:border-emerald-200">
+                        <div
+                            class="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:bg-emerald-600 group-hover:rotate-[10deg] transition-all duration-500">
+                            <i class="fas fa-fingerprint text-white text-2xl"></i>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Спринт-замовлення</h3>
+                        <p class="text-slate-500 leading-relaxed mb-6 text-sm">
+                            Замість довгих анкет — лише 3 поля. Оберіть тип прибирання, адресу та зручний час. Система
+                            миттєво призначить найкращого клінера поруч.
+                        </p>
+
+                        <div class="flex items-center gap-2 text-emerald-600 font-bold text-xs uppercase tracking-wider">
+                            <span class="w-8 h-px bg-emerald-600"></span>
+                            Займає 45 секунд
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative pt-5 lg:mt-15">
+                    <div
+                        class="absolute top-0 left-0 text-[10rem] font-black text-slate-50 leading-none select-none z-0 transition-colors group-hover:text-blue-50">
+                        02</div>
+
+                    <div
+                        class="relative z-10 bg-slate-900 p-8 rounded-3xl shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
+                        <div
+                            class="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-emerald-500/40 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-sparkles text-white text-2xl"></i>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white mb-4">Магія в процесі</h3>
+                        <p class="text-slate-400 leading-relaxed mb-6 text-sm">
+                            Клінер приїжджає з повним набором: від еко-засобів до HEPA-пилососа. Вам не потрібно навіть
+                            давати ганчірку. Відпочивайте або займайтеся справами.
+                        </p>
+
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 rounded-full text-emerald-400 text-[10px] font-bold uppercase tracking-tighter border border-slate-700">
+                            <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            Клінер вже в дорозі
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative pt-5">
+                    <div
+                        class="absolute top-0 left-0 text-[10rem] font-black text-slate-50 leading-none select-none z-0 transition-colors group-hover:text-emerald-50">
+                        03</div>
+
+                    <div
+                        class="relative z-10 bg-stone-100 p-8 rounded-3xl border border-stone-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
+                        <div
+                            class="w-16 h-16 bg-white border-2 border-slate-900 rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:border-emerald-600 transition-all duration-500">
+                            <i class="fas fa-glass-water text-slate-900 text-2xl group-hover:text-emerald-600"></i>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Вдих на повні груди</h3>
+                        <p class="text-slate-500 leading-relaxed mb-6 text-sm">
+                            Прийміть ідеальну роботу. Оплата списується лише після вашого підтвердження. Ви отримуєте не
+                            просто чистий дім, а стан тотального спокою.
+                        </p>
+
+                        <div class="flex items-center gap-4">
+                            <div class="flex -space-x-2">
+                                <img class="w-8 h-8 rounded-full border-2 border-white"
+                                    src="https://i.pravatar.cc/100?u=1" alt="">
+                                <img class="w-8 h-8 rounded-full border-2 border-white"
+                                    src="https://i.pravatar.cc/100?u=2" alt="">
+                            </div>
+                            <span class="text-xs text-slate-400 font-medium">+10k щасливих осель</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-20 flex justify-center">
+                <button
+                    class="group relative px-8 py-4 bg-emerald-600 text-white font-semibold font-display tracking-wide rounded-full overflow-hidden transition-all hover:pr-14 active:scale-95 shadow-2xl shadow-emerald-500/20">
+                    <span class="relative z-10">Спробувати цей досвід</span>
+                    <x-lucide-move-right
+                        class="absolute size-6 right-6 top-1/2 -translate-y-1/2 ms-2 opacity-0 group-hover:opacity-100 transition-all" />
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 relative overflow-hidden bg-slate-100" x-data="{ active: 1 }">
+        <div class="max-w-3xl relative z-10 mx-auto px-5">
+            <div class="mb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                <div>
+                    <h2 class="font-display text-3xl font-black text-slate-900 tracking-tight">
+                        Питання та <span class="text-emerald-500">відповіді</span>
+                    </h2>
+                    <p class="text-slate-500 text-xs mt-1">Все, що варто знати перед замовленням</p>
+                </div>
+                <a href="#"
+                    class="inline-flex items-center gap-1.5 mt-5 lg:mt-0 text-xs font-semibold uppercase tracking-wide text-emerald-600 hover:text-emerald-700 transition-colors">
+                    Задати запитання <x-lucide-arrow-right class="size-4" stroke-width="2" />
+                </a>
+            </div>
+
+            <div class="space-y-2">
+                @foreach ([
+            [
+                'q' => 'Як розраховується вартість прибирання?',
+                'a' => 'Ціна залежить від кількості кімнат та типу прибирання (підтримуюче або генеральне). Ми не беремо доплат за ступінь забруднення — ви знаєте точну суму ще до приїзду клінера.',
+            ],
+            [
+                'q' => 'Чи потрібно мені надавати свій інвентар або хімію?',
+                'a' => 'Ні, наші клінери приїжджають з усім необхідним: професійними миючими засобами, серветками з мікрофібри та обладнанням. Від вас потрібен лише доступ до води.',
+            ],
+            [
+                'q' => 'Чи безпечні ваші засоби для дітей та тварин?',
+                'a' => 'Так, ми використовуємо сертифіковані еко-засоби, які є гіпоалергенними та повністю безпечними для домашніх улюбленців і маленьких дітей.',
+            ],
+            [
+                'q' => 'Скільки часу триває прибирання?',
+                'a' => 'Підтримуюче прибирання зазвичай займає 2-4 години, генеральне — від 5 до 8 годин, залежно від площі та складності робіт.',
+            ],
+            [
+                'q' => 'Чи обов’язково мені бути вдома під час процесу?',
+                'a' => 'Зовсім ні. Ви можете залишити ключі нашому менеджеру або просто впустити клінера і піти у своїх справах. Ми несемо повну матеріальну відповідальність за ваше майно.',
+            ],
+            [
+                'q' => 'Хто до мене приїде? Ви перевіряєте персонал?',
+                'a' => 'Кожен клінер проходить ретельний відбір, перевірку службою безпеки та навчання. У нас працюють лише перевірені фахівці з досвідом від 1 року.',
+            ],
+            [
+                'q' => 'Що робити, якщо мені не сподобається результат?',
+                'a' => 'Ми надаємо 100% гарантію якості. Якщо у вас виникнуть зауваження, повідомте нам протягом 24 годин, і ми безкоштовно виправимо всі недоліки.',
+            ],
+        ] as $item)
+                    <div class="bg-white overflow-hidden transition-all duration-300 rounded-2xl border border-gray-200"
+                        :class="active === {{ $loop->index }} ? 'shadow-xl shadow-emerald-500/5' : ''">
+                        <button @click="active = active === {{ $loop->index }} ? null : {{ $loop->index }}"
+                            class="w-full flex items-center justify-between p-4 md:p-5 text-left transition-all">
+                            <div class="flex items-center gap-4">
+                                <div class="size-10 rounded-xl flex items-center justify-center shrink-0 transition-colors"
+                                    :class="active === {{ $loop->index }} ? 'bg-emerald-600 text-white' :
+                                        'bg-slate-100 text-slate-400'">
+                                    <span class="font-display textsm font-bold">0{{ $loop->index + 1 }}</span>
+                                </div>
+                                <span class="font-bold text-sm md:text-base transition-colors"
+                                    :class="active === {{ $loop->index }} ? 'text-slate-900' : 'text-slate-700'">
+                                    {{ $item['q'] }}
+                                </span>
+                            </div>
+                            <div class="transition-transform duration-500 text-slate-300"
+                                :class="active === {{ $loop->index }} ? 'rotate-180 text-emerald-600' : ''">
+                                <i class="fas fa-chevron-down text-[10px]"></i>
+                            </div>
+                        </button>
+
+                        <div x-show="active === {{ $loop->index }}" x-collapse x-cloak>
+                            <div class="px-5 pb-5 ml-0 md:ml-14">
+                                <p class="text-slate-500 text-sm leading-relaxed max-w-xl">
+                                    {{ $item['a'] }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
     {{-- === BLOG === --}}
-    <section class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-5">
+    <section class="py-20 bg-stone-50 relative overflow-hidden">
+        {{-- Subtle Background Image --}}
+        {{-- <div class="absolute inset-0 opacity-30 pointer-events-none z-0">
+            <img src="https://demo2.pavothemes.com/cetro/wp-content/uploads/2025/07/h2-background04.jpg"
+                class="size-full object-cover grayscale-100" alt="">
+        </div> --}}
+
+        <div class="max-w-6xl mx-auto px-5 relative z-10">
             <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
                 <div>
                     <span class="font-display text-sm font-semibold text-gray-500">Корисні статті</span>
                     <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mt-1.5">
-                        <span class="text-tryit-orange">Блог</span>
+                        Наш <span class="text-emerald-500">Блог</span>
                     </h2>
                 </div>
                 <a href="{{ route('blog') }}"
@@ -781,7 +1028,10 @@ name('main');
                             </div>
                             <div class="flex flex-col flex-1 p-4">
                                 <div class="flex items-center gap-3 text-xs text-gray-400 mb-2">
-                                    <span>{{ $post->published_at->translatedFormat('d M Y') }}</span>
+                                    <span class="inline-flex gap-1.5">
+                                        <x-lucide-calendar class="size-3 shrink-0" />
+                                        {{ $post->published_at->translatedFormat('d M Y') }}
+                                    </span>
                                     <span class="size-1 rounded-full bg-gray-300"></span>
                                     <span>{{ $post->reading_time }} хв</span>
                                 </div>
@@ -837,359 +1087,40 @@ name('main');
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-    <style>
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .blob {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(180deg, rgba(52, 211, 153, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
-            filter: blur(80px);
-            border-radius: 50%;
-            z-index: -1;
-        }
-    </style>
-
-    <section class="py-20 text-white relative overflow-hidden bg-cover bg-center"
-        style="background-image: url('{{ Vite::asset('resources/images/header.webp') }}');">
-
-        <div class="absolute inset-0 bg-emerald-950/95 z-0"></div>
-
-        <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-400/10 blur-[100px] rounded-full z-10"></div>
-
-        <div class="max-w-4xl mx-auto px-5 relative z-20">
-            <div class="flex flex-col items-center">
-                <span
-                    class="inline-flex items-center px-3 py-1 rounded-full bg-slate-900/30 text-emerald-400 text-[10px] font-bold uppercase tracking-tighter border border-slate-700/50">
-                    Про компанію
-                </span>
-
-                <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tighter leading-tight text-slate-50">
-                    Чому обирають <span class="text-emerald-400">нас</span>?
-                </h2>
-
-                <div class="space-y-4 text-emerald-50 leading-relaxed text-center text-balance font-light mt-5">
-                    <p>
-                        Наша клінінгова компанія — це професійний сервіс, який допомагає підтримувати чистоту у вашому
-                        домі чи офісі. Ми використовуємо сучасні методи та відповідально ставимося до кожного
-                        замовлення.
-                    </p>
-                    <p>
-                        Від генерального прибирання до спеціалізованого догляду за меблями. Наша мета — зробити ваш
-                        простір ідеально чистим, де кожен вдих приносить задоволення.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-10">
-                    <div>
-                        <div class="size-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
-                            <x-lucide-award class="size-7 stroke-emerald-500" />
-                        </div>
-                        <h4 class="text-emerald-400 font-bold text-sm mb-2">12+ років досвіду</h4>
-                        <p class="text-emerald-100/60 text-sm leading-normal">
-                            Понад десятиліття допомагаємо підтримувати чистоту, відточуючи кожну деталь сервісу.
-                        </p>
-                    </div>
-
-                    <div>
-                        <div class="size-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
-                            <x-lucide-users class="size-7 stroke-emerald-500" />
-                        </div>
-                        <h4 class="text-emerald-400 font-bold text-sm mb-2">300+ задоволених клієнтів</h4>
-                        <p class="text-emerald-100/60 text-sm leading-normal">
-                            Нам довіряють і рекомендують — більшість клієнтів повертаються до нас знову.
-                        </p>
-                    </div>
-
-                    <div>
-                        <div class="size-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
-                            <x-lucide-badge-check class="size-7 stroke-emerald-500" />
-                        </div>
-                        <h4 class="text-emerald-400 font-bold text-sm mb-2">100% гарантія якості</h4>
-                        <p class="text-emerald-100/60 text-sm leading-normal">
-                            Ми впевнені у результаті: якщо щось не влаштує — безкоштовно виправимо.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-white relative overflow-hidden">
-        <div
-            class="absolute top-1/2 left-0 w-full h-1 bg-linear-to-r from-transparent via-emerald-100 to-transparent -translate-y-1/2 hidden lg:block">
-        </div>
-
-        <div class="max-w-7xl mx-auto px-5 relative">
-            <div class="text-center mb-20">
-                <span class="text-emerald-600 font-extrabold tracking-[0.3em] uppercase text-xs">Алгоритм затишку</span>
-                <h2 class="text-5xl font-black text-slate-900 mt-4 tracking-tighter">Ваш час занадто дорогий, <br>щоб
-                    витрачати його на пил</h2>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 relative">
-
-                <div class="group relative pt-12">
-                    <div
-                        class="absolute top-0 left-0 text-[10rem] font-black text-slate-50 leading-none select-none z-0 transition-colors group-hover:text-emerald-50">
-                        01</div>
-
-                    <div
-                        class="relative z-10 bg-white/40 backdrop-blur-sm p-8 rounded-[2.5rem] border border-slate-100 shadow-sm transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:border-emerald-200">
-                        <div
-                            class="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:bg-emerald-600 group-hover:rotate-[10deg] transition-all duration-500">
-                            <i class="fas fa-fingerprint text-white text-2xl"></i>
-                        </div>
-
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Спринт-замовлення</h3>
-                        <p class="text-slate-500 leading-relaxed mb-6 text-sm">
-                            Замість довгих анкет — лише 3 поля. Оберіть тип прибирання, адресу та зручний час. Система
-                            миттєво призначить найкращого клінера поруч.
-                        </p>
-
-                        <div class="flex items-center gap-2 text-emerald-600 font-bold text-xs uppercase tracking-wider">
-                            <span class="w-8 h-px bg-emerald-600"></span>
-                            Займає 45 секунд
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group relative pt-12 lg:mt-16">
-                    <div
-                        class="absolute top-0 left-0 text-[10rem] font-black text-slate-50 leading-none select-none z-0 transition-colors group-hover:text-blue-50">
-                        02</div>
-
-                    <div
-                        class="relative z-10 bg-slate-900 p-8 rounded-[2.5rem] shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
-                        <div
-                            class="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-emerald-500/40 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-sparkles text-white text-2xl"></i>
-                        </div>
-
-                        <h3 class="text-2xl font-bold text-white mb-4">Магія в процесі</h3>
-                        <p class="text-slate-400 leading-relaxed mb-6 text-sm">
-                            Клінер приїжджає з повним набором: від еко-засобів до HEPA-пилососа. Вам не потрібно навіть
-                            давати ганчірку. Відпочивайте або займайтеся справами.
-                        </p>
-
-                        <div
-                            class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 rounded-full text-emerald-400 text-[10px] font-bold uppercase tracking-tighter border border-slate-700">
-                            <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                            Клінер вже в дорозі
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group relative pt-12">
-                    <div
-                        class="absolute top-0 left-0 text-[10rem] font-black text-slate-50 leading-none select-none z-0 transition-colors group-hover:text-emerald-50">
-                        03</div>
-
-                    <div
-                        class="relative z-10 bg-white/40 backdrop-blur-sm p-8 rounded-[2.5rem] border border-slate-100 shadow-sm transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:border-emerald-200">
-                        <div
-                            class="w-16 h-16 bg-white border-2 border-slate-900 rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:border-emerald-600 transition-all duration-500">
-                            <i class="fas fa-glass-water text-slate-900 text-2xl group-hover:text-emerald-600"></i>
-                        </div>
-
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Вдих на повні груди</h3>
-                        <p class="text-slate-500 leading-relaxed mb-6 text-sm">
-                            Прийміть ідеальну роботу. Оплата списується лише після вашого підтвердження. Ви отримуєте не
-                            просто чистий дім, а стан тотального спокою.
-                        </p>
-
-                        <div class="flex items-center gap-4">
-                            <div class="flex -space-x-2">
-                                <img class="w-8 h-8 rounded-full border-2 border-white"
-                                    src="https://i.pravatar.cc/100?u=1" alt="">
-                                <img class="w-8 h-8 rounded-full border-2 border-white"
-                                    src="https://i.pravatar.cc/100?u=2" alt="">
-                            </div>
-                            <span class="text-xs text-slate-400 font-medium">+10k щасливих осель</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="mt-20 flex justify-center">
-                <button
-                    class="group relative px-10 py-5 bg-emerald-600 text-white font-black rounded-full overflow-hidden transition-all hover:pr-14 active:scale-95 shadow-2xl shadow-emerald-500/20">
-                    <span class="relative z-10">Спробувати цей досвід</span>
-                    <i
-                        class="fas fa-arrow-right absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 bg-[#fcfdfd]" x-data="{ active: 1 }">
-        <div class="max-w-3xl mx-auto px-5">
-
-            <div class="mb-10 flex items-center justify-between">
-                <div>
-                    <h2 class="text-3xl font-black text-slate-900 tracking-tight">Питання та відповіді</h2>
-                    <p class="text-slate-500 text-xs mt-1">Все, що варто знати перед замовленням</p>
-                </div>
-                <button @click="active = active === null ? 1 : null"
-                    class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 hover:text-emerald-700 transition-colors">
-                    <span x-text="active === null ? 'Розгорнути' : 'Згорнути все'"></span>
-                </button>
-            </div>
-
-            <div class="space-y-3">
-
-                <div class="overflow-hidden transition-all duration-300 rounded-2xl border"
-                    :class="active === 1 ? 'border-emerald-500 bg-white shadow-xl shadow-emerald-500/5' :
-                        'border-slate-100 bg-white'">
-
-                    <button @click="active = active === 1 ? null : 1"
-                        class="w-full flex items-center justify-between p-4 md:p-5 text-left transition-all">
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center transition-colors"
-                                :class="active === 1 ? 'bg-emerald-600 text-white' : 'bg-slate-50 text-slate-400'">
-                                <i class="fas fa-wallet text-sm"></i>
-                            </div>
-                            <span class="font-bold text-sm md:text-base transition-colors"
-                                :class="active === 1 ? 'text-slate-900' : 'text-slate-700'">
-                                Як розраховується вартість?
-                            </span>
-                        </div>
-                        <div class="transition-transform duration-500 text-slate-300"
-                            :class="active === 1 ? 'rotate-180 text-emerald-600' : ''">
-                            <i class="fas fa-chevron-down text-[10px]"></i>
-                        </div>
-                    </button>
-
-                    <div x-show="active === 1" x-collapse>
-                        <div class="px-5 pb-5 ml-14">
-                            <p class="text-slate-500 text-sm leading-relaxed max-w-xl">
-                                Ціна фіксована та залежить від кількості кімнат. Ми не беремо доплат за ступінь забруднення
-                                — ви знаєте точну суму ще до приїзду клінера.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="overflow-hidden transition-all duration-300 rounded-2xl border"
-                    :class="active === 2 ? 'border-emerald-500 bg-white shadow-xl shadow-emerald-500/5' :
-                        'border-slate-100 bg-white'">
-
-                    <button @click="active = active === 2 ? null : 2"
-                        class="w-full flex items-center justify-between p-4 md:p-5 text-left transition-all">
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center transition-colors"
-                                :class="active === 2 ? 'bg-emerald-600 text-white' : 'bg-slate-50 text-slate-400'">
-                                <i class="fas fa-user-shield text-sm"></i>
-                            </div>
-                            <span class="font-bold text-sm md:text-base transition-colors"
-                                :class="active === 2 ? 'text-slate-900' : 'text-slate-700'">
-                                Чи можу я залишити клінера самого?
-                            </span>
-                        </div>
-                        <div class="transition-transform duration-500 text-slate-300"
-                            :class="active === 2 ? 'rotate-180 text-emerald-600' : ''">
-                            <i class="fas fa-chevron-down text-[10px]"></i>
-                        </div>
-                    </button>
-
-                    <div x-show="active === 2" x-collapse>
-                        <div class="px-5 pb-5 ml-14">
-                            <p class="text-slate-500 text-sm leading-relaxed max-w-xl">
-                                Так, звісно. Більшість наших клієнтів ідуть у справах або на прогулянку. Ви отримаєте
-                                сповіщення за 30 хвилин до завершення прибирання.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="overflow-hidden transition-all duration-300 rounded-2xl border"
-                    :class="active === 3 ? 'border-emerald-500 bg-white shadow-xl shadow-emerald-500/5' :
-                        'border-slate-100 bg-white'">
-
-                    <button @click="active = active === 3 ? null : 3"
-                        class="w-full flex items-center justify-between p-4 md:p-5 text-left transition-all">
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center transition-colors"
-                                :class="active === 3 ? 'bg-emerald-600 text-white' : 'bg-slate-50 text-slate-400'">
-                                <i class="fas fa-spray-can-sparkles text-sm"></i>
-                            </div>
-                            <span class="font-bold text-sm md:text-base transition-colors"
-                                :class="active === 3 ? 'text-slate-900' : 'text-slate-700'">
-                                Що входить у вартість?
-                            </span>
-                        </div>
-                        <div class="transition-transform duration-500 text-slate-300"
-                            :class="active === 3 ? 'rotate-180 text-emerald-600' : ''">
-                            <i class="fas fa-chevron-down text-[10px]"></i>
-                        </div>
-                    </button>
-
-                    <div x-show="active === 3" x-collapse>
-                        <div class="px-5 pb-5 ml-14">
-                            <p class="text-slate-500 text-sm leading-relaxed max-w-xl">
-                                Весь інвентар, професійна техніка та гіпоалергенна хімія вже включені. Ми миємо підлогу,
-                                поверхні, сантехніку та кухню.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="overflow-hidden transition-all duration-300 rounded-2xl border"
-                    :class="active === 4 ? 'border-emerald-500 bg-white shadow-xl shadow-emerald-500/5' :
-                        'border-slate-100 bg-white'">
-
-                    <button @click="active = active === 4 ? null : 4"
-                        class="w-full flex items-center justify-between p-4 md:p-5 text-left transition-all">
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center transition-colors"
-                                :class="active === 4 ? 'bg-emerald-600 text-white' : 'bg-slate-50 text-slate-400'">
-                                <i class="fas fa-paw text-sm"></i>
-                            </div>
-                            <span class="font-bold text-sm md:text-base transition-colors"
-                                :class="active === 4 ? 'text-slate-900' : 'text-slate-700'">
-                                У мене великий собака
-                            </span>
-                        </div>
-                        <div class="transition-transform duration-500 text-slate-300"
-                            :class="active === 4 ? 'rotate-180 text-emerald-600' : ''">
-                            <i class="fas fa-chevron-down text-[10px]"></i>
-                        </div>
-                    </button>
-
-                    <div x-show="active === 4" x-collapse>
-                        <div class="px-5 pb-5 ml-14">
-                            <p class="text-slate-500 text-sm leading-relaxed max-w-xl">
-                                Без проблем! Наші клінери люблять тварин. Просто попередьте нас, якщо ваш улюбленець може
-                                стресувати через шум пилососа.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="mt-8 flex items-center justify-center gap-6 py-4 border-t border-slate-50">
-                <div class="flex -space-x-2">
-                    <img class="w-6 h-6 rounded-full border border-white" src="https://i.pravatar.cc/100?u=11">
-                    <img class="w-6 h-6 rounded-full border border-white" src="https://i.pravatar.cc/100?u=12">
-                    <img class="w-6 h-6 rounded-full border border-white" src="https://i.pravatar.cc/100?u=13">
-                </div>
-                <p class="text-[11px] text-slate-400">Понад <span class="text-slate-900 font-bold">500+</span> відповідей
-                    надано сьогодні</p>
-            </div>
-        </div>
-    </section>
 @endsection
+
+<style>
+    @keyframes float {
+        0% {
+            transform: translateY(0px) rotate(var(--tw-rotate, 0deg));
+        }
+
+        50% {
+            transform: translateY(-20px) rotate(var(--tw-rotate, 0deg));
+        }
+
+        100% {
+            transform: translateY(0px) rotate(var(--tw-rotate, 0deg));
+        }
+    }
+
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .blob {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: linear-gradient(180deg, rgba(52, 211, 153, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+        filter: blur(80px);
+        border-radius: 50%;
+        z-index: -1;
+    }
+</style>
