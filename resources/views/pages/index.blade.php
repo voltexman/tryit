@@ -39,10 +39,7 @@ name('main');
         <div class="max-w-5xl mx-auto px-5 relative">
 
             <div class="relative z-20 text-center max-w-2xl mx-auto pt-10 pb-10">
-                <div
-                    class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide bg-emerald-100 text-emerald-800 rounded-full">
-                    Ваш дім у надійних руках
-                </div>
+                <x-section.badge class="mb-5">Ваш дім у надійних руках</x-section.badge>
                 <h2 class="font-display text-4xl/10 md:text-6xl/12 font-black tracking-tight text-slate-900 text-balance">
                     Бо ми знаємо, як важливо
                     <span class="text-emerald-600 inline-block mt-2">бути в гармонії</span>
@@ -53,15 +50,9 @@ name('main');
                     бездоганній чистоті.
                 </p>
 
-                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#"
-                        class="font-display w-full sm:w-auto px-8 py-4 bg-emerald-600 text-white font-bold rounded-full shadow-lg shadow-emerald-200 hover:bg-emerald-700 hover:-translate-y-1 transition-all">
-                        Замовити прибирання
-                    </a>
-                    <a href="#"
-                        class="font-display w-full sm:w-auto px-8 py-4 bg-tryit-orange text-white font-bold rounded-full hover:bg-amber-600 transition-all">
-                        Наші послуги
-                    </a>
+                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
+                    <x-button size="lg">Замовити прибирання</x-button>
+                    <x-button size="lg" color="orange">Наші послуги</x-button>
                 </div>
             </div>
 
@@ -135,12 +126,12 @@ name('main');
             </div>
         </div>
 
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-0">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0">
             <div
-                class="absolute top-[10%] left-[15%] w-64 h-64 bg-emerald-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse">
+                class="absolute top-[10%] left-[15%] size-64 bg-emerald-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse">
             </div>
             <div
-                class="absolute bottom-[10%] right-[15%] w-80 h-80 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse [animation-delay:2s]">
+                class="absolute bottom-[10%] right-[15%] size-80 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse [animation-delay:2s]">
             </div>
         </div>
     </section>
@@ -149,15 +140,14 @@ name('main');
         <div class="blob -top-20 -left-20"></div>
         <div class="max-w-6xl mx-auto px-5">
             <div class="mb-16">
-                <span class="text-emerald-600 font-extrabold tracking-[0.2em] uppercase text-sm">
-                    Спектр можливостей
-                </span>
-                <h2 class="text-5xl font-extrabold text-slate-900 mt-4 tracking-tighter">
-                    Ми чистимо все, <br>що піддається логіці
-                </h2>
+                <x-section.badge class="mb-2.5">Спектр можливостей</x-section.badge>
+
+                <x-section.title tag="h2">Ми чистимо все, <br>що
+                    <span class="text-emerald-500">піддається</span> логіці
+                </x-section.title>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-full md:h-[600px]">
+            <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-full md:h-130">
                 <div class="md:col-span-2 md:row-span-2 group relative rounded-4xl overflow-hidden bg-slate-900 shadow-2xl">
                     <img src="https://images.unsplash.com/photo-1603614486387-276f74fcbe2a?q=80&w=800"
                         class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700">
@@ -600,14 +590,14 @@ name('main');
         <div class="max-w-6xl mx-auto px-5">
 
             {{-- Основний контейнер (Зелена плашка) --}}
-            <div class="relative bg-[#2D6A4F] rounded-[45px] lg:rounded-[60px] min-h-[400px] flex items-center">
+            <div class="relative bg-[#2D6A4F] rounded-[45px] lg:rounded-[60px] min-h-100 flex items-center">
 
                 <div class="grid lg:grid-cols-12 w-full">
 
                     {{-- Ліва частина: Смартфон --}}
                     <div class="lg:col-span-5 relative flex justify-center lg:block">
                         <div
-                            class="lg:absolute mt-8 lg:mt-0 lg:left-[70px] lg:top-1/2 lg:-translate-y-1/2 z-30 w-[290px] md:w-[330px]">
+                            class="lg:absolute mt-8 lg:mt-0 lg:left-17.5 lg:top-1/2 lg:-translate-y-1/2 z-30 w-72.5 md:w-82.5">
 
                             {{-- Корпус смартфона --}}
                             <div
@@ -702,7 +692,7 @@ name('main');
                             <div class="flex flex-wrap gap-4 pt-6">
                                 {{-- Google Play --}}
                                 <div
-                                    class="flex items-center gap-3 bg-black/20 border border-white/15 backdrop-blur-md rounded-2xl px-5 py-2.5 transition-all focus-within:bg-black/40 focus-within:border-white/40 w-full max-w-[280px]">
+                                    class="flex items-center gap-3 bg-black/20 border border-white/15 backdrop-blur-md rounded-2xl px-5 py-2.5 transition-all focus-within:bg-black/40 focus-within:border-white/40 w-full max-w-70">
                                     {{-- Іконка телефону --}}
                                     <div class="w-8 h-8 flex items-center justify-center shrink-0">
                                         <x-lucide-phone class="size-6 stroke-white opacity-70" />
@@ -714,7 +704,7 @@ name('main');
                                             Ваш номер телефону
                                         </label>
                                         <input type="tel" id="phone" x-mask="+380 (99) 999-99-99"
-                                            placeholder="+380 (__) ___ __ __"
+                                            placeholder="+380 (63)  123-45-67"
                                             class="bg-transparent border-none p-0 focus:ring-0 text-white text-base font-bold focus:outline-none leading-none mt-1 w-full placeholder:text-white/20 placeholder:font-normal">
                                     </div>
                                 </div>
@@ -737,16 +727,13 @@ name('main');
 
         <div class="max-w-4xl mx-auto py-20 px-5 relative z-20">
             <div class="flex flex-col items-center">
-                <span
-                    class="inline-flex items-center px-3 py-1 rounded-full bg-slate-900/30 text-emerald-400 text-[10px] font-bold uppercase tracking-tighter border border-slate-700/50">
-                    Про компанію
-                </span>
+                <x-section.badge color="slate">Про компанію</x-section.badge>
 
-                <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tighter leading-tight text-slate-50">
+                <x-section.title tag="h3" color="white" size="sm">
                     Чому обирають <span class="text-emerald-400">нас</span>?
-                </h2>
+                </x-section.title>
 
-                <div class="space-y-4 text-emerald-50 leading-relaxed text-center text-balance font-light mt-5">
+                <div class="space-y-5 text-emerald-50 leading-relaxed text-center text-balance font-light mt-5">
                     <p>
                         Наша клінінгова компанія — це професійний сервіс, який допомагає підтримувати чистоту у вашому
                         домі чи офісі. Ми використовуємо сучасні методи та відповідально ставимося до кожного
@@ -805,11 +792,11 @@ name('main');
                     class="size-full object-cover grayscale-100 opacity-40 scale-75" alt="">
             </div>
             <div class="text-center mb-10 lg:mb-20">
-                <span class="text-emerald-600 font-extrabold tracking-[0.3em] uppercase text-xs">Алгоритм затишку</span>
-                <h2 class="text-3xl lg:text-5xl font-black text-slate-900 mt-4 tracking-tighter text-balance">
+                <x-section.badge class="mb-2.5">3 кроки до чистоти</x-section.badge>
+                <x-section.title tag="h4">
                     Ваш час занадто <span class="text-emerald-500">дорогий</span>, <br>
                     щоб <span class="text-emerald-500">витрачати</span> його на бруд
-                </h2>
+                </x-section.title>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-10 relative">
@@ -822,19 +809,19 @@ name('main');
                     <div
                         class="relative z-10 bg-slate-100 p-8 rounded-3xl border border-slate-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:border-emerald-200">
                         <div
-                            class="w-16 h-16 bg-slate-900 rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:bg-emerald-600 group-hover:rotate-[10deg] transition-all duration-500">
-                            <i class="fas fa-fingerprint text-white text-2xl"></i>
+                            class="size-16 bg-slate-900 rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:bg-emerald-600 group-hover:rotate-10 transition-all duration-500">
+                            <x-lucide-timer class="size-8 stroke-slate-100" />
                         </div>
 
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Спринт-замовлення</h3>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Домовимось за хвилину</h3>
                         <p class="text-slate-500 leading-relaxed mb-6 text-sm">
-                            Замість довгих анкет — лише 3 поля. Оберіть тип прибирання, адресу та зручний час. Система
-                            миттєво призначить найкращого клінера поруч.
+                            Забудьте про дзвінки — лише 3 кліки. Оберіть тип сервісу, зручну дату та час. Наша система
+                            автоматично підбере вільного профі-клінера під ваш запит.
                         </p>
 
                         <div class="flex items-center gap-2 text-emerald-600 font-bold text-xs uppercase tracking-wider">
                             <span class="w-8 h-px bg-emerald-600"></span>
-                            Займає 45 секунд
+                            Займає ~60 секунд
                         </div>
                     </div>
                 </div>
@@ -847,14 +834,18 @@ name('main');
                     <div
                         class="relative z-10 bg-slate-900 p-8 rounded-3xl shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
                         <div
-                            class="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-emerald-500/40 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-sparkles text-white text-2xl"></i>
+                            class="size-16 bg-emerald-500 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-emerald-500/40 group-hover:scale-110 transition-transform">
+                            <x-lucide-sparkles class="size-8 stroke-slate-100" />
                         </div>
 
-                        <h3 class="text-2xl font-bold text-white mb-4">Магія в процесі</h3>
-                        <p class="text-slate-400 leading-relaxed mb-6 text-sm">
-                            Клінер приїжджає з повним набором: від еко-засобів до HEPA-пилососа. Вам не потрібно навіть
-                            давати ганчірку. Відпочивайте або займайтеся справами.
+                        <h3 class="text-2xl font-bold text-white mb-2.5">Усе необхідне - з нас</h3>
+                        <p class="text-slate-400 leading-relaxed mb-5 text-sm">
+                            Ми приїжджаємо з повним арсеналом: від потужного промислового
+                            <span class="text-slate-100 font-medium">обладнання</span> до сертифікованої
+                            <span class="text-slate-100 font-medium">еко-хімії</span>. Вам не потрібно забезпечувати
+                            інвентар. Процес налагоджений так, щоб
+                            <span class="text-slate-100 font-medium">не відволікати</span>
+                            вас від основних справ.
                         </p>
 
                         <div
@@ -873,37 +864,25 @@ name('main');
                     <div
                         class="relative z-10 bg-stone-100 p-8 rounded-3xl border border-stone-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
                         <div
-                            class="w-16 h-16 bg-white border-2 border-slate-900 rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:border-emerald-600 transition-all duration-500">
-                            <i class="fas fa-glass-water text-slate-900 text-2xl group-hover:text-emerald-600"></i>
+                            class="size-16 bg-white border-2 border-slate-700 rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:border-emerald-600 transition-all duration-500">
+                            <x-lucide-smile-plus
+                                class="size-8 stroke-slate-700 group-hover:stroke-emerald-600 transition-all duration-500" />
                         </div>
 
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Вдих на повні груди</h3>
-                        <p class="text-slate-500 leading-relaxed mb-6 text-sm">
-                            Прийміть ідеальну роботу. Оплата списується лише після вашого підтвердження. Ви отримуєте не
-                            просто чистий дім, а стан тотального спокою.
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2.5">Насолоджуйтесь</h3>
+                        <p class="text-slate-500 leading-relaxed mb-5 text-sm">
+                            Перевірте якість роботи та насолоджуйтеся свіжістю. Оплата списується лише після вашого
+                            схвалення. Ви отримуєте не просто прибирання, а ідеальний простір для життя.
                         </p>
 
-                        <div class="flex items-center gap-4">
-                            <div class="flex -space-x-2">
-                                <img class="w-8 h-8 rounded-full border-2 border-white"
-                                    src="https://i.pravatar.cc/100?u=1" alt="">
-                                <img class="w-8 h-8 rounded-full border-2 border-white"
-                                    src="https://i.pravatar.cc/100?u=2" alt="">
-                            </div>
-                            <span class="text-xs text-slate-400 font-medium">+10k щасливих осель</span>
-                        </div>
+                        <div class="text-xs text-slate-400 font-medium">300+ чистих об'єктів</div>
                     </div>
                 </div>
 
             </div>
 
             <div class="mt-20 flex justify-center">
-                <button
-                    class="group relative px-8 py-4 bg-emerald-600 text-white font-semibold font-display tracking-wide rounded-full overflow-hidden transition-all hover:pr-14 active:scale-95 shadow-2xl shadow-emerald-500/20">
-                    <span class="relative z-10">Спробувати цей досвід</span>
-                    <x-lucide-move-right
-                        class="absolute size-6 right-6 top-1/2 -translate-y-1/2 ms-2 opacity-0 group-hover:opacity-100 transition-all" />
-                </button>
+                <x-button size="lg">Спробувати цей досвід</x-button>
             </div>
         </div>
     </section>
@@ -924,45 +903,17 @@ name('main');
             </div>
 
             <div class="space-y-2">
-                @foreach ([
-            [
-                'q' => 'Як розраховується вартість прибирання?',
-                'a' => 'Ціна залежить від кількості кімнат та типу прибирання (підтримуюче або генеральне). Ми не беремо доплат за ступінь забруднення — ви знаєте точну суму ще до приїзду клінера.',
-            ],
-            [
-                'q' => 'Чи потрібно мені надавати свій інвентар або хімію?',
-                'a' => 'Ні, наші клінери приїжджають з усім необхідним: професійними миючими засобами, серветками з мікрофібри та обладнанням. Від вас потрібен лише доступ до води.',
-            ],
-            [
-                'q' => 'Чи безпечні ваші засоби для дітей та тварин?',
-                'a' => 'Так, ми використовуємо сертифіковані еко-засоби, які є гіпоалергенними та повністю безпечними для домашніх улюбленців і маленьких дітей.',
-            ],
-            [
-                'q' => 'Скільки часу триває прибирання?',
-                'a' => 'Підтримуюче прибирання зазвичай займає 2-4 години, генеральне — від 5 до 8 годин, залежно від площі та складності робіт.',
-            ],
-            [
-                'q' => 'Чи обов’язково мені бути вдома під час процесу?',
-                'a' => 'Зовсім ні. Ви можете залишити ключі нашому менеджеру або просто впустити клінера і піти у своїх справах. Ми несемо повну матеріальну відповідальність за ваше майно.',
-            ],
-            [
-                'q' => 'Хто до мене приїде? Ви перевіряєте персонал?',
-                'a' => 'Кожен клінер проходить ретельний відбір, перевірку службою безпеки та навчання. У нас працюють лише перевірені фахівці з досвідом від 1 року.',
-            ],
-            [
-                'q' => 'Що робити, якщо мені не сподобається результат?',
-                'a' => 'Ми надаємо 100% гарантію якості. Якщо у вас виникнуть зауваження, повідомте нам протягом 24 годин, і ми безкоштовно виправимо всі недоліки.',
-            ],
-        ] as $item)
-                    <div class="bg-white overflow-hidden transition-all duration-300 rounded-2xl border border-gray-200"
+                @foreach (require resource_path('data/faqs.php') as $item)
+                    <div class="bg-white overflow-hidden transition-all duration-300 rounded-2xl border border-gray-200 cursor-pointer hover:bg-slate-50"
                         :class="active === {{ $loop->index }} ? 'shadow-xl shadow-emerald-500/5' : ''">
                         <button @click="active = active === {{ $loop->index }} ? null : {{ $loop->index }}"
-                            class="w-full flex items-center justify-between p-4 md:p-5 text-left transition-all">
+                            class="w-full flex items-center justify-between p-4 md:p-5 text-left transition-all cursor-pointer">
                             <div class="flex items-center gap-4">
-                                <div class="size-10 rounded-xl flex items-center justify-center shrink-0 transition-colors"
-                                    :class="active === {{ $loop->index }} ? 'bg-emerald-600 text-white' :
+                                <div class="size-10 rounded-xl flex items-center justify-center shrink-0 transition-[colors, transform]"
+                                    :class="active === {{ $loop->index }} ? 'bg-emerald-600 rotate-45 text-white' :
                                         'bg-slate-100 text-slate-400'">
-                                    <span class="font-display textsm font-bold">0{{ $loop->index + 1 }}</span>
+                                    <span class="font-display text-sm font-bold"
+                                        :class="active === {{ $loop->index }} ? '-rotate-45' : ''">0{{ $loop->index + 1 }}</span>
                                 </div>
                                 <span class="font-bold text-sm md:text-base transition-colors"
                                     :class="active === {{ $loop->index }} ? 'text-slate-900' : 'text-slate-700'">
@@ -999,10 +950,10 @@ name('main');
         <div class="max-w-6xl mx-auto px-5 relative z-10">
             <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
                 <div>
-                    <span class="font-display text-sm font-semibold text-gray-500">Корисні статті</span>
-                    <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mt-1.5">
+                    <x-section.badge class="mb-2.5">Корисні статті</x-section.badge>
+                    <x-section.title tag="h3" size="sm">
                         Наш <span class="text-emerald-500">Блог</span>
-                    </h2>
+                    </x-section.title>
                 </div>
                 <a href="{{ route('blog') }}"
                     class="inline-flex items-center gap-1.5 text-sm font-semibold text-tryit-green hover:gap-3 transition-all duration-300">
