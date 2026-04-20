@@ -40,13 +40,13 @@ enum ServiceEnum: string
     public function getImage(): string
     {
         return match ($this) {
-            self::WINDOW_CLEANING => 'https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg',
-            self::SOLAR_PANEL_CLEANING => 'https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg',
-            self::POST_CONSTRUCTION_CLEANING => 'https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg',
-            self::INDUSTRIAL_CLEANING => 'https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg',
-            self::DRY_CLEANING => 'https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg',
-            self::OFFICE_CLEANING => 'https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg',
-            self::INDUSTRIAL_ALPINISM => 'https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg',
+            self::WINDOW_CLEANING => 'service-1.jpg',
+            self::SOLAR_PANEL_CLEANING => 'service-2.jpg',
+            self::POST_CONSTRUCTION_CLEANING => 'service-3.jpg',
+            self::INDUSTRIAL_CLEANING => 'service-4.jpg',
+            self::DRY_CLEANING => 'service-5.jpg',
+            self::OFFICE_CLEANING => 'service-6.jpg',
+            self::INDUSTRIAL_ALPINISM => 'service-7.jpg',
         };
     }
 

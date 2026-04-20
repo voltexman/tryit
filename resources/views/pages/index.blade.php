@@ -136,451 +136,55 @@ name('main');
         </div>
     </section>
 
-    <section class="py-24 relative">
-        <div class="blob -top-20 -left-20"></div>
-        <div class="max-w-6xl mx-auto px-5">
-            <div class="mb-16">
-                <x-section.badge class="mb-2.5">Спектр можливостей</x-section.badge>
+    <!-- Секція Послуг -->
+    <section x-data="{
+        selected: 0,
+        services: {{ json_encode(
+            collect(App\Enums\ServiceEnum::cases())->map(
+                fn($service) => [
+                    'title' => $service->getTitle(),
+                    'description' => $service->getDescription(),
+                    'image' => Vite::asset('resources/images/' . $service->getImage()),
+                    'link' => route($service->getLink()),
+                ],
+            ),
+        ) }}
+    }" class="relative w-full min-h-125 flex items-center overflow-hidden bg-gray-900">
+        <!-- Фонове зображення з плавним переходом -->
+        <template x-for="(service, index) in services" :key="index">
+            <div x-show="selected === index" x-transition:enter="transition opacity duration-700 ease-in-out"
+                x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                x-transition:leave="transition opacity duration-700 ease-in-out" x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0" class="absolute inset-0 z-0">
+                <img :src="service.image" :alt="service.title" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/50 lg:bg-linear-to-l from-black/80 via-black/40 to-black/20"></div>
+            </div>
+        </template>
 
-                <x-section.title tag="h2">Ми чистимо все, <br>що
-                    <span class="text-emerald-500">піддається</span> логіці
-                </x-section.title>
+        <!-- Контент -->
+        <div class="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-[1fr_350px] mx-auto px-4 relative z-10 py-16">
+            <div class="grow w-full">
+                Наші послуги
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-full md:h-130">
-                <div class="md:col-span-2 md:row-span-2 group relative rounded-4xl overflow-hidden bg-slate-900 shadow-2xl">
-                    <img src="https://images.unsplash.com/photo-1603614486387-276f74fcbe2a?q=80&w=800"
-                        class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-700">
-                    <div class="relative z-10 p-10 h-full flex flex-col justify-end">
-                        <div class="bg-emerald-500 w-fit p-3 rounded-2xl mb-4 shadow-lg shadow-emerald-500/50">
-                            <i class="fas fa-building text-white text-2xl"></i>
-                        </div>
-                        <h3 class="text-3xl font-bold text-white mb-2">Гарантія якості</h3>
-                        <p class="text-slate-300">Відповідальний підхід до кожного замовлення.</p>
-                        <button
-                            class="mt-6 w-fit px-6 py-3 bg-white text-slate-900 rounded-full font-bold hover:bg-emerald-500 hover:text-white transition-all">Дізнатись
-                            більше</button>
-                    </div>
-                </div>
-
-                <div
-                    class="md:col-span-2 group relative rounded-4xl overflow-hidden bg-[#2D6A4F] p-8 flex items-center justify-between">
-                    <div class="max-w-[60%]">
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Еко засоби</h3>
-                        <p class="text-slate-600 text-sm">Безпечні для людей, тварин та довкілля.</p>
-                    </div>
-                    <div
-                        class="w-24 h-24 bg-white rounded-full flex items-center justify-center shadow-inner group-hover:rotate-12 transition-transform">
-                        <i class="fas fa-couch text-3xl text-emerald-500"></i>
-                    </div>
-                </div>
-
-                <div class="group rounded-4xl overflow-hidden bg-tryit-orange/10 p-8">
-                    <i class="fas fa-wind text-3xl text-blue-500 mb-6"></i>
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Точно в срок</h3>
-                    <p class="text-slate-500 text-xs">Завжди вчасно та без затримок.</p>
-                </div>
-
-                <div class="group rounded-4xl overflow-hidden bg-slate-900 p-8">
-                    <i class="fas fa-bolt text-3xl text-yellow-400 mb-6"></i>
-                    <h3 class="text-xl font-bold text-white mb-2">Сучасні методи</h3>
-                    <p class="text-slate-400 text-xs">Професійне обладнання та технології.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- === SERVICES GRID === --}}
-    <section class="py-20 bg-gray-50" id="services">
-        <div class="max-w-6xl mx-auto px-5">
-            <div class="text-center mb-16">
-                <span class="font-display text-sm font-medium text-gray-500">Що ми пропонуємо</span>
-                <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900 mt-1.5"><span
-                        class="text-tryit-orange">Наші</span> послуги</h2>
-                <div class="w-12 h-0.5 bg-tryit-green mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            {{-- Service 1 — FEATURED --}}
-            <a href="{{ route('services.myttia-fasadu-ta-vikon-na-vysoti') }}"
-                class="group relative block rounded-2xl overflow-hidden mb-6 shadow-sm hover:shadow-2xl transition-all duration-500 animate-in duration-700">
-                <div class="relative aspect-21/9 md:aspect-9/4 overflow-hidden">
-                    <img src="{{ Vite::asset('resources/images/service-1.jpg') }}" alt="Миття фасадів та вікон на висоті"
-                        class="size-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                        loading="lazy" />
-                    <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent"></div>
-                    <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-10 lg:p-14">
-                        <div class="max-w-2xl">
-                            <span
-                                class="inline-flex items-center gap-2 bg-tryit-orange/90 text-white text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-4">
-                                <x-lucide-star class="size-3.5" stroke-width="2.5" />
-                                Основна послуга
-                            </span>
-                            <h3
-                                class="font-display text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-3 group-hover:translate-x-2 transition-transform duration-500">
-                                Миття фасадів та вікон на висоті
-                            </h3>
-                            <p class="text-white/75 text-sm md:text-base leading-relaxed mb-4 max-w-xl">
-                                Забезпечимо ідеальну чистоту вікон та фасадів за допомогою сучасної WFP-системи.
-                                Професійні промислові альпіністи — безпечно, без розводів і слідів.
-                            </p>
-                            <div
-                                class="inline-flex items-center gap-2 text-white font-semibold text-sm border border-white/25 rounded-full px-5 py-2.5 group-hover:bg-white/15 group-hover:border-white/40 transition-all duration-300">
-                                <span>Дізнатись більше</span>
-                                <x-lucide-arrow-right
-                                    class="size-4 group-hover:translate-x-1 transition-transform duration-300"
-                                    stroke-width="2" />
-                            </div>
+            <!-- Список послуг -->
+            <div class="flex flex-col gap-y-2.5">
+                <template x-for="(service, index) in services" :key="index">
+                    <div @click="selected = index"
+                        class="bg-linear-to-r cursor-pointer px-5 py-2.5 border-s transition-all duration-300 group"
+                        :class="selected === index ? 'border-emerald-500 from-emerald-500/20 from-5% to-transparent' :
+                            'border-slate-100/20 bg-transparent'">
+                        <div>
+                            <h3 class="font-display text-xl font-semibold mb-2 transition-colors duration-300"
+                                :class="selected === index ? 'text-emerald-500' : 'text-white/80 group-hover:text-white'"
+                                x-text="service.title"></h3>
+                            <p class="text-sm leading-relaxed transition-all duration-300"
+                                :class="selected === index ? 'text-white/90 block' :
+                                    'text-white/40 hidden md:line-clamp-1 group-hover:text-white/60'"
+                                x-text="service.description"></p>
                         </div>
                     </div>
-                </div>
-            </a>
-
-            {{-- ===== MOBILE: Horizontal scroll carousel ===== --}}
-            <div class="md:hidden" x-data="{
-                current: 0,
-                total: 6,
-                scroll(el) {
-                    const card = el.querySelector('.snap-center');
-                    if (!card) return;
-                    const cardWidth = card.offsetWidth + 12;
-                    this.current = Math.round(el.scrollLeft / cardWidth);
-                }
-            }">
-                <div class="flex gap-3 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-5 px-5" x-ref="track"
-                    @scroll.throttle.100ms="scroll($el)"
-                    style="scrollbar-width: none; -ms-overflow-style: none; -webkit-overflow-scrolling: touch;">
-
-                    {{-- Card 1 --}}
-                    <a href="{{ route('services.myika-ta-ochyshchennia-soniachnykh-panelei') }}"
-                        class="snap-center shrink-0 w-[80vw] rounded-2xl overflow-hidden relative shadow-md">
-                        <div class="relative aspect-3/4">
-                            <img src="{{ Vite::asset('resources/images/service-2.jpg') }}" alt="Мийка сонячних панелей"
-                                class="size-full object-cover" loading="lazy" />
-                            <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
-                            <div class="absolute inset-x-0 bottom-0 p-5">
-                                <div
-                                    class="size-10 rounded-xl bg-tryit-green/25 backdrop-blur-sm flex items-center justify-center mb-3">
-                                    <x-lucide-sun class="size-5 text-white" stroke-width="1.5" />
-                                </div>
-                                <h3 class="font-display text-lg font-bold text-white leading-snug mb-1.5">Мийка сонячних
-                                    панелей</h3>
-                                <p class="text-white/65 text-sm leading-relaxed line-clamp-2">Видаляємо пил, бруд і наліт,
-                                    щоб ваші батареї працювали на повну потужність.</p>
-                                <div class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-tryit-orange">
-                                    Детальніше <x-lucide-arrow-right class="size-3" stroke-width="2.5" />
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    {{-- Card 2 --}}
-                    <a href="{{ route('services.pisliabudivelne-prybyrannia') }}"
-                        class="snap-center shrink-0 w-[80vw] rounded-2xl overflow-hidden relative shadow-md">
-                        <div class="relative aspect-3/4">
-                            <img src="{{ Vite::asset('resources/images/service-3.jpg') }}"
-                                alt="Післябудівельне прибирання" class="size-full object-cover" loading="lazy" />
-                            <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
-                            <div class="absolute inset-x-0 bottom-0 p-5">
-                                <div
-                                    class="size-10 rounded-xl bg-tryit-orange/25 backdrop-blur-sm flex items-center justify-center mb-3">
-                                    <x-lucide-hard-hat class="size-5 text-white" stroke-width="1.5" />
-                                </div>
-                                <h3 class="font-display text-lg font-bold text-white leading-snug mb-1.5">
-                                    Післябудівельне прибирання
-                                </h3>
-                                <p class="text-white/65 text-sm leading-relaxed line-clamp-2">
-                                    Швидко та якісно приберемо будівельне сміття, пил та бруд після ремонту.
-                                </p>
-                                <div class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-tryit-orange">
-                                    Детальніше <x-lucide-arrow-right class="size-3" stroke-width="2.5" />
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    {{-- Card 3 --}}
-                    <a href="{{ route('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva') }}"
-                        class="snap-center shrink-0 w-[80vw] rounded-2xl overflow-hidden relative shadow-md">
-                        <div class="relative aspect-3/4">
-                            <img src="{{ Vite::asset('resources/images/service-4.jpg') }}"
-                                alt="Генеральне прибирання цехів" class="size-full object-cover" loading="lazy" />
-                            <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
-                            <div class="absolute inset-x-0 bottom-0 p-5">
-                                <div
-                                    class="size-10 rounded-xl bg-tryit-green/25 backdrop-blur-sm flex items-center justify-center mb-3">
-                                    <x-lucide-factory class="size-5 text-white" stroke-width="1.5" />
-                                </div>
-                                <h3 class="font-display text-lg font-bold text-white leading-snug mb-1.5">
-                                    Генеральне прибирання цехів
-                                </h3>
-                                <p class="text-white/65 text-sm leading-relaxed line-clamp-2">
-                                    Комплексне прибирання цехів, складів та виробничих приміщень для безпеки та порядку.
-                                </p>
-                                <div class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-tryit-orange">
-                                    Детальніше <x-lucide-arrow-right class="size-3" stroke-width="2.5" />
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    {{-- Card 4 --}}
-                    <a href="{{ route('services.khimchystka') }}"
-                        class="snap-center shrink-0 w-[80vw] rounded-2xl overflow-hidden relative shadow-md">
-                        <div class="relative aspect-3/4">
-                            <img src="{{ Vite::asset('resources/images/service-5.jpg') }}" alt="Хімчистка"
-                                class="size-full object-cover" loading="lazy" />
-                            <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
-                            <div class="absolute inset-x-0 bottom-0 p-5">
-                                <div
-                                    class="size-10 rounded-xl bg-tryit-orange/25 backdrop-blur-sm flex items-center justify-center mb-3">
-                                    <x-lucide-spray-can class="size-5 text-white" stroke-width="1.5" />
-                                </div>
-                                <h3 class="font-display text-lg font-bold text-white leading-snug mb-1.5">Хімчистка</h3>
-                                <p class="text-white/65 text-sm leading-relaxed line-clamp-2">
-                                    Глибоке очищення меблів, килимів та текстилю безпечними засобами.
-                                </p>
-                                <div class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-tryit-orange">
-                                    Детальніше <x-lucide-arrow-right class="size-3" stroke-width="2.5" />
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    {{-- Card 5 --}}
-                    <a href="{{ route('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu') }}"
-                        class="snap-center shrink-0 w-[80vw] rounded-2xl overflow-hidden relative shadow-md">
-                        <div class="relative aspect-3/4">
-                            <img src="{{ Vite::asset('resources/images/service-6.jpg') }}" alt="Прибирання офісу"
-                                class="size-full object-cover" loading="lazy" />
-                            <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
-                            <div class="absolute inset-x-0 bottom-0 p-5">
-                                <div
-                                    class="size-10 rounded-xl bg-tryit-green/25 backdrop-blur-sm flex items-center justify-center mb-3">
-                                    <x-lucide-briefcase class="size-5 text-white" stroke-width="1.5" />
-                                </div>
-                                <h3 class="font-display text-lg font-bold text-white leading-snug mb-1.5">Прибирання офісу
-                                </h3>
-                                <p class="text-white/65 text-sm leading-relaxed line-clamp-2">Регулярне прибирання для
-                                    комфортної атмосфери вашої команди та клієнтів.</p>
-                                <div class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-tryit-orange">
-                                    Детальніше <x-lucide-arrow-right class="size-3" stroke-width="2.5" />
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-
-                    {{-- Card 6 --}}
-                    <a href="{{ route('services.promyslovyi-alpinizm') }}"
-                        class="snap-center shrink-0 w-[80vw] rounded-2xl overflow-hidden relative shadow-md">
-                        <div class="relative aspect-3/4">
-                            <img src="{{ Vite::asset('resources/images/service-7.jpg') }}" alt="Промисловий альпінізм"
-                                class="size-full object-cover" loading="lazy" />
-                            <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
-                            <div class="absolute inset-x-0 bottom-0 p-5">
-                                <div
-                                    class="size-10 rounded-xl bg-tryit-orange/25 backdrop-blur-sm flex items-center justify-center mb-3">
-                                    <x-lucide-mountain class="size-5 text-white" stroke-width="1.5" />
-                                </div>
-                                <h3 class="font-display text-lg font-bold text-white leading-snug mb-1.5">Промисловий
-                                    альпінізм</h3>
-                                <p class="text-white/65 text-sm leading-relaxed line-clamp-2">Будь-які висотні роботи —
-                                    професійно та безпечно з сертифікованим спорядженням.</p>
-                                <div class="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-tryit-orange">
-                                    Детальніше <x-lucide-arrow-right class="size-3" stroke-width="2.5" />
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                {{-- Dot indicators --}}
-                <div class="flex items-center justify-center gap-1.5 mt-2">
-                    <template x-for="i in total" :key="i">
-                        <button
-                            @click="$refs.track.scrollTo({ left: (i - 1) * ($refs.track.querySelector('.snap-center').offsetWidth + 12), behavior: 'smooth' })"
-                            class="rounded-full transition-all duration-300"
-                            :class="current === i - 1 ? 'w-6 h-2 bg-tryit-orange' : 'size-2 bg-gray-300'"
-                            aria-label="Slide"></button>
-                    </template>
-                </div>
-            </div>
-
-            {{-- ===== DESKTOP: Card grid ===== --}}
-            <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {{-- Service 2 --}}
-                <a href="{{ route('services.myika-ta-ochyshchennia-soniachnykh-panelei') }}"
-                    class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-                    <div class="relative aspect-4/5 overflow-hidden">
-                        <img src="{{ Vite::asset('resources/images/service-2.jpg') }}" alt="Мийка сонячних панелей"
-                            class="size-full object-cover group-hover:scale-105 transition-transform duration-700"
-                            loading="lazy" />
-                        <div class="absolute inset-0 bg-linear-to-t from-black/85 via-black/45 to-transparent"></div>
-                        <div class="absolute inset-x-0 bottom-0 p-6">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div
-                                    class="size-10 rounded-xl bg-tryit-green/25 backdrop-blur-sm flex items-center justify-center shrink-0">
-                                    <x-lucide-sun class="size-5 text-white" stroke-width="1.5" />
-                                </div>
-                                <h3 class="font-display text-lg font-bold text-white leading-snug">Мийка сонячних
-                                    панелей</h3>
-                            </div>
-                            <p class="text-sm text-white/80 leading-relaxed mb-0">
-                                Видаляємо пил, бруд і наліт, щоб ваші батареї працювали на повну потужність.
-                            </p>
-                            <div
-                                class="mt-4 flex items-center gap-1.5 text-sm font-semibold text-tryit-orange group-hover:gap-3 transition-all duration-300">
-                                <span>Детальніше</span>
-                                <x-lucide-arrow-right class="size-4" stroke-width="2" />
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                {{-- Service 3 --}}
-                <a href="{{ route('services.pisliabudivelne-prybyrannia') }}"
-                    class="group relative rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500"
-                    x-intersect="$el.classList.add('zoom-in')">
-                    <div class="relative aspect-4/5 overflow-hidden">
-                        <img src="{{ Vite::asset('resources/images/service-3.jpg') }}" alt="Післябудівельне прибирання"
-                            class="size-full object-cover group-hover:scale-105 transition-transform duration-700"
-                            loading="lazy" />
-                        <div class="absolute inset-0 bg-linear-to-t from-black/85 via-black/45 to-transparent"></div>
-                        <div class="absolute inset-x-0 bottom-0 p-6">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div
-                                    class="size-10 rounded-xl bg-tryit-orange/25 backdrop-blur-sm flex items-center justify-center shrink-0">
-                                    <x-lucide-hard-hat class="size-5 text-white" stroke-width="1.5" />
-                                </div>
-                                <h3 class="font-display text-lg font-bold text-white leading-snug">Післябудівельне
-                                    прибирання</h3>
-                            </div>
-                            <p class="text-sm text-white/80 leading-relaxed mb-0">
-                                Швидко та якісно приберемо будівельне сміття, пил та бруд після ремонту.
-                            </p>
-                            <div
-                                class="mt-4 flex items-center gap-1.5 text-sm font-semibold text-tryit-orange group-hover:gap-3 transition-all duration-300">
-                                <span>Детальніше</span>
-                                <x-lucide-arrow-right class="size-4" stroke-width="2" />
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                {{-- Service 4 --}}
-                <a href="{{ route('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva') }}"
-                    class="group relative rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500"
-                    x-intersect="$el.classList.add('zoom-in')">
-                    <div class="relative aspect-4/5 overflow-hidden">
-                        <img src="{{ Vite::asset('resources/images/service-4.jpg') }}" alt="Генеральне прибирання цехів"
-                            class="size-full object-cover group-hover:scale-105 transition-transform duration-700"
-                            loading="lazy" />
-                        <div class="absolute inset-0 bg-linear-to-t from-black/85 via-black/45 to-transparent"></div>
-                        <div class="absolute inset-x-0 bottom-0 p-6">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div
-                                    class="size-10 rounded-xl bg-tryit-green/25 backdrop-blur-sm flex items-center justify-center shrink-0">
-                                    <x-lucide-factory class="size-5 text-white" stroke-width="1.5" />
-                                </div>
-                                <h3 class="font-display text-lg font-bold text-white leading-snug">Генеральне прибирання
-                                    цехів</h3>
-                            </div>
-                            <p class="text-sm text-white/80 leading-relaxed mb-0">
-                                Комплексне прибирання цехів, складів та виробничих приміщень для безпеки та порядку.
-                            </p>
-                            <div
-                                class="mt-4 flex items-center gap-1.5 text-sm font-semibold text-tryit-orange group-hover:gap-3 transition-all duration-300">
-                                <span>Детальніше</span>
-                                <x-lucide-arrow-right class="size-4" stroke-width="2" />
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                {{-- Service 5 --}}
-                <a href="{{ route('services.khimchystka') }}"
-                    class="group relative rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500"
-                    x-intersect="$el.classList.add('zoom-in')">
-                    <div class="relative aspect-4/5 overflow-hidden">
-                        <img src="{{ Vite::asset('resources/images/service-5.jpg') }}" alt="Хімчистка"
-                            class="size-full object-cover group-hover:scale-105 transition-transform duration-700"
-                            loading="lazy" />
-                        <div class="absolute inset-0 bg-linear-to-t from-black/85 via-black/45 to-transparent"></div>
-                        <div class="absolute inset-x-0 bottom-0 p-6">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div
-                                    class="size-10 rounded-xl bg-tryit-orange/25 backdrop-blur-sm flex items-center justify-center shrink-0">
-                                    <x-lucide-spray-can class="size-5 text-white" stroke-width="1.5" />
-                                </div>
-                                <h3 class="font-display text-lg font-bold text-white leading-snug">Хімчистка</h3>
-                            </div>
-                            <p class="text-sm text-white/80 leading-relaxed mb-0">
-                                Глибоке очищення меблів, килимів та текстилю безпечними засобами.
-                            </p>
-                            <div
-                                class="mt-4 flex items-center gap-1.5 text-sm font-semibold text-tryit-orange group-hover:gap-3 transition-all duration-300">
-                                <span>Детальніше</span>
-                                <x-lucide-arrow-right class="size-4" stroke-width="2" />
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                {{-- Service 6 --}}
-                <a href="{{ route('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu') }}"
-                    class="group relative rounded-xl overflow-hidden hover:shadow-xl transition-all duration-500">
-                    <div class="relative aspect-4/5 overflow-hidden">
-                        <img src="{{ Vite::asset('resources/images/service-6.jpg') }}" alt="Прибирання офісу"
-                            class="size-full object-cover group-hover:scale-105 transition-transform duration-700"
-                            loading="lazy" />
-                        <div class="absolute inset-0 bg-linear-to-t from-black/85 via-black/45 to-transparent"></div>
-                        <div class="absolute inset-x-0 bottom-0 p-6">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div
-                                    class="size-10 rounded-xl bg-tryit-green/25 backdrop-blur-sm flex items-center justify-center shrink-0">
-                                    <x-lucide-briefcase class="size-5 text-white" stroke-width="1.5" />
-                                </div>
-                                <h3 class="font-display text-lg font-bold text-white leading-snug">Прибирання офісу</h3>
-                            </div>
-                            <p class="text-sm text-white/80 leading-relaxed mb-0">Регулярне прибирання для комфортної
-                                атмосфери
-                                вашої команди та клієнтів.</p>
-                            <div
-                                class="mt-4 flex items-center gap-1.5 text-sm font-semibold text-tryit-orange group-hover:gap-3 transition-all duration-300">
-                                <span>Детальніше</span>
-                                <x-lucide-arrow-right class="size-4" stroke-width="2" />
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                {{-- Service 7 --}}
-                <a href="{{ route('services.promyslovyi-alpinizm') }}"
-                    class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 animate-in duration-700"
-                    x-intersect="$el.classList.add('zoom-in')">
-                    <div class="relative aspect-4/5 overflow-hidden">
-                        <img src="{{ Vite::asset('resources/images/service-7.jpg') }}" alt="Промисловий альпінізм"
-                            class="size-full object-cover group-hover:scale-105 transition-transform duration-700"
-                            loading="lazy" />
-                        <div class="absolute inset-0 bg-linear-to-t from-black/85 via-black/45 to-transparent"></div>
-                        <div class="absolute inset-x-0 bottom-0 p-6">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div
-                                    class="size-10 rounded-xl bg-tryit-orange/25 backdrop-blur-sm flex items-center justify-center shrink-0">
-                                    <x-lucide-mountain class="size-5 text-white" stroke-width="1.5" />
-                                </div>
-                                <h3 class="font-display text-lg font-bold text-white leading-snug">Промисловий альпінізм
-                                </h3>
-                            </div>
-                            <p class="text-sm text-white/80 leading-relaxed mb-0">Будь-які висотні роботи — професійно та
-                                безпечно з сертифікованим спорядженням.</p>
-                            <div
-                                class="mt-4 flex items-center gap-1.5 text-sm font-semibold text-tryit-orange group-hover:gap-3 transition-all duration-300">
-                                <span>Детальніше</span>
-                                <x-lucide-arrow-right class="size-4" stroke-width="2" />
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                </template>
             </div>
         </div>
     </section>
@@ -720,12 +324,9 @@ name('main');
         class="relative overflow-hidden shadow-inner bg-cover bg-no-repeat bg-fixed"
         :style="`background-image: url('{{ Vite::asset('resources/images/header.webp') }}');`">
 
-        <div class="absolute inset-0 bg-emerald-950/90 z-0"></div>
+        <div class="absolute inset-0 bg-slate-900/70 z-0"></div>
 
-
-        <div class="absolute top-0 right-0 size-64 bg-emerald-500/10 blur-[100px] rounded-full z-10"></div>
-
-        <div class="max-w-4xl mx-auto py-20 px-5 relative z-20">
+        <div class="max-w-5xl mx-auto py-20 px-5 relative z-20">
             <div class="flex flex-col items-center">
                 <x-section.badge color="slate">Про компанію</x-section.badge>
 
@@ -733,7 +334,7 @@ name('main');
                     Чому обирають <span class="text-emerald-400">нас</span>?
                 </x-section.title>
 
-                <div class="space-y-5 text-emerald-50 leading-relaxed text-center text-balance font-light mt-5">
+                <div class="max-w-3xl space-y-5 text-slate-50 leading-relaxed text-center text-balance mt-5">
                     <p>
                         Наша клінінгова компанія — це професійний сервіс, який допомагає підтримувати чистоту у вашому
                         домі чи офісі. Ми використовуємо сучасні методи та відповідально ставимося до кожного
@@ -746,32 +347,38 @@ name('main');
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-10">
-                    <div>
+                    <div class="flex flex-col items-center text-center md:items-start md:text-left">
                         <div class="size-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
                             <x-lucide-award class="size-7 stroke-emerald-500" />
                         </div>
-                        <h4 class="text-emerald-400 font-bold mb-2">12+ років досвіду</h4>
-                        <p class="text-emerald-100/60 text-base leading-normal">
+                        <h4 class="font-display text-slate-100 uppercase font-semibold mb-2.5">
+                            12+ років досвіду
+                        </h4>
+                        <p class="text-slate-50/80 text-base leading-normal">
                             Понад десятиліття допомагаємо підтримувати чистоту, відточуючи кожну деталь сервісу.
                         </p>
                     </div>
 
-                    <div>
+                    <div class="flex flex-col items-center text-center md:items-start md:text-left">
                         <div class="size-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
                             <x-lucide-users class="size-7 stroke-emerald-500" />
                         </div>
-                        <h4 class="text-emerald-400 font-bold mb-2">300+ задоволених клієнтів</h4>
-                        <p class="text-emerald-100/60 text-base leading-normal">
+                        <h4 class="font-display text-slate-100 uppercase font-semibold mb-2.5">
+                            300+ задоволених клієнтів
+                        </h4>
+                        <p class="text-slate-100/80 text-base leading-normal">
                             Нам довіряють і рекомендують — більшість клієнтів повертаються до нас знову.
                         </p>
                     </div>
 
-                    <div>
+                    <div class="flex flex-col items-center text-center md:items-start md:text-left">
                         <div class="size-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
                             <x-lucide-badge-check class="size-7 stroke-emerald-500" />
                         </div>
-                        <h4 class="text-emerald-400 font-bold mb-2">100% гарантія якості</h4>
-                        <p class="text-emerald-100/60 text-base leading-normal">
+                        <h4 class="font-display text-slate-100 uppercase font-semibold mb-2.5">
+                            100% гарантія якості
+                        </h4>
+                        <p class="text-slate-100/80 text-base leading-normal">
                             Ми впевнені у результаті: якщо щось не влаштує — безкоштовно виправимо.
                         </p>
                     </div>
@@ -815,8 +422,10 @@ name('main');
 
                         <h3 class="text-2xl font-bold text-slate-900 mb-4">Домовимось за хвилину</h3>
                         <p class="text-slate-500 leading-relaxed mb-6 text-sm">
-                            Забудьте про дзвінки — лише 3 кліки. Оберіть тип сервісу, зручну дату та час. Наша система
-                            автоматично підбере вільного профі-клінера під ваш запит.
+                            Досить витрачати вечори на <span class="text-slate-950 font-medium">планування</span>.
+                            Ми відійшли від довгих форм. Просто вкажіть
+                            <span class="text-slate-950 font-medium">адресу</span> та час
+                            — решту ми беремо <span class="text-slate-950 font-medium">на себе</span>.
                         </p>
 
                         <div class="flex items-center gap-2 text-emerald-600 font-bold text-xs uppercase tracking-wider">
@@ -887,6 +496,82 @@ name('main');
         </div>
     </section>
 
+    <section class="relative min-h-150 flex items-center overflow-hidden bg-slate-900 px-6 py-20">
+        <!-- Фонове зображення з затемненням -->
+        <div class="absolute inset-0 z-0">
+            <img src="{{ Vite::asset('resources/images/header.webp') }}" class="size-full object-cover opacity-60"
+                alt="">
+            <div
+                class="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-slate-900/80 via-slate-900/40 to-transparent">
+            </div>
+        </div>
+
+        <!-- Величезний фоновий текст (TryIt) -->
+        <div class="absolute bottom-[-0.05em] left-1/2 -translate-x-1/2 z-10 select-none pointer-events-none">
+            <span class="text-[25vw] font-black uppercase leading-[0.75] tracking-tighter inline-flex">
+                <!-- Частина "Try" з градієнтом від смарагдового -->
+                <span class="bg-linear-to-b from-emerald-500/40 to-emerald-500/10 bg-clip-text text-transparent">
+                    Try
+                </span>
+                <!-- Частина "It" з градієнтом від помаранчевого -->
+                <span class="bg-linear-to-b from-orange-500/40 to-orange-500/10 bg-clip-text text-transparent">
+                    It
+                </span>
+            </span>
+        </div>
+
+        <div class="max-w-6xl mx-auto relative z-20">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+
+                <!-- Кнопка Play (Відео) -->
+                <div x-data="{ open: false }" class="relative">
+                    <button @click="open = true"
+                        class="group relative size-24 md:size-32 bg-emerald-500/20 rounded-full flex items-center justify-center backdrop-blur-md border border-white/30 transition-transform hover:scale-110">
+                        <!-- Анімовані хвилі -->
+                        <span class="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-20"></span>
+
+                        <div
+                            class="size-16 md:size-20 bg-emerald-500 rounded-full flex items-center justify-center shadow-xl shadow-emerald-500/40 group-hover:bg-emerald-400 transition-colors">
+                            <x-lucide-play class="size-8 text-white fill-current ml-1" />
+                        </div>
+                    </button>
+
+                    <!-- Модалка для відео (спрощена) -->
+                    <template x-if="open">
+                        <div class="fixed inset-0 z-100 flex items-center justify-center bg-slate-900/95 p-4"
+                            @click.self="open = false">
+                            <button @click="open = false"
+                                class="absolute top-10 right-10 text-white/50 hover:text-white text-4xl">&times;</button>
+                            <div class="aspect-video w-full max-w-4xl bg-black shadow-2xl">
+                                <!-- Сюди вставити iframe відео -->
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Текстовий блок -->
+                <div class="max-w-2xl text-center md:text-left">
+                    <h2 class="font-display text-4xl md:text-6xl font-black text-white leading-[0.95] text-balance mb-5">
+                        Хочете побачити нас <span class="text-emerald-500">у справі</span>?
+                        Наша робота <span class="text-emerald-500">говорить</span> сама за себе!
+                    </h2>
+
+                    <div class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-3">
+                        <div class="flex gap-1">
+                            @foreach (range(1, 5) as $i)
+                                <x-lucide-star class="size-4 text-tryit-orange fill-current" />
+                            @endforeach
+                        </div>
+                        <span class="text-slate-300 text-sm font-medium tracking-wide uppercase">
+                            <span class="font-black">5-ти</span> зірковий стандарт чистоти
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <section class="py-20 relative overflow-hidden bg-slate-100" x-data="{ active: 1 }">
         <div class="max-w-3xl relative z-10 mx-auto px-5">
             <div class="mb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between">
@@ -896,7 +581,7 @@ name('main');
                     </h2>
                     <p class="text-slate-500 text-xs mt-1">Все, що варто знати перед замовленням</p>
                 </div>
-                <a href="#"
+                <a href="{{ route('feedback') }}"
                     class="inline-flex items-center gap-1.5 mt-5 lg:mt-0 text-xs font-semibold uppercase tracking-wide text-emerald-600 hover:text-emerald-700 transition-colors">
                     Задати запитання <x-lucide-arrow-right class="size-4" stroke-width="2" />
                 </a>

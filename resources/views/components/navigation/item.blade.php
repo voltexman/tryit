@@ -6,6 +6,6 @@
         @isset($icon)
             @svg('lucide-' . $icon, 'size-7 inline-flex flex-none lg:hidden')
         @endisset
-        <span class="text-sm">{{ $slot }}</span>
+        {{ $slot }}
     </a>
 @endif

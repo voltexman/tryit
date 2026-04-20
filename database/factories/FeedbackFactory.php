@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Feedback;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class FeedbackFactory extends Factory
@@ -11,6 +10,10 @@ class FeedbackFactory extends Factory
     {
         return [
             'name' => fake()->optional()->name(),
+            'contact' => fake()->randomElement([
+                fake()->email(),
+                fake()->phoneNumber(),
+            ]),
             'text' => fake()->text(),
         ];
     }

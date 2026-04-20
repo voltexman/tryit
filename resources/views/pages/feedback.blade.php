@@ -6,91 +6,142 @@ name('feedback');
 @extends('layouts.base')
 
 @section('header')
-    <x-page-header
-        image="https://www.searchenginejournal.com/wp-content/uploads/2022/09/email-marketing-6331b0ee98b47-sej.png">
+    <x-page-header image="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1000&auto=format&fit=crop">
         <x-slot:title>
-            Зворотрій зв'язок
+            Зв'яжіться з нами
+        </x-slot>
+        <x-slot:description>
+            Ми завжди відкриті до ваших запитань, пропозицій та конструктивної критики.
+            Ваш відгук допомагає нам ставати кращими.
         </x-slot>
     </x-page-header>
 @endsection
 
 @section('content')
-    <x-section>
-        <div class="gap-10 flex flex-col xl:grid xl:grid-cols-5 xl:gap-15 min-h-screen">
-            <div class="max-w-xl flex flex-col gap-y-10 mx-auto xl:col-span-3">
-                <div>Ми цінуємо вашу думку та завжди раді допомогти. Якщо у вас є
-                    запитання, пропозиції або відгуки, будь ласка, надішліть повідомлення. Ми прагнемо зробити наш сервіс ще
-                    кращим, і ваша думка для нас дуже важлива. Дякуємо, що обираєте нас!
-                </div>
+    <x-section class="bg-gray-50/50">
+        <div class="max-w-6xl mx-auto">
 
-                <div class="grid md:grid-cols-2 gap-y-10">
-                    <div class="flex flex-col gap-y-5">
-                        <div class="flex gap-x-5 items-center">
-                            <div
-                                class="flex flex-none border border-dashed bg-tryit-orange/5 items-center justify-center size-14 rounded-full border-tryit-orange">
-                                <x-lucide-phone class="size-6 stroke-tryit-orange" stroke-width="1.5" />
-                            </div>
-                            <div class="grid">
-                                <span class="text-sm font-semibold">Питання та замовлення</span>
-                                <span class="text-sm">+380 (97) 877-866-7</span>
-                            </div>
-                        </div>
-                        <div class="flex gap-x-5 items-center">
-                            <div
-                                class="flex flex-none border border-dashed bg-tryit-orange/5 items-center justify-center size-14 rounded-full border-tryit-orange">
-                                <x-lucide-mail class="size-6 stroke-tryit-orange" stroke-width="1.5" />
-                            </div>
-                            <div class="grid">
-                                <span class="text-sm font-semibold">Поштова адреса</span>
-                                <span class="text-sm">info@tryit.com.ua</span>
-                            </div>
-                        </div>
+            <!-- Заголовок секції -->
+            <div class="text-center mb-15">
+                <x-section.title class="-tracking-wide">Давайте
+                    <span class="text-emerald-500">поспілкуємось</span>
+                </x-section.title>
+                <p class="text-stone-600 text-base leading-relaxed max-w-2xl mx-auto">
+                    Наша команда готова відповісти на будь-які ваші запитання щодо послуг прибирання.
+                    Ми цінуємо кожного клієнта і прагнемо надати максимально якісний сервіс.
+                </p>
+            </div>
+
+            <!-- Контактні блоки в один ряд -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Картка телефону -->
+                <div
+                    class="group relative overflow-hidden p-5 bg-slate-50 rounded-2xl border border-slate-200/80 flex flex-col items-center text-center">
+                    <!-- Background Decor -->
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1000&auto=format&fit=crop"
+                            class="w-full h-full object-cover opacity-[0.04] group-hover:opacity-[0.1] transition-opacity duration-500" />
+                    </div>
+                    <div
+                        class="absolute -right-6 -bottom-6 z-0 opacity-[0.05] group-hover:opacity-[0.1] group-hover:-translate-y-2 transition-all duration-500">
+                        <x-lucide-phone-call class="size-32 -rotate-12 text-tryit-orange" />
                     </div>
 
-                    <div class="flex flex-col gap-y-5">
-                        <div class="flex gap-x-5 items-center">
-                            <div class="flex flex-none items-center justify-center">
-                                <img src="{{ Vite::asset('resources/images/icons/instagram.svg') }}" class="size-9" />
-                            </div>
-                            <div class="grid">
-                                <span class="text-sm font-semibold">Ми в Instagram</span>
-                                <a href="http://www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr"
-                                    target="_blank"
-                                    class="text-sm flex items-center space-x-1.5 text-tryit-orange/60 hover:text-tryit-orange transition duration-300 line-clamp-1">
-                                    <x-lucide-link class="size-4 flex-none" />
-                                    <span
-                                        class="truncate">www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr</span>
-                                </a>
-                            </div>
+                    <div class="relative z-10 flex flex-col items-center">
+                        <div
+                            class="size-12 bg-tryit-orange/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <x-lucide-phone class="size-6 text-tryit-orange" />
                         </div>
-                        <div class="flex gap-x-5 items-center">
-                            <div class="flex flex-none items-center justify-center">
-                                <img src="{{ Vite::asset('resources/images/icons/telegram.svg') }}" class="size-9" />
-                            </div>
-                            <div class="grid">
-                                <span class="text-sm font-semibold">Наш Telegram</span>
-                                <a href="#"
-                                    class="text-sm text-tryit-orange/60 hover:text-tryit-orange transition duration-300 line-clamp-1">
-                                    <span class="truncate">@ExampleName</span>
-                                </a>
-                            </div>
+                        <h3 class="font-bold text-tryit-dark mb-1 uppercase tracking-wider text-sm">Зателефонуйте нам</h3>
+                        <p class="text-xs text-gray-400 mb-3 uppercase font-medium">Питання та замовлення</p>
+                        <a href="tel:+380978778667"
+                            class="text-lg font-bold text-tryit-dark hover:text-tryit-orange transition-colors">
+                            +380 (97) 877-866-7
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Картка пошти -->
+                <div
+                    class="group relative overflow-hidden p-5 bg-slate-50 rounded-2xl border border-slate-200/80 flex flex-col items-center text-center">
+                    <!-- Background Decor -->
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?q=80&w=1000&auto=format&fit=crop"
+                            class="w-full h-full object-cover opacity-[0.04] group-hover:opacity-[0.1] transition-opacity duration-500" />
+                    </div>
+                    <div
+                        class="absolute -right-6 -bottom-6 z-0 opacity-[0.05] group-hover:opacity-[0.1] group-hover:-translate-y-2 transition-all duration-500">
+                        <x-lucide-mail-open class="size-32 -rotate-12 text-tryit-orange" />
+                    </div>
+
+                    <div class="relative z-10 flex flex-col items-center">
+                        <div
+                            class="size-12 bg-tryit-orange/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <x-lucide-mail class="size-6 text-tryit-orange" />
                         </div>
-                        <div class="flex gap-x-5 items-center">
-                            <div class="flex flex-none items-center justify-center">
-                                <img src="{{ Vite::asset('resources/images/icons/viber.svg') }}" class="size-9" />
-                            </div>
-                            <div class="grid">
-                                <span class="text-sm font-semibold">Наш Viber</span>
-                                <a href="viber://call?number=380978778667"
-                                    class="text-sm text-tryit-orange/60 hover:text-tryit-orange transition duration-300 line-clamp-1">
-                                    <span class="truncate">+380978778667</span>
-                                </a>
-                            </div>
+                        <h3 class="font-bold text-tryit-dark mb-1 uppercase tracking-wider text-sm">Напишіть нам</h3>
+                        <p class="text-xs text-gray-400 mb-3 uppercase font-medium">Для ділових пропозицій</p>
+                        <a href="mailto:info@tryit.com.ua"
+                            class="text-lg font-bold text-tryit-dark hover:text-tryit-orange transition-colors">
+                            info@tryit.com.ua
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Соціальні мережі -->
+                <div
+                    class="group relative overflow-hidden p-5 bg-slate-50 rounded-2xl border border-slate-200/80 flex flex-col items-center text-center">
+                    <!-- Background Decor -->
+                    <div class="absolute inset-0 z-0">
+                        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=1000&auto=format&fit=crop"
+                            class="w-full h-full object-cover opacity-[0.04] group-hover:opacity-[0.1] transition-opacity duration-500" />
+                    </div>
+                    <div
+                        class="absolute -right-6 -bottom-6 z-0 opacity-[0.05] group-hover:opacity-[0.1] group-hover:-translate-y-2 transition-all duration-500">
+                        <x-lucide-users class="size-32 -rotate-12 text-tryit-orange" />
+                    </div>
+
+                    <div class="relative z-10 flex flex-col items-center">
+                        <div
+                            class="size-12 bg-tryit-orange/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <x-lucide-share-2 class="size-6 text-tryit-orange" />
+                        </div>
+                        <h3 class="font-bold text-tryit-dark mb-1 uppercase tracking-wider text-sm font-display">
+                            Ми в соцмережах
+                        </h3>
+                        <p class="text-xs text-gray-400 mb-3 uppercase font-medium">Приєднуйтесь до нас</p>
+                        <div class="flex gap-4">
+                            <a href="http://www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr"
+                                target="_blank" class="p-2 hover:bg-orange-50 rounded-lg transition-colors group/icon">
+                                <img src="{{ Vite::asset('resources/images/icons/instagram.svg') }}"
+                                    class="size-6 group-hover/icon:scale-110 transition-transform" />
+                            </a>
+                            <a href="#" class="p-2 hover:bg-orange-50 rounded-lg transition-colors group/icon">
+                                <img src="{{ Vite::asset('resources/images/icons/telegram.svg') }}"
+                                    class="size-6 group-hover/icon:scale-110 transition-transform" />
+                            </a>
+                            <a href="viber://call?number=380978778667"
+                                class="p-2 hover:bg-orange-50 rounded-lg transition-colors group/icon">
+                                <img src="{{ Vite::asset('resources/images/icons/viber.svg') }}"
+                                    class="size-6 group-hover/icon:scale-110 transition-transform" />
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="xl:col-span-2 mx-auto w-full max-w-md">@livewire('feedback')</div>
+
+            <!-- Форма зворотного зв'язку -->
+            <div class="max-w-5xl mx-auto relative">
+                <!-- Фонове зображення як водяний знак -->
+                <div class="absolute inset-0 z-0 pointer-events-none">
+                    <img src="https://demo2.pavothemes.com/cetro/wp-content/uploads/2025/07/h1-asked.png"
+                        class="size-full object-contain object-center opacity-7" />
+                </div>
+
+                <div class="max-w-2xl mx-auto relative z-10">
+                    @livewire('feedback')
+                </div>
+            </div>
         </div>
     </x-section>
 @endsection
