@@ -17,11 +17,7 @@
         'emerald' => 'text-emerald-950',
     ];
 
-    $classes = [
-        'font-black text-balance leading-[1.1]',
-        $sizes[$size] ?? $sizes['md'],
-        $colors[$color] ?? $colors['dark'],
-    ];
+    $classes = ['font-black text-balance', $sizes[$size] ?? $sizes['md'], $colors[$color] ?? $colors['dark']];
 @endphp
 
 <{{ $tag }} {{ $attributes->merge(['class' => implode(' ', $classes)]) }}>

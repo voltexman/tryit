@@ -21,17 +21,6 @@ name('feedback');
     <x-section class="bg-gray-50/50">
         <div class="max-w-6xl mx-auto">
 
-            <!-- Заголовок секції -->
-            <div class="text-center mb-15">
-                <x-section.title class="-tracking-wide">Давайте
-                    <span class="text-emerald-500">поспілкуємось</span>
-                </x-section.title>
-                <p class="text-stone-600 text-base leading-relaxed max-w-2xl mx-auto">
-                    Наша команда готова відповісти на будь-які ваші запитання щодо послуг прибирання.
-                    Ми цінуємо кожного клієнта і прагнемо надати максимально якісний сервіс.
-                </p>
-            </div>
-
             <!-- Контактні блоки в один ряд -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                 <!-- Картка телефону -->
@@ -52,8 +41,10 @@ name('feedback');
                             class="size-12 bg-tryit-orange/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                             <x-lucide-phone class="size-6 text-tryit-orange" />
                         </div>
-                        <h3 class="font-bold text-tryit-dark mb-1 uppercase tracking-wider text-sm">Зателефонуйте нам</h3>
-                        <p class="text-xs text-gray-400 mb-3 uppercase font-medium">Питання та замовлення</p>
+                        <h3 class="font-display font-bold text-tryit-dark mb-1 uppercase tracking-wide text-sm">
+                            Зателефонуйте нам
+                        </h3>
+                        <p class="text-xs text-gray-400 mb-2.5 font-medium">Питання та замовлення</p>
                         <a href="tel:+380978778667"
                             class="text-lg font-bold text-tryit-dark hover:text-tryit-orange transition-colors">
                             +380 (97) 877-866-7
@@ -79,8 +70,10 @@ name('feedback');
                             class="size-12 bg-tryit-orange/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                             <x-lucide-mail class="size-6 text-tryit-orange" />
                         </div>
-                        <h3 class="font-bold text-tryit-dark mb-1 uppercase tracking-wider text-sm">Напишіть нам</h3>
-                        <p class="text-xs text-gray-400 mb-3 uppercase font-medium">Для ділових пропозицій</p>
+                        <h3 class="font-display font-bold text-tryit-dark mb-1 uppercase tracking-wide text-sm">
+                            Напишіть нам
+                        </h3>
+                        <p class="text-xs text-gray-400 mb-2.5 font-medium">Для інформації та пропозицій</p>
                         <a href="mailto:info@tryit.com.ua"
                             class="text-lg font-bold text-tryit-dark hover:text-tryit-orange transition-colors">
                             info@tryit.com.ua
@@ -106,10 +99,10 @@ name('feedback');
                             class="size-12 bg-tryit-orange/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                             <x-lucide-share-2 class="size-6 text-tryit-orange" />
                         </div>
-                        <h3 class="font-bold text-tryit-dark mb-1 uppercase tracking-wider text-sm font-display">
+                        <h3 class="font-display font-bold text-tryit-dark mb-1 uppercase tracking-wide text-sm">
                             Ми в соцмережах
                         </h3>
-                        <p class="text-xs text-gray-400 mb-3 uppercase font-medium">Приєднуйтесь до нас</p>
+                        <p class="text-xs text-gray-400 mb-2.5 font-medium">Приєднуйтесь до нас</p>
                         <div class="flex gap-4">
                             <a href="http://www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr"
                                 target="_blank" class="p-2 hover:bg-orange-50 rounded-lg transition-colors group/icon">
@@ -131,14 +124,25 @@ name('feedback');
             </div>
 
             <!-- Форма зворотного зв'язку -->
-            <div class="max-w-5xl mx-auto relative">
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-5 md:gap-10 relative">
                 <!-- Фонове зображення як водяний знак -->
                 <div class="absolute inset-0 z-0 pointer-events-none">
                     <img src="https://demo2.pavothemes.com/cetro/wp-content/uploads/2025/07/h1-asked.png"
-                        class="size-full object-contain object-center opacity-7" />
+                        class="size-full object-contain object-center opacity-8" />
                 </div>
 
-                <div class="max-w-2xl mx-auto relative z-10">
+                <div>
+                    <x-section.title class="mb-5" size="lg">
+                        Ми на зв’язку — <span class="text-emerald-500">пишіть</span> нам
+                    </x-section.title>
+                    <x-section.caption>
+                        Є запитання, цікава ідея чи пропозиція? Ми завжди на зв’язку! Пишіть нам що вас цікавить: від
+                        консультацій щодо складних забруднень до пропозицій про співпрацю чи ідей, як зробити
+                        наш сервіс ще кращим. Ми готові обговорювати будь-які ваші запити зі світу чистоти!
+                    </x-section.caption>
+                </div>
+
+                <div class="relative z-10">
                     @livewire('feedback')
                 </div>
             </div>

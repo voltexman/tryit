@@ -20,7 +20,7 @@
 <body x-data="{ loading: true }" class="font-sans antialiased">
     <header class="relative overflow-hidden">
         <nav class="absolute bg-transparent h-20 w-full top-0 z-50 px-5 xl:px-0 transition-all duration-300">
-            <div class="flex justify-between h-full max-w-7xl mx-auto items-center">
+            <div class="flex justify-between h-full max-w-6xl mx-auto items-center">
                 <div class="relative w-auto mt-5">
                     <a href="{{ route('main') }}" aria-label="Перейти на головну сторінку натиснувши на логотип">
                         <img src="{{ Vite::asset('resources/images/logo.png') }}"
@@ -46,11 +46,11 @@
                                 <x-navigation.item :link="route('services')" icon="hand-platter" :active="request()->routeIs('services')">
                                     Послуги
                                 </x-navigation.item>
-                                <x-navigation.item :link="route('feedback')" icon="book-user" :active="request()->routeIs('feedback')">
-                                    Контакти
-                                </x-navigation.item>
                                 <x-navigation.item :link="route('blog')" icon="newspaper" :active="request()->routeIs('blog*')">
                                     Блог
+                                </x-navigation.item>
+                                <x-navigation.item :link="route('feedback')" icon="contact" :active="request()->routeIs('feedback')">
+                                    Контакти
                                 </x-navigation.item>
                             </x-navigation>
                             <a href="{{ route('legal.privacy-policy') }}" class="flex gap-x-1.5 items-center text-sm">
@@ -65,24 +65,24 @@
                     </x-sidebar>
                 </div>
 
-                <x-navigation class="hidden lg:flex">
-                    <x-navigation.item :link="route('main')" icon="book-user" :active="request()->routeIs('main')">
-                        <x-lucide-home class="size-4" />
+                <x-navigation class="hidden lg:flex mx-auto justify-center items-center">
+                    <x-navigation.item :link="route('main')" icon="home" :active="request()->routeIs('main')">
+                        Головна
                     </x-navigation.item>
-                    <x-navigation.item :link="route('services')" :active="request()->routeIs('services')">
+                    <x-navigation.item :link="route('services')" icon="hand-platter" :active="request()->routeIs('services')">
                         Послуги
                     </x-navigation.item>
-                    <x-navigation.item :link="route('feedback')" :active="request()->routeIs('feedback')">
-                        Контакти
-                    </x-navigation.item>
-                    <x-navigation.item :link="route('blog')" :active="request()->routeIs('blog*')">
+                    <x-navigation.item :link="route('blog')" icon="newspaper" :active="request()->routeIs('blog*')">
                         Блог
+                    </x-navigation.item>
+                    <x-navigation.item :link="route('feedback')" icon="contact" :active="request()->routeIs('feedback')">
+                        Контакти
                     </x-navigation.item>
                 </x-navigation>
 
-                <div class="hidden lg:flex text-white text-xl font-display font-semibold items-center gap-2.5">
+                <div class="hidden lg:flex text-white w-fit text-xl font-display font-semibold items-center gap-2.5">
                     <x-lucide-phone class="size-6" />
-                    <span>+380 (97) 877-866-7</span>
+                    <span class="text-nowrap">+380 (97) 877-866-7</span>
                 </div>
             </div>
         </nav>
