@@ -21,5 +21,5 @@
         "photoswipe-dynamic-caption-plugin": "^1.2.7",
         "tailwindcss-animate": "^1.0.7"
     },
-    "packageManager": "yarn@4.13.0"
+    "packageManager": "yarn@4.14.1"
 }
