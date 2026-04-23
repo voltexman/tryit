@@ -12,7 +12,7 @@
     ];
 
     $colors = [
-        'dark' => 'text-slate-900',
+        'dark' => 'text-slate-800',
         'white' => 'text-white',
         'emerald' => 'text-emerald-950',
     ];

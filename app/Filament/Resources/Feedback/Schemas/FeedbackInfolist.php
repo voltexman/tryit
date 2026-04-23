@@ -31,7 +31,7 @@ class FeedbackInfolist
                     ->columnSpanFull(),
                 TextEntry::make('created_at')
                     ->label('Дата звернення')
-                    ->dateTime('d F Y')
+                    ->dateTime('d F Y'),
             ]);
     }
 }

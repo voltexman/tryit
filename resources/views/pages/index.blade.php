@@ -7,10 +7,10 @@ name('main');
 
 @section('header')
     <div class="bg-cover bg-center h-dvh" style="background-image: url('{{ Vite::asset('resources/images/header.webp') }}');">
-        <div class="flex items-center justify-center size-full bg-black/65">
+        <div class="flex items-center justify-center size-full bg-slate-950/65 backdrop-blur-[1px]">
             <div class="max-w-4xl mx-auto flex flex-col items-center gap-y-8 px-5 text-center">
                 <h1
-                    class="font-display text-3xl md:text-6xl xl:text-7xl text-nowrap uppercase text-white font-black tracking-wide leading-tight drop-shadow-lg animate-in duration-700">
+                    class="font-display text-3xl md:text-6xl xl:text-7xl text-nowrap uppercase text-slate-100 font-black leading-tight drop-shadow-lg animate-in duration-700">
                     <span class="text-tryit-orange">Чистота</span>, яку варто<br>
                     спробувати <span class="text-tryit-orange">сьогодні</span>
                 </h1>
@@ -35,12 +35,18 @@ name('main');
 @endsection
 
 @section('content')
-    <section class="relative py-20 lg:py-32 bg-slate-50 overflow-hidden font-sans">
+    <section class="relative py-20 lg:py-30 bg-slate-50 overflow-hidden font-sans">
         <div class="max-w-5xl mx-auto px-5 relative">
+
+            {{-- Subtle Background Image --}}
+            <div class="absolute inset-0 opacity-30 pointer-events-none z-0">
+                <img src="https://demo2.pavothemes.com/cetro/wp-content/uploads/2025/07/h1-asked.png"
+                    class="size-full object-contain object-center grayscale-100 opacity-40" alt="">
+            </div>
 
             <div class="relative z-20 text-center max-w-2xl mx-auto pt-10 pb-10">
                 <x-section.badge class="mb-5">Ваш дім у надійних руках</x-section.badge>
-                <h2 class="font-display text-4xl/10 md:text-6xl/12 font-black tracking-tight text-slate-900 text-balance">
+                <h2 class="font-display text-4xl/10 md:text-6xl/12 font-black tracking-tight text-slate-800 text-balance">
                     Бо ми знаємо, як важливо
                     <span class="text-emerald-600 inline-block mt-2">бути в гармонії</span>
                     з вашим домом
@@ -70,7 +76,7 @@ name('main');
 
                 <div class="absolute top-[45%] -left-[2%] lg:left-[2%] animate-float [animation-delay:1s] hidden md:block">
                     <div class="flex flex-col items-end">
-                        <div class="bg-slate-900 text-white text-[10px] px-2 py-1 rounded-md mb-2">PRO Клінер</div>
+                        <div class="bg-slate-900 text-white text-[10px] px-2 py-1 rounded-md mb-2">Виконали вчасно</div>
                         <img src="https://i.pravatar.cc/150?u=2"
                             class="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl rotate-6 object-cover shadow-2xl border-4 border-white">
                     </div>
@@ -81,8 +87,8 @@ name('main');
                         <img src="https://i.pravatar.cc/150?u=3"
                             class="w-14 h-14 rounded-full border-4 border-white shadow-lg grayscale hover:grayscale-0 transition-all duration-500">
                         <div
-                            class="absolute -bottom-2 -right-10 bg-white px-3 py-1 rounded-full shadow-sm border border-slate-100 text-[11px] font-semibold text-emerald-600 italic">
-                            #ЧистоШвидко
+                            class="absolute -bottom-2 -right-10 bg-white px-3 py-1 rounded-full shadow-sm border border-slate-100 text-nowrap text-[11px] font-semibold text-emerald-600 italic">
+                            #Чисто #Швидко
                         </div>
                     </div>
                 </div>
@@ -98,7 +104,7 @@ name('main');
                         </div>
                         <div
                             class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-2xl shadow-lg border border-white text-xs font-medium text-slate-600">
-                            Вже їду до вас! 🚗
+                            Вже їдемо до вас! 🚗
                         </div>
                     </div>
                 </div>
@@ -110,7 +116,7 @@ name('main');
                             class="w-16 h-16 lg:w-24 lg:h-24 rounded-full border-4 border-white shadow-2xl transition-transform group-hover:scale-110">
                         <div
                             class="absolute -top-4 -left-6 bg-emerald-600 text-white text-[10px] px-3 py-1 rounded-full shadow-lg font-bold">
-                            10/10 рейтинг
+                            Безпечна хімія
                         </div>
                     </div>
                 </div>
@@ -120,7 +126,7 @@ name('main');
                         class="flex items-center gap-2 bg-white/40 backdrop-blur-[2px] p-2 rounded-full border border-white/50">
                         <img src="https://i.pravatar.cc/150?u=6"
                             class="w-12 h-12 rounded-full border-2 border-white shadow-md">
-                        <span class="text-[11px] text-slate-500 font-medium italic pr-2">"Нарешті вихідні!"</span>
+                        <span class="text-[11px] text-slate-500 font-medium italic pr-2">"Всі види робіт!"</span>
                     </div>
                 </div>
             </div>
@@ -149,7 +155,7 @@ name('main');
                 ],
             ),
         ) }}
-    }" class="relative w-full min-h-125 flex items-center overflow-hidden bg-gray-900">
+    }" class="relative w-full flex items-center overflow-hidden bg-gray-900 lg:min-h-125">
         <!-- Фонове зображення з плавним переходом -->
         <template x-for="(service, index) in services" :key="index">
             <div x-show="selected === index" x-transition:enter="transition opacity duration-700 ease-in-out"
@@ -157,32 +163,101 @@ name('main');
                 x-transition:leave="transition opacity duration-700 ease-in-out" x-transition:leave-start="opacity-100"
                 x-transition:leave-end="opacity-0" class="absolute inset-0 z-0">
                 <img :src="service.image" :alt="service.title" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-black/50 lg:bg-linear-to-l from-black/80 via-black/40 to-black/20"></div>
+                <div
+                    class="absolute inset-0 bg-slate-900/70 lg:bg-linear-to-l lg:from-slate-900/70 lg:via-slate-900/30 lg:to-slate-900/20">
+                </div>
             </div>
         </template>
 
         <!-- Контент -->
-        <div class="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-[1fr_350px] mx-auto px-4 relative z-10 py-16">
-            <div class="grow w-full">
-                Наші послуги
+        <div
+            class="max-w-6xl w-full mx-auto px-5 lg:px-4 relative z-10 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-8 lg:gap-0">
+
+            <!-- ЛІВА ЧАСТИНА: Заголовок та опис (видимо на ПК) -->
+            <div class="hidden lg:flex flex-col justify-center text-white">
+                <div class="space-y-8">
+                    <h2 class="font-display text-5xl xl:text-6xl font-black tracking-wide uppercase leading-tight">
+                        Наші<br><span class="text-emerald-500">послуги</span>
+                    </h2>
+
+                    <template x-for="(service, index) in services" :key="index">
+                        <div x-show="selected === index" x-transition:enter="transition opacity duration-500"
+                            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+                            x-transition:leave="transition opacity duration-300 absolute"
+                            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="space-y-6">
+
+                            <p class="text-lg text-white/90 leading-relaxed max-w-xl font-light">
+                                <span x-text="service.description"></span>
+                            </p>
+
+                            <div class="flex flex-row gap-5 pt-2">
+                                <a :href="service.link"
+                                    class="px-6 py-3 text-base font-display backdrop-blur-xs bg-slate-500/20 hover:bg-slate-600/20 border border-slate-500/20 text-slate-200/80 hover:text-slate-200 font-semibold rounded-full transition-all duration-300 text-center">
+                                    Детальніше
+                                    <x-lucide-move-right class="size-4 shrink-0 inline-flex ml-1.5" />
+                                </a>
+                                <button type="button"
+                                    class="px-6 py-3 font-display rounded-full backdrop-blur-xs text-emerald-400/80 hover:text-emerald-400 bg-emerald-500/20 hover:bg-emerald-600/20 border border-emerald-500/20 transition-all duration-300 cursor-pointer">
+                                    Замовити послугу
+                                </button>
+                            </div>
+                        </div>
+                    </template>
+                </div>
             </div>
 
-            <!-- Список послуг -->
-            <div class="flex flex-col gap-y-2.5">
+            <!-- МОБІЛЬНА ВЕРСІЯ: Акордіон на фоні зображення -->
+            <div class="lg:hidden flex flex-col justify-center text-white w-full min-h-96">
+                <!-- Заголовок на мобільному -->
+                <h2 class="font-display text-4xl font-black tracking-wide uppercase leading-tight mb-5">
+                    Наші<br><span class="text-emerald-500">послуги</span>
+                </h2>
+
+                <template x-for="(service, index) in services" :key="index">
+                    <div class="border-b last:border-b-0 border-slate-50/15 py-4">
+                        <!-- Кнопка послуги -->
+                        <button @click="selected === index ? selected = -1 : selected = index"
+                            class="w-full flex items-center justify-between font-display text-left text-xl font-semibold text-white/90 hover:text-white transition-colors duration-200"
+                            :class="selected === index ? 'text-emerald-400 text-lg' : 'text-base'">
+                            <span x-text="service.title"></span>
+                            <x-lucide-chevron-down class="size-6 transition-transform duration-300 shrink-0 ml-2"
+                                x-bind:class="selected === index ? 'rotate-180' : 'stroke-slate-50/25'" />
+                        </button>
+
+                        <!-- Розгорнута інформація -->
+                        <div x-show="selected === index" x-transition:enter="transition ease-out duration-300"
+                            x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100"
+                            x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100"
+                            x-transition:leave-end="opacity-0 -translate-y-2" class="mt-4 space-y-2">
+
+                            <p class="text-slate-200/80 leading-snug text-base">
+                                <span x-text="service.description"></span>
+                            </p>
+
+                            <div class="flex flex-row gap-2 pt-2">
+                                <a :href="service.link"
+                                    class="px-4 py-2.5 bg-slate-500/50 tracking-wide hover:bg-slate-500/30 text-white font-display font-semibold rounded-full transition-all duration-300 text-center text-sm border border-slate-500/30 backdrop-blur-sm">
+                                    Детальніше
+                                    <x-lucide-move-right class="size-4 shrink-0 inline-flex ml-1.5" />
+                                </a>
+                                <x-button color="emerald" class="tracking-wide">Замовити послугу</x-button>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <!-- СПИСОК ПОСЛУГ (видимо на ПК справа) -->
+            <div class="hidden lg:flex flex-col lg:gap-y-2.5">
                 <template x-for="(service, index) in services" :key="index">
                     <div @click="selected = index"
-                        class="bg-linear-to-r cursor-pointer px-5 py-2.5 border-s transition-all duration-300 group"
-                        :class="selected === index ? 'border-emerald-500 from-emerald-500/20 from-5% to-transparent' :
-                            'border-slate-100/20 bg-transparent'">
-                        <div>
-                            <h3 class="font-display text-xl font-semibold mb-2 transition-colors duration-300"
-                                :class="selected === index ? 'text-emerald-500' : 'text-white/80 group-hover:text-white'"
-                                x-text="service.title"></h3>
-                            <p class="text-sm leading-relaxed transition-all duration-300"
-                                :class="selected === index ? 'text-white/90 block' :
-                                    'text-white/40 hidden md:line-clamp-1 group-hover:text-white/60'"
-                                x-text="service.description"></p>
-                        </div>
+                        class="bg-linear-to-r cursor-pointer px-5 py-3 border-s transition-all duration-300 group"
+                        :class="selected === index ?
+                            'border-emerald-500 from-emerald-500/20 from-5% to-transparent' :
+                            'border-slate-100/20 bg-transparent hover:bg-white/5'">
+                        <h3 class="font-display text-lg font-semibold transition-colors duration-300"
+                            :class="selected === index ? 'text-emerald-400' : 'text-white/70 group-hover:text-white'"
+                            x-text="service.title"></h3>
                     </div>
                 </template>
             </div>
@@ -190,7 +265,7 @@ name('main');
     </section>
 
     {{-- === CTA: TRY IT + CALLBACK === --}}
-    <section class="relative py-32 bg-white overflow-visible font-sans">
+    <section class="relative py-32 lg:py-44 bg-white overflow-visible font-sans">
         <div class="max-w-6xl mx-auto px-5">
 
             {{-- Основний контейнер (Зелена плашка) --}}
@@ -288,17 +363,21 @@ name('main');
                                 для тих, хто цінує свій час та бездоганний результат.
                             </p>
 
-                            <p class="text-white/70 text-sm font-semibold">
+                            <div class="font-display text-3xl text-slate-50 font-black">
+                                +380 (97) 877-866-7
+                            </div>
+
+                            <div class="text-white/70 text-base font-semibold mb-2">
                                 Передзвонити вам? Просто вкажіть свій номер.
-                            </p>
+                            </div>
 
                             {{-- Кнопки маркетів --}}
-                            <div class="flex flex-wrap gap-4 pt-6">
+                            <div class="flex flex-wrap gap-4">
                                 {{-- Google Play --}}
                                 <div
                                     class="flex items-center gap-3 bg-black/20 border border-white/15 backdrop-blur-md rounded-2xl px-5 py-2.5 transition-all focus-within:bg-black/40 focus-within:border-white/40 w-full max-w-70">
                                     {{-- Іконка телефону --}}
-                                    <div class="w-8 h-8 flex items-center justify-center shrink-0">
+                                    <div class="size-8 flex items-center justify-center shrink-0">
                                         <x-lucide-phone class="size-6 stroke-white opacity-70" />
                                     </div>
 
@@ -414,13 +493,13 @@ name('main');
                         01</div>
 
                     <div
-                        class="relative z-10 bg-slate-100 p-8 rounded-3xl border border-slate-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:border-emerald-200">
+                        class="relative z-10 bg-slate-200/80 p-8 rounded-3xl border border-slate-200 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:border-emerald-200">
                         <div
                             class="size-16 bg-slate-900 rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:bg-emerald-600 group-hover:rotate-10 transition-all duration-500">
                             <x-lucide-timer class="size-8 stroke-slate-100" />
                         </div>
 
-                        <h3 class="text-2xl font-bold text-slate-900 mb-4">Домовимось за хвилину</h3>
+                        <h3 class="font-display text-2xl font-bold text-slate-900 mb-4">Домовимось за хвилину</h3>
                         <p class="text-slate-500 leading-relaxed mb-6 text-sm">
                             Досить витрачати вечори на <span class="text-slate-950 font-medium">планування</span>.
                             Ми відійшли від довгих форм. Просто вкажіть
@@ -447,7 +526,7 @@ name('main');
                             <x-lucide-sparkles class="size-8 stroke-slate-100" />
                         </div>
 
-                        <h3 class="text-2xl font-bold text-white mb-2.5">Усе необхідне - з нас</h3>
+                        <h3 class="font-display text-2xl font-bold text-white mb-2.5">Усе необхідне - з нас</h3>
                         <p class="text-slate-400 leading-relaxed mb-5 text-sm">
                             Ми приїжджаємо з повним арсеналом: від потужного промислового
                             <span class="text-slate-100 font-medium">обладнання</span> до сертифікованої
@@ -471,17 +550,19 @@ name('main');
                         03</div>
 
                     <div
-                        class="relative z-10 bg-stone-100 p-8 rounded-3xl border border-stone-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
+                        class="relative z-10 bg-zinc-200/80 p-8 rounded-3xl border border-zinc-200 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
                         <div
-                            class="size-16 bg-white border-2 border-slate-700 rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:border-emerald-600 transition-all duration-500">
+                            class="size-16 bg-emerald-500 border-2 border-slate-700 rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:border-emerald-600 transition-all duration-500">
                             <x-lucide-smile-plus
                                 class="size-8 stroke-slate-700 group-hover:stroke-emerald-600 transition-all duration-500" />
                         </div>
 
-                        <h3 class="text-2xl font-bold text-slate-800 mb-2.5">Насолоджуйтесь</h3>
+                        <h3 class="font-display text-2xl font-bold text-slate-800 mb-2.5">Насолоджуйтесь</h3>
                         <p class="text-slate-500 leading-relaxed mb-5 text-sm">
-                            Перевірте якість роботи та насолоджуйтеся свіжістю. Оплата списується лише після вашого
-                            схвалення. Ви отримуєте не просто прибирання, а ідеальний простір для життя.
+                            Перевірте <span class="text-slate-950 font-medium">якість</span> роботи та насолоджуйтеся
+                            свіжістю. Оплата списується лише після вашого
+                            <span class="text-slate-950 font-medium">схвалення</span>. Ви отримуєте не просто прибирання, а
+                            <span class="text-slate-950 font-medium">ідеальний простір</span> для життя.
                         </p>
 
                         <div class="text-xs text-slate-400 font-medium">300+ чистих об'єктів</div>
