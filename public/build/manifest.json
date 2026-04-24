@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-BXnMYLxJ.css",
+    "file": "assets/app-DuCv8dtF.css",
     "name": "app",
     "names": [
       "app.css"
@@ -8,9 +8,21 @@
     "src": "resources/css/app.css",
     "isEntry": true
   },
+  "resources/images/banner-1.jpg": {
+    "file": "assets/banner-1-4Fm5gwCE.jpg",
+    "src": "resources/images/banner-1.jpg"
+  },
   "resources/images/cleaning.png": {
     "file": "assets/cleaning-fdbXvyGX.png",
     "src": "resources/images/cleaning.png"
+  },
+  "resources/images/footer-background.jpg": {
+    "file": "assets/footer-background-J9XjIIWB.jpg",
+    "src": "resources/images/footer-background.jpg"
+  },
+  "resources/images/gallery-section.jpg": {
+    "file": "assets/gallery-section-t4UpB7ZX.jpg",
+    "src": "resources/images/gallery-section.jpg"
   },
   "resources/images/header.webp": {
     "file": "assets/header-D7Evp8KQ.webp",
@@ -69,7 +81,7 @@
     "src": "resources/images/service-4.jpg"
   },
   "resources/images/service-5.jpg": {
-    "file": "assets/service-5-HeRrD7LF.jpg",
+    "file": "assets/service-5-K9R8nF0l.jpg",
     "src": "resources/images/service-5.jpg"
   },
   "resources/images/service-6.jpg": {

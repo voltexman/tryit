@@ -77,16 +77,16 @@
         },
         {
             "name": "blade-ui-kit/blade-icons",
-            "version": "1.9.1",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/driesvints/blade-icons.git",
-                "reference": "377eede719f9690b03bbbfd516afef887e27634a"
+                "reference": "74189a80bbaa4966aebaee54fec3a3c2ef0a5f3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/driesvints/blade-icons/zipball/377eede719f9690b03bbbfd516afef887e27634a",
-                "reference": "377eede719f9690b03bbbfd516afef887e27634a",
+                "url": "https://api.github.com/repos/driesvints/blade-icons/zipball/74189a80bbaa4966aebaee54fec3a3c2ef0a5f3a",
+                "reference": "74189a80bbaa4966aebaee54fec3a3c2ef0a5f3a",
                 "shasum": ""
             },
             "require": {
@@ -154,7 +154,7 @@
                     "type": "paypal"
                 }
             ],
-            "time": "2026-04-07T17:56:48+00:00"
+            "time": "2026-04-23T19:03:45+00:00"
         },
         {
             "name": "brick/math",
@@ -3508,16 +3508,16 @@
         },
         {
             "name": "mallardduck/blade-lucide-icons",
-            "version": "1.26.12",
+            "version": "1.26.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mallardduck/blade-lucide-icons.git",
-                "reference": "bd6f832ce594acbb2328cecebad236839c8cc17d"
+                "reference": "bd7b8fc4f4a0d9741378acb5c6af2d21df51fe7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mallardduck/blade-lucide-icons/zipball/bd6f832ce594acbb2328cecebad236839c8cc17d",
-                "reference": "bd6f832ce594acbb2328cecebad236839c8cc17d",
+                "url": "https://api.github.com/repos/mallardduck/blade-lucide-icons/zipball/bd7b8fc4f4a0d9741378acb5c6af2d21df51fe7d",
+                "reference": "bd7b8fc4f4a0d9741378acb5c6af2d21df51fe7d",
                 "shasum": ""
             },
             "require": {
@@ -3562,9 +3562,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mallardduck/blade-lucide-icons/issues",
-                "source": "https://github.com/mallardduck/blade-lucide-icons/tree/1.26.12"
+                "source": "https://github.com/mallardduck/blade-lucide-icons/tree/1.26.13"
             },
-            "time": "2026-04-10T00:26:49+00:00"
+            "time": "2026-04-24T00:33:21+00:00"
         },
         {
             "name": "monolog/monolog",

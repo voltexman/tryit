@@ -24,7 +24,7 @@ name('main');
 
                 <a href="#services" class="relative inline-block group mt-4">
                     <button
-                        class="bg-tryit-orange font-display relative py-4 px-10 uppercase text-white text-base tracking-widest rounded-full border border-white/20 hover:border-tryit-orange/50 hover:bg-tryit-orange/50 backdrop-blur-sm transition-all duration-300 cursor-pointer"
+                        class="bg-tryit-orange font-display relative py-4 px-10 uppercase text-white font-bold text-base tracking-wide rounded-full border border-white/20 hover:border-tryit-orange/50 hover:bg-tryit-orange/50 backdrop-blur-sm transition-all duration-300 cursor-pointer"
                         aria-label="Перейти до розділу з нашими послугами">
                         Наші послуги
                     </button>
@@ -196,8 +196,8 @@ name('main');
                                     Детальніше
                                     <x-lucide-move-right class="size-4 shrink-0 inline-flex ml-1.5" />
                                 </a>
-                                <button type="button"
-                                    class="px-6 py-3 font-display rounded-full backdrop-blur-xs text-emerald-400/80 hover:text-emerald-400 bg-emerald-500/20 hover:bg-emerald-600/20 border border-emerald-500/20 transition-all duration-300 cursor-pointer">
+                                <button type="button" @click="openOffcanvas('orderOffcanvas')"
+                                    class="px-6 py-3 font-display rounded-full backdrop-blur-xs text-emerald-400 hover:text-emerald-400 bg-emerald-500/20 hover:bg-emerald-600/20 border border-emerald-500/20 transition-all duration-300 cursor-pointer">
                                     Замовити послугу
                                 </button>
                             </div>
@@ -240,7 +240,9 @@ name('main');
                                     Детальніше
                                     <x-lucide-move-right class="size-4 shrink-0 inline-flex ml-1.5" />
                                 </a>
-                                <x-button color="emerald" class="tracking-wide">Замовити послугу</x-button>
+                                <button type="button" @click="openOffcanvas('orderOffcanvas')" class="flex-1">
+                                    <x-button color="emerald" class="tracking-wide w-full">Замовити послугу</x-button>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -255,7 +257,7 @@ name('main');
                         :class="selected === index ?
                             'border-emerald-500 from-emerald-500/20 from-5% to-transparent' :
                             'border-slate-100/20 bg-transparent hover:bg-white/5'">
-                        <h3 class="font-display text-lg font-semibold transition-colors duration-300"
+                        <h3 class="font-display text-xl font-semibold transition-colors duration-300"
                             :class="selected === index ? 'text-emerald-400' : 'text-white/70 group-hover:text-white'"
                             x-text="service.title"></h3>
                     </div>
@@ -401,14 +403,13 @@ name('main');
 
     <section x-data="{ scroll: 0 }" x-init="window.addEventListener('scroll', () => { scroll = window.scrollY })"
         class="relative overflow-hidden shadow-inner bg-cover bg-no-repeat bg-fixed"
-        :style="`background-image: url('{{ Vite::asset('resources/images/header.webp') }}');`">
+        :style="`background-image: url('{{ Vite::asset('resources/images/banner-1.jpg') }}');`">
 
         <div class="absolute inset-0 bg-slate-900/70 z-0"></div>
 
         <div class="max-w-5xl mx-auto py-20 px-5 relative z-20">
             <div class="flex flex-col items-center">
-                <x-section.badge color="slate">Про компанію</x-section.badge>
-
+                <x-section.badge color="slate" class="mb-2.5">Про компанію</x-section.badge>
                 <x-section.title tag="h3" color="white" size="sm">
                     Чому обирають <span class="text-emerald-400">нас</span>?
                 </x-section.title>
@@ -427,37 +428,37 @@ name('main');
 
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-10">
                     <div class="flex flex-col items-center text-center md:items-start md:text-left">
-                        <div class="size-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
-                            <x-lucide-award class="size-7 stroke-emerald-500" />
+                        <div class="font-display text-5xl font-black text-slate-50 mb-4">
+                            12+
                         </div>
-                        <h4 class="font-display text-slate-100 uppercase font-semibold mb-2.5">
-                            12+ років досвіду
+                        <h4 class="font-display text-slate-50 uppercase font-semibold mb-2.5">
+                            років досвіду
                         </h4>
-                        <p class="text-slate-50/80 text-base leading-normal">
+                        <p class="text-slate-50/60 text-base leading-normal">
                             Понад десятиліття допомагаємо підтримувати чистоту, відточуючи кожну деталь сервісу.
                         </p>
                     </div>
 
                     <div class="flex flex-col items-center text-center md:items-start md:text-left">
-                        <div class="size-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
-                            <x-lucide-users class="size-7 stroke-emerald-500" />
+                        <div class="font-display text-5xl font-black text-slate-50 mb-4">
+                            300+
                         </div>
-                        <h4 class="font-display text-slate-100 uppercase font-semibold mb-2.5">
-                            300+ задоволених клієнтів
+                        <h4 class="font-display text-slate-50 uppercase font-semibold mb-2.5">
+                            задоволених клієнтів
                         </h4>
-                        <p class="text-slate-100/80 text-base leading-normal">
+                        <p class="text-slate-50/60 text-base leading-normal">
                             Нам довіряють і рекомендують — більшість клієнтів повертаються до нас знову.
                         </p>
                     </div>
 
                     <div class="flex flex-col items-center text-center md:items-start md:text-left">
-                        <div class="size-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4">
-                            <x-lucide-badge-check class="size-7 stroke-emerald-500" />
+                        <div class="font-display text-5xl font-black text-slate-50 mb-4">
+                            100%
                         </div>
-                        <h4 class="font-display text-slate-100 uppercase font-semibold mb-2.5">
-                            100% гарантія якості
+                        <h4 class="font-display text-slate-50 uppercase font-semibold mb-2.5">
+                            гарантія якості
                         </h4>
-                        <p class="text-slate-100/80 text-base leading-normal">
+                        <p class="text-slate-50/60 text-base leading-normal">
                             Ми впевнені у результаті: якщо щось не влаштує — безкоштовно виправимо.
                         </p>
                     </div>
@@ -580,7 +581,7 @@ name('main');
     <section class="relative min-h-150 flex items-center overflow-hidden bg-slate-900 px-6 py-20">
         <!-- Фонове зображення з затемненням -->
         <div class="absolute inset-0 z-0">
-            <img src="{{ Vite::asset('resources/images/header.webp') }}" class="size-full object-cover opacity-60"
+            <img src="{{ Vite::asset('resources/images/gallery-section.jpg') }}" class="size-full object-cover opacity-60"
                 alt="">
             <div
                 class="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-slate-900/80 via-slate-900/40 to-transparent">
@@ -722,7 +723,7 @@ name('main');
                     </x-section.title>
                 </div>
                 <a href="{{ route('blog') }}"
-                    class="inline-flex items-center gap-1.5 text-sm font-semibold text-tryit-green hover:gap-3 transition-all duration-300">
+                    class="inline-flex items-center gap-1.5 text-sm uppercase font-semibold text-emerald-600 hover:gap-3 transition-all duration-300">
                     Всі статті <x-lucide-arrow-right class="size-4" stroke-width="2" />
                 </a>
             </div>

@@ -3,8 +3,6 @@
 namespace App\Livewire;
 
 use App\Livewire\Forms\OrderForm;
-use App\Mail\OrderShipped;
-use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -16,18 +14,10 @@ class Order extends Component
 
     public function save()
     {
-        $order = $this->order->store();
+        $this->order->store();
 
-        // foreach ($this->order->images as $image) {
-        //     $image->storeAs(
-        //         path: "images/{$order->id}",
-        //         name: now()->timestamp . '_' . uniqid() . '.' . $image->extension()
-        //     );
-        // }
-
-        Mail::to(env('ADMIN_MAIL'))->send(new OrderShipped($this->order));
-
-        session()->flash('success');
+        $this->order->reset();
+        session()->flash('success', 'Ваше замовлення успішно відправлено!');
     }
 
     public function render()

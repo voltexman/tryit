@@ -91,10 +91,18 @@
 
     @yield('content')
 
-    <footer class="bg-stone-900">
-        {{-- Main footer --}}
-        <div class="max-w-6xl mx-auto px-5 pt-14 pb-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+    <footer class="relative overflow-hidden bg-slate-900">
+        <!-- Фонове зображення з затемненням -->
+        <div class="absolute inset-0 z-0" style="background-image: url('{{ Vite::asset('resources/images/footer-background.jpg') }}'); background-size: cover; background-position: center;">
+        </div>
+        <!-- Затемнення слейт кольором -->
+        <div class="absolute inset-0 bg-slate-950/85 z-0"></div>
+
+        <!-- Контент -->
+        <div class="relative z-10">
+            {{-- Main footer --}}
+            <div class="max-w-6xl mx-auto px-5 pt-14 pb-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
 
                 {{-- Column 1: Brand --}}
                 <div class="lg:col-span-1">
@@ -230,20 +238,23 @@
                     </ul>
                 </div>
             </div>
-        </div>
+            </div>
 
         {{-- Bottom bar --}}
-        <div class="border-t border-white/5">
-            <div class="max-w-7xl mx-auto px-5 py-5 flex flex-col md:flex-row items-center justify-between gap-0.5">
+        <div class="relative z-10 border-t border-white/5">
+            <div class="max-w-7xl mx-auto px-5 py-2.5 flex flex-col md:flex-row items-center justify-between gap-0.5">
                 <span class="text-xs text-tryit-cream/40 text-center">
                     &copy; {{ date('Y') }} {{ config('app.name') }}. Всі права застережено.
                 </span>
                 <span class="text-xs text-tryit-cream/30">
-                    Розробка сайту &mdash; <a href="#" class="">LEV</a>
+                    Розробка сайту &mdash; <a href="#" class="text-orange-400/60">LEV</a>
                 </span>
             </div>
         </div>
+        </div> <!-- Закриття .relative.z-10 контенту -->
     </footer>
+
+    @livewire('order')
 
     @livewireScripts
 </body>
