@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Scope;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -27,9 +29,10 @@ class Post extends Model
         ];
     }
 
-    public function scopePublished($query)
+    #[Scope]
+    protected function published(Builder $query): void
     {
-        return $query->where('is_published', true)->whereNotNull('published_at')->orderByDesc('published_at');
+        $query->where('is_published', true)->whereNotNull('published_at');
     }
 
     public function getReadingTimeAttribute(): int

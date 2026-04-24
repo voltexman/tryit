@@ -195,4 +195,6 @@ name('services.myika-ta-ochyshchennia-soniachnykh-panelei');
             </a>
         </div>
     </section>
+
+    @include('partials.blog-section')
 @endsection

@@ -181,4 +181,6 @@ name('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu');
             </a>
         </div>
     </section>
+
+    @include('partials.blog-section')
 @endsection

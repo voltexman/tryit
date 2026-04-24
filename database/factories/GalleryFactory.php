@@ -26,7 +26,7 @@ class GalleryFactory extends Factory
     public function configure(): static
     {
         return $this->afterMaking(function (Gallery $gallery) {
-            $gallery->addMediaFromUrl('https://picsum.photos/1024/768')
+            $gallery->addMediaFromUrl('https://picsum.photos/1024/768?random=' . fake()->numberBetween(1, 9999))
                 ->toMediaCollection('gallery');
         });
     }

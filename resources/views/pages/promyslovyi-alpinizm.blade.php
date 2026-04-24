@@ -179,4 +179,6 @@ name('services.promyslovyi-alpinizm');
             </a>
         </div>
     </section>
+
+    @include('partials.blog-section')
 @endsection

@@ -131,7 +131,7 @@ name('feedback');
                         class="size-full object-contain object-center opacity-8" />
                 </div>
 
-                <div>
+                <div class="relative z-10">
                     <x-section.title class="mb-5" size="lg">
                         Ми на зв’язку — <span class="text-emerald-500">пишіть</span> нам
                     </x-section.title>

@@ -184,4 +184,6 @@ name('services.pisliabudivelne-prybyrannia');
             </a>
         </div>
     </section>
+
+    @include('partials.blog-section')
 @endsection

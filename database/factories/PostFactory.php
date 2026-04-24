@@ -2,11 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 class PostFactory extends Factory
 {
+    protected $model = Post::class;
+
     public function definition(): array
     {
         $titles = [
@@ -20,31 +23,32 @@ class PostFactory extends Factory
             'Що входить у післябудівельне прибирання: повний чек-лист',
             'Хімчистка меблів: коли потрібна та як проходить',
             'Сонячні панелі: чому важливо їх регулярно мити',
+            'Як вибрати клінінгову компанію: головні критерії',
+            'Особливості прибирання після ремонту',
+            'Миття вітрин: як залучити клієнтів чистотою',
+            'Дезінфекція приміщень у сучасному офісі',
+            'Догляд за твердим покриттям підлоги: поради',
         ];
 
-        $title = fake()->unique()->randomElement($titles);
+        $baseTitle = fake()->randomElement($titles);
+        $title = $baseTitle . (fake()->boolean(30) ? ' ' . fake()->words(1, true) : '');
+        $title = Str::ucfirst(trim($title));
 
-        $paragraphs = fake()->paragraphs(rand(6, 12));
-        $body = implode("\n\n", array_map(fn ($p) => '<p>'.$p.'</p>', $paragraphs));
+        $slug = Str::slug($title) . '-' . fake()->unique()->numberBetween(1, 9999);
 
-        $coverImages = [
-            'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1200',
-            'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1200',
-            'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200',
-            'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=1200',
-            'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1200',
-        ];
+        $paragraphs = fake()->paragraphs(rand(6, 10));
+        $body = collect($paragraphs)->map(fn($p) => "<p>{$p}</p>")->implode("\n");
 
-        $publishedAt = fake()->dateTimeBetween('-6 months', 'now');
+        $coverImage = "https://picsum.photos/seed/{$slug}/1200/800";
 
         return [
             'title' => $title,
-            'slug' => Str::slug($title),
-            'excerpt' => fake()->sentence(20),
+            'slug' => $slug,
+            'excerpt' => fake()->realText(150),
             'body' => $body,
-            'cover_image' => fake()->randomElement($coverImages),
+            'cover_image' => $coverImage,
             'is_published' => true,
-            'published_at' => $publishedAt,
+            'published_at' => fake()->dateTimeBetween('-1 year', 'now'),
         ];
     }
 }

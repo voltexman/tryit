@@ -211,4 +211,6 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
             </a>
         </div>
     </section>
+
+    @include('partials.blog-section')
 @endsection

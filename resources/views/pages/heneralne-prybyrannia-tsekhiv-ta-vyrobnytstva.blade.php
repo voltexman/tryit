@@ -180,4 +180,6 @@ name('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva');
             </a>
         </div>
     </section>
+
+    @include('partials.blog-section')
 @endsection
