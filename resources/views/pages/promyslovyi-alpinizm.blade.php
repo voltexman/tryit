@@ -84,6 +84,24 @@ name('services.promyslovyi-alpinizm');
                     <x-table.cell>~1–8 годин/завдання залежно від складності</x-table.cell>
                 </x-table.row>
             </x-table>
+            <div class="space-y-2.5 mt-10">
+                <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
+                <div class="w-full lg:w-3/4">
+                    <x-progressbar percentage="100" label="Мийка фасадів і вікон" />
+                </div>
+                <div class="w-full lg:w-3/4">
+                    <x-progressbar percentage="95" label="Герметизація міжпанельних швів" />
+                </div>
+                <div class="w-full lg:w-3/4">
+                    <x-progressbar percentage="90" label="Монтаж конструкцій" />
+                </div>
+                <div class="w-full lg:w-3/4">
+                    <x-progressbar percentage="85" label="Очищення дахів" />
+                </div>
+                <div class="w-full lg:w-3/4">
+                    <x-progressbar percentage="80" label="Фарбування фасадів" />
+                </div>
+            </div>
         </div>
     </section>
 
@@ -165,20 +183,8 @@ name('services.promyslovyi-alpinizm');
         </div>
     </section>
 
-    {{-- CTA --}}
-    <section class="py-12 md:py-16 bg-tryit-green">
-        <div class="max-w-3xl mx-auto px-5 text-center">
-            <x-lucide-phone-call class="size-8 text-white/80 mx-auto mb-4" stroke-width="1.5" />
-            <h2 class="font-display text-2xl md:text-3xl font-bold text-white mb-3">Замовте висотні роботи сьогодні</h2>
-            <p class="text-white/70 text-sm mb-6">Ми допоможемо вирішити будь-яке висотне завдання швидко, безпечно та
-                якісно</p>
-            <a href="tel:+380978778667"
-                class="inline-flex items-center gap-2 bg-white text-tryit-green font-display font-bold text-sm px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors">
-                <x-lucide-phone class="size-4" stroke-width="2" />
-                +380 (97) 877-866-7
-            </a>
-        </div>
-    </section>
+    <x-order-banner image="service-5.jpg" phone="+38 (067) 123-45-67" title="Замовити хімчистку"
+        subtitle="Професійна чистка меблів, килимів, авто. Телефонуйте!" />
 
     @include('partials.blog-section')
 @endsection

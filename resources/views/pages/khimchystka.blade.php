@@ -78,6 +78,21 @@ name('services.khimchystka');
                     <x-table.cell>1 одиниця об’єкта або від 30 хв роботи</x-table.cell>
                 </x-table.row>
             </x-table>
+            <div class="space-y-2.5 mt-10">
+                <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
+                <div class="w-full lg:w-3/4">
+                    <x-progressbar percentage="100" label="Хімчистка меблів" />
+                </div>
+                <div class="w-full lg:w-3/4">
+                    <x-progressbar percentage="95" label="Очищення килимів" />
+                </div>
+                <div class="w-full lg:w-3/4">
+                    <x-progressbar percentage="90" label="Чистка салонів авто" />
+                </div>
+                <div class="w-full lg:w-3/4">
+                    <x-progressbar percentage="85" label="Антиалергенна обробка" />
+                </div>
+            </div>
         </div>
     </section>
 
@@ -159,20 +174,8 @@ name('services.khimchystka');
         </div>
     </section>
 
-    {{-- CTA --}}
-    <section class="py-12 md:py-16 bg-tryit-green">
-        <div class="max-w-3xl mx-auto px-5 text-center">
-            <x-lucide-phone-call class="size-8 text-white/80 mx-auto mb-4" stroke-width="1.5" />
-            <h2 class="font-display text-2xl md:text-3xl font-bold text-white mb-3">Подаруйте речам друге життя</h2>
-            <p class="text-white/70 text-sm mb-6">Замовте хімчистку сьогодні — і ми повернемо вашим меблям, килимам та
-                автомобілю ідеальну чистоту</p>
-            <a href="tel:+380978778667"
-                class="inline-flex items-center gap-2 bg-white text-tryit-green font-display font-bold text-sm px-8 py-3.5 rounded-full hover:bg-white/90 transition-colors">
-                <x-lucide-phone class="size-4" stroke-width="2" />
-                +380 (97) 877-866-7
-            </a>
-        </div>
-    </section>
+    <x-order-banner image="service-5.jpg" phone="+38 (067) 123-45-67" title="Замовити хімчистку"
+        subtitle="Професійна чистка меблів, килимів, авто. Телефонуйте!" />
 
     @include('partials.blog-section')
 @endsection
