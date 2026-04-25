@@ -24,7 +24,7 @@ name('main');
 
                 <a href="#services" class="relative inline-block group mt-4">
                     <button
-                        class="bg-tryit-orange font-display relative py-4 px-10 uppercase text-white font-bold text-base tracking-wide rounded-full border border-white/20 hover:border-tryit-orange/50 hover:bg-tryit-orange/50 backdrop-blur-sm transition-all duration-300 cursor-pointer"
+                        class="bg-tryit-orange/70 backdrop-blur-sm font-display relative py-4 px-10 uppercase text-white font-bold text-base tracking-wide rounded-full hover:bg-tryit-orange/50 transition-all duration-300 cursor-pointer"
                         aria-label="Перейти до розділу з нашими послугами">
                         Наші послуги
                     </button>
@@ -410,7 +410,7 @@ name('main');
         <div class="max-w-5xl mx-auto py-20 px-5 relative z-20">
             <div class="flex flex-col items-center">
                 <x-section.badge color="slate" class="mb-2.5">Про компанію</x-section.badge>
-                <x-section.title tag="h3" color="white" size="sm">
+                <x-section.title tag="h3" color="white">
                     Чому обирають <span class="text-emerald-400">нас</span>?
                 </x-section.title>
 
@@ -478,7 +478,7 @@ name('main');
                 <img src="https://demo2.pavothemes.com/cetro/wp-content/uploads/2025/07/h1-asked.png"
                     class="size-full object-cover grayscale-100 opacity-40 scale-75" alt="">
             </div>
-            <div class="text-center mb-10 lg:mb-20">
+            <div class="text-center mb-10">
                 <x-section.badge class="mb-2.5">3 кроки до чистоти</x-section.badge>
                 <x-section.title tag="h4">
                     Ваш час занадто <span class="text-emerald-500">дорогий</span>, <br>
@@ -488,13 +488,13 @@ name('main');
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-10 relative">
 
-                <div class="group relative pt-5">
+                <div class="group relative pt-5 z-10">
                     <div
-                        class="absolute top-0 left-0 text-[10rem] font-black text-slate-50 leading-none select-none z-0 transition-colors">
+                        class="absolute top-2 right-2 text-[9rem] font-black text-slate-500/8 leading-none select-none z-20 transition-colors">
                         01</div>
 
                     <div
-                        class="relative z-10 bg-slate-200/80 p-8 rounded-3xl border border-slate-200 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:border-emerald-200">
+                        class="relative z-10 bg-slate-100 p-8 rounded-3xl border border-slate-200 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:border-emerald-200">
                         <div
                             class="size-16 bg-slate-900 rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:bg-emerald-600 group-hover:rotate-10 transition-all duration-500">
                             <x-lucide-timer class="size-8 stroke-slate-100" />
@@ -515,9 +515,9 @@ name('main');
                     </div>
                 </div>
 
-                <div class="group relative pt-5 lg:mt-15">
+                <div class="group relative z-10 pt-5 lg:mt-15">
                     <div
-                        class="absolute top-0 left-0 text-[10rem] font-black text-slate-50 leading-none select-none z-0 transition-colors group-hover:text-blue-50">
+                        class="absolute top-2 right-2 text-[9rem] font-black text-slate-500/8 leading-none select-none z-20 transition-colors group-hover:text-blue-50">
                         02</div>
 
                     <div
@@ -539,19 +539,19 @@ name('main');
 
                         <div
                             class="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 rounded-full text-emerald-400 text-[10px] font-bold uppercase tracking-tighter border border-slate-700">
-                            <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span class="flex size-2 rounded-full bg-emerald-500 animate-pulse"></span>
                             Клінер вже в дорозі
                         </div>
                     </div>
                 </div>
 
-                <div class="group relative pt-5">
+                <div class="group relative pt-5 z-10">
                     <div
-                        class="absolute top-0 left-0 text-[10rem] font-black text-slate-50 leading-none select-none z-0 transition-colors group-hover:text-emerald-50">
+                        class="absolute top-2 right-2 text-[9rem] font-black text-slate-500/8 leading-none select-none z-20 transition-colors group-hover:text-emerald-50">
                         03</div>
 
                     <div
-                        class="relative z-10 bg-zinc-200/80 p-8 rounded-3xl border border-zinc-200 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
+                        class="relative z-10 bg-zinc-100 p-8 rounded-3xl border border-zinc-200 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
                         <div
                             class="size-16 bg-emerald-500 border-2 border-slate-700 rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:border-emerald-600 transition-all duration-500">
                             <x-lucide-smile-plus
@@ -572,7 +572,7 @@ name('main');
 
             </div>
 
-            <div class="mt-20 flex justify-center">
+            <div class="mt-10 lg:mt-20 flex justify-center">
                 <x-button size="lg">Спробувати цей досвід</x-button>
             </div>
         </div>
@@ -695,7 +695,7 @@ name('main');
 
                         <div x-show="active === {{ $loop->index }}" x-collapse x-cloak>
                             <div class="px-5 pb-5 ml-0 md:ml-14">
-                                <p class="text-slate-500 text-sm leading-relaxed max-w-xl">
+                                <p class="text-slate-500 text-base leading-relaxed max-w-xl">
                                     {{ $item['a'] }}
                                 </p>
                             </div>

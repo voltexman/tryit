@@ -31,13 +31,13 @@ class PostFactory extends Factory
         ];
 
         $baseTitle = fake()->randomElement($titles);
-        $title = $baseTitle . (fake()->boolean(30) ? ' ' . fake()->words(1, true) : '');
+        $title = $baseTitle.(fake()->boolean(30) ? ' '.fake()->words(1, true) : '');
         $title = Str::ucfirst(trim($title));
 
-        $slug = Str::slug($title) . '-' . fake()->unique()->numberBetween(1, 9999);
+        $slug = Str::slug($title).'-'.fake()->unique()->numberBetween(1, 9999);
 
         $paragraphs = fake()->paragraphs(rand(6, 10));
-        $body = collect($paragraphs)->map(fn($p) => "<p>{$p}</p>")->implode("\n");
+        $body = collect($paragraphs)->map(fn ($p) => "<p>{$p}</p>")->implode("\n");
 
         $coverImage = "https://picsum.photos/seed/{$slug}/1200/800";
 
@@ -50,5 +50,13 @@ class PostFactory extends Factory
             'is_published' => true,
             'published_at' => fake()->dateTimeBetween('-1 year', 'now'),
         ];
+    }
+
+    public function unpublished(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'is_published' => false,
+            'published_at' => null,
+        ]);
     }
 }
