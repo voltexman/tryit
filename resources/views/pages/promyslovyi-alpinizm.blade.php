@@ -21,10 +21,8 @@ name('services.promyslovyi-alpinizm');
     {{-- Intro --}}
     <section class="py-12 md:py-16">
         <div class="max-w-5xl mx-auto px-5">
-            <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
                 <div>
-                    <span class="font-display text-sm font-semibold text-tryit-orange uppercase tracking-wider">Висотні
-                        роботи</span>
                     <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-5">Професійні рішення на
                         будь-якій висоті</h2>
                     <p class="text-gray-600 leading-relaxed">Деякі види робіт на висоті неможливо виконати звичайними
@@ -34,12 +32,30 @@ name('services.promyslovyi-alpinizm');
                         робіт: мийка фасадів, монтаж і демонтаж конструкцій, герметизація швів, очищення дахів від снігу та
                         криги. Ми гарантуємо високу якість, безпеку та оперативність.</p>
                 </div>
-                <div class="relative">
-                    <img src="{{ Vite::asset('resources/images/service-7.jpg') }}"
-                        class="w-full rounded-2xl shadow-lg object-cover aspect-4/3" alt="Промисловий альпінізм"
-                        loading="lazy" />
+                <div class="space-y-2.5">
+                    <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
+                    <div class="w-full">
+                        <x-progressbar percentage="100" label="Мийка фасадів і вікон" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="95" label="Герметизація міжпанельних швів" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="90" label="Монтаж конструкцій" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="85" label="Очищення дахів" />
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    {{-- Image section --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <x-before-after before="{{ Vite::asset('resources/images/service-7.jpg') }}"
+                after="{{ Vite::asset('resources/images/service-1.jpg') }}" />
         </div>
     </section>
 
@@ -84,24 +100,6 @@ name('services.promyslovyi-alpinizm');
                     <x-table.cell>~1–8 годин/завдання залежно від складності</x-table.cell>
                 </x-table.row>
             </x-table>
-            <div class="space-y-2.5 mt-10">
-                <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="100" label="Мийка фасадів і вікон" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="95" label="Герметизація міжпанельних швів" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="90" label="Монтаж конструкцій" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="85" label="Очищення дахів" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="80" label="Фарбування фасадів" />
-                </div>
-            </div>
         </div>
     </section>
 
@@ -183,8 +181,9 @@ name('services.promyslovyi-alpinizm');
         </div>
     </section>
 
-    <x-order-banner image="service-5.jpg" phone="+38 (067) 123-45-67" title="Замовити хімчистку"
-        subtitle="Професійна чистка меблів, килимів, авто. Телефонуйте!" />
+    <x-order-banner image="service-7.jpg" phone="+38 (067) 123-45-67" title="Послуги альпіністів"
+        subtitle="Висотні роботи будь-якої складності. Телефонуйте!"
+        :service="\App\Enums\ServiceEnum::INDUSTRIAL_ALPINISM->value" />
 
     @include('partials.blog-section')
 @endsection

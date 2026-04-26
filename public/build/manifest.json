@@ -1,12 +1,16 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-BZZmgd1Z.css",
+    "file": "assets/app-BimyF9m6.css",
     "name": "app",
     "names": [
       "app.css"
     ],
     "src": "resources/css/app.css",
     "isEntry": true
+  },
+  "resources/images/about-section-bg.jpg": {
+    "file": "assets/about-section-bg-94NWgt3H.jpg",
+    "src": "resources/images/about-section-bg.jpg"
   },
   "resources/images/banner-1.jpg": {
     "file": "assets/banner-1-4Fm5gwCE.jpg",
@@ -23,6 +27,10 @@
   "resources/images/gallery-section.jpg": {
     "file": "assets/gallery-section-t4UpB7ZX.jpg",
     "src": "resources/images/gallery-section.jpg"
+  },
+  "resources/images/h1-agency.png": {
+    "file": "assets/h1-agency-CtPudIAX.png",
+    "src": "resources/images/h1-agency.png"
   },
   "resources/images/header.webp": {
     "file": "assets/header-D7Evp8KQ.webp",

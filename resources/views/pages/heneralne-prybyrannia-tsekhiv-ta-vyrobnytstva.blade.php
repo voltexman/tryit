@@ -20,10 +20,8 @@ name('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva');
 @section('content')
     <section class="py-10 mt-10">
         <div class="max-w-5xl mx-auto px-5">
-            <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
                 <div>
-                    <span class="font-display text-sm font-semibold text-tryit-orange uppercase tracking-wider">Промисловий
-                        клінінг</span>
                     <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-5">Чистота на виробництві —
                         безпека та ефективність</h2>
                     <p class="text-gray-600 leading-relaxed">В умовах постійного виробничого процесу накопичуються пил, жир,
@@ -31,12 +29,30 @@ name('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva');
                     <p class="text-gray-600 leading-relaxed">Наша команда має досвід роботи на підприємствах різних галузей —
                         від харчових виробництв до важкої промисловості.</p>
                 </div>
-                <div>
-                    <img src="{{ Vite::asset('resources/images/service-4.jpg') }}"
-                        class="w-full rounded-2xl shadow-lg object-cover aspect-4/3" alt="Прибирання виробництва"
-                        loading="lazy" />
+                <div class="space-y-2.5">
+                    <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
+                    <div class="w-full">
+                        <x-progressbar percentage="100" label="Видалення пилу та бруду" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="95" label="Дезінфекція робочих зон" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="90" label="Очищення обладнання" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="85" label="Миття поверхонь" />
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    {{-- Image section --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <x-before-after before="{{ Vite::asset('resources/images/service-4.jpg') }}"
+                after="{{ Vite::asset('resources/images/service-5.jpg') }}" />
         </div>
     </section>
 
@@ -91,21 +107,6 @@ name('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva');
                     <x-table.cell>до 60% перед нанесенням хімії</x-table.cell>
                 </x-table.row>
             </x-table>
-            <div class="space-y-2.5 mt-10">
-                <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="100" label="Видалення пилу та бруду" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="95" label="Дезінфекція робочих зон" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="90" label="Очищення обладнання" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="85" label="Миття поверхонь" />
-                </div>
-            </div>
         </div>
     </section>
 
@@ -183,8 +184,9 @@ name('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva');
         </div>
     </section>
 
-    <x-order-banner image="service-5.jpg" phone="+38 (067) 123-45-67" title="Замовити хімчистку"
-        subtitle="Професійна чистка меблів, килимів, авто. Телефонуйте!" />
+    <x-order-banner image="service-5.jpg" phone="+38 (067) 123-45-67" title="Замовити послугу"
+        subtitle="Професійне прибирання промислових об'єктів. Телефонуйте!"
+        :service="\App\Enums\ServiceEnum::INDUSTRIAL_CLEANING->value" />
 
     @include('partials.blog-section')
 @endsection

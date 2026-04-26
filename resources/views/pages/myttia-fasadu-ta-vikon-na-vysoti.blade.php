@@ -21,10 +21,8 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
     {{-- Intro --}}
     <section class="py-12 md:py-16">
         <div class="max-w-5xl mx-auto px-5">
-            <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
                 <div>
-                    <span
-                        class="font-display text-sm font-semibold text-tryit-orange uppercase tracking-wider">WFP-система</span>
                     <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-5">Чисті вікна та фасади —
                         імідж вашого бізнесу</h2>
                     <p class="text-gray-600 leading-relaxed">Забруднення, пил, дощові патьоки та міський смог з часом роблять
@@ -34,13 +32,31 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
                     <p class="text-gray-600 leading-relaxed">Телескопічні карбонові штанги подають очищену демінералізовану
                         воду під тиском — вікна висихають без розводів, а процес повністю безпечний та екологічний.</p>
                 </div>
-                <div class="relative">
-                    <img src="{{ Vite::asset('resources/images/service-1.jpg') }}"
-                        class="w-full rounded-2xl shadow-lg object-cover aspect-4/3" alt="Миття фасадів" loading="lazy" />
+                <div class="space-y-2.5">
+                    <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
+                    <div class="w-full">
+                        <x-progressbar percentage="100" label="Мийка фасадів і вікон" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="95" label="Очищення важкодоступних місць" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="90" label="Видалення забруднень без хімії" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="85" label="Робота на висоті" />
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+{{-- Image section --}}
+<section class="py-12 md:py-16 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-5">
+        <x-before-after before="{{ Vite::asset('resources/images/service-1.jpg') }}"
+            after="{{ Vite::asset('resources/images/service-2.jpg') }}" />
+    </div>
+</section>
 
     <section class="mt-10">
         <div class="max-w-5xl mx-auto px-5">
@@ -93,21 +109,6 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
                     <x-table.cell>2–4 рази на рік</x-table.cell>
                 </x-table.row>
             </x-table>
-            <div class="space-y-2.5 mt-10">
-                <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="100" label="Мийка фасадів і вікон" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="95" label="Очищення важкодоступних місць" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="90" label="Видалення забруднень без хімії" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="85" label="Робота на висоті" />
-                </div>
-            </div>
         </div>
     </section>
 
@@ -212,8 +213,9 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
         </div>
     </section>
 
-    <x-order-banner image="service-5.jpg" phone="+38 (067) 123-45-67" title="Замовити хімчистку"
-        subtitle="Професійна чистка меблів, килимів, авто. Телефонуйте!" />
+    <x-order-banner image="service-1.jpg" phone="+38 (067) 123-45-67" title="Замовити миття вікон"
+        subtitle="Ідеальна чистота вашого фасаду та вікон. Телефонуйте!"
+        :service="\App\Enums\ServiceEnum::WINDOW_CLEANING->value" />
 
     @include('partials.blog-section')
 @endsection

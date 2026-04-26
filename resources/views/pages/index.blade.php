@@ -57,8 +57,8 @@ name('main');
                 </p>
 
                 <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
-                    <x-button size="lg">Замовити прибирання</x-button>
-                    <x-button size="lg" color="orange">Наші послуги</x-button>
+                    <x-button size="lg" @click="Livewire.dispatch('setService', { service: '' }); window.openOffcanvas('orderOffcanvas')">Замовити прибирання</x-button>
+                    <x-button size="lg" color="orange" href="#services">Наші послуги</x-button>
                 </div>
             </div>
 
@@ -402,10 +402,10 @@ name('main');
     </section>
 
     <section x-data="{ scroll: 0 }" x-init="window.addEventListener('scroll', () => { scroll = window.scrollY })"
-        class="relative overflow-hidden shadow-inner bg-cover bg-no-repeat bg-fixed"
-        :style="`background-image: url('{{ Vite::asset('resources/images/banner-1.jpg') }}');`">
+        class="relative overflow-hidden shadow-inner bg-cover bg-center bg-no-repeat bg-fixed"
+        :style="`background-image: url('{{ Vite::asset('resources/images/about-section-bg.jpg') }}');`">
 
-        <div class="absolute inset-0 bg-slate-900/70 z-0"></div>
+        <div class="absolute inset-0 bg-slate-900/80 z-0"></div>
 
         <div class="max-w-5xl mx-auto py-20 px-5 relative z-20">
             <div class="flex flex-col items-center">

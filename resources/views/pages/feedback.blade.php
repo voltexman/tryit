@@ -18,8 +18,11 @@ name('feedback');
 @endsection
 
 @section('content')
-    <x-section class="bg-gray-50/50">
-        <div class="max-w-6xl mx-auto">
+    <x-section class="bg-gray-50/50 relative">
+        <img src="{{ Vite::asset('resources/images/h1-agency.png') }}"
+            class="absolute left-0 bottom-0 z-0 w-screen h-auto lg:h-80 lg:w-auto opacity-50" alt="">
+
+        <div class="max-w-6xl mx-auto relative z-10">
 
             <!-- Контактні блоки в один ряд -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">

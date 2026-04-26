@@ -21,10 +21,8 @@ name('services.khimchystka');
     {{-- Intro --}}
     <section class="py-12 md:py-16">
         <div class="max-w-5xl mx-auto px-5">
-            <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
                 <div>
-                    <span class="font-display text-sm font-semibold text-tryit-orange uppercase tracking-wider">Екстракційна
-                        технологія</span>
                     <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-5">Друге життя для ваших
                         меблів та килимів</h2>
                     <p class="text-gray-600 leading-relaxed">Звичайне прибирання не завжди здатне впоратися зі складними
@@ -34,11 +32,30 @@ name('services.khimchystka');
                         первозданну чистоту та свіжість. Використовуємо безпечні мийні засоби, що не шкодять тканинам та
                         навколишньому середовищу.</p>
                 </div>
-                <div class="relative">
-                    <img src="{{ Vite::asset('resources/images/service-5.jpg') }}"
-                        class="w-full rounded-2xl shadow-lg object-cover aspect-4/3" alt="Хімчистка" loading="lazy" />
+                <div class="space-y-2.5">
+                    <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
+                    <div class="w-full">
+                        <x-progressbar percentage="100" label="Хімчистка меблів" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="95" label="Очищення килимів" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="90" label="Чистка салонів авто" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="85" label="Антиалергенна обробка" />
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    {{-- Image section --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <x-before-after before="{{ Vite::asset('resources/images/service-5.jpg') }}"
+                after="{{ Vite::asset('resources/images/service-6.jpg') }}" />
         </div>
     </section>
 
@@ -78,21 +95,6 @@ name('services.khimchystka');
                     <x-table.cell>1 одиниця об’єкта або від 30 хв роботи</x-table.cell>
                 </x-table.row>
             </x-table>
-            <div class="space-y-2.5 mt-10">
-                <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="100" label="Хімчистка меблів" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="95" label="Очищення килимів" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="90" label="Чистка салонів авто" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="85" label="Антиалергенна обробка" />
-                </div>
-            </div>
         </div>
     </section>
 
@@ -175,7 +177,8 @@ name('services.khimchystka');
     </section>
 
     <x-order-banner image="service-5.jpg" phone="+38 (067) 123-45-67" title="Замовити хімчистку"
-        subtitle="Професійна чистка меблів, килимів, авто. Телефонуйте!" />
+        subtitle="Професійна чистка меблів, килимів, авто. Телефонуйте!"
+        :service="\App\Enums\ServiceEnum::DRY_CLEANING->value" />
 
     @include('partials.blog-section')
 @endsection

@@ -1,36 +1,35 @@
-<div x-data="imageSlider('{{ $before }}', '{{ $after }}')" class="slider-wrapper rounded-xl">
+<div x-data="imageSlider('{{ $before }}', '{{ $after }}')" class="slider-wrapper rounded-2xl overflow-hidden">
     <!-- "До" зображення -->
     <div class="image-container">
-        <img :src="beforeImage" alt="Before">
+        <img :src="beforeImage" alt="Before" class="w-full h-full object-cover">
     </div>
 
     <!-- "Після" зображення (обрізається) -->
     <div class="image-container after-image" :style="`clip-path: inset(0 ${100 - sliderPosition}% 0 0)`">
-        <img :src="afterImage" alt="After">
+        <img :src="afterImage" alt="After" class="w-full h-full object-cover">
     </div>
 
-    <!-- Повзунок -->
-    <div class="relative size-full flex items-center">
-        <input type="range" min="0" max="100" step="1" x-model="sliderPosition"
-            class="absolute size-10 bg-tryit-orange rounded-lg outline-none appearance-none cursor-pointer transform
-            [&::-webkit-slider-thumb]:appearance-none 
-            [&::-webkit-slider-thumb]:size-10
-            [&::-webkit-slider-thumb]:rounded-full
-            [&::-webkit-slider-thumb]:cursor-ew-resize
-            [&::-moz-range-thumb]:size-10
-            [&::-moz-range-thumb]:rounded-full
-            [&::-moz-range-thumb]:cursor-ew-resize">
-        <div class="absolute size-10 flex items-center justify-center bg-tryit-orange rounded-full"
-            :style="'left: ' + sliderPosition + '%; top: 50%; transform: translate(-50%, -50%)'"
-            class="z-50 flex size-10 shrink-0 cursor-ew-resize items-center justify-center rounded-full bg-tryit-orange">
-            <x-lucide-chevrons-left-right class="size-6 z-50 text-white" />
-            <div class="absolute inset-1 rounded-full bg-tryit-orange animate-ping"></div>
+    <!-- Range input для контролю -->
+    <input type="range" min="0" max="100" step="1" 
+        x-model.number="sliderPosition"
+        @input="handleSliderMove($event)"
+        class="slider-input"
+        aria-label="Before and after image slider">
+
+    <!-- Повзунок з іконкою -->
+    <div class="slider-handle"
+        :style="{ left: sliderPosition + '%' }"
+        @mousedown="isDragging = true"
+        @touchstart="isDragging = true">
+        <div class="flex items-center justify-center size-10 bg-tryit-orange rounded-full cursor-ew-resize shadow-lg">
+            <x-lucide-chevrons-left-right class="size-6 text-white" stroke-width="2" />
         </div>
+        <div class="absolute inset-1 rounded-full bg-tryit-orange/50 animate-pulse"></div>
     </div>
 
     <!-- Позначки "До" і "Після" -->
-    <div class="absolute top-3 left-3 bg-tryit-green text-white text-xs px-2.5 py-1.5 rounded-md">До</div>
-    <div class="absolute top-3 right-3 bg-tryit-green text-white text-xs px-2.5 py-1.5 rounded-md">Після</div>
+    <div class="absolute top-4 left-4 z-20 bg-black/60 text-white text-xs font-semibold px-3 py-1.5 rounded-md backdrop-blur-sm">До</div>
+    <div class="absolute top-4 right-4 z-20 bg-black/60 text-white text-xs font-semibold px-3 py-1.5 rounded-md backdrop-blur-sm">Після</div>
 </div>
 
 <script>
@@ -39,6 +38,30 @@
             beforeImage: before,
             afterImage: after,
             sliderPosition: 50,
+            isDragging: false,
+
+            init() {
+                document.addEventListener('mouseup', () => this.isDragging = false);
+                document.addEventListener('touchend', () => this.isDragging = false);
+                document.addEventListener('mousemove', (e) => {
+                    if (this.isDragging) {
+                        this.updateSliderFromMouse(e);
+                    }
+                });
+            },
+
+            handleSliderMove(event) {
+                this.sliderPosition = event.target.value;
+            },
+
+            updateSliderFromMouse(e) {
+                const wrapper = e.target.closest('.slider-wrapper');
+                if (!wrapper) return;
+
+                const rect = wrapper.getBoundingClientRect();
+                const position = ((e.clientX - rect.left) / rect.width) * 100;
+                this.sliderPosition = Math.max(0, Math.min(100, position));
+            }
         }));
     });
 </script>
@@ -47,9 +70,9 @@
     .slider-wrapper {
         position: relative;
         width: 100%;
-        max-width: 600px;
-        height: 400px;
-        overflow: hidden;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        background: #f3f4f6;
     }
 
     .image-container {
@@ -58,32 +81,70 @@
         left: 0;
         width: 100%;
         height: 100%;
+        overflow: hidden;
     }
 
     .image-container img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
     }
 
     .after-image {
+        clip-path: inset(0 50% 0 0);
+        transition: clip-path 0.05s ease-out;
+    }
+
+    .slider-input {
         position: absolute;
         top: 0;
         left: 0;
+        width: 100%;
         height: 100%;
-        clip-path: inset(0 50% 0 0);
-        transition: clip-path 0s;
+        cursor: ew-resize;
+        appearance: none;
+        background: transparent;
+        border: none;
+        z-index: 15;
+        pointer-events: all;
     }
 
-    input[type="range"] {
-        -webkit-appearance: none;
+    .slider-input::-webkit-slider-thumb {
         appearance: none;
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 6px;
+        width: 0;
+        height: 0;
         background: transparent;
-        cursor: pointer;
-        z-index: 10;
+        border: none;
+        cursor: ew-resize;
+    }
+
+    .slider-input::-moz-range-thumb {
+        width: 0;
+        height: 0;
+        background: transparent;
+        border: none;
+        cursor: ew-resize;
+    }
+
+    .slider-input::-moz-range-track {
+        background: transparent;
+        border: none;
+    }
+
+    .slider-handle {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 20;
+        pointer-events: none;
+    }
+
+    .slider-handle > div {
+        transition: box-shadow 0.2s ease;
+    }
+
+    .slider-handle:hover > div {
+        box-shadow: 0 0 20px rgba(251, 146, 60, 0.5);
     }
 </style>

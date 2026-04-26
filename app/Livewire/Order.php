@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Livewire\Forms\OrderForm;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -11,6 +12,12 @@ class Order extends Component
     use WithFileUploads;
 
     public OrderForm $order;
+
+    #[On('setService')]
+    public function setService($service)
+    {
+        $this->order->service = $service;
+    }
 
     public function save()
     {

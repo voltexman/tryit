@@ -20,6 +20,7 @@ class Order extends Model
         'has_water',
         'has_parking',
         'room_count',
+        'floor_count',
         'contamination_level',
         'is_urgent',
         'text',

@@ -21,10 +21,8 @@ name('services.myika-ta-ochyshchennia-soniachnykh-panelei');
     {{-- Intro --}}
     <section class="py-12 md:py-16">
         <div class="max-w-5xl mx-auto px-5">
-            <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
                 <div>
-                    <span class="font-display text-sm font-semibold text-tryit-orange uppercase tracking-wider">Зелена
-                        енергія</span>
                     <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-5">До 30% більше енергії з
                         чистих панелей</h2>
                     <p class="text-gray-600 leading-relaxed">Сонячні панелі — це вигідна інвестиція в екологічну енергію, але
@@ -34,12 +32,30 @@ name('services.myika-ta-ochyshchennia-soniachnykh-panelei');
                         безпечних технологій, що не пошкоджують поверхню. Наші спеціалісти знають, як правильно очищати
                         фотоелементи, щоб уникнути подряпин та механічних пошкоджень.</p>
                 </div>
-                <div class="relative">
-                    <img src="{{ Vite::asset('resources/images/service-2.jpg') }}"
-                        class="w-full rounded-2xl shadow-lg object-cover aspect-4/3" alt="Мийка сонячних панелей"
-                        loading="lazy" />
+                <div class="space-y-2.5">
+                    <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
+                    <div class="w-full">
+                        <x-progressbar percentage="100" label="Мийка сонячних панелей" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="95" label="Очищення без подряпин" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="90" label="Видалення пилу та нальоту" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="85" label="Підвищення ефективності панелей" />
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    {{-- Image section --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <x-before-after before="{{ Vite::asset('resources/images/service-2.jpg') }}"
+                after="{{ Vite::asset('resources/images/service-3.jpg') }}" />
         </div>
     </section>
 
@@ -99,21 +115,6 @@ name('services.myika-ta-ochyshchennia-soniachnykh-panelei');
                     <x-table.cell>1–3 м (залежно від установки)</x-table.cell>
                 </x-table.row>
             </x-table>
-            <div class="space-y-2.5 mt-10">
-                <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="100" label="Мийка сонячних панелей" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="95" label="Очищення без подряпин" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="90" label="Видалення пилу та нальоту" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="85" label="Підвищення ефективності панелей" />
-                </div>
-            </div>
         </div>
     </section>
 
@@ -195,8 +196,9 @@ name('services.myika-ta-ochyshchennia-soniachnykh-panelei');
         </div>
     </section>
 
-    <x-order-banner image="service-5.jpg" phone="+38 (067) 123-45-67" title="Замовити хімчистку"
-        subtitle="Професійна чистка меблів, килимів, авто. Телефонуйте!" />
+    <x-order-banner image="service-2.jpg" phone="+38 (067) 123-45-67" title="Замовити миття панелей"
+        subtitle="Збільште ефективність вашої СЕС вже сьогодні. Телефонуйте!"
+        :service="\App\Enums\ServiceEnum::SOLAR_PANEL_CLEANING->value" />
 
     @include('partials.blog-section')
 @endsection

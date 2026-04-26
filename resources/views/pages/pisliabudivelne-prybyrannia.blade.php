@@ -21,10 +21,8 @@ name('services.pisliabudivelne-prybyrannia');
     {{-- Intro --}}
     <section class="py-12 md:py-16">
         <div class="max-w-5xl mx-auto px-5">
-            <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
                 <div>
-                    <span class="font-display text-sm font-semibold text-tryit-orange uppercase tracking-wider">Після
-                        ремонту</span>
                     <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-5">Чистий простір після
                         будь-якого ремонту</h2>
                     <p class="text-gray-600 leading-relaxed">Будівництво чи ремонт — це завжди оновлення простору, але після
@@ -34,12 +32,30 @@ name('services.pisliabudivelne-prybyrannia');
                         ремонту. Наші фахівці мають необхідне обладнання та засоби, щоб видалити навіть найстійкіші
                         забруднення, не пошкодивши нові покриття та поверхні.</p>
                 </div>
-                <div class="relative">
-                    <img src="{{ Vite::asset('resources/images/service-3.jpg') }}"
-                        class="w-full rounded-2xl shadow-lg object-cover aspect-4/3" alt="Післябудівельне прибирання"
-                        loading="lazy" />
+                <div class="space-y-2.5">
+                    <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
+                    <div class="w-full">
+                        <x-progressbar percentage="100" label="Видалення будівельного пилу" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="95" label="Очищення вікон та рам" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="90" label="Видалення залишків фарби та клею" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="90" label="Полірування та дезінфекція підлог" />
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    {{-- Image section --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <x-before-after before="{{ Vite::asset('resources/images/service-3.jpg') }}"
+                after="{{ Vite::asset('resources/images/service-4.jpg') }}" />
         </div>
     </section>
 
@@ -89,21 +105,7 @@ name('services.pisliabudivelne-prybyrannia');
                     <x-table.cell>до 60% перед нанесенням хімії</x-table.cell>
                 </x-table.row>
             </x-table>
-            <div class="space-y-2.5 mt-10">
-                <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="100" label="Видалення будівельного пилу" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="95" label="Очищення вікон та рам" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="90" label="Вивіз сміття" />
-                </div>
-                <div class="w-full lg:w-3/4">
-                    <x-progressbar percentage="85" label="Видалення плям та залишків" />
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -185,8 +187,9 @@ name('services.pisliabudivelne-prybyrannia');
         </div>
     </section>
 
-    <x-order-banner image="service-5.jpg" phone="+38 (067) 123-45-67" title="Замовити хімчистку"
-        subtitle="Професійна чистка меблів, килимів, авто. Телефонуйте!" />
+    <x-order-banner image="service-3.jpg" phone="+38 (067) 123-45-67" title="Замовити прибирання"
+        subtitle="Швидко усунемо наслідки ремонту чи будівництва. Телефонуйте!"
+        :service="\App\Enums\ServiceEnum::POST_CONSTRUCTION_CLEANING->value" />
 
     @include('partials.blog-section')
 @endsection

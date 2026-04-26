@@ -30,12 +30,12 @@ name('gallery');
                 <p class="text-blue-100 mb-8 text-lg">Залиште заявку сьогодні та отримайте знижку 10% на перше замовлення!
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#"
-                        class="bg-white text-[#2D6A4F] px-8 py-4 rounded-xl font-bold hover:bg-blue-50 transition">
+                    <x-button size="lg" color="white" @click="Livewire.dispatch('setService', { service: '' }); window.openOffcanvas('orderOffcanvas')">
                         Замовити прибирання
-                    </a>
-                    <a href="#"
-                        class="bg-[#2D6A4F] text-white border border-white px-8 py-4 rounded-xl font-bold hover:bg-[#2D6A4F] transition">Консультація</a>
+                    </x-button>
+                    <x-button size="lg" color="white" variant="outline" @click="window.openOffcanvas('callbackOffcanvas')">
+                        Консультація
+                    </x-button>
                 </div>
             </div>
             <div class="absolute -top-10 -right-10 w-40 h-40 bg-green-500 rounded-full opacity-50"></div>

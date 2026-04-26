@@ -40,6 +40,9 @@ class OrderForm extends Form
     #[Validate('nullable', message: 'Невірне значення')]
     public $room_count = '';
 
+    #[Validate('nullable', message: 'Невірне значення')]
+    public $floor_count = '';
+
     #[Validate('required', message: 'Оберіть рівень забруднення')]
     #[Validate('numeric', message: 'Невірне значення')]
     #[Validate('between:1,5', message: 'Значення повинно бути від 1 до 5')]
