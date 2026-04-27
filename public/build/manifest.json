@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-CKNM1o0x.css",
+    "file": "assets/app-B842LlhX.css",
     "name": "app",
     "names": [
       "app.css"
@@ -71,6 +71,110 @@
   "resources/images/logo.png": {
     "file": "assets/logo-DX72VlMl.png",
     "src": "resources/images/logo.png"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/1.jpg": {
+    "file": "assets/1-fnJMTGak.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/1.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2.jpg": {
+    "file": "assets/2-DLiOReuR.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.00.33.jpg": {
+    "file": "assets/2026-04-26 14.00.33-BjQhsCJy.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.00.33.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.00.47.jpg": {
+    "file": "assets/2026-04-26 14.00.47-BqaPS66T.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.00.47.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.03.07.jpg": {
+    "file": "assets/2026-04-26 14.03.07-zknN9YZA.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.03.07.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.24.49.jpg": {
+    "file": "assets/2026-04-26 14.24.49-DOm8fIuR.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.24.49.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.24.58.jpg": {
+    "file": "assets/2026-04-26 14.24.58-C7C1J6EL.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.24.58.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.29.29.jpg": {
+    "file": "assets/2026-04-26 14.29.29-CkWMH7fm.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.29.29.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.29.40.jpg": {
+    "file": "assets/2026-04-26 14.29.40-BO5Z_uv2.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.29.40.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.29.45.jpg": {
+    "file": "assets/2026-04-26 14.29.45-PM63oZ98.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.29.45.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.29.52.jpg": {
+    "file": "assets/2026-04-26 14.29.52-BpC93ciE.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.29.52.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.29.58.jpg": {
+    "file": "assets/2026-04-26 14.29.58-DIg_wisD.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.29.58.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.30.06.jpg": {
+    "file": "assets/2026-04-26 14.30.06-BtDGt8bY.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.30.06.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.30.19.jpg": {
+    "file": "assets/2026-04-26 14.30.19-DOET_ucD.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.30.19.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.30.25.jpg": {
+    "file": "assets/2026-04-26 14.30.25-B8DGzz3f.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.30.25.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.30.33.jpg": {
+    "file": "assets/2026-04-26 14.30.33-CV9_Rx3h.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.30.33.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/IMAGE 2026-04-26 14_16_58.jpg": {
+    "file": "assets/IMAGE 2026-04-26 14_16_58-NI-3H-AK.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/IMAGE 2026-04-26 14_16_58.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/IMAGE 2026-04-26 14_25_40.jpg": {
+    "file": "assets/IMAGE 2026-04-26 14_25_40-CW6HZArO.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/IMAGE 2026-04-26 14_25_40.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/IMG_0319.MOV": {
+    "file": "assets/IMG_0319-DVfZ7f2G.MOV",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/IMG_0319.MOV"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.06.41.png": {
+    "file": "assets/Знімок екрана 2026-04-26 о 14.06.41-Dg40l8jn.png",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.06.41.png"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.07.54.png": {
+    "file": "assets/Знімок екрана 2026-04-26 о 14.07.54-DaTYdGsL.png",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.07.54.png"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.09.41.png": {
+    "file": "assets/Знімок екрана 2026-04-26 о 14.09.41-BpoUxik6.png",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.09.41.png"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.12.44.png": {
+    "file": "assets/Знімок екрана 2026-04-26 о 14.12.44-CvvSMzS8.png",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.12.44.png"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.14.28.png": {
+    "file": "assets/Знімок екрана 2026-04-26 о 14.14.28-Bg8U2zvv.png",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.14.28.png"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.18.19.png": {
+    "file": "assets/Знімок екрана 2026-04-26 о 14.18.19-DL1Ey8VH.png",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.18.19.png"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.31.58.png": {
+    "file": "assets/Знімок екрана 2026-04-26 о 14.31.58-CAZDs8mX.png",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.31.58.png"
   },
   "resources/images/service-1.jpg": {
     "file": "assets/service-1-CK1_oBol.jpg",
