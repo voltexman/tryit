@@ -52,8 +52,9 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
     </section>
     {{-- Image section --}}
     <div class="max-w-5xl mx-auto px-5">
-        <x-before-after before="{{ Vite::asset('resources/images/myttia-fasadiv-ta-vikon-na-vysoti/1.jpg') }}"
-            after="{{ Vite::asset('resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2.jpg') }}" />
+        <x-before-after
+            before="{{ Vite::asset('resources/images/myttia-fasadiv-ta-vikon-na-vysoti/comparison-1-before.jpg') }}"
+            after="{{ Vite::asset('resources/images/myttia-fasadiv-ta-vikon-na-vysoti/comparison-1-after.jpg') }}" />
     </div>
 
     <section class="mt-10">
@@ -108,6 +109,23 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
                 </x-table.row>
             </x-table>
         </div>
+    </section>
+
+    <section class="my-20 py-20 bg-slate-100 border border-slate-100">
+        <x-carousel-slider :images="[
+            '2026-04-26 14.03.07.jpg',
+            '2026-04-26 14.29.29.jpg',
+            '2026-04-26 14.29.40.jpg',
+            '2026-04-26 14.29.45.jpg',
+            '2026-04-26 14.29.52.jpg',
+            '2026-04-26 14.29.58.jpg',
+            '2026-04-26 14.30.06.jpg',
+            '2026-04-26 14.30.19.jpg',
+            '2026-04-26 14.30.25.jpg',
+            '2026-04-26 14.30.33.jpg',
+            'IMAGE 2026-04-26 14_16_58.jpg',
+            'IMAGE 2026-04-26 14_25_40.jpg',
+        ]" imagePath="myttia-fasadiv-ta-vikon-na-vysoti" :itemsPerView="3" />
     </section>
 
     {{-- Advantages grid --}}

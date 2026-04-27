@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-B842LlhX.css",
+    "file": "assets/app-D8CO838U.css",
     "name": "app",
     "names": [
       "app.css"
@@ -31,6 +31,10 @@
   "resources/images/h1-agency.png": {
     "file": "assets/h1-agency-CtPudIAX.png",
     "src": "resources/images/h1-agency.png"
+  },
+  "resources/images/h2-background.jpg": {
+    "file": "assets/h2-background-C6HLSC8Z.jpg",
+    "src": "resources/images/h2-background.jpg"
   },
   "resources/images/header.webp": {
     "file": "assets/header-D7Evp8KQ.webp",
@@ -72,33 +76,9 @@
     "file": "assets/logo-DX72VlMl.png",
     "src": "resources/images/logo.png"
   },
-  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/1.jpg": {
-    "file": "assets/1-fnJMTGak.jpg",
-    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/1.jpg"
-  },
-  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2.jpg": {
-    "file": "assets/2-DLiOReuR.jpg",
-    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2.jpg"
-  },
-  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.00.33.jpg": {
-    "file": "assets/2026-04-26 14.00.33-BjQhsCJy.jpg",
-    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.00.33.jpg"
-  },
-  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.00.47.jpg": {
-    "file": "assets/2026-04-26 14.00.47-BqaPS66T.jpg",
-    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.00.47.jpg"
-  },
   "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.03.07.jpg": {
     "file": "assets/2026-04-26 14.03.07-zknN9YZA.jpg",
     "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.03.07.jpg"
-  },
-  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.24.49.jpg": {
-    "file": "assets/2026-04-26 14.24.49-DOm8fIuR.jpg",
-    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.24.49.jpg"
-  },
-  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.24.58.jpg": {
-    "file": "assets/2026-04-26 14.24.58-C7C1J6EL.jpg",
-    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.24.58.jpg"
   },
   "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2026-04-26 14.29.29.jpg": {
     "file": "assets/2026-04-26 14.29.29-CkWMH7fm.jpg",
@@ -147,6 +127,30 @@
   "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/IMG_0319.MOV": {
     "file": "assets/IMG_0319-DVfZ7f2G.MOV",
     "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/IMG_0319.MOV"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/comparison-1-after.jpg": {
+    "file": "assets/comparison-1-after-fnJMTGak.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/comparison-1-after.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/comparison-1-before.jpg": {
+    "file": "assets/comparison-1-before-DLiOReuR.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/comparison-1-before.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/comparison-2-after.jpg": {
+    "file": "assets/comparison-2-after-BqaPS66T.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/comparison-2-after.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/comparison-2-before.jpg": {
+    "file": "assets/comparison-2-before-BjQhsCJy.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/comparison-2-before.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/comparison-3-after.jpg": {
+    "file": "assets/comparison-3-after-C7C1J6EL.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/comparison-3-after.jpg"
+  },
+  "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/comparison-3-before.jpg": {
+    "file": "assets/comparison-3-before-DOm8fIuR.jpg",
+    "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/comparison-3-before.jpg"
   },
   "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.06.41.png": {
     "file": "assets/Знімок екрана 2026-04-26 о 14.06.41-Dg40l8jn.png",
@@ -205,7 +209,7 @@
     "src": "resources/images/service-7.jpg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-DqWblADW.js",
+    "file": "assets/app-B0aRL031.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true
