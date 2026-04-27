@@ -13,6 +13,20 @@ class Order extends Component
 
     public OrderForm $order;
 
+    public $images = [];
+
+    public function updatedImages()
+    {
+        $this->validate([
+            'images.*' => 'image|max:5120', // 5MB max
+        ]);
+    }
+
+    public function removeImage($index)
+    {
+        array_splice($this->images, $index, 1);
+    }
+
     #[On('setService')]
     public function setService($service)
     {
@@ -21,8 +35,9 @@ class Order extends Component
 
     public function save()
     {
-        $this->order->store();
+        $this->order->store($this->images);
 
+        $this->images = [];
         $this->order->reset();
         session()->flash('success', 'Ваше замовлення успішно відправлено!');
     }

@@ -19,7 +19,7 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
 
 @section('content')
     {{-- Intro --}}
-    <section class="py-12 md:py-16">
+    <section class="py-12 md:py-10">
         <div class="max-w-5xl mx-auto px-5">
             <div class="grid lg:grid-cols-2 gap-10 items-start">
                 <div>
@@ -50,13 +50,11 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
             </div>
         </div>
     </section>
-{{-- Image section --}}
-<section class="py-12 md:py-16 bg-gray-50">
+    {{-- Image section --}}
     <div class="max-w-5xl mx-auto px-5">
-        <x-before-after before="{{ Vite::asset('resources/images/service-1.jpg') }}"
-            after="{{ Vite::asset('resources/images/service-2.jpg') }}" />
+        <x-before-after before="{{ Vite::asset('resources/images/myttia-fasadiv-ta-vikon-na-vysoti/1.jpg') }}"
+            after="{{ Vite::asset('resources/images/myttia-fasadiv-ta-vikon-na-vysoti/2.jpg') }}" />
     </div>
-</section>
 
     <section class="mt-10">
         <div class="max-w-5xl mx-auto px-5">
@@ -214,8 +212,7 @@ name('services.myttia-fasadu-ta-vikon-na-vysoti');
     </section>
 
     <x-order-banner image="service-1.jpg" phone="+38 (067) 123-45-67" title="Замовити миття вікон"
-        subtitle="Ідеальна чистота вашого фасаду та вікон. Телефонуйте!"
-        :service="\App\Enums\ServiceEnum::WINDOW_CLEANING->value" />
+        subtitle="Ідеальна чистота вашого фасаду та вікон. Телефонуйте!" :service="\App\Enums\ServiceEnum::WINDOW_CLEANING->value" />
 
     @include('partials.blog-section')
 @endsection

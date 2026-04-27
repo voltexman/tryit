@@ -54,10 +54,18 @@ class OrderForm extends Form
     #[Validate('max:1200', message: 'Занадто багато символів')]
     public $text = '';
 
-    public function store()
+    public function store($images = [])
     {
         $this->validate();
 
-        return Order::create($this->all());
+        $order = Order::create($this->all());
+
+        foreach ($images as $image) {
+            $order->addMedia($image->getRealPath())
+                ->usingFileName($image->getClientOriginalName())
+                ->toMediaCollection('orders');
+        }
+
+        return $order;
     }
 }

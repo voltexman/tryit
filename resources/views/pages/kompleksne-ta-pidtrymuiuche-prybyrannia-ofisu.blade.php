@@ -51,12 +51,10 @@ name('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu');
     </section>
 
     {{-- Image section --}}
-    <section class="py-12 md:py-16 bg-gray-50">
-        <div class="max-w-5xl mx-auto px-5">
-            <x-before-after before="{{ Vite::asset('resources/images/service-6.jpg') }}"
-                after="{{ Vite::asset('resources/images/service-7.jpg') }}" />
-        </div>
-    </section>
+    <div class="max-w-5xl mx-auto px-5">
+        <x-before-after before="{{ Vite::asset('resources/images/service-6.jpg') }}"
+            after="{{ Vite::asset('resources/images/service-7.jpg') }}" />
+    </div>
 
     <section class="mt-10">
         <div class="max-w-5xl mx-auto px-5">
@@ -186,8 +184,7 @@ name('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu');
     </section>
 
     <x-order-banner image="service-6.jpg" phone="+38 (067) 123-45-67" title="Замовити прибирання офісу"
-        subtitle="Створимо ідеальну чистоту у вашому робочому просторі. Телефонуйте!"
-        :service="\App\Enums\ServiceEnum::OFFICE_CLEANING->value" />
+        subtitle="Створимо ідеальну чистоту у вашому робочому просторі. Телефонуйте!" :service="\App\Enums\ServiceEnum::OFFICE_CLEANING->value" />
 
     @include('partials.blog-section')
 @endsection

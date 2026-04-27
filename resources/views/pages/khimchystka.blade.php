@@ -19,7 +19,7 @@ name('services.khimchystka');
 
 @section('content')
     {{-- Intro --}}
-    <section class="py-12 md:py-16">
+    <section class="py-12 md:py-10">
         <div class="max-w-5xl mx-auto px-5">
             <div class="grid lg:grid-cols-2 gap-10 items-start">
                 <div>
@@ -52,12 +52,10 @@ name('services.khimchystka');
     </section>
 
     {{-- Image section --}}
-    <section class="py-12 md:py-16 bg-gray-50">
-        <div class="max-w-5xl mx-auto px-5">
-            <x-before-after before="{{ Vite::asset('resources/images/service-5.jpg') }}"
-                after="{{ Vite::asset('resources/images/service-6.jpg') }}" />
-        </div>
-    </section>
+    <div class="max-w-5xl mx-auto px-5">
+        <x-before-after before="{{ Vite::asset('resources/images/service-5.jpg') }}"
+            after="{{ Vite::asset('resources/images/service-6.jpg') }}" />
+    </div>
 
     <section class="mt-10">
         <div class="max-w-5xl mx-auto px-5">
@@ -177,8 +175,7 @@ name('services.khimchystka');
     </section>
 
     <x-order-banner image="service-5.jpg" phone="+38 (067) 123-45-67" title="Замовити хімчистку"
-        subtitle="Професійна чистка меблів, килимів, авто. Телефонуйте!"
-        :service="\App\Enums\ServiceEnum::DRY_CLEANING->value" />
+        subtitle="Професійна чистка меблів, килимів, авто. Телефонуйте!" :service="\App\Enums\ServiceEnum::DRY_CLEANING->value" />
 
     @include('partials.blog-section')
 @endsection

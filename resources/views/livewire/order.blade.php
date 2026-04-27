@@ -63,7 +63,13 @@
 
             <!-- ХАРАКТЕРИСТИКИ ОБ'ЄКТУ -->
             <div class="space-y-4">
-                <h3 class="font-display text-lg font-semibold text-slate-900">Характеристики об'єкту</h3>
+                <div class="space-y-1">
+                    <h3 class="font-display text-lg font-semibold text-slate-900">Характеристики об'єкту</h3>
+                    <p class="text-xs leading-relaxed text-slate-500 font-medium italic">
+                        Ці дані не є обов'язковими, проте вони допоможуть нам точніше оцінити обсяг робіт та підготувати
+                        найкращу пропозицію саме для вас.
+                    </p>
+                </div>
 
                 <!-- Площа, Кімнати та Поверхи в одному рядку -->
                 <div class="grid grid-cols-3 gap-2.5 lg:gap-5">
@@ -71,7 +77,7 @@
                     <div>
                         <label class="block text-sm font-medium text-slate-700 mb-2">Площа (м²)</label>
                         <x-forms.input size="lg" wire:model="order.square_area" type="number" step="0.1"
-                            placeholder="м²" wire:target="save" wire:loading.attr="disabled" />
+                            placeholder="250" wire:target="save" wire:loading.attr="disabled" />
                         @error('order.square_area')
                             <x-forms.error class="mt-2" :message="$message" />
                         @enderror
@@ -79,9 +85,12 @@
 
                     <!-- Кількість кімнат -->
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Кімнат</label>
-                        <x-forms.input size="lg" wire:model="order.room_count" type="number" placeholder="К-сть"
-                            wire:target="save" wire:loading.attr="disabled" />
+                        <label class="flex items-center text-sm font-medium text-slate-700 mb-2">
+                            <span>Кімнат</span>
+                            <x-tooltip content="Вкажіть кількість кімнат, офісних приміщень, цехів або окремих кабінетів" />
+                        </label>
+                        <x-forms.input size="lg" wire:model="order.room_count" type="number" wire:target="save"
+                            placeholder="3" wire:loading.attr="disabled" />
                         @error('order.room_count')
                             <x-forms.error class="mt-2" :message="$message" />
                         @enderror
@@ -89,8 +98,12 @@
 
                     <!-- Кількість поверхів -->
                     <div>
-                        <label class="block text-sm font-medium text-slate-700 mb-2">Поверхів</label>
-                        <x-forms.input size="lg" wire:model="order.floor_count" type="number" placeholder="Поверхи"
+                        <label class="flex items-center text-sm font-medium text-slate-700 mb-2">
+                            <span>Поверхів</span>
+                            <x-tooltip
+                                content="Загальна кількість поверхів у приміщенні або номер поверху, на якому потрібно прибрати" />
+                        </label>
+                        <x-forms.input size="lg" wire:model="order.floor_count" type="number" placeholder="5"
                             wire:target="save" wire:loading.attr="disabled" />
                         @error('order.floor_count')
                             <x-forms.error class="mt-2" :message="$message" />
@@ -100,33 +113,33 @@
 
                 <!-- Чекбокси: ліфт, вода, паркування - як квадратні кнопки в ряд -->
                 <div class="space-y-2.5">
-                    <label class="block text-sm font-medium text-slate-700 mb-3">Умови на об'єкті</label>
-                    <div class="grid grid-cols-3 justify-items-start w-fit gap-2.5 lg:gap-5">
+                    <label class="block text-sm font-medium text-slate-700 mb-2.5">Умови на об'єкті</label>
+                    <div class="flex gap-2.5 lg:gap-5">
                         <label class="flex items-center justify-center cursor-pointer group">
                             <input type="checkbox" wire:model="order.has_elevator" class="hidden" />
-                            <div class="size-30 flex flex-col justify-center items-center rounded-xl border-2 border-slate-200 text-center transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-100/60"
+                            <div class="size-25 lg:size-30 flex flex-col justify-center items-center rounded-xl border-2 text-center transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-100/60"
                                 :class="$wire.order.has_elevator ? 'border-emerald-500 bg-emerald-50 text-emerald-600' :
-                                    'bg-slate-50 text-slate-700'">
+                                    'border-slate-200 bg-slate-50 text-slate-700'">
                                 <x-lucide-arrow-up-down class="size-6 mx-auto mb-2 transition-colors" />
                                 <span class="text-xs font-semibold">Ліфт</span>
                             </div>
                         </label>
 
-                        <label class="flex items-center justify-center cursor-pointer group">
+                        <label class="size-30 flex items-center justify-center cursor-pointer group">
                             <input type="checkbox" wire:model="order.has_water" class="hidden" />
-                            <div class="size-30 flex flex-col justify-center items-center rounded-xl border-2 border-slate-200 text-center transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-100/60"
+                            <div class="size-25 lg:size-30 flex flex-col justify-center items-center rounded-xl border-2 text-center transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-100/60"
                                 :class="$wire.order.has_water ? 'border-emerald-500 bg-emerald-50 text-emerald-600' :
-                                    'bg-slate-50 text-slate-700'">
+                                    'border-slate-200 bg-slate-50 text-slate-700'">
                                 <x-lucide-droplets class="size-6 mx-auto mb-2 transition-colors" />
                                 <span class="text-xs font-semibold">Вода</span>
                             </div>
                         </label>
 
-                        <label class="flex items-center justify-center cursor-pointer group">
+                        <label class="size-30 flex items-center justify-center cursor-pointer group">
                             <input type="checkbox" wire:model="order.has_parking" class="hidden" />
-                            <div class="size-30 flex flex-col justify-center items-center rounded-xl border-2 border-slate-200 text-center transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-100/60"
-                                x-bind:class="$wire.order.has_parking ? 'border-emerald-500 bg-emerald-50 text-emerald-600' :
-                                    'bg-slate-50 text-slate-700'">
+                            <div class="size-25 lg:size-30 flex flex-col justify-center items-center rounded-xl border-2 text-center transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-100/60"
+                                x-bind:class="$wire.order.has_parking ? 'border-emerald-400 bg-emerald-50 text-emerald-600' :
+                                    'border-slate-200 bg-slate-50 text-slate-700'">
                                 <x-lucide-car class="size-6 mx-auto mb-2 transition-colors" />
                                 <span class="text-xs font-semibold">Паркування</span>
                             </div>
@@ -215,6 +228,49 @@
                         <span class="text-sm font-medium text-slate-700">Терміне прибирання</span>
                     </div>
                 </label>
+            </div>
+
+            <!-- ЗАВАНТАЖЕННЯ ЗОБРАЖЕНЬ -->
+            <div class="space-y-4">
+                <h3 class="font-display text-lg font-semibold text-slate-900">Фото об'єкту</h3>
+
+                <div class="flex flex-col gap-3">
+                    <label
+                        class="w-fit flex items-center gap-2.5 px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-full cursor-pointer transition-colors border border-slate-200">
+                        <x-lucide-image class="size-5" />
+                        <span class="text-sm font-semibold">Додати фото</span>
+                        <input type="file" wire:model="images" multiple class="hidden" accept="image/*">
+                    </label>
+                    <span class="text-[10px] text-gray-400 uppercase font-bold tracking-tight">До 4 зображень (макс. 5MB
+                        кожне)</span>
+                </div>
+
+                @error('images.*')
+                    <x-forms.error :message="$message" />
+                @enderror
+
+                @if ($images)
+                    <div class="flex flex-wrap gap-3 p-4 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
+                        @foreach ($images as $index => $image)
+                            <div wire:key="order-image-{{ $index }}"
+                                class="relative group size-20 rounded-xl overflow-hidden shadow-sm border border-slate-200">
+                                <img src="{{ $image->temporaryUrl() }}" class="size-full object-cover">
+                                <button type="button" wire:click="removeImage({{ $index }})"
+                                    class="absolute top-1 right-1 size-6 bg-red-500 text-white rounded-full flex items-center justify-center md:opacity-0 md:group-hover:opacity-100 transition-opacity shadow-lg cursor-pointer">
+                                    <x-lucide-x class="size-4" />
+                                </button>
+                            </div>
+                        @endforeach
+
+                        @if (count($images) < 4)
+                            <label
+                                class="size-20 rounded-xl border-2 border-dashed border-slate-200 flex flex-col items-center justify-center text-slate-400 hover:border-emerald-500 hover:text-emerald-500 cursor-pointer transition-all">
+                                <x-lucide-plus class="size-6" />
+                                <input type="file" wire:model="images" multiple class="hidden" accept="image/*">
+                            </label>
+                        @endif
+                    </div>
+                @endif
             </div>
 
             <!-- ДОДАТКОВІ ПРИМІТКИ -->

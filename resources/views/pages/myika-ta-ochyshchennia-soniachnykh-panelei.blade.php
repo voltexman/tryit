@@ -52,12 +52,10 @@ name('services.myika-ta-ochyshchennia-soniachnykh-panelei');
     </section>
 
     {{-- Image section --}}
-    <section class="py-12 md:py-16 bg-gray-50">
-        <div class="max-w-5xl mx-auto px-5">
-            <x-before-after before="{{ Vite::asset('resources/images/service-2.jpg') }}"
-                after="{{ Vite::asset('resources/images/service-3.jpg') }}" />
-        </div>
-    </section>
+    <div class="max-w-5xl mx-auto px-5">
+        <x-before-after before="{{ Vite::asset('resources/images/service-2.jpg') }}"
+            after="{{ Vite::asset('resources/images/service-3.jpg') }}" />
+    </div>
 
     <section class="mt-10">
         <div class="max-w-5xl mx-auto px-5">
@@ -197,8 +195,7 @@ name('services.myika-ta-ochyshchennia-soniachnykh-panelei');
     </section>
 
     <x-order-banner image="service-2.jpg" phone="+38 (067) 123-45-67" title="Замовити миття панелей"
-        subtitle="Збільште ефективність вашої СЕС вже сьогодні. Телефонуйте!"
-        :service="\App\Enums\ServiceEnum::SOLAR_PANEL_CLEANING->value" />
+        subtitle="Збільште ефективність вашої СЕС вже сьогодні. Телефонуйте!" :service="\App\Enums\ServiceEnum::SOLAR_PANEL_CLEANING->value" />
 
     @include('partials.blog-section')
 @endsection

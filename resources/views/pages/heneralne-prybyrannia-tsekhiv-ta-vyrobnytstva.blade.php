@@ -49,12 +49,10 @@ name('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva');
     </section>
 
     {{-- Image section --}}
-    <section class="py-12 md:py-16 bg-gray-50">
-        <div class="max-w-5xl mx-auto px-5">
-            <x-before-after before="{{ Vite::asset('resources/images/service-4.jpg') }}"
-                after="{{ Vite::asset('resources/images/service-5.jpg') }}" />
-        </div>
-    </section>
+    <div class="max-w-5xl mx-auto px-5">
+        <x-before-after before="{{ Vite::asset('resources/images/service-4.jpg') }}"
+            after="{{ Vite::asset('resources/images/service-5.jpg') }}" />
+    </div>
 
     <section class="mt-10">
         <div class="max-w-5xl mx-auto px-5">
@@ -185,8 +183,7 @@ name('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva');
     </section>
 
     <x-order-banner image="service-5.jpg" phone="+38 (067) 123-45-67" title="Замовити послугу"
-        subtitle="Професійне прибирання промислових об'єктів. Телефонуйте!"
-        :service="\App\Enums\ServiceEnum::INDUSTRIAL_CLEANING->value" />
+        subtitle="Професійне прибирання промислових об'єктів. Телефонуйте!" :service="\App\Enums\ServiceEnum::INDUSTRIAL_CLEANING->value" />
 
     @include('partials.blog-section')
 @endsection

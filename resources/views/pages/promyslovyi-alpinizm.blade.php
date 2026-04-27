@@ -52,12 +52,10 @@ name('services.promyslovyi-alpinizm');
     </section>
 
     {{-- Image section --}}
-    <section class="py-12 md:py-16 bg-gray-50">
-        <div class="max-w-5xl mx-auto px-5">
-            <x-before-after before="{{ Vite::asset('resources/images/service-7.jpg') }}"
-                after="{{ Vite::asset('resources/images/service-1.jpg') }}" />
-        </div>
-    </section>
+    <div class="max-w-5xl mx-auto px-5">
+        <x-before-after before="{{ Vite::asset('resources/images/service-7.jpg') }}"
+            after="{{ Vite::asset('resources/images/service-1.jpg') }}" />
+    </div>
 
     <section class="mt-10">
         <div class="max-w-5xl mx-auto px-5">
@@ -182,8 +180,7 @@ name('services.promyslovyi-alpinizm');
     </section>
 
     <x-order-banner image="service-7.jpg" phone="+38 (067) 123-45-67" title="Послуги альпіністів"
-        subtitle="Висотні роботи будь-якої складності. Телефонуйте!"
-        :service="\App\Enums\ServiceEnum::INDUSTRIAL_ALPINISM->value" />
+        subtitle="Висотні роботи будь-якої складності. Телефонуйте!" :service="\App\Enums\ServiceEnum::INDUSTRIAL_ALPINISM->value" />
 
     @include('partials.blog-section')
 @endsection

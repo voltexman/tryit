@@ -52,12 +52,10 @@ name('services.pisliabudivelne-prybyrannia');
     </section>
 
     {{-- Image section --}}
-    <section class="py-12 md:py-16 bg-gray-50">
-        <div class="max-w-5xl mx-auto px-5">
-            <x-before-after before="{{ Vite::asset('resources/images/service-3.jpg') }}"
-                after="{{ Vite::asset('resources/images/service-4.jpg') }}" />
-        </div>
-    </section>
+    <div class="max-w-5xl mx-auto px-5">
+        <x-before-after before="{{ Vite::asset('resources/images/service-3.jpg') }}"
+            after="{{ Vite::asset('resources/images/service-4.jpg') }}" />
+    </div>
 
     <section class="mt-10">
         <div class="max-w-5xl mx-auto px-5">
@@ -188,8 +186,7 @@ name('services.pisliabudivelne-prybyrannia');
     </section>
 
     <x-order-banner image="service-3.jpg" phone="+38 (067) 123-45-67" title="Замовити прибирання"
-        subtitle="Швидко усунемо наслідки ремонту чи будівництва. Телефонуйте!"
-        :service="\App\Enums\ServiceEnum::POST_CONSTRUCTION_CLEANING->value" />
+        subtitle="Швидко усунемо наслідки ремонту чи будівництва. Телефонуйте!" :service="\App\Enums\ServiceEnum::POST_CONSTRUCTION_CLEANING->value" />
 
     @include('partials.blog-section')
 @endsection
