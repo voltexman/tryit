@@ -43,7 +43,7 @@ enum ServiceEnum: string
             self::WINDOW_CLEANING => 'service-1.jpg',
             self::SOLAR_PANEL_CLEANING => 'service-2.jpg',
             self::POST_CONSTRUCTION_CLEANING => 'service-3.jpg',
-            self::INDUSTRIAL_CLEANING => 'service-4.jpg',
+            self::INDUSTRIAL_CLEANING => 'service-4.jpeg',
             self::DRY_CLEANING => 'service-5.jpg',
             self::OFFICE_CLEANING => 'service-6.jpg',
             self::INDUSTRIAL_ALPINISM => 'service-7.jpg',

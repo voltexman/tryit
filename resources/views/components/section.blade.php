@@ -1,4 +1,4 @@
-<section {{ $attributes->class(['py-15 min-h-screen']) }}>
+<section {{ $attributes->class(['py-10 lg:py-20']) }}>
     @isset($caption)
         <h2 class="mb-15 text-center text-3xl uppercase font-display font-black text-gray-800 drop-shadow-lg relative">
             <img src="{{ Vite::asset('resources/images/klax.svg') }}"

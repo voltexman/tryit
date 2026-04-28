@@ -6,7 +6,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-BhMJYSrD.css",
+    "file": "assets/app-ZM_T3vQc.css",
     "name": "app",
     "names": [
       "app.css"
@@ -426,6 +426,14 @@
     "file": "assets/comparison-7-before-DWdcUiLl.jpg",
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-7-before.jpg"
   },
+  "resources/images/promyslovyi-alpinizm/image-1.jpg": {
+    "file": "assets/image-1-CWdYmt6d.jpg",
+    "src": "resources/images/promyslovyi-alpinizm/image-1.jpg"
+  },
+  "resources/images/promyslovyi-alpinizm/image-2.jpg": {
+    "file": "assets/image-2-Dh_kS9yF.jpg",
+    "src": "resources/images/promyslovyi-alpinizm/image-2.jpg"
+  },
   "resources/images/service-1.jpg": {
     "file": "assets/service-1-CK1_oBol.jpg",
     "src": "resources/images/service-1.jpg"
@@ -434,25 +442,41 @@
     "file": "assets/service-2-BF0DbPE7.jpg",
     "src": "resources/images/service-2.jpg"
   },
-  "resources/images/service-3.jpg": {
-    "file": "assets/service-3-B46rLH6d.jpg",
-    "src": "resources/images/service-3.jpg"
+  "resources/images/service-3-old.jpg": {
+    "file": "assets/service-3-old-B46rLH6d.jpg",
+    "src": "resources/images/service-3-old.jpg"
   },
-  "resources/images/service-4.jpg": {
-    "file": "assets/service-4-BTD9UH8T.jpg",
-    "src": "resources/images/service-4.jpg"
+  "resources/images/service-3.jpg": {
+    "file": "assets/comparison-4-after-BNiP3oMY.jpg",
+    "src": "resources/images/pisliabudivelne-prybyrannia/comparison-4-after.jpg"
+  },
+  "resources/images/service-4-old.jpg": {
+    "file": "assets/service-4-old-BTD9UH8T.jpg",
+    "src": "resources/images/service-4-old.jpg"
+  },
+  "resources/images/service-4.jpeg": {
+    "file": "assets/IMG_3208-DV7zRpaC.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3208.jpeg"
   },
   "resources/images/service-5.jpg": {
     "file": "assets/service-5-K9R8nF0l.jpg",
     "src": "resources/images/service-5.jpg"
   },
+  "resources/images/service-6-old.jpg": {
+    "file": "assets/service-6-old-vfKHD1Ij.jpg",
+    "src": "resources/images/service-6-old.jpg"
+  },
   "resources/images/service-6.jpg": {
-    "file": "assets/service-6-vfKHD1Ij.jpg",
-    "src": "resources/images/service-6.jpg"
+    "file": "assets/2026-04-26 14.31.00-rkLMSoIA.jpg",
+    "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/2026-04-26 14.31.00.jpg"
+  },
+  "resources/images/service-7-old.jpg": {
+    "file": "assets/service-7-old-CLQ6xYdb.jpg",
+    "src": "resources/images/service-7-old.jpg"
   },
   "resources/images/service-7.jpg": {
-    "file": "assets/service-7-CLQ6xYdb.jpg",
-    "src": "resources/images/service-7.jpg"
+    "file": "assets/image-1-CWdYmt6d.jpg",
+    "src": "resources/images/promyslovyi-alpinizm/image-1.jpg"
   },
   "resources/js/app.js": {
     "file": "assets/app-Dd1ufhFS.js",

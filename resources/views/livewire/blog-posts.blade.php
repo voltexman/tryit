@@ -55,16 +55,18 @@
                         class="text-3xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors font-display">
                         {{ $featured->title }}
                     </h3>
-                    <p class="text-gray-500 mb-6 line-clamp-2">
+                    <p class="text-gray-500 mb-5 line-clamp-2">
                         {{ $featured->excerpt }}
                     </p>
                     <div class="flex items-center justify-between border-t border-gray-100">
                         <div class="flex items-center gap-1.5">
-                            <span class="text-gray-700 font-medium">
+                            <span class="text-sm text-gray-400 font-medium">
+                                <x-lucide-calendar class="size-4 shrink-0 inline-flex mb-0.5" />
                                 {{ $post->published_at->translatedFormat('d M Y') }}
                             </span>
                         </div>
-                        <span class="text-gray-400 font-medium uppercase text-sm tracking-wider">
+                        <span class="text-gray-400 font-medium text-sm tracking-wide">
+                            <x-lucide-timer class="size-4 shrink-0 inline-flex mb-0.5" />
                             {{ $post->reading_time }} хв читання
                         </span>
                     </div>
@@ -90,10 +92,11 @@
                             <div class="text-sm line-clamp-2 text-gray-500 mt-1.5">{{ $post->excerpt }}</div>
                             <div class="flex items-center justify-between mt-auto">
                                 <div class="flex items-center gap-0.5 text-gray-400 text-xs">
-                                    <x-lucide-calendar class="size-3 shrink-0 mb-0.5" />
+                                    <x-lucide-calendar class="size-3 shrink-0 mb-1.5" />
                                     {{ $post->published_at->translatedFormat('d M Y') }}
                                 </div>
                                 <span class="text-gray-400 text-xs uppercase tracking-wide">
+                                    <x-lucide-timer class="size-3 shrink-0 inline-flex mb-1.5" />
                                     {{ $post->reading_time }} хв читання
                                 </span>
                             </div>
