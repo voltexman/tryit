@@ -6,7 +6,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-CcMxkdaQ.css",
+    "file": "assets/app-BhMJYSrD.css",
     "name": "app",
     "names": [
       "app.css"
@@ -122,6 +122,10 @@
     "file": "assets/comparison-4-before-BMn2wKJu.jpg",
     "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-4-before.jpg"
   },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-5-after.jpg": {
+    "file": "assets/comparison-5-after-5csRYFcO.jpg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-5-after.jpg"
+  },
   "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-5-before.jpg": {
     "file": "assets/comparison-5-before-BrzBu7QS.jpg",
     "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-5-before.jpg"
@@ -129,10 +133,6 @@
   "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-6-after.jpeg": {
     "file": "assets/comparison-6-after-CYGtE6lm.jpeg",
     "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-6-after.jpeg"
-  },
-  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-6-after.jpg": {
-    "file": "assets/comparison-6-after-5csRYFcO.jpg",
-    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-6-after.jpg"
   },
   "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-6-before.jpeg": {
     "file": "assets/comparison-6-before-BvDYgXpg.jpeg",
@@ -182,9 +182,81 @@
     "file": "assets/viber-DEEbfu3A.svg",
     "src": "resources/images/icons/viber.svg"
   },
+  "resources/images/khimchystka/IMG_4654.jpeg": {
+    "file": "assets/IMG_4654-Dp2CsEmp.jpeg",
+    "src": "resources/images/khimchystka/IMG_4654.jpeg"
+  },
+  "resources/images/khimchystka/IMG_4656.jpeg": {
+    "file": "assets/IMG_4656-Ej4-fdnT.jpeg",
+    "src": "resources/images/khimchystka/IMG_4656.jpeg"
+  },
+  "resources/images/khimchystka/comparison-1-after.jpg": {
+    "file": "assets/comparison-1-after-Ducb4p1E.jpg",
+    "src": "resources/images/khimchystka/comparison-1-after.jpg"
+  },
+  "resources/images/khimchystka/comparison-1-before.jpg": {
+    "file": "assets/comparison-1-before-CfFijD6Y.jpg",
+    "src": "resources/images/khimchystka/comparison-1-before.jpg"
+  },
+  "resources/images/khimchystka/image-1.jpg": {
+    "file": "assets/image-1-BjNwDoT4.jpg",
+    "src": "resources/images/khimchystka/image-1.jpg"
+  },
   "resources/images/klax.svg": {
     "file": "assets/klax-C3yrtJC7.svg",
     "src": "resources/images/klax.svg"
+  },
+  "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/2026-04-26 14.31.00.jpg": {
+    "file": "assets/2026-04-26 14.31.00-rkLMSoIA.jpg",
+    "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/2026-04-26 14.31.00.jpg"
+  },
+  "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/IMG_4603.jpeg": {
+    "file": "assets/IMG_4603-KWSejcCG.jpeg",
+    "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/IMG_4603.jpeg"
+  },
+  "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/IMG_4808.jpeg": {
+    "file": "assets/IMG_4808-NX5Gp75X.jpeg",
+    "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/IMG_4808.jpeg"
+  },
+  "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-1-after.jpg": {
+    "file": "assets/comparison-1-after-B1pkBcFU.jpg",
+    "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-1-after.jpg"
+  },
+  "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-1-before.jpg": {
+    "file": "assets/comparison-1-before-QqkUB0Yy.jpg",
+    "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-1-before.jpg"
+  },
+  "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-2-after.jpg": {
+    "file": "assets/comparison-2-after-Bvi56WE6.jpg",
+    "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-2-after.jpg"
+  },
+  "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-2-before.jpg": {
+    "file": "assets/comparison-2-before-ChcIHrwH.jpg",
+    "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-2-before.jpg"
+  },
+  "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-3-after.jpg": {
+    "file": "assets/comparison-3-after-D3AF5ECh.jpg",
+    "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-3-after.jpg"
+  },
+  "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-3-before.jpg": {
+    "file": "assets/comparison-3-before-emTK-mKP.jpg",
+    "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-3-before.jpg"
+  },
+  "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-4-after.jpg": {
+    "file": "assets/comparison-4-after-Bu5qi01Z.jpg",
+    "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-4-after.jpg"
+  },
+  "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-4-before.jpg": {
+    "file": "assets/comparison-4-before-BE_YGDiB.jpg",
+    "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-4-before.jpg"
+  },
+  "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-5-after.jpg": {
+    "file": "assets/comparison-5-after-BtSmMT8E.jpg",
+    "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-5-after.jpg"
+  },
+  "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-5-before.jpg": {
+    "file": "assets/comparison-5-before-DXEi1d5t.jpg",
+    "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-5-before.jpg"
   },
   "resources/images/logo-klax.png": {
     "file": "assets/logo-klax-DMG5ucPO.png",
@@ -298,6 +370,62 @@
     "file": "assets/Знімок екрана 2026-04-26 о 14.31.58-CAZDs8mX.png",
     "src": "resources/images/myttia-fasadiv-ta-vikon-na-vysoti/Знімок екрана 2026-04-26 о 14.31.58.png"
   },
+  "resources/images/pisliabudivelne-prybyrannia/comparison-1-after.jpg": {
+    "file": "assets/comparison-1-after-0qYTniLD.jpg",
+    "src": "resources/images/pisliabudivelne-prybyrannia/comparison-1-after.jpg"
+  },
+  "resources/images/pisliabudivelne-prybyrannia/comparison-1-before.jpg": {
+    "file": "assets/comparison-1-before-DwEOv9lD.jpg",
+    "src": "resources/images/pisliabudivelne-prybyrannia/comparison-1-before.jpg"
+  },
+  "resources/images/pisliabudivelne-prybyrannia/comparison-2-after.jpg": {
+    "file": "assets/comparison-2-after-Cwr9qSDR.jpg",
+    "src": "resources/images/pisliabudivelne-prybyrannia/comparison-2-after.jpg"
+  },
+  "resources/images/pisliabudivelne-prybyrannia/comparison-2-before.jpg": {
+    "file": "assets/comparison-2-before-BO6A_OiQ.jpg",
+    "src": "resources/images/pisliabudivelne-prybyrannia/comparison-2-before.jpg"
+  },
+  "resources/images/pisliabudivelne-prybyrannia/comparison-3-after.jpg": {
+    "file": "assets/comparison-3-after-m13w-tMu.jpg",
+    "src": "resources/images/pisliabudivelne-prybyrannia/comparison-3-after.jpg"
+  },
+  "resources/images/pisliabudivelne-prybyrannia/comparison-3-before.jpg": {
+    "file": "assets/comparison-3-before-Bkt4ECzj.jpg",
+    "src": "resources/images/pisliabudivelne-prybyrannia/comparison-3-before.jpg"
+  },
+  "resources/images/pisliabudivelne-prybyrannia/comparison-4-after.jpg": {
+    "file": "assets/comparison-4-after-BNiP3oMY.jpg",
+    "src": "resources/images/pisliabudivelne-prybyrannia/comparison-4-after.jpg"
+  },
+  "resources/images/pisliabudivelne-prybyrannia/comparison-4-before.jpg": {
+    "file": "assets/comparison-4-before-BwuoIwH0.jpg",
+    "src": "resources/images/pisliabudivelne-prybyrannia/comparison-4-before.jpg"
+  },
+  "resources/images/pisliabudivelne-prybyrannia/comparison-5-after.jpg": {
+    "file": "assets/comparison-5-after-JVXJ_qZK.jpg",
+    "src": "resources/images/pisliabudivelne-prybyrannia/comparison-5-after.jpg"
+  },
+  "resources/images/pisliabudivelne-prybyrannia/comparison-5-before.jpg": {
+    "file": "assets/comparison-5-before-7syyUjse.jpg",
+    "src": "resources/images/pisliabudivelne-prybyrannia/comparison-5-before.jpg"
+  },
+  "resources/images/pisliabudivelne-prybyrannia/comparison-6-after.jpg": {
+    "file": "assets/comparison-6-after-COzj3qMI.jpg",
+    "src": "resources/images/pisliabudivelne-prybyrannia/comparison-6-after.jpg"
+  },
+  "resources/images/pisliabudivelne-prybyrannia/comparison-6-before.jpg": {
+    "file": "assets/comparison-6-before-BjAvmSZj.jpg",
+    "src": "resources/images/pisliabudivelne-prybyrannia/comparison-6-before.jpg"
+  },
+  "resources/images/pisliabudivelne-prybyrannia/comparison-7-after.jpg": {
+    "file": "assets/comparison-7-after-Bcgoy8aB.jpg",
+    "src": "resources/images/pisliabudivelne-prybyrannia/comparison-7-after.jpg"
+  },
+  "resources/images/pisliabudivelne-prybyrannia/comparison-7-before.jpg": {
+    "file": "assets/comparison-7-before-DWdcUiLl.jpg",
+    "src": "resources/images/pisliabudivelne-prybyrannia/comparison-7-before.jpg"
+  },
   "resources/images/service-1.jpg": {
     "file": "assets/service-1-CK1_oBol.jpg",
     "src": "resources/images/service-1.jpg"
@@ -337,6 +465,10 @@
     "css": [
       "assets/app-DOg8h1BU.css"
     ]
+  },
+  "resources/videos/khimchystka/video-bg.mp4": {
+    "file": "assets/video-bg-BdpedeHD.mp4",
+    "src": "resources/videos/khimchystka/video-bg.mp4"
   },
   "resources/videos/myttia-fasadiv-ta-vikon-na-vysoti/video-section-bg.mp4": {
     "file": "assets/video-section-bg-C-bK1RKi.mp4",

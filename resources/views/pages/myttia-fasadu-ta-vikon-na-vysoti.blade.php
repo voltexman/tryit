@@ -338,9 +338,8 @@ $categories = [
         </div>
     </section>
 
-    <x-order-banner image="service-1.jpg" phone="+38 (067) 123-45-67" title="Замовити миття вікон"
-        subtitle="Ідеальна чистота вашого фасаду та вікон. Телефонуйте!" :service="\App\Enums\ServiceEnum::WINDOW_CLEANING->value"
-        video="myttia-fasadiv-ta-vikon-na-vysoti/video-section-bg.mp4" />
+    <x-order-banner title="Замовити миття вікон" subtitle="Ідеальна чистота вашого фасаду та вікон. Телефонуйте!"
+        :service="\App\Enums\ServiceEnum::WINDOW_CLEANING->value" video="myttia-fasadiv-ta-vikon-na-vysoti/video-section-bg.mp4" />
 
     @include('partials.blog-section')
 @endsection

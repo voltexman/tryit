@@ -6,6 +6,37 @@ $meta_title = 'Післябудівельне прибирання у Києві
 $meta_description = 'Післябудівельне прибирання у Києві. Видалення пилу, вивіз сміття, очищення вікон, підлог і поверхонь після ремонту. Гарантія чистоти та швидкість роботи';
 
 name('services.pisliabudivelne-prybyrannia');
+
+// Назва папки з зображеннями: pisliabudivelne-prybyrannia
+$imgDir = 'pisliabudivelne-prybyrannia';
+
+$comparisons = [
+    [
+        'title' => 'Торговий зал',
+        'before' => Vite::asset("resources/images/{$imgDir}/comparison-1-before.jpg"),
+        'after' => Vite::asset("resources/images/{$imgDir}/comparison-1-after.jpg"),
+    ],
+    [
+        'title' => 'Санвузол',
+        'before' => Vite::asset("resources/images/{$imgDir}/comparison-2-before.jpg"),
+        'after' => Vite::asset("resources/images/{$imgDir}/comparison-2-after.jpg"),
+    ],
+    [
+        'title' => 'Технічна зона',
+        'before' => Vite::asset("resources/images/{$imgDir}/comparison-3-before.jpg"),
+        'after' => Vite::asset("resources/images/{$imgDir}/comparison-3-after.jpg"),
+    ],
+    [
+        'title' => 'Комунікації',
+        'before' => Vite::asset("resources/images/{$imgDir}/comparison-4-before.jpg"),
+        'after' => Vite::asset("resources/images/{$imgDir}/comparison-4-after.jpg"),
+    ],
+    [
+        'title' => 'Підлога',
+        'before' => Vite::asset("resources/images/{$imgDir}/comparison-5-before.jpg"),
+        'after' => Vite::asset("resources/images/{$imgDir}/comparison-5-after.jpg"),
+    ],
+];
 ?>
 
 @extends('layouts.base')
@@ -51,11 +82,48 @@ name('services.pisliabudivelne-prybyrannia');
         </div>
     </section>
 
-    {{-- Image section --}}
-    <div class="max-w-5xl mx-auto px-5">
-        <x-before-after before="{{ Vite::asset('resources/images/service-3.jpg') }}"
-            after="{{ Vite::asset('resources/images/service-4.jpg') }}" />
-    </div>
+    {{-- Before/After Section with Tabs --}}
+    <section class="py-20 bg-slate-100 border border-slate-100" x-data="{
+        activeTab: 0,
+        comparisons: {{ json_encode($comparisons) }}
+    }">
+        <div class="max-w-5xl mx-auto px-5 mt-5">
+            <div class="text-center mb-10">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900">Результати нашої роботи</h2>
+                <p class="text-gray-500 mt-3">Оберіть зону, щоб побачити результат до та після післябудівельного прибирання</p>
+            </div>
+
+            {{-- Comparison View --}}
+            <div class="relative bg-gray-100 rounded-2xl overflow-hidden shadow-xl">
+                @foreach ($comparisons as $index => $item)
+                    <div x-show="activeTab === {{ $index }}" x-transition:enter="transition ease-out duration-500"
+                        x-transition:enter-start="opacity-0 translate-y-4"
+                        x-transition:enter-end="opacity-100 translate-y-0" @if ($index !== 0) x-cloak @endif>
+                        <x-before-after before="{{ $item['before'] }}" after="{{ $item['after'] }}" />
+                    </div>
+                @endforeach
+            </div>
+
+            {{-- Thumbnails Triggers --}}
+            <div class="grid grid-cols-5 gap-2.5 md:gap-5 mt-10">
+                <template x-for="(item, index) in comparisons" :key="index">
+                    <button @click="activeTab = index"
+                        class="relative aspect-video rounded-2xl overflow-hidden border-2 transition-all duration-300 cursor-pointer group"
+                        :class="activeTab === index ? 'border-tryit-orange ring-4 ring-tryit-orange/20 scale-105' :
+                            'border-transparent opacity-60 hover:opacity-100'">
+                        <img :src="item.after"
+                            class="size-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            :alt="item.title">
+                        <div class="absolute inset-0 bg-black/40 flex items-end p-3">
+                            <span
+                                class="font-display text-white text-[10px] font-bold uppercase drop-shadow-xl tracking-wider"
+                                x-text="item.title"></span>
+                        </div>
+                    </button>
+                </template>
+            </div>
+        </div>
+    </section>
 
     <section class="mt-10">
         <div class="max-w-5xl mx-auto px-5">

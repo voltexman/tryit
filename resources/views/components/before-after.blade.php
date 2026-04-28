@@ -28,8 +28,8 @@
     </div>
 
     <!-- Позначки "До" і "Після" -->
-    <div class="absolute top-4 left-4 z-20 bg-black/60 text-white text-xs font-semibold px-3 py-1.5 rounded-md backdrop-blur-sm">Після</div>
-    <div class="absolute top-4 right-4 z-20 bg-black/60 text-white text-xs font-semibold px-3 py-1.5 rounded-md backdrop-blur-sm">До</div>
+    <div class="absolute top-4 left-4 z-20 bg-black/60 text-white text-xs font-semibold px-3 py-1.5 rounded-md backdrop-blur-sm">До</div>
+    <div class="absolute top-4 right-4 z-20 bg-black/60 text-white text-xs font-semibold px-3 py-1.5 rounded-md backdrop-blur-sm">Після</div>
 </div>
 
 <script>

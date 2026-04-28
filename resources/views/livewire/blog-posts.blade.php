@@ -52,23 +52,20 @@
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <h3
-                        class="text-3xl font-bold text-gray-900 mb-4 group-hover:text-indigo-600 transition-colors font-display">
+                        class="text-3xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors font-display">
                         {{ $featured->title }}
                     </h3>
                     <p class="text-gray-500 mb-6 line-clamp-2">
                         {{ $featured->excerpt }}
                     </p>
-                    <div class="flex items-center justify-between border-t border-gray-100 pt-6">
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold">
-                                {{ substr($featured->author_name ?? 'A', 0, 1) }}
-                            </div>
-                            <span class="text-gray-700 font-medium">By
-                                {{ $featured->author_name ?? 'Редакція' }}</span>
+                    <div class="flex items-center justify-between border-t border-gray-100">
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-gray-700 font-medium">
+                                {{ $post->published_at->translatedFormat('d M Y') }}
+                            </span>
                         </div>
                         <span class="text-gray-400 font-medium uppercase text-sm tracking-wider">
-                            {{ $featured->category_name ?? 'Блог' }}
+                            {{ $post->reading_time }} хв читання
                         </span>
                     </div>
                 </a>
@@ -87,16 +84,17 @@
                         </div>
                         <div class="flex flex-col justify-between py-1">
                             <h4
-                                class="text-xl font-bold text-gray-900 group-hover:text-indigo-600 transition-colors leading-tight line-clamp-2 font-display">
+                                class="text-xl font-bold text-gray-900 group-hover:text-orange-600 transition-colors leading-tight line-clamp-2 font-display">
                                 {{ $post->title }}
                             </h4>
+                            <div class="text-sm line-clamp-2 text-gray-500 mt-1.5">{{ $post->excerpt }}</div>
                             <div class="flex items-center justify-between mt-auto">
-                                <div class="flex items-center gap-2 text-sm">
-                                    <span class="text-gray-600 font-medium">By
-                                        {{ $post->author_name ?? 'Редакція' }}</span>
+                                <div class="flex items-center gap-0.5 text-gray-400 text-xs">
+                                    <x-lucide-calendar class="size-3 shrink-0 mb-0.5" />
+                                    {{ $post->published_at->translatedFormat('d M Y') }}
                                 </div>
                                 <span class="text-gray-400 text-xs uppercase tracking-wide">
-                                    {{ $post->published_at->translatedFormat('d M') }}
+                                    {{ $post->reading_time }} хв читання
                                 </span>
                             </div>
                         </div>

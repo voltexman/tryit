@@ -6,6 +6,57 @@ $meta_title = 'Генеральне прибирання виробничих п
 $meta_description = 'Професійне прибирання промислових приміщень, цехів, складів та заводів. Видалення пилу, мастил, сажі, дезінфекція та відповідність санітарним нормам';
 
 name('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva');
+
+// Назва папки з зображеннями: generalne-prybyrannia-tsekhiv-ta-vyrobnytstva
+$imgDir = 'generalne-prybyrannia-tsekhiv-ta-vyrobnytstva';
+
+$comparisons = [
+    [
+        'title' => 'Виробничий цех',
+        'before' => Vite::asset("resources/images/{$imgDir}/comparison-1-before.jpg"),
+        'after' => Vite::asset("resources/images/{$imgDir}/comparison-1-after.jpg"),
+    ],
+    [
+        'title' => 'Складське приміщення',
+        'before' => Vite::asset("resources/images/{$imgDir}/comparison-2-before.jpg"),
+        'after' => Vite::asset("resources/images/{$imgDir}/comparison-2-after.jpg"),
+    ],
+    [
+        'title' => 'Технічна зона',
+        'before' => Vite::asset("resources/images/{$imgDir}/comparison-3-before.jpg"),
+        'after' => Vite::asset("resources/images/{$imgDir}/comparison-3-after.jpg"),
+    ],
+    [
+        'title' => 'Промислові відкладення',
+        'before' => Vite::asset("resources/images/{$imgDir}/comparison-4-before.jpg"),
+        'after' => Vite::asset("resources/images/{$imgDir}/comparison-4-after.jpg"),
+    ],
+    [
+        'title' => 'Спеціалізована ділянка',
+        'before' => Vite::asset("resources/images/{$imgDir}/comparison-5-before.jpg"),
+        'after' => Vite::asset("resources/images/{$imgDir}/comparison-5-after.jpg"),
+    ],
+    [
+        'title' => 'Спеціалізована ділянка',
+        'before' => Vite::asset("resources/images/{$imgDir}/comparison-6-before.jpeg"),
+        'after' => Vite::asset("resources/images/{$imgDir}/comparison-6-after.jpeg"),
+    ],
+];
+
+$categories = [
+    [
+        'title' => 'Цехи',
+        'subtitle' => 'Професійне прибирання виробничих приміщень. Якісний результат для вашого виробництва.',
+        'bgImage' => Vite::asset("resources/images/{$imgDir}/comparison-1-after.jpg"),
+        'images' => ['IMG_2816.jpeg', 'IMG_2843.jpeg', 'IMG_2934.jpeg', 'IMG_3025.JPG'],
+    ],
+    [
+        'title' => 'Склади',
+        'subtitle' => 'Кожна деталь має значення. Ми приділяємо увагу навіть найбільш важкодоступним місцям.',
+        'bgImage' => Vite::asset("resources/images/{$imgDir}/comparison-2-after.jpg"),
+        'images' => ['IMG_3034.jpeg', 'IMG_3127.jpeg', 'IMG_3141.JPG', 'IMG_3170.jpeg'],
+    ],
+];
 ?>
 
 @extends('layouts.base')
@@ -48,13 +99,50 @@ name('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva');
         </div>
     </section>
 
-    {{-- Image section --}}
-    <div class="max-w-5xl mx-auto px-5">
-        <x-before-after before="{{ Vite::asset('resources/images/service-4.jpg') }}"
-            after="{{ Vite::asset('resources/images/service-5.jpg') }}" />
-    </div>
+    {{-- Before/After Section with Tabs --}}
+    <section class="py-20 bg-slate-100 border border-slate-100" x-data="{
+        activeTab: 0,
+        comparisons: {{ json_encode($comparisons) }}
+    }">
+        <div class="max-w-5xl mx-auto px-5 mt-5">
+            <div class="text-center mb-10">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900">Результати нашої роботи</h2>
+                <p class="text-gray-500 mt-3">Оберіть об'єкт, щоб побачити результат до та після генерального прибирання</p>
+            </div>
 
-    <section class="mt-10">
+            {{-- Comparison View --}}
+            <div class="relative bg-gray-100 rounded-2xl overflow-hidden shadow-xl">
+                @foreach ($comparisons as $index => $item)
+                    <div x-show="activeTab === {{ $index }}" x-transition:enter="transition ease-out duration-500"
+                        x-transition:enter-start="opacity-0 translate-y-4"
+                        x-transition:enter-end="opacity-100 translate-y-0" @if ($index !== 0) x-cloak @endif>
+                        <x-before-after before="{{ $item['before'] }}" after="{{ $item['after'] }}" />
+                    </div>
+                @endforeach
+            </div>
+
+            {{-- Thumbnails Triggers --}}
+            <div class="grid grid-cols-3 gap-2.5 md:gap-5 mt-10">
+                <template x-for="(item, index) in comparisons" :key="index">
+                    <button @click="activeTab = index"
+                        class="relative aspect-video rounded-2xl overflow-hidden border-2 transition-all duration-300 cursor-pointer group"
+                        :class="activeTab === index ? 'border-tryit-orange ring-4 ring-tryit-orange/20 scale-105' :
+                            'border-transparent opacity-60 hover:opacity-100'">
+                        <img :src="item.after"
+                            class="size-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            :alt="item.title">
+                        <div class="absolute inset-0 bg-black/40 flex items-end p-3">
+                            <span
+                                class="font-display text-white text-[10px] font-bold uppercase drop-shadow-xl tracking-wider"
+                                x-text="item.title"></span>
+                        </div>
+                    </button>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 md:py-20">
         <div class="max-w-5xl mx-auto px-5">
 
             @include('partials.services-standarts')
@@ -108,6 +196,53 @@ name('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva');
         </div>
     </section>
 
+    <section class="relative lg:py-20 w-full bg-gray-900 overflow-hidden text-white font-sans" x-data="{
+        activeTab: 0
+    }">
+        {{-- Динамічний фон --}}
+        @foreach ($categories as $index => $cat)
+            <div x-show="activeTab === {{ $index }}" x-transition:enter="transition opacity-100 duration-1000"
+                x-transition:enter-start="opacity-0" x-cloak class="absolute inset-0 z-0">
+                <img src="{{ $cat['bgImage'] }}" class="size-full object-cover brightness-[0.3] scale-105 blur-xs">
+                <div class="absolute inset-0 bg-linear-to-r from-slate-900/50 to-slate-950/10"></div>
+            </div>
+        @endforeach
+
+        <div class="relative z-10 h-full flex flex-col lg:flex-row">
+            <!-- Ліва панель: Вертикальні Таби -->
+            <div
+                class="w-full lg:w-1/4 flex lg:flex-col justify-start lg:justify-center p-5 lg:pl-12 gap-5 lg:gap-10 overflow-x-auto lg:overflow-visible no-scrollbar mt-12 lg:mt-0">
+                @foreach ($categories as $index => $cat)
+                    <button @click="activeTab = {{ $index }}"
+                        :class="activeTab === {{ $index }} ?
+                            'text-3xl lg:text-5xl font-bold opacity-100 translate-x-2' :
+                            'text-xl lg:text-2xl opacity-30 hover:opacity-60'"
+                        class="text-left transition-all duration-500 whitespace-nowrap lg:whitespace-normal origin-left flex items-center gap-4">
+                        <span class="text-xs font-mono opacity-50">0{{ $index + 1 }}</span>
+                        <span class="font-display">{{ $cat['title'] }}</span>
+                    </button>
+                @endforeach
+            </div>
+
+            <!-- Права панель: Контент та Слайдер -->
+            <div class="w-full lg:w-3/4 flex flex-col justify-center lg:px-20 pb-12 lg:pb-0 h-full">
+                @foreach ($categories as $index => $cat)
+                    <div x-show="activeTab === {{ $index }}" x-cloak class="flex flex-col h-full justify-center">
+                        <div class="max-w-xl mb-8 lg:mb-12">
+                            <h2 class="text-4xl lg:text-6xl font-display font-bold mb-4 tracking-tighter leading-none">
+                                {{ $cat['title'] }}</h2>
+                            <p class="text-gray-400 text-sm lg:text-base leading-relaxed max-w-md">{{ $cat['subtitle'] }}
+                            </p>
+                        </div>
+
+                        <x-carousel-slider :images="$cat['images']" :imagePath="$imgDir" id="embla-cat-{{ $index }}"
+                            :itemsPerView="3" />
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
     <section class="py-12 md:py-16 bg-gray-50">
         <div class="max-w-5xl mx-auto px-5">
             <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Що <span
@@ -126,7 +261,7 @@ name('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva');
         </div>
     </section>
 
-    <section class="py-12 md:py-16">
+    <section class="py-10 md:py-20">
         <div class="max-w-5xl mx-auto px-5">
             <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Кому <span
                     class="text-tryit-orange">потрібна</span> ця послуга</h2>
@@ -182,7 +317,7 @@ name('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva');
         </div>
     </section>
 
-    <x-order-banner image="service-5.jpg" phone="+38 (067) 123-45-67" title="Замовити послугу"
+    <x-order-banner image="generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3170.jpeg" title="Замовити послугу"
         subtitle="Професійне прибирання промислових об'єктів. Телефонуйте!" :service="\App\Enums\ServiceEnum::INDUSTRIAL_CLEANING->value" />
 
     @include('partials.blog-section')

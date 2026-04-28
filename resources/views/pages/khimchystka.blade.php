@@ -6,6 +6,18 @@ $meta_title = 'Професійна хімчистка меблів, килим�
 $meta_description = 'Замовте хімчистку меблів, килимів, авто та текстилю! Видалення плям, запахів, алергенів. Швидке висихання, безпечні засоби, відновлення свіжості';
 
 name('services.khimchystka');
+
+// Назва папки з зображеннями: khimchystka
+$imgDir = 'khimchystka';
+
+$categories = [
+    [
+        'title' => 'Хімчистка',
+        'subtitle' => 'Професійне очищення меблів та килимів для відновлення їхнього вигляду.',
+        'bgImage' => Vite::asset("resources/images/{$imgDir}/IMG_4654.jpeg"),
+        'images' => ['IMG_4654.jpeg', 'IMG_4656.jpeg', 'image-1.jpg'],
+    ],
+];
 ?>
 
 @extends('layouts.base')
@@ -51,11 +63,19 @@ name('services.khimchystka');
         </div>
     </section>
 
-    {{-- Image section --}}
-    <div class="max-w-5xl mx-auto px-5">
-        <x-before-after before="{{ Vite::asset('resources/images/service-5.jpg') }}"
-            after="{{ Vite::asset('resources/images/service-6.jpg') }}" />
-    </div>
+    {{-- Before/After Section --}}
+    <section class="py-12 md:py-20 bg-slate-50 border-y border-slate-100">
+        <div class="max-w-5xl mx-auto px-5">
+            <div class="text-center mb-10">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900">Результат хімчистки</h2>
+                <p class="text-gray-500 mt-3">Професійне видалення найскладніших забруднень</p>
+            </div>
+            <div class="relative bg-gray-100 rounded-2xl overflow-hidden shadow-xl">
+                <x-before-after before="{{ Vite::asset('resources/images/' . $imgDir . '/comparison-1-before.jpg') }}"
+                    after="{{ Vite::asset('resources/images/' . $imgDir . '/comparison-1-after.jpg') }}" />
+            </div>
+        </div>
+    </section>
 
     <section class="mt-10">
         <div class="max-w-5xl mx-auto px-5">
@@ -93,6 +113,53 @@ name('services.khimchystka');
                     <x-table.cell>1 одиниця об’єкта або від 30 хв роботи</x-table.cell>
                 </x-table.row>
             </x-table>
+        </div>
+    </section>
+
+    <section class="relative lg:py-20 w-full bg-gray-900 overflow-hidden text-white font-sans" x-data="{
+        activeTab: 0
+    }">
+        {{-- Динамічний фон --}}
+        @foreach ($categories as $index => $cat)
+            <div x-show="activeTab === {{ $index }}" x-transition:enter="transition opacity-100 duration-1000"
+                x-transition:enter-start="opacity-0" x-cloak class="absolute inset-0 z-0">
+                <img src="{{ $cat['bgImage'] }}" class="size-full object-cover brightness-[0.3] scale-105 blur-xs">
+                <div class="absolute inset-0 bg-linear-to-r from-slate-900/50 to-slate-950/10"></div>
+            </div>
+        @endforeach
+
+        <div class="relative z-10 h-full flex flex-col lg:flex-row">
+            <!-- Ліва панель: Вертикальні Таби -->
+            <div
+                class="w-full lg:w-1/4 flex lg:flex-col justify-start lg:justify-center p-5 lg:pl-12 gap-5 lg:gap-10 overflow-x-auto lg:overflow-visible no-scrollbar mt-12 lg:mt-0">
+                @foreach ($categories as $index => $cat)
+                    <button @click="activeTab = {{ $index }}"
+                        :class="activeTab === {{ $index }} ?
+                            'text-3xl lg:text-5xl font-bold opacity-100 translate-x-2' :
+                            'text-xl lg:text-2xl opacity-30 hover:opacity-60'"
+                        class="text-left transition-all duration-500 whitespace-nowrap lg:whitespace-normal origin-left flex items-center gap-4">
+                        <span class="text-xs font-mono opacity-50">0{{ $index + 1 }}</span>
+                        <span class="font-display">{{ $cat['title'] }}</span>
+                    </button>
+                @endforeach
+            </div>
+
+            <!-- Права панель: Контент та Слайдер -->
+            <div class="w-full lg:w-3/4 flex flex-col justify-center lg:px-20 pb-12 lg:pb-0 h-full">
+                @foreach ($categories as $index => $cat)
+                    <div x-show="activeTab === {{ $index }}" x-cloak class="flex flex-col h-full justify-center">
+                        <div class="max-w-xl mb-8 lg:mb-12">
+                            <h2 class="text-4xl lg:text-6xl font-display font-bold mb-4 tracking-tighter leading-none">
+                                {{ $cat['title'] }}</h2>
+                            <p class="text-gray-400 text-sm lg:text-base leading-relaxed max-w-md">{{ $cat['subtitle'] }}
+                            </p>
+                        </div>
+
+                        <x-carousel-slider :images="$cat['images']" :imagePath="$imgDir" id="embla-cat-{{ $index }}"
+                            :itemsPerView="3" />
+                    </div>
+                @endforeach
+            </div>
         </div>
     </section>
 
@@ -174,8 +241,8 @@ name('services.khimchystka');
         </div>
     </section>
 
-    <x-order-banner image="service-5.jpg" phone="+38 (067) 123-45-67" title="Замовити хімчистку"
-        subtitle="Професійна чистка меблів, килимів, авто. Телефонуйте!" :service="\App\Enums\ServiceEnum::DRY_CLEANING->value" />
+    <x-order-banner title="Замовити хімчистку" subtitle="Професійна чистка меблів, килимів, авто. Телефонуйте!"
+        :service="\App\Enums\ServiceEnum::DRY_CLEANING->value" video="khimchystka/video-bg.mp4" />
 
     @include('partials.blog-section')
 @endsection

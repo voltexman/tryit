@@ -13,8 +13,8 @@
             <source src="{{ Vite::asset('resources/videos/' . $video) }}" type="video/mp4">
         </video>
     @elseif($image)
-        <img src="{{ asset('images/' . $image) }}" alt="order background"
-            class="absolute inset-0 size-full object-cover object-center" style="z-index:1;" loading="lazy">
+        <img src="{{ Vite::asset('resources/images/' . $image) }}"
+            class="absolute inset-0 size-full object-cover object-center" style="z-index:1;" loading="lazy" alt="">
     @endif
     <div class="absolute inset-0 bg-emerald-950/70 backdrop-blur-xs" style="z-index:2;"></div>
     <div class="relative z-10 flex flex-col items-center justify-center px-5 text-center">
