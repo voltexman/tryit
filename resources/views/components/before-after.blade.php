@@ -1,12 +1,12 @@
 <div x-data="imageSlider('{{ $before }}', '{{ $after }}')" class="slider-wrapper rounded-2xl overflow-hidden">
-    <!-- "До" зображення -->
+    <!-- "Після" зображення (базове, щоб воно було під "До") -->
     <div class="image-container">
-        <img :src="beforeImage" alt="Before" class="w-full h-full object-cover">
+        <img :src="afterImage" alt="After" class="w-full h-full object-cover">
     </div>
 
-    <!-- "Після" зображення (обрізається) -->
+    <!-- "До" зображення (обрізається) -->
     <div class="image-container after-image" :style="`clip-path: inset(0 ${100 - sliderPosition}% 0 0)`">
-        <img :src="afterImage" alt="After" class="w-full h-full object-cover">
+        <img :src="beforeImage" alt="Before" class="w-full h-full object-cover">
     </div>
 
     <!-- Range input для контролю -->
@@ -28,8 +28,8 @@
     </div>
 
     <!-- Позначки "До" і "Після" -->
-    <div class="absolute top-4 left-4 z-20 bg-black/60 text-white text-xs font-semibold px-3 py-1.5 rounded-md backdrop-blur-sm">До</div>
-    <div class="absolute top-4 right-4 z-20 bg-black/60 text-white text-xs font-semibold px-3 py-1.5 rounded-md backdrop-blur-sm">Після</div>
+    <div class="absolute top-4 left-4 z-20 bg-black/60 text-white text-xs font-semibold px-3 py-1.5 rounded-md backdrop-blur-sm">Після</div>
+    <div class="absolute top-4 right-4 z-20 bg-black/60 text-white text-xs font-semibold px-3 py-1.5 rounded-md backdrop-blur-sm">До</div>
 </div>
 
 <script>

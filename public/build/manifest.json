@@ -1,6 +1,12 @@
 {
+  "node_modules/photoswipe/dist/photoswipe.esm.js": {
+    "file": "assets/photoswipe.esm-33QBPrd4.js",
+    "name": "photoswipe.esm",
+    "src": "node_modules/photoswipe/dist/photoswipe.esm.js",
+    "isDynamicEntry": true
+  },
   "resources/css/app.css": {
-    "file": "assets/app-D8CO838U.css",
+    "file": "assets/app-CcMxkdaQ.css",
     "name": "app",
     "names": [
       "app.css"
@@ -27,6 +33,118 @@
   "resources/images/gallery-section.jpg": {
     "file": "assets/gallery-section-t4UpB7ZX.jpg",
     "src": "resources/images/gallery-section.jpg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMAGE 2026-04-26 14_15_54.jpg": {
+    "file": "assets/IMAGE 2026-04-26 14_15_54-D4R9vfMm.jpg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMAGE 2026-04-26 14_15_54.jpg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_2816.jpeg": {
+    "file": "assets/IMG_2816-BWsmN27b.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_2816.jpeg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_2843.jpeg": {
+    "file": "assets/IMG_2843-DzXab7Ko.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_2843.jpeg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_2934.jpeg": {
+    "file": "assets/IMG_2934-B5XUo2Fy.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_2934.jpeg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3025.JPG": {
+    "file": "assets/IMG_3025-Drw-gwnV.JPG",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3025.JPG"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3034.jpeg": {
+    "file": "assets/IMG_3034-DxlESsEB.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3034.jpeg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3127.jpeg": {
+    "file": "assets/IMG_3127-yKYcCk8r.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3127.jpeg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3141.JPG": {
+    "file": "assets/IMG_3141-BoAefDHl.JPG",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3141.JPG"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3170.jpeg": {
+    "file": "assets/IMG_3170-BGtmWRjp.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3170.jpeg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3183.jpeg": {
+    "file": "assets/IMG_3183-CCRJMTZW.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3183.jpeg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3189.jpeg": {
+    "file": "assets/IMG_3189-CLM9H5MP.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3189.jpeg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3201.jpeg": {
+    "file": "assets/IMG_3201-I_CZObZu.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3201.jpeg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3204.jpeg": {
+    "file": "assets/IMG_3204-C-wOqeRk.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3204.jpeg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3208.jpeg": {
+    "file": "assets/IMG_3208-DV7zRpaC.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMG_3208.jpeg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-1-after.jpg": {
+    "file": "assets/comparison-1-after-C0oOpwzE.jpg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-1-after.jpg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-1-before.jpg": {
+    "file": "assets/comparison-1-before-BHwUyzuE.jpg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-1-before.jpg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-2-after.jpg": {
+    "file": "assets/comparison-2-after-DOtk24fF.jpg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-2-after.jpg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-2-before.jpg": {
+    "file": "assets/comparison-2-before-BGf0bF3l.jpg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-2-before.jpg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-3-after.jpg": {
+    "file": "assets/comparison-3-after-DgsD81nB.jpg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-3-after.jpg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-3-before.jpg": {
+    "file": "assets/comparison-3-before-BR03l_Bv.jpg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-3-before.jpg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-4-after.jpg": {
+    "file": "assets/comparison-4-after-Di7jYFlL.jpg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-4-after.jpg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-4-before.jpg": {
+    "file": "assets/comparison-4-before-BMn2wKJu.jpg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-4-before.jpg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-5-before.jpg": {
+    "file": "assets/comparison-5-before-BrzBu7QS.jpg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-5-before.jpg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-6-after.jpeg": {
+    "file": "assets/comparison-6-after-CYGtE6lm.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-6-after.jpeg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-6-after.jpg": {
+    "file": "assets/comparison-6-after-5csRYFcO.jpg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-6-after.jpg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-6-before.jpeg": {
+    "file": "assets/comparison-6-before-BvDYgXpg.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-6-before.jpeg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-7-after.jpeg": {
+    "file": "assets/comparison-7-after-CAnNpA8l.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-7-after.jpeg"
+  },
+  "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-7-before.jpeg": {
+    "file": "assets/comparison-7-before-Cof40Exr.jpeg",
+    "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-7-before.jpeg"
   },
   "resources/images/h1-agency.png": {
     "file": "assets/h1-agency-CtPudIAX.png",
@@ -209,9 +327,19 @@
     "src": "resources/images/service-7.jpg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-B0aRL031.js",
+    "file": "assets/app-Dd1ufhFS.js",
     "name": "app",
     "src": "resources/js/app.js",
-    "isEntry": true
+    "isEntry": true,
+    "dynamicImports": [
+      "node_modules/photoswipe/dist/photoswipe.esm.js"
+    ],
+    "css": [
+      "assets/app-DOg8h1BU.css"
+    ]
+  },
+  "resources/videos/myttia-fasadiv-ta-vikon-na-vysoti/video-section-bg.mp4": {
+    "file": "assets/video-section-bg-C-bK1RKi.mp4",
+    "src": "resources/videos/myttia-fasadiv-ta-vikon-na-vysoti/video-section-bg.mp4"
   }
 }

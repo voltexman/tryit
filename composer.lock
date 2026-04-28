@@ -3508,16 +3508,16 @@
         },
         {
             "name": "mallardduck/blade-lucide-icons",
-            "version": "1.26.16",
+            "version": "1.26.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mallardduck/blade-lucide-icons.git",
-                "reference": "a2cdaccdf35e9e3bf4fb2e3d9e840797a9984c56"
+                "reference": "2d0bfdc1bc7191b1669c4912456421162030bfcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mallardduck/blade-lucide-icons/zipball/a2cdaccdf35e9e3bf4fb2e3d9e840797a9984c56",
-                "reference": "a2cdaccdf35e9e3bf4fb2e3d9e840797a9984c56",
+                "url": "https://api.github.com/repos/mallardduck/blade-lucide-icons/zipball/2d0bfdc1bc7191b1669c4912456421162030bfcc",
+                "reference": "2d0bfdc1bc7191b1669c4912456421162030bfcc",
                 "shasum": ""
             },
             "require": {
@@ -3562,9 +3562,9 @@
             ],
             "support": {
                 "issues": "https://github.com/mallardduck/blade-lucide-icons/issues",
-                "source": "https://github.com/mallardduck/blade-lucide-icons/tree/1.26.16"
+                "source": "https://github.com/mallardduck/blade-lucide-icons/tree/1.26.17"
             },
-            "time": "2026-04-27T00:33:13+00:00"
+            "time": "2026-04-28T00:35:50+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -5712,16 +5712,16 @@
         },
         {
             "name": "spatie/shiki-php",
-            "version": "2.3.3",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/shiki-php.git",
-                "reference": "9d50ff4d9825d87d3283a6695c65ae9c3c3caa6b"
+                "reference": "b8b0ca32d3a82bc5c533e68ffab96c5d4ec1b9ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/shiki-php/zipball/9d50ff4d9825d87d3283a6695c65ae9c3c3caa6b",
-                "reference": "9d50ff4d9825d87d3283a6695c65ae9c3c3caa6b",
+                "url": "https://api.github.com/repos/spatie/shiki-php/zipball/b8b0ca32d3a82bc5c533e68ffab96c5d4ec1b9ba",
+                "reference": "b8b0ca32d3a82bc5c533e68ffab96c5d4ec1b9ba",
                 "shasum": ""
             },
             "require": {
@@ -5765,7 +5765,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/shiki-php/tree/2.3.3"
+                "source": "https://github.com/spatie/shiki-php/tree/2.4.0"
             },
             "funding": [
                 {
@@ -5773,7 +5773,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-01T09:30:04+00:00"
+            "time": "2026-04-27T14:27:52+00:00"
         },
         {
             "name": "spatie/temporary-directory",
