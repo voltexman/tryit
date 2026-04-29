@@ -77,44 +77,41 @@ $categories = [
         </div>
     </section>
 
-    <section class="mt-10">
-        <div class="max-w-5xl mx-auto px-5">
+    <x-section>
+        @include('partials.services-standarts')
 
-            @include('partials.services-standarts')
+        <x-table class="mt-15" striped>
+            <x-table.row>
+                <x-table.cell class="font-semibold">Об’єкти</x-table.cell>
+                <x-table.cell>Меблі, килими, штори, пледи, салони авто</x-table.cell>
+            </x-table.row>
 
-            <x-table class="mt-15" striped>
-                <x-table.row>
-                    <x-table.cell class="font-semibold">Об’єкти</x-table.cell>
-                    <x-table.cell>Меблі, килими, штори, пледи, салони авто</x-table.cell>
-                </x-table.row>
+            <x-table.row>
+                <x-table.cell class="font-semibold">Метод очищення</x-table.cell>
+                <x-table.cell>Екстракційний, пінний, ручний</x-table.cell>
+            </x-table.row>
 
-                <x-table.row>
-                    <x-table.cell class="font-semibold">Метод очищення</x-table.cell>
-                    <x-table.cell>Екстракційний, пінний, ручний</x-table.cell>
-                </x-table.row>
+            <x-table.row>
+                <x-table.cell class="font-semibold">Час виконання</x-table.cell>
+                <x-table.cell>30–120 хв залежно від об’єкта</x-table.cell>
+            </x-table.row>
 
-                <x-table.row>
-                    <x-table.cell class="font-semibold">Час виконання</x-table.cell>
-                    <x-table.cell>30–120 хв залежно від об’єкта</x-table.cell>
-                </x-table.row>
+            <x-table.row>
+                <x-table.cell class="font-semibold">Сушка</x-table.cell>
+                <x-table.cell>Швидка, 1–3 години без запаху</x-table.cell>
+            </x-table.row>
 
-                <x-table.row>
-                    <x-table.cell class="font-semibold">Сушка</x-table.cell>
-                    <x-table.cell>Швидка, 1–3 години без запаху</x-table.cell>
-                </x-table.row>
+            <x-table.row>
+                <x-table.cell class="font-semibold">Продуктивність</x-table.cell>
+                <x-table.cell>~1–3 м²/год <i>(залежно від типу поверхні)</i></x-table.cell>
+            </x-table.row>
 
-                <x-table.row>
-                    <x-table.cell class="font-semibold">Продуктивність</x-table.cell>
-                    <x-table.cell>~1–3 м²/год <i>(залежно від типу поверхні)</i></x-table.cell>
-                </x-table.row>
-
-                <x-table.row>
-                    <x-table.cell class="font-semibold">Мінімальне замовлення</x-table.cell>
-                    <x-table.cell>1 одиниця об’єкта або від 30 хв роботи</x-table.cell>
-                </x-table.row>
-            </x-table>
-        </div>
-    </section>
+            <x-table.row>
+                <x-table.cell class="font-semibold">Мінімальне замовлення</x-table.cell>
+                <x-table.cell>1 одиниця об’єкта або від 30 хв роботи</x-table.cell>
+            </x-table.row>
+        </x-table>
+    </x-section>
 
     <section class="relative lg:py-20 w-full bg-gray-900 overflow-hidden text-white font-sans" x-data="{
         activeTab: 0

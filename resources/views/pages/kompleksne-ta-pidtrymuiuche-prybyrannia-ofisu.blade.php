@@ -43,7 +43,7 @@ $categories = [
         'title' => 'Офіс',
         'subtitle' => 'Комплексне прибирання офісних приміщень для комфортної роботи.',
         'bgImage' => Vite::asset("resources/images/{$imgDir}/IMG_4603.jpeg"),
-        'images' => ['IMG_4603.jpeg', 'IMG_4808.jpeg', '2026-04-26 14.31.00.jpg', 'comparison-6-after.jpg'],
+        'images' => ['IMG_4603.jpeg', 'IMG_4808.jpeg', '2026-04-26 14.31.00.jpg'],
     ],
     [
         'title' => 'Деталі',

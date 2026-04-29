@@ -91,12 +91,12 @@
 
     @yield('content')
 
-    <footer class="relative overflow-hidden bg-slate-900">
+    <footer class="relative overflow-hidden bg-slate-950">
         <!-- Фонове зображення з затемненням -->
         <div class="absolute inset-0 z-0" style="background-image: url('{{ Vite::asset('resources/images/footer-background.jpg') }}'); background-size: cover; background-position: center;">
         </div>
         <!-- Затемнення слейт кольором -->
-        <div class="absolute inset-0 bg-slate-950/85 z-0"></div>
+        <div class="absolute inset-0 bg-neutral-950/85 z-0"></div>
 
         <!-- Контент -->
         <div class="relative z-10">

@@ -62,7 +62,7 @@ $categories = [
 @extends('layouts.base')
 
 @section('header')
-    <x-page-header image="{{ Vite::asset('resources/images/service-4.jpg') }}">
+    <x-page-header image="{{ Vite::asset('resources/images/service-4.jpeg') }}">
         <x-slot:title class="text-balance">Генеральне прибирання<br>цехів та виробництва</x-slot>
         <x-slot:description class="text-balance">Чистота, безпека та відповідність санітарним нормам</x-slot>
     </x-page-header>

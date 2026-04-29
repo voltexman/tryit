@@ -1,3 +1,3 @@
-<tr class="odd:bg-zinc-50 even:bg-zinc-100">
+<tr class="odd:bg-zinc-100 even:bg-zinc-200">
     {{ $slot }}
 </tr>

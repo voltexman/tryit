@@ -57,35 +57,49 @@ name('main');
                 </p>
 
                 <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
-                    <x-button size="lg" @click="Livewire.dispatch('setService', { service: '' }); window.openOffcanvas('orderOffcanvas')">Замовити прибирання</x-button>
-                    <x-button size="lg" color="orange" href="#services">Наші послуги</x-button>
+                    <x-button size="lg"
+                        @click="Livewire.dispatch('setService', { service: '' }); window.openOffcanvas('orderOffcanvas')">
+                        Замовити прибирання
+                    </x-button>
+                    <a href="#services">
+                        <x-button size="lg" color="orange" href="#services">Наші послуги</x-button>
+                    </a>
                 </div>
             </div>
 
             <div class="absolute inset-0 z-10 pointer-events-none select-none">
 
+                {{-- "Все блищить!" -> Sparkles --}}
                 <div
                     class="absolute top-[5%] left-[2%] lg:left-[5%] animate-float transition-all duration-1000 hidden sm:block">
                     <div
                         class="flex items-center gap-3 bg-white/80 backdrop-blur-md p-2 rounded-full shadow-xl border border-white">
-                        <img src="https://i.pravatar.cc/150?u=1"
-                            class="w-12 h-12 lg:w-16 lg:h-16 rounded-full object-cover border-2 border-emerald-500">
+                        <div
+                            class="w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center bg-emerald-50 text-emerald-500 border-2 border-emerald-500">
+                            <x-lucide-sparkles class="size-6 lg:size-8" />
+                        </div>
                         <span class="pr-4 text-xs lg:text-sm font-medium text-slate-700">"Все блищить!"</span>
                     </div>
                 </div>
 
-                <div class="absolute top-[45%] -left-[2%] lg:left-[2%] animate-float [animation-delay:1s] hidden md:block">
+                {{-- "Виконали вчасно" -> Clock --}}
+                <div class="absolute top-[45%] left-[-2%] lg:left-[2%] animate-float [animation-delay:1s] hidden md:block">
                     <div class="flex flex-col items-end">
                         <div class="bg-slate-900 text-white text-[10px] px-2 py-1 rounded-md mb-2">Виконали вчасно</div>
-                        <img src="https://i.pravatar.cc/150?u=2"
-                            class="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl rotate-6 object-cover shadow-2xl border-4 border-white">
+                        <div
+                            class="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl rotate-6 flex items-center justify-center bg-white shadow-2xl border-4 border-white text-slate-700">
+                            <x-lucide-clock class="size-8 lg:size-10" />
+                        </div>
                     </div>
                 </div>
 
+                {{-- #Чисто #Швидко -> Zap/Flash --}}
                 <div class="absolute bottom-[10%] left-[8%] animate-float [animation-delay:2s] hidden lg:block">
                     <div class="relative">
-                        <img src="https://i.pravatar.cc/150?u=3"
-                            class="w-14 h-14 rounded-full border-4 border-white shadow-lg grayscale hover:grayscale-0 transition-all duration-500">
+                        <div
+                            class="w-14 h-14 rounded-full border-4 border-white shadow-lg bg-slate-100 flex items-center justify-center text-slate-400">
+                            <x-lucide-zap class="size-6" />
+                        </div>
                         <div
                             class="absolute -bottom-2 -right-10 bg-white px-3 py-1 rounded-full shadow-sm border border-slate-100 text-nowrap text-[11px] font-semibold text-emerald-600 italic">
                             #Чисто #Швидко
@@ -93,14 +107,17 @@ name('main');
                     </div>
                 </div>
 
+                {{-- "Вже їдемо" -> Car/Truck --}}
                 <div
                     class="absolute top-[10%] right-[2%] lg:right-[8%] animate-float [animation-delay:1.5s] hidden sm:block">
                     <div class="flex items-center flex-row-reverse gap-3">
                         <div class="relative">
-                            <img src="https://i.pravatar.cc/150?u=4"
-                                class="w-12 h-12 lg:w-16 lg:h-16 rounded-full border-4 border-white shadow-xl">
+                            <div
+                                class="size-12 lg:w-16 lg:h-16 rounded-full border-4 border-white shadow-xl bg-emerald-500 flex items-center justify-center text-white">
+                                <x-lucide-truck class="size-6 lg:size-8" />
+                            </div>
                             <span
-                                class="absolute top-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></span>
+                                class="absolute top-0 right-0 size-4 bg-green-500 border-2 border-white rounded-full"></span>
                         </div>
                         <div
                             class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-2xl shadow-lg border border-white text-xs font-medium text-slate-600">
@@ -109,11 +126,14 @@ name('main');
                     </div>
                 </div>
 
+                {{-- "Безпечна хімія" -> Shield/Leaf --}}
                 <div
                     class="absolute top-[50%] right-[0%] lg:right-[4%] animate-float [animation-delay:0.5s] hidden md:block">
                     <div class="group relative">
-                        <img src="https://i.pravatar.cc/150?u=5"
-                            class="w-16 h-16 lg:w-24 lg:h-24 rounded-full border-4 border-white shadow-2xl transition-transform group-hover:scale-110">
+                        <div
+                            class="size-16 lg:size-24 rounded-full border-4 border-white shadow-2xl bg-white flex items-center justify-center text-emerald-600 transition-transform group-hover:scale-110">
+                            <x-lucide-leaf class="size-8 lg:size-12" />
+                        </div>
                         <div
                             class="absolute -top-4 -left-6 bg-emerald-600 text-white text-[10px] px-3 py-1 rounded-full shadow-lg font-bold">
                             Безпечна хімія
@@ -121,17 +141,21 @@ name('main');
                     </div>
                 </div>
 
+                {{-- "Всі види робіт" -> Layers/Checklist --}}
                 <div class="absolute bottom-[15%] right-[10%] animate-float [animation-delay:2.5s] hidden lg:block">
                     <div
                         class="flex items-center gap-2 bg-white/40 backdrop-blur-[2px] p-2 rounded-full border border-white/50">
-                        <img src="https://i.pravatar.cc/150?u=6"
-                            class="w-12 h-12 rounded-full border-2 border-white shadow-md">
+                        <div
+                            class="size-12 rounded-full border-2 border-white shadow-md bg-white flex items-center justify-center text-slate-400">
+                            <x-lucide-layers class="size-6" />
+                        </div>
                         <span class="text-[11px] text-slate-500 font-medium italic pr-2">"Всі види робіт!"</span>
                     </div>
                 </div>
             </div>
         </div>
 
+        {{-- Фон з блюром --}}
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0">
             <div
                 class="absolute top-[10%] left-[15%] size-64 bg-emerald-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse">
@@ -155,7 +179,8 @@ name('main');
                 ],
             ),
         ) }}
-    }" class="relative w-full flex items-center overflow-hidden bg-gray-900 lg:min-h-125">
+    }" class="relative w-full flex items-center overflow-hidden bg-gray-900 lg:min-h-125"
+        id="services">
         <!-- Фонове зображення з плавним переходом -->
         <template x-for="(service, index) in services" :key="index">
             <div x-show="selected === index" x-transition:enter="transition opacity duration-700 ease-in-out"
@@ -196,7 +221,8 @@ name('main');
                                     Детальніше
                                     <x-lucide-move-right class="size-4 shrink-0 inline-flex ml-1.5" />
                                 </a>
-                                <button type="button" @click="openOffcanvas('orderOffcanvas')"
+                                <button type="button"
+                                    @click="openOffcanvas('orderOffcanvas'), Livewire.dispatch('setService', { service: service })"
                                     class="px-6 py-3 font-display rounded-full backdrop-blur-xs text-emerald-400 hover:text-emerald-400 bg-emerald-500/20 hover:bg-emerald-600/20 border border-emerald-500/20 transition-all duration-300 cursor-pointer">
                                     Замовити послугу
                                 </button>
@@ -230,18 +256,20 @@ name('main');
                             x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100"
                             x-transition:leave-end="opacity-0 -translate-y-2" class="mt-4 space-y-2">
 
-                            <p class="text-slate-200/80 leading-snug text-base">
+                            <p class="text-slate-200/60 leading-snug text-base">
                                 <span x-text="service.description"></span>
                             </p>
 
                             <div class="flex flex-row gap-2 pt-2">
                                 <a :href="service.link"
-                                    class="px-4 py-2.5 bg-slate-500/50 tracking-wide hover:bg-slate-500/30 text-white font-display font-semibold rounded-full transition-all duration-300 text-center text-sm border border-slate-500/30 backdrop-blur-sm">
+                                    class="px-6 py-3 inline-flex justify-center items-center w-fit bg-slate-500/25 tracking-wide hover:bg-slate-500/30 text-white font-display font-semibold rounded-full transition-all duration-300 text-center text-sm border border-slate-500/30 backdrop-blur-xs">
                                     Детальніше
                                     <x-lucide-move-right class="size-4 shrink-0 inline-flex ml-1.5" />
                                 </a>
-                                <button type="button" @click="openOffcanvas('orderOffcanvas')" class="flex-1">
-                                    <x-button color="emerald" class="tracking-wide w-full">Замовити послугу</x-button>
+                                <button type="button"
+                                    @click="Livewire.dispatch('setService', { service: service }); window.openOffcanvas('orderOffcanvas')"
+                                    class="px-6 py-3 font-display rounded-full backdrop-blur-xs text-emerald-400 hover:text-emerald-400 bg-emerald-500/20 hover:bg-emerald-600/20 border border-emerald-500/20 transition-all duration-300 cursor-pointer">
+                                    Замовити послугу
                                 </button>
                             </div>
                         </div>
@@ -517,7 +545,7 @@ name('main');
 
                 <div class="group relative z-10 pt-5 lg:mt-15">
                     <div
-                        class="absolute top-2 right-2 text-[9rem] font-black text-slate-500/8 leading-none select-none z-20 transition-colors group-hover:text-blue-50">
+                        class="absolute top-2 right-2 text-[9rem] font-black text-slate-500/8 leading-none select-none z-20 transition-colors">
                         02</div>
 
                     <div
@@ -547,7 +575,7 @@ name('main');
 
                 <div class="group relative pt-5 z-10">
                     <div
-                        class="absolute top-2 right-2 text-[9rem] font-black text-slate-500/8 leading-none select-none z-20 transition-colors group-hover:text-emerald-50">
+                        class="absolute top-2 right-2 text-[9rem] font-black text-slate-500/8 leading-none select-none z-20 transition-colors">
                         03</div>
 
                     <div
