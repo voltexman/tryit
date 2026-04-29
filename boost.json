@@ -1,0 +1,19 @@
+{
+    "agents": [
+        "gemini"
+    ],
+    "cloud": false,
+    "guidelines": true,
+    "packages": [
+        "filament/filament",
+        "spatie/laravel-medialibrary"
+    ],
+    "skills": [
+        "folio-routing",
+        "laravel-best-practices",
+        "livewire-development",
+        "pest-testing",
+        "tailwindcss-development",
+        "medialibrary-development"
+    ]
+}

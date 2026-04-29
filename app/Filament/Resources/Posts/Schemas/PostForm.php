@@ -45,6 +45,7 @@ class PostForm
                             ->maxLength(255)
                             ->disabled(fn (Get $get): bool => (bool) ($get('slug_locked') ?? true))
                             ->readOnly(fn (Get $get): bool => (bool) ($get('slug_locked') ?? true))
+                            ->dehydrated()
                             ->suffixAction(
                                 Action::make('toggleSlugLock')
                                     ->icon(fn (Get $get): string => ($get('slug_locked') ?? true) ? 'heroicon-m-lock-closed' : 'heroicon-m-lock-open')
