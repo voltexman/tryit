@@ -54,7 +54,7 @@
             @if ($loop->index % 9 === 0)
                 <article
                     class="col-span-full relative w-full h-100 rounded-3xl overflow-hidden mb-8 group cursor-pointer">
-                    <img src="{{ $post->cover_image }}" alt="Office"
+                    <img src="{{ $post->getFirstMediaUrl('posts') }}" alt="Office"
                         class="absolute inset-0 w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center p-6">
                         <a href="{{ route('blog.show', ['slug' => $post->slug]) }}"
@@ -82,14 +82,15 @@
                 <article class="flex flex-col">
                     <a href="{{ route('blog.show', ['slug' => $post->slug]) }}"
                         class="rounded-3xl overflow-hidden h-64 mb-2.5 shadow-sm">
-                        <img src="{{ $post->cover_image }}" alt="Interior" class="w-full h-full object-cover">
+                        <img src="{{ $post->getFirstMediaUrl('posts') }}" alt="Interior"
+                            class="w-full h-full object-cover">
                     </a>
                     <a href="{{ route('blog.show', ['slug' => $post->slug]) }}"
                         class="text-2xl font-bold mb-3 leading-tight text-slate-800 hover:text-orange-600 transition-colors duration-300 cursor-pointer">
                         {{ $post->title }}
                     </a>
                     <p class="text-gray-500 text-sm mb-1.5 leading-relaxed line-clamp-2">
-                        {{ $post->excerpt }}
+                        {{ Str::limit(strip_tags($post->body), 150) }}
                     </p>
                     <div class="mt-auto flex items-center justify-between">
                         <div class="flex items-center gap-3">

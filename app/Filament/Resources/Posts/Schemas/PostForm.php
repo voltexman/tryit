@@ -7,6 +7,7 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Section;
@@ -43,13 +44,13 @@ class PostForm
                             ->required()
                             ->unique(ignoreRecord: true)
                             ->maxLength(255)
-                            ->disabled(fn (Get $get): bool => (bool) ($get('slug_locked') ?? true))
-                            ->readOnly(fn (Get $get): bool => (bool) ($get('slug_locked') ?? true))
+                            ->disabled(fn(Get $get): bool => (bool) ($get('slug_locked') ?? true))
+                            ->readOnly(fn(Get $get): bool => (bool) ($get('slug_locked') ?? true))
                             ->dehydrated()
                             ->suffixAction(
                                 Action::make('toggleSlugLock')
-                                    ->icon(fn (Get $get): string => ($get('slug_locked') ?? true) ? 'heroicon-m-lock-closed' : 'heroicon-m-lock-open')
-                                    ->tooltip(fn (Get $get): string => ($get('slug_locked') ?? true) ? 'Розблокувати' : 'Заблокувати')
+                                    ->icon(fn(Get $get): string => ($get('slug_locked') ?? true) ? 'heroicon-m-lock-closed' : 'heroicon-m-lock-open')
+                                    ->tooltip(fn(Get $get): string => ($get('slug_locked') ?? true) ? 'Розблокувати' : 'Заблокувати')
                                     ->action(function (Get $get, Set $set): void {
                                         $currentState = (bool) ($get('slug_locked') ?? true);
                                         $set('slug_locked', ! $currentState);
@@ -81,13 +82,12 @@ class PostForm
 
                 Section::make('Публікація та обкладинка')
                     ->schema([
-                        FileUpload::make('cover_image')
+                        SpatieMediaLibraryFileUpload::make('image')
+                            ->collection('posts')
+                            ->disk('public')
                             ->label('Обкладинка')
                             ->image()
-                            ->directory('posts')
-                            ->imageEditor()
-                            ->imagePreviewHeight('180')
-                            ->maxSize(4096)
+                            ->required()
                             ->columnSpanFull(),
 
                         Toggle::make('is_published')
@@ -99,8 +99,9 @@ class PostForm
                             ->label('Дата публікації')
                             ->seconds(false)
                             ->native(false)
-                            ->visible(fn ($get): bool => (bool) $get('is_published'))
-                            ->required(fn ($get): bool => (bool) $get('is_published')),
+                            ->default(now())
+                            ->visible(fn($get): bool => (bool) $get('is_published'))
+                            ->required(fn($get): bool => (bool) $get('is_published')),
                     ])
                     ->columns(2),
             ]);

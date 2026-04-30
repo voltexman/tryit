@@ -16,7 +16,8 @@ name('blog.show');
 @endphp
 
 @section('header')
-    <div class="relative h-[60vh] min-h-100 bg-cover bg-center" style="background-image: url('{{ $post->cover_image }}');">
+    <div class="relative h-[60vh] min-h-100 bg-cover bg-center"
+        style="background-image: url('{{ $post->getFirstMediaUrl('posts') }}');">
         <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-black/30"></div>
         <div class="relative flex flex-col justify-end size-full max-w-3xl mx-auto px-5 pb-10 md:pb-15">
             <a href="{{ route('blog') }}"
@@ -93,7 +94,7 @@ name('blog.show');
                         <a href="{{ route('blog.show', ['slug' => $related->slug]) }}"
                             class="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
                             <div class="aspect-16/10 overflow-hidden">
-                                <img src="{{ $related->cover_image }}" alt="{{ $related->title }}"
+                                <img src="{{ $related->getFirstMediaUrl('posts') }}" alt="{{ $related->title }}"
                                     class="size-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     loading="lazy" />
                             </div>
