@@ -4,13 +4,42 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    {{-- SEO Meta Tags --}}
     <title>{{ $meta_title ?? config('app.name') }}</title>
-    <meta name="description" content="{{ $meta_description ?? 'Опис за замовчуванням' }}">
+    <meta name="description" content="{{ $meta_description ?? 'Професійна клінінгова компанія TryIt. Чистота вашого офісу, виробництва та дому — наша відповідальність.' }}">
+    <link rel="canonical" href="{{ request()->url() }}">
+    <meta name="robots" content="index, follow">
+
+    {{-- Open Graph / Facebook --}}
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request()->url() }}">
+    <meta property="og:title" content="{{ $meta_title ?? config('app.name') }}">
+    <meta property="og:description" content="{{ $meta_description ?? 'Професійна клінінгова компанія TryIt. Чистота вашого офісу, виробництва та дому — наша відповідальність.' }}">
+    <meta property="og:image" content="{{ isset($meta_image) ? asset($meta_image) : Vite::asset('resources/images/header.webp') }}">
+    <meta property="og:site_name" content="{{ config('app.name') }}">
+    <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+    {{-- Twitter --}}
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ request()->url() }}">
+    <meta property="twitter:title" content="{{ $meta_title ?? config('app.name') }}">
+    <meta property="twitter:description" content="{{ $meta_description ?? 'Професійна клінінгова компанія TryIt. Чистота вашого офісу, виробництва та дому — наша відповідальність.' }}">
+    <meta property="twitter:image" content="{{ isset($meta_image) ? asset($meta_image) : Vite::asset('resources/images/header.webp') }}">
+
+    {{-- Favicons --}}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicons/favicon-16x16.png') }}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ asset('favicons/favicon-48x48.png') }}">
+    <link rel="manifest" href="{{ asset('favicons/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('favicons/safari-pinned-tab.svg') }}" color="#f59e0b">
+    <link rel="shortcut icon" href="{{ asset('favicons/favicon.ico') }}">
+    <meta name="msapplication-TileColor" content="#f59e0b">
+    <meta name="theme-color" content="#ffffff">
 
     <meta name="google-site-verification" content="fsrylmGFBJ7d7DJ_JlXie1uxWstE-InnV6R0eFJKphE" />
-
-    <link rel="shortcut icon" href="favicon.ico">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 

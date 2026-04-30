@@ -395,7 +395,7 @@
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-3-before.jpg"
   },
   "resources/images/pisliabudivelne-prybyrannia/comparison-4-after.jpg": {
-    "file": "assets/comparison-4-after-BNiP3oMY.jpg",
+    "file": "assets/service-3-BNiP3oMY.jpg",
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-4-after.jpg"
   },
   "resources/images/pisliabudivelne-prybyrannia/comparison-4-before.jpg": {
@@ -427,7 +427,7 @@
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-7-before.jpg"
   },
   "resources/images/promyslovyi-alpinizm/image-1.jpg": {
-    "file": "assets/image-1-CWdYmt6d.jpg",
+    "file": "assets/service-7-CWdYmt6d.jpg",
     "src": "resources/images/promyslovyi-alpinizm/image-1.jpg"
   },
   "resources/images/promyslovyi-alpinizm/image-2.jpg": {
@@ -447,7 +447,7 @@
     "src": "resources/images/service-3-old.jpg"
   },
   "resources/images/service-3.jpg": {
-    "file": "assets/comparison-4-after-BNiP3oMY.jpg",
+    "file": "assets/service-3-BNiP3oMY.jpg",
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-4-after.jpg"
   },
   "resources/images/service-4-old.jpg": {
@@ -475,7 +475,7 @@
     "src": "resources/images/service-7-old.jpg"
   },
   "resources/images/service-7.jpg": {
-    "file": "assets/image-1-CWdYmt6d.jpg",
+    "file": "assets/service-7-CWdYmt6d.jpg",
     "src": "resources/images/promyslovyi-alpinizm/image-1.jpg"
   },
   "resources/js/app.js": {
