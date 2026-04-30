@@ -737,38 +737,40 @@ name('main');
     @include('partials.blog-section')
 @endsection
 
-<style>
-    @keyframes float {
-        0% {
-            transform: translateY(0px) rotate(var(--tw-rotate, 0deg));
+@push('styles')
+    <style>
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(var(--tw-rotate, 0deg));
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(var(--tw-rotate, 0deg));
+            }
+
+            100% {
+                transform: translateY(0px) rotate(var(--tw-rotate, 0deg));
+            }
         }
 
-        50% {
-            transform: translateY(-20px) rotate(var(--tw-rotate, 0deg));
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
         }
 
-        100% {
-            transform: translateY(0px) rotate(var(--tw-rotate, 0deg));
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
-    }
 
-    .animate-float {
-        animation: float 6s ease-in-out infinite;
-    }
-
-    .glass-card {
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .blob {
-        position: absolute;
-        width: 400px;
-        height: 400px;
-        background: linear-gradient(180deg, rgba(52, 211, 153, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
-        filter: blur(80px);
-        border-radius: 50%;
-        z-index: -1;
-    }
-</style>
+        .blob {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(180deg, rgba(52, 211, 153, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    </style>
+@endpush
