@@ -18,7 +18,7 @@
     ];
 
     $classes = [
-        'font-display font-black text-balance',
+        'font-[Lora] italic font-black drop-shadow-xl text-balance',
         $sizes[$size] ?? $sizes['md'],
         $colors[$color] ?? $colors['dark'],
     ];

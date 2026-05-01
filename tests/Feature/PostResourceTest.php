@@ -6,7 +6,10 @@ use App\Filament\Resources\Posts\Pages\ListPosts;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Livewire;
+use Illuminate\Support\Str;
 
 uses(RefreshDatabase::class);
 
@@ -34,6 +37,9 @@ it('can render create post page', function () {
 });
 
 it('can create a post', function () {
+    Storage::fake('public');
+    $file = UploadedFile::fake()->image('post.jpg');
+
     $title = 'Unique Post Title '.uniqid();
     $body = '<p>Post body content.</p>';
     $slug = Str::slug($title);
@@ -42,6 +48,7 @@ it('can create a post', function () {
         ->set('data.title', $title)
         ->set('data.body', $body)
         ->set('data.slug', $slug)
+        ->set('data.image', $file)
         ->call('create')
         ->assertHasNoFormErrors();
 

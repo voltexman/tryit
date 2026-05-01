@@ -6,7 +6,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-BOhZaixG.css",
+    "file": "assets/app-CVFfYXH6.css",
     "name": "app",
     "names": [
       "app.css"
@@ -427,7 +427,7 @@
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-7-before.jpg"
   },
   "resources/images/promyslovyi-alpinizm/image-1.jpg": {
-    "file": "assets/service-7-CWdYmt6d.jpg",
+    "file": "assets/image-1-CWdYmt6d.jpg",
     "src": "resources/images/promyslovyi-alpinizm/image-1.jpg"
   },
   "resources/images/promyslovyi-alpinizm/image-2.jpg": {
@@ -475,7 +475,7 @@
     "src": "resources/images/service-7-old.jpg"
   },
   "resources/images/service-7.jpg": {
-    "file": "assets/service-7-CWdYmt6d.jpg",
+    "file": "assets/image-1-CWdYmt6d.jpg",
     "src": "resources/images/promyslovyi-alpinizm/image-1.jpg"
   },
   "resources/js/app.js": {

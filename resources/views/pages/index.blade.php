@@ -10,7 +10,7 @@ name('main');
         <div class="flex items-center justify-center size-full bg-slate-950/65 backdrop-blur-[1px]">
             <div class="max-w-4xl mx-auto flex flex-col items-center gap-y-8 px-5 text-center">
                 <h1
-                    class="font-display text-3xl md:text-6xl xl:text-7xl text-nowrap uppercase text-slate-100 font-black leading-tight drop-shadow-lg animate-in duration-700">
+                    class="font-[Lora] text-3xl md:text-6xl xl:text-7xl text-nowrap uppercase text-slate-100 font-black italic -tracking-wide drop-shadow-lg animate-in duration-700">
                     <span class="text-tryit-orange">Чистота</span>, яку варто<br>
                     спробувати <span class="text-tryit-orange">сьогодні</span>
                 </h1>
@@ -44,14 +44,14 @@ name('main');
                     class="size-full object-contain object-center grayscale-100 opacity-40" alt="">
             </div>
 
-            <div class="relative z-20 text-center max-w-2xl mx-auto pt-10 pb-10">
+            <div class="relative z-20 text-center max-w-3xl mx-auto pt-10 pb-10">
                 <x-section.badge class="mb-5">Ваш дім у надійних руках</x-section.badge>
-                <h2 class="font-display text-4xl/10 md:text-6xl/12 font-black tracking-tight text-slate-800 text-balance">
-                    Бо ми знаємо, як важливо
-                    <span class="text-emerald-600 inline-block mt-2">бути в гармонії</span>
-                    з вашим домом
+                <h2
+                    class="font-[Lora] italic text-4xl/10 md:text-5xl/12 font-black tracking-tight text-slate-800 text-balance">
+                    Бо ми знаємо, як важливо <span class="text-emerald-600">бути в гармонії</span>
+                    з чистотою у вашому <span class="text-emerald-600">просторі</span>
                 </h2>
-                <p class="mt-8 text-lg md:text-xl text-slate-600 font-light leading-relaxed">
+                <p class="max-w-2xl mx-auto mt-8 text-lg md:text-xl text-slate-600 font-light text-balance leading-relaxed">
                     Ми об'єднуємо професіоналів та власників осель, щоб кожен момент вашого відпочинку проходив у
                     бездоганній чистоті.
                 </p>
@@ -318,7 +318,7 @@ name('main');
 
                                     <div class="text-center space-y-3 mt-4 animate-pulse">
                                         <p class="text-[10px] text-white/40 uppercase tracking-[0.3em]">Йде виклик...</p>
-                                        <h3 class="text-5xl font-black text-white tracking-tighter">Try It</h3>
+                                        <h3 class="text-5xl font-black font-[Lora] text-white tracking-tighter">TryIt</h3>
                                         <p class="text-xs text-white/30 uppercase tracking-wide">Клінінгова компанія</p>
                                     </div>
 
@@ -382,13 +382,13 @@ name('main');
                     </div>
 
                     {{-- Права частина: Текст --}}
-                    <div class="lg:col-span-7 p-10 lg:p-20 lg:pl-0 text-white">
-                        <div class="max-w-xl space-y-6">
-                            <h2 class="font-display text-3xl md:text-5xl font-bold tracking-tight">
+                    <div class="lg:col-span-7 p-8 lg:p-20 lg:pl-0 text-white">
+                        <div class="max-w-xl text-center lg:text-left space-y-5">
+                            <h2 class="font-[Lora] italic text-3xl md:text-5xl font-black tracking-tight">
                                 Чистота в один клік!
                             </h2>
 
-                            <p class="text-white/80 text-base md:text-lg leading-relaxed font-light text-balance">
+                            <p class="text-white/80 text-base md:text-lg leading-relaxed font-light lg:text-balance">
                                 Поки ви керуєте справами, ми створюємо ідеальну чистоту. TryIt — професійний клінінг
                                 для тих, хто цінує свій час та бездоганний результат.
                             </p>
@@ -397,7 +397,7 @@ name('main');
                                 +380 (97) 877-866-7
                             </div>
 
-                            <div class="text-white/70 text-base font-semibold mb-2">
+                            <div class="text-white/70 text-sm font-medium mb-2">
                                 Передзвонити вам? Просто вкажіть свій номер.
                             </div>
 
@@ -617,7 +617,7 @@ name('main');
         </div>
 
         <!-- Величезний фоновий текст (TryIt) -->
-        <div class="absolute bottom-[-0.05em] left-1/2 -translate-x-1/2 z-10 select-none pointer-events-none">
+        <div class="absolute bottom-[-0.5em] left-1/2 -translate-x-1/2 z-10 select-none pointer-events-none">
             <span class="text-[25vw] font-black uppercase leading-[0.75] tracking-tighter inline-flex">
                 <!-- Частина "Try" з градієнтом від смарагдового -->
                 <span class="bg-linear-to-b from-emerald-500/40 to-emerald-500/10 bg-clip-text text-transparent">
@@ -660,8 +660,9 @@ name('main');
                 </div>
 
                 <!-- Текстовий блок -->
-                <div class="max-w-2xl text-center md:text-left">
-                    <h2 class="font-display text-4xl md:text-6xl font-black text-white leading-[0.95] text-balance mb-5">
+                <div class="max-w-3xl text-center md:text-left">
+                    <h2
+                        class="font-[Lora] italic text-5xl md:text-6xl drop-shadow-xl font-black text-white leading-[0.95] text-balance mb-5">
                         Хочете побачити нас <span class="text-emerald-500">у справі</span>?
                         Наша робота <span class="text-emerald-500">говорить</span> сама за себе!
                     </h2>
@@ -686,13 +687,16 @@ name('main');
         <div class="max-w-3xl relative z-10 mx-auto px-5">
             <div class="mb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between">
                 <div>
-                    <h2 class="font-display text-3xl font-black text-slate-900 tracking-tight">
+                    <x-section.badge class="mb-2.5">FAQs</x-section.badge>
+                    <x-section.title tag="h2" size="sm">
                         Питання та <span class="text-emerald-500">відповіді</span>
-                    </h2>
-                    <p class="text-slate-500 text-xs mt-1">Все, що варто знати перед замовленням</p>
+                    </x-section.title>
+                    <x-section.description>
+                        Все, що варто знати перед замовленням
+                    </x-section.description>
                 </div>
                 <a href="{{ route('feedback') }}"
-                    class="inline-flex items-center gap-1.5 mt-5 lg:mt-0 text-xs font-semibold uppercase tracking-wide text-emerald-600 hover:text-emerald-700 transition-colors">
+                    class="inline-flex font-display items-center gap-1.5 mt-5 lg:mt-0 text-xs font-semibold uppercase tracking-wider text-emerald-600 hover:text-emerald-700 transition-colors">
                     Задати запитання <x-lucide-arrow-right class="size-4" stroke-width="2" />
                 </a>
             </div>

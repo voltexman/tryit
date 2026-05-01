@@ -7,9 +7,12 @@
                 <x-section.title tag="h3" size="sm">
                     Наш <span class="text-emerald-500">Блог</span>
                 </x-section.title>
+                <x-section.description>
+                    Поради, ідеї та інсайти для бездоганної чистоти
+                </x-section.description>
             </div>
             <a href="{{ route('blog') }}"
-                class="inline-flex items-center gap-1.5 text-sm uppercase font-semibold text-emerald-600 hover:gap-3 transition-all duration-300">
+                class="inline-flex font-display items-center gap-1.5 mt-5 lg:mt-0 text-xs font-semibold uppercase tracking-wider text-emerald-600 hover:text-emerald-700 transition-colors">
                 Всі статті <x-lucide-arrow-right class="size-4" stroke-width="2" />
             </a>
         </div>

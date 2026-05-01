@@ -39,17 +39,22 @@ class PostFactory extends Factory
         $paragraphs = fake()->paragraphs(rand(6, 10));
         $body = collect($paragraphs)->map(fn ($p) => "<p>{$p}</p>")->implode("\n");
 
-        $coverImage = "https://picsum.photos/seed/{$slug}/1200/800";
-
         return [
             'title' => $title,
             'slug' => $slug,
             'excerpt' => fake()->realText(150),
             'body' => $body,
-            'cover_image' => $coverImage,
             'is_published' => true,
             'published_at' => fake()->dateTimeBetween('-1 year', 'now'),
         ];
+    }
+
+    public function configure(): static
+    {
+        return $this->afterCreating(function (Post $post) {
+            $post->addMediaFromUrl("https://picsum.photos/seed/{$post->slug}/1200/800")
+                ->toMediaCollection('posts');
+        });
     }
 
     public function unpublished(): static
