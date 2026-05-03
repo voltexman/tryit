@@ -6,7 +6,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-BsZ8rPs0.css",
+    "file": "assets/app-CAKn8Txr.css",
     "name": "app",
     "names": [
       "app.css"
@@ -25,6 +25,10 @@
   "resources/images/cleaning.png": {
     "file": "assets/cleaning-fdbXvyGX.png",
     "src": "resources/images/cleaning.png"
+  },
+  "resources/images/demo-block.png": {
+    "file": "assets/demo-block-DLHfaUfn.png",
+    "src": "resources/images/demo-block.png"
   },
   "resources/images/footer-background.jpg": {
     "file": "assets/footer-background-J9XjIIWB.jpg",
@@ -150,9 +154,17 @@
     "file": "assets/h1-agency-CtPudIAX.png",
     "src": "resources/images/h1-agency.png"
   },
+  "resources/images/h1-cleaning-team.png": {
+    "file": "assets/h1-cleaning-team-DdpHNL6A.png",
+    "src": "resources/images/h1-cleaning-team.png"
+  },
   "resources/images/h2-background.jpg": {
     "file": "assets/h2-background-C6HLSC8Z.jpg",
     "src": "resources/images/h2-background.jpg"
+  },
+  "resources/images/h3-cleaning-01.jpg": {
+    "file": "assets/h3-cleaning-01-DxSqe5cq.jpg",
+    "src": "resources/images/h3-cleaning-01.jpg"
   },
   "resources/images/header.webp": {
     "file": "assets/header-D7Evp8KQ.webp",

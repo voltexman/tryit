@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Scope;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -24,11 +25,17 @@ class Post extends Model implements HasMedia
         'published_at',
     ];
 
+    public function tags(): MorphToMany
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
+
     protected function casts(): array
     {
         return [
             'is_published' => 'boolean',
             'published_at' => 'datetime',
+            'body' => 'array',
         ];
     }
 
@@ -40,7 +47,8 @@ class Post extends Model implements HasMedia
 
     public function getReadingTimeAttribute(): int
     {
-        return max(1, (int) ceil(str_word_count(strip_tags($this->body)) / 200));
+        $content = is_array($this->body) ? json_encode($this->body, JSON_UNESCAPED_UNICODE) : (string) $this->body;
+        return max(1, (int) ceil(str_word_count(strip_tags($content)) / 200));
     }
 
     public function registerMediaConversions(?Media $media = null): void

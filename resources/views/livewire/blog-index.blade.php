@@ -1,49 +1,59 @@
 <div>
     {{-- Filters --}}
-    <div class="sticky top-0 z-10 py-5 bg-white mb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+    <div class="sticky top-0 z-10 py-5 bg-white mb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5 border-b border-gray-100">
         <div class="lg:col-span-1">
-            <label for="search" class="block text-sm font-medium text-gray-700 mb-1">Пошук</label>
+            <label for="search" class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Пошук</label>
             <div class="relative">
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <x-lucide-search class="size-4 text-gray-400" />
                 </div>
                 <input wire:model.live.debounce.300ms="search" type="text" id="search"
-                    class="block w-full pl-10 pr-3 py-2 border border-gray-200 rounded-xl focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm"
+                    class="block w-full pl-10 pr-3 py-2 border border-gray-200 rounded-xl focus:ring-tryit-orange focus:border-tryit-orange sm:text-sm transition-all"
                     placeholder="Назва...">
             </div>
         </div>
 
         <div>
-            <label for="dateFrom" class="block text-sm font-medium text-gray-700 mb-1">Дата від</label>
-            <input wire:model.live="dateFrom" type="date" id="dateFrom"
-                class="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+            <label for="tag" class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Тег</label>
+            <select wire:model.live="tag" id="tag"
+                class="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-tryit-orange focus:border-tryit-orange sm:text-sm transition-all">
+                <option value="">Усі теги</option>
+                @foreach ($this->tags as $t)
+                    <option value="{{ $t->slug }}">{{ $t->name }}</option>
+                @endforeach
+            </select>
         </div>
 
         <div>
-            <label for="dateTo" class="block text-sm font-medium text-gray-700 mb-1">Дата до</label>
-            <input wire:model.live="dateTo" type="date" id="dateTo"
-                class="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-        </div>
-
-        <div>
-            <label for="readingTime" class="block text-sm font-medium text-gray-700 mb-1">Час читання</label>
+            <label for="readingTime" class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Час читання</label>
             <select wire:model.live="readingTime" id="readingTime"
-                class="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
+                class="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-tryit-orange focus:border-tryit-orange sm:text-sm transition-all">
                 <option value="">Будь-який</option>
-                <option value="short">
-                    < 5 хв</option>
+                <option value="short">< 5 хв</option>
                 <option value="medium">5-10 хв</option>
                 <option value="long">> 10 хв</option>
             </select>
         </div>
 
         <div>
-            <label for="sortBy" class="block text-sm font-medium text-gray-700 mb-1">Сортувати</label>
+            <label for="dateFrom" class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Від</label>
+            <input wire:model.live="dateFrom" type="date" id="dateFrom"
+                class="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-tryit-orange focus:border-tryit-orange sm:text-sm transition-all">
+        </div>
+
+        <div>
+            <label for="dateTo" class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">До</label>
+            <input wire:model.live="dateTo" type="date" id="dateTo"
+                class="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-tryit-orange focus:border-tryit-orange sm:text-sm transition-all">
+        </div>
+
+        <div>
+            <label for="sortBy" class="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Сортувати</label>
             <select wire:model.live="sortBy" id="sortBy"
-                class="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm">
-                <option value="newest">Спочатку нові</option>
-                <option value="oldest">Спочатку старі</option>
-                <option value="alphabetical">За назвою</option>
+                class="block w-full px-3 py-2 border border-gray-200 rounded-xl focus:ring-tryit-orange focus:border-tryit-orange sm:text-sm transition-all">
+                <option value="newest">Нові</option>
+                <option value="oldest">Старі</option>
+                <option value="alphabetical">А-Я</option>
             </select>
         </div>
     </div>
@@ -57,6 +67,16 @@
                     <img src="{{ $post->getFirstMediaUrl('posts') }}" alt="Office"
                         class="absolute inset-0 w-full h-full object-cover">
                     <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-center p-6">
+                        @if ($post->tags->isNotEmpty())
+                            <div class="flex gap-2 mb-4">
+                                @foreach ($post->tags as $tag)
+                                    <span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest">
+                                        {{ $tag->name }}
+                                    </span>
+                                @endforeach
+                            </div>
+                        @endif
+
                         <a href="{{ route('blog.show', ['slug' => $post->slug]) }}"
                             class="text-white font-display text-3xl md:text-5xl font-bold mb-6 max-w-2xl leading-tight">
                             {{ $post->title }}
@@ -81,9 +101,18 @@
             @else
                 <article class="flex flex-col">
                     <a href="{{ route('blog.show', ['slug' => $post->slug]) }}"
-                        class="rounded-3xl overflow-hidden h-64 mb-2.5 shadow-sm">
+                        class="relative rounded-3xl overflow-hidden h-64 mb-2.5 shadow-sm group">
                         <img src="{{ $post->getFirstMediaUrl('posts') }}" alt="Interior"
-                            class="w-full h-full object-cover">
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        @if ($post->tags->isNotEmpty())
+                            <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                                @foreach ($post->tags as $tag)
+                                    <span class="px-2.5 py-1 rounded-lg bg-white/90 backdrop-blur-sm text-slate-900 text-[10px] font-bold uppercase tracking-widest shadow-sm">
+                                        {{ $tag->name }}
+                                    </span>
+                                @endforeach
+                            </div>
+                        @endif
                     </a>
                     <a href="{{ route('blog.show', ['slug' => $post->slug]) }}"
                         class="text-2xl font-bold mb-3 leading-tight text-slate-800 hover:text-orange-600 transition-colors duration-300 cursor-pointer">

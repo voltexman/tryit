@@ -26,6 +26,11 @@ class PostsTable
                 TextColumn::make('title')
                     ->label('Заголовок'),
 
+                TextColumn::make('tags.name')
+                    ->label('Теги')
+                    ->badge()
+                    ->color('slate'),
+
                 ToggleColumn::make('is_published')
                     ->label(false),
 

@@ -1,8 +1,9 @@
 <div class="max-w-7xl mx-auto px-5 lg:px-0">
     {{-- Mobile: horizontal scroll (зберігаємо вашу логіку Alpine) --}}
-    <div class="md:hidden" x-data="{ scrollEl: null, active: 0, count: {{ $posts->count() }} }" x-init="scrollEl = $refs.blogScroll;
-    scrollEl.addEventListener('scroll', () => { active = Math.round(scrollEl.scrollLeft / (scrollEl.scrollWidth / count)) })">
-        <div x-ref="blogScroll" class="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-5 -mx-5 px-5"
+    <div class="md:hidden" x-data="{ active: 0, count: {{ $posts->count() }} }">
+        <div x-ref="blogScroll" 
+            @scroll.passive="active = Math.round($refs.blogScroll.scrollLeft / ($refs.blogScroll.scrollWidth / count))"
+            class="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-5 -mx-5 px-5"
             style="scrollbar-width: none; -ms-overflow-style: none;">
             @foreach ($posts as $post)
                 <a href="{{ route('blog.show', ['slug' => $post->slug]) }}"
@@ -32,7 +33,7 @@
             <div class="flex justify-center gap-1.5 mt-4">
                 <template x-for="i in count" :key="i">
                     <button
-                        @click="scrollEl.scrollTo({ left: (i - 1) * (scrollEl.scrollWidth / count), behavior: 'smooth' })"
+                        @click="$refs.blogScroll.scrollTo({ left: (i - 1) * ($refs.blogScroll.scrollWidth / count), behavior: 'smooth' })"
                         class="size-2 rounded-full transition-all duration-300"
                         :class="active === i - 1 ? 'bg-indigo-600 w-5' : 'bg-gray-300'"></button>
                 </template>
@@ -62,12 +63,12 @@
                         <div class="flex items-center gap-1.5">
                             <span class="text-sm text-gray-400 font-medium">
                                 <x-lucide-calendar class="size-4 shrink-0 inline-flex mb-1.5" />
-                                {{ $post->published_at->translatedFormat('d M Y') }}
+                                {{ $featured->published_at->translatedFormat('d M Y') }}
                             </span>
                         </div>
                         <span class="text-gray-400 font-medium text-sm tracking-wide">
                             <x-lucide-timer class="size-4 shrink-0 inline-flex mb-1.5" />
-                            {{ $post->reading_time }} хв читання
+                            {{ $featured->reading_time }} хв читання
                         </span>
                     </div>
                 </a>

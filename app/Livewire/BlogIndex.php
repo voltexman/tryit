@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Post;
+use App\Models\Tag;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -27,7 +28,16 @@ class BlogIndex extends Component
     #[Url(history: true)]
     public $readingTime = '';
 
+    #[Url(history: true)]
+    public $tag = '';
+
     public $perPage = 9;
+
+    #[Computed]
+    public function tags()
+    {
+        return Tag::orderBy('name')->get();
+    }
 
     public function updatedSearch()
     {
@@ -59,6 +69,12 @@ class BlogIndex extends Component
         $this->perPage = 9;
     }
 
+    public function updatedTag()
+    {
+        $this->resetPage();
+        $this->perPage = 9;
+    }
+
     public function loadMore()
     {
         $this->perPage += 9;
@@ -68,11 +84,17 @@ class BlogIndex extends Component
     public function posts()
     {
         return Post::published()
+            ->with('tags')
             ->when($this->search, function ($query) {
                 $query->where(function ($q) {
                     $q->where('title', 'like', '%'.$this->search.'%')
                         ->orWhere('excerpt', 'like', '%'.$this->search.'%')
                         ->orWhere('body', 'like', '%'.$this->search.'%');
+                });
+            })
+            ->when($this->tag, function ($query) {
+                $query->whereHas('tags', function ($q) {
+                    $q->where('slug', $this->tag);
                 });
             })
             ->when($this->dateFrom, function ($query) {

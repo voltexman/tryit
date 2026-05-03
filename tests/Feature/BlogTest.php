@@ -2,6 +2,7 @@
 
 use App\Livewire\BlogIndex;
 use App\Models\Post;
+use App\Models\Tag;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
 
@@ -98,4 +99,18 @@ it('can sort posts on the blog index', function () {
         ->assertSeeInOrder(['Newest Post', 'Oldest Post'])
         ->set('sortBy', 'oldest')
         ->assertSeeInOrder(['Oldest Post', 'Newest Post']);
+});
+
+it('can filter posts by tag on the blog index', function () {
+    $tag = Tag::factory()->create(['name' => 'Specific Tag', 'slug' => 'specific-tag']);
+
+    $taggedPost = Post::factory()->create(['title' => 'Tagged Post', 'is_published' => true, 'published_at' => now()]);
+    $taggedPost->tags()->attach($tag);
+
+    $untaggedPost = Post::factory()->create(['title' => 'Untagged Post', 'is_published' => true, 'published_at' => now()]);
+
+    Livewire::test(BlogIndex::class)
+        ->set('tag', 'specific-tag')
+        ->assertSee('Tagged Post')
+        ->assertDontSee('Untagged Post');
 });

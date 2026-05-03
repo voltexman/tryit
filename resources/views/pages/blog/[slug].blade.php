@@ -10,9 +10,10 @@ name('blog.show');
 
 @php
     $post = Post::where('slug', request()->route('slug'))
+        ->with('tags')
         ->where('is_published', true)
         ->firstOrFail();
-    $relatedPosts = Post::published()->where('id', '!=', $post->id)->take(3)->get();
+    $relatedPosts = Post::published()->where('id', '!=', $post->id)->with('tags')->take(3)->get();
 @endphp
 
 @section('header')
@@ -25,6 +26,18 @@ name('blog.show');
                 <x-lucide-arrow-left class="size-4" stroke-width="2" />
                 Назад до блогу
             </a>
+
+            @if ($post->tags->isNotEmpty())
+                <div class="flex gap-2 mb-3">
+                    @foreach ($post->tags as $tag)
+                        <span
+                            class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest">
+                            {{ $tag->name }}
+                        </span>
+                    @endforeach
+                </div>
+            @endif
+
             <div class="flex items-center gap-2.5 text-sm text-white/50 mb-5">
                 <x-lucide-calendar class="size-3 mb-0.5 shrink-0" />
                 <span class="-ms-1.5">{{ $post->published_at->translatedFormat('d F Y') }}</span>
@@ -57,7 +70,10 @@ name('blog.show');
                 prose-strong:text-gray-800
                 prose-img:rounded-2xl prose-img:shadow-lg
                 prose-blockquote:border-tryit-orange prose-blockquote:text-gray-600 prose-blockquote:not-italic">
-                {!! $post->body !!}
+
+                @if ($post->body)
+                    {!! \Filament\Forms\Components\RichEditor\RichContentRenderer::make($post->body)->customBlocks([\App\Filament\Forms\Components\RichEditor\RichContentCustomBlocks\ServiceBlock::class])->toHtml() !!}
+                @endif
             </div>
 
             {{-- Share + Back --}}
@@ -93,10 +109,20 @@ name('blog.show');
                     @foreach ($relatedPosts as $related)
                         <a href="{{ route('blog.show', ['slug' => $related->slug]) }}"
                             class="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
-                            <div class="aspect-16/10 overflow-hidden">
+                            <div class="relative aspect-16/10 overflow-hidden">
                                 <img src="{{ $related->getFirstMediaUrl('posts') }}" alt="{{ $related->title }}"
                                     class="size-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     loading="lazy" />
+                                @if ($related->tags->isNotEmpty())
+                                    <div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                                        @foreach ($related->tags as $tag)
+                                            <span
+                                                class="px-2 py-0.5 rounded-md bg-white/90 backdrop-blur-sm text-slate-900 text-[9px] font-bold uppercase tracking-widest shadow-xs">
+                                                {{ $tag->name }}
+                                            </span>
+                                        @endforeach
+                                    </div>
+                                @endif
                             </div>
                             <div class="flex flex-col flex-1 p-5">
                                 <div class="flex items-center gap-3 text-xs text-gray-400 mb-2">
