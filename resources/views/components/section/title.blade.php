@@ -8,7 +8,7 @@
     $sizes = [
         'sm' => 'text-2xl lg:text-4xl',
         'md' => 'text-3xl lg:text-5xl',
-        'lg' => 'text-4xl lg:text-6xl',
+        'lg' => 'text-4xl/9 md:text-5xl lg:text-6xl',
     ];
 
     $colors = [

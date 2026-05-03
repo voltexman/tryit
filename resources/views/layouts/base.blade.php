@@ -74,29 +74,67 @@
                         <x-slot:title>Головне меню</x-slot>
 
                         <x-slot:body>
-                            <x-navigation class="lg:hidden">
-                                <x-navigation.item :link="route('main')" icon="home" :active="request()->routeIs('main')">
-                                    Головна
-                                </x-navigation.item>
-                                <x-navigation.item :link="route('services')" icon="hand-platter" :active="request()->routeIs('services')">
-                                    Послуги
-                                </x-navigation.item>
-                                <x-navigation.item :link="route('blog')" icon="newspaper" :active="request()->routeIs('blog*')">
-                                    Блог
-                                </x-navigation.item>
-                                <x-navigation.item :link="route('feedback')" icon="contact" :active="request()->routeIs('feedback')">
-                                    Контакти
-                                </x-navigation.item>
-                            </x-navigation>
-                            <a href="{{ route('legal.privacy-policy') }}" class="flex gap-x-1.5 items-center text-sm">
-                                <x-lucide-shield-check class="size-5" />
-                                <span>Політика конфіденційності</span>
-                            </a>
-                            <a href="{{ route('legal.terms-of-service') }}"
-                                class="flex gap-x-1.5 items-center text-sm">
-                                <x-lucide-scroll-text class="size-5" />
-                                <span>Умови надання послуг</span>
-                            </a>
+                            <div class="grow flex flex-col items-center justify-center w-full">
+                                <x-navigation class="lg:hidden">
+                                    <x-navigation.item :link="route('main')" icon="home" :active="request()->routeIs('main')">
+                                        Головна
+                                    </x-navigation.item>
+                                    <x-navigation.item :link="route('services')" icon="hand-platter" :active="request()->routeIs('services')">
+                                        Послуги
+                                    </x-navigation.item>
+                                    <x-navigation.item :link="route('blog')" icon="newspaper" :active="request()->routeIs('blog*')">
+                                        Блог
+                                    </x-navigation.item>
+                                    <x-navigation.item :link="route('feedback')" icon="contact" :active="request()->routeIs('feedback')">
+                                        Контакти
+                                    </x-navigation.item>
+                                </x-navigation>
+                            </div>
+
+                            <div class="flex flex-col items-center gap-5 w-full pt-10 mt-auto">
+                                {{-- Social Icons --}}
+                                <div class="flex items-center justify-center gap-5">
+                                    <a href="https://www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr"
+                                        target="_blank" aria-label="Instagram"
+                                        class="size-12 rounded-full bg-slate-50 hover:bg-tryit-orange/10 flex items-center justify-center transition-all duration-300 group shadow-xs">
+                                        <img src="{{ Vite::asset('resources/images/icons/instagram.svg') }}"
+                                            class="size-6 group-hover:scale-110 transition-transform" loading="lazy"
+                                            alt="" />
+                                    </a>
+                                    <a href="#" aria-label="Telegram"
+                                        class="size-12 rounded-full bg-slate-50 hover:bg-tryit-orange/10 flex items-center justify-center transition-all duration-300 group shadow-xs">
+                                        <img src="{{ Vite::asset('resources/images/icons/telegram.svg') }}"
+                                            class="size-6 group-hover:scale-110 transition-transform" loading="lazy"
+                                            alt="" />
+                                    </a>
+                                    <a href="viber://chat?number=380978778667" aria-label="Viber"
+                                        class="size-12 rounded-full bg-slate-50 hover:bg-tryit-orange/10 flex items-center justify-center transition-all duration-300 group shadow-xs">
+                                        <img src="{{ Vite::asset('resources/images/icons/viber.svg') }}"
+                                            class="size-6 group-hover:scale-110 transition-transform" loading="lazy"
+                                            alt="" />
+                                    </a>
+                                </div>
+
+                                {{-- Phone Number --}}
+                                <a href="tel:+380978778667"
+                                    class="text-xl font-display font-bold text-slate-900 flex items-center gap-2 hover:text-tryit-orange transition-colors">
+                                    <x-lucide-phone class="size-5 text-tryit-orange animate-pulse" />
+                                    <span>+380 (97) 877-866-7</span>
+                                </a>
+
+                                {{-- Legal Links --}}
+                                <div class="flex gap-5 items-center justify-center w-full">
+                                    <a href="{{ route('legal.privacy-policy') }}"
+                                        class="text-slate-400 hover:text-tryit-orange text-xs uppercase tracking-wideк transition-colors">
+                                        Політика
+                                    </a>
+                                    <span class="size-1 rounded-full bg-slate-200"></span>
+                                    <a href="{{ route('legal.terms-of-service') }}"
+                                        class="text-slate-400 hover:text-tryit-orange text-xs uppercase tracking-wider transition-colors">
+                                        Умови
+                                    </a>
+                                </div>
+                            </div>
                         </x-slot>
                     </x-sidebar>
                 </div>
@@ -138,8 +176,8 @@
         <!-- Контент -->
         <div class="relative z-10">
             {{-- Main footer --}}
-            <div class="max-w-6xl mx-auto px-5 pt-14 pb-10">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+            <div class="max-w-6xl mx-auto px-5 pt-15 pb-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
                     {{-- Column 1: Brand --}}
                     <div class="lg:col-span-1">

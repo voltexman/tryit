@@ -69,35 +69,33 @@ $categories = [
 @endsection
 
 @section('content')
-    <section class="py-10 mt-10">
-        <div class="max-w-5xl mx-auto px-5">
-            <div class="grid lg:grid-cols-2 gap-10 items-start">
-                <div>
-                    <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-5">Чистота на виробництві —
-                        безпека та ефективність</h2>
-                    <p class="text-gray-600 leading-relaxed">В умовах постійного виробничого процесу накопичуються пил, жир,
-                        технічні забруднення, що впливають на працездатність персоналу та обладнання.</p>
-                    <p class="text-gray-600 leading-relaxed">Наша команда має досвід роботи на підприємствах різних галузей —
-                        від харчових виробництв до важкої промисловості.</p>
+    <x-section>
+        <div class="grid lg:grid-cols-2 gap-10 items-start">
+            <div>
+                <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-5">Чистота на виробництві —
+                    безпека та ефективність</h2>
+                <p class="text-gray-600 leading-relaxed">В умовах постійного виробничого процесу накопичуються пил, жир,
+                    технічні забруднення, що впливають на працездатність персоналу та обладнання.</p>
+                <p class="text-gray-600 leading-relaxed">Наша команда має досвід роботи на підприємствах різних галузей —
+                    від харчових виробництв до важкої промисловості.</p>
+            </div>
+            <div class="space-y-2.5">
+                <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
+                <div class="w-full">
+                    <x-progressbar percentage="100" label="Видалення пилу та бруду" />
                 </div>
-                <div class="space-y-2.5">
-                    <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
-                    <div class="w-full">
-                        <x-progressbar percentage="100" label="Видалення пилу та бруду" />
-                    </div>
-                    <div class="w-full">
-                        <x-progressbar percentage="95" label="Дезінфекція робочих зон" />
-                    </div>
-                    <div class="w-full">
-                        <x-progressbar percentage="90" label="Очищення обладнання" />
-                    </div>
-                    <div class="w-full">
-                        <x-progressbar percentage="85" label="Миття поверхонь" />
-                    </div>
+                <div class="w-full">
+                    <x-progressbar percentage="95" label="Дезінфекція робочих зон" />
+                </div>
+                <div class="w-full">
+                    <x-progressbar percentage="90" label="Очищення обладнання" />
+                </div>
+                <div class="w-full">
+                    <x-progressbar percentage="85" label="Миття поверхонь" />
                 </div>
             </div>
         </div>
-    </section>
+    </x-section>
 
     {{-- Before/After Section with Tabs --}}
     <section class="py-20 bg-slate-100 border border-slate-100" x-data="{

@@ -4,7 +4,7 @@
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
             <div>
                 <x-section.badge class="mb-2.5">Корисні статті</x-section.badge>
-                <x-section.title tag="h3" size="sm">
+                <x-section.title tag="h3" size="lg">
                     Наш <span class="text-emerald-500">Блог</span>
                 </x-section.title>
                 <x-section.description>

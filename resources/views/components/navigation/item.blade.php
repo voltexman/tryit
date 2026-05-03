@@ -2,9 +2,9 @@
 
 @php
     $baseClasses =
-        'flex flex-col lg:flex-row items-center justify-center lg:justify-start py-5 lg:py-2.5 px-6 lg:px-4 rounded-2xl lg:rounded-full transition-all duration-300 gap-3 group w-full lg:w-auto';
+        'flex flex-col lg:flex-row items-center justify-center lg:justify-start py-6 lg:py-2.5 px-6 lg:px-4 rounded-xl lg:rounded-full aspect-square lg:aspect-auto transition-all duration-300 gap-3 group w-full lg:w-auto';
 
-    $activeClasses = 'text-white font-bold z-10';
+    $activeClasses = 'bg-tryit-orange text-white font-bold z-10 shadow-lg lg:bg-transparent lg:shadow-none';
     $inactiveClasses =
         'bg-white border border-gray-100 lg:border-none lg:bg-transparent text-slate-600 lg:text-slate-50/50 hover:bg-tryit-orange/5 lg:hover:bg-white/10 hover:text-tryit-orange lg:hover:text-white hover:shadow-md lg:hover:shadow-none font-semibold';
 

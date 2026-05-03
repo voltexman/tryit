@@ -35,7 +35,7 @@ name('main');
 @endsection
 
 @section('content')
-    <section class="relative py-20 lg:py-30 bg-slate-50 overflow-hidden font-sans">
+    <section class="relative py-10 lg:py-30 bg-slate-50 overflow-hidden font-sans">
         <div class="max-w-5xl mx-auto px-5 relative">
 
             {{-- Subtle Background Image --}}
@@ -47,7 +47,7 @@ name('main');
             <div class="relative z-20 text-center max-w-3xl mx-auto pt-10 pb-10">
                 <x-section.badge class="mb-5">Ваш дім у надійних руках</x-section.badge>
                 <h2
-                    class="font-[Lora] italic text-4xl/10 md:text-5xl/12 font-black tracking-tight text-slate-800 text-balance">
+                    class="font-[Lora] italic text-4xl/9 md:text-5xl/12 font-black tracking-tight text-slate-800 text-balance">
                     Бо ми знаємо, як важливо <span class="text-emerald-600">бути в гармонії</span>
                     з чистотою у вашому <span class="text-emerald-600">просторі</span>
                 </h2>
@@ -179,8 +179,8 @@ name('main');
                 ],
             ),
         ) }}
-    }" class="relative w-full flex items-center overflow-hidden bg-gray-900 lg:min-h-125"
-        id="services">
+    }"
+        class="relative w-full flex items-center py-10 lg:py-20 overflow-hidden bg-gray-900 lg:min-h-125" id="services">
         <!-- Фонове зображення з плавним переходом -->
         <template x-for="(service, index) in services" :key="index">
             <div x-show="selected === index" x-transition:enter="transition opacity duration-700 ease-in-out"
@@ -195,8 +195,7 @@ name('main');
         </template>
 
         <!-- Контент -->
-        <div
-            class="max-w-6xl w-full mx-auto px-5 lg:px-4 relative z-10 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-8 lg:gap-0">
+        <div class="max-w-6xl w-full mx-auto px-5 relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-10 lg:gap-0">
 
             <!-- ЛІВА ЧАСТИНА: Заголовок та опис (видимо на ПК) -->
             <div class="hidden lg:flex flex-col justify-center text-white">
@@ -262,13 +261,13 @@ name('main');
 
                             <div class="flex flex-row gap-2 pt-2">
                                 <a :href="service.link"
-                                    class="px-6 py-3 inline-flex justify-center items-center w-fit bg-slate-500/25 tracking-wide hover:bg-slate-500/30 text-white font-display font-semibold rounded-full transition-all duration-300 text-center text-sm border border-slate-500/30 backdrop-blur-xs">
+                                    class="px-5 py-2 inline-flex justify-center items-center w-fit bg-slate-500/25 tracking-wide hover:bg-slate-500/30 text-white font-display font-semibold rounded-full transition-all duration-300 text-center text-sm border border-slate-500/30 backdrop-blur-xs">
                                     Детальніше
                                     <x-lucide-move-right class="size-4 shrink-0 inline-flex ml-1.5" />
                                 </a>
                                 <button type="button"
                                     @click="Livewire.dispatch('setService', { service: service }); window.openOffcanvas('orderOffcanvas')"
-                                    class="px-6 py-3 font-display rounded-full backdrop-blur-xs text-emerald-400 hover:text-emerald-400 bg-emerald-500/20 hover:bg-emerald-600/20 border border-emerald-500/20 transition-all duration-300 cursor-pointer">
+                                    class="px-5 py-2 font-display rounded-full backdrop-blur-xs text-emerald-400 hover:text-emerald-400 bg-emerald-500/20 hover:bg-emerald-600/20 border border-emerald-500/20 transition-all duration-300 cursor-pointer">
                                     Замовити послугу
                                 </button>
                             </div>
@@ -398,11 +397,11 @@ name('main');
                             </div>
 
                             <div class="text-white/70 text-sm font-medium mb-2">
-                                Передзвонити вам? Просто вкажіть свій номер.
+                                Передзвонити вам? <br><span class="text-xs text-white/50">Просто вкажіть свій номер.
                             </div>
 
                             {{-- Кнопки маркетів --}}
-                            <div class="flex flex-wrap gap-4">
+                            <div class="flex flex-wrap gap-4 mx-auto lg:mx-0">
                                 {{-- Google Play --}}
                                 <div
                                     class="flex items-center gap-3 bg-black/20 border border-white/15 backdrop-blur-md rounded-2xl px-5 py-2.5 transition-all focus-within:bg-black/40 focus-within:border-white/40 w-full max-w-70">
@@ -438,7 +437,7 @@ name('main');
         <div class="max-w-5xl mx-auto py-20 px-5 relative z-20">
             <div class="flex flex-col items-center">
                 <x-section.badge color="slate" class="mb-2.5">Про компанію</x-section.badge>
-                <x-section.title tag="h3" color="white">
+                <x-section.title tag="h3" color="white" size="lg" class="text-center">
                     Чому обирають <span class="text-emerald-400">нас</span>?
                 </x-section.title>
 
@@ -508,7 +507,7 @@ name('main');
             </div>
             <div class="text-center mb-10">
                 <x-section.badge class="mb-2.5">3 кроки до чистоти</x-section.badge>
-                <x-section.title tag="h4">
+                <x-section.title tag="h4" size="lg">
                     Ваш час занадто <span class="text-emerald-500">дорогий</span>, <br>
                     щоб <span class="text-emerald-500">витрачати</span> його на бруд
                 </x-section.title>
@@ -688,7 +687,7 @@ name('main');
             <div class="mb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between">
                 <div>
                     <x-section.badge class="mb-2.5">FAQs</x-section.badge>
-                    <x-section.title tag="h2" size="sm">
+                    <x-section.title tag="h2" size="lg">
                         Питання та <span class="text-emerald-500">відповіді</span>
                     </x-section.title>
                     <x-section.description>
