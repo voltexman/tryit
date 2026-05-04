@@ -16,9 +16,9 @@
     ];
 
     $colors = [
-        'emerald' => 'bg-emerald-700 hover:bg-emerald-600 text-white shadow-emerald-500/20',
-        'orange' => 'bg-tryit-orange hover:bg-tryit-orange/90 text-slate-100 shadow-tryit-orange/20',
-        'slate' => 'bg-slate-800 hover:bg-slate-700 text-white shadow-slate-500/20',
+        'emerald' => 'bg-emerald-700 hover:bg-emerald-800 text-white',
+        'orange' => 'bg-orange-600 hover:bg-orange-700 text-white font-bold',
+        'slate' => 'bg-slate-800 hover:bg-slate-700 text-white',
         'white' => 'bg-white hover:bg-slate-50 text-slate-900 border border-slate-200',
     ];
 

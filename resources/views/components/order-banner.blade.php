@@ -22,7 +22,7 @@
             <img src="{{ Vite::asset('resources/images/cleaning.png') }}" class="size-10" />
         </div>
         <div class="text-2xl md:text-4xl font-bold text-white mb-1.5 font-[Oswald]">{{ $title }}</div>
-        <div class="text-base md:text-base text-emerald-100 mb-10">{{ $subtitle }}</div>
+        <div class="text-base md:text-base text-white mb-10">{{ $subtitle }}</div>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <x-button size="lg" color="orange"

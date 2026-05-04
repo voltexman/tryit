@@ -6,7 +6,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-P330GKc2.css",
+    "file": "assets/app-BsuA0a0L.css",
     "name": "app",
     "names": [
       "app.css"
@@ -154,6 +154,10 @@
     "file": "assets/h1-agency-CtPudIAX.png",
     "src": "resources/images/h1-agency.png"
   },
+  "resources/images/h1-asked.png": {
+    "file": "assets/h1-asked-Bp4zb4bJ.png",
+    "src": "resources/images/h1-asked.png"
+  },
   "resources/images/h1-cleaning-team.png": {
     "file": "assets/h1-cleaning-team-DdpHNL6A.png",
     "src": "resources/images/h1-cleaning-team.png"
@@ -219,7 +223,7 @@
     "src": "resources/images/klax.svg"
   },
   "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/2026-04-26 14.31.00.jpg": {
-    "file": "assets/2026-04-26 14.31.00-rkLMSoIA.jpg",
+    "file": "assets/service-6-rkLMSoIA.jpg",
     "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/2026-04-26 14.31.00.jpg"
   },
   "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/IMG_4603.jpeg": {
@@ -407,7 +411,7 @@
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-3-before.jpg"
   },
   "resources/images/pisliabudivelne-prybyrannia/comparison-4-after.jpg": {
-    "file": "assets/comparison-4-after-BNiP3oMY.jpg",
+    "file": "assets/service-3-BNiP3oMY.jpg",
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-4-after.jpg"
   },
   "resources/images/pisliabudivelne-prybyrannia/comparison-4-before.jpg": {
@@ -459,7 +463,7 @@
     "src": "resources/images/service-3-old.jpg"
   },
   "resources/images/service-3.jpg": {
-    "file": "assets/comparison-4-after-BNiP3oMY.jpg",
+    "file": "assets/service-3-BNiP3oMY.jpg",
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-4-after.jpg"
   },
   "resources/images/service-4-old.jpg": {
@@ -479,7 +483,7 @@
     "src": "resources/images/service-6-old.jpg"
   },
   "resources/images/service-6.jpg": {
-    "file": "assets/2026-04-26 14.31.00-rkLMSoIA.jpg",
+    "file": "assets/service-6-rkLMSoIA.jpg",
     "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/2026-04-26 14.31.00.jpg"
   },
   "resources/images/service-7-old.jpg": {

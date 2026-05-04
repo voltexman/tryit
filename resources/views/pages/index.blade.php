@@ -24,7 +24,7 @@ name('main');
 
                 <a href="#services" class="relative inline-block group mt-4">
                     <button
-                        class="bg-tryit-orange font-display relative py-4 px-10 uppercase text-white font-bold text-base tracking-wide rounded-full hover:bg-tryit-orange/80 transition-all duration-300 cursor-pointer shadow-lg"
+                        class="bg-orange-700 font-display relative py-4 px-10 uppercase text-white font-black text-lg tracking-wider rounded-full hover:bg-tryit-orange/90 transition-all duration-300 cursor-pointer"
                         aria-label="Перейти до розділу з нашими послугами">
                         Наші послуги
                     </button>
@@ -40,9 +40,9 @@ name('main');
 
             {{-- Subtle Background Image --}}
             <div class="absolute inset-0 opacity-30 pointer-events-none z-0">
-                <img src="https://demo2.pavothemes.com/cetro/wp-content/uploads/2025/07/h1-asked.png"
-                    class="size-full object-contain object-center grayscale-100 opacity-40"
-                    width="1920" height="1080" loading="lazy" alt="Background pattern">
+                <img src="{{ Vite::asset('resources/images/h1-asked.png') }}"
+                    class="size-full object-contain object-center grayscale-100 opacity-40" width="1920" height="1080"
+                    loading="lazy" alt="Background pattern">
             </div>
 
             <div class="relative z-20 text-center max-w-3xl mx-auto pt-10 pb-10">
@@ -188,7 +188,8 @@ name('main');
                 x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
                 x-transition:leave="transition opacity duration-700 ease-in-out" x-transition:leave-start="opacity-100"
                 x-transition:leave-end="opacity-0" class="absolute inset-0 z-0">
-                <img :src="service.image" :alt="service.title" class="w-full h-full object-cover" loading="lazy" width="1200" height="600">
+                <img :src="service.image" :alt="service.title" class="w-full h-full object-cover" loading="lazy"
+                    width="1200" height="600">
                 <div
                     class="absolute inset-0 bg-slate-900/70 lg:bg-linear-to-l lg:from-slate-900/70 lg:via-slate-900/30 lg:to-slate-900/20">
                 </div>
@@ -343,8 +344,7 @@ name('main');
                                                     class="size-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 transition-colors">
                                                     <x-lucide-hash class="size-5" />
                                                 </div>
-                                                <span
-                                                    class="text-[9px] text-white uppercase tracking-widest font-medium">
+                                                <span class="text-[9px] text-white uppercase tracking-widest font-medium">
                                                     Клавіші
                                                 </span>
                                             </div>
@@ -366,8 +366,7 @@ name('main');
                                                     class="size-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 transition-colors">
                                                     <x-lucide-volume-2 class="size-5" />
                                                 </div>
-                                                <span
-                                                    class="text-[9px] text-white uppercase tracking-widest font-medium">
+                                                <span class="text-[9px] text-white uppercase tracking-widest font-medium">
                                                     Динамік</span>
                                             </div>
                                         </div>
@@ -503,9 +502,9 @@ name('main');
         <div class="max-w-7xl mx-auto px-5 relative">
             {{-- Subtle Background Image --}}
             <div class="absolute inset-0 opacity-30 pointer-events-none z-0">
-                <img src="https://demo2.pavothemes.com/cetro/wp-content/uploads/2025/07/h1-asked.png"
-                    class="size-full object-cover grayscale-100 opacity-40 scale-75"
-                    width="1920" height="1080" loading="lazy" alt="Background pattern">
+                <img src="{{ Vite::asset('resources/images/h1-asked.png') }}"
+                    class="size-full object-cover grayscale-100 opacity-40 scale-75" width="1920" height="1080"
+                    loading="lazy" alt="Background pattern">
             </div>
             <div class="text-center mb-10">
                 <x-section.badge class="mb-2.5">3 кроки до чистоти</x-section.badge>
@@ -636,8 +635,7 @@ name('main');
 
                 <!-- Кнопка Play (Відео) -->
                 <div x-data="{ open: false }" class="relative">
-                    <button @click="open = true"
-                        aria-label="Відтворити відео"
+                    <button @click="open = true" aria-label="Відтворити відео"
                         class="group relative size-24 md:size-32 bg-emerald-500/20 rounded-full flex items-center justify-center backdrop-blur-md border border-white/30 transition-transform hover:scale-110">
                         <!-- Анімовані хвилі -->
                         <span class="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-20"></span>
@@ -652,8 +650,7 @@ name('main');
                     <template x-if="open">
                         <div class="fixed inset-0 z-100 flex items-center justify-center bg-slate-900/95 p-4"
                             @click.self="open = false">
-                            <button @click="open = false"
-                                aria-label="Закрити відео"
+                            <button @click="open = false" aria-label="Закрити відео"
                                 class="absolute top-10 right-10 text-white/50 hover:text-white text-4xl">&times;</button>
                             <div class="aspect-video w-full max-w-4xl bg-black shadow-2xl">
                                 <!-- Сюди вставити iframe відео -->
@@ -712,7 +709,7 @@ name('main');
                             class="w-full flex items-center justify-between p-4 md:p-5 text-left transition-all cursor-pointer">
                             <div class="flex items-center gap-4">
                                 <div class="size-10 rounded-xl flex items-center justify-center shrink-0 transition-[colors, transform]"
-                                    :class="active === {{ $loop->index }} ? 'bg-emerald-600 rotate-45 text-white' :
+                                    :class="active === {{ $loop->index }} ? 'bg-emerald-700 rotate-45 text-white' :
                                         'bg-slate-100 text-slate-700'">
                                     <span class="font-display text-sm font-bold"
                                         :class="active === {{ $loop->index }} ? '-rotate-45' : ''">0{{ $loop->index + 1 }}</span>

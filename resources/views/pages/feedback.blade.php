@@ -130,7 +130,7 @@ name('feedback');
             <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-5 md:gap-10 relative">
                 <!-- Фонове зображення як водяний знак -->
                 <div class="absolute inset-0 z-0 pointer-events-none">
-                    <img src="https://demo2.pavothemes.com/cetro/wp-content/uploads/2025/07/h1-asked.png"
+                    <img src="{{ Vite::asset('resources/images/h1-asked.png') }}"
                         class="size-full object-contain object-center opacity-8" />
                 </div>
 
