@@ -41,7 +41,8 @@ name('main');
             {{-- Subtle Background Image --}}
             <div class="absolute inset-0 opacity-30 pointer-events-none z-0">
                 <img src="https://demo2.pavothemes.com/cetro/wp-content/uploads/2025/07/h1-asked.png"
-                    class="size-full object-contain object-center grayscale-100 opacity-40" alt="">
+                    class="size-full object-contain object-center grayscale-100 opacity-40"
+                    width="1920" height="1080" loading="lazy" alt="Background pattern">
             </div>
 
             <div class="relative z-20 text-center max-w-3xl mx-auto pt-10 pb-10">
@@ -187,7 +188,7 @@ name('main');
                 x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
                 x-transition:leave="transition opacity duration-700 ease-in-out" x-transition:leave-start="opacity-100"
                 x-transition:leave-end="opacity-0" class="absolute inset-0 z-0">
-                <img :src="service.image" :alt="service.title" class="w-full h-full object-cover">
+                <img :src="service.image" :alt="service.title" class="w-full h-full object-cover" loading="lazy" width="1200" height="600">
                 <div
                     class="absolute inset-0 bg-slate-900/70 lg:bg-linear-to-l lg:from-slate-900/70 lg:via-slate-900/30 lg:to-slate-900/20">
                 </div>
@@ -503,7 +504,8 @@ name('main');
             {{-- Subtle Background Image --}}
             <div class="absolute inset-0 opacity-30 pointer-events-none z-0">
                 <img src="https://demo2.pavothemes.com/cetro/wp-content/uploads/2025/07/h1-asked.png"
-                    class="size-full object-cover grayscale-100 opacity-40 scale-75" alt="">
+                    class="size-full object-cover grayscale-100 opacity-40 scale-75"
+                    width="1920" height="1080" loading="lazy" alt="Background pattern">
             </div>
             <div class="text-center mb-10">
                 <x-section.badge class="mb-2.5">3 кроки до чистоти</x-section.badge>
@@ -609,7 +611,7 @@ name('main');
         <!-- Фонове зображення з затемненням -->
         <div class="absolute inset-0 z-0">
             <img src="{{ Vite::asset('resources/images/gallery-section.jpg') }}" class="size-full object-cover opacity-60"
-                alt="">
+                width="1920" height="1080" loading="lazy" alt="Gallery preview">
             <div
                 class="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-slate-900/80 via-slate-900/40 to-transparent">
             </div>

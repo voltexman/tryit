@@ -28,6 +28,7 @@
                         class="group flex flex-col bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-xs hover:shadow-md transition-shadow duration-300 h-full">
                         <div class="aspect-16/10 overflow-hidden relative">
                             <img src="{{ $post->getFirstMediaUrl('posts') }}" alt="{{ $post->title }}"
+                                width="400" height="250" loading="lazy"
                                 class="size-full object-cover group-hover:scale-105 transition-transform duration-700" />
                             <div class="absolute top-4 left-4">
                                 <span
@@ -77,6 +78,7 @@
                     <div
                         class="overflow-hidden rounded-[2.5rem] mb-8 aspect-video relative shadow-2xl shadow-emerald-900/10">
                         <img src="{{ $featured->getFirstMediaUrl('posts') }}" alt="{{ $featured->title }}"
+                            width="800" height="450" loading="lazy"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
                         <div
                             class="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -132,6 +134,7 @@
                         class="grid grid-cols-[160px_1fr] xl:grid-cols-[200px_1fr] gap-6 xl:gap-8">
                         <div class="h-32 xl:h-40 rounded-3xl overflow-hidden shadow-lg shadow-emerald-900/5">
                             <img src="{{ $post->getFirstMediaUrl('posts') }}" alt="{{ $post->title }}"
+                                width="300" height="200" loading="lazy"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         </div>
                         <div class="flex flex-col justify-center py-1">
@@ -157,14 +160,6 @@
                     </a>
                 </article>
             @endforeach
-
-            <div class="mt-auto">
-                <a href="{{ route('blog') }}"
-                    class="group/all flex items-center justify-center gap-3 w-full py-5 rounded-2xl bg-gray-900 text-white font-bold hover:bg-emerald-600 transition-all duration-300">
-                    <span>Дивитися всі статті</span>
-                    <x-lucide-layout-grid class="size-5 transition-transform group-hover/all:rotate-12" />
-                </a>
-            </div>
         </div>
     </div>
 </div>

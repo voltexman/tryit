@@ -46,6 +46,16 @@
 
     <meta name="google-site-verification" content="fsrylmGFBJ7d7DJ_JlXie1uxWstE-InnV6R0eFJKphE" />
 
+    {{-- Preconnect to Google Fonts --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+    {{-- Preload LCP Image --}}
+    @if(request()->routeIs('main'))
+        <link rel="preload" as="image" href="{{ Vite::asset('resources/images/header.webp') }}" fetchpriority="high">
+    @endif
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     @livewireStyles
@@ -194,17 +204,17 @@
                                 target="_blank" aria-label="Instagram"
                                 class="size-9 rounded-full bg-white/5 hover:bg-tryit-orange/20 flex items-center justify-center transition-colors duration-300">
                                 <img src="{{ Vite::asset('resources/images/icons/footer-instagram.svg') }}"
-                                    class="size-4" loading="lazy" alt="" />
+                                    class="size-4" width="16" height="16" loading="lazy" alt="Instagram" />
                             </a>
                             <a href="#" aria-label="Telegram"
                                 class="size-9 rounded-full bg-white/5 hover:bg-tryit-orange/20 flex items-center justify-center transition-colors duration-300">
                                 <img src="{{ Vite::asset('resources/images/icons/footer-telegram.svg') }}"
-                                    class="size-4" loading="lazy" alt="" />
+                                    class="size-4" width="16" height="16" loading="lazy" alt="Telegram" />
                             </a>
                             <a href="viber://chat?number=380978778667" aria-label="Viber"
                                 class="size-9 rounded-full bg-white/5 hover:bg-tryit-orange/20 flex items-center justify-center transition-colors duration-300">
                                 <img src="{{ Vite::asset('resources/images/icons/footer-viber.svg') }}"
-                                    class="size-4" loading="lazy" alt="" />
+                                    class="size-4" width="16" height="16" loading="lazy" alt="Viber" />
                             </a>
                         </div>
                     </div>
