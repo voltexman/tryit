@@ -1,7 +1,7 @@
 {{-- === BLOG === --}}
 <section class="py-20 bg-stone-50 relative overflow-hidden">
-    <div class="max-w-6xl mx-auto px-5 relative z-10">
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+    <div class="max-w-6xl mx-auto relative z-10">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between px-5 gap-5 mb-10">
             <div>
                 <x-section.badge class="mb-2.5">Корисні статті</x-section.badge>
                 <x-section.title tag="h3" size="lg">

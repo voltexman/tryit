@@ -45,13 +45,13 @@ class PostForm
                             ->required()
                             ->unique(ignoreRecord: true)
                             ->maxLength(255)
-                            ->disabled(fn(Get $get): bool => (bool) ($get('slug_locked') ?? true))
-                            ->readOnly(fn(Get $get): bool => (bool) ($get('slug_locked') ?? true))
+                            ->disabled(fn (Get $get): bool => (bool) ($get('slug_locked') ?? true))
+                            ->readOnly(fn (Get $get): bool => (bool) ($get('slug_locked') ?? true))
                             ->dehydrated()
                             ->suffixAction(
                                 Action::make('toggleSlugLock')
-                                    ->icon(fn(Get $get): string => ($get('slug_locked') ?? true) ? 'heroicon-m-lock-closed' : 'heroicon-m-lock-open')
-                                    ->tooltip(fn(Get $get): string => ($get('slug_locked') ?? true) ? 'Розблокувати' : 'Заблокувати')
+                                    ->icon(fn (Get $get): string => ($get('slug_locked') ?? true) ? 'heroicon-m-lock-closed' : 'heroicon-m-lock-open')
+                                    ->tooltip(fn (Get $get): string => ($get('slug_locked') ?? true) ? 'Розблокувати' : 'Заблокувати')
                                     ->action(function (Get $get, Set $set): void {
                                         $currentState = (bool) ($get('slug_locked') ?? true);
                                         $set('slug_locked', ! $currentState);
@@ -70,7 +70,7 @@ class PostForm
                                     ->label('Назва')
                                     ->required()
                                     ->live(onBlur: true)
-                                    ->afterStateUpdated(fn($state, $set) => $set('slug', Str::slug((string) $state))),
+                                    ->afterStateUpdated(fn ($state, $set) => $set('slug', Str::slug((string) $state))),
                                 TextInput::make('slug')
                                     ->label('Slug')
                                     ->required()
@@ -124,8 +124,8 @@ class PostForm
                             ->seconds(false)
                             ->native(false)
                             ->default(now())
-                            ->visible(fn($get): bool => (bool) $get('is_published'))
-                            ->required(fn($get): bool => (bool) $get('is_published')),
+                            ->visible(fn ($get): bool => (bool) $get('is_published'))
+                            ->required(fn ($get): bool => (bool) $get('is_published')),
                     ])
                     ->columns(2),
             ]);

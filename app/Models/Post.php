@@ -48,6 +48,7 @@ class Post extends Model implements HasMedia
     public function getReadingTimeAttribute(): int
     {
         $content = is_array($this->body) ? json_encode($this->body, JSON_UNESCAPED_UNICODE) : (string) $this->body;
+
         return max(1, (int) ceil(str_word_count(strip_tags($content)) / 200));
     }
 
