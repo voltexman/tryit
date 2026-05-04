@@ -49,11 +49,14 @@
     {{-- Optimized Font Loading --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'">
 
     {{-- Preload LCP Image --}}
-    @if(request()->routeIs('main'))
-        <link rel="preload" as="image" href="{{ Vite::asset('resources/images/header.webp') }}" fetchpriority="high">
+    @if (request()->routeIs('main'))
+        <link rel="preload" as="image" href="{{ Vite::asset('resources/images/header.webp') }}"
+            fetchpriority="high">
     @endif
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -64,117 +67,118 @@
 
 <body x-data="{ loading: true }" class="font-sans antialiased">
     {{-- Main loader for better CLS if needed --}}
-    <div x-show="loading" x-init="window.onload = () => loading = false" class="fixed inset-0 z-100 flex items-center justify-center bg-white transition-opacity duration-500" :class="{ 'opacity-0 pointer-events-none': !loading }">
-         <div class="size-12 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+    <div x-show="loading" x-init="window.onload = () => loading = false"
+        class="fixed inset-0 z-100 flex items-center justify-center bg-white transition-opacity duration-500"
+        :class="{ 'opacity-0 pointer-events-none': !loading }">
+        <div class="size-12 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
     </div>
-        <nav class="absolute bg-transparent h-20 w-full top-0 z-50 px-5 xl:px-0 transition-all duration-300">
-            <div class="flex justify-between h-full max-w-6xl mx-auto items-center">
-                <div class="relative w-auto mt-5">
-                    <a href="{{ route('main') }}" aria-label="Перейти на головну сторінку натиснувши на логотип">
-                        <img src="{{ Vite::asset('resources/images/logo.png') }}"
-                            class="relative top-0 left-0 h-10 w-auto z-50" width="120" height="40"
-                            fetchpriority="high"
-                            alt="Логотип компанії" />
-                    </a>
-                </div>
-
-                <div class="lg:hidden">
-                    <x-sidebar>
-                        <x-slot:trigger>
-                            <button type="button" aria-label="Відкрити головне меню" x-on:click="open = true">
-                                <x-lucide-menu class="size-6 stroke-white" />
-                            </button>
-                        </x-slot>
-                        <x-slot:title>Головне меню</x-slot>
-
-                        <x-slot:body>
-                            <div class="grow flex flex-col items-center justify-center w-full">
-                                <x-navigation class="lg:hidden">
-                                    <x-navigation.item :link="route('main')" icon="home" :active="request()->routeIs('main')">
-                                        Головна
-                                    </x-navigation.item>
-                                    <x-navigation.item :link="route('services')" icon="hand-platter" :active="request()->routeIs('services')">
-                                        Послуги
-                                    </x-navigation.item>
-                                    <x-navigation.item :link="route('blog')" icon="newspaper" :active="request()->routeIs('blog*')">
-                                        Блог
-                                    </x-navigation.item>
-                                    <x-navigation.item :link="route('feedback')" icon="contact" :active="request()->routeIs('feedback')">
-                                        Контакти
-                                    </x-navigation.item>
-                                </x-navigation>
-                            </div>
-
-                            <div class="flex flex-col items-center gap-5 w-full pt-10 mt-auto">
-                                {{-- Social Icons --}}
-                                <div class="flex items-center justify-center gap-5">
-                                    <a href="https://www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr"
-                                        target="_blank" aria-label="Instagram"
-                                        class="size-12 rounded-full bg-slate-50 hover:bg-tryit-orange/10 flex items-center justify-center transition-all duration-300 group shadow-xs">
-                                        <img src="{{ Vite::asset('resources/images/icons/instagram.svg') }}"
-                                            class="size-6 group-hover:scale-110 transition-transform" loading="lazy"
-                                            alt="" />
-                                    </a>
-                                    <a href="#" aria-label="Telegram"
-                                        class="size-12 rounded-full bg-slate-50 hover:bg-tryit-orange/10 flex items-center justify-center transition-all duration-300 group shadow-xs">
-                                        <img src="{{ Vite::asset('resources/images/icons/telegram.svg') }}"
-                                            class="size-6 group-hover:scale-110 transition-transform" loading="lazy"
-                                            alt="" />
-                                    </a>
-                                    <a href="viber://chat?number=380978778667" aria-label="Viber"
-                                        class="size-12 rounded-full bg-slate-50 hover:bg-tryit-orange/10 flex items-center justify-center transition-all duration-300 group shadow-xs">
-                                        <img src="{{ Vite::asset('resources/images/icons/viber.svg') }}"
-                                            class="size-6 group-hover:scale-110 transition-transform" loading="lazy"
-                                            alt="" />
-                                    </a>
-                                </div>
-
-                                {{-- Phone Number --}}
-                                <a href="tel:+380978778667"
-                                    class="text-xl font-display font-bold text-slate-900 flex items-center gap-2 hover:text-tryit-orange transition-colors">
-                                    <x-lucide-phone class="size-5 text-tryit-orange animate-pulse" />
-                                    <span>+380 (97) 877-866-7</span>
-                                </a>
-
-                                {{-- Legal Links --}}
-                                <div class="flex gap-5 items-center justify-center w-full">
-                                    <a href="{{ route('legal.privacy-policy') }}"
-                                        class="text-slate-400 hover:text-tryit-orange text-xs uppercase tracking-wideк transition-colors">
-                                        Політика
-                                    </a>
-                                    <span class="size-1 rounded-full bg-slate-200"></span>
-                                    <a href="{{ route('legal.terms-of-service') }}"
-                                        class="text-slate-400 hover:text-tryit-orange text-xs uppercase tracking-wider transition-colors">
-                                        Умови
-                                    </a>
-                                </div>
-                            </div>
-                        </x-slot>
-                    </x-sidebar>
-                </div>
-
-                <x-navigation class="hidden lg:flex mx-auto justify-center items-center">
-                    <x-navigation.item :link="route('main')" icon="home" :active="request()->routeIs('main')">
-                        Головна
-                    </x-navigation.item>
-                    <x-navigation.item :link="route('services')" icon="hand-platter" :active="request()->routeIs('services')">
-                        Послуги
-                    </x-navigation.item>
-                    <x-navigation.item :link="route('blog')" icon="newspaper" :active="request()->routeIs('blog*')">
-                        Блог
-                    </x-navigation.item>
-                    <x-navigation.item :link="route('feedback')" icon="contact" :active="request()->routeIs('feedback')">
-                        Контакти
-                    </x-navigation.item>
-                </x-navigation>
-
-                <div class="hidden lg:flex text-white w-fit text-xl font-display font-semibold items-center gap-2.5">
-                    <x-lucide-phone class="size-6" />
-                    <span class="text-nowrap">+380 (97) 877-866-7</span>
-                </div>
+    <nav class="absolute bg-transparent h-20 w-full top-0 z-50 px-5 xl:px-0 transition-all duration-300">
+        <div class="flex justify-between h-full max-w-6xl mx-auto items-center">
+            <div class="relative w-auto mt-5">
+                <a href="{{ route('main') }}" aria-label="Перейти на головну сторінку натиснувши на логотип">
+                    <img src="{{ Vite::asset('resources/images/logo.png') }}"
+                        class="relative top-0 left-0 h-10 w-auto z-50" width="120" height="40"
+                        fetchpriority="high" alt="Логотип компанії" />
+                </a>
             </div>
-        </nav>
-        @yield('header')
+
+            <div class="lg:hidden">
+                <x-sidebar>
+                    <x-slot:trigger>
+                        <button type="button" aria-label="Відкрити головне меню" x-on:click="open = true">
+                            <x-lucide-menu class="size-6 stroke-white" />
+                        </button>
+                    </x-slot>
+                    <x-slot:title>Головне меню</x-slot>
+
+                    <x-slot:body>
+                        <div class="grow flex flex-col items-center justify-center w-full">
+                            <x-navigation class="lg:hidden">
+                                <x-navigation.item :link="route('main')" icon="home" :active="request()->routeIs('main')">
+                                    Головна
+                                </x-navigation.item>
+                                <x-navigation.item :link="route('services')" icon="hand-platter" :active="request()->routeIs('services')">
+                                    Послуги
+                                </x-navigation.item>
+                                <x-navigation.item :link="route('blog')" icon="newspaper" :active="request()->routeIs('blog*')">
+                                    Блог
+                                </x-navigation.item>
+                                <x-navigation.item :link="route('feedback')" icon="contact" :active="request()->routeIs('feedback')">
+                                    Контакти
+                                </x-navigation.item>
+                            </x-navigation>
+                        </div>
+
+                        <div class="flex flex-col items-center gap-5 w-full pt-10 mt-auto">
+                            {{-- Social Icons --}}
+                            <div class="flex items-center justify-center gap-5">
+                                <a href="https://www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr"
+                                    target="_blank" aria-label="Instagram"
+                                    class="size-12 rounded-full bg-slate-50 hover:bg-tryit-orange/10 flex items-center justify-center transition-all duration-300 group shadow-xs">
+                                    <img src="{{ Vite::asset('resources/images/icons/instagram.svg') }}"
+                                        class="size-6 group-hover:scale-110 transition-transform" loading="lazy"
+                                        alt="" />
+                                </a>
+                                <a href="#" aria-label="Telegram"
+                                    class="size-12 rounded-full bg-slate-50 hover:bg-tryit-orange/10 flex items-center justify-center transition-all duration-300 group shadow-xs">
+                                    <img src="{{ Vite::asset('resources/images/icons/telegram.svg') }}"
+                                        class="size-6 group-hover:scale-110 transition-transform" loading="lazy"
+                                        alt="" />
+                                </a>
+                                <a href="viber://chat?number=380978778667" aria-label="Viber"
+                                    class="size-12 rounded-full bg-slate-50 hover:bg-tryit-orange/10 flex items-center justify-center transition-all duration-300 group shadow-xs">
+                                    <img src="{{ Vite::asset('resources/images/icons/viber.svg') }}"
+                                        class="size-6 group-hover:scale-110 transition-transform" loading="lazy"
+                                        alt="" />
+                                </a>
+                            </div>
+
+                            {{-- Phone Number --}}
+                            <a href="tel:+380978778667"
+                                class="text-xl font-display font-bold text-slate-900 flex items-center gap-2 hover:text-tryit-orange transition-colors">
+                                <x-lucide-phone class="size-5 text-tryit-orange animate-pulse" />
+                                <span>+380 (97) 877-866-7</span>
+                            </a>
+
+                            {{-- Legal Links --}}
+                            <div class="flex gap-5 items-center justify-center w-full">
+                                <a href="{{ route('legal.privacy-policy') }}"
+                                    class="text-slate-400 hover:text-tryit-orange text-xs uppercase tracking-wideк transition-colors">
+                                    Політика
+                                </a>
+                                <span class="size-1 rounded-full bg-slate-200"></span>
+                                <a href="{{ route('legal.terms-of-service') }}"
+                                    class="text-slate-400 hover:text-tryit-orange text-xs uppercase tracking-wider transition-colors">
+                                    Умови
+                                </a>
+                            </div>
+                        </div>
+                    </x-slot>
+                </x-sidebar>
+            </div>
+
+            <x-navigation class="hidden lg:flex mx-auto justify-center items-center">
+                <x-navigation.item :link="route('main')" icon="home" :active="request()->routeIs('main')">
+                    Головна
+                </x-navigation.item>
+                <x-navigation.item :link="route('services')" icon="hand-platter" :active="request()->routeIs('services')">
+                    Послуги
+                </x-navigation.item>
+                <x-navigation.item :link="route('blog')" icon="newspaper" :active="request()->routeIs('blog*')">
+                    Блог
+                </x-navigation.item>
+                <x-navigation.item :link="route('feedback')" icon="contact" :active="request()->routeIs('feedback')">
+                    Контакти
+                </x-navigation.item>
+            </x-navigation>
+
+            <div class="hidden lg:flex text-white w-fit text-xl font-display font-semibold items-center gap-2.5">
+                <x-lucide-phone class="size-6" />
+                <span class="text-nowrap">+380 (97) 877-866-7</span>
+            </div>
+        </div>
+    </nav>
+    @yield('header')
     </header>
 
     <main>
@@ -184,7 +188,7 @@
     <footer class="relative overflow-hidden bg-slate-950">
         <!-- Фонове зображення з затемненням -->
         <div class="absolute inset-0 z-0"
-            style="background-image: url('{{ Vite::asset('resources/images/footer-background.jpg') }}'); background-size: cover; background-position: center;">
+            style="background-image: url('{{ Vite::asset('resources/images/footer-background.webp') }}'); background-size: cover; background-position: center;">
         </div>
         <!-- Затемнення слейт кольором -->
         <div class="absolute inset-0 bg-neutral-950/85 z-0"></div>
@@ -288,7 +292,8 @@
                         </h4>
                         <ul class="space-y-3">
                             <li>
-                                <a href="tel:+380978778667" class="flex items-center gap-2.5 group" aria-label="Подзвонити нам">
+                                <a href="tel:+380978778667" class="flex items-center gap-2.5 group"
+                                    aria-label="Подзвонити нам">
                                     <div
                                         class="size-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-tryit-orange/20 transition-colors">
                                         <x-lucide-phone class="size-4 text-tryit-cream/80" stroke-width="1.5" />
@@ -299,7 +304,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:info@tryit.com.ua" class="flex items-center gap-2.5 group" aria-label="Написати нам на email">
+                                <a href="mailto:info@tryit.com.ua" class="flex items-center gap-2.5 group"
+                                    aria-label="Написати нам на email">
                                     <div
                                         class="size-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-tryit-orange/20 transition-colors">
                                         <x-lucide-mail class="size-4 text-tryit-cream/80" stroke-width="1.5" />
