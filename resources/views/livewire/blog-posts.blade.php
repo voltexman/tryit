@@ -61,7 +61,9 @@
         @if ($posts->count() > 1)
             <div class="flex justify-center gap-2 mt-2">
                 <template x-for="i in count" :key="i">
-                    <button @click="scrollTo(i - 1)" class="h-1.5 rounded-full transition-all duration-300"
+                    <button @click="scrollTo(i - 1)" 
+                        class="h-1.5 rounded-full transition-all duration-300"
+                        :aria-label="'Перейти до слайду ' + i"
                         :class="active === i - 1 ? 'bg-emerald-500 w-8' : 'bg-gray-200 w-4'"></button>
                 </template>
             </div>

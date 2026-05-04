@@ -73,7 +73,7 @@
                             {{ $title }}
                         </span>
                     @endisset
-                    <button x-on:click="open = false" type="button" class="ms-auto">
+                    <button x-on:click="open = false" type="button" class="ms-auto" aria-label="Закрити меню">
                         <x-lucide-x class="hi-solid hi-x -mx-1 inline-block size-4" />
                     </button>
                 </div>

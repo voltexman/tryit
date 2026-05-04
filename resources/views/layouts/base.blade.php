@@ -63,7 +63,10 @@
 </head>
 
 <body x-data="{ loading: true }" class="font-sans antialiased">
-    <header class="relative overflow-hidden">
+    {{-- Main loader for better CLS if needed --}}
+    <div x-show="loading" x-init="window.onload = () => loading = false" class="fixed inset-0 z-100 flex items-center justify-center bg-white transition-opacity duration-500" :class="{ 'opacity-0 pointer-events-none': !loading }">
+         <div class="size-12 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+    </div>
         <nav class="absolute bg-transparent h-20 w-full top-0 z-50 px-5 xl:px-0 transition-all duration-300">
             <div class="flex justify-between h-full max-w-6xl mx-auto items-center">
                 <div class="relative w-auto mt-5">
@@ -173,7 +176,9 @@
         @yield('header')
     </header>
 
-    @yield('content')
+    <main>
+        @yield('content')
+    </main>
 
     <footer class="relative overflow-hidden bg-slate-950">
         <!-- Фонове зображення з затемненням -->

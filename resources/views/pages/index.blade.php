@@ -637,6 +637,7 @@ name('main');
                 <!-- Кнопка Play (Відео) -->
                 <div x-data="{ open: false }" class="relative">
                     <button @click="open = true"
+                        aria-label="Відтворити відео"
                         class="group relative size-24 md:size-32 bg-emerald-500/20 rounded-full flex items-center justify-center backdrop-blur-md border border-white/30 transition-transform hover:scale-110">
                         <!-- Анімовані хвилі -->
                         <span class="absolute inset-0 rounded-full bg-emerald-500 animate-ping opacity-20"></span>
@@ -652,6 +653,7 @@ name('main');
                         <div class="fixed inset-0 z-100 flex items-center justify-center bg-slate-900/95 p-4"
                             @click.self="open = false">
                             <button @click="open = false"
+                                aria-label="Закрити відео"
                                 class="absolute top-10 right-10 text-white/50 hover:text-white text-4xl">&times;</button>
                             <div class="aspect-video w-full max-w-4xl bg-black shadow-2xl">
                                 <!-- Сюди вставити iframe відео -->
@@ -760,6 +762,7 @@ name('main');
 
         .animate-float {
             animation: float 6s ease-in-out infinite;
+            will-change: transform;
         }
 
         .glass-card {
