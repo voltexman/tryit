@@ -2,9 +2,9 @@
 
 @php
     $colors = [
-        'emerald' => 'bg-emerald-100 text-emerald-700 border-emerald-200',
-        'slate' => 'bg-slate-500/10 text-slate-300 border-slate-500/20',
-        'amber' => 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+        'emerald' => 'bg-emerald-100 text-emerald-800 border-emerald-200',
+        'slate' => 'bg-slate-500/10 text-slate-200 border-slate-500/20',
+        'amber' => 'bg-amber-500/10 text-amber-700 border-amber-500/20',
     ];
 
     $colorClasses = $colors[$color] ?? $colors['emerald'];

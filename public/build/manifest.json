@@ -6,7 +6,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-ok80VlHO.css",
+    "file": "assets/app-P330GKc2.css",
     "name": "app",
     "names": [
       "app.css"
@@ -407,7 +407,7 @@
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-3-before.jpg"
   },
   "resources/images/pisliabudivelne-prybyrannia/comparison-4-after.jpg": {
-    "file": "assets/service-3-BNiP3oMY.jpg",
+    "file": "assets/comparison-4-after-BNiP3oMY.jpg",
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-4-after.jpg"
   },
   "resources/images/pisliabudivelne-prybyrannia/comparison-4-before.jpg": {
@@ -459,7 +459,7 @@
     "src": "resources/images/service-3-old.jpg"
   },
   "resources/images/service-3.jpg": {
-    "file": "assets/service-3-BNiP3oMY.jpg",
+    "file": "assets/comparison-4-after-BNiP3oMY.jpg",
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-4-after.jpg"
   },
   "resources/images/service-4-old.jpg": {

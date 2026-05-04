@@ -43,11 +43,11 @@
                                 {{ $post->title }}
                             </h3>
                             <div class="mt-auto flex items-center justify-between pt-4 border-t border-gray-50">
-                                <span class="text-[11px] font-medium text-gray-400 uppercase tracking-wider">
+                                <span class="text-[11px] font-medium text-gray-600 uppercase tracking-wider">
                                     {{ $post->published_at->translatedFormat('d M Y') }}
                                 </span>
                                 <x-lucide-arrow-right
-                                    class="size-4 text-emerald-500 transform group-hover:translate-x-1 transition-transform" />
+                                    class="size-4 text-emerald-600 transform group-hover:translate-x-1 transition-transform" />
                             </div>
                         </div>
                     </a>
@@ -63,7 +63,7 @@
                 <template x-for="i in count" :key="i">
                     <button @click="scrollTo(i - 1)" class="h-1.5 rounded-full transition-all duration-300"
                         :aria-label="'Перейти до слайду ' + i"
-                        :class="active === i - 1 ? 'bg-emerald-500 w-8' : 'bg-gray-200 w-4'"></button>
+                        :class="active === i - 1 ? 'bg-emerald-600 w-8' : 'bg-gray-300 w-4'"></button>
                 </template>
             </div>
         @endif
@@ -87,7 +87,7 @@
 
                         <div class="absolute top-6 left-6">
                             <span
-                                class="bg-white/90 backdrop-blur-md text-emerald-600 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-sm">
+                                class="bg-white/95 backdrop-blur-md text-emerald-700 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-sm">
                                 Останні новини
                             </span>
                         </div>
@@ -95,30 +95,30 @@
 
                     <div class="flex items-center gap-3 mb-4">
                         <span
-                            class="text-xs font-bold text-emerald-600 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-md">
+                            class="text-xs font-bold text-emerald-700 uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-md">
                             #Поради
                         </span>
-                        <span class="text-gray-400 text-sm font-medium">
+                        <span class="text-gray-600 text-sm font-medium">
                             {{ $featured->published_at->translatedFormat('d F Y') }}
                         </span>
                     </div>
 
                     <h3
-                        class="text-3xl xl:text-4xl font-black text-gray-900 mb-5 group-hover:text-emerald-600 transition-colors font-display leading-tight">
+                        class="text-3xl xl:text-4xl font-black text-gray-900 mb-5 group-hover:text-emerald-700 transition-colors font-display leading-tight">
                         {{ $featured->title }}
                     </h3>
 
-                    <p class="text-gray-500 text-lg mb-8 line-clamp-3 leading-relaxed">
+                    <p class="text-gray-700 text-lg mb-8 line-clamp-3 leading-relaxed">
                         {{ Str::limit(strip_tags($featured->excerpt ?? strip_tags($featured->body)), 180) }}
                     </p>
 
                     <div class="mt-auto flex items-center gap-6 pt-6 border-t border-gray-100">
-                        <div class="flex items-center gap-2 text-gray-400">
-                            <x-lucide-timer class="size-5 text-emerald-500" />
+                        <div class="flex items-center gap-2 text-gray-600">
+                            <x-lucide-timer class="size-5 text-emerald-600" />
                             <span class="text-sm font-semibold tracking-wide">{{ $featured->reading_time }} хв
                                 читання</span>
                         </div>
-                        <div class="flex items-center gap-2 text-emerald-600 font-bold group/btn transition-colors">
+                        <div class="flex items-center gap-2 text-emerald-700 font-bold group/btn transition-colors">
                             <span>Читати далі</span>
                             <x-lucide-move-right class="size-5 transition-transform group-hover/btn:translate-x-2" />
                         </div>
@@ -140,21 +140,21 @@
                         </div>
                         <div class="flex flex-col justify-center py-1">
                             <div class="flex items-center gap-3 mb-2">
-                                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                                <span class="text-[10px] font-bold text-gray-600 uppercase tracking-widest">
                                     {{ $post->published_at->translatedFormat('d M Y') }}
                                 </span>
-                                <span class="size-1 rounded-full bg-emerald-500"></span>
-                                <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest">
+                                <span class="size-1 rounded-full bg-emerald-600"></span>
+                                <span class="text-[10px] font-bold text-emerald-700 uppercase tracking-widest">
                                     {{ $post->reading_time }} хв
                                 </span>
                             </div>
 
                             <h4
-                                class="text-xl xl:text-2xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors leading-tight line-clamp-2 font-display mb-3">
+                                class="text-xl xl:text-2xl font-bold text-gray-900 group-hover:text-emerald-700 transition-colors leading-tight line-clamp-2 font-display mb-3">
                                 {{ $post->title }}
                             </h4>
 
-                            <p class="text-sm text-gray-500 line-clamp-2 leading-relaxed">
+                            <p class="text-sm text-gray-700 line-clamp-2 leading-relaxed">
                                 {{ Str::limit(strip_tags($post->excerpt ?? strip_tags($post->body)), 120) }}
                             </p>
                         </div>

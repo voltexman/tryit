@@ -17,14 +17,14 @@ name('main');
 
                 <div class="w-16 h-0.5 bg-tryit-orange/80 rounded-full"></div>
 
-                <p class="text-white/80 text-lg md:text-xl xl:text-2xl font-light max-w-xl text-balance">
+                <p class="text-white/90 text-lg md:text-xl xl:text-2xl font-light max-w-xl text-balance">
                     Шукаєте надійну клінінгову компанію?<br class="hidden md:block">
                     Ми подбаємо про чистоту вашого офісу, виробництва чи будинку на найвищому рівні
                 </p>
 
                 <a href="#services" class="relative inline-block group mt-4">
                     <button
-                        class="bg-tryit-orange/70 backdrop-blur-sm font-display relative py-4 px-10 uppercase text-white font-bold text-base tracking-wide rounded-full hover:bg-tryit-orange/50 transition-all duration-300 cursor-pointer"
+                        class="bg-tryit-orange font-display relative py-4 px-10 uppercase text-white font-bold text-base tracking-wide rounded-full hover:bg-tryit-orange/80 transition-all duration-300 cursor-pointer shadow-lg"
                         aria-label="Перейти до розділу з нашими послугами">
                         Наші послуги
                     </button>
@@ -49,16 +49,16 @@ name('main');
                 <x-section.badge class="mb-5">Ваш дім у надійних руках</x-section.badge>
                 <h2
                     class="font-[Lora] italic text-4xl/9 md:text-5xl/12 font-black tracking-tight text-slate-800 text-balance">
-                    Бо ми знаємо, як важливо <span class="text-emerald-600">бути в гармонії</span>
-                    з чистотою у вашому <span class="text-emerald-600">просторі</span>
+                    Бо ми знаємо, як важливо <span class="text-emerald-700">бути в гармонії</span>
+                    з чистотою у вашому <span class="text-emerald-700">просторі</span>
                 </h2>
-                <p class="max-w-2xl mx-auto mt-8 text-lg md:text-xl text-slate-600 font-light text-balance leading-relaxed">
+                <p class="max-w-2xl mx-auto mt-8 text-lg md:text-xl text-slate-700 font-light text-balance leading-relaxed">
                     Ми об'єднуємо професіоналів та власників осель, щоб кожен момент вашого відпочинку проходив у
                     бездоганній чистоті.
                 </p>
 
                 <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
-                    <x-button size="lg"
+                    <x-button size="lg" color="emerald"
                         @click="Livewire.dispatch('setService', { service: '' }); window.openOffcanvas('orderOffcanvas')">
                         Замовити прибирання
                     </x-button>
@@ -98,7 +98,7 @@ name('main');
                 <div class="absolute bottom-[10%] left-[8%] animate-float [animation-delay:2s] hidden lg:block">
                     <div class="relative">
                         <div
-                            class="w-14 h-14 rounded-full border-4 border-white shadow-lg bg-slate-100 flex items-center justify-center text-slate-400">
+                            class="w-14 h-14 rounded-full border-4 border-white shadow-lg bg-slate-100 flex items-center justify-center text-slate-600">
                             <x-lucide-zap class="size-6" />
                         </div>
                         <div
@@ -147,10 +147,10 @@ name('main');
                     <div
                         class="flex items-center gap-2 bg-white/40 backdrop-blur-[2px] p-2 rounded-full border border-white/50">
                         <div
-                            class="size-12 rounded-full border-2 border-white shadow-md bg-white flex items-center justify-center text-slate-400">
+                            class="size-12 rounded-full border-2 border-white shadow-md bg-white flex items-center justify-center text-slate-600">
                             <x-lucide-layers class="size-6" />
                         </div>
-                        <span class="text-[11px] text-slate-500 font-medium italic pr-2">"Всі види робіт!"</span>
+                        <span class="text-[11px] text-slate-700 font-medium italic pr-2">"Всі види робіт!"</span>
                     </div>
                 </div>
             </div>
@@ -317,9 +317,9 @@ name('main');
                                     class="absolute inset-0 flex flex-col items-center justify-between py-20 px-6 bg-linearfaaA-to-b from-[#1a1a1a] to-black">
 
                                     <div class="text-center space-y-3 mt-4 animate-pulse">
-                                        <p class="text-[10px] text-white/40 uppercase tracking-[0.3em]">Йде виклик...</p>
+                                        <p class="text-[10px] text-white uppercase tracking-[0.3em]">Йде виклик...</p>
                                         <h3 class="text-5xl font-black font-[Lora] text-white tracking-tighter">TryIt</h3>
-                                        <p class="text-xs text-white/30 uppercase tracking-wide">Клінінгова компанія</p>
+                                        <p class="text-xs text-white/90 uppercase tracking-wide">Клінінгова компанія</p>
                                     </div>
 
                                     {{-- Анімоване коло виклику --}}
@@ -344,7 +344,7 @@ name('main');
                                                     <x-lucide-hash class="size-5" />
                                                 </div>
                                                 <span
-                                                    class="text-[9px] text-white/40 uppercase tracking-widest font-medium">
+                                                    class="text-[9px] text-white uppercase tracking-widest font-medium">
                                                     Клавіші
                                                 </span>
                                             </div>
@@ -356,7 +356,7 @@ name('main');
                                                     <x-lucide-phone class="size-8 fill-white stroke-white rotate-135" />
                                                 </div>
                                                 <span
-                                                    class="text-[10px] text-white/70 mt-3 uppercase tracking-wide font-bold">
+                                                    class="text-[10px] text-white mt-3 uppercase tracking-wide font-bold">
                                                     Скасувати</span>
                                             </div>
 
@@ -367,7 +367,7 @@ name('main');
                                                     <x-lucide-volume-2 class="size-5" />
                                                 </div>
                                                 <span
-                                                    class="text-[9px] text-white/40 uppercase tracking-widest font-medium">
+                                                    class="text-[9px] text-white uppercase tracking-widest font-medium">
                                                     Динамік</span>
                                             </div>
                                         </div>
@@ -388,7 +388,7 @@ name('main');
                                 Чистота в один клік!
                             </h2>
 
-                            <p class="text-white/80 text-base md:text-lg leading-relaxed font-light lg:text-balance">
+                            <p class="text-white text-base md:text-lg leading-relaxed font-light lg:text-balance">
                                 Поки ви керуєте справами, ми створюємо ідеальну чистоту. TryIt — професійний клінінг
                                 для тих, хто цінує свій час та бездоганний результат.
                             </p>
@@ -397,8 +397,8 @@ name('main');
                                 +380 (97) 877-866-7
                             </div>
 
-                            <div class="text-white/70 text-sm font-medium mb-2">
-                                Передзвонити вам? <br><span class="text-xs text-white/50">Просто вкажіть свій номер.
+                            <div class="text-white text-sm font-medium mb-2">
+                                Передзвонити вам? <br><span class="text-xs text-white/90">Просто вкажіть свій номер.</span>
                             </div>
 
                             {{-- Кнопки маркетів --}}
@@ -408,17 +408,17 @@ name('main');
                                     class="flex items-center gap-3 bg-black/20 border border-white/15 backdrop-blur-md rounded-2xl px-5 py-2.5 transition-all focus-within:bg-black/40 focus-within:border-white/40 w-full max-w-70">
                                     {{-- Іконка телефону --}}
                                     <div class="size-8 flex items-center justify-center shrink-0">
-                                        <x-lucide-phone class="size-6 stroke-white opacity-70" />
+                                        <x-lucide-phone class="size-6 stroke-white" />
                                     </div>
 
                                     {{-- Поле введення --}}
                                     <div class="text-left w-full">
-                                        <label for="phone" class="text-xs uppercase leading-none opacity-60 block">
+                                        <label for="phone" class="text-xs uppercase leading-none block font-bold">
                                             Ваш номер телефону
                                         </label>
                                         <input type="tel" id="phone" x-mask="+380 (99) 999-99-99"
                                             placeholder="+380 (63)  123-45-67"
-                                            class="bg-transparent border-none p-0 focus:ring-0 text-white text-base font-bold focus:outline-none leading-none mt-1 w-full placeholder:text-white/20 placeholder:font-normal">
+                                            class="bg-transparent border-none p-0 focus:ring-0 text-white text-base font-bold focus:outline-none leading-none mt-1 w-full placeholder:text-white/60 placeholder:font-normal">
                                     </div>
                                 </div>
                             </div>
@@ -530,15 +530,15 @@ name('main');
                         </div>
 
                         <h3 class="font-display text-2xl font-bold text-slate-900 mb-4">Домовимось за хвилину</h3>
-                        <p class="text-slate-500 leading-relaxed mb-6 text-sm">
+                        <p class="text-slate-700 leading-relaxed mb-6 text-sm">
                             Досить витрачати вечори на <span class="text-slate-950 font-medium">планування</span>.
                             Ми відійшли від довгих форм. Просто вкажіть
                             <span class="text-slate-950 font-medium">адресу</span> та час
                             — решту ми беремо <span class="text-slate-950 font-medium">на себе</span>.
                         </p>
 
-                        <div class="flex items-center gap-2 text-emerald-600 font-bold text-xs uppercase tracking-wider">
-                            <span class="w-8 h-px bg-emerald-600"></span>
+                        <div class="flex items-center gap-2 text-emerald-700 font-bold text-xs uppercase tracking-wider">
+                            <span class="w-8 h-px bg-emerald-700"></span>
                             Займає ~60 секунд
                         </div>
                     </div>
@@ -557,7 +557,7 @@ name('main');
                         </div>
 
                         <h3 class="font-display text-2xl font-bold text-white mb-2.5">Усе необхідне - з нас</h3>
-                        <p class="text-slate-400 leading-relaxed mb-5 text-sm">
+                        <p class="text-slate-300 leading-relaxed mb-5 text-sm">
                             Ми приїжджаємо з повним арсеналом: від потужного промислового
                             <span class="text-slate-100 font-medium">обладнання</span> до сертифікованої
                             <span class="text-slate-100 font-medium">еко-хімії</span>. Вам не потрібно забезпечувати
@@ -588,14 +588,14 @@ name('main');
                         </div>
 
                         <h3 class="font-display text-2xl font-bold text-slate-800 mb-2.5">Насолоджуйтесь</h3>
-                        <p class="text-slate-500 leading-relaxed mb-5 text-sm">
+                        <p class="text-slate-700 leading-relaxed mb-5 text-sm">
                             Перевірте <span class="text-slate-950 font-medium">якість</span> роботи та насолоджуйтеся
                             свіжістю. Оплата списується лише після вашого
                             <span class="text-slate-950 font-medium">схвалення</span>. Ви отримуєте не просто прибирання, а
                             <span class="text-slate-950 font-medium">ідеальний простір</span> для життя.
                         </p>
 
-                        <div class="text-xs text-slate-400 font-medium">300+ чистих об'єктів</div>
+                        <div class="text-xs text-slate-600 font-medium">300+ чистих об'єктів</div>
                     </div>
                 </div>
 
@@ -692,14 +692,14 @@ name('main');
                 <div>
                     <x-section.badge class="mb-2.5">FAQs</x-section.badge>
                     <x-section.title tag="h2" size="lg">
-                        Питання та <span class="text-emerald-500">відповіді</span>
+                        Питання та <span class="text-emerald-600">відповіді</span>
                     </x-section.title>
                     <x-section.description>
                         Все, що варто знати перед замовленням
                     </x-section.description>
                 </div>
                 <a href="{{ route('feedback') }}"
-                    class="inline-flex font-display items-center gap-1.5 mt-5 lg:mt-0 text-xs font-semibold uppercase tracking-wider text-emerald-600 hover:text-emerald-700 transition-colors">
+                    class="inline-flex font-display items-center gap-1.5 mt-5 lg:mt-0 text-xs font-semibold uppercase tracking-wider text-emerald-700 hover:text-emerald-800 transition-colors">
                     Задати запитання <x-lucide-arrow-right class="size-4" stroke-width="2" />
                 </a>
             </div>
@@ -713,16 +713,16 @@ name('main');
                             <div class="flex items-center gap-4">
                                 <div class="size-10 rounded-xl flex items-center justify-center shrink-0 transition-[colors, transform]"
                                     :class="active === {{ $loop->index }} ? 'bg-emerald-600 rotate-45 text-white' :
-                                        'bg-slate-100 text-slate-400'">
+                                        'bg-slate-100 text-slate-700'">
                                     <span class="font-display text-sm font-bold"
                                         :class="active === {{ $loop->index }} ? '-rotate-45' : ''">0{{ $loop->index + 1 }}</span>
                                 </div>
                                 <span class="font-bold text-sm md:text-base transition-colors"
-                                    :class="active === {{ $loop->index }} ? 'text-slate-900' : 'text-slate-700'">
+                                    :class="active === {{ $loop->index }} ? 'text-slate-900' : 'text-slate-800'">
                                     {{ $item['q'] }}
                                 </span>
                             </div>
-                            <div class="transition-transform duration-500 text-slate-300"
+                            <div class="transition-transform duration-500 text-slate-500"
                                 :class="active === {{ $loop->index }} ? 'rotate-180 text-emerald-600' : ''">
                                 <i class="fas fa-chevron-down text-[10px]"></i>
                             </div>
@@ -730,7 +730,7 @@ name('main');
 
                         <div x-show="active === {{ $loop->index }}" x-collapse x-cloak>
                             <div class="px-5 pb-5 ml-0 md:ml-14">
-                                <p class="text-slate-500 text-base leading-relaxed max-w-xl">
+                                <p class="text-slate-700 text-base leading-relaxed max-w-xl">
                                     {{ $item['a'] }}
                                 </p>
                             </div>

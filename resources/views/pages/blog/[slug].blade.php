@@ -22,7 +22,7 @@ name('blog.show');
         <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-black/30"></div>
         <div class="relative flex flex-col justify-end size-full max-w-3xl mx-auto px-5 pb-10 md:pb-15">
             <a href="{{ route('blog') }}"
-                class="inline-flex items-center gap-1.5 text-white/60 text-sm font-medium mb-2.5 hover:text-white transition-colors">
+                class="inline-flex items-center gap-1.5 text-white text-sm font-medium mb-2.5 hover:text-white transition-colors">
                 <x-lucide-arrow-left class="size-4" stroke-width="2" />
                 Назад до блогу
             </a>
@@ -31,17 +31,17 @@ name('blog.show');
                 <div class="flex gap-2 mb-3">
                     @foreach ($post->tags as $tag)
                         <span
-                            class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest">
+                            class="px-3 py-1 rounded-full bg-white/30 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest">
                             {{ $tag->name }}
                         </span>
                     @endforeach
                 </div>
             @endif
 
-            <div class="flex items-center gap-2.5 text-sm text-white/50 mb-5">
+            <div class="flex items-center gap-2.5 text-sm text-white mb-5">
                 <x-lucide-calendar class="size-3 mb-0.5 shrink-0" />
                 <span class="-ms-1.5">{{ $post->published_at->translatedFormat('d F Y') }}</span>
-                <span class="size-1 rounded-full bg-white/30"></span>
+                <span class="size-1 rounded-full bg-white/40"></span>
                 <x-lucide-timer class="size-3 mb-0.5 shrink-0" />
                 <span class="-ms-1.5">{{ $post->reading_time }} хв читання</span>
             </div>
@@ -57,7 +57,7 @@ name('blog.show');
         <div class="max-w-3xl mx-auto px-5">
             @if ($post->excerpt)
                 <p
-                    class="text-lg md:text-xl text-gray-600 leading-relaxed font-light border-l-4 border-tryit-orange pl-5 mb-10">
+                    class="text-lg md:text-xl text-gray-700 leading-relaxed font-light border-l-4 border-tryit-orange pl-5 mb-10">
                     {{ $post->excerpt }}
                 </p>
             @endif
@@ -65,11 +65,11 @@ name('blog.show');
             <div
                 class="prose prose-lg max-w-none
                 prose-headings:font-display prose-headings:font-bold prose-headings:text-gray-900
-                prose-p:text-gray-600 prose-p:leading-relaxed
+                prose-p:text-gray-700 prose-p:leading-relaxed
                 prose-a:text-tryit-green prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
                 prose-strong:text-gray-800
                 prose-img:rounded-2xl prose-img:shadow-lg
-                prose-blockquote:border-tryit-orange prose-blockquote:text-gray-600 prose-blockquote:not-italic">
+                prose-blockquote:border-tryit-orange prose-blockquote:text-gray-700 prose-blockquote:not-italic">
 
                 @if ($post->body)
                     {!! \Filament\Forms\Components\RichEditor\RichContentRenderer::make($post->body)->customBlocks([\App\Filament\Forms\Components\RichEditor\RichContentCustomBlocks\ServiceBlock::class])->toHtml() !!}
@@ -83,16 +83,16 @@ name('blog.show');
                     <x-lucide-arrow-left class="size-4" stroke-width="2" />
                     Всі статті
                 </a>
-                <div class="flex items-center gap-3 text-sm text-gray-400">
+                <div class="flex items-center gap-3 text-sm text-gray-600">
                     <span>Поділитись:</span>
                     <a href="https://t.me/share/url?url={{ urlencode(request()->url()) }}&text={{ urlencode($post->title) }}"
                         target="_blank"
                         class="size-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-tryit-green/10 transition-colors">
-                        <x-lucide-send class="size-4 text-gray-500" stroke-width="1.5" />
+                        <x-lucide-send class="size-4 text-gray-600" stroke-width="1.5" />
                     </a>
                     <a href="viber://forward?text={{ urlencode($post->title . ' ' . request()->url()) }}"
                         class="size-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-tryit-green/10 transition-colors">
-                        <x-lucide-message-circle class="size-4 text-gray-500" stroke-width="1.5" />
+                        <x-lucide-message-circle class="size-4 text-gray-600" stroke-width="1.5" />
                     </a>
                 </div>
             </div>
@@ -125,9 +125,9 @@ name('blog.show');
                                 @endif
                             </div>
                             <div class="flex flex-col flex-1 p-5">
-                                <div class="flex items-center gap-3 text-xs text-gray-400 mb-2">
+                                <div class="flex items-center gap-3 text-xs text-gray-600 mb-2">
                                     <span>{{ $related->published_at->translatedFormat('d M Y') }}</span>
-                                    <span class="size-1 rounded-full bg-gray-300"></span>
+                                    <span class="size-1 rounded-full bg-gray-400"></span>
                                     <span>{{ $related->reading_time }} хв</span>
                                 </div>
                                 <h3

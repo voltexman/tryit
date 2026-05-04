@@ -1,3 +1,3 @@
-<div {{ $attributes->class('text-sm text-slate-500 mt-1') }}>
+<div {{ $attributes->class('text-sm text-slate-600 mt-1') }}>
     {{ $slot }}
 </div>
