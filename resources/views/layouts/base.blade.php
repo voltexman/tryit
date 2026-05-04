@@ -46,10 +46,10 @@
 
     <meta name="google-site-verification" content="fsrylmGFBJ7d7DJ_JlXie1uxWstE-InnV6R0eFJKphE" />
 
-    {{-- Preconnect to Google Fonts --}}
+    {{-- Optimized Font Loading --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
     {{-- Preload LCP Image --}}
     @if(request()->routeIs('main'))
@@ -72,7 +72,8 @@
                 <div class="relative w-auto mt-5">
                     <a href="{{ route('main') }}" aria-label="Перейти на головну сторінку натиснувши на логотип">
                         <img src="{{ Vite::asset('resources/images/logo.png') }}"
-                            class="relative top-0 left-0 h-10 z-50" width="120" height="40"
+                            class="relative top-0 left-0 h-10 w-auto z-50" width="120" height="40"
+                            fetchpriority="high"
                             alt="Логотип компанії" />
                     </a>
                 </div>
@@ -200,7 +201,7 @@
                             <img src="{{ Vite::asset('resources/images/logo.png') }}" class="h-10" width="120"
                                 height="40" alt="Логотип Try It" loading="lazy" />
                         </a>
-                        <p class="text-tryit-cream/60 text-sm leading-relaxed mb-5">
+                        <p class="text-tryit-cream/80 text-sm leading-relaxed mb-5">
                             Професійна клінінгова компанія. Чистота вашого офісу, виробництва та дому &mdash; наша
                             відповідальність.
                         </p>
@@ -230,19 +231,19 @@
                         </h4>
                         <ul class="space-y-2.5">
                             <li><a href="{{ route('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu') }}"
-                                    class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Прибирання
+                                    class="text-tryit-cream/80 text-sm hover:text-tryit-orange transition-colors">Прибирання
                                     офісів</a></li>
                             <li><a href="{{ route('services.heneralne-prybyrannia-tsekhiv-ta-vyrobnytstva') }}"
-                                    class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Прибирання
+                                    class="text-tryit-cream/80 text-sm hover:text-tryit-orange transition-colors">Прибирання
                                     виробництв</a></li>
                             <li><a href="{{ route('services.myttia-fasadu-ta-vikon-na-vysoti') }}"
-                                    class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Миття
+                                    class="text-tryit-cream/80 text-sm hover:text-tryit-orange transition-colors">Миття
                                     фасадів та вікон</a></li>
                             <li><a href="{{ route('services.khimchystka') }}"
-                                    class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Хімчистка</a>
+                                    class="text-tryit-cream/80 text-sm hover:text-tryit-orange transition-colors">Хімчистка</a>
                             </li>
                             <li><a href="{{ route('services.pisliabudivelne-prybyrannia') }}"
-                                    class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Післябудівельне
+                                    class="text-tryit-cream/80 text-sm hover:text-tryit-orange transition-colors">Післябудівельне
                                     прибирання</a></li>
                             <li><a href="{{ route('services') }}"
                                     class="text-tryit-orange text-sm font-semibold hover:text-tryit-orange/80 transition-colors">Всі
@@ -256,27 +257,27 @@
                         </h4>
                         <ul class="space-y-2.5">
                             <li><a href="{{ route('blog') }}"
-                                    class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Блог</a>
+                                    class="text-tryit-cream/80 text-sm hover:text-tryit-orange transition-colors">Блог</a>
                             </li>
                             <li><a href="{{ route('gallery') }}"
-                                    class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Галерея</a>
+                                    class="text-tryit-cream/80 text-sm hover:text-tryit-orange transition-colors">Галерея</a>
                             </li>
                             <li><a href="{{ route('feedback') }}"
-                                    class="text-tryit-cream/60 text-sm hover:text-tryit-orange transition-colors">Зворотній
+                                    class="text-tryit-cream/80 text-sm hover:text-tryit-orange transition-colors">Зворотній
                                     зв'язок</a></li>
                             <li class="pt-2 border-t border-white/5">
                                 <a href="{{ route('legal.privacy-policy') }}"
-                                    class="text-tryit-cream/40 text-xs hover:text-tryit-cream/70 transition-colors">Політика
+                                    class="text-tryit-cream/60 text-xs hover:text-tryit-cream/90 transition-colors">Політика
                                     конфіденційності</a>
                             </li>
                             <li><a href="{{ route('legal.terms-of-service') }}"
-                                    class="text-tryit-cream/40 text-xs hover:text-tryit-cream/70 transition-colors">Умови
+                                    class="text-tryit-cream/60 text-xs hover:text-tryit-cream/90 transition-colors">Умови
                                     надання послуг</a></li>
                             <li><a href="{{ route('legal.guarantee-policy') }}"
-                                    class="text-tryit-cream/40 text-xs hover:text-tryit-cream/70 transition-colors">Гарантії
+                                    class="text-tryit-cream/60 text-xs hover:text-tryit-cream/90 transition-colors">Гарантії
                                     та повернення</a></li>
                             <li><a href="{{ route('legal.cookie-policy') }}"
-                                    class="text-tryit-cream/40 text-xs hover:text-tryit-cream/70 transition-colors">Політика
+                                    class="text-tryit-cream/60 text-xs hover:text-tryit-cream/90 transition-colors">Політика
                                     cookies</a></li>
                         </ul>
                     </div>
@@ -287,37 +288,37 @@
                         </h4>
                         <ul class="space-y-3">
                             <li>
-                                <a href="tel:+380978778667" class="flex items-center gap-2.5 group">
+                                <a href="tel:+380978778667" class="flex items-center gap-2.5 group" aria-label="Подзвонити нам">
                                     <div
                                         class="size-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-tryit-orange/20 transition-colors">
-                                        <x-lucide-phone class="size-4 text-tryit-cream/70" stroke-width="1.5" />
+                                        <x-lucide-phone class="size-4 text-tryit-cream/80" stroke-width="1.5" />
                                     </div>
                                     <span
-                                        class="text-tryit-cream/80 text-sm font-semibold group-hover:text-white transition-colors">+380
+                                        class="text-tryit-cream/90 text-sm font-semibold group-hover:text-white transition-colors">+380
                                         (97) 877-866-7</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:info@tryit.com.ua" class="flex items-center gap-2.5 group">
+                                <a href="mailto:info@tryit.com.ua" class="flex items-center gap-2.5 group" aria-label="Написати нам на email">
                                     <div
                                         class="size-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-tryit-orange/20 transition-colors">
-                                        <x-lucide-mail class="size-4 text-tryit-cream/70" stroke-width="1.5" />
+                                        <x-lucide-mail class="size-4 text-tryit-cream/80" stroke-width="1.5" />
                                     </div>
                                     <span
-                                        class="text-tryit-cream/80 text-sm group-hover:text-white transition-colors">info@tryit.com.ua</span>
+                                        class="text-tryit-cream/90 text-sm group-hover:text-white transition-colors">info@tryit.com.ua</span>
                                 </a>
                             </li>
                             <li>
                                 <div class="flex items-start gap-2.5">
                                     <div
                                         class="size-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
-                                        <x-lucide-clock class="size-4 text-tryit-cream/70" stroke-width="1.5" />
+                                        <x-lucide-clock class="size-4 text-tryit-cream/80" stroke-width="1.5" />
                                     </div>
                                     <div class="text-sm">
-                                        <span class="text-tryit-cream/80 font-semibold">Пн–Пт:</span> <span
-                                            class="text-tryit-cream/60">08:00 – 20:00</span><br>
-                                        <span class="text-tryit-cream/80 font-semibold">Сб–Нд:</span> <span
-                                            class="text-tryit-cream/60">09:00 – 18:00</span>
+                                        <span class="text-tryit-cream/90 font-semibold">Пн–Пт:</span> <span
+                                            class="text-tryit-cream/70">08:00 – 20:00</span><br>
+                                        <span class="text-tryit-cream/90 font-semibold">Сб–Нд:</span> <span
+                                            class="text-tryit-cream/70">09:00 – 18:00</span>
                                     </div>
                                 </div>
                             </li>
@@ -325,9 +326,9 @@
                                 <div class="flex items-start gap-2.5">
                                     <div
                                         class="size-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
-                                        <x-lucide-map-pin class="size-4 text-tryit-cream/70" stroke-width="1.5" />
+                                        <x-lucide-map-pin class="size-4 text-tryit-cream/80" stroke-width="1.5" />
                                     </div>
-                                    <span class="text-tryit-cream/60 text-sm">м. Київ, Україна</span>
+                                    <span class="text-tryit-cream/70 text-sm">м. Київ, Україна</span>
                                 </div>
                             </li>
                         </ul>
@@ -339,11 +340,11 @@
             <div class="relative z-10 border-t border-white/5">
                 <div
                     class="max-w-7xl mx-auto px-5 py-2.5 flex flex-col md:flex-row items-center justify-between gap-0.5">
-                    <span class="text-xs text-tryit-cream/40 text-center">
+                    <span class="text-xs text-tryit-cream/60 text-center">
                         &copy; {{ date('Y') }} {{ config('app.name') }}. Всі права застережено.
                     </span>
-                    <span class="text-xs text-tryit-cream/30">
-                        Розробка сайту &mdash; <a href="#" class="text-orange-400/60">LEV</a>
+                    <span class="text-xs text-tryit-cream/50">
+                        Розробка сайту &mdash; <a href="#" class="text-orange-400/80">LEV</a>
                     </span>
                 </div>
             </div>

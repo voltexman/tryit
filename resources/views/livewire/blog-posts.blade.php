@@ -27,8 +27,8 @@
                     <a href="{{ route('blog.show', ['slug' => $post->slug]) }}"
                         class="group flex flex-col bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-xs hover:shadow-md transition-shadow duration-300 h-full">
                         <div class="aspect-16/10 overflow-hidden relative">
-                            <img src="{{ $post->getFirstMediaUrl('posts') }}" alt="{{ $post->title }}"
-                                width="400" height="250" loading="lazy"
+                            <img src="{{ $post->getFirstMediaUrl('posts') }}" alt="{{ $post->title }}" width="400"
+                                height="250" loading="lazy"
                                 class="size-full object-cover group-hover:scale-105 transition-transform duration-700" />
                             <div class="absolute top-4 left-4">
                                 <span
@@ -61,8 +61,7 @@
         @if ($posts->count() > 1)
             <div class="flex justify-center gap-2 mt-2">
                 <template x-for="i in count" :key="i">
-                    <button @click="scrollTo(i - 1)" 
-                        class="h-1.5 rounded-full transition-all duration-300"
+                    <button @click="scrollTo(i - 1)" class="h-1.5 rounded-full transition-all duration-300"
                         :aria-label="'Перейти до слайду ' + i"
                         :class="active === i - 1 ? 'bg-emerald-500 w-8' : 'bg-gray-200 w-4'"></button>
                 </template>
@@ -135,8 +134,8 @@
                     <a href="{{ route('blog.show', ['slug' => $post->slug]) }}"
                         class="grid grid-cols-[160px_1fr] xl:grid-cols-[200px_1fr] gap-6 xl:gap-8">
                         <div class="h-32 xl:h-40 rounded-3xl overflow-hidden shadow-lg shadow-emerald-900/5">
-                            <img src="{{ $post->getFirstMediaUrl('posts') }}" alt="{{ $post->title }}"
-                                width="300" height="200" loading="lazy"
+                            <img src="{{ $post->getFirstMediaUrl('posts') }}" alt="{{ $post->title }}" width="300"
+                                height="200" loading="lazy"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         </div>
                         <div class="flex flex-col justify-center py-1">
