@@ -187,11 +187,11 @@
 
     <footer class="relative overflow-hidden bg-zinc-950">
         <!-- Фонове зображення з затемненням -->
-        <div class="absolute inset-0 z-0 opacity-15">
+        <div class="absolute inset-0 z-0 opacity-20">
             <picture>
                 <source srcset="{{ Vite::asset('resources/images/footer-background.webp') }}" type="image/webp">
-                <img src="{{ Vite::asset('resources/images/footer-background.jpg') }}" 10 alt="Footer Background" 11
-                    class="size-full object-cover object-center" 12 loading="lazy">
+                <img src="{{ Vite::asset('resources/images/footer-background.jpg') }}" alt="Footer Background"
+                    class="size-full object-cover object-center" loading="lazy">
             </picture>
         </div>
 

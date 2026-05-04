@@ -609,8 +609,12 @@ name('main');
     <section class="relative min-h-150 flex items-center overflow-hidden bg-slate-900 px-6 py-20">
         <!-- Фонове зображення з затемненням -->
         <div class="absolute inset-0 z-0">
-            <img src="{{ Vite::asset('resources/images/gallery-section.jpg') }}" class="size-full object-cover opacity-60"
-                width="1920" height="1080" loading="lazy" alt="Gallery preview">
+            <picture>
+                <source srcset="{{ Vite::asset('resources/images/gallery-section.webp') }}" type="image/webp">
+                <img src="{{ Vite::asset('resources/images/gallery-section.jpg') }}"
+                    class="size-full object-cover opacity-60" width="1920" height="1080" loading="lazy"
+                    alt="Gallery preview">
+            </picture>
             <div
                 class="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-slate-900/80 via-slate-900/40 to-transparent">
             </div>

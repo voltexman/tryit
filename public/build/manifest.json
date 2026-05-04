@@ -6,7 +6,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-C2zGyx5_.css",
+    "file": "assets/app-B7pvMfDk.css",
     "name": "app",
     "names": [
       "app.css"
@@ -41,6 +41,10 @@
   "resources/images/gallery-section.jpg": {
     "file": "assets/gallery-section-t4UpB7ZX.jpg",
     "src": "resources/images/gallery-section.jpg"
+  },
+  "resources/images/gallery-section.webp": {
+    "file": "assets/gallery-section-B8aHvfq0.webp",
+    "src": "resources/images/gallery-section.webp"
   },
   "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/IMAGE 2026-04-26 14_15_54.jpg": {
     "file": "assets/IMAGE 2026-04-26 14_15_54-D4R9vfMm.jpg",
@@ -175,7 +179,7 @@
     "src": "resources/images/h3-cleaning-01.jpg"
   },
   "resources/images/header.webp": {
-    "file": "assets/header-D7Evp8KQ.webp",
+    "file": "assets/header-fi6G3z48.webp",
     "src": "resources/images/header.webp"
   },
   "resources/images/icons/footer-instagram.svg": {
