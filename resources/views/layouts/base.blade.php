@@ -185,13 +185,15 @@
         @yield('content')
     </main>
 
-    <footer class="relative overflow-hidden bg-slate-950">
+    <footer class="relative overflow-hidden bg-zinc-950">
         <!-- Фонове зображення з затемненням -->
-        <div class="absolute inset-0 z-0"
-            style="background-image: url('{{ Vite::asset('resources/images/footer-background.webp') }}'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 z-0 opacity-15">
+            <picture>
+                <source srcset="{{ Vite::asset('resources/images/footer-background.webp') }}" type="image/webp">
+                <img src="{{ Vite::asset('resources/images/footer-background.jpg') }}" 10 alt="Footer Background" 11
+                    class="size-full object-cover object-center" 12 loading="lazy">
+            </picture>
         </div>
-        <!-- Затемнення слейт кольором -->
-        <div class="absolute inset-0 bg-neutral-950/85 z-0"></div>
 
         <!-- Контент -->
         <div class="relative z-10">
