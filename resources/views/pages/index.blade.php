@@ -353,7 +353,7 @@ name('main');
             <div class="flex flex-col items-center">
                 <x-section.badge color="slate" class="mb-2.5">Про компанію</x-section.badge>
                 <x-section.title tag="h3" color="white" size="lg" class="text-center">
-                    Чому обирають <span class="text-emerald-400">нас</span>?
+                    Чому обирають <span class="text-emerald-400 font-[Lora] font-black italic">нас</span>?
                 </x-section.title>
 
                 <div class="max-w-3xl space-y-5 text-slate-50 leading-relaxed text-center text-balance mt-5">
@@ -424,8 +424,8 @@ name('main');
             <div class="text-center mb-10">
                 <x-section.badge class="mb-2.5">3 кроки до чистоти</x-section.badge>
                 <x-section.title tag="h4" size="lg">
-                    Ваш час занадто <span class="text-emerald-500">дорогий</span>, <br>
-                    щоб <span class="text-emerald-500">витрачати</span> його на бруд
+                    Ваш час занадто <span class="text-emerald-500 font-[Lora] font-black italic">дорогий</span>, <br>
+                    щоб <span class="text-emerald-500 font-[Lora] font-black italic">витрачати</span> його на бруд
                 </x-section.title>
             </div>
 
@@ -580,10 +580,10 @@ name('main');
 
                 <!-- Текстовий блок -->
                 <div class="max-w-3xl text-center md:text-left">
-                    <h2
-                        class="font-[Lora] italic text-5xl md:text-6xl drop-shadow-xl font-black text-white leading-[0.95] text-balance mb-5">
-                        Хочете побачити нас <span class="text-emerald-500">у справі</span>?
-                        Наша робота <span class="text-emerald-500">говорить</span> сама за себе!
+                    <h2 class="font-[Oswald] text-5xl md:text-6xl drop-shadow-xl font-normal text-white text-balance mb-5">
+                        Хочете побачити нас <span class="text-emerald-500 font-[Lora] font-black italic">у справі</span>?
+                        Наша робота <span class="text-emerald-500 font-[Lora] font-black italic">говорить</span> сама за
+                        себе!
                     </h2>
 
                     <div class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-3">
@@ -608,7 +608,7 @@ name('main');
                 <div>
                     <x-section.badge class="mb-2.5">FAQs</x-section.badge>
                     <x-section.title tag="h2" size="lg">
-                        Питання та <span class="text-emerald-600">відповіді</span>
+                        Питання та <span class="text-emerald-600 font-[Lora] font-black italic">відповіді</span>
                     </x-section.title>
                     <x-section.description>
                         Все, що варто знати перед замовленням

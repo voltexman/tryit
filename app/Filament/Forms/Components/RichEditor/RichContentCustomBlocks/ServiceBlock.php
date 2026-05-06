@@ -23,7 +23,8 @@ class ServiceBlock extends RichContentCustomBlock
     public static function configureEditorAction(Action $action): Action
     {
         return $action
-            ->modalDescription('Configure the service block')
+            ->closeModalByClickingAway(false)
+            ->modalDescription('Блок послуги, який буде відображатися у контенті.')
             ->schema([
                 TextInput::make('title')
                     ->label('Заголовок')

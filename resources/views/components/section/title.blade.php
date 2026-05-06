@@ -12,13 +12,13 @@
     ];
 
     $colors = [
-        'dark' => 'text-slate-800',
+        'dark' => 'text-slate-700',
         'white' => 'text-white',
         'emerald' => 'text-emerald-950',
     ];
 
     $classes = [
-        'font-[Lora] italic font-black drop-shadow-xl text-balance',
+        'font-[Oswald] font-normal tracking-tight drop-shadow-xl text-balance',
         $sizes[$size] ?? $sizes['md'],
         $colors[$color] ?? $colors['dark'],
     ];
