@@ -20,7 +20,7 @@ name('blog.show');
     <div class="relative h-[60vh] min-h-100 bg-cover bg-center"
         style="background-image: url('{{ $post->getFirstMediaUrl('posts') }}');">
         <div class="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-black/30"></div>
-        <div class="relative flex flex-col justify-end size-full max-w-3xl mx-auto px-5 pb-10 md:pb-15">
+        <div class="relative flex flex-col justify-end size-full max-w-4xl mx-auto px-5 pb-10 md:pb-15">
             <a href="{{ route('blog') }}"
                 class="inline-flex items-center gap-1.5 text-white text-sm font-medium mb-2.5 hover:text-white transition-colors">
                 <x-lucide-arrow-left class="size-4" stroke-width="2" />
@@ -54,7 +54,7 @@ name('blog.show');
 
 @section('content')
     <article class="py-12 md:py-16">
-        <div class="max-w-3xl mx-auto px-5">
+        <div class="max-w-4xl mx-auto px-5">
             @if ($post->excerpt)
                 <p
                     class="text-lg md:text-xl text-gray-700 leading-relaxed font-light border-l-4 border-tryit-orange pl-5 mb-10">

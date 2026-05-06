@@ -6,7 +6,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-B7pvMfDk.css",
+    "file": "assets/app-Jx3ddJ18.css",
     "name": "app",
     "names": [
       "app.css"
@@ -25,6 +25,10 @@
   "resources/images/cleaning.png": {
     "file": "assets/cleaning-fdbXvyGX.png",
     "src": "resources/images/cleaning.png"
+  },
+  "resources/images/decore.png": {
+    "file": "assets/decore-BhTcopo9.png",
+    "src": "resources/images/decore.png"
   },
   "resources/images/demo-block.png": {
     "file": "assets/demo-block-DLHfaUfn.png",
@@ -167,7 +171,7 @@
     "src": "resources/images/h1-asked.png"
   },
   "resources/images/h1-cleaning-team.png": {
-    "file": "assets/h1-cleaning-team-DdpHNL6A.png",
+    "file": "assets/h1-cleaning-team-AmBK_Agg.png",
     "src": "resources/images/h1-cleaning-team.png"
   },
   "resources/images/h2-background.jpg": {

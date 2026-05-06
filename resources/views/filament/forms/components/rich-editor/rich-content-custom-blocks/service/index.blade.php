@@ -1,45 +1,49 @@
 <div
-    class="relative overflow-hidden -mx-5 md:rounded-4xl my-10 bg-[#2d6a4f] min-h-120 md:min-h-120 flex flex-col justify-end group">
-    {{-- 1. Background Texture/Image --}}
-    <div class="absolute inset-0 -top-10 z-0">
+    class="relative overflow-hidden -mx-5 md:rounded-3xl my-6 min-h-120 lg:min-h-100 flex items-center bg-emerald-700 group">
+    {{-- 1. Subtle Background Pattern (Optional, for depth) --}}
+    <div class="absolute inset-0 -top-10 z-0 pointer-events-none opacity-15">
         <img src="{{ Vite::asset('resources/images/h3-cleaning-01.jpg') }}"
-            class="size-full object-cover rounded-none! mix-blend-overlay" alt="">
-        <div class="absolute inset-0 bg-[#2d6a4f]/85"></div>
+            class="size-full object-cover mix-blend-overlay" alt="">
     </div>
 
-    {{-- 2. Team Image --}}
-    <div class="absolute inset-x-0 -bottom-10 z-10 h-full flex justify-center items-end pointer-events-none">
+    {{-- 2. Team Image (Directly on Green Background) --}}
+    <div class="absolute inset-y-0 -bottom-10 left-15 z-10 w-1/2 flex items-end pointer-events-none">
         <img src="{{ Vite::asset('resources/images/h1-cleaning-team.png') }}"
-            class="w-auto h-full max-h-full object-contain object-bottom! shadow-none!" alt="TryIt Team">
+            class="w-auto h-[90%] object-contain object-bottom shadow-none! drop-shadow-xl" alt="TryIt Team">
     </div>
 
-    {{-- 3. Floating Content Card (Bottom Left) --}}
-    <div class="relative max-w-lg w-fit z-20 p-5 text-center md:text-left">
-        <div
-            class="bg-[#fdfcf5] p-5 md:p-7.5 rounded-3xl shadow-2xl flex flex-col animate-in fade-in slide-in-from-bottom-10 duration-1000">
+    {{-- 3. Content (Directly on Green Background, Right Aligned) --}}
+    <div class="relative z-30 w-full max-w-6xl mx-auto px-5 flex justify-end">
+        <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
 
             {{-- Title --}}
-            <div class="font-display text-xl md:text-2xl font-black text-slate-800 leading-tight">
-                {{ $title ?? 'Ratings 4.5' }}
+            <div class="font-[Oswald] text-2xl md:text-4xl font-semibold mb-4 text-white">
+                {{ $title ?? 'Чистота без зусиль' }}
             </div>
 
             {{-- Subtitle --}}
-            <div class="mt-2 text-slate-500 text-base md:text-base font-medium leading-relaxed">
-                {{ $subtitle ?? 'Clients praise our exceptional work.' }}
+            <div class="text-emerald-100/80 text-base mb-10 max-w-sm leading-relaxed">
+                {{ $subtitle ?? 'Ваш простір у надійних руках наших професіоналів.' }}
             </div>
 
-            {{-- Action Link --}}
-            <div class="flex items-center mt-5 gap-2.5">
-                <div
-                    class="px-6 py-3.5 bg-[#2d6a4f] rounded-full w-fit text-white font-black text-xs uppercase tracking-wide flex items-center gap-2">
-                    {{ $actionLabel ?? 'Детальніше' }}
-                    <x-lucide-arrow-right class="size-4" stroke-width="3" />
-                </div>
-                <div
-                    class="p-6 bg-[#2d6a4f] rounded-full w-fit text-white font-black text-xs uppercase tracking-wide flex items-center">
-                    <x-lucide-phone-call class="size-4 shrink-0 stroke-white" stroke-width="3" />
-                </div>
+            {{-- Action Buttons --}}
+            <div class="flex flex-col gap-5">
+                <a href="tel:+380978778667"
+                    class="flex w-fit cursor-pointer items-center gap-2.5 text-white! font-[Oswald] hover:text-white text-2xl font-bold no-underline!">
+                    <x-lucide-phone class="size-4" />
+                    <span>+380 (97) 877-86-67</span>
+                </a>
+                <a href="{{ $serviceUrl ?? '#' }}" class="shrink-0 no-underline">
+                    <button
+                        class="font-[Oswald] bg-white hover:bg-emerald-50 text-emerald-800 px-6 py-4 rounded-full font-black text-sm uppercase tracking-wide transition-all shadow-lg active:scale-95">
+                        {{ $actionLabel ?? 'Замовити послугу' }}
+                    </button>
+                </a>
             </div>
         </div>
     </div>
+
+    {{-- Decorative "Decore" Element --}}
+    <img src="{{ Vite::asset('resources/images/decore.png') }}"
+        class="absolute -top-10 -right-10 w-48 opacity-10 pointer-events-none z-10 -rotate-12 invert" alt="">
 </div>

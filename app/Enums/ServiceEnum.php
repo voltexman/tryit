@@ -2,9 +2,10 @@
 
 namespace App\Enums;
 
+use Filament\Support\Contracts\HasLabel;
 use Illuminate\Support\Str;
 
-enum ServiceEnum: string
+enum ServiceEnum: string implements HasLabel
 {
     case WINDOW_CLEANING = 'Миття фасадів та вікон на висоті';
     case SOLAR_PANEL_CLEANING = 'Мийка та очищення сонячних панелей';
@@ -13,6 +14,11 @@ enum ServiceEnum: string
     case DRY_CLEANING = 'Хімчистка та професійний догляд';
     case OFFICE_CLEANING = 'Комплексне та підтримуюче прибирання офісу';
     case INDUSTRIAL_ALPINISM = 'Промисловий альпінізм';
+
+    public function getLabel(): ?string
+    {
+        return $this->value;
+    }
 
     public function getSlug(): string
     {

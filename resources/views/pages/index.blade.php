@@ -10,7 +10,7 @@ name('main');
         <div class="flex items-center justify-center size-full bg-slate-950/65 backdrop-blur-[1px]">
             <div class="max-w-4xl mx-auto flex flex-col items-center gap-y-8 px-5 text-center">
                 <h1
-                    class="font-[Lora] text-3xl md:text-6xl xl:text-7xl text-nowrap uppercase text-slate-100 font-black italic -tracking-wide drop-shadow-lg animate-in duration-700">
+                    class="font-[Lora] text-3xl md:text-6xl xl:text-7xl text-nowrap uppercase text-slate-100 font-black italic tracking-tight drop-shadow-lg animate-in duration-700">
                     <span class="text-tryit-orange">Чистота</span>, яку варто<br>
                     спробувати <span class="text-tryit-orange">сьогодні</span>
                 </h1>
@@ -22,12 +22,10 @@ name('main');
                     Ми подбаємо про чистоту вашого офісу, виробництва чи будинку на найвищому рівні
                 </p>
 
-                <a href="#services" class="relative inline-block group mt-4">
-                    <button
-                        class="bg-orange-700 font-display relative py-4 px-10 uppercase text-white font-black text-lg tracking-wider rounded-full hover:bg-tryit-orange/90 transition-all duration-300 cursor-pointer"
-                        aria-label="Перейти до розділу з нашими послугами">
-                        Наші послуги
-                    </button>
+                <a href="#services"
+                    class="bg-orange-700 font-display relative py-4 px-10 uppercase text-white font-black text-lg tracking-wider rounded-full hover:bg-tryit-orange/90 transition-all duration-300 cursor-pointer"
+                    aria-label="Перейти до розділу з нашими послугами">
+                    Наші послуги
                 </a>
             </div>
         </div>
@@ -36,21 +34,25 @@ name('main');
 
 @section('content')
     <section class="relative py-10 lg:py-30 bg-slate-50 overflow-hidden font-sans">
-        <div class="max-w-5xl mx-auto px-5 relative">
+        {{-- Decorative Image --}}
+        <img src="{{ Vite::asset('resources/images/decore.png') }}"
+            class="absolute top-5 right-0 w-48 md:w-64 lg:w-80 opacity-50 pointer-events-none z-10"
+            alt="Decorative element">
 
+        <div class="max-w-5xl mx-auto px-5 relative">
             {{-- Subtle Background Image --}}
             <div class="absolute inset-0 opacity-30 pointer-events-none z-0">
                 <img src="{{ Vite::asset('resources/images/h1-asked.png') }}"
-                    class="size-full object-contain object-center grayscale-100 opacity-40" width="1920" height="1080"
+                    class="size-full object-contain object-center grayscale-100 opacity-50" width="1920" height="1080"
                     loading="lazy" alt="Background pattern">
             </div>
 
             <div class="relative z-20 text-center max-w-3xl mx-auto pt-10 pb-10">
                 <x-section.badge class="mb-5">Ваш дім у надійних руках</x-section.badge>
-                <h2
-                    class="font-[Lora] italic text-4xl/9 md:text-5xl/12 font-black tracking-tight text-slate-800 text-balance">
-                    Бо ми знаємо, як важливо <span class="text-emerald-700">бути в гармонії</span>
-                    з чистотою у вашому <span class="text-emerald-700">просторі</span>
+                <h2 class="font-[Oswald] text-4xl/9 md:text-6xl/14 tracking-tight text-slate-700 text-balance">
+                    Бо ми знаємо, як важливо
+                    <span class="text-emerald-700 font-[Lora] font-black italic">бути в гармонії</span>
+                    з чистотою у вашому <span class="text-emerald-700 font-[Lora] font-black italic">просторі</span>
                 </h2>
                 <p class="max-w-2xl mx-auto mt-8 text-lg md:text-xl text-slate-700 font-light text-balance leading-relaxed">
                     Ми об'єднуємо професіоналів та власників осель, щоб кожен момент вашого відпочинку проходив у
@@ -65,93 +67,6 @@ name('main');
                     <a href="#services">
                         <x-button size="lg" color="orange" href="#services">Наші послуги</x-button>
                     </a>
-                </div>
-            </div>
-
-            <div class="absolute inset-0 z-10 pointer-events-none select-none">
-
-                {{-- "Все блищить!" -> Sparkles --}}
-                <div
-                    class="absolute top-[5%] left-[2%] lg:left-[5%] animate-float transition-all duration-1000 hidden sm:block">
-                    <div
-                        class="flex items-center gap-3 bg-white/80 backdrop-blur-md p-2 rounded-full shadow-xl border border-white">
-                        <div
-                            class="w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center bg-emerald-50 text-emerald-500 border-2 border-emerald-500">
-                            <x-lucide-sparkles class="size-6 lg:size-8" />
-                        </div>
-                        <span class="pr-4 text-xs lg:text-sm font-medium text-slate-700">"Все блищить!"</span>
-                    </div>
-                </div>
-
-                {{-- "Виконали вчасно" -> Clock --}}
-                <div class="absolute top-[45%] left-[-2%] lg:left-[2%] animate-float [animation-delay:1s] hidden md:block">
-                    <div class="flex flex-col items-end">
-                        <div class="bg-slate-900 text-white text-[10px] px-2 py-1 rounded-md mb-2">Виконали вчасно</div>
-                        <div
-                            class="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl rotate-6 flex items-center justify-center bg-white shadow-2xl border-4 border-white text-slate-700">
-                            <x-lucide-clock class="size-8 lg:size-10" />
-                        </div>
-                    </div>
-                </div>
-
-                {{-- #Чисто #Швидко -> Zap/Flash --}}
-                <div class="absolute bottom-[10%] left-[8%] animate-float [animation-delay:2s] hidden lg:block">
-                    <div class="relative">
-                        <div
-                            class="w-14 h-14 rounded-full border-4 border-white shadow-lg bg-slate-100 flex items-center justify-center text-slate-600">
-                            <x-lucide-zap class="size-6" />
-                        </div>
-                        <div
-                            class="absolute -bottom-2 -right-10 bg-white px-3 py-1 rounded-full shadow-sm border border-slate-100 text-nowrap text-[11px] font-semibold text-emerald-600 italic">
-                            #Чисто #Швидко
-                        </div>
-                    </div>
-                </div>
-
-                {{-- "Вже їдемо" -> Car/Truck --}}
-                <div
-                    class="absolute top-[10%] right-[2%] lg:right-[8%] animate-float [animation-delay:1.5s] hidden sm:block">
-                    <div class="flex items-center flex-row-reverse gap-3">
-                        <div class="relative">
-                            <div
-                                class="size-12 lg:w-16 lg:h-16 rounded-full border-4 border-white shadow-xl bg-emerald-500 flex items-center justify-center text-white">
-                                <x-lucide-truck class="size-6 lg:size-8" />
-                            </div>
-                            <span
-                                class="absolute top-0 right-0 size-4 bg-green-500 border-2 border-white rounded-full"></span>
-                        </div>
-                        <div
-                            class="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-2xl shadow-lg border border-white text-xs font-medium text-slate-600">
-                            Вже їдемо до вас! 🚗
-                        </div>
-                    </div>
-                </div>
-
-                {{-- "Безпечна хімія" -> Shield/Leaf --}}
-                <div
-                    class="absolute top-[50%] right-[0%] lg:right-[4%] animate-float [animation-delay:0.5s] hidden md:block">
-                    <div class="group relative">
-                        <div
-                            class="size-16 lg:size-24 rounded-full border-4 border-white shadow-2xl bg-white flex items-center justify-center text-emerald-600 transition-transform group-hover:scale-110">
-                            <x-lucide-leaf class="size-8 lg:size-12" />
-                        </div>
-                        <div
-                            class="absolute -top-4 -left-6 bg-emerald-600 text-white text-[10px] px-3 py-1 rounded-full shadow-lg font-bold">
-                            Безпечна хімія
-                        </div>
-                    </div>
-                </div>
-
-                {{-- "Всі види робіт" -> Layers/Checklist --}}
-                <div class="absolute bottom-[15%] right-[10%] animate-float [animation-delay:2.5s] hidden lg:block">
-                    <div
-                        class="flex items-center gap-2 bg-white/40 backdrop-blur-[2px] p-2 rounded-full border border-white/50">
-                        <div
-                            class="size-12 rounded-full border-2 border-white shadow-md bg-white flex items-center justify-center text-slate-600">
-                            <x-lucide-layers class="size-6" />
-                        </div>
-                        <span class="text-[11px] text-slate-700 font-medium italic pr-2">"Всі види робіт!"</span>
-                    </div>
                 </div>
             </div>
         </div>
