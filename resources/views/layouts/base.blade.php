@@ -198,7 +198,7 @@
         <!-- Контент -->
         <div class="relative z-10">
             {{-- Main footer --}}
-            <div class="max-w-6xl mx-auto px-5 pt-15 pb-10">
+            <div class="max-w-6xl mx-auto px-5 py-10 lg:py-20">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
                     {{-- Column 1: Brand --}}
@@ -233,7 +233,8 @@
 
                     {{-- Column 2: Services --}}
                     <div class="hidden lg:block">
-                        <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Послуги
+                        <h4 class="font-display font-bold text-white text-base uppercase tracking-wider mb-4">
+                            Послуги
                         </h4>
                         <ul class="space-y-2.5">
                             <li><a href="{{ route('services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu') }}"
@@ -259,7 +260,8 @@
 
                     {{-- Column 3: Company --}}
                     <div>
-                        <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Компанія
+                        <h4 class="font-display font-bold text-white text-base uppercase tracking-wider mb-4">
+                            Компанія
                         </h4>
                         <ul class="space-y-2.5">
                             <li><a href="{{ route('blog') }}"
@@ -290,7 +292,8 @@
 
                     {{-- Column 4: Contacts --}}
                     <div>
-                        <h4 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-4">Контакти
+                        <h4 class="font-display font-bold text-white text-base uppercase tracking-wider mb-4">
+                            Контакти
                         </h4>
                         <ul class="space-y-3">
                             <li>

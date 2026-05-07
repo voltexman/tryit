@@ -52,7 +52,8 @@ name('main');
 
             <div class="relative z-20 text-center max-w-3xl mx-auto pt-10 pb-10">
                 <x-section.badge class="mb-5">Ваш дім у надійних руках</x-section.badge>
-                <div class="font-[Oswald] text-4xl/9 md:text-6xl/14 tracking-tight text-slate-700 text-balance">
+                <div
+                    class="font-[Oswald] text-4xl/9 md:text-6xl/14 tracking-tight drop-shadow-xl text-slate-700 text-balance">
                     Бо ми знаємо, як важливо
                     <span class="text-emerald-700 font-[Lora] font-bold italic">бути в гармонії</span>
                     з чистотою у вашому <span class="text-emerald-700 font-[Lora] font-bold italic">просторі</span>
@@ -121,7 +122,7 @@ name('main');
             <div class="hidden lg:flex flex-col justify-center text-white">
                 <div class="space-y-8">
                     <h2 class="font-display text-5xl xl:text-6xl font-black tracking-wide uppercase leading-tight">
-                        Наші<br><span class="text-emerald-500">послуги</span>
+                        Наші<br><span class="text-emerald-500 font-black font-[Lora] italic">послуги</span>
                     </h2>
 
                     <template x-for="(service, index) in services" :key="index">
@@ -436,19 +437,19 @@ name('main');
 
                 <div class="group relative pt-5 z-10">
                     <div
-                        class="absolute top-2 right-2 text-[9rem] font-black text-slate-500/8 leading-none select-none z-20 transition-colors">
+                        class="absolute top-3 right-3 text-[9rem] font-black text-slate-500/8 leading-none select-none z-20 transition-colors">
                         01</div>
 
                     <div
-                        class="relative z-10 bg-slate-100 p-8 rounded-3xl border border-slate-200 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:border-emerald-200">
+                        class="relative z-10 bg-slate-100 p-8 rounded-3xl border border-slate-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
                         <div
-                            class="size-16 bg-slate-900 rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:bg-emerald-600 group-hover:rotate-10 transition-all duration-500">
+                            class="size-16 bg-slate-900 rounded-2xl flex items-center justify-center mb-5 shadow-xl group-hover:bg-emerald-600 group-hover:rotate-10 transition-all duration-500">
                             <x-lucide-timer class="size-8 stroke-slate-100" />
                         </div>
 
-                        <h3 class="font-display text-2xl font-bold text-slate-900 mb-4">Домовимось за хвилину</h3>
-                        <p class="text-slate-700 leading-relaxed mb-6 text-sm">
-                            Досить витрачати вечори на <span class="text-slate-950 font-medium">планування</span>.
+                        <h3 class="font-display text-2xl font-bold text-slate-700 mb-2.5">Домовимось за хвилину</h3>
+                        <p class="text-slate-500 leading-relaxed mb-5 text-base">
+                            Досить витрачати вечори на <span class="text-slate-800 font-medium">планування</span>.
                             Ми відійшли від довгих форм. Просто вкажіть
                             <span class="text-slate-950 font-medium">адресу</span> та час
                             — решту ми беремо <span class="text-slate-950 font-medium">на себе</span>.
@@ -463,23 +464,23 @@ name('main');
 
                 <div class="group relative z-10 pt-5 lg:mt-15">
                     <div
-                        class="absolute top-2 right-2 text-[9rem] font-black text-slate-500/8 leading-none select-none z-20 transition-colors">
+                        class="absolute top-3 right-3 text-[9rem] font-black text-slate-500/15 leading-none select-none z-20 transition-colors">
                         02</div>
 
                     <div
                         class="relative z-10 bg-slate-900 p-8 rounded-3xl shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
                         <div
-                            class="size-16 bg-emerald-500 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-emerald-500/40 group-hover:scale-110 transition-transform">
+                            class="size-16 bg-emerald-500 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-emerald-500/40 group-hover:scale-110 transition-transform">
                             <x-lucide-sparkles class="size-8 stroke-slate-100" />
                         </div>
 
                         <h3 class="font-display text-2xl font-bold text-white mb-2.5">Усе необхідне - з нас</h3>
-                        <p class="text-slate-300 leading-relaxed mb-5 text-sm">
+                        <p class="text-slate-400 leading-relaxed mb-5 text-base">
                             Ми приїжджаємо з повним арсеналом: від потужного промислового
-                            <span class="text-slate-100 font-medium">обладнання</span> до сертифікованої
-                            <span class="text-slate-100 font-medium">еко-хімії</span>. Вам не потрібно забезпечувати
+                            <span class="text-slate-50 font-medium">обладнання</span> до сертифікованої
+                            <span class="text-slate-50 font-medium">еко-хімії</span>. Вам не потрібно забезпечувати
                             інвентар. Процес налагоджений так, щоб
-                            <span class="text-slate-100 font-medium">не відволікати</span>
+                            <span class="text-slate-50 font-medium">не відволікати</span>
                             вас від основних справ.
                         </p>
 
@@ -493,19 +494,18 @@ name('main');
 
                 <div class="group relative pt-5 z-10">
                     <div
-                        class="absolute top-2 right-2 text-[9rem] font-black text-slate-500/8 leading-none select-none z-20 transition-colors">
+                        class="absolute top-3 right-3 text-[9rem] font-black text-slate-500/8 leading-none select-none z-20 transition-colors">
                         03</div>
 
                     <div
-                        class="relative z-10 bg-zinc-100 p-8 rounded-3xl border border-zinc-200 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
+                        class="relative z-10 bg-slate-100 p-8 rounded-3xl border border-slate-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
                         <div
-                            class="size-16 bg-emerald-500 border-2 border-slate-700 rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:border-emerald-600 transition-all duration-500">
-                            <x-lucide-smile-plus
-                                class="size-8 stroke-slate-700 group-hover:stroke-emerald-600 transition-all duration-500" />
+                            class="size-16 bg-emerald-500 border-2 border-slate-700 rounded-2xl flex items-center justify-center mb-5 shadow-xl transition-all duration-500">
+                            <x-lucide-smile-plus class="size-8 stroke-slate-700 transition-all duration-500" />
                         </div>
 
-                        <h3 class="font-display text-2xl font-bold text-slate-800 mb-2.5">Насолоджуйтесь</h3>
-                        <p class="text-slate-700 leading-relaxed mb-5 text-sm">
+                        <h3 class="font-display text-2xl font-bold text-slate-700 mb-2.5">Насолоджуйтесь</h3>
+                        <p class="text-slate-500 leading-relaxed mb-5 text-base">
                             Перевірте <span class="text-slate-950 font-medium">якість</span> роботи та насолоджуйтеся
                             свіжістю. Оплата списується лише після вашого
                             <span class="text-slate-950 font-medium">схвалення</span>. Ви отримуєте не просто прибирання, а
@@ -664,7 +664,19 @@ name('main');
         </div>
     </section>
 
-    @include('partials.blog-section')
+    {{-- === BLOG === --}}
+    <section class="py-24 bg-slate-200/60 text-white overflow-hidden relative">
+        {{-- Background Image with Overlay --}}
+        <div class="absolute inset-0 z-0">
+            <img src="{{ Vite::asset('resources/images/h2-background04.jpg') }}" alt=""
+                class="size-full object-cover opacity-25 grayscale" />
+            <div class="absolute inset-0 bg-slate-50/15"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <livewire:blog-posts />
+        </div>
+    </section>
 @endsection
 
 @push('styles')

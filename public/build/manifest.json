@@ -6,7 +6,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-BieIG7L0.css",
+    "file": "assets/app-CtUKFeYg.css",
     "name": "app",
     "names": [
       "app.css"
@@ -21,6 +21,10 @@
   "resources/images/banner-1.jpg": {
     "file": "assets/banner-1-4Fm5gwCE.jpg",
     "src": "resources/images/banner-1.jpg"
+  },
+  "resources/images/blog-post-item.jpg": {
+    "file": "assets/blog-post-item-CofLrxUd.jpg",
+    "src": "resources/images/blog-post-item.jpg"
   },
   "resources/images/cleaning.png": {
     "file": "assets/cleaning-fdbXvyGX.png",
