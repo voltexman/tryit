@@ -18,7 +18,7 @@
     ];
 
     $classes = [
-        'font-[Oswald] font-normal tracking-tight drop-shadow-xl text-balance',
+        'font-[Oswald] font-medium tracking-tight drop-shadow-xl text-balance',
         $sizes[$size] ?? $sizes['md'],
         $colors[$color] ?? $colors['dark'],
     ];

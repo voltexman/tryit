@@ -38,6 +38,9 @@ name('main');
         <img src="{{ Vite::asset('resources/images/decore.png') }}"
             class="absolute top-5 right-0 w-48 md:w-64 lg:w-80 opacity-50 pointer-events-none z-10"
             alt="Decorative element">
+        <img src="{{ Vite::asset('resources/images/h1-agency.png') }}"
+            class="absolute bottom-0 left-0 w-80 md:w-110 lg:w-150 opacity-50 pointer-events-none z-10"
+            alt="Decorative element">
 
         <div class="max-w-5xl mx-auto px-5 relative">
             {{-- Subtle Background Image --}}
@@ -49,11 +52,11 @@ name('main');
 
             <div class="relative z-20 text-center max-w-3xl mx-auto pt-10 pb-10">
                 <x-section.badge class="mb-5">Ваш дім у надійних руках</x-section.badge>
-                <h2 class="font-[Oswald] text-4xl/9 md:text-6xl/14 tracking-tight text-slate-700 text-balance">
+                <div class="font-[Oswald] text-4xl/9 md:text-6xl/14 tracking-tight text-slate-700 text-balance">
                     Бо ми знаємо, як важливо
                     <span class="text-emerald-700 font-[Lora] font-black italic">бути в гармонії</span>
                     з чистотою у вашому <span class="text-emerald-700 font-[Lora] font-black italic">просторі</span>
-                </h2>
+                </div>
                 <p class="max-w-2xl mx-auto mt-8 text-lg md:text-xl text-slate-700 font-light text-balance leading-relaxed">
                     Ми об'єднуємо професіоналів та власників осель, щоб кожен момент вашого відпочинку проходив у
                     бездоганній чистоті.
@@ -418,7 +421,7 @@ name('main');
             {{-- Subtle Background Image --}}
             <div class="absolute inset-0 opacity-30 pointer-events-none z-0">
                 <img src="{{ Vite::asset('resources/images/h1-asked.png') }}"
-                    class="size-full object-cover grayscale-100 opacity-40 scale-75" width="1920" height="1080"
+                    class="size-full object-cover grayscale-100 opacity-50 scale-75" width="1920" height="1080"
                     loading="lazy" alt="Background pattern">
             </div>
             <div class="text-center mb-10">
@@ -527,7 +530,7 @@ name('main');
             <picture>
                 <source srcset="{{ Vite::asset('resources/images/gallery-section.webp') }}" type="image/webp">
                 <img src="{{ Vite::asset('resources/images/gallery-section.jpg') }}"
-                    class="size-full object-cover opacity-60" width="1920" height="1080" loading="lazy"
+                    class="size-full object-cover opacity-40" width="1920" height="1080" loading="lazy"
                     alt="Gallery preview">
             </picture>
             <div
@@ -536,8 +539,11 @@ name('main');
         </div>
 
         <!-- Величезний фоновий текст (TryIt) -->
-        <div class="absolute bottom-[-0.5em] left-1/2 -translate-x-1/2 z-10 select-none pointer-events-none">
-            <span class="text-[25vw] font-black uppercase leading-[0.75] tracking-tighter inline-flex">
+        <div
+            class="absolute bottom-[-1.3em] lg:bottom-[-4.2em] left-1/2 -translate-x-1/2 z-10 select-none pointer-events-none">
+            <img src="{{ Vite::asset('resources/images/logo.png') }}"
+                class="size-full scale-150 opacity-20 pointer-events-none z-30" alt="Decorative element">
+            {{-- <span class="text-[25vw] font-black uppercase leading-[0.75] tracking-tighter inline-flex">
                 <!-- Частина "Try" з градієнтом від смарагдового -->
                 <span class="bg-linear-to-b from-emerald-500/40 to-emerald-500/10 bg-clip-text text-transparent">
                     Try
@@ -546,7 +552,7 @@ name('main');
                 <span class="bg-linear-to-b from-orange-500/40 to-orange-500/10 bg-clip-text text-transparent">
                     It
                 </span>
-            </span>
+            </span> --}}
         </div>
 
         <div class="max-w-6xl mx-auto relative z-20">
@@ -580,7 +586,8 @@ name('main');
 
                 <!-- Текстовий блок -->
                 <div class="max-w-3xl text-center md:text-left">
-                    <h2 class="font-[Oswald] text-5xl md:text-6xl drop-shadow-xl font-normal text-white text-balance mb-5">
+                    <h2
+                        class="font-[Oswald] text-5xl md:text-7xl/16 drop-shadow-xl font-semibold text-white text-balance mb-5">
                         Хочете побачити нас <span class="text-emerald-500 font-[Lora] font-black italic">у справі</span>?
                         Наша робота <span class="text-emerald-500 font-[Lora] font-black italic">говорить</span> сама за
                         себе!
