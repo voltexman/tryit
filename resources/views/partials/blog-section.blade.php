@@ -1,22 +1,13 @@
 {{-- === BLOG === --}}
-<section class="py-20 bg-stone-50 relative overflow-hidden">
-    <div class="max-w-6xl mx-auto relative z-10">
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between px-5 gap-5 mb-10">
-            <div>
-                <x-section.badge class="mb-2.5">Корисні статті</x-section.badge>
-                <x-section.title tag="h3" size="lg">
-                    Наш <span class="text-emerald-600">Блог</span>
-                </x-section.title>
-                <x-section.description>
-                    Поради, ідеї та інсайти для бездоганної чистоти
-                </x-section.description>
-            </div>
-            <a href="{{ route('blog') }}"
-                class="inline-flex font-display items-center gap-1.5 mt-5 lg:mt-0 text-xs font-semibold uppercase tracking-wider text-emerald-700 hover:text-emerald-800 transition-colors">
-                Всі статті <x-lucide-arrow-right class="size-4" stroke-width="2" />
-            </a>
-        </div>
+<section class="py-24 bg-slate-200/60 text-white overflow-hidden relative">
+    {{-- Background Image with Overlay --}}
+    <div class="absolute inset-0 z-0">
+        <img src="{{ Vite::asset('resources/images/h2-background04.jpg') }}" alt=""
+            class="size-full object-cover opacity-25 grayscale" />
+        <div class="absolute inset-0 bg-slate-50/15"></div>
+    </div>
 
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
         <livewire:blog-posts />
     </div>
 </section>

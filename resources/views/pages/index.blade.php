@@ -54,8 +54,8 @@ name('main');
                 <x-section.badge class="mb-5">Ваш дім у надійних руках</x-section.badge>
                 <div class="font-[Oswald] text-4xl/9 md:text-6xl/14 tracking-tight text-slate-700 text-balance">
                     Бо ми знаємо, як важливо
-                    <span class="text-emerald-700 font-[Lora] font-black italic">бути в гармонії</span>
-                    з чистотою у вашому <span class="text-emerald-700 font-[Lora] font-black italic">просторі</span>
+                    <span class="text-emerald-700 font-[Lora] font-bold italic">бути в гармонії</span>
+                    з чистотою у вашому <span class="text-emerald-700 font-[Lora] font-bold italic">просторі</span>
                 </div>
                 <p class="max-w-2xl mx-auto mt-8 text-lg md:text-xl text-slate-700 font-light text-balance leading-relaxed">
                     Ми об'єднуємо професіоналів та власників осель, щоб кожен момент вашого відпочинку проходив у
@@ -524,7 +524,7 @@ name('main');
         </div>
     </section>
 
-    <section class="relative min-h-150 flex items-center overflow-hidden bg-slate-900 px-6 py-20">
+    <section class="relative min-h-140 lg:min-h-150 flex items-center overflow-hidden bg-slate-900 px-6 py-20">
         <!-- Фонове зображення з затемненням -->
         <div class="absolute inset-0 z-0">
             <picture>
@@ -587,7 +587,7 @@ name('main');
                 <!-- Текстовий блок -->
                 <div class="max-w-3xl text-center md:text-left">
                     <h2
-                        class="font-[Oswald] text-5xl md:text-7xl/16 drop-shadow-xl font-semibold text-white text-balance mb-5">
+                        class="font-[Oswald] text-4xl/10 md:text-7xl/16 drop-shadow-xl font-semibold text-white text-balance mb-5">
                         Хочете побачити нас <span class="text-emerald-500 font-[Lora] font-black italic">у справі</span>?
                         Наша робота <span class="text-emerald-500 font-[Lora] font-black italic">говорить</span> сама за
                         себе!

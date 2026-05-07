@@ -6,7 +6,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-a5MK33_P.css",
+    "file": "assets/app-BieIG7L0.css",
     "name": "app",
     "names": [
       "app.css"
@@ -178,6 +178,10 @@
     "file": "assets/h2-background-C6HLSC8Z.jpg",
     "src": "resources/images/h2-background.jpg"
   },
+  "resources/images/h2-background04.jpg": {
+    "file": "assets/h2-background-C6HLSC8Z.jpg",
+    "src": "resources/images/h2-background.jpg"
+  },
   "resources/images/h3-cleaning-01.jpg": {
     "file": "assets/h3-cleaning-01-DxSqe5cq.jpg",
     "src": "resources/images/h3-cleaning-01.jpg"
@@ -285,6 +289,10 @@
   "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-5-before.jpg": {
     "file": "assets/comparison-5-before-DXEi1d5t.jpg",
     "src": "resources/images/kompleksne-ta-pidtrymuiuche-prybyrannia/comparison-5-before.jpg"
+  },
+  "resources/images/latest-posts-demo.png": {
+    "file": "assets/latest-posts-demo-Br1iolbf.png",
+    "src": "resources/images/latest-posts-demo.png"
   },
   "resources/images/logo-klax.png": {
     "file": "assets/logo-klax-DMG5ucPO.png",

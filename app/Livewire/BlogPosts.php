@@ -11,7 +11,7 @@ class BlogPosts extends Component
 {
     public function render()
     {
-        $posts = Post::published()->latest('published_at')->take(4)->get();
+        $posts = Post::published()->latest('published_at')->take(3)->get();
 
         return view('livewire.blog-posts', [
             'posts' => $posts,
