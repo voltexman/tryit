@@ -1,0 +1,372 @@
+<?php
+
+use function Laravel\Folio\name;
+
+$meta_title = 'Професійне миття вікон і фасадів. Безпечне очищення WFP-системою';
+$meta_description = 'Замовте миття вікон і фасадів із використанням екологічної WFP-системи! Без розводів, без хімії, безпечне очищення для бізнес-центрів, офісів, ЖК та магазинів';
+
+name('services.myttia-fasadu-ta-vikon-na-vysoti');
+
+// Назва папки з зображеннями: myttia-fasadiv-ta-vikon-na-vysoti
+$imgDir = 'myttia-fasadiv-ta-vikon-na-vysoti';
+
+$categories = [
+    [
+        'title' => 'Екстер\'єр',
+        'subtitle' => 'Професійне миття фасадів та вікон на висоті. Якісний результат для вашого бізнесу.',
+        'bgImage' => Vite::asset("resources/images/{$imgDir}/2026-04-26 14.03.07.jpg"),
+        'images' => ['2026-04-26 14.03.07.jpg', '2026-04-26 14.29.29.jpg', '2026-04-26 14.29.40.jpg', '2026-04-26 14.29.45.jpg'],
+    ],
+    [
+        'title' => 'Деталі',
+        'subtitle' => 'Кожна деталь має значення. Ми приділяємо увагу навіть найбільш важкодоступним місцям.',
+        'bgImage' => Vite::asset("resources/images/{$imgDir}/2026-04-26 14.29.52.jpg"),
+        'images' => ['2026-04-26 14.29.52.jpg', '2026-04-26 14.29.58.jpg', '2026-04-26 14.30.06.jpg', '2026-04-26 14.30.19.jpg'],
+    ],
+];
+?>
+
+<x-layouts::app>
+    <x-slot:header>
+        <x-page-header image="{{ Vite::asset('resources/images/service-1.jpg') }}">
+            <x-slot:title class="text-balance">Миття фасадів та вікон на висоті</x-slot>
+            <x-slot:description class="text-balance">Інноваційна технологія WFP-системи для бездоганного результату</x-slot>
+        </x-page-header>
+    </x-slot:header>
+
+    {{-- Intro --}}
+    <section class="py-12 md:py-10">
+        <div class="max-w-5xl mx-auto px-5">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
+                <div>
+                    <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mt-2 mb-5">Чисті вікна та фасади
+                        —
+                        імідж вашого бізнесу</h2>
+                    <p class="text-gray-600 leading-relaxed">Забруднення, пил, дощові патьоки та міський смог з часом
+                        роблять
+                        будівлю тьмяною. Ми пропонуємо професійне миття фасадів і вікон за допомогою сучасної
+                        WFP-системи
+                        <i>(Water-Fed Pole)</i> — інноваційної технології без використання драбин або підйомників.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">Телескопічні карбонові штанги подають очищену
+                        демінералізовану
+                        воду під тиском — вікна висихають без розводів, а процес повністю безпечний та екологічний.</p>
+                </div>
+                <div class="space-y-2.5">
+                    <div class="font-bold font-[Oswald] text-2xl">Наші навички</div>
+                    <div class="w-full">
+                        <x-progressbar percentage="100" label="Мийка фасадів і вікон" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="95" label="Очищення важкодоступних місць" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="90" label="Видалення забруднень без хімії" />
+                    </div>
+                    <div class="w-full">
+                        <x-progressbar percentage="85" label="Робота на висоті" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Before/After Section with Tabs --}}
+    <section class="py-20 bg-slate-100 border border-slate-100" x-data="{
+        activeTab: 0,
+        comparisons: [{
+                title: 'Офісний центр',
+                before: '{{ Vite::asset("resources/images/{$imgDir}/comparison-1-before.jpg") }}',
+                after: '{{ Vite::asset("resources/images/{$imgDir}/comparison-1-after.jpg") }}'
+            },
+            {
+                title: 'Приватний будинок',
+                before: '{{ Vite::asset("resources/images/{$imgDir}/comparison-2-before.jpg") }}',
+                after: '{{ Vite::asset("resources/images/{$imgDir}/comparison-2-after.jpg") }}'
+            },
+            {
+                title: 'Торговий комплекс',
+                before: '{{ Vite::asset("resources/images/{$imgDir}/comparison-3-before.jpg") }}',
+                after: '{{ Vite::asset("resources/images/{$imgDir}/comparison-3-after.jpg") }}'
+            }
+        ]
+    }">
+        <div class="max-w-5xl mx-auto px-5 mt-5">
+            <div class="text-center mb-10">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-gray-900">Результати нашої роботи</h2>
+                <p class="text-gray-500 mt-3">Оберіть об'єкт, щоб побачити магію очищення WFP-системою</p>
+            </div>
+
+            {{-- Comparison View --}}
+            <div class="relative bg-gray-100 rounded-2xl overflow-hidden shadow-xl">
+                <div x-show="activeTab === 0" x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 translate-y-4"
+                    x-transition:enter-end="opacity-100 translate-y-0">
+                    <x-before-after
+                        before="{{ Vite::asset('resources/images/' . $imgDir . '/comparison-1-before.jpg') }}"
+                        after="{{ Vite::asset('resources/images/' . $imgDir . '/comparison-1-after.jpg') }}" />
+                </div>
+                <div x-show="activeTab === 1" x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 translate-y-4"
+                    x-transition:enter-end="opacity-100 translate-y-0" x-cloak>
+                    <x-before-after
+                        before="{{ Vite::asset('resources/images/' . $imgDir . '/comparison-2-before.jpg') }}"
+                        after="{{ Vite::asset('resources/images/' . $imgDir . '/comparison-2-after.jpg') }}" />
+                </div>
+                <div x-show="activeTab === 2" x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 translate-y-4"
+                    x-transition:enter-end="opacity-100 translate-y-0" x-cloak>
+                    <x-before-after
+                        before="{{ Vite::asset('resources/images/' . $imgDir . '/comparison-3-before.jpg') }}"
+                        after="{{ Vite::asset('resources/images/' . $imgDir . '/comparison-3-after.jpg') }}" />
+                </div>
+            </div>
+
+            {{-- Thumbnails Triggers --}}
+            <div class="grid grid-cols-3 gap-2.5 md:gap-5 mt-10">
+                <template x-for="(item, index) in comparisons" :key="index">
+                    <button @click="activeTab = index"
+                        class="relative aspect-video rounded-2xl overflow-hidden border-2 transition-all duration-300 cursor-pointer group"
+                        :class="activeTab === index ? 'border-tryit-orange ring-4 ring-tryit-orange/20 scale-105' :
+                            'border-transparent opacity-60 hover:opacity-100'">
+                        <img :src="item.after"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            :alt="item.title">
+                        <div class="absolute inset-0 bg-black/40 flex items-end p-3">
+                            <span
+                                class="font-display text-white text-xs font-bold uppercase drop-shadow-xl tracking-wider"
+                                x-text="item.title"></span>
+                        </div>
+                    </button>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-5">
+
+            @include('partials.services-standarts')
+
+            <x-table class="mt-15" striped>
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Максимальна висота</x-table.cell>
+                    <x-table.cell>до 18 м <i>(без підйомника)</i></x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Тип системи</x-table.cell>
+                    <x-table.cell>WFP, телескопічні карбонові штанги</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Якість води</x-table.cell>
+                    <x-table.cell>0 ppm демінералізована</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Тиск води в системі</x-table.cell>
+                    <x-table.cell>2,5–4 бар</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Довжина карбонових штанг</x-table.cell>
+                    <x-table.cell>6–18 м <i>(залежно від об'єкта)</i></x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Споживання води</x-table.cell>
+                    <x-table.cell>0.7–1.2 л/хв</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Продуктивність</x-table.cell>
+                    <x-table.cell>80–150 м²/год</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Мінімальне замовлення</x-table.cell>
+                    <x-table.cell>від 2 годин роботи</x-table.cell>
+                </x-table.row>
+
+                <x-table.row>
+                    <x-table.cell class="font-semibold">Рекомендована частота</x-table.cell>
+                    <x-table.cell>2–4 рази на рік</x-table.cell>
+                </x-table.row>
+            </x-table>
+        </div>
+    </section>
+
+    <section class="relative lg:py-20 w-full bg-gray-900 overflow-hidden text-white font-sans" x-data="{
+        activeTab: 0
+    }">
+        {{-- Динамічний фон --}}
+        @foreach ($categories as $index => $cat)
+            <div x-show="activeTab === {{ $index }}" x-transition:enter="transition opacity-100 duration-1000"
+                x-transition:enter-start="opacity-0" x-cloak class="absolute inset-0 z-0">
+                <img src="{{ $cat['bgImage'] }}" class="size-full object-cover brightness-[0.3] scale-105 blur-xs">
+                <div class="absolute inset-0 bg-linear-to-r from-slate-900/50 to-slate-950/10"></div>
+            </div>
+        @endforeach
+
+        <div class="relative z-10 h-full flex flex-col lg:flex-row">
+            <!-- Ліва панель: Вертикальні Таби -->
+            <div
+                class="w-full lg:w-1/4 flex lg:flex-col justify-start lg:justify-center p-5 lg:pl-12 gap-5 lg:gap-10 overflow-x-auto lg:overflow-visible no-scrollbar mt-12 lg:mt-0">
+                @foreach ($categories as $index => $cat)
+                    <button @click="activeTab = {{ $index }}"
+                        :class="activeTab === {{ $index }} ?
+                            'text-3xl lg:text-5xl font-bold opacity-100 translate-x-2' :
+                            'text-xl lg:text-2xl opacity-30 hover:opacity-60'"
+                        class="text-left transition-all duration-500 whitespace-nowrap lg:whitespace-normal origin-left flex items-center gap-4">
+                        <span class="text-xs font-mono opacity-50">0{{ $index + 1 }}</span>
+                        <span class="font-display">{{ $cat['title'] }}</span>
+                    </button>
+                @endforeach
+            </div>
+
+            <!-- Права панель: Контент та Слайдер -->
+            <div class="w-full lg:w-3/4 flex flex-col justify-center lg:px-20 pb-12 lg:pb-0 h-full">
+                @foreach ($categories as $index => $cat)
+                    <div x-show="activeTab === {{ $index }}" x-cloak
+                        class="flex flex-col h-full justify-center">
+                        <div class="max-w-xl mb-8 lg:mb-12">
+                            <h2 class="text-4xl lg:text-6xl font-display font-bold mb-4 tracking-tighter leading-none">
+                                {{ $cat['title'] }}</h2>
+                            <p class="text-gray-400 text-sm lg:text-base leading-relaxed max-w-md">
+                                {{ $cat['subtitle'] }}
+                            </p>
+                        </div>
+
+                        <x-carousel-slider :images="$cat['images']" :imagePath="$imgDir" id="embla-cat-{{ $index }}"
+                            :itemsPerView="3" />
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- Advantages grid --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Переваги <span
+                    class="text-tryit-orange">WFP-системи</span></h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="bg-white rounded-xl p-5 shadow-sm">
+                    <div class="size-10 rounded-lg bg-tryit-green/10 flex items-center justify-center mb-3">
+                        <x-lucide-droplets class="size-5 text-tryit-green" stroke-width="1.5" />
+                    </div>
+                    <h3 class="font-display font-bold text-gray-900 text-sm mb-1.5">Без хімії</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed mb-0">Тільки очищена демінералізована вода —
+                        екологічно
+                        та безпечно</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-sm">
+                    <div class="size-10 rounded-lg bg-tryit-green/10 flex items-center justify-center mb-3">
+                        <x-lucide-sparkles class="size-5 text-tryit-green" stroke-width="1.5" />
+                    </div>
+                    <h3 class="font-display font-bold text-gray-900 text-sm mb-1.5">Без розводів</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed mb-0">Вікна висихають природним чином — ідеально
+                        чиста
+                        поверхня</p>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-sm">
+                    <div class="size-10 rounded-lg bg-tryit-green/10 flex items-center justify-center mb-3">
+                        <x-lucide-shield-check class="size-5 text-tryit-green" stroke-width="1.5" />
+                    </div>
+                    <h3 class="font-display font-bold text-gray-900 text-sm mb-1.5">Безпечно</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed mb-0">Без підйомників та альпінізму на середніх
+                        висотах
+                    </p>
+                </div>
+                <div class="bg-white rounded-xl p-5 shadow-sm">
+                    <div class="size-10 rounded-lg bg-tryit-green/10 flex items-center justify-center mb-3">
+                        <x-lucide-leaf class="size-5 text-tryit-green" stroke-width="1.5" />
+                    </div>
+                    <h3 class="font-display font-bold text-gray-900 text-sm mb-1.5">Екологічно</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed mb-0">Жодних хімічних слідів на поверхні та в
+                        повітрі
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- For whom --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Для яких <span
+                    class="text-tryit-orange">об'єктів</span></h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                @foreach ([['icon' => 'building-2', 'text' => 'Бізнес-центри та офісні будівлі'], ['icon' => 'store', 'text' => 'Торгові комплекси та магазини'], ['icon' => 'building', 'text' => 'Житлові багатоповерхові будинки'], ['icon' => 'bed-double', 'text' => 'Готелі та ресторани'], ['icon' => 'warehouse', 'text' => 'Промислові та складські приміщення'], ['icon' => 'panel-top', 'text' => 'Вітрини та скляні фасади']] as $item)
+                    <div class="flex items-center gap-3 bg-gray-50 rounded-xl p-4">
+                        <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-orange shrink-0"
+                            stroke-width="1.5" />
+                        <span class="text-sm text-gray-700">{{ $item['text'] }}</span>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- How we work --}}
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Як ми <span
+                    class="text-tryit-orange">працюємо</span></h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                @foreach ([['step' => '01', 'title' => 'Оцінка об\'єкта', 'desc' => 'Визначаємо рівень забруднення, тип поверхні та підбираємо оптимальну технологію', 'icon' => 'search'], ['step' => '02', 'title' => 'Підготовка', 'desc' => 'Налаштовуємо карбонові штанги з подачею демінералізованої води', 'icon' => 'settings'], ['step' => '03', 'title' => 'Миття', 'desc' => 'Видаляємо бруд, пил, залишки смогу та водяних патьоків', 'icon' => 'spray-can'], ['step' => '04', 'title' => 'Контроль якості', 'desc' => 'Перевіряємо кожне вікно та фасад на бездоганний результат', 'icon' => 'check-circle']] as $step)
+                    <div class="relative bg-white rounded-xl p-5 shadow-sm">
+                        <span
+                            class="font-display text-3xl font-black text-tryit-orange/10 absolute top-3 right-4">{{ $step['step'] }}</span>
+                        <div class="size-10 rounded-lg bg-tryit-orange/10 flex items-center justify-center mb-3">
+                            <x-dynamic-component :component="'lucide-' . $step['icon']" class="size-5 text-tryit-orange"
+                                stroke-width="1.5" />
+                        </div>
+                        <h3 class="font-display font-bold text-gray-900 text-sm mb-1.5">{{ $step['title'] }}</h3>
+                        <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $step['desc'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    {{-- Why us --}}
+    <section class="py-12 md:py-16">
+        <div class="max-w-5xl mx-auto px-5">
+            <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-8">Чому <span
+                    class="text-tryit-orange">ми</span></h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                @foreach ([['icon' => 'shield-check', 'title' => 'Безпека та якість', 'desc' => 'Досвідчені фахівці та сертифіковане обладнання'], ['icon' => 'leaf', 'title' => 'Екологічність', 'desc' => 'Тільки очищена вода без хімічних засобів'], ['icon' => 'badge-check', 'title' => 'Гарантія результату', 'desc' => 'Чистота без розводів і слідів'], ['icon' => 'wallet', 'title' => 'Доступні ціни', 'desc' => 'Індивідуальний підхід та знижки для корпоративних клієнтів'], ['icon' => 'zap', 'title' => 'Оперативність', 'desc' => 'Швидке виконання замовлень у зручний для вас час']] as $item)
+                    <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+                        <div class="size-10 rounded-lg bg-tryit-green/10 flex items-center justify-center shrink-0">
+                            <x-dynamic-component :component="'lucide-' . $item['icon']" class="size-5 text-tryit-green"
+                                stroke-width="1.5" />
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-gray-900 text-sm mb-1">{{ $item['title'] }}</h3>
+                            <p class="text-xs text-gray-500 leading-relaxed mb-0">{{ $item['desc'] }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+    <x-order-banner title="Замовити миття вікон" subtitle="Ідеальна чистота вашого фасаду та вікон. Телефонуйте!"
+        :service="\App\Enums\ServiceEnum::WINDOW_CLEANING->value" video="myttia-fasadiv-ta-vikon-na-vysoti/video-section-bg.mp4" />
+
+    {{-- === BLOG === --}}
+    <section class="py-24 bg-slate-200/60 text-white overflow-hidden relative">
+        {{-- Background Image with Overlay --}}
+        <div class="absolute inset-0 z-0">
+            <img src="{{ Vite::asset('resources/images/h2-background04.jpg') }}" alt=""
+                class="size-full object-cover opacity-25 grayscale" />
+            <div class="absolute inset-0 bg-slate-50/15"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <livewire:blog-posts />
+        </div>
+    </section>
+</x-layouts::app>

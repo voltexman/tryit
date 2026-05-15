@@ -1,0 +1,29 @@
+@props([
+    'tag' => 'h2',
+    'size' => 'md',
+    'color' => 'dark',
+])
+
+@php
+    $sizes = [
+        'sm' => 'text-2xl lg:text-4xl',
+        'md' => 'text-3xl lg:text-5xl',
+        'lg' => 'text-4xl/9 md:text-5xl lg:text-6xl',
+    ];
+
+    $colors = [
+        'dark' => 'text-slate-700',
+        'white' => 'text-white',
+        'emerald' => 'text-emerald-950',
+    ];
+
+    $classes = [
+        'relative z-10 font-[Oswald] font-medium tracking-tight text-balance',
+        $sizes[$size] ?? $sizes['md'],
+        $colors[$color] ?? $colors['dark'],
+    ];
+@endphp
+
+<{{ $tag }} {{ $attributes->merge(['class' => implode(' ', $classes)]) }}>
+    {{ $slot }}
+    </{{ $tag }}>

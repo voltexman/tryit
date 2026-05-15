@@ -1,0 +1,197 @@
+@import "tailwindcss";
+@import "flatpickr/dist/flatpickr.min.css";
+
+@source '../views/';
+
+@plugin 'tailwindcss-animate';
+@plugin '@tailwindcss/typography';
+
+@theme {
+    --font-sans:
+        Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+        "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --color-tryit-dark: #454649;
+    --color-tryit-orange: #fc4c02;
+    --color-tryit-cream: #d5c3a7;
+    --color-tryit-green: #396d39;
+    --font-display: "Oswald", ui-sans-serif, system-ui, sans-serif;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+
+    body {
+        @apply text-lg font-normal text-gray-800;
+    }
+
+    p {
+        @apply mb-5 last:mb-0;
+    }
+}
+
+/* Range Slider Custom Styles */
+@layer components {
+    .range-slider {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: none;
+    }
+
+    /* Chrome, Safari, Edge */
+    .range-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--color-tryit-orange);
+        cursor: pointer;
+        border: 3px solid white;
+        box-shadow: 0 2px 8px rgba(252, 76, 2, 0.3);
+        transition: all 0.3s ease;
+        pointer-events: auto;
+    }
+
+    .range-slider::-webkit-slider-thumb:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(252, 76, 2, 0.5);
+    }
+
+    .range-slider::-webkit-slider-thumb:active {
+        transform: scale(0.95);
+    }
+
+    /* Firefox */
+    .range-slider::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--color-tryit-orange);
+        cursor: pointer;
+        border: 3px solid white;
+        box-shadow: 0 2px 8px rgba(252, 76, 2, 0.3);
+        transition: all 0.3s ease;
+        pointer-events: auto;
+    }
+
+    .range-slider::-moz-range-thumb:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(252, 76, 2, 0.5);
+    }
+
+    .range-slider::-moz-range-thumb:active {
+        transform: scale(0.95);
+    }
+}
+
+/* Flatpickr Custom Theme */
+@layer components {
+    .flatpickr-calendar {
+        @apply !font-sans !shadow-xl !border-0 !ring-1 !ring-gray-100 !rounded-2xl !p-2;
+    }
+    .flatpickr-months .flatpickr-month {
+        @apply !fill-gray-900 !text-gray-900;
+    }
+    .flatpickr-current-month .flatpickr-monthDropdown-months {
+        @apply !font-bold !rounded-lg hover:!bg-gray-100;
+    }
+    .flatpickr-current-month input.cur-year {
+        @apply !font-bold !rounded-lg hover:!bg-gray-100;
+    }
+    span.flatpickr-weekday {
+        @apply !text-gray-500 !font-medium;
+    }
+    .flatpickr-day {
+        @apply !rounded-xl !text-gray-700 !font-medium hover:!bg-orange-50 hover:!text-orange-600 !transition-colors;
+    }
+    .flatpickr-day.inRange,
+    .flatpickr-day.prevMonthDay.inRange,
+    .flatpickr-day.nextMonthDay.inRange,
+    .flatpickr-day.today.inRange,
+    .flatpickr-day.prevMonthDay.today.inRange,
+    .flatpickr-day.nextMonthDay.today.inRange,
+    .flatpickr-day:hover,
+    .flatpickr-day.prevMonthDay:hover,
+    .flatpickr-day.nextMonthDay:hover,
+    .flatpickr-day:focus,
+    .flatpickr-day.prevMonthDay:focus,
+    .flatpickr-day.nextMonthDay:focus {
+        @apply !bg-orange-50 !border-orange-50 !shadow-none;
+    }
+    .flatpickr-day.today {
+        @apply !border-orange-200 !text-orange-600;
+    }
+    .flatpickr-day.selected,
+    .flatpickr-day.startRange,
+    .flatpickr-day.endRange,
+    .flatpickr-day.selected.inRange,
+    .flatpickr-day.startRange.inRange,
+    .flatpickr-day.endRange.inRange,
+    .flatpickr-day.selected:focus,
+    .flatpickr-day.startRange:focus,
+    .flatpickr-day.endRange:focus,
+    .flatpickr-day.selected:hover,
+    .flatpickr-day.startRange:hover,
+    .flatpickr-day.endRange:hover,
+    .flatpickr-day.selected.prevMonthDay,
+    .flatpickr-day.startRange.prevMonthDay,
+    .flatpickr-day.endRange.prevMonthDay,
+    .flatpickr-day.selected.nextMonthDay,
+    .flatpickr-day.startRange.nextMonthDay,
+    .flatpickr-day.endRange.nextMonthDay {
+        background: var(--color-tryit-orange) !important;
+        border-color: var(--color-tryit-orange) !important;
+        @apply !text-white;
+        }
+        }
+
+        /* PhotoSwipe Custom Caption */
+        .pswp__custom-caption {
+        background: rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(8px);
+        color: #fff;
+        width: 100%;
+        padding: 20px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        z-index: 10;
+        }
+
+        .pswp__custom-caption-title {
+        font-family: "Oswald", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.2;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 8px;
+        color: #fff;
+        }
+
+        .pswp__custom-caption-desc {
+        font-family: ui-sans-serif, system-ui, sans-serif;
+        font-size: 15px;
+        color: #d1d5db;
+        max-width: 700px;
+        line-height: 1.5;
+        }
