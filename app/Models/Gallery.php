@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Scope;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
@@ -25,4 +27,10 @@ class Gallery extends Model implements HasMedia
         'is_visible_on_slideshow' => 'boolean',
         'sort_order' => 'integer',
     ];
+
+    #[Scope]
+    protected function main(Builder $query): void
+    {
+        $query->where('is_visible_on_slideshow', true);
+    }
 }

@@ -8,7 +8,7 @@ new class extends Component {
     #[Computed]
     public function images()
     {
-        return Gallery::where('is_visible_on_slideshow', true)->orderBy('sort_order', 'asc')->latest()->get();
+        return Gallery::main()->latest()->get();
     }
 };
 ?>
@@ -16,7 +16,7 @@ new class extends Component {
 <x-slot:meta_title>Галерея робіт — Клінінг TryIt</x-slot:meta_title>
 <x-slot:meta_description>Фотогалерея виконаних робіт з прибирання офісів та будинків від компанії TryIt.</x-slot:meta_description>
 <x-slot:meta_robots>index, follow</x-slot:meta_robots>
-<x-slot:meta_image>resources/images/gallery-share.jpg</x-slot:meta_image>
+<x-slot:meta_image>{{ Vite::asset('resources/images/gallery-header-bg.png') }}</x-slot:meta_image>
 
 <x-slot:header>
     <x-page-header :image="Vite::asset('resources/images/gallery-header-bg.png')">
@@ -51,7 +51,7 @@ new class extends Component {
 
                         @if ($item->title || $item->description)
                             <div
-                                class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                class="absolute inset-0 bg-linear-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                                 @if ($item->title)
                                     <h3
                                         class="text-white text-xl font-bold font-[Oswald] tracking-wide mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">

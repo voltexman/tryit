@@ -123,6 +123,11 @@ new class extends Component {
 };
 ?>
 
+<x-slot:meta_title></x-slot:meta_title>
+<x-slot:meta_description></x-slot:meta_description>
+<x-slot:meta_robots>index, follow</x-slot:meta_robots>
+<x-slot:meta_image>resources/images/</x-slot:meta_image>
+
 <x-slot:header>
     <x-page-header :image="Vite::asset('resources/images/blog-header-bg.png')">
         <x-slot:title>Блог</x-slot>

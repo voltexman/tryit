@@ -3,8 +3,14 @@ use function Laravel\Folio\name;
 name('feedback');
 ?>
 
-<x-layouts::app meta_title="Відгуки про клінінгову компанію TryIt — Нам довіряють чистоту"
-    meta_description="Читайте реальні відгуки наших клієнтів про якість прибирання квартир та офісів. Дізнайтеся, чому мешканці Києва обирають TryIt для підтримки ідеальної чистоти у своїх оселях.">
+
+
+<x-layouts::app>
+    <x-slot:meta_title>feedback title</x-slot:meta_title>
+    <x-slot:meta_description>feedback description</x-slot:meta_description>
+    <x-slot:meta_robots>index, follow</x-slot:meta_robots>
+    <x-slot:meta_image>resources/images/</x-slot:meta_image>
+
     <x-slot:header>
         <x-page-header :image="Vite::asset('resources/images/feedback-header-bg.png')">
             <x-slot:title>

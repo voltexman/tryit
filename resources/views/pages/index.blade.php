@@ -4,6 +4,11 @@ name('main');
 ?>
 
 <x-layouts::app>
+    <x-slot:meta_title>головна</x-slot:meta_title>
+    <x-slot:meta_description>опис головної сторінки</x-slot:meta_description>
+    <x-slot:meta_robots>index, follow</x-slot:meta_robots>
+    <x-slot:meta_image>resources/images/</x-slot:meta_image>
+
     <x-slot:header>
         <div class="bg-cover bg-center h-dvh"
             style="background-image: url('{{ Vite::asset('resources/images/header.webp') }}');">
