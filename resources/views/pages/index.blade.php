@@ -592,12 +592,12 @@ name('main');
                 <!-- Кнопка Play (Відео) -->
                 <div x-data="{ open: false }" class="relative" id="cta-play-wrapper">
                     <button @click="open = true" aria-label="Відтворити відео"
-                        class="group relative size-24 md:size-32 bg-tryit-orange/20 rounded-full flex items-center justify-center backdrop-blur-md border border-white/30 transition-transform hover:scale-110">
+                        class="group relative size-32 bg-tryit-orange/20 rounded-full flex items-center justify-center backdrop-blur-md border border-white/30 transition-transform hover:scale-110">
                         <!-- Анімовані хвилі -->
                         <span class="absolute inset-0 rounded-full bg-tryit-orange animate-ping opacity-20"></span>
 
                         <div id="cta-play-inner"
-                            class="size-16 md:size-20 bg-tryit-orange rounded-full flex items-center justify-center shadow-xl shadow-tryit-orange/40 group-hover:bg-tryit-orange/80 transition-colors">
+                            class="size-20 bg-tryit-orange rounded-full flex items-center justify-center shadow-xl shadow-tryit-orange/40 group-hover:bg-tryit-orange/80 transition-colors">
                             <x-lucide-play class="size-8 text-white fill-current ml-1" />
                         </div>
                     </button>
