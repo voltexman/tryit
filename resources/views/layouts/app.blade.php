@@ -71,7 +71,7 @@
                 <div class="relative w-auto mt-5">
                     <a href="{{ route('main') }}" aria-label="Перейти на головну сторінку натиснувши на логотип">
                         <img src="{{ Vite::asset('resources/images/logo.png') }}"
-                            class="relative top-0 left-0 h-12 w-auto z-50" width="120" height="40"
+                            class="relative top-0 left-0 h-12 w-auto z-50 drop-shadow-xl" width="120" height="40"
                             fetchpriority="high" alt="Логотип компанії" />
                     </a>
                 </div>
@@ -172,7 +172,8 @@
                     </x-navigation.item>
                 </x-navigation>
 
-                <div class="hidden lg:flex text-white w-fit text-xl font-display font-semibold items-center gap-2.5">
+                <div
+                    class="hidden drop-shadow-xl lg:flex text-tryit-cream w-fit text-xl font-display font-semibold items-center gap-2.5">
                     <x-lucide-phone class="size-6" />
                     <span class="text-nowrap">+380 (97) 877-866-7</span>
                 </div>

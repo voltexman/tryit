@@ -16,9 +16,9 @@ name('main');
         <div class="bg-cover bg-center h-dvh"
             style="background-image: url('{{ Vite::asset('resources/images/header.webp') }}');">
             <div class="flex items-center justify-center size-full bg-slate-950/65 backdrop-blur-[1px]">
-                <div class="max-w-4xl mx-auto flex flex-col items-center gap-y-8 px-5 text-center">
+                <div class="max-w-4xl mx-auto flex flex-col items-center gap-y-5 px-5 text-center">
                     <div
-                        class="font-[Lora] text-4xl md:text-6xl xl:text-7xl text-nowrap uppercase text-slate-100 font-black italic tracking-tight drop-shadow-xl">
+                        class="font-[Lora] text-4xl md:text-6xl xl:text-7xl text-nowrap uppercase text-tryit-cream font-black italic tracking-tight drop-shadow-xl">
                         <span class="text-tryit-orange text-5xl lg:text-8xl font-[Oswald]">Чистота</span>, яку<br>
                         варто <br class="lg:hidden">спробувати<br>
                         <span class="text-tryit-orange text-5xl lg:text-7xl font-[Oswald]">сьогодні</span>
@@ -26,13 +26,13 @@ name('main');
 
                     <div class="w-16 h-0.5 bg-tryit-orange/80 rounded-full"></div>
 
-                    <p class="text-white/90 text-lg md:text-xl xl:text-2xl font-light max-w-xl text-balance">
+                    <p class="text-tryit-cream text-lg md:text-xl xl:text-2xl font-light max-w-xl text-balance">
                         Шукаєте надійну клінінгову компанію?<br class="hidden md:block">
                         Ми подбаємо про чистоту вашого офісу, виробництва чи будинку на найвищому рівні
                     </p>
 
                     <a href="#services"
-                        class="bg-orange-700 font-display relative py-4 px-10 uppercase text-white font-black text-lg tracking-wider rounded-full hover:bg-tryit-orange/90 transition-all duration-300 cursor-pointer"
+                        class="bg-tryit-orange font-display relative py-4 px-8 uppercase text-tryit-cream font-black text-lg tracking-wider rounded-full hover:bg-tryit-orange/90 transition-all duration-300 cursor-pointer"
                         aria-label="Перейти до розділу з нашими послугами">
                         Наші послуги
                     </a>
