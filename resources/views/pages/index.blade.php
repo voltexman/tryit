@@ -358,7 +358,7 @@ name('main');
                             <div class="flex flex-wrap gap-4 mx-auto lg:mx-0">
                                 {{-- Google Play --}}
                                 <div
-                                    class="flex items-center gap-3 bg-black/20 border border-white/15 backdrop-blur-md rounded-2xl px-5 py-2.5 transition-all focus-within:bg-black/40 focus-within:border-white/40 w-full max-w-70">
+                                    class="flex justify-center mx-auto items-center gap-3 bg-black/20 border border-white/15 backdrop-blur-md rounded-2xl px-5 py-2.5 transition-all focus-within:bg-black/40 focus-within:border-white/40 w-full max-w-70">
                                     {{-- Іконка телефону --}}
                                     <div class="size-8 flex items-center justify-center shrink-0">
                                         <x-lucide-phone class="size-6 stroke-white" />

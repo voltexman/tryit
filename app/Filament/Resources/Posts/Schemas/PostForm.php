@@ -49,13 +49,13 @@ class PostForm
                                 ->required()
                                 ->unique(ignoreRecord: true)
                                 ->maxLength(255)
-                                ->disabled(fn (Get $get): bool => (bool) ($get('slug_locked') ?? true))
-                                ->readOnly(fn (Get $get): bool => (bool) ($get('slug_locked') ?? true))
+                                ->disabled(fn(Get $get): bool => (bool) ($get('slug_locked') ?? true))
+                                ->readOnly(fn(Get $get): bool => (bool) ($get('slug_locked') ?? true))
                                 ->dehydrated()
                                 ->suffixAction(
                                     Action::make('toggleSlugLock')
-                                        ->icon(fn (Get $get): string => ($get('slug_locked') ?? true) ? 'heroicon-m-lock-closed' : 'heroicon-m-lock-open')
-                                        ->tooltip(fn (Get $get): string => ($get('slug_locked') ?? true) ? 'Розблокувати' : 'Заблокувати')
+                                        ->icon(fn(Get $get): string => ($get('slug_locked') ?? true) ? 'heroicon-m-lock-closed' : 'heroicon-m-lock-open')
+                                        ->tooltip(fn(Get $get): string => ($get('slug_locked') ?? true) ? 'Розблокувати' : 'Заблокувати')
                                         ->action(function (Get $get, Set $set): void {
                                             $currentState = (bool) ($get('slug_locked') ?? true);
                                             $set('slug_locked', ! $currentState);
@@ -72,7 +72,7 @@ class PostForm
                                         ->label('Назва')
                                         ->required()
                                         ->live(onBlur: true)
-                                        ->afterStateUpdated(fn ($state, $set) => $set('slug', Str::slug((string) $state))),
+                                        ->afterStateUpdated(fn($state, $set) => $set('slug', Str::slug((string) $state))),
                                     TextInput::make('slug')
                                         ->label('Slug')
                                         ->required()
@@ -105,17 +105,17 @@ class PostForm
 
                         Section::make('SEO Налаштування')->schema([
                             TextInput::make('meta_title')
-                                ->label('Мета заголовок')
+                                ->label('Meta title')
                                 ->maxLength(255),
 
                             Textarea::make('meta_description')
-                                ->label('Мета опис (180 символів)')
+                                ->label('Meta description (180 символів)')
                                 ->rows(3)
                                 ->helperText('Опис для відображення в результатах пошуку. Рекомендована довжина в межах 180 символів.')
                                 ->maxLength(180),
 
                             Select::make('meta_robots')
-                                ->label('Мета роботи')
+                                ->label('Meta robots')
                                 ->options([
                                     'index, follow' => 'Індексувати, Слідувати',
                                     'index, nofollow' => 'Індексувати, Не слідувати',
@@ -141,11 +141,12 @@ class PostForm
                         Section::make('Публікація')->schema([
                             DateTimePicker::make('published_at')
                                 ->label('Дата публікації')
+                                ->default(now())
                                 ->native(false),
 
                             Toggle::make('is_published')
                                 ->label('Опубліковано')
-                                ->default(false),
+                                ->default(true),
                         ]),
                     ])->columnSpan(1),
                 ])->columnSpanFull(),

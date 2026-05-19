@@ -259,7 +259,7 @@
                             Часи роботи
                         </h4>
 
-                        <ul class="space-y-5">
+                        <ul class="flex justify-center lg:justify-start space-y-5">
                             <li>
                                 <div class="flex items-start gap-2.5">
                                     <div class="text-base md:text-lg">
@@ -277,7 +277,7 @@
 
                     {{-- Column 4: Contacts --}}
                     <div class="text-center md:text-left">
-                        <ul class="space-y-2.5">
+                        <ul class="flex flex-col items-center lg:items-start space-y-2.5">
                             <li>
                                 <a href="tel:+380978778667" class="flex items-center gap-2.5 group"
                                     aria-label="Подзвонити нам">
@@ -303,7 +303,8 @@
                                 </div>
                             </li>
                         </ul>
-                        <div class="flex items-center justify-center md:justify-start gap-2.5 mt-5">
+
+                        <div class="flex items-center justify-center md:justify-start gap-2.5 mt-10 lg:mt-5">
                             <a href="https://www.instagram.com/try.it_cleaning?igsh=NGJxNDY4cnFwZ29k&utm_source=qr"
                                 target="_blank" aria-label="Instagram"
                                 class="size-15 md:size-14 rounded-full bg-tryit-orange/20 hover:bg-tryit-orange/30 flex items-center justify-center transition-colors duration-300">
