@@ -20,6 +20,8 @@ class FeedbackResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Відгуки';
 
+    protected static ?int $navigationSort = 3;
+
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedChatBubbleLeftRight;
 
     public static function form(Schema $schema): Schema

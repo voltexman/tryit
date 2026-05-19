@@ -17,6 +17,10 @@
     --font-display: "Oswald", ui-sans-serif, system-ui, sans-serif;
 }
 
+.grecaptcha-badge {
+    visibility: hidden !important;
+}
+
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -157,41 +161,41 @@
         background: var(--color-tryit-orange) !important;
         border-color: var(--color-tryit-orange) !important;
         @apply !text-white;
-        }
-        }
+    }
+}
 
-        /* PhotoSwipe Custom Caption */
-        .pswp__custom-caption {
-        background: rgba(0, 0, 0, 0.75);
-        backdrop-filter: blur(8px);
-        color: #fff;
-        width: 100%;
-        padding: 20px;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        z-index: 10;
-        }
+/* PhotoSwipe Custom Caption */
+.pswp__custom-caption {
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+}
 
-        .pswp__custom-caption-title {
-        font-family: "Oswald", sans-serif;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 1.2;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        margin-bottom: 8px;
-        color: #fff;
-        }
+.pswp__custom-caption-title {
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    color: #fff;
+}
 
-        .pswp__custom-caption-desc {
-        font-family: ui-sans-serif, system-ui, sans-serif;
-        font-size: 15px;
-        color: #d1d5db;
-        max-width: 700px;
-        line-height: 1.5;
-        }
+.pswp__custom-caption-desc {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 15px;
+    color: #d1d5db;
+    max-width: 700px;
+    line-height: 1.5;
+}

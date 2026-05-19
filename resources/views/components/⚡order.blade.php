@@ -27,7 +27,7 @@ new class extends Component {
     #[On('setService')]
     public function setService($service)
     {
-        $this->order->service = $service;
+        $this->order->service = is_array($service) ? $service['service'] ?? '' : $service;
     }
 
     public function save($recaptchaToken = null)
@@ -41,29 +41,52 @@ new class extends Component {
 };
 ?>
 
-@session('success')
-    <div class="h-96 flex items-center justify-center">
-        <div class="flex flex-col items-center">
-            <x-lucide-circle-check class="size-24 stroke-1 text-tryit-orange mb-5" />
-            <span class="font-semibold">Дякуємо, заявка відправлена</span>
-            <span class="text-sm font-medium">Ми зв'яжемось з Вами найближчим часом</span>
-        </div>
-    </div>
-@else
-    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site') }}"></script>
+@assets
+    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site') }}" defer></script>
+@endassets
 
-    <x-offcanvas id="orderOffcanvas" title="Замовити послугу">
+{{-- <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site') }}"></script> --}}
+
+<x-offcanvas id="orderOffcanvas" title="Замовити послугу">
+    @session('success')
+        <div class="h-full flex items-center justify-center">
+            <div class="flex flex-col items-center">
+                <x-lucide-circle-check class="size-24 stroke-1 text-tryit-orange mb-5" />
+                <span class="font-semibold">Дякуємо, заявка відправлена</span>
+                <span class="text-sm font-medium">Ми зв'яжемось з Вами найближчим часом</span>
+            </div>
+        </div>
+    @else
         <form x-data="{
-            executeCaptcha() {
+            loading: false,
+            sendForm() {
+                if (this.loading) return;
+                this.loading = true;
                 grecaptcha.ready(() => {
                     grecaptcha.execute('{{ config('services.recaptcha.site') }}', { action: 'order_submit' })
                         .then((token) => {
-                            // Передаємо згенерований токен прямо в метод $wire.save()
-                            @this.call('save', token);
+                            $wire.save(token).then(() => {
+                                this.loading = false;
+                            }).catch((error) => {
+                                this.loading = false;
+                            });
+                        })
+                        .catch((e) => {
+                            this.loading = false;
+                            console.error('Google reCAPTCHA Error:', e);
                         });
                 });
             }
-        }" @submit.prevent="executeCaptcha" class="space-y-5">
+        }" @submit.prevent="sendForm" class="space-y-5">
+
+            @if ($order->service)
+                <div class="mb-2 -mt-2">
+                    <span
+                        class="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-700 ring-1 ring-inset ring-emerald-600/20">
+                        {{ $order->service }}
+                    </span>
+                </div>
+            @endif
 
             <!-- ОСНОВНІ ПОЛЯ -->
             <div class="space-y-5">
@@ -95,7 +118,7 @@ new class extends Component {
             </div>
 
             <!-- ПОСЛУГА -->
-            {{-- @if (!$order->service)
+            @if (!$order->service)
                 <div class="space-y-3">
                     <h3 class="font-display text-lg font-semibold text-slate-900">Послуга</h3>
                     <div class="space-y-2">
@@ -114,7 +137,7 @@ new class extends Component {
                         <x-forms.error :message="$message" />
                     @enderror
                 </div>
-            @endif --}}
+            @endif
 
             <!-- ХАРАКТЕРИСТИКИ ОБ'ЄКТУ -->
             <div x-data="{ expanded: false }" class="space-y-5">
@@ -360,6 +383,13 @@ new class extends Component {
                     <x-lucide-loader-2 wire:target="save" wire:loading class="w-4 h-4 animate-spin" />
                 </button>
             </div>
+
+            <!-- ПОМИЛКА КАПЧІ (Якщо робот або збій верифікації) -->
+            @error('recaptcha')
+                <div class="p-3 text-sm text-red-600 bg-red-50 rounded-lg border border-red-200">
+                    {{ $message }}
+                </div>
+            @enderror
         </form>
-    </x-offcanvas>
-@endsession
+    @endsession
+</x-offcanvas>

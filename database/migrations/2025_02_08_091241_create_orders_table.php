@@ -25,6 +25,7 @@ return new class extends Migration
             $table->boolean('has_water')->nullable();
             $table->boolean('has_parking')->nullable();
             $table->string('room_count')->nullable();
+            $table->string('floor_count')->nullable();
             $table->string('contamination_level')->nullable();
             $table->boolean('is_urgent')->default(false);
 

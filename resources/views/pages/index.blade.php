@@ -94,6 +94,7 @@ name('main');
         services: {{ json_encode(
             collect(App\Enums\ServiceEnum::cases())->map(
                 fn($service) => [
+                    'value' => $service->value,
                     'title' => $service->getTitle(),
                     'description' => $service->getDescription(),
                     'image' => Vite::asset('resources/images/' . $service->getImage()),
@@ -146,7 +147,7 @@ name('main');
                                     <x-lucide-move-right class="size-4 shrink-0 inline-flex ml-1.5" />
                                 </a>
                                 <button type="button"
-                                    @click="openOffcanvas('orderOffcanvas'), Livewire.dispatch('setService', { service: service })"
+                                    @click="openOffcanvas('orderOffcanvas'), Livewire.dispatch('setService', { service: service.value })"
                                     class="px-6 py-3 font-display rounded-full backdrop-blur-xs text-emerald-400 hover:text-emerald-400 bg-emerald-500/20 hover:bg-emerald-600/20 border border-emerald-500/20 transition-all duration-300 cursor-pointer">
                                     Замовити послугу
                                 </button>
@@ -191,7 +192,7 @@ name('main');
                                     <x-lucide-move-right class="size-4 shrink-0 inline-flex ml-1.5" />
                                 </a>
                                 <button type="button"
-                                    @click="Livewire.dispatch('setService', { service: service }); window.openOffcanvas('orderOffcanvas')"
+                                    @click="Livewire.dispatch('setService', { service: service.value }); window.openOffcanvas('orderOffcanvas')"
                                     class="px-5 py-2 font-display rounded-full backdrop-blur-xs text-emerald-400 hover:text-emerald-400 bg-emerald-500/20 hover:bg-emerald-600/20 border border-emerald-500/20 transition-all duration-300 cursor-pointer">
                                     Замовити послугу
                                 </button>
