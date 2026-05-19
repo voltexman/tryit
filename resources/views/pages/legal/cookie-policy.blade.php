@@ -5,20 +5,22 @@ use function Laravel\Folio\name;
 name('legal.cookie-policy');
 ?>
 
-@extends('layouts.base')
+<x-layouts::app>
+    <x-slot:meta_title>Політика cookies - {{ env('APP_NAME') }}</x-slot:meta_title>
+    <x-slot:meta_description>Інформація про використання файлів cookie на нашому сайті</x-slot:meta_description>
+    <x-slot:meta_robots>index, follow</x-slot:meta_robots>
 
-@section('header')
-    <x-page-header image="{{ Vite::asset('resources/images/service-4.jpg') }}">
-        <x-slot:title>
-            Політика cookies
-        </x-slot>
-        <x-slot:description>
-            Інформація про використання файлів cookie на нашому сайті
-        </x-slot>
-    </x-page-header>
-@endsection
+    <x-slot:header>
+        <x-page-header image="{{ Vite::asset('resources/images/service-4.jpg') }}">
+            <x-slot:title>
+                Політика cookies
+            </x-slot>
+            <x-slot:description>
+                Інформація про використання файлів cookie на нашому сайті
+            </x-slot>
+        </x-page-header>
+    </x-slot:header>
 
-@section('content')
     <section class="py-12 md:py-16">
         <div class="max-w-3xl mx-auto px-5">
             {{-- Document header --}}
@@ -119,4 +121,4 @@ name('legal.cookie-policy');
             </div>
         </div>
     </section>
-@endsection
+</x-layouts::app>

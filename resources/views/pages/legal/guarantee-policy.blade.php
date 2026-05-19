@@ -5,20 +5,22 @@ use function Laravel\Folio\name;
 name('legal.guarantee-policy');
 ?>
 
-@extends('layouts.base')
+<x-layouts::app>
+    <x-slot:meta_title>Гарантії та повернення - {{ env('APP_NAME') }}</x-slot:meta_title>
+    <x-slot:meta_description>Наші гарантійні зобов'язання щодо якості наданих клінінгових послуг</x-slot:meta_description>
+    <x-slot:meta_robots>index, follow</x-slot:meta_robots>
 
-@section('header')
-    <x-page-header image="{{ Vite::asset('resources/images/service-5.jpg') }}">
-        <x-slot:title>
-            Гарантії та повернення
-        </x-slot>
-        <x-slot:description>
-            Наші гарантійні зобов'язання щодо якості наданих клінінгових послуг
-        </x-slot>
-    </x-page-header>
-@endsection
+    <x-slot:header>
+        <x-page-header image="{{ Vite::asset('resources/images/service-5.jpg') }}">
+            <x-slot:title>
+                Гарантії та повернення
+            </x-slot>
+            <x-slot:description>
+                Наші гарантійні зобов'язання щодо якості наданих клінінгових послуг
+            </x-slot>
+        </x-page-header>
+    </x-slot:header>
 
-@section('content')
     <section class="py-12 md:py-16">
         <div class="max-w-3xl mx-auto px-5">
             {{-- Document header --}}
@@ -101,4 +103,4 @@ name('legal.guarantee-policy');
             </div>
         </div>
     </section>
-@endsection
+</x-layouts::app>

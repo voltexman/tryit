@@ -20,7 +20,7 @@ name('legal.privacy-policy');
         </x-page-header>
     </x-slot:header>
 
-    <section class="py-12 md:py-16">
+    <section class="py-10 md:py-20">
         <div class="max-w-3xl mx-auto px-5">
             {{-- Document header --}}
             <div class="flex items-center gap-3 mb-2 text-sm text-gray-400">

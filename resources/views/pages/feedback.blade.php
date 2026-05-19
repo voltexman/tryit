@@ -9,7 +9,7 @@ name('feedback');
     <x-slot:meta_title>feedback title</x-slot:meta_title>
     <x-slot:meta_description>feedback description</x-slot:meta_description>
     <x-slot:meta_robots>index, follow</x-slot:meta_robots>
-    <x-slot:meta_image>resources/images/</x-slot:meta_image>
+    {{-- <x-slot:meta_image>resources/images/</x-slot:meta_image> --}}
 
     <x-slot:header>
         <x-page-header :image="Vite::asset('resources/images/feedback-header-bg.png')">

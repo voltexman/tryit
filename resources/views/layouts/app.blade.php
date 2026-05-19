@@ -220,7 +220,7 @@
                     <div class="text-center md:text-left">
                         <ul class="space-y-3">
                             <li>
-                                <a href="{{ route('legal.privacy-policy') }}"
+                                <a href="{{ route('legal.privacy-policy') }}" wire:navigate
                                     class="group inline-flex items-center justify-center md:justify-start gap-2 text-tryit-cream text-base font-medium hover:text-white transition-colors">
                                     <x-lucide-shield-check
                                         class="size-4 text-emerald-500 group-hover:text-emerald-400 transition-colors" />
@@ -228,7 +228,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('legal.terms-of-service') }}"
+                                <a href="{{ route('legal.terms-of-service') }}" wire:navigate
                                     class="group inline-flex items-center justify-center md:justify-start gap-2 text-tryit-cream text-base font-medium hover:text-white transition-colors">
                                     <x-lucide-file-text
                                         class="size-4 text-emerald-500 group-hover:text-emerald-400 transition-colors" />
@@ -236,7 +236,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('legal.guarantee-policy') }}"
+                                <a href="{{ route('legal.guarantee-policy') }}" wire:navigate
                                     class="group inline-flex items-center justify-center md:justify-start gap-2 text-tryit-cream text-base font-medium hover:text-white transition-colors">
                                     <x-lucide-award
                                         class="size-4 text-emerald-500 group-hover:text-emerald-400 transition-colors" />
@@ -244,7 +244,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('legal.cookie-policy') }}"
+                                <a href="{{ route('legal.cookie-policy') }}" wire:navigate
                                     class="group inline-flex items-center justify-center md:justify-start gap-2 text-tryit-cream text-base font-medium hover:text-white transition-colors">
                                     <x-lucide-cookie
                                         class="size-4 text-emerald-500 group-hover:text-emerald-400 transition-colors" />
