@@ -1,5 +1,5 @@
 <div
-    class="relative overflow-hidden -mx-5 md:rounded-3xl my-5 py-5 min-h-120 lg:min-h-100 flex items-center bg-emerald-700 group">
+    class="relative overflow-hidden -mx-5 md:rounded-3xl my-5 py-5 md:py-10 min-h-120 lg:min-h-100 flex items-center bg-emerald-700 group">
     {{-- 1. Subtle Background Pattern (Optional, for depth) --}}
     <div class="absolute inset-0 -top-10 z-0 pointer-events-none opacity-15">
         <img src="{{ Vite::asset('resources/images/h3-cleaning-01.jpg') }}"

@@ -91,18 +91,6 @@ new class extends Component {
                 <x-lucide-arrow-left class="size-4" stroke-width="2" />
                 Всі статті
             </a>
-            <div class="flex items-center gap-3 text-sm text-gray-600">
-                <span>Поділитись:</span>
-                <a href="https://t.me/share/url?url={{ urlencode(request()->url()) }}&text={{ urlencode($post->title) }}"
-                    target="_blank"
-                    class="size-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-tryit-green/10 transition-colors">
-                    <x-lucide-send class="size-4 text-gray-600" stroke-width="1.5" />
-                </a>
-                <a href="viber://forward?text={{ urlencode($post->title . ' ' . request()->url()) }}"
-                    class="size-9 rounded-full bg-gray-100 flex items-center justify-center hover:bg-tryit-green/10 transition-colors">
-                    <x-lucide-message-circle class="size-4 text-gray-600" stroke-width="1.5" />
-                </a>
-            </div>
         </div>
     </div>
 </article>
