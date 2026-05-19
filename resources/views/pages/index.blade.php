@@ -14,12 +14,12 @@ name('main');
             style="background-image: url('{{ Vite::asset('resources/images/header.webp') }}');">
             <div class="flex items-center justify-center size-full bg-slate-950/65 backdrop-blur-[1px]">
                 <div class="max-w-4xl mx-auto flex flex-col items-center gap-y-8 px-5 text-center">
-                    <h1
+                    <div
                         class="font-[Lora] text-4xl md:text-6xl xl:text-7xl text-nowrap uppercase text-slate-100 font-black italic tracking-tight drop-shadow-xl">
                         <span class="text-tryit-orange text-5xl lg:text-8xl font-[Oswald]">Чистота</span>, яку<br>
                         варто <br class="lg:hidden">спробувати<br>
                         <span class="text-tryit-orange text-5xl lg:text-7xl font-[Oswald]">сьогодні</span>
-                    </h1>
+                    </div>
 
                     <div class="w-16 h-0.5 bg-tryit-orange/80 rounded-full"></div>
 
@@ -126,9 +126,9 @@ name('main');
             <!-- ЛІВА ЧАСТИНА: Заголовок та опис (видимо на ПК) -->
             <div class="hidden lg:flex flex-col justify-center text-white">
                 <div class="space-y-8">
-                    <h2 class="font-display text-5xl xl:text-6xl font-black tracking-wide uppercase leading-tight">
+                    <div class="font-display text-5xl xl:text-6xl font-black tracking-wide uppercase leading-tight">
                         Наші<br><span class="text-emerald-500 font-black font-[Lora] italic">послуги</span>
-                    </h2>
+                    </div>
 
                     <template x-for="(service, index) in services" :key="index">
                         <div x-show="selected === index" x-transition:enter="transition opacity duration-500"
@@ -160,9 +160,9 @@ name('main');
             <!-- МОБІЛЬНА ВЕРСІЯ: Акордіон на фоні зображення -->
             <div class="lg:hidden flex flex-col justify-center text-white w-full min-h-96">
                 <!-- Заголовок на мобільному -->
-                <h2 class="font-display text-4xl font-black tracking-wide uppercase leading-tight mb-5">
+                <div class="font-display text-4xl font-black tracking-wide uppercase leading-tight mb-5">
                     Наші<br><span class="text-emerald-500">послуги</span>
-                </h2>
+                </div>
 
                 <template x-for="(service, index) in services" :key="index">
                     <div class="border-b last:border-b-0 border-slate-50/15 py-4">
@@ -210,9 +210,9 @@ name('main');
                         :class="selected === index ?
                             'border-emerald-500 from-emerald-500/20 from-5% to-transparent' :
                             'border-slate-100/20 bg-transparent hover:bg-white/5'">
-                        <h3 class="font-display text-xl font-semibold transition-colors duration-300"
+                        <div class="font-display text-xl font-semibold transition-colors duration-300"
                             :class="selected === index ? 'text-emerald-400' : 'text-white/70 group-hover:text-white'"
-                            x-text="service.title"></h3>
+                            x-text="service.title"></div>
                     </div>
                 </template>
             </div>
@@ -243,7 +243,7 @@ name('main');
 
                                     <div class="text-center space-y-3 mt-4 animate-pulse">
                                         <p class="text-[10px] text-white uppercase tracking-[0.3em]">Йде виклик...</p>
-                                        <h3
+                                        <div
                                             class="text-5xl font-semibold font-[Lora] text-orange-500 tracking-tighter flex">
                                             Try
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54"
@@ -268,7 +268,7 @@ name('main');
                                                 </g>
                                             </svg>
                                             It
-                                        </h3>
+                                        </div>
                                         <p class="text-xs text-white/90 uppercase tracking-wide">Клінінгова компанія
                                         </p>
                                     </div>
@@ -336,9 +336,9 @@ name('main');
                     {{-- Права частина: Текст --}}
                     <div class="lg:col-span-7 p-8 lg:p-20 lg:pl-0 text-white">
                         <div class="max-w-xl text-center lg:text-left space-y-5">
-                            <h2 class="font-[Lora] italic text-3xl md:text-5xl font-black tracking-tight">
+                            <div class="font-[Lora] italic text-3xl md:text-5xl font-black tracking-tight">
                                 Чистота в один клік!
-                            </h2>
+                            </div>
 
                             <p class="text-white text-base md:text-lg leading-relaxed font-light lg:text-balance">
                                 Поки ви керуєте справами, ми створюємо ідеальну чистоту. TryIt — професійний клінінг
@@ -391,7 +391,7 @@ name('main');
         <div class="max-w-5xl mx-auto py-20 px-5 relative z-20">
             <div class="flex flex-col items-center">
                 <x-section.badge color="slate" class="mb-2.5">Про компанію</x-section.badge>
-                <x-section.title tag="h3" color="white" size="lg" class="text-center">
+                <x-section.title tag="div" color="white" size="lg" class="text-center">
                     Чому обирають <span class="text-emerald-400 font-[Lora] font-black italic">нас</span>?
                 </x-section.title>
 
@@ -412,9 +412,9 @@ name('main');
                         <div class="font-display text-5xl font-black text-slate-50 mb-4">
                             12+
                         </div>
-                        <h4 class="font-display text-slate-50 uppercase font-semibold mb-2.5">
+                        <div class="font-display text-slate-50 uppercase font-semibold mb-2.5">
                             років досвіду
-                        </h4>
+                        </div>
                         <p class="text-slate-50/60 text-base leading-normal">
                             Понад десятиліття допомагаємо підтримувати чистоту, відточуючи кожну деталь сервісу.
                         </p>
@@ -424,9 +424,9 @@ name('main');
                         <div class="font-display text-5xl font-black text-slate-50 mb-4">
                             300+
                         </div>
-                        <h4 class="font-display text-slate-50 uppercase font-semibold mb-2.5">
+                        <div class="font-display text-slate-50 uppercase font-semibold mb-2.5">
                             задоволених клієнтів
-                        </h4>
+                        </div>
                         <p class="text-slate-50/60 text-base leading-normal">
                             Нам довіряють і рекомендують — більшість клієнтів повертаються до нас знову.
                         </p>
@@ -436,9 +436,9 @@ name('main');
                         <div class="font-display text-5xl font-black text-slate-50 mb-4">
                             100%
                         </div>
-                        <h4 class="font-display text-slate-50 uppercase font-semibold mb-2.5">
+                        <div class="font-display text-slate-50 uppercase font-semibold mb-2.5">
                             гарантія якості
-                        </h4>
+                        </div>
                         <p class="text-slate-50/60 text-base leading-normal">
                             Ми впевнені у результаті: якщо щось не влаштує — безкоштовно виправимо.
                         </p>
@@ -462,7 +462,7 @@ name('main');
             </div>
             <div class="text-center mb-10">
                 <x-section.badge class="mb-2.5">3 кроки до чистоти</x-section.badge>
-                <x-section.title tag="h4" size="lg">
+                <x-section.title tag="div" size="lg">
                     Ваш час занадто <span class="text-emerald-500 font-[Lora] font-black italic">дорогий</span>, <br>
                     щоб <span class="text-emerald-500 font-[Lora] font-black italic">витрачати</span> його на бруд
                 </x-section.title>
@@ -482,7 +482,7 @@ name('main');
                             <x-lucide-timer class="size-8 stroke-slate-100" />
                         </div>
 
-                        <h3 class="font-display text-2xl font-bold text-slate-700 mb-2.5">Домовимось за хвилину</h3>
+                        <div class="font-display text-2xl font-bold text-slate-700 mb-2.5">Домовимось за хвилину</div>
                         <p class="text-slate-500 leading-relaxed mb-5 text-base">
                             Досить витрачати вечори на <span class="text-slate-800 font-medium">планування</span>.
                             Ми відійшли від довгих форм. Просто вкажіть
@@ -510,7 +510,7 @@ name('main');
                             <x-lucide-sparkles class="size-8 stroke-slate-100" />
                         </div>
 
-                        <h3 class="font-display text-2xl font-bold text-white mb-2.5">Усе необхідне - з нас</h3>
+                        <div class="font-display text-2xl font-bold text-white mb-2.5">Усе необхідне - з нас</div>
                         <p class="text-slate-400 leading-relaxed mb-5 text-base">
                             Ми приїжджаємо з повним арсеналом: від потужного промислового
                             <span class="text-slate-50 font-medium">обладнання</span> до сертифікованої
@@ -540,7 +540,7 @@ name('main');
                             <x-lucide-smile-plus class="size-8 stroke-slate-700 transition-all duration-500" />
                         </div>
 
-                        <h3 class="font-display text-2xl font-bold text-slate-700 mb-2.5">Насолоджуйтесь</h3>
+                        <div class="font-display text-2xl font-bold text-slate-700 mb-2.5">Насолоджуйтесь</div>
                         <p class="text-slate-500 leading-relaxed mb-5 text-base">
                             Перевірте <span class="text-slate-950 font-medium">якість</span> роботи та насолоджуйтеся
                             свіжістю. Оплата списується лише після вашого
@@ -617,14 +617,14 @@ name('main');
 
                 <!-- Текстовий блок -->
                 <div class="max-w-3xl text-center md:text-left">
-                    <h2 id="cta-headline"
+                    <div id="cta-headline"
                         class="font-[Oswald] text-4xl/10 md:text-7xl/16 drop-shadow-xl font-semibold text-white text-balance mb-5">
                         Хочете побачити нас <span class="text-emerald-500 font-[Lora] font-black italic">у
                             справі</span>?
                         Наша робота <span class="text-emerald-500 font-[Lora] font-black italic">говорить</span> сама
                         за
                         себе!
-                    </h2>
+                    </div>
 
                     <div id="cta-stars-block"
                         class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-3">
@@ -651,7 +651,7 @@ name('main');
             <div class="mb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between">
                 <div>
                     <x-section.badge class="mb-2.5">FAQs</x-section.badge>
-                    <x-section.title tag="h2" size="lg">
+                    <x-section.title tag="div" size="lg">
                         Питання та <span class="text-emerald-600 font-[Lora] font-black italic">відповіді</span>
                     </x-section.title>
                     <x-section.description>
