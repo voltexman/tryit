@@ -222,6 +222,10 @@
     "file": "assets/comparison-7-before-Cof40Exr.jpeg",
     "src": "resources/images/generalne-prybyrannia-tsekhiv-ta-vyrobnytstva/comparison-7-before.jpeg"
   },
+  "resources/images/guarantee-policy.png": {
+    "file": "assets/guarantee-policy-BxDoYYQf.png",
+    "src": "resources/images/guarantee-policy.png"
+  },
   "resources/images/h1-agency.png": {
     "file": "assets/h1-agency-CtPudIAX.png",
     "src": "resources/images/h1-agency.png"
@@ -518,6 +522,10 @@
     "file": "assets/comparison-7-before-DWdcUiLl.jpg",
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-7-before.jpg"
   },
+  "resources/images/policy-cookies-header-bg.png": {
+    "file": "assets/policy-cookies-header-bg-ChFyEFV8.png",
+    "src": "resources/images/policy-cookies-header-bg.png"
+  },
   "resources/images/promyslovyi-alpinizm/image-1.jpg": {
     "file": "assets/image-1-CWdYmt6d.jpg",
     "src": "resources/images/promyslovyi-alpinizm/image-1.jpg"
@@ -569,6 +577,10 @@
   "resources/images/service-7.jpg": {
     "file": "assets/image-1-CWdYmt6d.jpg",
     "src": "resources/images/promyslovyi-alpinizm/image-1.jpg"
+  },
+  "resources/images/terms-of-service.png": {
+    "file": "assets/terms-of-service-2VJQpcC8.png",
+    "src": "resources/images/terms-of-service.png"
   },
   "resources/js/app.js": {
     "file": "assets/app-DCcJTUqd.js",

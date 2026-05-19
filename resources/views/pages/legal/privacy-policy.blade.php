@@ -7,10 +7,9 @@ name('legal.privacy-policy');
     <x-slot:meta_title>Політика конфіденційності - {{ env('APP_NAME') }}</x-slot:meta_title>
     <x-slot:meta_description>Політика конфіденційності</x-slot:meta_description>
     <x-slot:meta_robots>index, follow</x-slot:meta_robots>
-    {{-- <x-slot:meta_image>resources/images/</x-slot:meta_image> --}}
 
     <x-slot:header>
-        <x-page-header image="{{ Vite::asset('resources/images/service-3.jpg') }}">
+        <x-page-header :image="Vite::asset('resources/images/service-3.jpg')">
             <x-slot:title>
                 Політика конфіденційності
             </x-slot>

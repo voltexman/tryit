@@ -1,7 +1,5 @@
 <?php
-
 use function Laravel\Folio\name;
-
 name('legal.terms-of-service');
 ?>
 
@@ -13,7 +11,7 @@ name('legal.terms-of-service');
     <x-slot:meta_robots>index, follow</x-slot:meta_robots>
 
     <x-slot:header>
-        <x-page-header image="{{ Vite::asset('resources/images/service-3.jpg') }}">
+        <x-page-header :image="Vite::asset('resources/images/terms-of-service.png')">
             <x-slot:title>
                 Умови надання послуг
             </x-slot>
