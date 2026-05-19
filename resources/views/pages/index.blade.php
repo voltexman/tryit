@@ -4,10 +4,13 @@ name('main');
 ?>
 
 <x-layouts::app>
-    <x-slot:meta_title>головна</x-slot:meta_title>
-    <x-slot:meta_description>опис головної сторінки</x-slot:meta_description>
+    <x-slot:meta_title>Клінінгова компанія Київ | Професійне прибирання {{ env('APP_NAME') }}</x-slot:meta_title>
+    <x-slot:meta_description>
+        Професійний клінінг у Києві для дому, офісів та виробництв. Прибирання після ремонту, миття вікон та фасадів
+        еко-засобами. 100% гарантія якості!
+    </x-slot:meta_description>
     <x-slot:meta_robots>index, follow</x-slot:meta_robots>
-    <x-slot:meta_image>resources/images/</x-slot:meta_image>
+    {{-- <x-slot:meta_image>resources/images/</x-slot:meta_image> --}}
 
     <x-slot:header>
         <div class="bg-cover bg-center h-dvh"
