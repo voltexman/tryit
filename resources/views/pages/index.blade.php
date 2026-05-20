@@ -24,8 +24,8 @@ name('main');
             </div>
 
             <!-- Content -->
-            <div class="relative mt-10 lg:mt-0 z-10 mx-auto flex h-full max-w-360 items-center px-5 py-8 lg:px-12">
-                <div class="max-w-160">
+            <div class="relative mt-10 lg:mt-0 z-10 mx-auto flex h-full max-w-5xl items-center">
+                <div>
                     <!-- Title -->
                     <h1
                         class="font-display drop-shadow-xl italic font-black text-center lg:text-left uppercase tracking-tight">
@@ -47,7 +47,7 @@ name('main');
 
                     <!-- Features -->
                     <div
-                        class="mt-5 lg:mt-10 grid grid-cols-2 lg:grid-cols-4 gap-2.5 lg:gap-10 justify-items-center lg:justify-items-start">
+                        class="hidden lg:grid mt-5 lg:mt-10 grid-cols-2 lg:grid-cols-4 gap-2.5 lg:gap-10 justify-items-center lg:justify-items-start">
                         <!-- Item -->
                         <div class="text-center lg:text-left flex flex-col items-center lg:items-start">
                             <div
@@ -138,7 +138,7 @@ name('main');
                         </a>
 
                         <a href="#services"
-                            class="group inline-flex items-center gap-3 text-base text-white/75 transition hover:text-orange-500">
+                            class="hidden lg:inline-flex group items-center gap-3 text-base text-tryit-cream transition hover:text-orange-500">
                             <span class="h-px w-10 bg-orange-500 transition group-hover:w-14"></span>
                             Детальніше про послуги
                         </a>

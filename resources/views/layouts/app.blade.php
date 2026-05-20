@@ -66,8 +66,8 @@
         <div class="size-12 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
     </div>
     <header>
-        <nav class="absolute bg-transparent h-20 w-full top-0 z-50 px-5 xl:px-0 transition-all duration-300">
-            <div class="flex justify-between h-full max-w-6xl mx-auto items-center">
+        <nav class="absolute h-20 w-full top-0 z-50 px-5 lg:px-0">
+            <div class="flex justify-between h-full max-w-5xl mx-auto items-center">
                 <div class="relative w-auto mt-5">
                     <a href="{{ route('main') }}" aria-label="Перейти на головну сторінку натиснувши на логотип">
                         <img src="{{ Vite::asset('resources/images/logo.png') }}"
