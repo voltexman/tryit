@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Feedback\Schemas;
 
 use App\Enums\FeedbackTopicEnum;
 use App\Enums\ServiceEnum;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -35,7 +36,7 @@ class FeedbackForm
                         5 => '5 зірок',
                     ])
                     ->native(false)
-                    ->visible(fn (Get $get) => $get('topic') === FeedbackTopicEnum::GRATITUDE->value),
+                    ->visible(fn(Get $get) => $get('topic') === FeedbackTopicEnum::GRATITUDE->value),
 
                 Select::make('service')
                     ->label('Послуга')
@@ -51,10 +52,16 @@ class FeedbackForm
                     ->label('Контакт')
                     ->maxLength(255),
 
+                DatePicker::make('created_at')
+                    ->format('d/m/Y')
+                    ->columnSpanFull()
+                    ->label('Дата публікації'),
+
                 Textarea::make('text')
                     ->label('Текст відгуку')
                     ->required()
                     ->rows(4)
+                    ->maxLength(1500)
                     ->maxLength(65535)
                     ->columnSpanFull(),
 

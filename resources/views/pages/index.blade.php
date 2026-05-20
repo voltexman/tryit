@@ -13,7 +13,137 @@ name('main');
     {{-- <x-slot:meta_image>resources/images/</x-slot:meta_image> --}}
 
     <x-slot:header>
-        <div class="bg-cover bg-center h-dvh"
+        <header class="relative h-dvh overflow-hidden bg-black text-white">
+            <!-- Background image -->
+            <div class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('{{ Vite::asset('resources/images/header-bg.png') }}')"></div>
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-linear-to-r from-black/75 via-black/45 to-black/15"></div>
+
+            <!-- Content -->
+            <div class="relative z-10 mx-auto flex h-full max-w-360 items-center px-5 py-8 lg:px-12">
+                <div class="max-w-160">
+                    <!-- Title -->
+                    <h1
+                        class="text-4xl font-display font-black uppercase leading-[0.92] tracking-tight sm:text-5xl lg:text-6xl">
+                        <span class="block font-[Lora] text-8xl text-tryit-orange">
+                            Чистота,
+                        </span>
+
+                        <span class="block itali text-tryit-cream">
+                            яку варто <span class="bloc text-5xl text-tryit-orange">спробувати!</span>
+                        </span>
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="mt-5 max-w-140 text-base leading-relaxed text-tryit-cream sm:text-xl">
+                        Професійне прибирання для <span class="font-black">бізнесу, виробництва та
+                            складів</span>, а також квартир та ваших осель
+                    </p>
+
+                    <!-- Features -->
+                    <div class="mt-10 grid grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-4">
+                        <!-- Item -->
+                        <div>
+                            <div
+                                class="mb-3 flex h-14 w-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z" />
+                                </svg>
+                            </div>
+
+                            <h3 class="text-base text-tryit-cream font-semibold">
+                                Надійність
+                            </h3>
+
+                            <p class="mt-1 text-sm text-tryit-cream/60">
+                                Гарантія якості
+                            </p>
+                        </div>
+
+                        <!-- Item -->
+                        <div>
+                            <div
+                                class="mb-3 flex h-14 w-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3" />
+                                    <circle cx="12" cy="12" r="9" />
+                                </svg>
+                            </div>
+
+                            <h3 class="text-base text-tryit-cream font-semibold">
+                                Оперативність
+                            </h3>
+
+                            <p class="mt-1 text-sm text-tryit-cream/60">
+                                Швидкий виїзд
+                            </p>
+                        </div>
+
+                        <!-- Item -->
+                        <div>
+                            <div
+                                class="mb-3 flex h-14 w-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 3c-2 3-6 5.5-6 10a6 6 0 0012 0c0-4.5-4-7-6-10z" />
+                                </svg>
+                            </div>
+
+                            <h3 class="text-base text-tryit-cream font-semibold">
+                                Екологічність
+                            </h3>
+
+                            <p class="mt-1 text-sm text-tryit-cream/60">
+                                Безпечні засоби
+                            </p>
+                        </div>
+
+                        <!-- Item -->
+                        <div>
+                            <div
+                                class="mb-3 flex h-14 w-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M17 20h5V4H2v16h5m10 0v-4a3 3 0 00-6 0v4m6 0H7" />
+                                </svg>
+                            </div>
+
+                            <h3 class="text-base text-tryit-cream font-semibold">
+                                Професіоналізм
+                            </h3>
+
+                            <p class="mt-1 text-sm text-tryit-cream/60">
+                                Досвідчені команди
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="mt-10 flex flex-wrap items-center gap-6">
+                        <a href="#"
+                            class="inline-flex h-14 items-center justify-center rounded-full bg-orange-500 px-8 text-base font-semibold text-white transition hover:bg-orange-600">
+                            Замовити послугу
+                        </a>
+
+                        <a href="#"
+                            class="group inline-flex items-center gap-3 text-base text-white/75 transition hover:text-orange-500">
+                            <span class="h-px w-10 bg-orange-500 transition group-hover:w-14"></span>
+
+                            Детальніше про послуги
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="hidden bg-cover bg-center h-dvh"
             style="background-image: url('{{ Vite::asset('resources/images/header.webp') }}');">
             <div class="flex items-center justify-center size-full bg-slate-950/65 backdrop-blur-[1px]">
                 <div class="max-w-4xl mx-auto flex flex-col items-center gap-y-5 px-5 text-center">
@@ -112,8 +242,9 @@ name('main');
         <template x-for="(service, index) in services" :key="index">
             <div x-show="selected === index" x-transition:enter="transition opacity duration-700 ease-in-out"
                 x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-                x-transition:leave="transition opacity duration-700 ease-in-out" x-transition:leave-start="opacity-100"
-                x-transition:leave-end="opacity-0" class="absolute inset-0 z-0">
+                x-transition:leave="transition opacity duration-700 ease-in-out"
+                x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+                class="absolute inset-0 z-0">
                 <img :src="service.image" :alt="service.title" class="w-full h-full object-cover" loading="lazy"
                     width="1200" height="600">
                 <div
@@ -137,7 +268,8 @@ name('main');
                         <div x-show="selected === index" x-transition:enter="transition opacity duration-500"
                             x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
                             x-transition:leave="transition opacity duration-300 absolute"
-                            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="space-y-6">
+                            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+                            class="space-y-6">
 
                             <p class="text-lg text-white/90 leading-relaxed max-w-xl font-light">
                                 <span x-text="service.description"></span>
@@ -181,8 +313,9 @@ name('main');
                         <!-- Розгорнута інформація -->
                         <div x-show="selected === index" x-transition:enter="transition ease-out duration-300"
                             x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100"
-                            x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100"
-                            x-transition:leave-end="opacity-0 -translate-y-2" class="mt-4 space-y-2">
+                            x-transition:leave="transition ease-in duration-200"
+                            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0 -translate-y-2"
+                            class="mt-4 space-y-2">
 
                             <p class="text-slate-200/60 leading-snug text-base">
                                 <span x-text="service.description"></span>
