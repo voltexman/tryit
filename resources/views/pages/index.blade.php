@@ -19,35 +19,38 @@ name('main');
                 style="background-image: url('{{ Vite::asset('resources/images/header-bg.png') }}')"></div>
 
             <!-- Overlay -->
-            <div class="absolute inset-0 bg-linear-to-r from-black/75 via-black/45 to-black/15"></div>
+            <div
+                class="absolute inset-0 bg-linear-to-b lg:bg-linear-to-r from-slate-950/75 via-slate-950/45 to-slate-950/15">
+            </div>
 
             <!-- Content -->
-            <div class="relative z-10 mx-auto flex h-full max-w-360 items-center px-5 py-8 lg:px-12">
+            <div class="relative mt-10 lg:mt-0 z-10 mx-auto flex h-full max-w-360 items-center px-5 py-8 lg:px-12">
                 <div class="max-w-160">
                     <!-- Title -->
                     <h1
-                        class="text-4xl font-display font-black uppercase leading-[0.92] tracking-tight sm:text-5xl lg:text-6xl">
-                        <span class="block font-[Lora] text-8xl text-tryit-orange">
+                        class="text-4xl font-display drop-shadow-xl font-black text-center lg:text-left uppercase tracking-tight sm:text-5xl lg:text-6xl">
+                        <span class="block font-[Lora] text-5xl lg:text-8xl text-tryit-orange">
                             Чистота,
                         </span>
 
                         <span class="block itali text-tryit-cream">
-                            яку варто <span class="bloc text-5xl text-tryit-orange">спробувати!</span>
+                            яку варто <span class="lg:text-5xl text-tryit-orange">спробувати!</span>
                         </span>
                     </h1>
 
                     <!-- Description -->
-                    <p class="mt-5 max-w-140 text-base leading-relaxed text-tryit-cream sm:text-xl">
+                    <p
+                        class="mt-5 max-w-140 text-base text-center lg:text-left leading-relaxed text-tryit-cream sm:text-xl">
                         Професійне прибирання для <span class="font-black">бізнесу, виробництва та
                             складів</span>, а також квартир та ваших осель
                     </p>
 
                     <!-- Features -->
-                    <div class="mt-10 grid grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-4">
+                    <div class="mt-10 grid grid-cols-4 gap-5 lg:gap-10 justify-items-center lg:justify-items-start">
                         <!-- Item -->
                         <div>
                             <div
-                                class="mb-3 flex h-14 w-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
+                                class="mb-3 flex size-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -55,11 +58,11 @@ name('main');
                                 </svg>
                             </div>
 
-                            <h3 class="text-base text-tryit-cream font-semibold">
+                            <h3 class="hidden lg:block text-base text-tryit-cream font-semibold">
                                 Надійність
                             </h3>
 
-                            <p class="mt-1 text-sm text-tryit-cream/60">
+                            <p class="hidden lg:block mt-1 text-sm text-tryit-cream/60">
                                 Гарантія якості
                             </p>
                         </div>
@@ -67,7 +70,7 @@ name('main');
                         <!-- Item -->
                         <div>
                             <div
-                                class="mb-3 flex h-14 w-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
+                                class="mb-3 flex size-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3" />
@@ -75,11 +78,11 @@ name('main');
                                 </svg>
                             </div>
 
-                            <h3 class="text-base text-tryit-cream font-semibold">
+                            <h3 class="hidden lg:block text-base text-tryit-cream font-semibold">
                                 Оперативність
                             </h3>
 
-                            <p class="mt-1 text-sm text-tryit-cream/60">
+                            <p class="hidden lg:block mt-1 text-sm text-tryit-cream/60">
                                 Швидкий виїзд
                             </p>
                         </div>
@@ -87,7 +90,7 @@ name('main');
                         <!-- Item -->
                         <div>
                             <div
-                                class="mb-3 flex h-14 w-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
+                                class="mb-3 flex size-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -95,11 +98,11 @@ name('main');
                                 </svg>
                             </div>
 
-                            <h3 class="text-base text-tryit-cream font-semibold">
+                            <h3 class="hidden lg:block text-base text-tryit-cream font-semibold">
                                 Екологічність
                             </h3>
 
-                            <p class="mt-1 text-sm text-tryit-cream/60">
+                            <p class="hidden lg:block mt-1 text-sm text-tryit-cream/60">
                                 Безпечні засоби
                             </p>
                         </div>
@@ -107,7 +110,7 @@ name('main');
                         <!-- Item -->
                         <div>
                             <div
-                                class="mb-3 flex h-14 w-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
+                                class="mb-3 flex size-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -115,27 +118,27 @@ name('main');
                                 </svg>
                             </div>
 
-                            <h3 class="text-base text-tryit-cream font-semibold">
+                            <h3 class="hidden lg:block text-base text-tryit-cream font-semibold">
                                 Професіоналізм
                             </h3>
 
-                            <p class="mt-1 text-sm text-tryit-cream/60">
+                            <p class="hidden lg:block mt-1 text-sm text-tryit-cream/60">
                                 Досвідчені команди
                             </p>
                         </div>
                     </div>
 
                     <!-- Buttons -->
-                    <div class="mt-10 flex flex-wrap items-center gap-6">
+                    <div class="mt-10 flex flex-wrap items-center gap-5 justify-center lg:justify-start">
                         <a href="#"
+                            @click="Livewire.dispatch('setService', { service: '' }); window.openOffcanvas('orderOffcanvas')"
                             class="inline-flex h-14 items-center justify-center rounded-full bg-orange-500 px-8 text-base font-semibold text-white transition hover:bg-orange-600">
                             Замовити послугу
                         </a>
 
-                        <a href="#"
+                        <a href="#services"
                             class="group inline-flex items-center gap-3 text-base text-white/75 transition hover:text-orange-500">
                             <span class="h-px w-10 bg-orange-500 transition group-hover:w-14"></span>
-
                             Детальніше про послуги
                         </a>
                     </div>

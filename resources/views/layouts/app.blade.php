@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 
 <head>
     <meta charset="utf-8">
@@ -80,7 +80,7 @@
                     <x-sidebar>
                         <x-slot:trigger>
                             <button type="button" aria-label="Відкрити головне меню" x-on:click="open = true">
-                                <x-lucide-menu class="size-6 stroke-white" />
+                                <x-lucide-menu class="size-6 stroke-tryit-cream" />
                             </button>
                         </x-slot>
                         <x-slot:title>Головне меню</x-slot>
