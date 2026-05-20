@@ -14,7 +14,7 @@ class Feedback extends Model implements HasMedia
     use HasFactory;
     use InteractsWithMedia;
 
-    protected $fillable = ['name', 'contact', 'text', 'is_visible_on_homepage', 'topic', 'service', 'rating'];
+    protected $fillable = ['name', 'contact', 'text', 'is_visible_on_homepage', 'topic', 'service', 'rating', 'created_at'];
 
     protected $casts = [
         'is_visible_on_homepage' => 'boolean',
