@@ -33,7 +33,7 @@ class PostsTable
                     ->searchable()
                     ->sortable()
                     ->weight(FontWeight::Bold)
-                    ->description(fn(Post $record) => new HtmlString(
+                    ->description(fn (Post $record) => new HtmlString(
                         Blade::render('
                             @if($tags->isNotEmpty())
                                 <div class="flex flex-wrap gap-1 mt-1">

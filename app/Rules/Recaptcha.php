@@ -13,26 +13,29 @@ class Recaptcha implements ValidationRule
         // Якщо токен порожній (наприклад, збій JS)
         if (empty($value)) {
             $fail('Помилка безпеки: токен капчі відсутній.');
+
             return;
         }
 
         // НАДВАЖЛИВО: використовуємо точний повний URL сервісу Google для перевірки v3
         $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
-            'secret'   => config('services.recaptcha.secret'),
+            'secret' => config('services.recaptcha.secret'),
             'response' => $value,
             'remoteip' => request()->ip(),
         ]);
 
         if ($response->failed()) {
             $fail('Не вдалося зв’язатися з сервером перевірки безпеки.');
+
             return;
         }
 
         $data = $response->json();
 
         // Якщо Google відхилив токен або повернув помилку
-        if (!($data['success'] ?? false)) {
+        if (! ($data['success'] ?? false)) {
             $fail('Капча не пройшла перевірку. Спробуйте ще раз.');
+
             return;
         }
 
