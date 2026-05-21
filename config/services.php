@@ -13,6 +13,11 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
+    'mail' => [
+        'admin' => [
+            'email' => env('ADMIN_EMAIL'),
+        ],
+    ],
 
     'recaptcha' => [
         'site' => env('RECAPTCHA_SITE_KEY'),
