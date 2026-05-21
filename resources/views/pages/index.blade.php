@@ -10,7 +10,7 @@ name('main');
         еко-засобами. 100% гарантія якості!
     </x-slot:meta_description>
     <x-slot:meta_robots>index, follow</x-slot:meta_robots>
-    <x-slot:meta_image>{{ Vite::asset('resources/images/header-bg.png') }}</x-slot:meta_image>
+    <x-slot:meta_image>{{ Vite::asset('resources/images/header-bg-desktop.png') }}</x-slot:meta_image>
 
     <x-slot:header>
         <header class="relative h-dvh overflow-hidden bg-black text-white">
