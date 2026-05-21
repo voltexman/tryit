@@ -43,8 +43,8 @@ class OrderForm extends Form
     #[Validate('between:1,5', message: 'Значення повинно бути від 1 до 5')]
     public $contamination_level = '3';
 
-    #[Validate('nullable', message: 'Невірне значення')]
-    public $is_urgent = false;
+    #[Validate('boolean')]
+    public bool $is_urgent = false;
 
     #[Validate('max:1200', message: 'Занадто багато символів')]
     public $text = '';
