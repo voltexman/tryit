@@ -152,7 +152,7 @@ test('телеграм-нотифікація використовує TelegramM
     expect($mediaArray[0]['caption'] ?? '')->toContain('*Нове замовлення!*');
     expect($mediaArray[0]['caption'] ?? '')->toContain('[🔗 Переглянути замовлення]');
     expect($mediaArray[1]['type'])->toBe('photo');
-    expect($mediaArray[1]['caption'] ?? '')->toBeNull();
+    expect($mediaArray[1]['caption'] ?? null)->toBeNull();
 
     @unlink($tempFile1);
     @unlink($tempFile2);

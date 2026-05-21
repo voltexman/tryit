@@ -43,7 +43,7 @@ test('імейл та телеграм-нотифікація про відгу�
     $payload = $telegramMessage->toArray();
     $telegramText = $payload['text'] ?? '';
 
-    expect($telegramText)->toContain('*Нове повідомлення зворотного зв\'язку!*');
+    expect($telegramText)->toContain('*Зворотній зв\'язок!*');
     expect($telegramText)->toContain("- *Ім'я:* Микола");
     expect($telegramText)->toContain("- *Контакт:* +380998887766");
     expect($telegramText)->toContain("- *Тема:* Скарга");
