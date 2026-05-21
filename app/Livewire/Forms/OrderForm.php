@@ -44,7 +44,7 @@ class OrderForm extends Form
     public $contamination_level = '3';
 
     #[Validate('nullable', message: 'Невірне значення')]
-    public $is_urgent = '';
+    public $is_urgent = false;
 
     #[Validate('max:1200', message: 'Занадто багато символів')]
     public $text = '';
