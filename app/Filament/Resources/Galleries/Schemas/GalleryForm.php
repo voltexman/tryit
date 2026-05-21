@@ -19,6 +19,7 @@ class GalleryForm
                     SpatieMediaLibraryFileUpload::make('gallery')
                         ->collection('gallery')
                         ->label('Зображення')
+                        ->imageEditor()
                         ->image()
                         ->required(),
 
