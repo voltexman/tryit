@@ -9,16 +9,15 @@ name('feedback');
     <x-slot:meta_title>feedback title</x-slot:meta_title>
     <x-slot:meta_description>feedback description</x-slot:meta_description>
     <x-slot:meta_robots>index, follow</x-slot:meta_robots>
-    {{-- <x-slot:meta_image>resources/images/</x-slot:meta_image> --}}
+    <x-slot:meta_image>{{ Vite::asset('resources/images/feedback-header-bg.png') }}</x-slot:meta_image>
 
     <x-slot:header>
-        <x-page-header :image="Vite::asset('resources/images/feedback-header-bg.png')">
+        <x-page-header :image="Vite::asset('resources/images/feedback-header-bg.png')" icon="messages-square">
             <x-slot:title>
                 Зв'яжіться з нами
             </x-slot>
-            <x-slot:description>
-                Ми завжди відкриті до ваших запитань, пропозицій та конструктивної критики.
-                Ваш відгук допомагає нам ставати кращими.
+            <x-slot:description class="text-balance">
+                Ми відкриті до ваших запитань, пропозицій та критики. Ваш відгук допомагає нам ставати кращими.
             </x-slot>
         </x-page-header>
     </x-slot:header>
@@ -129,7 +128,7 @@ name('feedback');
                     <x-section.title class="mb-5" size="lg">
                         Ми на зв’язку — <span class="text-emerald-500">пишіть</span> нам
                     </x-section.title>
-                    <x-section.caption class="text-base!">
+                    <x-section.caption class="text-lg!">
                         Є запитання, цікава ідея чи пропозиція? Ми завжди на зв’язку! Пишіть нам що вас цікавить: від
                         консультацій щодо складних забруднень до пропозицій про співпрацю чи ідей, як зробити
                         наш сервіс ще кращим. Ми готові обговорювати будь-які ваші запити зі світу чистоти!

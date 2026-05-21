@@ -26,17 +26,17 @@ class OrderForm extends Form
     public string $address = '';
 
     // Додаткові поля для клінінгової компанії
-    public $square_area = '';
+    public ?int $square_area = null;
+
+    public ?int $room_count = null;
+
+    public ?int $floor_count = null;
 
     public ?bool $has_elevator = null;
 
     public ?bool $has_water = null;
 
     public ?bool $has_parking = null;
-
-    public int $room_count = 0;
-
-    public int $floor_count = 0;
 
     #[Validate('required', message: 'Оберіть рівень забруднення')]
     #[Validate('numeric', message: 'Невірне значення')]

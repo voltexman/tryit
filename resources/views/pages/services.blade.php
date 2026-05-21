@@ -11,9 +11,13 @@ name('services');
 
 <x-layouts::app>
     <x-slot:header>
-        <x-page-header image="https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg">
+        <x-page-header image="https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg"
+            icon="sparkles">
             <x-slot:title class="text-balance">
                 Спектр наших послуг
+            </x-slot>
+            <x-slot:description class="text-balance">
+                Професійні клінінгові рішення для квартир, будинків, офісів та комерційних приміщень.
             </x-slot>
         </x-page-header>
     </x-slot:header>

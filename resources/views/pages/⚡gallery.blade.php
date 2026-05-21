@@ -21,9 +21,9 @@ new class extends Component {
 <x-slot:meta_image>{{ Vite::asset('resources/images/gallery-header-bg.png') }}</x-slot:meta_image>
 
 <x-slot:header>
-    <x-page-header :image="Vite::asset('resources/images/gallery-header-bg.png')">
+    <x-page-header :image="Vite::asset('resources/images/gallery-header-bg.png')" icon="images">
         <x-slot:title>Як ми створюємо чистоту</x-slot>
-        <x-slot:description>
+        <x-slot:description class="text-balance">
             Реальні фото об’єктів, процесу прибирання та результатів роботи нашої команди.
         </x-slot>
     </x-page-header>

@@ -1,5 +1,7 @@
 <?php
 
+use App\Notifications\OrderSubmitted;
+use Illuminate\Support\Facades\Notification;
 use App\Livewire\Forms\OrderForm;
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -32,10 +34,14 @@ new class extends Component {
 
     public function save($recaptchaToken = null)
     {
-        $this->order->store($this->images, $recaptchaToken);
+        $order = $this->order->store($this->images, $recaptchaToken);
+
+        Notification::route('mail', 'admin@example.com')->notify(new OrderSubmitted($order));
 
         $this->images = [];
+
         $this->order->reset();
+
         session()->flash('success', 'Ваше замовлення успішно відправлено!');
     }
 };
@@ -79,6 +85,13 @@ new class extends Component {
             }
         }" @submit.prevent="sendForm" class="space-y-5">
 
+            <!-- ПОМИЛКА КАПЧІ (Якщо робот або збій верифікації) -->
+            @error('recaptcha')
+                <div class="p-3 text-sm text-red-600 bg-red-50 rounded-lg border border-red-200">
+                    {{ $message }}
+                </div>
+            @enderror
+
             @if ($order->service)
                 <div class="mb-2 -mt-2">
                     <span
@@ -121,17 +134,17 @@ new class extends Component {
             @if (!$order->service)
                 <div class="space-y-3">
                     <h3 class="font-display text-lg font-semibold text-slate-900">Послуга</h3>
-                    <div class="space-y-2">
-                        @foreach (\App\Enums\ServiceEnum::cases() as $serviceCase)
-                            <label
-                                class="flex items-center p-3 rounded-lg border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors"
-                                :class="$wire.order.service === '{{ $serviceCase->value }}' ?
-                                    'border-emerald-500 bg-emerald-50' : ''">
-                                <input type="radio" wire:model="order.service" value="{{ $serviceCase->value }}"
-                                    class="w-4 h-4 accent-emerald-500" />
-                                <span class="ml-3 text-sm font-medium text-slate-700">{{ $serviceCase->value }}</span>
-                            </label>
-                        @endforeach
+                    <div class="relative">
+                        <select wire:model.live="order.service"
+                            class="w-full appearance-none rounded-full transition-all duration-300 focus:outline-none font-medium text-slate-900 disabled:opacity-50 px-6 py-3.5 text-base border focus:bg-white focus:ring-2 focus:ring-offset-2 bg-slate-100 border-slate-200 focus:ring-slate-500/40 focus:border-slate-300 pr-10 cursor-pointer">
+                            <option value="">Оберіть послугу...</option>
+                            @foreach (\App\Enums\ServiceEnum::cases() as $serviceCase)
+                                <option value="{{ $serviceCase->value }}">{{ $serviceCase->value }}</option>
+                            @endforeach
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-6 text-slate-400">
+                            <x-lucide-chevron-down class="w-5 h-5" />
+                        </div>
                     </div>
                     @error('order.service')
                         <x-forms.error :message="$message" />
@@ -178,8 +191,9 @@ new class extends Component {
                                 <x-tooltip
                                     content="Вкажіть кількість кімнат, офісних приміщень, цехів або окремих кабінетів" />
                             </label>
-                            <x-forms.input size="lg" wire:model="order.room_count" type="number" wire:target="save"
-                                placeholder="3" wire:loading.attr="disabled" />
+                            <x-forms.input size="lg" wire:model="order.room_count" type="number" min="1"
+                                max="30" step="1" wire:target="save" placeholder="3"
+                                wire:loading.attr="disabled" x-on:input="$el.value = $el.value.replace(/[^0-9]/g, '')" />
                             @error('order.room_count')
                                 <x-forms.error class="mt-2" :message="$message" />
                             @enderror
@@ -192,8 +206,9 @@ new class extends Component {
                                 <x-tooltip
                                     content="Загальна кількість поверхів у приміщенні або номер поверху, на якому потрібно прибрати" />
                             </label>
-                            <x-forms.input size="lg" wire:model="order.floor_count" type="number" placeholder="5"
-                                wire:target="save" wire:loading.attr="disabled" />
+                            <x-forms.input size="lg" wire:model="order.floor_count" type="number" min="1"
+                                max="50" step="1" placeholder="5" wire:target="save"
+                                wire:loading.attr="disabled" x-on:input="$el.value = $el.value.replace(/[^0-9]/g, '')" />
                             @error('order.floor_count')
                                 <x-forms.error class="mt-2" :message="$message" />
                             @enderror
@@ -318,8 +333,9 @@ new class extends Component {
                         <span class="text-sm font-semibold">Додати фото</span>
                         <input type="file" wire:model="images" multiple class="hidden" accept="image/*">
                     </label>
-                    <span class="text-[10px] text-gray-400 uppercase font-bold tracking-tight">До 4 зображень (макс. 5MB
-                        кожне)</span>
+                    <span class="text-[10px] text-gray-400 uppercase font-bold tracking-tight">
+                        До 4 зображень (макс. 5MB кожне)
+                    </span>
                 </div>
 
                 @error('images.*')
@@ -383,13 +399,6 @@ new class extends Component {
                     <x-lucide-loader-2 wire:target="save" wire:loading class="w-4 h-4 animate-spin" />
                 </button>
             </div>
-
-            <!-- ПОМИЛКА КАПЧІ (Якщо робот або збій верифікації) -->
-            @error('recaptcha')
-                <div class="p-3 text-sm text-red-600 bg-red-50 rounded-lg border border-red-200">
-                    {{ $message }}
-                </div>
-            @enderror
         </form>
     @endsession
 </x-offcanvas>

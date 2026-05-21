@@ -129,10 +129,10 @@ new class extends Component {
 <x-slot:meta_image>resources/images/</x-slot:meta_image>
 
 <x-slot:header>
-    <x-page-header :image="Vite::asset('resources/images/blog-header-bg.png')">
-        <x-slot:title>Блог</x-slot>
+    <x-page-header :image="Vite::asset('resources/images/blog-header-bg.png')" icon="newspaper">
+        <x-slot:title>Наш експертний блог</x-slot>
         <x-slot:description class="text-balance">
-            Корисні поради, новини та статті про професійне прибирання
+            Ділимось практичними порадами, професійними рекомендаціями та новинами зі світу клінінгу.
         </x-slot>
     </x-page-header>
 </x-slot:header>

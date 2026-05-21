@@ -27,7 +27,7 @@ name('main');
 
             <!-- Overlay -->
             <div
-                class="absolute inset-0 bg-linear-to-b lg:bg-linear-to-r from-slate-950/75 via-slate-950/45 to-slate-950/15">
+                class="absolute inset-0 bg-linear-to-b lg:bg-linear-to-r from-slate-950/70 via-slate-950/40 to-slate-950/10">
             </div>
 
             <!-- Content -->
@@ -121,7 +121,7 @@ name('main');
                     <div class="mt-5 lg:mt-10 flex flex-wrap items-center gap-5 justify-center lg:justify-start">
                         <a href="#"
                             @click="Livewire.dispatch('setService', { service: '' }); window.openOffcanvas('orderOffcanvas')"
-                            class="inline-flex font-[Oswald] h-14 text-lg items-center tracking-wide justify-center group rounded-full bg-tryit-orange/40 hover:bg-tryit-orange/50 border border-orange-500/40 px-6 text-[#F5E9D3] font-semibold transition">
+                            class="inline-flex font-[Oswald] h-14 text-lg items-center tracking-wide justify-center group rounded-full bg-tryit-orange/40 hover:bg-tryit-orange/50 backdrop-blur-xs border border-orange-500/40 px-6 text-[#F5E9D3] font-semibold transition">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                 class="mr-1 size-6 group-hover:rotate-45 transition-transform"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -170,7 +170,7 @@ name('main');
         </div>
     </x-slot:header>
 
-    <section class="relative py-10 lg:py-30 bg-slate-50 overflow-hidden font-sans">
+    <section class="relative py-10 lg:py-30 bg-slate-50">
         {{-- Decorative Image --}}
         <img src="{{ Vite::asset('resources/images/decore.png') }}"
             class="absolute top-5 right-0 w-48 md:w-64 lg:w-80 opacity-50 pointer-events-none z-10"
@@ -491,26 +491,7 @@ name('main');
                             </div>
 
                             {{-- Кнопки маркетів --}}
-                            <div class="flex flex-wrap gap-4 mx-auto lg:mx-0">
-                                {{-- Google Play --}}
-                                <div
-                                    class="flex justify-center mx-auto lg:mx-0 items-center gap-3 bg-black/20 border border-white/15 backdrop-blur-md rounded-2xl px-5 py-2.5 transition-all focus-within:bg-black/40 focus-within:border-white/40 w-full max-w-70">
-                                    {{-- Іконка телефону --}}
-                                    <div class="size-8 flex items-center justify-center shrink-0">
-                                        <x-lucide-phone class="size-6 stroke-white" />
-                                    </div>
-
-                                    {{-- Поле введення --}}
-                                    <div class="text-left w-full">
-                                        <label for="phone" class="text-xs uppercase leading-none block font-bold">
-                                            Ваш номер телефону
-                                        </label>
-                                        <input type="tel" id="phone" x-mask="+380 (99) 999-99-99"
-                                            placeholder="+380 (63)  123-45-67"
-                                            class="bg-transparent border-none p-0 focus:ring-0 text-white text-base font-bold focus:outline-none leading-none mt-1 w-full placeholder:text-white/60 placeholder:font-normal">
-                                    </div>
-                                </div>
-                            </div>
+                            <livewire:callback />
                         </div>
                     </div>
                 </div>
@@ -528,7 +509,8 @@ name('main');
             <div class="flex flex-col items-center">
                 <x-section.badge color="slate" class="mb-2.5">Про компанію</x-section.badge>
                 <x-section.title tag="div" color="white" size="lg" class="text-center">
-                    Чому обирають <span class="text-emerald-400 font-[Lora] font-black italic">нас</span>?
+                    Чому обирають <span
+                        class="text-emerald-400 font-[Lora] text-5xl lg:text-7xl font-black italic">нас</span>?
                 </x-section.title>
 
                 <div class="max-w-3xl space-y-5 text-slate-50 leading-relaxed text-center text-balance mt-5">
@@ -696,8 +678,15 @@ name('main');
 
             <div class="mt-10 lg:mt-20 flex justify-center">
                 <x-button size="lg"
-                    @click="Livewire.dispatch('setService', { service: '' }); window.openOffcanvas('orderOffcanvas')">Позбутися
-                    бруду</x-button>
+                    @click="Livewire.dispatch('setService', { service: '' }); window.openOffcanvas('orderOffcanvas')">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                        class="mr-1 size-6 fill-white group-hover:rotate-45 transition-transform"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 3 C16.8 8.5 18.5 11.2 21 13 C23.8 14.8 26.5 15.5 29 16 C26.5 16.5 23.8 17.2 21 19 C18.5 20.8 16.8 23.5 16 29 C15.2 23.5 13.5 20.8 11 19 C8.2 17.2 5.5 16.5 3 16 C5.5 15.5 8.2 14.8 11 13 C13.5 11.2 15.2 8.5 16 3Z" />
+                    </svg>
+                    Позбутися бруду
+                </x-button>
             </div>
         </div>
     </section>

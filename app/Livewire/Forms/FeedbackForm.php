@@ -4,6 +4,8 @@ namespace App\Livewire\Forms;
 
 use App\Enums\FeedbackTopicEnum;
 use App\Models\Feedback;
+use App\Notifications\FeedbackSubmitted;
+use Illuminate\Support\Facades\Notification;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
@@ -48,6 +50,10 @@ class FeedbackForm extends Form
                 ->toMediaCollection('feedback');
         }
 
+        Notification::route('mail', 'admin@example.com')
+            ->notify(new FeedbackSubmitted($feedback));
+
         $this->reset();
     }
 }
+
