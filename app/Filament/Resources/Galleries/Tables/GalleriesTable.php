@@ -18,6 +18,7 @@ class GalleriesTable
             ->columns([
                 SpatieMediaLibraryImageColumn::make('gallery')
                     ->collection('gallery')
+                    ->disk('public')
                     ->circular()
                     ->label('Зображення'),
 
