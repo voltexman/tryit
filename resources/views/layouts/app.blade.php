@@ -69,7 +69,8 @@
         <nav class="absolute h-20 w-full top-0 z-50 px-5 lg:px-0">
             <div class="flex justify-between h-full max-w-5xl mx-auto items-center">
                 <div class="relative w-auto mt-5">
-                    <a href="{{ route('main') }}" aria-label="Перейти на головну сторінку натиснувши на логотип">
+                    <a href="{{ route('main') }}" wire:navigate
+                        aria-label="Перейти на головну сторінку натиснувши на логотип">
                         <img src="{{ Vite::asset('resources/images/logo.png') }}"
                             class="relative top-0 left-0 h-12 w-auto z-50 drop-shadow-xl" width="120" height="40"
                             fetchpriority="high" alt="Логотип компанії" />
@@ -139,13 +140,13 @@
 
                                 {{-- Legal Links --}}
                                 <div class="flex gap-5 items-center justify-center w-full">
-                                    <a href="{{ route('legal.privacy-policy') }}"
-                                        class="text-slate-400 hover:text-tryit-orange text-xs uppercase tracking-wideк transition-colors">
+                                    <a href="{{ route('legal.privacy-policy') }}" wire:navigate
+                                        class="text-slate-400 text-xs font-semibold uppercase tracking-wide">
                                         Політика
                                     </a>
-                                    <span class="size-1 rounded-full bg-slate-200"></span>
-                                    <a href="{{ route('legal.terms-of-service') }}"
-                                        class="text-slate-400 hover:text-tryit-orange text-xs uppercase tracking-wider transition-colors">
+                                    <span class="size-1 rounded-full bg-orange-500"></span>
+                                    <a href="{{ route('legal.terms-of-service') }}" wire:navigate
+                                        class="text-slate-400 text-xs font-semibold uppercase tracking-wide">
                                         Умови
                                     </a>
                                 </div>

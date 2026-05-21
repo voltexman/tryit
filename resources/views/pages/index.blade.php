@@ -24,7 +24,8 @@ name('main');
             </div>
 
             <!-- Content -->
-            <div class="relative mt-10 lg:mt-0 z-10 mx-auto flex h-full max-w-5xl items-center">
+            <div
+                class="relative mt-10 lg:mt-0 z-10 mx-auto flex h-full max-w-5xl justify-center items-center lg:justify-start">
                 <div>
                     <!-- Title -->
                     <h1
@@ -47,7 +48,7 @@ name('main');
 
                     <!-- Features -->
                     <div
-                        class="hidden lg:grid mt-5 lg:mt-10 grid-cols-2 lg:grid-cols-4 gap-2.5 lg:gap-10 justify-items-center lg:justify-items-start">
+                        class="grid mt-5 lg:mt-10 grid-cols-3 lg:grid-cols-4 gap-1.5 lg:gap-10 justify-center items-center justify-items-center lg:justify-items-start">
                         <!-- Item -->
                         <div class="text-center lg:text-left flex flex-col items-center lg:items-start">
                             <div class="mb-2 flex items-center justify-center">
@@ -94,7 +95,7 @@ name('main');
                         </div>
 
                         <!-- Item -->
-                        <div class="text-center lg:text-left flex flex-col items-center lg:items-start">
+                        <div class="hidden lg:flex text-center lg:text-left flex-col items-center lg:items-start">
                             <div class="mb-2 flex items-center justify-center">
                                 <x-lucide-badge-check class="size-12 text-orange-500" stroke-width="1" />
                             </div>
@@ -115,7 +116,7 @@ name('main');
                             @click="Livewire.dispatch('setService', { service: '' }); window.openOffcanvas('orderOffcanvas')"
                             class="inline-flex font-[Oswald] h-14 text-lg items-center tracking-wide justify-center group rounded-full bg-tryit-orange/40 hover:bg-tryit-orange/50 border border-orange-500/40 px-6 text-[#F5E9D3] font-semibold transition">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
-                                class="mr-1 group-hover:rotate-45 transition-transform"
+                                class="mr-1 size-6 group-hover:rotate-45 transition-transform"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M16 3 C16.8 8.5 18.5 11.2 21 13 C23.8 14.8 26.5 15.5 29 16 C26.5 16.5 23.8 17.2 21 19 C18.5 20.8 16.8 23.5 16 29 C15.2 23.5 13.5 20.8 11 19 C8.2 17.2 5.5 16.5 3 16 C5.5 15.5 8.2 14.8 11 13 C13.5 11.2 15.2 8.5 16 3Z"
@@ -195,13 +196,8 @@ name('main');
                 <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
                     <x-button size="lg" color="emerald" class="group"
                         @click="Livewire.dispatch('setService', { service: '' }); window.openOffcanvas('orderOffcanvas')">
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
-                            class="mr-1 group-hover:rotate-45 fill-white transition-transform"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M16 3 C16.8 8.5 18.5 11.2 21 13 C23.8 14.8 26.5 15.5 29 16 C26.5 16.5 23.8 17.2 21 19 C18.5 20.8 16.8 23.5 16 29 C15.2 23.5 13.5 20.8 11 19 C8.2 17.2 5.5 16.5 3 16 C5.5 15.5 8.2 14.8 11 13 C13.5 11.2 15.2 8.5 16 3Z" />
-                        </svg>
-                        Замовити прибирання
+                        <x-lucide-hand-coins class="mr-1 size-6 shrink-0" />
+                        Розрахувати вартість
                     </x-button>
                 </div>
             </div>
@@ -273,7 +269,7 @@ name('main');
                             </p>
 
                             <div class="flex flex-row gap-5 pt-2">
-                                <a :href="service.link"
+                                <a :href="service.link" wire:navigate
                                     class="px-6 py-3 text-base font-display backdrop-blur-xs bg-slate-500/20 hover:bg-slate-600/20 border border-slate-500/20 text-slate-200/80 hover:text-slate-200 font-semibold rounded-full transition-all duration-300 text-center">
                                     Детальніше
                                     <x-lucide-move-right class="size-4 shrink-0 inline-flex ml-1.5" />
@@ -319,7 +315,7 @@ name('main');
                             </p>
 
                             <div class="flex flex-row gap-2 pt-2">
-                                <a :href="service.link"
+                                <a :href="service.link" wire:navigate
                                     class="px-5 py-2 inline-flex justify-center items-center w-fit bg-slate-500/25 tracking-wide hover:bg-slate-500/30 text-white font-display font-semibold rounded-full transition-all duration-300 text-center text-sm border border-slate-500/30 backdrop-blur-xs">
                                     Детальніше
                                     <x-lucide-move-right class="size-4 shrink-0 inline-flex ml-1.5" />
