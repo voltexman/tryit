@@ -23,12 +23,10 @@ new class extends Component {
 
 <div class="relative py-10 lg:py-20 border-b border-white/5">
     <div class="max-w-4xl mx-auto px-5 text-center">
-        <h2 class="text-3xl md:text-5xl font-display font-bold text-tryit-cream md:mb-2">
-            Піпишіться на <span class="text-emerald-500">блог</span>
-        </h2>
-        <p class="text-3xl md:text-5xl font-display font-bold text-emerald-500 mb-8">
-            щоб не відставати від <span class="text-tryit-cream">новин</span>
-        </p>
+        <div class="text-4xl md:text-5xl font-display text-balance font-bold text-tryit-cream mb-5 lg:mb-10">
+            Підписуйтесь на <span class="text-emerald-500">блог</span> і будьте
+            <span class="text-emerald-500">в курсі всіх</span> новин.
+        </div>
 
         @if ($subscribed)
             <div

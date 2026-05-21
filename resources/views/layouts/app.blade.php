@@ -80,7 +80,7 @@
                     <x-sidebar>
                         <x-slot:trigger>
                             <button type="button" aria-label="Відкрити головне меню" x-on:click="open = true">
-                                <x-lucide-menu class="size-6 stroke-tryit-cream" />
+                                <x-lucide-menu class="size-8 stroke-tryit-cream" />
                             </button>
                         </x-slot>
                         <x-slot:title>Головне меню</x-slot>

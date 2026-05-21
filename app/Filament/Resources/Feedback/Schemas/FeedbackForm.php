@@ -36,7 +36,7 @@ class FeedbackForm
                         5 => '5 зірок',
                     ])
                     ->native(false)
-                    ->visible(fn(Get $get) => $get('topic') === FeedbackTopicEnum::GRATITUDE->value),
+                    ->visible(fn (Get $get) => $get('topic') === FeedbackTopicEnum::GRATITUDE->value),
 
                 Select::make('service')
                     ->label('Послуга')

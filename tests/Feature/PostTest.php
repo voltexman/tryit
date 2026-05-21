@@ -1,12 +1,14 @@
 <?php
 
+use App\Filament\Resources\Posts\Pages\CreatePost;
 use App\Models\Post;
 use App\Models\Tag;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Livewire\Livewire;
 
 uses(RefreshDatabase::class);
 
-test('can create a post', function () {
+test('можна створити статтю', function () {
     $post = Post::factory()->create([
         'title' => 'Test Post',
         'slug' => 'test-post',
@@ -17,20 +19,29 @@ test('can create a post', function () {
     expect($post->title)->toBe('Test Post');
 });
 
-test('validates required fields for post', function () {
-    $this->postJson('/posts', [])->assertStatus(422);
+test('перевіряє обовʼязкові поля форми статті', function () {
+    Livewire::test(CreatePost::class)
+        ->fillForm([
+            'title' => '',
+            'slug' => '',
+        ])
+        ->call('create')
+        ->assertHasFormErrors([
+            'title' => 'required',
+            'slug' => 'required',
+        ]);
 });
 
-test('post can have tags', function () {
+test('стаття може мати теги', function () {
     $post = Post::factory()->create();
     $tag = Tag::factory()->create();
 
     $post->tags()->attach($tag);
 
-    expect($post->tags)->toContain($tag);
+    expect($post->fresh()->tags->contains($tag))->toBeTrue();
 });
 
-test('can publish a post', function () {
+test('можна опублікувати статтю', function () {
     $post = Post::factory()->create(['is_published' => false]);
 
     $post->update(['is_published' => true]);

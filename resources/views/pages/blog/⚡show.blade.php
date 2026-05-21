@@ -92,5 +92,35 @@ new class extends Component {
                 Всі статті
             </a>
         </div>
+
+        <div class="relative mt-10 overflow-hidden rounded-3xl bg-slate-900">
+            <!-- Background Image -->
+            <img src="{{ Vite::asset('resources/images/feedback_banner.png') }}"
+                class="absolute inset-0 size-full object-cover object-center opacity-40 z-0" alt="Feedback Background">
+
+            <!-- Overlay & Content -->
+            <div class="relative z-10 py-10 px-5 sm:px-10 bg-slate-900/50 backdropblur text-center">
+                <div class="text-white text-4xl text-center tracking-wide font-bold font-[Oswald] mb-6">
+                    Ви вже користувались нашою послугою?
+                </div>
+                <div class="max-w-2xl mx-auto space-y-4">
+                    <p class="text-slate-100 text-lg text-center text-balance leading-relaxed">
+                        Ми постійно працюємо над тим, щоб ставати кращими та робити наш сервіс ще зручнішим і якіснішим
+                        для вас.
+                    </p>
+
+                    <p class="text-slate-100 text-lg text-center text-balance leading-relaxed">
+                        Поділіться своїми враженнями — ваша думка допомагає нам вдосконалюватися, а іншим клієнтам —
+                        зробити правильний вибір.
+                    </p>
+                </div>
+                <div class="flex justify-center mt-5">
+                    <x-button href="{{ route('feedback') }}" color="emerald" size="lg"
+                        class="shadow-md hover:shadow-lg transition-shadow">
+                        Залишити відгук
+                    </x-button>
+                </div>
+            </div>
+        </div>
     </div>
 </article>

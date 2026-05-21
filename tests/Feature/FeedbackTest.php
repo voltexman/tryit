@@ -1,19 +1,20 @@
 <?php
 
-use App\Models\Feedback;
 use App\Enums\FeedbackTopicEnum;
 use App\Enums\ServiceEnum;
+use App\Models\Feedback;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Livewire\Livewire;
 
 uses(RefreshDatabase::class);
 
-test('can create feedback', function () {
+test('можна створити відгук', function () {
     $feedback = Feedback::factory()->create([
         'name' => 'John Doe',
         'contact' => 'john@example.com',
         'text' => 'Great service!',
         'topic' => FeedbackTopicEnum::GENERAL,
-        'service' => ServiceEnum::SUPPORT,
+        'service' => ServiceEnum::DRY_CLEANING,
         'rating' => 5,
     ]);
 
@@ -21,11 +22,20 @@ test('can create feedback', function () {
     expect($feedback->name)->toBe('John Doe');
 });
 
-test('validates required fields for feedback', function () {
-    $this->postJson('/feedback', [])->assertStatus(422);
+test('перевіряє обовʼязкові поля форми відгуку', function () {
+    Livewire::test('feedback')
+        ->set('feedback.name', '')
+        ->set('feedback.contact', '')
+        ->set('feedback.text', '')
+        ->set('feedback.topic', '')
+        ->call('save')
+        ->assertHasErrors([
+            'feedback.text' => 'required',
+            'feedback.topic' => 'required',
+        ]);
 });
 
-test('feedback casts fields correctly', function () {
+test('поля відгуку коректно кастуються', function () {
     $feedback = Feedback::factory()->create([
         'is_visible_on_homepage' => true,
     ]);
@@ -33,12 +43,12 @@ test('feedback casts fields correctly', function () {
     expect($feedback->is_visible_on_homepage)->toBeTrue();
 });
 
-test('feedback topic and service enums work', function () {
+test('enum-значення теми та послуги відгуку працюють коректно', function () {
     $feedback = Feedback::factory()->create([
         'topic' => FeedbackTopicEnum::GENERAL,
-        'service' => ServiceEnum::SUPPORT,
+        'service' => ServiceEnum::DRY_CLEANING,
     ]);
 
     expect($feedback->topic)->toBe(FeedbackTopicEnum::GENERAL);
-    expect($feedback->service)->toBe(ServiceEnum::SUPPORT);
+    expect($feedback->service)->toBe(ServiceEnum::DRY_CLEANING);
 });

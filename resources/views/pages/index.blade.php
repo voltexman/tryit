@@ -29,18 +29,18 @@ name('main');
                     <!-- Title -->
                     <h1
                         class="font-display drop-shadow-xl italic font-black text-center lg:text-left uppercase tracking-tight">
-                        <span class="block text-6xl lg:text-9xl text-tryit-orange">
+                        <span class="block text-6xl lg:text-8xl text-tryit-orange/80">
                             Чистота,
                         </span>
 
                         <span class="inline-block text-6xl lg:text-5xl text-tryit-cream mt-2">яку варто</span>
 
-                        <span class="inline-block text-5xl lg:text-5xl text-tryit-orange">спробувати!</span>
+                        <span class="inline-block text-5xl lg:text-5xl text-tryit-orange/80"> спробувати!</span>
                     </h1>
 
                     <!-- Description -->
                     <p
-                        class="mt-5 max-w-140 text-xl text-center lg:text-left leading-relaxed text-tryit-cream sm:text-xl">
+                        class="mt-5 max-w-140 text-xl text-balance text-center lg:text-left px-5 lg:px-0 leading-relaxed text-tryit-cream sm:text-xl">
                         Професійне прибирання для <span class="font-extrabold">бізнесу, виробництва та
                             складів</span>, а також квартир та ваших осель
                     </p>
@@ -50,13 +50,8 @@ name('main');
                         class="hidden lg:grid mt-5 lg:mt-10 grid-cols-2 lg:grid-cols-4 gap-2.5 lg:gap-10 justify-items-center lg:justify-items-start">
                         <!-- Item -->
                         <div class="text-center lg:text-left flex flex-col items-center lg:items-start">
-                            <div
-                                class="mb-3 flex size-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z" />
-                                </svg>
+                            <div class="mb-2 flex items-center justify-center">
+                                <x-lucide-shield-check class="size-12 text-orange-500" stroke-width="1" />
                             </div>
 
                             <h3 class="text-base text-tryit-cream font-semibold">
@@ -70,13 +65,8 @@ name('main');
 
                         <!-- Item -->
                         <div class="text-center lg:text-left flex flex-col items-center lg:items-start">
-                            <div
-                                class="mb-3 flex size-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3" />
-                                    <circle cx="12" cy="12" r="9" />
-                                </svg>
+                            <div class="mb-2 flex items-center justify-center">
+                                <x-lucide-clock class="size-12 text-orange-500" stroke-width="1" />
                             </div>
 
                             <h3 class="text-base text-tryit-cream font-semibold">
@@ -90,13 +80,8 @@ name('main');
 
                         <!-- Item -->
                         <div class="text-center lg:text-left flex flex-col items-center lg:items-start">
-                            <div
-                                class="mb-3 flex size-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M12 3c-2 3-6 5.5-6 10a6 6 0 0012 0c0-4.5-4-7-6-10z" />
-                                </svg>
+                            <div class="mb-2 flex items-center justify-center">
+                                <x-lucide-leaf class="size-12 text-orange-500" stroke-width="1" />
                             </div>
 
                             <h3 class="text-base text-tryit-cream font-semibold">
@@ -110,13 +95,8 @@ name('main');
 
                         <!-- Item -->
                         <div class="text-center lg:text-left flex flex-col items-center lg:items-start">
-                            <div
-                                class="mb-3 flex size-14 items-center justify-center rounded-xl border border-orange-500/40 bg-black/35 backdrop-blur">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M17 20h5V4H2v16h5m10 0v-4a3 3 0 00-6 0v4m6 0H7" />
-                                </svg>
+                            <div class="mb-2 flex items-center justify-center">
+                                <x-lucide-badge-check class="size-12 text-orange-500" stroke-width="1" />
                             </div>
 
                             <h3 class="text-base text-tryit-cream font-semibold">
@@ -133,7 +113,14 @@ name('main');
                     <div class="mt-5 lg:mt-10 flex flex-wrap items-center gap-5 justify-center lg:justify-start">
                         <a href="#"
                             @click="Livewire.dispatch('setService', { service: '' }); window.openOffcanvas('orderOffcanvas')"
-                            class="inline-flex h-14 items-center justify-center rounded-full bg-orange-500 px-8 text-base font-semibold text-white transition hover:bg-orange-600">
+                            class="inline-flex font-[Oswald] h-14 text-lg items-center tracking-wide justify-center group rounded-full bg-tryit-orange/40 hover:bg-tryit-orange/50 border border-orange-500/40 px-6 text-[#F5E9D3] font-semibold transition">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                class="mr-1 group-hover:rotate-45 transition-transform"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16 3 C16.8 8.5 18.5 11.2 21 13 C23.8 14.8 26.5 15.5 29 16 C26.5 16.5 23.8 17.2 21 19 C18.5 20.8 16.8 23.5 16 29 C15.2 23.5 13.5 20.8 11 19 C8.2 17.2 5.5 16.5 3 16 C5.5 15.5 8.2 14.8 11 13 C13.5 11.2 15.2 8.5 16 3Z"
+                                    fill="#F5E9D3" />
+                            </svg>
                             Замовити послугу
                         </a>
 
@@ -206,8 +193,14 @@ name('main');
                 </p>
 
                 <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
-                    <x-button size="lg" color="emerald"
+                    <x-button size="lg" color="emerald" class="group"
                         @click="Livewire.dispatch('setService', { service: '' }); window.openOffcanvas('orderOffcanvas')">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                            class="mr-1 group-hover:rotate-45 fill-white transition-transform"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16 3 C16.8 8.5 18.5 11.2 21 13 C23.8 14.8 26.5 15.5 29 16 C26.5 16.5 23.8 17.2 21 19 C18.5 20.8 16.8 23.5 16 29 C15.2 23.5 13.5 20.8 11 19 C8.2 17.2 5.5 16.5 3 16 C5.5 15.5 8.2 14.8 11 13 C13.5 11.2 15.2 8.5 16 3Z" />
+                        </svg>
                         Замовити прибирання
                     </x-button>
                 </div>
@@ -547,39 +540,39 @@ name('main');
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mt-10">
+                <div class="grid grid-cols-3 gap-5 mt-10">
                     <div class="flex flex-col items-center text-center md:items-start md:text-left">
-                        <div class="font-display text-5xl font-black text-slate-50 mb-4">
+                        <div class="font-display text-4xl lg:text-5xl font-black text-slate-50 mb-4">
                             12+
                         </div>
-                        <div class="font-display text-slate-50 uppercase font-semibold mb-2.5">
+                        <div class="font-display text-base lg:text-lg text-slate-50 uppercase font-semibold mb-2.5">
                             років досвіду
                         </div>
-                        <p class="text-slate-50/60 text-base leading-normal">
+                        <p class="hidden lg:block text-slate-50/60 text-base leading-normal">
                             Понад десятиліття допомагаємо підтримувати чистоту, відточуючи кожну деталь сервісу.
                         </p>
                     </div>
 
                     <div class="flex flex-col items-center text-center md:items-start md:text-left">
-                        <div class="font-display text-5xl font-black text-slate-50 mb-4">
+                        <div class="font-display text-4xl lg:text-5xl font-black text-slate-50 mb-4">
                             300+
                         </div>
-                        <div class="font-display text-slate-50 uppercase font-semibold mb-2.5">
+                        <div class="font-display text-base lg:text-lg text-slate-50 uppercase font-semibold mb-2.5">
                             задоволених клієнтів
                         </div>
-                        <p class="text-slate-50/60 text-base leading-normal">
+                        <p class="hidden lg:block text-slate-50/60 text-base leading-normal">
                             Нам довіряють і рекомендують — більшість клієнтів повертаються до нас знову.
                         </p>
                     </div>
 
                     <div class="flex flex-col items-center text-center md:items-start md:text-left">
-                        <div class="font-display text-5xl font-black text-slate-50 mb-4">
+                        <div class="font-display text-4xl lg:text-5xl font-black text-slate-50 mb-4">
                             100%
                         </div>
-                        <div class="font-display text-slate-50 uppercase font-semibold mb-2.5">
+                        <div class="font-display text-base lg:text-lg text-slate-50 uppercase font-semibold mb-2.5">
                             гарантія якості
                         </div>
-                        <p class="text-slate-50/60 text-base leading-normal">
+                        <p class="hidden lg:block text-slate-50/60 text-base leading-normal">
                             Ми впевнені у результаті: якщо щось не влаштує — безкоштовно виправимо.
                         </p>
                     </div>
@@ -758,12 +751,11 @@ name('main');
                 <!-- Текстовий блок -->
                 <div class="max-w-3xl text-center md:text-left">
                     <div id="cta-headline"
-                        class="font-[Oswald] text-4xl/10 md:text-7xl/16 drop-shadow-xl font-semibold text-white text-balance mb-5">
-                        Хочете побачити нас <span class="text-emerald-500 font-[Lora] font-black italic">у
-                            справі</span>?
-                        Наша робота <span class="text-emerald-500 font-[Lora] font-black italic">говорить</span> сама
-                        за
-                        себе!
+                        class="font-[Oswald] text-5xl md:text-7xl drop-shadow-xl font-semibold text-white text-balance mb-5">
+                        Хочете побачити нас <span class="text-6xl text-emerald-500 font-[Lora] font-black italic">
+                            у справі</span>? Наша робота
+                        <span class="text-emerald-500 font-[Lora] font-black italic">говорить</span> сама
+                        за себе!
                     </div>
 
                     <div id="cta-stars-block"
