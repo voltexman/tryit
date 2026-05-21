@@ -10,13 +10,20 @@ name('main');
         еко-засобами. 100% гарантія якості!
     </x-slot:meta_description>
     <x-slot:meta_robots>index, follow</x-slot:meta_robots>
-    {{-- <x-slot:meta_image>resources/images/</x-slot:meta_image> --}}
+    <x-slot:meta_image>{{ Vite::asset('resources/images/header-bg.png') }}</x-slot:meta_image>
 
     <x-slot:header>
         <header class="relative h-dvh overflow-hidden bg-black text-white">
             <!-- Background image -->
-            <div class="absolute inset-0 bg-cover bg-center"
-                style="background-image: url('{{ Vite::asset('resources/images/header-bg.png') }}')"></div>
+            <!-- Mobile -->
+            <div class="absolute inset-0 bg-cover bg-center lg:hidden"
+                style="background-image: url('{{ Vite::asset('resources/images/header-bg-mobile.png') }}');">
+            </div>
+
+            <!-- Desktop -->
+            <div class="absolute inset-0 hidden bg-cover bg-center lg:block"
+                style="background-image: url('{{ Vite::asset('resources/images/header-bg-desktop.png') }}');">
+            </div>
 
             <!-- Overlay -->
             <div
@@ -30,7 +37,7 @@ name('main');
                     <!-- Title -->
                     <h1
                         class="font-display drop-shadow-xl italic font-black text-center lg:text-left uppercase tracking-tight">
-                        <span class="block text-6xl lg:text-8xl text-tryit-orange/80">
+                        <span class="block text-6xl md:text-9xl lg:text-8xl text-tryit-orange/80">
                             Чистота,
                         </span>
 
@@ -542,10 +549,10 @@ name('main');
                             12+
                         </div>
                         <div class="font-display text-base lg:text-lg text-slate-50 uppercase font-semibold mb-2.5">
-                            років досвіду
+                            років <br class="lg:hidden">досвіду
                         </div>
-                        <p class="hidden lg:block text-slate-50/60 text-base leading-normal">
-                            Понад десятиліття допомагаємо підтримувати чистоту, відточуючи кожну деталь сервісу.
+                        <p class="hidden lg:block text-slate-50/50 text-base leading-normal">
+                            Понад десятиліття допомагаємо підтримувати чистоту, відточуючи кожну деталь нашого сервісу.
                         </p>
                     </div>
 
@@ -554,10 +561,11 @@ name('main');
                             300+
                         </div>
                         <div class="font-display text-base lg:text-lg text-slate-50 uppercase font-semibold mb-2.5">
-                            задоволених клієнтів
+                            задоволених <br class="lg:hidden">клієнтів
                         </div>
-                        <p class="hidden lg:block text-slate-50/60 text-base leading-normal">
-                            Нам довіряють і рекомендують — більшість клієнтів повертаються до нас знову.
+                        <p class="hidden lg:block text-slate-50/50 text-base leading-normal">
+                            Нам довіряють і рекомендують — більшість клієнтів, з задоволенням, повертаються до нас
+                            знову.
                         </p>
                     </div>
 
@@ -566,10 +574,11 @@ name('main');
                             100%
                         </div>
                         <div class="font-display text-base lg:text-lg text-slate-50 uppercase font-semibold mb-2.5">
-                            гарантія якості
+                            гарантія <br class="lg:hidden">якості
                         </div>
-                        <p class="hidden lg:block text-slate-50/60 text-base leading-normal">
-                            Ми впевнені у результаті: якщо щось не влаштує — безкоштовно виправимо.
+                        <p class="hidden lg:block text-slate-50/50 text-base leading-normal">
+                            Ми впевнені у нашому результаті: якщо вас щось не влаштує в роботі — ми безкоштовно
+                            виправимо.
                         </p>
                     </div>
                 </div>
