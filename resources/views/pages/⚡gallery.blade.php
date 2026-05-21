@@ -13,16 +13,18 @@ new class extends Component {
 };
 ?>
 
-<x-slot:meta_title>Галерея робіт — Клінінг TryIt</x-slot:meta_title>
-<x-slot:meta_description>Фотогалерея виконаних робіт з прибирання офісів та будинків від компанії TryIt.</x-slot:meta_description>
+<x-slot:meta_title>Як ми створюємо чистоту — Клінінг {{ env('APP_NAME') }}</x-slot:meta_title>
+<x-slot:meta_description>
+    Реальні фото об’єктів, процесу прибирання та результатів роботи нашої команди.
+</x-slot:meta_description>
 <x-slot:meta_robots>index, follow</x-slot:meta_robots>
 <x-slot:meta_image>{{ Vite::asset('resources/images/gallery-header-bg.png') }}</x-slot:meta_image>
 
 <x-slot:header>
     <x-page-header :image="Vite::asset('resources/images/gallery-header-bg.png')">
-        <x-slot:title>Галерея</x-slot>
+        <x-slot:title>Як ми створюємо чистоту</x-slot>
         <x-slot:description>
-            Тут ви можете побачити нас в дії.
+            Реальні фото об’єктів, процесу прибирання та результатів роботи нашої команди.
         </x-slot>
     </x-page-header>
 </x-slot:header>
