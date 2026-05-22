@@ -12,21 +12,21 @@ use Livewire\Form;
 class FeedbackForm extends Form
 {
     #[Validate('min:2', message: 'Занадто мало символів')]
-    public $name = '';
+    public string $name = '';
 
     #[Validate('min:2', message: 'Занадто мало символів')]
-    public $contact = '';
+    public string $contact = '';
 
     #[Validate('required', message: 'Напишіть листа')]
     #[Validate('max:1500', message: 'Занадто багато символів')]
-    public $text = '';
+    public string $text = '';
 
     #[Validate('required', message: 'Оберіть тему')]
-    public $topic = '';
+    public string $topic = '';
 
-    public $service = null;
+    public string $service = '';
 
-    public $rating = null;
+    public int|null $rating = null;
 
     public function store($images = [])
     {
@@ -56,4 +56,3 @@ class FeedbackForm extends Form
         $this->reset();
     }
 }
-

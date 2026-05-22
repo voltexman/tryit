@@ -21,13 +21,6 @@ class OrderSubmitted extends Notification
     public function via(object $notifiable): array
     {
         return ['mail', 'telegram'];
-        // $channels = ['mail', 'telegram'];
-
-        // if (config('services.telegram-bot-api.token') && config('services.telegram-bot-api.chat_id')) {
-        //     $channels[] = TelegramChannel::class;
-        // }
-
-        // return $channels;
     }
 
     public function toMail(object $notifiable): MailMessage
