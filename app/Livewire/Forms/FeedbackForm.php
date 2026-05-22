@@ -60,11 +60,6 @@ class FeedbackForm extends Form
                 ->toMediaCollection('feedback');
         }
 
-        Notification::route('mail', 'admin@example.com')
-            ->notify(new FeedbackSubmitted($feedback));
-
-        $this->reset();
-
         return $feedback;
     }
 }
