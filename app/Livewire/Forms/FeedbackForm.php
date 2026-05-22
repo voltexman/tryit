@@ -24,7 +24,7 @@ class FeedbackForm extends Form
     #[Validate('required', message: 'Оберіть тему')]
     public string $topic = '';
 
-    public string $service = '';
+    public string|null $service = null;
 
     public int|null $rating = null;
 
