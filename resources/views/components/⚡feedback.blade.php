@@ -35,7 +35,10 @@ new class extends Component {
         ])->notify(new FeedbackSubmitted($feedback));
 
         $this->images = [];
-        session()->flash('success');
+
+        $this->reset('feedback');
+
+        session()->flash('success', true);
     }
 };
 ?>
