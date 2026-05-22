@@ -19,13 +19,7 @@ class FeedbackSubmitted extends Notification
 
     public function via(object $notifiable): array
     {
-        $channels = ['mail'];
-
-        if (config('services.telegram-bot-api.token') && config('services.telegram-bot-api.chat_id')) {
-            $channels[] = TelegramChannel::class;
-        }
-
-        return $channels;
+        return ['mail', 'telegram'];
     }
 
     public function toMail(object $notifiable): MailMessage

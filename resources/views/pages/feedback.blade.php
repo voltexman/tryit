@@ -3,8 +3,6 @@ use function Laravel\Folio\name;
 name('feedback');
 ?>
 
-
-
 <x-layouts::app>
     <x-slot:meta_title>feedback title</x-slot:meta_title>
     <x-slot:meta_description>feedback description</x-slot:meta_description>

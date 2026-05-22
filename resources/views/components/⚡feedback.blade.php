@@ -1,6 +1,8 @@
 <?php
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\FeedbackSubmitted;
 use App\Livewire\Forms\FeedbackForm;
 use Livewire\WithFileUploads;
 
@@ -25,7 +27,12 @@ new class extends Component {
 
     public function save()
     {
-        $this->feedback->store($this->images);
+        $feedback = $this->feedback->store($this->images);
+
+        Notification::routes([
+            'mail' => config('services.mail.admin.email'),
+            'telegram' => config('services.telegram-bot-api.chat_id'),
+        ])->notify(new FeedbackSubmitted($feedback));
 
         $this->images = [];
         session()->flash('success');
