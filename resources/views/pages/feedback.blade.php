@@ -134,7 +134,7 @@ name('feedback');
                 </div>
 
                 <div class="relative z-10">
-                    @livewire('feedback')
+                    <livewire:feedback />
                 </div>
             </div>
         </div>
