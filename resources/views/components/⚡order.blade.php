@@ -54,8 +54,6 @@ new class extends Component {
     <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site') }}" defer></script>
 @endassets
 
-{{-- <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site') }}"></script> --}}
-
 <x-offcanvas id="orderOffcanvas" title="Замовити послугу">
     @session('success')
         <div class="h-full flex items-center justify-center">

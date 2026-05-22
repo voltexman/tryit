@@ -25,9 +25,9 @@ new class extends Component {
         array_splice($this->images, $index, 1);
     }
 
-    public function save()
+    public function save($recaptchaToken = null)
     {
-        $feedback = $this->feedback->store($this->images);
+        $feedback = $this->feedback->store($this->images, $recaptchaToken);
 
         Notification::routes([
             'mail' => config('services.mail.admin.email'),
@@ -36,9 +36,9 @@ new class extends Component {
 
         $this->images = [];
 
-        $this->reset('feedback');
+        $this->feedback->reset();
 
-        session()->flash('success', true);
+        session()->flash('success');
     }
 };
 ?>
@@ -58,7 +58,31 @@ new class extends Component {
         </button>
     </div>
 @else
-    <form wire:submit="save" class="relative space-y-5">
+    @assets
+        <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site') }}" defer></script>
+    @endassets
+
+    <form x-data="{
+        loading: false,
+        sendForm() {
+            if (this.loading) return;
+            this.loading = true;
+            grecaptcha.ready(() => {
+                grecaptcha.execute('{{ config('services.recaptcha.site') }}', { action: 'feedback_submit' })
+                    .then((token) => {
+                        $wire.save(token).then(() => {
+                            this.loading = false;
+                        }).catch((error) => {
+                            this.loading = false;
+                        });
+                    })
+                    .catch((e) => {
+                        this.loading = false;
+                        console.error('Google reCAPTCHA Error:', e);
+                    });
+            });
+        }
+    }" @submit.prevent="sendForm" class="relative space-y-5">
         <div>
             <label class="text-xs font-bold uppercase tracking-wider text-gray-400 ml-1">Ваше ім'я</label>
             <x-forms.input size="lg" wire:model="feedback.name" placeholder="Як до вас звертатися?" />

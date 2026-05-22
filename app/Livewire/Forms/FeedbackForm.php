@@ -5,6 +5,7 @@ namespace App\Livewire\Forms;
 use App\Enums\FeedbackTopicEnum;
 use App\Models\Feedback;
 use App\Notifications\FeedbackSubmitted;
+use App\Rules\Recaptcha;
 use Illuminate\Support\Facades\Notification;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
@@ -28,7 +29,7 @@ class FeedbackForm extends Form
 
     public int|null $rating = null;
 
-    public function store($images = [])
+    public function store($images = [], $recaptchaToken = null)
     {
         if ($this->topic === FeedbackTopicEnum::GRATITUDE->value) {
             $this->validate([
@@ -39,6 +40,15 @@ class FeedbackForm extends Form
         } else {
             $this->rating = null;
         }
+
+        $this->withValidator(function ($validator) use ($recaptchaToken) {
+            $validator->after(function ($validator) use ($recaptchaToken) {
+                $recaptchaRule = new Recaptcha;
+                $recaptchaRule->validate('recaptcha', $recaptchaToken, function ($message) use ($validator) {
+                    $validator->errors()->add('recaptcha', $message);
+                });
+            });
+        });
 
         $this->validate();
 
@@ -54,5 +64,7 @@ class FeedbackForm extends Form
             ->notify(new FeedbackSubmitted($feedback));
 
         $this->reset();
+
+        return $feedback;
     }
 }
