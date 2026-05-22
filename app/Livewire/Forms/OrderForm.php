@@ -19,7 +19,7 @@ class OrderForm extends Form
     public string $contact = '';
 
     #[Validate('required', message: 'Необхідно обрати послугу')]
-    public $service = '';
+    public string $service = '';
 
     #[Validate('required', message: 'Вкажіть адресу')]
     #[Validate('min:5', message: 'Занадто коротка адреса')]
@@ -41,13 +41,13 @@ class OrderForm extends Form
     #[Validate('required', message: 'Оберіть рівень забруднення')]
     #[Validate('numeric', message: 'Невірне значення')]
     #[Validate('between:1,5', message: 'Значення повинно бути від 1 до 5')]
-    public $contamination_level = '3';
+    public int $contamination_level = 3;
 
     #[Validate('boolean')]
     public bool $is_urgent = false;
 
     #[Validate('max:1200', message: 'Занадто багато символів')]
-    public $text = '';
+    public string $text = '';
 
     public function store($images = [], $recaptchaToken = null)
     {

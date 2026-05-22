@@ -36,7 +36,10 @@ new class extends Component {
     {
         $order = $this->order->store($this->images, $recaptchaToken);
 
-        Notification::route('mail', config('mail.admin.email'))->notify(new OrderSubmitted($order));
+        Notification::routes([
+            'mail' => config('services.mail.admin.email'),
+            'telegram' => config('services.telegram-bot-api.chat_id'),
+        ])->notify(new OrderSubmitted($order));
 
         $this->images = [];
 
