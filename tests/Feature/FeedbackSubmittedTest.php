@@ -1,9 +1,10 @@
 <?php
 
-use App\Models\Feedback;
 use App\Enums\FeedbackTopicEnum;
 use App\Enums\ServiceEnum;
+use App\Models\Feedback;
 use App\Notifications\FeedbackSubmitted;
+use NotificationChannels\Telegram\TelegramChannel;
 use NotificationChannels\Telegram\TelegramMessage;
 
 test('імейл та телеграм-нотифікація про відгук містить усі заповнені деталі', function () {
@@ -24,17 +25,17 @@ test('імейл та телеграм-нотифікація про відгу�
     // 1. Тест Email каналу
     $channels = $notification->via(new stdClass);
     expect($channels)->toContain('mail');
-    expect($channels)->toContain(\NotificationChannels\Telegram\TelegramChannel::class);
+    expect($channels)->toContain(TelegramChannel::class);
 
     $mailMessage = $notification->toMail(new stdClass);
     $mailContent = implode("\n", $mailMessage->introLines);
 
     expect($mailContent)->toContain("- **Ім'я:** Микола");
-    expect($mailContent)->toContain("- **Контакт:** +380998887766");
-    expect($mailContent)->toContain("- **Тема:** Скарга");
-    expect($mailContent)->toContain("- **Послуга:** Хімчистка та професійний догляд");
-    expect($mailContent)->toContain("- **Оцінка:** 4 / 5 ⭐");
-    expect($mailContent)->toContain("- **Повідомлення:** Дуже брудно після прибирання");
+    expect($mailContent)->toContain('- **Контакт:** +380998887766');
+    expect($mailContent)->toContain('- **Тема:** Скарга');
+    expect($mailContent)->toContain('- **Послуга:** Хімчистка та професійний догляд');
+    expect($mailContent)->toContain('- **Оцінка:** 4 / 5 ⭐');
+    expect($mailContent)->toContain('- **Повідомлення:** Дуже брудно після прибирання');
 
     // 2. Тест Telegram каналу
     $telegramMessage = $notification->toTelegram(new stdClass);
@@ -45,9 +46,9 @@ test('імейл та телеграм-нотифікація про відгу�
 
     expect($telegramText)->toContain('*Зворотній зв\'язок!*');
     expect($telegramText)->toContain("- *Ім'я:* Микола");
-    expect($telegramText)->toContain("- *Контакт:* +380998887766");
-    expect($telegramText)->toContain("- *Тема:* Скарга");
-    expect($telegramText)->toContain("- *Послуга:* Хімчистка та професійний догляд");
-    expect($telegramText)->toContain("- *Оцінка:* ⭐⭐⭐⭐");
-    expect($telegramText)->toContain("- *Повідомлення:* Дуже брудно після прибирання");
+    expect($telegramText)->toContain('- *Контакт:* +380998887766');
+    expect($telegramText)->toContain('- *Тема:* Скарга');
+    expect($telegramText)->toContain('- *Послуга:* Хімчистка та професійний догляд');
+    expect($telegramText)->toContain('- *Оцінка:* ⭐⭐⭐⭐');
+    expect($telegramText)->toContain('- *Повідомлення:* Дуже брудно після прибирання');
 });

@@ -1,10 +1,12 @@
 <?php
 
+use App\Enums\ServiceEnum;
 use App\Models\Order;
 use App\Notifications\OrderSubmitted;
-use App\Enums\ServiceEnum;
-use NotificationChannels\Telegram\TelegramMessage;
+use NotificationChannels\Telegram\TelegramChannel;
 use NotificationChannels\Telegram\TelegramFile;
+use NotificationChannels\Telegram\TelegramMediaGroup;
+use NotificationChannels\Telegram\TelegramMessage;
 
 test('імейл-нотифікація містить рівень забруднення та умови на об\'єкті, якщо вони вказані', function () {
     $order = Order::factory()->create([
@@ -75,7 +77,7 @@ test('телеграм-нотифікація містить рівень заб
 
     // Verify channel routing works
     $channels = $notification->via(new stdClass);
-    expect($channels)->toContain(\NotificationChannels\Telegram\TelegramChannel::class);
+    expect($channels)->toContain(TelegramChannel::class);
 
     $telegramMessage = $notification->toTelegram(new stdClass);
     expect($telegramMessage)->toBeInstanceOf(TelegramMessage::class);
@@ -139,13 +141,13 @@ test('телеграм-нотифікація використовує TelegramM
     $notification = new OrderSubmitted($order);
     $telegramMessage = $notification->toTelegram(new stdClass);
 
-    expect($telegramMessage)->toBeInstanceOf(\NotificationChannels\Telegram\TelegramMediaGroup::class);
+    expect($telegramMessage)->toBeInstanceOf(TelegramMediaGroup::class);
 
     $payload = getPayloadData($telegramMessage->toArray());
-    
+
     // Check that 'media' field is present and contains both photos
     expect($payload['media'])->toBeString();
-    
+
     $mediaArray = json_decode($payload['media'], true);
     expect($mediaArray)->toHaveCount(2);
     expect($mediaArray[0]['type'])->toBe('photo');
@@ -168,5 +170,6 @@ function getPayloadData(array $payload): array
             return $payload;
         }
     }
+
     return $data;
 }

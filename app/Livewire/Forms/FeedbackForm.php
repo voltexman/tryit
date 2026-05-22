@@ -4,9 +4,7 @@ namespace App\Livewire\Forms;
 
 use App\Enums\FeedbackTopicEnum;
 use App\Models\Feedback;
-use App\Notifications\FeedbackSubmitted;
 use App\Rules\Recaptcha;
-use Illuminate\Support\Facades\Notification;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
@@ -18,37 +16,41 @@ class FeedbackForm extends Form
     #[Validate('min:2', message: 'Занадто мало символів')]
     public string $contact = '';
 
-    #[Validate('required', message: 'Напишіть листа')]
-    #[Validate('max:1500', message: 'Занадто багато символів')]
+    #[Validate('required|min:5|max:1500', message: [
+        'required' => 'Напишіть листа',
+        'min' => 'Занадто мало символів',
+        'max' => 'Занадто багато символів',
+    ])]
     public string $text = '';
 
-    #[Validate('required', message: 'Оберіть тему')]
+    #[Validate('required', message: 'Оберіть тему звернення')]
     public string $topic = '';
 
-    public string|null $service = null;
+    public ?string $service = null;
 
-    public int|null $rating = null;
+    #[Validate(
+        [
+            'nullable',
+            'integer',
+            'min:1',
+            'max:5',
+            'required_if:topic,'.FeedbackTopicEnum::GRATITUDE->value,
+        ],
+        message: [
+            'required_if' => 'Будь ласка, залиште оцінку',
+        ]
+    )]
+    public ?int $rating = null;
 
     public function store($images = [], $recaptchaToken = null)
     {
-        if ($this->topic === FeedbackTopicEnum::GRATITUDE->value) {
-            $this->validate([
-                'rating' => 'required|integer|min:1|max:5',
-            ], [
-                'rating.required' => 'Будь ласка, залиште оцінку',
-            ]);
-        } else {
-            $this->rating = null;
-        }
-
-        $this->withValidator(function ($validator) use ($recaptchaToken) {
-            $validator->after(function ($validator) use ($recaptchaToken) {
-                $recaptchaRule = new Recaptcha;
-                $recaptchaRule->validate('recaptcha', $recaptchaToken, function ($message) use ($validator) {
-                    $validator->errors()->add('recaptcha', $message);
-                });
-            });
-        });
+        validator(
+            ['captcha' => $recaptchaToken],
+            ['captcha' => ['required', new Recaptcha]],
+            [
+                'captcha.required' => 'Помилка перевірки безпеки. Спробуйте ще раз.',
+            ]
+        )->validate();
 
         $this->validate();
 

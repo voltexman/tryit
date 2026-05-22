@@ -1,12 +1,11 @@
 <?php
 
+use Livewire\Attributes\Lazy;
 use Livewire\Component;
-use App\Models\Feedback;
-use App\Enums\FeedbackTopicEnum;
 use App\Notifications\CallbackSubmitted;
 use Illuminate\Support\Facades\Notification;
 
-new class extends Component {
+new #[Lazy] class extends Component {
     public string $phone = '';
     public bool $submitted = false;
 
@@ -22,12 +21,6 @@ new class extends Component {
             ],
         );
 
-        Feedback::create([
-            'topic' => FeedbackTopicEnum::GENERAL->value,
-            'contact' => $this->phone,
-            'text' => 'Замовлення зворотного дзвінка',
-        ]);
-
         Notification::route('telegram', config('services.telegram-bot-api.chat_id'))->notify(new CallbackSubmitted($this->phone));
 
         $this->submitted = true;
@@ -36,7 +29,7 @@ new class extends Component {
 };
 ?>
 
-<div class="w-full max-w-70">
+<div class="mx-auto lg:mx-0 w-full max-w-70">
     @if ($submitted)
         <div
             class="flex justify-center mx-auto lg:mx-0 items-center gap-3 bg-emerald-500/20 border border-emerald-500/40 backdrop-blur-md rounded-2xl px-5 py-3.5 text-emerald-300 w-full text-center text-sm font-semibold animate-in fade-in duration-300">

@@ -6,7 +6,6 @@ use App\Models\Feedback;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use NotificationChannels\Telegram\TelegramChannel;
 use NotificationChannels\Telegram\TelegramFile;
 use NotificationChannels\Telegram\TelegramMediaGroup;
 use NotificationChannels\Telegram\TelegramMessage;
@@ -31,7 +30,7 @@ class FeedbackSubmitted extends Notification
             ->lineIf($this->feedback->name, "- **Ім'я:** {$this->feedback->name}")
             ->lineIf($this->feedback->contact, "- **Контакт:** {$this->feedback->contact}")
             ->line("- **Тема:** {$this->feedback->topic->getLabel()}")
-            ->lineIf($this->feedback->service, "- **Послуга:** " . $this->feedback->service?->getLabel())
+            ->lineIf($this->feedback->service, '- **Послуга:** '.$this->feedback->service?->getLabel())
             ->lineIf($this->feedback->rating, "- **Оцінка:** {$this->feedback->rating} / 5 ⭐")
             ->line("- **Повідомлення:** {$this->feedback->text}");
     }
@@ -42,8 +41,8 @@ class FeedbackSubmitted extends Notification
         $content = $this->buildMessageContent();
 
         $validMediaPaths = collect($this->feedback->getMedia('feedback'))
-            ->map(fn($media) => $media->getPath())
-            ->filter(fn($path) => file_exists($path))
+            ->map(fn ($media) => $media->getPath())
+            ->filter(fn ($path) => file_exists($path))
             ->values()
             ->all();
 
@@ -52,6 +51,7 @@ class FeedbackSubmitted extends Notification
             foreach ($validMediaPaths as $index => $path) {
                 $message->photo($path, $index === 0 ? $content : null);
             }
+
             return $message;
         }
 
@@ -75,8 +75,8 @@ class FeedbackSubmitted extends Notification
             $this->feedback->name ? "- *Ім'я:* {$this->feedback->name}" : null,
             $this->feedback->contact ? "- *Контакт:* {$this->feedback->contact}" : null,
             "- *Тема:* {$this->feedback->topic->getLabel()}",
-            $this->feedback->service ? "- *Послуга:* " . $this->feedback->service->getLabel() : null,
-            $this->feedback->rating ? "- *Оцінка:* " . str_repeat('⭐', $this->feedback->rating) : null,
+            $this->feedback->service ? '- *Послуга:* '.$this->feedback->service->getLabel() : null,
+            $this->feedback->rating ? '- *Оцінка:* '.str_repeat('⭐', $this->feedback->rating) : null,
             "- *Повідомлення:* {$this->feedback->text}",
         ]);
 

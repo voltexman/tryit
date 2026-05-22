@@ -7,7 +7,6 @@ use App\Models\Order;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use NotificationChannels\Telegram\TelegramChannel;
 use NotificationChannels\Telegram\TelegramFile;
 use NotificationChannels\Telegram\TelegramMediaGroup;
 use NotificationChannels\Telegram\TelegramMessage;
@@ -38,8 +37,8 @@ class OrderSubmitted extends Notification
             ->lineIf($this->order->square_area, "- **Площа:** {$this->order->square_area} м²")
             ->lineIf($this->order->room_count, "- **Кімнат:** {$this->order->room_count}")
             ->lineIf($this->order->floor_count, "- **Поверхів:** {$this->order->floor_count}")
-            ->lineIf($this->getContaminationLevel(), '- **Рівень забруднення:** ' . $this->getContaminationLevel())
-            ->lineIf($this->getConditionsString(), '- **Умови на об\'єкті:** ' . $this->getConditionsString())
+            ->lineIf($this->getContaminationLevel(), '- **Рівень забруднення:** '.$this->getContaminationLevel())
+            ->lineIf($this->getConditionsString(), '- **Умови на об\'єкті:** '.$this->getConditionsString())
             ->lineIf($this->order->text, "- **Коментар клієнта:** {$this->order->text}");
 
         if ($url = $this->getAdminUrl()) {
@@ -64,18 +63,18 @@ class OrderSubmitted extends Notification
             $this->order->square_area ? "- *Площа:* {$this->order->square_area} м²" : null,
             $this->order->room_count ? "- *Кімнат:* {$this->order->room_count}" : null,
             $this->order->floor_count ? "- *Поверхів:* {$this->order->floor_count}" : null,
-            $this->getContaminationLevel() ? '- *Рівень забруднення:* ' . $this->getContaminationLevel() : null,
-            $this->getConditionsString() ? '- *Умови на об\'єкті:* ' . $this->getConditionsString() : null,
+            $this->getContaminationLevel() ? '- *Рівень забруднення:* '.$this->getContaminationLevel() : null,
+            $this->getConditionsString() ? '- *Умови на об\'єкті:* '.$this->getConditionsString() : null,
             $this->order->text ? "- *Коментар клієнта:* {$this->order->text}" : null,
-        ], fn($line) => $line !== null);
+        ], fn ($line) => $line !== null);
 
         $content = implode("\n", $lines);
         $chatId = config('services.telegram-bot-api.chat_id');
         $url = $this->getAdminUrl();
 
         $validMediaPaths = collect($this->order->getMedia('orders'))
-            ->map(fn($media) => $media->getPath())
-            ->filter(fn($path) => file_exists($path))
+            ->map(fn ($media) => $media->getPath())
+            ->filter(fn ($path) => file_exists($path))
             ->values()
             ->all();
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Notifications\CallbackSubmitted;
+use NotificationChannels\Telegram\TelegramChannel;
 use NotificationChannels\Telegram\TelegramMessage;
 
 test('телеграм-нотифікація про зворотній дзвінок генерується з правильним текстом та форматуванням', function () {
@@ -12,7 +13,7 @@ test('телеграм-нотифікація про зворотній дзві
 
     // Перевірка каналів відправки
     $channels = $notification->via(new stdClass);
-    expect($channels)->toContain(\NotificationChannels\Telegram\TelegramChannel::class);
+    expect($channels)->toContain(TelegramChannel::class);
 
     // Отримання повідомлення
     $telegramMessage = $notification->toTelegram(new stdClass);
@@ -21,7 +22,7 @@ test('телеграм-нотифікація про зворотній дзві
     $payload = $telegramMessage->toArray();
     $text = $payload['text'] ?? '';
 
-    expect($text)->toContain("*Прохання передзвонити:*");
+    expect($text)->toContain('*Прохання передзвонити:*');
     expect($text)->toContain($phone);
-    expect($text)->toContain("_Зараз очікує на дзвінок_");
+    expect($text)->toContain('_Зараз очікує на дзвінок_');
 });

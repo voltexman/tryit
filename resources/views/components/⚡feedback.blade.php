@@ -1,12 +1,13 @@
 <?php
 
 use Livewire\Component;
+use Livewire\Attributes\Lazy;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\FeedbackSubmitted;
 use App\Livewire\Forms\FeedbackForm;
 use Livewire\WithFileUploads;
 
-new class extends Component {
+new #[Lazy] class extends Component {
     use WithFileUploads;
 
     public FeedbackForm $feedback;
@@ -58,31 +59,7 @@ new class extends Component {
         </button>
     </div>
 @else
-    @assets
-        <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site') }}" defer></script>
-    @endassets
-
-    <form x-data="{
-        loading: false,
-        sendForm() {
-            if (this.loading) return;
-            this.loading = true;
-            grecaptcha.ready(() => {
-                grecaptcha.execute('{{ config('services.recaptcha.site') }}', { action: 'feedback_submit' })
-                    .then((token) => {
-                        $wire.save(token).then(() => {
-                            this.loading = false;
-                        }).catch((error) => {
-                            this.loading = false;
-                        });
-                    })
-                    .catch((e) => {
-                        this.loading = false;
-                        console.error('Google reCAPTCHA Error:', e);
-                    });
-            });
-        }
-    }" @submit.prevent="sendForm" class="relative space-y-5">
+    <form class="relative space-y-5">
         <div>
             <label class="text-xs font-bold uppercase tracking-wider text-gray-400 ml-1">Ваше ім'я</label>
             <x-forms.input size="lg" wire:model="feedback.name" placeholder="Як до вас звертатися?" />
@@ -138,7 +115,7 @@ new class extends Component {
 
         <div>
             <label class="text-xs font-bold uppercase tracking-wider text-gray-400 ml-1">Повідомлення</label>
-            <x-forms.textarea size="lg" wire:model="feedback.text" placeholder="Опишіть ваше питання..."
+            <x-forms.textarea required size="lg" wire:model="feedback.text" placeholder="Опишіть ваше питання..."
                 rows="5" />
             @error('feedback.text')
                 <x-forms.error class="ml-1" :message="$message" />
@@ -187,11 +164,22 @@ new class extends Component {
             @endif
         </div>
 
-        <x-button type="submit" color="slate" size="lg" wire:target="save, images" wire:loading.attr="disabled">
+        <x-button type="button" color="slate" size="lg" wire:target="save, images" wire:loading.attr="disabled"
+            x-data
+            x-on:click="
+                grecaptcha.ready(() => {
+                    grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', {
+                        action: 'submit'
+                    }).then(token => {
+                        $wire.save(token)
+                    })
+                })
+    ">
             <span wire:target="save" wire:loading.remove class="flex items-center gap-2">
                 <span>Надіслати повідомлення</span>
                 <x-lucide-send class="size-4" />
             </span>
+
             <span wire:target="save" wire:loading class="flex items-center gap-2">
                 <span>Відправка...</span>
                 <x-lucide-loader-2 class="size-4 shrink-0 inline-flex animate-spin" />
@@ -199,3 +187,7 @@ new class extends Component {
         </x-button>
     </form>
 @endsession
+
+@assets
+    <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
+@endassets

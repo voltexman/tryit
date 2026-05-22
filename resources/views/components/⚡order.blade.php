@@ -1,5 +1,6 @@
 <?php
 
+// use Livewire\Attributes\Lazy;
 use App\Notifications\OrderSubmitted;
 use Illuminate\Support\Facades\Notification;
 use App\Livewire\Forms\OrderForm;
@@ -26,12 +27,6 @@ new class extends Component {
         array_splice($this->images, $index, 1);
     }
 
-    #[On('setService')]
-    public function setService($service)
-    {
-        $this->order->service = is_array($service) ? $service['service'] ?? '' : $service;
-    }
-
     public function save($recaptchaToken = null)
     {
         $order = $this->order->store($this->images, $recaptchaToken);
@@ -54,7 +49,7 @@ new class extends Component {
     <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site') }}" defer></script>
 @endassets
 
-<x-offcanvas id="orderOffcanvas" title="Замовити послугу">
+<x-offcanvas>
     @session('success')
         <div class="h-full flex items-center justify-center">
             <div class="flex flex-col items-center">
@@ -64,6 +59,21 @@ new class extends Component {
             </div>
         </div>
     @else
+        <x-slot:trigger>
+            {{ $slots['trigger'] }}
+        </x-slot>
+
+        <x-slot:header>
+            <x-lucide-sparkles class="size-5" />
+            Замовлення послуги
+        </x-slot>
+
+        @placeholder
+            <div class="animate-pulse">
+                <div class="h-32 bg-gray-200 rounded"></div>
+            </div>
+        @endplaceholder
+
         <form x-data="{
             loading: false,
             sendForm() {
@@ -87,7 +97,7 @@ new class extends Component {
         }" @submit.prevent="sendForm" class="space-y-5">
 
             <!-- ПОМИЛКА КАПЧІ (Якщо робот або збій верифікації) -->
-            @error('recaptcha')
+            {{-- @error('recaptcha')
                 <div class="p-3 text-sm text-red-600 bg-red-50 rounded-lg border border-red-200">
                     {{ $message }}
                 </div>
@@ -100,22 +110,22 @@ new class extends Component {
                         {{ $order->service }}
                     </span>
                 </div>
-            @endif
+            @endif --}}
 
             <!-- ОСНОВНІ ПОЛЯ -->
             <div class="space-y-5">
                 <h3 class="font-display text-lg font-semibold text-slate-900">Ваші дані</h3>
 
                 <div>
-                    <x-forms.input wire:model="order.name" maxLength="40" placeholder="Ваше ім'я" wire:target="save"
-                        size="lg" wire:loading.attr="disabled" />
+                    <x-forms.input required wire:model="order.name" maxLength="40" placeholder="Ваше ім'я"
+                        wire:target="save" size="lg" wire:loading.attr="disabled" />
                     @error('order.name')
                         <x-forms.error class="mt-2" :message="$message" />
                     @enderror
                 </div>
 
                 <div>
-                    <x-forms.input wire:model="order.contact" maxLength="40" placeholder="Пошта або телефон"
+                    <x-forms.input required wire:model="order.contact" maxLength="40" placeholder="Пошта або телефон"
                         wire:target="save" size="lg" wire:loading.attr="disabled" />
                     @error('order.contact')
                         <x-forms.error class="mt-2" :message="$message" />
@@ -123,8 +133,8 @@ new class extends Component {
                 </div>
 
                 <div>
-                    <x-forms.input wire:model="order.address" placeholder="Адреса об'єкта" wire:target="save" size="lg"
-                        wire:loading.attr="disabled" />
+                    <x-forms.input required wire:model="order.address" placeholder="Адреса об'єкта" wire:target="save"
+                        size="lg" wire:loading.attr="disabled" />
                     @error('order.address')
                         <x-forms.error class="mt-2" :message="$message" />
                     @enderror
@@ -156,13 +166,13 @@ new class extends Component {
             <!-- ХАРАКТЕРИСТИКИ ОБ'ЄКТУ -->
             <div x-data="{ expanded: false }" class="space-y-5">
                 <button type="button" @click="expanded = !expanded"
-                    class="w-full flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-200 group transition-all"
+                    class="w-full flex items-center justify-between p-4 bg-slate-50 rounded-xl cursor-pointer hover:bg-slate-100 border border-slate-200 group transition-all duration-300"
                     :class="expanded ? 'border-emerald-500/30 bg-emerald-50/30' : ''">
                     <div class="space-y-1 text-left">
                         <h3
                             class="font-display text-lg font-semibold text-slate-900 group-hover:text-emerald-600 transition-colors">
                             Характеристики об'єкту</h3>
-                        <p class="text-xs leading-relaxed text-slate-500 font-medium italic">
+                        <p class="text-xs text-slate-500/60 font-medium italic">
                             Ці дані не є обов'язковими, проте вони допоможуть нам точніше оцінити обсяг робіт
                         </p>
                     </div>
@@ -219,10 +229,10 @@ new class extends Component {
                     <!-- Чекбокси: ліфт, вода, паркування - як квадратні кнопки в ряд -->
                     <div class="space-y-2.5">
                         <label class="block text-sm font-medium text-slate-700 mb-2.5">Умови на об'єкті</label>
-                        <div class="flex gap-2.5 lg:gap-5">
-                            <label class="flex items-center justify-center cursor-pointer group">
+                        <div class="flex gap-2.5">
+                            <label class="size-25 flex items-center justify-center cursor-pointer group">
                                 <input type="checkbox" wire:model="order.has_elevator" class="hidden" />
-                                <div class="size-25 lg:size-30 flex flex-col justify-center items-center rounded-xl border-2 text-center transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-100/60"
+                                <div class="size-25 flex flex-col justify-center items-center rounded-xl border-2 text-center transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-100/60"
                                     :class="$wire.order.has_elevator ? 'border-emerald-500 bg-emerald-50 text-emerald-600' :
                                         'border-slate-200 bg-slate-50 text-slate-700'">
                                     <x-lucide-arrow-up-down class="size-6 mx-auto mb-2 transition-colors" />
@@ -230,9 +240,9 @@ new class extends Component {
                                 </div>
                             </label>
 
-                            <label class="size-30 flex items-center justify-center cursor-pointer group">
+                            <label class="size-25 flex items-center justify-center cursor-pointer group">
                                 <input type="checkbox" wire:model="order.has_water" class="hidden" />
-                                <div class="size-25 lg:size-30 flex flex-col justify-center items-center rounded-xl border-2 text-center transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-100/60"
+                                <div class="size-25 flex flex-col justify-center items-center rounded-xl border-2 text-center transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-100/60"
                                     :class="$wire.order.has_water ? 'border-emerald-500 bg-emerald-50 text-emerald-600' :
                                         'border-slate-200 bg-slate-50 text-slate-700'">
                                     <x-lucide-droplets class="size-6 mx-auto mb-2 transition-colors" />
@@ -240,9 +250,9 @@ new class extends Component {
                                 </div>
                             </label>
 
-                            <label class="size-30 flex items-center justify-center cursor-pointer group">
+                            <label class="size-25 flex items-center justify-center cursor-pointer group">
                                 <input type="checkbox" wire:model="order.has_parking" class="hidden" />
-                                <div class="size-25 lg:size-30 flex flex-col justify-center items-center rounded-xl border-2 text-center transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-100/60"
+                                <div class="size-25 flex flex-col justify-center items-center rounded-xl border-2 text-center transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-100/60"
                                     x-bind:class="$wire.order.has_parking ? 'border-emerald-400 bg-emerald-50 text-emerald-600' :
                                         'border-slate-200 bg-slate-50 text-slate-700'">
                                     <x-lucide-car class="size-6 mx-auto mb-2 transition-colors" />
@@ -388,18 +398,18 @@ new class extends Component {
             </div>
 
             <!-- КНОПКА ВІДПРАВКИ -->
-            <div class="sticky bottom-0 bg-white border-t border-slate-200 -mx-6 px-6 py-4 flex gap-3">
+            <x-slot:footer>
                 <button type="button" @click="open = false"
-                    class="flex-1 px-4 py-3 border border-slate-300 text-slate-700 font-semibold rounded-lg hover:bg-slate-50 transition-colors">
-                    Скасувати
+                    class="size-10 flex justify-center items-center bg-slate-200 border border-slate-300 rounded-full cursor-pointer hover:bg-slate-50 transition-colors">
+                    <x-lucide-x class="size-5 stroke-slate-600" />
                 </button>
-                <button type="submit" wire:target="save" wire:loading.attr="disabled"
-                    class="flex-1 px-4 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-lg transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
+                <button type="submit" wiretarget="save" wire:loading.attr="disabled"
+                    class="flex-1 px-6 py-2.5 text-base bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-full cursor-pointer transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
                     <span wire:target="save" wire:loading.remove>Замовити</span>
                     <span wire:target="save" wire:loading>Відправка...</span>
                     <x-lucide-loader-2 wire:target="save" wire:loading class="w-4 h-4 animate-spin" />
                 </button>
-            </div>
+            </x-slot>
         </form>
     @endsession
 </x-offcanvas>

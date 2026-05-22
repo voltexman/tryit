@@ -1,94 +1,106 @@
-@props(['id' => 'offcanvas', 'title' => '', 'position' => 'right'])
+@props(['trigger', 'header', 'footer', 'position' => 'end', 'size' => 'md'])
 
-<div 
-    x-data="{
-        open: false,
-        init() {
-            // Зберігаємо посилання на цей компонент в глобальному об'єкті
-            if (!window.offcanvasInstances) {
-                window.offcanvasInstances = {};
+<div x-data="{
+    open: false,
+    mobileFullWidth: true,
+
+    // 'start', 'end', 'top', 'bottom'
+    position: '{{ $position }}',
+
+    // 'xs', 'sm', 'md', 'lg', 'xl'
+    size: '{{ $size }}',
+
+    // Set transition classes based on position
+    transitionClasses: {
+        'x-transition:enter-start'() {
+            if (this.position === 'start') {
+                return '-translate-x-full rtl:translate-x-full';
+            } else if (this.position === 'end') {
+                return 'translate-x-full rtl:-translate-x-full';
+            } else if (this.position === 'top') {
+                return '-translate-y-full';
+            } else if (this.position === 'bottom') {
+                return 'translate-y-full';
             }
-            window.offcanvasInstances['{{ $id }}'] = this;
-        }
-    }"
-    x-init="init()"
-    id="{{ $id }}"
-    class="offcanvas-component">
-    
-    <!-- Фон зі скломинаєм -->
-    <div 
-        x-cloak
-        x-show="open"
-        @click="open = false"
-        x-transition:enter="transition ease-out duration-300"
-        x-transition:enter-start="opacity-0"
-        x-transition:enter-end="opacity-100"
-        x-transition:leave="transition ease-in duration-200"
-        x-transition:leave-start="opacity-100"
-        x-transition:leave-end="opacity-0"
-        class="fixed inset-0 bg-black/50 z-40"
-        style="display: none;">
-    </div>
+        },
+        'x-transition:leave-end'() {
+            if (this.position === 'start') {
+                return '-translate-x-full rtl:translate-x-full';
+            } else if (this.position === 'end') {
+                return 'translate-x-full rtl:-translate-x-full';
+            } else if (this.position === 'top') {
+                return '-translate-y-full';
+            } else if (this.position === 'bottom') {
+                return 'translate-y-full';
+            }
+        },
+    },
+}" x-on:keydown.esc.prevent="open = false" {{ $attributes->class('') }}>
+    <button x-on:click="open = true" type="button"
+        class="relative rounded-md p-1.5 transition-colors duration-500 cursor-pointer">
+        {{ $trigger }}
+    </button>
 
-    <!-- Офканвас панель -->
-    <div
-        x-cloak
-        x-show="open"
-        x-transition:enter="transition ease-out duration-300"
-        x-transition:enter-start="{{ $position === 'right' ? 'translate-x-full' : '-translate-x-full' }}"
-        x-transition:enter-end="translate-x-0"
-        x-transition:leave="transition ease-in duration-200"
-        x-transition:leave-start="translate-x-0"
-        x-transition:leave-end="{{ $position === 'right' ? 'translate-x-full' : '-translate-x-full' }}"
-        class="fixed top-0 {{ $position === 'right' ? 'right-0' : 'left-0' }} h-screen w-full max-w-2xl bg-white shadow-2xl z-50 overflow-y-auto"
-        style="display: none;">
-        
-        <!-- Заголовок -->
-        <div class="sticky top-0 z-30 bg-white border-b border-slate-200 px-6 py-5 flex items-center justify-between gap-4">
-            @if($title)
-                <h2 class="font-display text-2xl font-bold text-slate-900">{{ $title }}</h2>
-            @endif
-            <button 
-                @click="open = false"
-                type="button"
-                class="ml-auto shrink-0 text-slate-500 hover:text-slate-700 transition-colors p-1">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
+    <template x-teleport="body">
+        <div x-cloak x-show="open" x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0" x-bind:aria-hidden="!open" tabindex="-1" role="dialog"
+            aria-labelledby="pm-offcanvas-title"
+            class="z-90 fixed inset-0 overflow-hidden bg-stone-900/60 backdrop-blur-xs"
+            x-effect="document.body.style.overflow = open ? 'hidden' : 'auto'">
+
+            <div x-cloak x-show="open" x-on:click.away="open = false" x-bind="transitionClasses"
+                x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-end="translate-x-0 translate-y-0"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="translate-x-0 translate-y-0" role="document"
+                class="absolute flex w-full flex-col bg-white shadow-lg will-change-transform"
+                x-bind:class="{
+                    'h-dvh top-0 inset-e-0': position === 'end',
+                    'h-dvh top-0 inset-s-0': position === 'start',
+                    'bottom-0 inset-s-0 inset-e-0': position === 'top',
+                    'bottom-0 inset-s-0 inset-e-0': position === 'bottom',
+                    'h-64': position === 'top' || position === 'bottom',
+                    'sm:max-w-xs': size === 'xs' && !(position === 'top' || position === 'bottom'),
+                    'sm:max-w-sm': size === 'sm' && !(position === 'top' || position === 'bottom'),
+                    'sm:max-w-md': size === 'md' && !(position === 'top' || position === 'bottom'),
+                    'sm:max-w-lg': size === 'lg' && !(position === 'top' || position === 'bottom'),
+                    'sm:max-w-xl': size === 'xl' && !(position === 'top' || position === 'bottom'),
+                    'max-w-72': !mobileFullWidth && !(position === 'top' || position === 'bottom'),
+                }">
+
+                @isset($header)
+                    <div
+                        {{ $header->attributes->class('flex gap-1.5 font-[Oswald] tracking-wide min-h-16 bg-slate-50 border-b border-slate-100 flex-none items-center px-5') }}>
+                        {{ $header }}
+                    </div>
+                @endisset
+
+                <button x-on:click="open = false" type="button"
+                    class="absolute top-3 right-3 inline-flex items-center justify-center size-8 rounded-full bg-slate-800 text-slate-50 hover:bg-zinc-800 hover:text-zinc-200 transition-colors duration-300 cursor-pointer">
+                    <x-lucide-x class="-mx-1 inline-block size-4" />
+                </button>
+
+                <div class="flex grow flex-col overflow-y-auto">
+                    <div x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 translate-y-4"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-transition:leave="transition ease-in duration-200"
+                        x-transition:leave-start="opacity-100 translate-y-0"
+                        x-transition:leave-end="opacity-0 translate-y-4"
+                        class="flex flex-col size-full max-w-xl mx-auto p-5">
+                        {{ $slot }}
+                    </div>
+                </div>
+
+                @isset($footer)
+                    <div
+                        {{ $footer->attributes->class('relative bg-slate-50 border-t border-slate-100 flex gap-2.5 px-5 py-2.5') }}>
+                        {{ $footer }}
+                    </div>
+                @endisset
+            </div>
         </div>
-
-        <!-- Контент -->
-        <div class="p-6">
-            {{ $slot }}
-        </div>
-    </div>
-
-    <!-- Тригер для відкривання (якщо переданий) -->
-    @if(isset($trigger))
-        <button 
-            @click="open = true"
-            type="button"
-            {{ $trigger->attributes }}>
-            {{ $trigger }}
-        </button>
-    @endif
+    </template>
 </div>
-
-<script>
-    if (!window.openOffcanvas) {
-        window.openOffcanvas = function(id) {
-            if (window.offcanvasInstances && window.offcanvasInstances[id]) {
-                window.offcanvasInstances[id].open = true;
-            }
-        };
-    }
-
-    if (!window.closeOffcanvas) {
-        window.closeOffcanvas = function(id) {
-            if (window.offcanvasInstances && window.offcanvasInstances[id]) {
-                window.offcanvasInstances[id].open = false;
-            }
-        };
-    }
-</script>
