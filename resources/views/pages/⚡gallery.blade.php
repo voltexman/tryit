@@ -29,14 +29,13 @@ new class extends Component {
     </x-page-header>
 </x-slot:header>
 
-<div class="max-w-7xl mx-auto px-5 py-16 lg:py-24">
+<div class="max-w-6xl mx-auto px-5 py-10 lg:py-20 lg:px-0">
     @if ($this->images->isEmpty())
         <div class="text-center py-20">
             <p class="text-gray-500 text-lg font-[Lora] italic">Галерея наразі порожня.</p>
         </div>
     @else
-        <div id="gallery-container" x-init="initializeGallery('gallery-container')"
-            class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 space-y-6">
+        <div id="gallery-container" x-init="initializeGallery('gallery-container')" class="columns-2 md:columns-3 lg:columns-4 gap-5 space-y-5">
             @foreach ($this->images as $item)
                 @php
                     $imageUrl = $item->getFirstMediaUrl('gallery');
