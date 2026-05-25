@@ -58,7 +58,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-BenCgikJ.css",
+    "file": "assets/app-DJShXwMp.css",
     "name": "app",
     "names": [
       "app.css"
@@ -243,7 +243,7 @@
     "src": "resources/images/h1-cleaning-team.png"
   },
   "resources/images/h2-background.jpg": {
-    "file": "assets/h2-background04-C6HLSC8Z.jpg",
+    "file": "assets/h2-background-C6HLSC8Z.jpg",
     "src": "resources/images/h2-background.jpg"
   },
   "resources/images/h2-background01.jpg": {
@@ -251,7 +251,7 @@
     "src": "resources/images/h2-background01.jpg"
   },
   "resources/images/h2-background04.jpg": {
-    "file": "assets/h2-background04-C6HLSC8Z.jpg",
+    "file": "assets/h2-background-C6HLSC8Z.jpg",
     "src": "resources/images/h2-background.jpg"
   },
   "resources/images/h3-cleaning-01.jpg": {
@@ -543,7 +543,7 @@
     "src": "resources/images/policy-cookies-header-bg.png"
   },
   "resources/images/promyslovyi-alpinizm/image-1.jpg": {
-    "file": "assets/image-1-CWdYmt6d.jpg",
+    "file": "assets/service-7-CWdYmt6d.jpg",
     "src": "resources/images/promyslovyi-alpinizm/image-1.jpg"
   },
   "resources/images/promyslovyi-alpinizm/image-2.jpg": {
@@ -591,7 +591,7 @@
     "src": "resources/images/service-7-old.jpg"
   },
   "resources/images/service-7.jpg": {
-    "file": "assets/image-1-CWdYmt6d.jpg",
+    "file": "assets/service-7-CWdYmt6d.jpg",
     "src": "resources/images/promyslovyi-alpinizm/image-1.jpg"
   },
   "resources/images/services-header-bg.png": {

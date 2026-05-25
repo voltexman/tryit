@@ -7,7 +7,7 @@
     </div>
 
     {{-- 2. Team Image (Directly on Green Background) --}}
-    <div class="absolute inset-y-0 -bottom-10 left-15 z-10 w-1/2 flex items-end pointer-events-none">
+    <div class="hidden lg:flex absolute inset-y-0 -bottom-10 left-10 z-10 w-1/2 items-end pointer-events-none">
         <img src="{{ Vite::asset('resources/images/h1-cleaning-team.png') }}"
             class="w-auto h-[90%] object-contain object-bottom shadow-none! drop-shadow-xl" alt="TryIt Team">
     </div>
@@ -17,12 +17,12 @@
         <div class="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
 
             {{-- Title --}}
-            <div class="font-[Oswald] text-2xl md:text-4xl font-semibold mb-4 text-white">
+            <div class="font-[Oswald] text-3xl md:text-4xl font-semibold mb-4 text-white">
                 {{ $title ?? 'Чистота без зусиль' }}
             </div>
 
             {{-- Subtitle --}}
-            <div class="text-emerald-100/80 text-base mb-5 max-w-sm leading-relaxed">
+            <div class="text-emerald-100/80 text-base mb-5 max-w-sm leading-relaxed text-balance">
                 {{ $subtitle ?? 'Ваш простір у надійних руках наших професіоналів.' }}
             </div>
 
@@ -35,7 +35,7 @@
                 </a>
                 <a href="{{ $serviceUrl ?? '#' }}" class="shrink-0 no-underline">
                     <button
-                        class="font-[Oswald] bg-white hover:bg-emerald-50 text-emerald-800 px-6 py-4 rounded-full font-black text-sm uppercase tracking-wide transition-all shadow-lg active:scale-95">
+                        class="font-[Oswald] bg-white hover:bg-emerald-50 text-emerald-800 px-6 py-4 rounded-full font-black text-sm uppercase tracking-wide transition-all active:scale-95">
                         {{ $actionLabel ?? 'Замовити послугу' }}
                     </button>
                 </a>

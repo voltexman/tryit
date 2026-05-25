@@ -33,7 +33,7 @@ new class extends Component {
 
         {{-- 3. Контентна частина --}}
         <div class="relative flex flex-col justify-end size-full max-w-4xl mx-auto px-5 pb-10 md:pb-15">
-            <a href="{{ route('blog.list') }}"
+            <a href="{{ route('blog.list') }}" wire:navigate
                 class="inline-flex w-fit items-center gap-1.5 text-white text-sm font-medium mb-4 hover:text-white/80 transition-colors">
                 <x-lucide-arrow-left class="size-4" stroke-width="2" />
                 Назад до блогу
