@@ -44,6 +44,18 @@
     <meta name="theme-color" content="#ffffff">
 
     <meta name="google-site-verification" content="fsrylmGFBJ7d7DJ_JlXie1uxWstE-InnV6R0eFJKphE" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F16PNX9NXE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-F16PNX9NXE');
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
