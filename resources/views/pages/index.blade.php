@@ -278,7 +278,7 @@ name('main');
                                     <x-lucide-move-right class="size-4 shrink-0 inline-flex ml-1.5" />
                                 </a>
                                 <button type="button"
-                                    @click="openOffcanvas('orderOffcanvas'), Livewire.dispatch('setService', { service: service.value })"
+                                    @click="$dispatch('open-order-offcanvas'); Livewire.dispatch('setService', { service: service.value })"
                                     class="px-6 py-3 font-display rounded-full backdrop-blur-xs text-emerald-400 hover:text-emerald-400 bg-emerald-500/20 hover:bg-emerald-600/20 border border-emerald-500/20 transition-all duration-300 cursor-pointer">
                                     Замовити послугу
                                 </button>
@@ -324,7 +324,7 @@ name('main');
                                     <x-lucide-move-right class="size-4 shrink-0 inline-flex ml-1.5" />
                                 </a>
                                 <button type="button"
-                                    @click="Livewire.dispatch('setService', { service: service.value }); window.openOffcanvas('orderOffcanvas')"
+                                    @click="Livewire.dispatch('setService', { service: service.value }); $dispatch('open-order-offcanvas')"
                                     class="px-5 py-2 font-display rounded-full backdrop-blur-xs text-emerald-400 hover:text-emerald-400 bg-emerald-500/20 hover:bg-emerald-600/20 border border-emerald-500/20 transition-all duration-300 cursor-pointer">
                                     Замовити послугу
                                 </button>
@@ -672,7 +672,7 @@ name('main');
 
             <div class="mt-10 lg:mt-20 flex justify-center">
                 <x-button size="lg"
-                    @click="Livewire.dispatch('setService', { service: '' }); window.openOffcanvas('orderOffcanvas')">
+                    @click="Livewire.dispatch('setService', { service: '' }); $dispatch('open-order-offcanvas')">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                         class="mr-1 size-6 fill-white group-hover:rotate-45 transition-transform"
                         xmlns="http://www.w3.org/2000/svg">

@@ -57,7 +57,7 @@ new class extends Component {
 };
 ?>
 
-<x-offcanvas>
+<x-offcanvas x-on:open-order-offcanvas.window="open = true">
     <x-slot:trigger wire:ignore>
         {{ $slots['trigger'] }}
     </x-slot>
@@ -72,8 +72,17 @@ new class extends Component {
         </div>
     @else
         <x-slot:header>
-            <x-lucide-sparkles class="size-5" />
-            Замовлення послуги
+            <div class="flex flex-col gap-0.5">
+                <div class="flex items-center gap-1.5">
+                    <x-lucide-sparkles class="size-5 shrink-0" />
+                    <span>Замовлення послуги</span>
+                </div>
+                @if ($order->service)
+                    <span class="text-xs font-normal tracking-normal font-sans text-slate-500 pl-0.5">
+                        {{ $order->service }}
+                    </span>
+                @endif
+            </div>
         </x-slot>
 
         <form x-data="{

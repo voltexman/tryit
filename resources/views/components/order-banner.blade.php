@@ -26,7 +26,7 @@
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <x-button size="lg" color="orange"
-                @click="Livewire.dispatch('setService', { service: '{{ $service ?? '' }}' }); window.openOffcanvas('orderOffcanvas')">
+                @click="Livewire.dispatch('setService', { service: '{{ $service ?? '' }}' }); $dispatch('open-order-offcanvas')">
                 Замовити послугу
             </x-button>
 

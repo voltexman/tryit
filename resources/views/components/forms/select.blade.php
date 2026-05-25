@@ -80,22 +80,22 @@
     ];
     $dotPosition = $dotClasses[$size] ?? $dotClasses['md'];
 
-    // Класи для лейбла
+    // Класи для лейбла (floated стан керується через Alpine.js `hasValue`)
     $labelClasses = [
         'sm' => [
-            'idle' => 'top-1/2 -translate-y-1/2 text-sm ' . ($hasLeftIcon ? 'left-9' : 'left-3'),
-            'float' =>
-                'peer-focus:top-1 peer-focus:text-[10px] peer-focus:translate-y-0 peer-focus:left-9 peer-[&:not(:has(option[value=\'\']:checked))]:top-1 peer-[&:not(:has(option[value=\'\']:checked))]:text-[10px] peer-[&:not(:has(option[value=\'\']:checked))]:translate-y-0 peer-[&:not(:has(option[value=\'\']:checked))]:left-9',
+            'idle'    => 'top-1/2 -translate-y-1/2 text-sm '  . ($hasLeftIcon ? 'left-9'  : 'left-3'),
+            'floated' => 'top-1 text-[10px] translate-y-0 '    . ($hasLeftIcon ? 'left-9'  : 'left-3'),
+            'focus'   => 'peer-focus:top-1 peer-focus:text-[10px] peer-focus:translate-y-0 ' . ($hasLeftIcon ? 'peer-focus:left-9'  : 'peer-focus:left-3'),
         ],
         'md' => [
-            'idle' => 'top-1/2 -translate-y-1/2 text-base ' . ($hasLeftIcon ? 'left-11' : 'left-4'),
-            'float' =>
-                'peer-focus:top-1 peer-focus:text-[11px] peer-focus:translate-y-0 peer-focus:left-11 peer-[&:not(:has(option[value=\'\']:checked))]:top-1 peer-[&:not(:has(option[value=\'\']:checked))]:text-[11px] peer-[&:not(:has(option[value=\'\']:checked))]:translate-y-0 peer-[&:not(:has(option[value=\'\']:checked))]:left-11',
+            'idle'    => 'top-1/2 -translate-y-1/2 text-base ' . ($hasLeftIcon ? 'left-11' : 'left-4'),
+            'floated' => 'top-1 text-[11px] translate-y-0 '    . ($hasLeftIcon ? 'left-11' : 'left-4'),
+            'focus'   => 'peer-focus:top-1 peer-focus:text-[11px] peer-focus:translate-y-0 ' . ($hasLeftIcon ? 'peer-focus:left-11' : 'peer-focus:left-4'),
         ],
         'lg' => [
-            'idle' => 'top-1/2 -translate-y-1/2 text-base ' . ($hasLeftIcon ? 'left-14' : 'left-6'),
-            'float' =>
-                'peer-focus:top-3 peer-focus:text-xs peer-focus:translate-y-0 peer-focus:left-14 peer-[&:not(:has(option[value=\'\']:checked))]:top-3 peer-[&:not(:has(option[value=\'\']:checked))]:text-xs peer-[&:not(:has(option[value=\'\']:checked))]:translate-y-0 peer-[&:not(:has(option[value=\'\']:checked))]:left-14',
+            'idle'    => 'top-1/2 -translate-y-1/2 text-base ' . ($hasLeftIcon ? 'left-14' : 'left-6'),
+            'floated' => 'top-3 text-xs translate-y-0 '         . ($hasLeftIcon ? 'left-14' : 'left-6'),
+            'focus'   => 'peer-focus:top-3 peer-focus:text-xs peer-focus:translate-y-0 ' . ($hasLeftIcon ? 'peer-focus:left-14' : 'peer-focus:left-6'),
         ],
     ];
     $currentLabelClasses = $labelClasses[$size] ?? $labelClasses['md'];
@@ -124,8 +124,23 @@
     $chevronPositionClasses = $chevronPositions[$size] ?? $chevronPositions['md'];
 @endphp
 
-<div class="relative w-full flex items-center">
-    <select {{ $attributes->class($finalClasses) }}>
+<div
+    class="relative w-full flex items-center"
+    x-data="{ hasValue: false }"
+    x-init="
+        const syncValue = () => $nextTick(() => {
+            const sel = $refs.select;
+            hasValue = sel ? sel.options[sel.selectedIndex]?.text.trim() !== '' : false;
+        });
+        syncValue();
+        document.addEventListener('livewire:commit', syncValue);
+    "
+>
+    <select
+        x-ref="select"
+        {{ $attributes->class($finalClasses) }}
+        @change="hasValue = $event.target.options[$event.target.selectedIndex]?.text.trim() !== ''"
+    >
         {{ $slot }}
     </select>
 
@@ -138,7 +153,8 @@
 
     @if ($labelText)
         <label
-            class="absolute {{ $currentLabelClasses['idle'] }} {{ $currentLabelClasses['float'] }} text-slate-400 font-medium transition-all duration-300 pointer-events-none origin-left peer-focus:text-tryit-orange/90">
+            :class="hasValue ? '{{ $currentLabelClasses['floated'] }} {{ $currentLabelClasses['focus'] }} text-slate-400' : '{{ $currentLabelClasses['idle'] }} {{ $currentLabelClasses['focus'] }} text-slate-400'"
+            class="absolute font-medium transition-all duration-300 pointer-events-none origin-left peer-focus:text-tryit-orange/90">
             {{ $labelText }}
         </label>
     @endif
