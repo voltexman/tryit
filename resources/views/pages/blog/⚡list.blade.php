@@ -123,10 +123,13 @@ new class extends Component {
 };
 ?>
 
-<x-slot:meta_title></x-slot:meta_title>
-<x-slot:meta_description></x-slot:meta_description>
+<x-slot:meta_title>Блог про прибирання та клінінг {{ env('APP_NAME') }} | Корисні поради та лайфхаки</x-slot:meta_title>
+<x-slot:meta_description>
+    Читайте експертні статті про догляд за офісом чи складом від {{ env('APP_NAME') }}. Професійні секрети виведення
+    плям, підбору еко-засобів та швидкого прибирання.
+</x-slot:meta_description>
 <x-slot:meta_robots>index, follow</x-slot:meta_robots>
-<x-slot:meta_image>resources/images/</x-slot:meta_image>
+<x-slot:meta_image>{{ Vite::asset('resources/images/blog-header-bg.png') }}</x-slot:meta_image>
 
 <x-slot:header>
     <x-page-header :image="Vite::asset('resources/images/blog-header-bg.png')" icon="newspaper">

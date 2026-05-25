@@ -4,8 +4,13 @@ name('feedback');
 ?>
 
 <x-layouts::app>
-    <x-slot:meta_title>feedback title</x-slot:meta_title>
-    <x-slot:meta_description>feedback description</x-slot:meta_description>
+    <x-slot:meta_title>
+        Контакти клінінгової компанії {{ env('APP_NAME') }} - Замовити прибирання Київ
+    </x-slot:meta_title>
+    <x-slot:meta_description>
+        Зв'яжіться з нами для розрахунку вартості клінінгу. Номери телефонів, адреса та форма замовлення прибирання
+        квартир, будинків чи офісів від {{ env('APP_NAME') }}.
+    </x-slot:meta_description>
     <x-slot:meta_robots>index, follow</x-slot:meta_robots>
     <x-slot:meta_image>{{ Vite::asset('resources/images/feedback-header-bg.png') }}</x-slot:meta_image>
 

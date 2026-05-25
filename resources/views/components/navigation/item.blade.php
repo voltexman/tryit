@@ -16,7 +16,7 @@
     ]) }}>
     @isset($icon)
         <div
-            class="flex-none transition-all duration-300 group-hover:scale-110 group-hover:text-tryit-orange lg:group-hover:text-white">
+            class="lg:hidden flex-none transition-all duration-300 group-hover:scale-110 group-hover:text-tryit-orange lg:group-hover:text-white">
             <x-dynamic-component :component="'lucide-' . $icon" class="size-7 lg:size-5 not-data-current:text-tryit-cream" />
         </div>
     @endisset

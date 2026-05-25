@@ -43,7 +43,7 @@ class Recaptcha implements ValidationRule
             return;
         }
 
-        if (($data['action'] ?? null) !== 'submit') {
+        if (($data['action'] ?? null) !== 'order_submit') {
             $fail('Некоректна дія reCAPTCHA.');
 
             return;

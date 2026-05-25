@@ -4,15 +4,19 @@ use App\Enums\ServiceEnum;
 name('services');
 ?>
 
-{{-- @extends('layouts.base', [
-    'meta_title' => 'Послуги клінінгу: прибирання після ремонту, хімчистка та миття вікон — TryIt',
-    'meta_description' => 'Повний спектр клінінгових послуг у Києві. Професійне прибирання після ремонту, генеральне та підтримуюче прибирання, миття фасадів та професійна хімчистка меблів. Ціни від виробника!',
-]) --}}
-
 <x-layouts::app>
+    <x-slot:meta_title>
+        Послуги клінінгу: прибирання після ремонту, хімчистка та миття вікон — {{ env('APP_NAME') }}
+    </x-slot:meta_title>
+    <x-slot:meta_description>
+        Повний спектр клінінгових послуг у Києві. Професійне прибирання після ремонту, генеральне та підтримуюче
+        прибирання, миття фасадів та професійна хімчистка меблів. Ціни від виробника!
+    </x-slot:meta_description>
+    <x-slot:meta_robots>index, follow</x-slot:meta_robots>
+    <x-slot:meta_image>{{ Vite::asset('resources/images/services-header-bg.png') }}</x-slot:meta_image>
+
     <x-slot:header>
-        <x-page-header image="https://cleaning-group.pro/wp-content/uploads/2019/08/cleaning_appartment_vinnitsa.jpg"
-            icon="sparkles">
+        <x-page-header :image="Vite::asset('resources/images/services-header-bg.png')" icon="sparkles">
             <x-slot:title class="text-balance">
                 Спектр наших послуг
             </x-slot>

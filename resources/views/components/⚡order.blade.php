@@ -1,6 +1,5 @@
 <?php
 
-// use Livewire\Attributes\Lazy;
 use App\Notifications\OrderSubmitted;
 use Illuminate\Support\Facades\Notification;
 use App\Livewire\Forms\OrderForm;
@@ -15,10 +14,16 @@ new class extends Component {
 
     public $images = [];
 
+    #[On('setService')]
+    public function setService(string $service): void
+    {
+        $this->order->service = $service;
+    }
+
     public function updatedImages()
     {
         $this->validate([
-            'images.*' => 'image|max:5120', // 5MB max
+            'images.*' => 'image|max:5120',
         ]);
     }
 
@@ -27,29 +32,36 @@ new class extends Component {
         array_splice($this->images, $index, 1);
     }
 
+    protected function resetForm(): void
+    {
+        $this->images = [];
+
+        $this->order->reset();
+    }
+
     public function save($recaptchaToken = null)
     {
-        $order = $this->order->store($this->images, $recaptchaToken);
+        validator(['recaptcha' => $recaptchaToken], ['recaptcha' => [new App\Rules\Recaptcha()]])->validate();
+
+        $order = $this->order->store($this->images);
 
         Notification::routes([
             'mail' => config('services.mail.admin.email'),
             'telegram' => config('services.telegram-bot-api.chat_id'),
         ])->notify(new OrderSubmitted($order));
 
-        $this->images = [];
-
-        $this->order->reset();
+        $this->resetForm();
 
         session()->flash('success', 'Ваше замовлення успішно відправлено!');
     }
 };
 ?>
 
-@assets
-    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site') }}" defer></script>
-@endassets
-
 <x-offcanvas>
+    <x-slot:trigger wire:ignore>
+        {{ $slots['trigger'] }}
+    </x-slot>
+
     @session('success')
         <div class="h-full flex items-center justify-center">
             <div class="flex flex-col items-center">
@@ -59,65 +71,35 @@ new class extends Component {
             </div>
         </div>
     @else
-        <x-slot:trigger>
-            {{ $slots['trigger'] }}
-        </x-slot>
-
         <x-slot:header>
             <x-lucide-sparkles class="size-5" />
             Замовлення послуги
         </x-slot>
 
-        @placeholder
-            <div class="animate-pulse">
-                <div class="h-32 bg-gray-200 rounded"></div>
-            </div>
-        @endplaceholder
-
         <form x-data="{
-            loading: false,
-            sendForm() {
-                if (this.loading) return;
-                this.loading = true;
-                grecaptcha.ready(() => {
-                    grecaptcha.execute('{{ config('services.recaptcha.site') }}', { action: 'order_submit' })
-                        .then((token) => {
-                            $wire.save(token).then(() => {
-                                this.loading = false;
-                            }).catch((error) => {
-                                this.loading = false;
-                            });
-                        })
-                        .catch((e) => {
-                            this.loading = false;
-                            console.error('Google reCAPTCHA Error:', e);
-                        });
-                });
+            submit() {
+                window.executeRecaptcha('order_submit')
+                    .then(token => $wire.save(token))
+                    .catch(err => {
+                        console.error('reCAPTCHA error:', err);
+                        alert('Помилка reCAPTCHA. Спробуйте ще раз.');
+                    });
             }
-        }" @submit.prevent="sendForm" class="space-y-5">
+        }" @submit.prevent="submit()" x-on:submit-form.window="open && submit()" class="space-y-5">
 
             <!-- ПОМИЛКА КАПЧІ (Якщо робот або збій верифікації) -->
-            {{-- @error('recaptcha')
+            @error('recaptcha')
                 <div class="p-3 text-sm text-red-600 bg-red-50 rounded-lg border border-red-200">
                     {{ $message }}
                 </div>
             @enderror
-
-            @if ($order->service)
-                <div class="mb-2 -mt-2">
-                    <span
-                        class="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-700 ring-1 ring-inset ring-emerald-600/20">
-                        {{ $order->service }}
-                    </span>
-                </div>
-            @endif --}}
 
             <!-- ОСНОВНІ ПОЛЯ -->
             <div class="space-y-5">
                 <h3 class="font-display text-lg font-semibold text-slate-900">Ваші дані</h3>
 
                 <div>
-                    <x-forms.input required wire:model="order.name" maxLength="40" placeholder="Ваше ім'я"
+                    <x-forms.input required wire:model="order.name" icon="user" maxLength="40" placeholder="Ваше ім'я"
                         wire:target="save" size="lg" wire:loading.attr="disabled" />
                     @error('order.name')
                         <x-forms.error class="mt-2" :message="$message" />
@@ -125,16 +107,16 @@ new class extends Component {
                 </div>
 
                 <div>
-                    <x-forms.input required wire:model="order.contact" maxLength="40" placeholder="Пошта або телефон"
-                        wire:target="save" size="lg" wire:loading.attr="disabled" />
+                    <x-forms.input required wire:model="order.contact" icon="mail" maxLength="40"
+                        placeholder="Пошта або телефон" wire:target="save" size="lg" wire:loading.attr="disabled" />
                     @error('order.contact')
                         <x-forms.error class="mt-2" :message="$message" />
                     @enderror
                 </div>
 
                 <div>
-                    <x-forms.input required wire:model="order.address" placeholder="Адреса об'єкта" wire:target="save"
-                        size="lg" wire:loading.attr="disabled" />
+                    <x-forms.input required wire:model="order.address" icon="map-pin" placeholder="Адреса об'єкта"
+                        wire:target="save" size="lg" wire:loading.attr="disabled" />
                     @error('order.address')
                         <x-forms.error class="mt-2" :message="$message" />
                     @enderror
@@ -143,22 +125,16 @@ new class extends Component {
 
             <!-- ПОСЛУГА -->
             @if (!$order->service)
-                <div class="space-y-3">
-                    <h3 class="font-display text-lg font-semibold text-slate-900">Послуга</h3>
-                    <div class="relative">
-                        <select wire:model.live="order.service"
-                            class="w-full appearance-none rounded-full transition-all duration-300 focus:outline-none font-medium text-slate-900 disabled:opacity-50 px-6 py-3.5 text-base border focus:bg-white focus:ring-2 focus:ring-offset-2 bg-slate-100 border-slate-200 focus:ring-slate-500/40 focus:border-slate-300 pr-10 cursor-pointer">
-                            <option value="">Оберіть послугу...</option>
-                            @foreach (\App\Enums\ServiceEnum::cases() as $serviceCase)
-                                <option value="{{ $serviceCase->value }}">{{ $serviceCase->value }}</option>
-                            @endforeach
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-6 text-slate-400">
-                            <x-lucide-chevron-down class="w-5 h-5" />
-                        </div>
-                    </div>
+                <div>
+                    <x-forms.select required wire:model.live="order.service" icon="sparkles" placeholder="Оберіть послугу"
+                        size="lg">
+                        <option value="" disabled selected></option>
+                        @foreach (\App\Enums\ServiceEnum::cases() as $serviceCase)
+                            <option value="{{ $serviceCase->value }}">{{ $serviceCase->value }}</option>
+                        @endforeach
+                    </x-forms.select>
                     @error('order.service')
-                        <x-forms.error :message="$message" />
+                        <x-forms.error class="mt-2" :message="$message" />
                     @enderror
                 </div>
             @endif
@@ -187,9 +163,8 @@ new class extends Component {
                     <div class="grid grid-cols-3 gap-2.5 lg:gap-5">
                         <!-- Площа -->
                         <div>
-                            <label class="block text-sm font-medium text-slate-700 mb-2">Площа (м²)</label>
-                            <x-forms.input size="lg" wire:model="order.square_area" type="number" step="0.1"
-                                placeholder="250" wire:target="save" wire:loading.attr="disabled" />
+                            <x-forms.input size="lg" wire:model="order.square_area" label="Площа (м²)" type="number"
+                                step="0.1" placeholder="250" wire:target="save" wire:loading.attr="disabled" />
                             @error('order.square_area')
                                 <x-forms.error class="mt-2" :message="$message" />
                             @enderror
@@ -197,13 +172,8 @@ new class extends Component {
 
                         <!-- Кількість кімнат -->
                         <div>
-                            <label class="flex items-center text-sm font-medium text-slate-700 mb-2">
-                                <span>Кімнат</span>
-                                <x-tooltip
-                                    content="Вкажіть кількість кімнат, офісних приміщень, цехів або окремих кабінетів" />
-                            </label>
-                            <x-forms.input size="lg" wire:model="order.room_count" type="number" min="1"
-                                max="30" step="1" wire:target="save" placeholder="3"
+                            <x-forms.input size="lg" wire:model="order.room_count" label="Кімнат" type="number"
+                                min="1" max="30" step="1" wire:target="save" placeholder="3"
                                 wire:loading.attr="disabled" x-on:input="$el.value = $el.value.replace(/[^0-9]/g, '')" />
                             @error('order.room_count')
                                 <x-forms.error class="mt-2" :message="$message" />
@@ -212,13 +182,8 @@ new class extends Component {
 
                         <!-- Кількість поверхів -->
                         <div>
-                            <label class="flex items-center text-sm font-medium text-slate-700 mb-2">
-                                <span>Поверхів</span>
-                                <x-tooltip
-                                    content="Загальна кількість поверхів у приміщенні або номер поверху, на якому потрібно прибрати" />
-                            </label>
-                            <x-forms.input size="lg" wire:model="order.floor_count" type="number" min="1"
-                                max="50" step="1" placeholder="5" wire:target="save"
+                            <x-forms.input size="lg" wire:model="order.floor_count" label="Поверхів" type="number"
+                                min="1" max="50" step="1" placeholder="5" wire:target="save"
                                 wire:loading.attr="disabled" x-on:input="$el.value = $el.value.replace(/[^0-9]/g, '')" />
                             @error('order.floor_count')
                                 <x-forms.error class="mt-2" :message="$message" />
@@ -397,14 +362,15 @@ new class extends Component {
                 </label>
             </div>
 
-            <!-- КНОПКА ВІДПРАВКИ -->
+            <!-- КНОПКИ ДІЇ -->
             <x-slot:footer>
                 <button type="button" @click="open = false"
-                    class="size-10 flex justify-center items-center bg-slate-200 border border-slate-300 rounded-full cursor-pointer hover:bg-slate-50 transition-colors">
+                    class="size-10 flex shrink-0 justify-center items-center bg-slate-200 border border-slate-300 rounded-full cursor-pointer hover:bg-slate-50 transition-colors">
                     <x-lucide-x class="size-5 stroke-slate-600" />
                 </button>
-                <button type="submit" wiretarget="save" wire:loading.attr="disabled"
-                    class="flex-1 px-6 py-2.5 text-base bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-full cursor-pointer transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
+                <!-- КНОПКА ВІДПРАВКИ -->
+                <button type="button" @click="$dispatch('submit-form')" wire:target="save" wire:loading.attr="disabled"
+                    class="flex-1 w-full px-6 py-2.5 text-base bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-full cursor-pointer transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
                     <span wire:target="save" wire:loading.remove>Замовити</span>
                     <span wire:target="save" wire:loading>Відправка...</span>
                     <x-lucide-loader-2 wire:target="save" wire:loading class="w-4 h-4 animate-spin" />

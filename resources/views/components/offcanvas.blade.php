@@ -36,10 +36,9 @@
         },
     },
 }" x-on:keydown.esc.prevent="open = false" {{ $attributes->class('') }}>
-    <button x-on:click="open = true" type="button"
-        class="relative rounded-md p-1.5 transition-colors duration-500 cursor-pointer">
+    <div wire:ignore class="contents">
         {{ $trigger }}
-    </button>
+    </div>
 
     <template x-teleport="body">
         <div x-cloak x-show="open" x-transition:enter="transition ease-out duration-300"

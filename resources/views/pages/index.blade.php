@@ -27,7 +27,7 @@ name('main');
 
             <!-- Overlay -->
             <div
-                class="absolute inset-0 bg-linear-to-b lg:bg-linear-to-r from-slate-950/70 via-slate-950/40 to-slate-950/10">
+                class="absolute inset-0 bg-linear-to-b lg:bg-linear-to-r from-slate-950/75 via-slate-950/45 to-slate-950/10">
             </div>
 
             <!-- Content -->
@@ -119,7 +119,7 @@ name('main');
 
                     <!-- Buttons -->
                     <div class="mt-5 lg:mt-10 flex flex-wrap items-center gap-5 justify-center lg:justify-start">
-                        <livewire:order>
+                        <livewire:order wire:key="order-hero">
                             <livewire:slot name="trigger">
                                 <button x-on:click="open = true"
                                     class="inline-flex font-[Oswald] h-14 text-lg items-center tracking-wide cursor-pointer justify-center group rounded-full bg-tryit-orange/40 hover:bg-tryit-orange/50 backdrop-blur-xs border border-orange-500/40 px-6 text-[#F5E9D3] font-semibold transition">
@@ -191,7 +191,7 @@ name('main');
             </div>
 
             <div class="relative z-20 text-center max-w-3xl mx-auto pt-10 pb-10">
-                <x-section.badge class="mb-5">Ваш дім у надійних руках</x-section.badge>
+                <x-section.badge class="mb-5">Ви у надійних руках</x-section.badge>
                 <div class="font-[Oswald] text-4xl/9 md:text-6xl/14 tracking-tight text-slate-700 text-balance">
                     Бо ми знаємо, як важливо
                     <span class="text-emerald-700 font-[Lora] font-bold italic">бути в гармонії</span>
@@ -204,7 +204,7 @@ name('main');
                 </p>
 
                 <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
-                    <livewire:order>
+                    <livewire:order wire:key="order-cta">
                         <livewire:slot name="trigger">
                             <x-button size="lg" color="emerald" x-on:click="open = true" class="group">
                                 <x-lucide-hand-coins class="mr-1 size-6 shrink-0" />
@@ -213,16 +213,6 @@ name('main');
                         </livewire:slot>
                     </livewire:order>
                 </div>
-            </div>
-        </div>
-
-        {{-- Фон з блюром --}}
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0">
-            <div
-                class="absolute top-[10%] left-[15%] size-64 bg-emerald-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse">
-            </div>
-            <div
-                class="absolute bottom-[10%] right-[15%] size-80 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse [animation-delay:2s]">
             </div>
         </div>
     </section>
@@ -604,7 +594,7 @@ name('main');
                     <div
                         class="relative z-10 bg-slate-100 p-8 rounded-3xl border border-slate-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
                         <div
-                            class="size-16 bg-slate-900 rounded-2xl flex items-center justify-center mb-5 shadow-xl group-hover:bg-emerald-600 group-hover:rotate-10 transition-all duration-500">
+                            class="size-16 bg-slate-900 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-emerald-600 group-hover:rotate-10 transition-all duration-500">
                             <x-lucide-timer class="size-8 stroke-slate-100" />
                         </div>
 
@@ -630,9 +620,9 @@ name('main');
                         02</div>
 
                     <div
-                        class="relative z-10 bg-slate-900 p-8 rounded-3xl shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
+                        class="relative z-10 bg-slate-900 p-8 rounded-3xl transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
                         <div
-                            class="size-16 bg-emerald-500 rounded-2xl flex items-center justify-center mb-5 shadow-lg shadow-emerald-500/40 group-hover:scale-110 transition-transform">
+                            class="size-16 bg-emerald-500 rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
                             <x-lucide-sparkles class="size-8 stroke-slate-100" />
                         </div>
 
@@ -660,9 +650,9 @@ name('main');
                         03</div>
 
                     <div
-                        class="relative z-10 bg-slate-100 p-8 rounded-3xl border border-slate-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
+                        class="relative z-10 bg-mist-100 p-8 rounded-3xl border border-slate-100 transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2">
                         <div
-                            class="size-16 bg-emerald-500 border-2 border-slate-700 rounded-2xl flex items-center justify-center mb-5 shadow-xl transition-all duration-500">
+                            class="size-16 bg-emerald-500 border-2 border-slate-700 rounded-2xl flex items-center justify-center mb-5 transition-all duration-500">
                             <x-lucide-smile-plus class="size-8 stroke-slate-700 transition-all duration-500" />
                         </div>
 
@@ -671,9 +661,7 @@ name('main');
                             Перевірте <span class="text-slate-950 font-medium">якість</span> роботи та насолоджуйтеся
                             свіжістю. Оплата списується лише після вашого
                             <span class="text-slate-950 font-medium">схвалення</span>. Ви отримуєте не просто
-                            прибирання,
-                            а
-                            <span class="text-slate-950 font-medium">ідеальний простір</span> для життя.
+                            прибирання, а <span class="text-slate-950 font-medium">ідеальний простір</span> для життя.
                         </p>
 
                         <div class="text-xs text-slate-600 font-medium">300+ чистих об'єктів</div>
@@ -752,10 +740,9 @@ name('main');
                 <div class="max-w-3xl text-center md:text-left">
                     <div id="cta-headline"
                         class="font-[Oswald] text-5xl md:text-7xl drop-shadow-xl font-semibold text-white text-balance mb-5">
-                        Хочете побачити нас <span class="text-6xl text-emerald-500 font-[Lora] font-black italic">
-                            у справі</span>? Наша робота
-                        <span class="text-emerald-500 font-[Lora] font-black italic">говорить</span> сама
-                        за себе!
+                        Хочете побачити нас <span class="text-emerald-500 font-[Lora] font-black italic">у
+                            справі</span>? Наша робота
+                        <span class="text-emerald-500 font-[Lora] font-black italic">говорить</span> сама за себе!
                     </div>
 
                     <div id="cta-stars-block"

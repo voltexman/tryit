@@ -155,23 +155,53 @@
                     </x-sidebar>
                 </div>
 
-                <x-navigation class="hidden lg:flex mx-auto justify-center items-center">
+                <x-navigation class="desktop-nav hidden lg:flex mx-auto justify-center items-center">
                     <x-navigation.item :link="route('main')" icon="home">
                         Головна
                     </x-navigation.item>
+                    <svg viewBox="0 0 32 32" fill="none"
+                        class="size-3.5 shrink-0 fill-tryit-cream/60 transition-opacity duration-300 pointer-events-none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 3 C16.8 8.5 18.5 11.2 21 13 C23.8 14.8 26.5 15.5 29 16 C26.5 16.5 23.8 17.2 21 19 C18.5 20.8 16.8 23.5 16 29 C15.2 23.5 13.5 20.8 11 19 C8.2 17.2 5.5 16.5 3 16 C5.5 15.5 8.2 14.8 11 13 C13.5 11.2 15.2 8.5 16 3Z" />
+                    </svg>
                     <x-navigation.item :link="route('services')" icon="hand-platter">
                         Послуги
                     </x-navigation.item>
+                    <svg viewBox="0 0 32 32" fill="none"
+                        class="size-3.5 shrink-0 fill-tryit-cream/60 transition-opacity duration-300 pointer-events-none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 3 C16.8 8.5 18.5 11.2 21 13 C23.8 14.8 26.5 15.5 29 16 C26.5 16.5 23.8 17.2 21 19 C18.5 20.8 16.8 23.5 16 29 C15.2 23.5 13.5 20.8 11 19 C8.2 17.2 5.5 16.5 3 16 C5.5 15.5 8.2 14.8 11 13 C13.5 11.2 15.2 8.5 16 3Z" />
+                    </svg>
                     <x-navigation.item :link="route('blog.list')" icon="newspaper">
                         Блог
                     </x-navigation.item>
+                    <svg viewBox="0 0 32 32" fill="none"
+                        class="size-3.5 shrink-0 fill-tryit-cream/60 transition-opacity duration-300 pointer-events-none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 3 C16.8 8.5 18.5 11.2 21 13 C23.8 14.8 26.5 15.5 29 16 C26.5 16.5 23.8 17.2 21 19 C18.5 20.8 16.8 23.5 16 29 C15.2 23.5 13.5 20.8 11 19 C8.2 17.2 5.5 16.5 3 16 C5.5 15.5 8.2 14.8 11 13 C13.5 11.2 15.2 8.5 16 3Z" />
+                    </svg>
                     <x-navigation.item :link="route('gallery')" icon="images">
                         Галерея
                     </x-navigation.item>
+                    <svg viewBox="0 0 32 32" fill="none"
+                        class="size-3.5 shrink-0 fill-tryit-cream/60 transition-opacity duration-300 pointer-events-none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 3 C16.8 8.5 18.5 11.2 21 13 C23.8 14.8 26.5 15.5 29 16 C26.5 16.5 23.8 17.2 21 19 C18.5 20.8 16.8 23.5 16 29 C15.2 23.5 13.5 20.8 11 19 C8.2 17.2 5.5 16.5 3 16 C5.5 15.5 8.2 14.8 11 13 C13.5 11.2 15.2 8.5 16 3Z" />
+                    </svg>
                     <x-navigation.item :link="route('feedback')" icon="contact">
                         Контакти
                     </x-navigation.item>
                 </x-navigation>
+                <style>
+                    .desktop-nav>svg:has(+ [data-current]),
+                    .desktop-nav>[data-current]+svg {
+                        display: none !important;
+                    }
+                </style>
 
                 <div
                     class="hidden drop-shadow-xl lg:flex text-tryit-cream w-fit text-xl font-display font-semibold items-center gap-2.5">
@@ -340,12 +370,45 @@
                     </span>
                 </div>
             </div>
-        </div> <!-- Закриття .relative.z-10 контенту -->
+        </div>
     </footer>
-
-    @livewire('order')
-
     @livewireScripts
+    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site') }}" defer></script>
+    <script>
+        window.recaptchaSiteKey = '{{ config('services.recaptcha.site') }}';
+
+        window.executeRecaptcha = function(action) {
+            return new Promise((resolve, reject) => {
+                if (typeof grecaptcha === 'undefined') {
+                    reject(new Error('reCAPTCHA is not loaded yet'));
+                    return;
+                }
+                grecaptcha.ready(() => {
+                    grecaptcha.execute(window.recaptchaSiteKey, {
+                            action: action
+                        })
+                        .then(resolve)
+                        .catch(reject);
+                });
+            });
+        };
+
+        // Переініціалізація Google reCAPTCHA при SPA-переходах (wire:navigate)
+        document.addEventListener('livewire:navigated', () => {
+            if (window.grecaptcha) {
+                delete window.grecaptcha;
+                delete window.___grecaptcha_cfg;
+
+                document.querySelectorAll('script[src*="recaptcha/api.js"]').forEach(s => s.remove());
+                document.querySelectorAll('.grecaptcha-badge, iframe[src*="recaptcha"]').forEach(el => el.remove());
+
+                const script = document.createElement('script');
+                script.src = `https://www.google.com/recaptcha/api.js?render=${window.recaptchaSiteKey}`;
+                script.defer = true;
+                document.head.appendChild(script);
+            }
+        });
+    </script>
 </body>
 
 </html>

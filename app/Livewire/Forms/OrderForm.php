@@ -3,13 +3,11 @@
 namespace App\Livewire\Forms;
 
 use App\Models\Order;
-use App\Rules\Recaptcha;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
 class OrderForm extends Form
 {
-    // Основні поля
     #[Validate('required', message: 'Вкажіть як до Вас звертатись')]
     #[Validate('min:2', message: 'Занадто мало символів')]
     public string $name = '';
@@ -25,7 +23,6 @@ class OrderForm extends Form
     #[Validate('min:5', message: 'Занадто коротка адреса')]
     public string $address = '';
 
-    // Додаткові поля для клінінгової компанії
     public ?int $square_area = null;
 
     public ?int $room_count = null;
@@ -49,17 +46,8 @@ class OrderForm extends Form
     #[Validate('max:1200', message: 'Занадто багато символів')]
     public string $text = '';
 
-    public function store($images = [], $recaptchaToken = null)
+    public function store($images = []): Order
     {
-        $this->withValidator(function ($validator) use ($recaptchaToken) {
-            $validator->after(function ($validator) use ($recaptchaToken) {
-                $recaptchaRule = new Recaptcha;
-                $recaptchaRule->validate('recaptcha', $recaptchaToken, function ($message) use ($validator) {
-                    $validator->errors()->add('recaptcha', $message);
-                });
-            });
-        });
-
         $this->validate();
 
         $order = Order::create($this->all());
