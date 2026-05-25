@@ -207,8 +207,14 @@ name('main');
                     <livewire:order wire:key="order-cta">
                         <livewire:slot name="trigger">
                             <x-button size="lg" color="emerald" x-on:click="open = true" class="group">
-                                <x-lucide-hand-coins class="mr-1 size-6 shrink-0" />
-                                Розрахувати вартість
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                    class="mr-1 size-6 group-hover:rotate-45 transition-transform"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M16 3 C16.8 8.5 18.5 11.2 21 13 C23.8 14.8 26.5 15.5 29 16 C26.5 16.5 23.8 17.2 21 19 C18.5 20.8 16.8 23.5 16 29 C15.2 23.5 13.5 20.8 11 19 C8.2 17.2 5.5 16.5 3 16 C5.5 15.5 8.2 14.8 11 13 C13.5 11.2 15.2 8.5 16 3Z"
+                                        fill="#FFFFFF" />
+                                </svg>
+                                Замовити клінінг
                             </x-button>
                         </livewire:slot>
                     </livewire:order>
