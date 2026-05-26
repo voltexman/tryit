@@ -16,7 +16,7 @@ new class extends Component {
 <x-slot:meta_title>{{ $this->post->meta_title }}</x-slot:meta_title>
 <x-slot:meta_description>{{ $this->post->meta_description }}</x-slot:meta_description>
 <x-slot:meta_robots>{{ $this->post->meta_robots }}</x-slot:meta_robots>
-<x-slot:meta_image>{{ $this->post->getFirstMedia(Post::COLLECTION_COVER) }}</x-slot:meta_image>
+<x-slot:meta_image>{{ $this->post->getFirstMediaUrl(Post::COLLECTION_COVER) }}</x-slot:meta_image>
 
 <x-slot:header>
     <div class="relative h-[60vh] min-h-100 overflow-hidden bg-zinc-900">
