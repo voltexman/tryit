@@ -93,13 +93,9 @@ new class extends Component {
             </a>
         </div>
 
-        <div class="relative mt-10 overflow-hidden rounded-3xl bg-slate-900">
-            <!-- Background Image -->
-            <img src="{{ Vite::asset('resources/images/feedback_banner.png') }}"
-                class="absolute inset-0 size-full object-cover object-center opacity-40 z-0" alt="Feedback Background">
-
+        <div class="mt-10 overflow-hidden rounded-3xl bg-emerald-700 block-typography">
             <!-- Overlay & Content -->
-            <div class="relative z-10 py-10 px-5 sm:px-10 bg-slate-900/50 backdropblur text-center">
+            <div class="py-10 px-5 sm:px-10 text-center">
                 <div class="text-white text-4xl text-center tracking-wide font-bold font-[Oswald] mb-6">
                     Ви вже користувались нашою послугою?
                 </div>
@@ -115,10 +111,11 @@ new class extends Component {
                     </p>
                 </div>
                 <div class="flex justify-center mt-5">
-                    <x-button href="{{ route('feedback') }}" color="emerald" size="lg"
-                        class="shadow-md hover:shadow-lg transition-shadow">
+                    <a href="{{ route('feedback') }}" wire:navigate
+                        class="px-6 py-2.5 flex items-center rounded-full bg-emerald-500 text-white font-[Oswald] text-xl hover:bg-emerald-600 transition-color duration-300">
+                        <x-lucide-message-square-text class="size-5 shrink-0 inline-flex mr-1.5" />
                         Залишити відгук
-                    </x-button>
+                    </a>
                 </div>
             </div>
         </div>

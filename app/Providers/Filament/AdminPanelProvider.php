@@ -30,6 +30,9 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->plugins([
+                \BezhanSalleh\GoogleAnalytics\GoogleAnalyticsPlugin::make()
+            ])
             ->colors([
                 'primary' => Color::Amber,
             ])

@@ -257,7 +257,7 @@ name('main');
 
         <!-- Контент -->
         <div
-            class="max-w-6xl w-full mx-auto px-5 relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-10 lg:gap-0">
+            class="max-w-5xl w-full mx-auto px-5 relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-10 lg:gap-0">
 
             <!-- ЛІВА ЧАСТИНА: Заголовок та опис (видимо на ПК) -->
             <div class="hidden lg:flex flex-col justify-center text-white">
