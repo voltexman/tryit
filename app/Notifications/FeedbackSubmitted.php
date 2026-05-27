@@ -6,6 +6,7 @@ use App\Models\Feedback;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use NotificationChannels\Telegram\TelegramChannel;
 use NotificationChannels\Telegram\TelegramFile;
 use NotificationChannels\Telegram\TelegramMediaGroup;
 use NotificationChannels\Telegram\TelegramMessage;
@@ -18,7 +19,7 @@ class FeedbackSubmitted extends Notification
 
     public function via(object $notifiable): array
     {
-        return ['mail', 'telegram'];
+        return ['mail', TelegramChannel::class];
     }
 
     public function toMail(object $notifiable): MailMessage

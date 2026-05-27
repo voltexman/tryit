@@ -21,14 +21,13 @@ class Order extends Model implements HasMedia
         'has_elevator',
         'has_water',
         'has_parking',
-        'room_count',
-        'floor_count',
         'contamination_level',
         'is_urgent',
         'text',
         'service',
         'status',
         'comment',
+        'options',
     ];
 
     protected $casts = [
@@ -38,5 +37,6 @@ class Order extends Model implements HasMedia
         'has_water' => 'boolean',
         'has_parking' => 'boolean',
         'is_urgent' => 'boolean',
+        'options' => 'array',
     ];
 }

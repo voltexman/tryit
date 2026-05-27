@@ -49,8 +49,7 @@
             class="z-90 fixed inset-0 overflow-hidden bg-stone-900/60 backdrop-blur-xs"
             x-effect="document.body.style.overflow = open ? 'hidden' : 'auto'">
 
-            <div x-cloak x-show="open" x-on:click.away="open = false" x-bind="transitionClasses"
-                x-transition:enter="transition ease-out duration-300"
+            <div x-cloak x-show="open" x-bind="transitionClasses" x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-end="translate-x-0 translate-y-0"
                 x-transition:leave="transition ease-in duration-200"
                 x-transition:leave-start="translate-x-0 translate-y-0" role="document"

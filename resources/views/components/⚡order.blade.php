@@ -32,6 +32,13 @@ new class extends Component {
         array_splice($this->images, $index, 1);
     }
 
+    public function updated(string $property): void
+    {
+        if ($property === 'order.is_urgent' && $this->order->is_urgent) {
+            $this->order->options['preferred_date'] = null;
+        }
+    }
+
     protected function resetForm(): void
     {
         $this->images = [];
@@ -57,7 +64,7 @@ new class extends Component {
 };
 ?>
 
-<x-offcanvas x-on:open-order-offcanvas.window="open = true">
+<x-offcanvas size="lg" x-on:open-order-offcanvas.window="open = true">
     <x-slot:trigger wire:ignore>
         {{ $slots['trigger'] }}
     </x-slot>
@@ -95,7 +102,7 @@ new class extends Component {
                     });
             }
         }" @submit.prevent="submit()" x-on:submit-form.window="open && submit()"
-            class="space-y-5">
+            class="space-y-5 pb-5">
 
             <!-- ПОМИЛКА КАПЧІ (Якщо робот або збій верифікації) -->
             @error('recaptcha')
@@ -109,15 +116,15 @@ new class extends Component {
                 <h3 class="font-display text-lg font-semibold text-slate-900">Ваші дані</h3>
 
                 <div>
-                    <x-forms.input required wire:model="order.name" icon="user" maxLength="40" placeholder="Ваше ім'я"
-                        wire:target="save" size="lg" wire:loading.attr="disabled" />
+                    <x-forms.input required wire:model.trim="order.name" icon="user" maxLength="40"
+                        placeholder="Ваше ім'я" wire:target="save" size="lg" wire:loading.attr="disabled" />
                     @error('order.name')
                         <x-forms.error class="mt-2" :message="$message" />
                     @enderror
                 </div>
 
                 <div>
-                    <x-forms.input required wire:model="order.contact" icon="mail" maxLength="40"
+                    <x-forms.input required wire:model.trim="order.contact" icon="mail" maxLength="40"
                         placeholder="Пошта або телефон" wire:target="save" size="lg" wire:loading.attr="disabled" />
                     @error('order.contact')
                         <x-forms.error class="mt-2" :message="$message" />
@@ -125,7 +132,7 @@ new class extends Component {
                 </div>
 
                 <div>
-                    <x-forms.input required wire:model="order.address" icon="map-pin" placeholder="Адреса об'єкта"
+                    <x-forms.input required wire:model.trim="order.address" icon="map-pin" placeholder="Адреса об'єкта"
                         wire:target="save" size="lg" wire:loading.attr="disabled" />
                     @error('order.address')
                         <x-forms.error class="mt-2" :message="$message" />
@@ -150,10 +157,10 @@ new class extends Component {
             @endif
 
             <!-- ХАРАКТЕРИСТИКИ ОБ'ЄКТУ -->
-            <div x-data="{ expanded: false }" class="space-y-5">
+            <div x-data="{ expanded: false }" class="p-5 bg-slate-50 rounded-xl border border-slate-200">
                 <button type="button" @click="expanded = !expanded"
-                    class="w-full flex items-center justify-between p-4 bg-slate-50 rounded-xl cursor-pointer hover:bg-slate-100 border border-slate-200 group transition-all duration-300"
-                    :class="expanded ? 'border-emerald-500/30 bg-emerald-50/30' : ''">
+                    class="w-full flex items-center justify-between group transition-all duration-300 cursor-pointer"
+                    :class="expanded ? '' : ''">
                     <div class="space-y-1 text-left">
                         <h3
                             class="font-display text-lg font-semibold text-slate-900 group-hover:text-emerald-600 transition-colors">
@@ -168,37 +175,14 @@ new class extends Component {
                     </div>
                 </button>
 
-                <div x-show="expanded" x-collapse x-cloak class="space-y-5">
-                    <!-- Площа, Кімнати та Поверхи в одному рядку -->
-                    <div class="grid grid-cols-3 gap-2.5 lg:gap-5">
-                        <!-- Площа -->
-                        <div>
-                            <x-forms.input size="lg" wire:model="order.square_area" label="Площа (м²)" type="number"
-                                step="0.1" placeholder="250" wire:target="save" wire:loading.attr="disabled" />
-                            @error('order.square_area')
-                                <x-forms.error class="mt-2" :message="$message" />
-                            @enderror
-                        </div>
-
-                        <!-- Кількість кімнат -->
-                        <div>
-                            <x-forms.input size="lg" wire:model="order.room_count" label="Кімнат" type="number"
-                                min="1" max="30" step="1" wire:target="save" placeholder="3"
-                                wire:loading.attr="disabled" x-on:input="$el.value = $el.value.replace(/[^0-9]/g, '')" />
-                            @error('order.room_count')
-                                <x-forms.error class="mt-2" :message="$message" />
-                            @enderror
-                        </div>
-
-                        <!-- Кількість поверхів -->
-                        <div>
-                            <x-forms.input size="lg" wire:model="order.floor_count" label="Поверхів" type="number"
-                                min="1" max="50" step="1" placeholder="5" wire:target="save"
-                                wire:loading.attr="disabled" x-on:input="$el.value = $el.value.replace(/[^0-9]/g, '')" />
-                            @error('order.floor_count')
-                                <x-forms.error class="mt-2" :message="$message" />
-                            @enderror
-                        </div>
+                <div x-show="expanded" x-collapse x-cloak class="space-y-5 pt-5">
+                    <!-- Площа -->
+                    <div class="w-38">
+                        <x-forms.input size="lg" wire:model.trim="order.square_area" label="Площа (м²)" type="number"
+                            step="0.1" placeholder="250" wire:target="save" wire:loading.attr="disabled" />
+                        @error('order.square_area')
+                            <x-forms.error class="mt-2" :message="$message" />
+                        @enderror
                     </div>
 
                     <!-- Чекбокси: ліфт, вода, паркування - як квадратні кнопки в ряд -->
@@ -209,7 +193,7 @@ new class extends Component {
                                 <input type="checkbox" wire:model="order.has_elevator" class="hidden" />
                                 <div class="size-25 flex flex-col justify-center items-center rounded-xl border-2 text-center transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-100/60"
                                     :class="$wire.order.has_elevator ? 'border-emerald-500 bg-emerald-50 text-emerald-600' :
-                                        'border-slate-200 bg-slate-50 text-slate-700'">
+                                        'border-slate-200 bg-slate-100 text-slate-700'">
                                     <x-lucide-arrow-up-down class="size-6 mx-auto mb-2 transition-colors" />
                                     <span class="text-xs font-semibold">Ліфт</span>
                                 </div>
@@ -219,7 +203,7 @@ new class extends Component {
                                 <input type="checkbox" wire:model="order.has_water" class="hidden" />
                                 <div class="size-25 flex flex-col justify-center items-center rounded-xl border-2 text-center transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-100/60"
                                     :class="$wire.order.has_water ? 'border-emerald-500 bg-emerald-50 text-emerald-600' :
-                                        'border-slate-200 bg-slate-50 text-slate-700'">
+                                        'border-slate-200 bg-slate-100 text-slate-700'">
                                     <x-lucide-droplets class="size-6 mx-auto mb-2 transition-colors" />
                                     <span class="text-xs font-semibold">Вода</span>
                                 </div>
@@ -229,7 +213,7 @@ new class extends Component {
                                 <input type="checkbox" wire:model="order.has_parking" class="hidden" />
                                 <div class="size-25 flex flex-col justify-center items-center rounded-xl border-2 text-center transition-all duration-300 group-hover:border-emerald-400 group-hover:bg-emerald-100/60"
                                     x-bind:class="$wire.order.has_parking ? 'border-emerald-400 bg-emerald-50 text-emerald-600' :
-                                        'border-slate-200 bg-slate-50 text-slate-700'">
+                                        'border-slate-200 bg-slate-100 text-slate-700'">
                                     <x-lucide-car class="size-6 mx-auto mb-2 transition-colors" />
                                     <span class="text-xs font-semibold">Паркування</span>
                                 </div>
@@ -261,40 +245,45 @@ new class extends Component {
                             <div class="flex justify-between text-center">
                                 <div class="flex flex-col items-center flex-1">
                                     <div class="text-2xl mb-2"
-                                        :class="$wire.order.contamination_level == '1' ? 'opacity-100' : 'opacity-40'">
-                                        ✨
+                                        :class="$wire.order.contamination_level == '1' ? 'text-emerald-500 opacity-100' :
+                                            'text-slate-500 opacity-40'">
+                                        <x-lucide-leaf class="size-8 shrink-0" stroke-width="1.5" />
                                     </div>
                                     <span class="text-xs font-medium text-slate-600">Мінімальне</span>
                                     <span class="text-[10px] text-slate-500">Пилок</span>
                                 </div>
                                 <div class="flex flex-col items-center flex-1">
                                     <div class="text-2xl mb-2"
-                                        :class="$wire.order.contamination_level == '2' ? 'opacity-100' : 'opacity-40'">
-                                        🧹
+                                        :class="$wire.order.contamination_level == '2' ? 'text-emerald-500 opacity-100' :
+                                            'text-slate-500 opacity-40'">
+                                        <x-lucide-brush-cleaning class="size-8 shrink-0" stroke-width="1.5" />
                                     </div>
                                     <span class="text-xs font-medium text-slate-600">Легке</span>
                                     <span class="text-[10px] text-slate-500">Дрібне</span>
                                 </div>
                                 <div class="flex flex-col items-center flex-1">
                                     <div class="text-2xl mb-2"
-                                        :class="$wire.order.contamination_level == '3' ? 'opacity-100' : 'opacity-40'">
-                                        🧼
+                                        :class="$wire.order.contamination_level == '3' ? 'text-emerald-500 opacity-100' :
+                                            'text-slate-500 opacity-40'">
+                                        <x-lucide-soap-dispenser-droplet class="size-8 shrink-0" stroke-width="1.5" />
                                     </div>
                                     <span class="text-xs font-medium text-slate-600">Середнє</span>
                                     <span class="text-[10px] text-slate-500">Звичайне</span>
                                 </div>
                                 <div class="flex flex-col items-center flex-1">
                                     <div class="text-2xl mb-2"
-                                        :class="$wire.order.contamination_level == '4' ? 'opacity-100' : 'opacity-40'">
-                                        💪
+                                        :class="$wire.order.contamination_level == '4' ? 'text-emerald-500 opacity-100' :
+                                            'text-slate-500 opacity-40'">
+                                        <x-lucide-shield-alert class="size-8 shrink-0" stroke-width="1.5" />
                                     </div>
                                     <span class="text-xs font-medium text-slate-600">Важке</span>
                                     <span class="text-[10px] text-slate-500">Забруднено</span>
                                 </div>
                                 <div class="flex flex-col items-center flex-1">
                                     <div class="text-2xl mb-2"
-                                        :class="$wire.order.contamination_level == '5' ? 'opacity-100' : 'opacity-40'">
-                                        🔥
+                                        :class="$wire.order.contamination_level == '5' ? 'text-emerald-500 opacity-100' :
+                                            'text-slate-500 opacity-40'">
+                                        <x-lucide-flame class="size-8 shrink-0" stroke-width="1.5" />
                                     </div>
                                     <span class="text-xs font-medium text-slate-600">Критичне</span>
                                     <span class="text-[10px] text-slate-500">Ремонт</span>
@@ -309,10 +298,10 @@ new class extends Component {
             </div>
 
             <!-- ЗАВАНТАЖЕННЯ ЗОБРАЖЕНЬ -->
-            <div class="space-y-4">
+            <div class="space-y-5">
                 <h3 class="font-display text-lg font-semibold text-slate-900">Фото об'єкту</h3>
 
-                <div class="flex flex-col gap-3">
+                <div class="flex flex-col gap-2.5">
                     <label
                         class="w-fit flex items-center gap-2.5 px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-full cursor-pointer transition-colors border border-slate-200">
                         <x-lucide-image class="size-5" />
@@ -361,15 +350,51 @@ new class extends Component {
 
             <!-- ТЕРМІНОВІСТЬ -->
             <div>
-                <label
-                    class="flex items-center p-3 rounded-lg border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors"
-                    :class="$wire.order.is_urgent ? 'border-orange-500 bg-orange-50' : ''">
-                    <input type="checkbox" wire:model="order.is_urgent" class="w-4 h-4 accent-orange-500" />
-                    <div class="ml-3 flex items-center gap-2">
-                        <x-lucide-zap class="w-5 h-5 text-orange-500" />
-                        <span class="text-sm font-medium text-slate-700">Термінове прибирання</span>
+                <label class="flex items-start p-4 rounded-xl border cursor-pointer"
+                    :class="$wire.order.is_urgent ?
+                        'border-orange-300 bg-orange-50 hover:bg-orange-100/70 ring-1 ring-orange-300' :
+                        'border-slate-200 bg-slate-100 hover:bg-slate-200 hover:border-slate-300'">
+                    <input type="checkbox" wire:model.live="order.is_urgent"
+                        class="mt-1 size-5 accent-orange-500 rounded-md cursor-pointer" />
+                    <div class="ml-4 flex flex-col">
+                        <span class="text-sm font-semibold text-slate-600 flex items-center gap-1.5">
+                            Термінове прибирання
+                        </span>
+                        <span class="text-xs text-slate-400">
+                            Приїдемо до вас якнайшвидше!
+                        </span>
                     </div>
                 </label>
+            </div>
+
+            <!-- ДАТА ПРИБИРАННЯ -->
+            <div x-show="!$wire.order.is_urgent" x-collapse x-cloak>
+                <div x-data="{
+                    init() {
+                        let picker = window.flatpickr(this.$refs.datePicker, {
+                            dateFormat: 'Y-m-d',
+                            minDate: 'today',
+                            defaultDate: $wire.order.options?.preferred_date || null,
+                            onChange: (selectedDates, dateStr, instance) => {
+                                $wire.set('order.options.preferred_date', dateStr);
+                            }
+                        });
+                
+                        $wire.watch('order.options.preferred_date', value => {
+                            if (!value) {
+                                picker.clear();
+                            } else {
+                                picker.setDate(value);
+                            }
+                        });
+                    }
+                }" class="space-y-2">
+                    <label class="block text-sm font-medium text-slate-700">Бажана дата прибирання</label>
+                    <div class="relative">
+                        <x-forms.input x-ref="datePicker" placeholder="Оберіть бажану дату" icon="calendar" readonly
+                            size="lg" />
+                    </div>
+                </div>
             </div>
 
             <!-- КНОПКИ ДІЇ -->

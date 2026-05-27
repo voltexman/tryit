@@ -85,17 +85,17 @@
         'sm' => [
             'idle' => 'top-1/2 -translate-y-1/2 text-sm ' . ($hasLeftIcon ? 'left-9' : 'left-3'),
             'float' =>
-                'peer-focus:top-1 peer-focus:text-[10px] peer-focus:translate-y-0 peer-focus:left-9 peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:left-9',
+                'peer-focus:top-1 peer-focus:text-[10px] peer-focus:translate-y-0 ' . ($hasLeftIcon ? 'peer-focus:left-9' : 'peer-focus:left-3') . ' peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:translate-y-0 ' . ($hasLeftIcon ? 'peer-[:not(:placeholder-shown)]:left-9' : 'peer-[:not(:placeholder-shown)]:left-3'),
         ],
         'md' => [
             'idle' => 'top-1/2 -translate-y-1/2 text-base ' . ($hasLeftIcon ? 'left-11' : 'left-4'),
             'float' =>
-                'peer-focus:top-1 peer-focus:text-[11px] peer-focus:translate-y-0 peer-focus:left-11 peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:text-[11px] peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:left-11',
+                'peer-focus:top-1 peer-focus:text-[11px] peer-focus:translate-y-0 ' . ($hasLeftIcon ? 'peer-focus:left-11' : 'peer-focus:left-4') . ' peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:text-[11px] peer-[:not(:placeholder-shown)]:translate-y-0 ' . ($hasLeftIcon ? 'peer-[:not(:placeholder-shown)]:left-11' : 'peer-[:not(:placeholder-shown)]:left-4'),
         ],
         'lg' => [
             'idle' => 'top-1/2 -translate-y-1/2 text-base ' . ($hasLeftIcon ? 'left-14' : 'left-6'),
             'float' =>
-                'peer-focus:top-3 peer-focus:text-xs peer-focus:translate-y-0 peer-focus:left-14 peer-[:not(:placeholder-shown)]:top-3 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:translate-y-0 peer-[:not(:placeholder-shown)]:left-14',
+                'peer-focus:top-3 peer-focus:text-xs peer-focus:translate-y-0 ' . ($hasLeftIcon ? 'peer-focus:left-14' : 'peer-focus:left-6') . ' peer-[:not(:placeholder-shown)]:top-3 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:translate-y-0 ' . ($hasLeftIcon ? 'peer-[:not(:placeholder-shown)]:left-14' : 'peer-[:not(:placeholder-shown)]:left-6'),
         ],
     ];
     $currentLabelClasses = $labelClasses[$size] ?? $labelClasses['md'];

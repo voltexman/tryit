@@ -25,10 +25,6 @@ class OrderForm extends Form
 
     public ?int $square_area = null;
 
-    public ?int $room_count = null;
-
-    public ?int $floor_count = null;
-
     public ?bool $has_elevator = null;
 
     public ?bool $has_water = null;
@@ -45,6 +41,9 @@ class OrderForm extends Form
 
     #[Validate('max:1200', message: 'Занадто багато символів')]
     public string $text = '';
+
+    #[Validate('nullable|array')]
+    public array $options = [];
 
     public function store($images = []): Order
     {

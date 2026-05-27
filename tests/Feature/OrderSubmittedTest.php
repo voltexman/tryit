@@ -15,8 +15,7 @@ test('імейл-нотифікація містить рівень забруд
         'address' => 'вул. Хрещатик, 1',
         'service' => ServiceEnum::DRY_CLEANING,
         'square_area' => 150.5,
-        'room_count' => 3,
-        'floor_count' => 2,
+        'is_urgent' => true,
         'contamination_level' => '3', // 🧼 Середнє (Звичайне)
         'has_elevator' => true,
         'has_water' => true,
@@ -29,6 +28,7 @@ test('імейл-нотифікація містить рівень забруд
 
     $rendered = implode("\n", $mailMessage->introLines);
 
+    expect($rendered)->toContain('**Термінове прибирання:** Так 🔥');
     expect($rendered)->toContain('**Рівень забруднення:** 🧼 Середнє (Звичайне)');
     expect($rendered)->toContain('**Умови на об\'єкті:** 🛗 ліфт, 🚰 вода');
     expect($rendered)->not->toContain('паркування');
@@ -40,6 +40,7 @@ test('імейл-нотифікація працює коректно, якщо 
         'contact' => 'test@example.com',
         'service' => ServiceEnum::DRY_CLEANING,
         'contamination_level' => null,
+        'is_urgent' => false,
         'has_elevator' => false,
         'has_water' => false,
         'has_parking' => false,
@@ -50,6 +51,7 @@ test('імейл-нотифікація працює коректно, якщо 
 
     $rendered = implode("\n", $mailMessage->introLines);
 
+    expect($rendered)->not->toContain('Термінове прибирання:');
     expect($rendered)->not->toContain('Рівень забруднення:');
     expect($rendered)->not->toContain('Умови на об\'єкті:');
 });
@@ -64,8 +66,7 @@ test('телеграм-нотифікація містить рівень заб
         'address' => 'вул. Хрещатик, 1',
         'service' => ServiceEnum::DRY_CLEANING,
         'square_area' => 150.5,
-        'room_count' => 3,
-        'floor_count' => 2,
+        'is_urgent' => true,
         'contamination_level' => '3', // 🧼 Середнє (Звичайне)
         'has_elevator' => true,
         'has_water' => true,
@@ -85,6 +86,7 @@ test('телеграм-нотифікація містить рівень заб
     $payload = $telegramMessage->toArray();
     $text = $payload['text'] ?? $payload['caption'] ?? '';
 
+    expect($text)->toContain('*Термінове прибирання:* Так 🔥');
     expect($text)->toContain('*Рівень забруднення:* 🧼 Середнє (Звичайне)');
     expect($text)->toContain('*Умови на об\'єкті:* 🛗 ліфт, 🚰 вода');
     expect($text)->not->toContain('паркування');
@@ -173,3 +175,32 @@ function getPayloadData(array $payload): array
 
     return $data;
 }
+
+test('імейл та телеграм-нотифікації містять бажану дату прибирання, якщо вона вказана в опціях', function () {
+    $order = Order::factory()->create([
+        'name' => 'Олексій',
+        'contact' => '+380991234567',
+        'address' => 'вул. Хрещатик, 1',
+        'service' => ServiceEnum::DRY_CLEANING,
+        'square_area' => 150.5,
+        'is_urgent' => false,
+        'options' => [
+            'preferred_date' => '2026-06-01',
+        ],
+    ]);
+
+    $notification = new OrderSubmitted($order);
+
+    // 1. Mail message test
+    $mailMessage = $notification->toMail(new stdClass);
+    $renderedMail = implode("\n", $mailMessage->introLines);
+    expect($renderedMail)->toContain('**Бажана дата прибирання:** 2026-06-01');
+    expect($renderedMail)->not->toContain('Термінове прибирання:');
+
+    // 2. Telegram message test
+    $telegramMessage = $notification->toTelegram(new stdClass);
+    $payload = $telegramMessage->toArray();
+    $text = $payload['text'] ?? $payload['caption'] ?? '';
+    expect($text)->toContain('*Бажана дата прибирання:* 2026-06-01');
+    expect($text)->not->toContain('Термінове прибирання:');
+});

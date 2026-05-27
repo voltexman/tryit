@@ -7,6 +7,7 @@ use App\Models\Order;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use NotificationChannels\Telegram\TelegramChannel;
 use NotificationChannels\Telegram\TelegramFile;
 use NotificationChannels\Telegram\TelegramMediaGroup;
 use NotificationChannels\Telegram\TelegramMessage;
@@ -19,7 +20,7 @@ class OrderSubmitted extends Notification
 
     public function via(object $notifiable): array
     {
-        return ['mail', 'telegram'];
+        return ['mail', TelegramChannel::class];
     }
 
     public function toMail(object $notifiable): MailMessage
@@ -35,10 +36,10 @@ class OrderSubmitted extends Notification
             ->lineIf($this->order->address, "- **Адреса:** {$this->order->address}")
             ->line("- **Послуга:** {$serviceName}")
             ->lineIf($this->order->square_area, "- **Площа:** {$this->order->square_area} м²")
-            ->lineIf($this->order->room_count, "- **Кімнат:** {$this->order->room_count}")
-            ->lineIf($this->order->floor_count, "- **Поверхів:** {$this->order->floor_count}")
+            ->lineIf(! empty($this->order->options['preferred_date']), '- **Бажана дата прибирання:** '.($this->order->options['preferred_date'] ?? ''))
             ->lineIf($this->getContaminationLevel(), '- **Рівень забруднення:** '.$this->getContaminationLevel())
             ->lineIf($this->getConditionsString(), '- **Умови на об\'єкті:** '.$this->getConditionsString())
+            ->lineIf($this->order->is_urgent, '- **Термінове прибирання:** Так 🔥')
             ->lineIf($this->order->text, "- **Коментар клієнта:** {$this->order->text}");
 
         if ($url = $this->getAdminUrl()) {
@@ -61,10 +62,10 @@ class OrderSubmitted extends Notification
             $this->order->address ? "- *Адреса:* {$this->order->address}" : null,
             "- *Послуга:* {$serviceName}",
             $this->order->square_area ? "- *Площа:* {$this->order->square_area} м²" : null,
-            $this->order->room_count ? "- *Кімнат:* {$this->order->room_count}" : null,
-            $this->order->floor_count ? "- *Поверхів:* {$this->order->floor_count}" : null,
+            ! empty($this->order->options['preferred_date']) ? '- *Бажана дата прибирання:* '.$this->order->options['preferred_date'] : null,
             $this->getContaminationLevel() ? '- *Рівень забруднення:* '.$this->getContaminationLevel() : null,
             $this->getConditionsString() ? '- *Умови на об\'єкті:* '.$this->getConditionsString() : null,
+            $this->order->is_urgent ? '- *Термінове прибирання:* Так 🔥' : null,
             $this->order->text ? "- *Коментар клієнта:* {$this->order->text}" : null,
         ], fn ($line) => $line !== null);
 

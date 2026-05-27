@@ -357,219 +357,6 @@ name('main');
         </div>
     </section>
 
-    {{-- === CTA: TRY IT + CALLBACK === --}}
-    <section class="relative py-32 lg:py-44 bg-white overflow-visible font-sans">
-        <div class="max-w-6xl mx-auto px-5">
-
-            {{-- Основний контейнер (Зелена плашка) --}}
-            <div class="relative bg-[#2D6A4F] rounded-[45px] lg:rounded-[60px] min-h-100 flex items-center">
-
-                <div class="grid lg:grid-cols-12 w-full">
-
-                    {{-- Ліва частина: Смартфон --}}
-                    <div class="lg:col-span-5 relative flex justify-center lg:block">
-                        <div
-                            class="lg:absolute mt-8 lg:mt-0 lg:left-17.5 lg:top-1/2 lg:-translate-y-1/2 z-30 w-72.5 md:w-82.5">
-
-                            {{-- Корпус смартфона --}}
-                            <div
-                                class="relative aspect-9/18 rounded-[3.8rem] border-12 border-black bg-[#151515] shadow-[0_60px_100px_-20px_rgba(0,0,0,0.6)] overflow-hidden">
-
-                                {{-- Екран активного виклику --}}
-                                <div
-                                    class="absolute inset-0 flex flex-col items-center justify-between py-20 px-6 bg-linearfaaA-to-b from-[#1a1a1a] to-black">
-
-                                    <div class="text-center space-y-3 mt-4 animate-pulse">
-                                        <p class="text-[10px] text-white uppercase tracking-[0.3em]">Йде виклик...</p>
-                                        <div
-                                            class="text-5xl font-semibold font-[Lora] text-orange-500 tracking-tighter flex">
-                                            Try
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54"
-                                                class="size-5 self-center ml-1.5 text-slate-100">
-                                                <g fill="none" class="nc-icon-wrapper">
-                                                    <g clip-path="url(#1751600403171-8248782_clip0_1948_4490)">
-                                                        <mask style="mask-type:luminance" maskUnits="userSpaceOnUse"
-                                                            x="0" y="0" width="54" height="54">
-                                                            <path d="M54 0H0V54H54V0Z" fill="#fff"></path>
-                                                        </mask>
-                                                        <g mask="url(#1751600403171-8248782_mask0_1948_4490)">
-                                                            <path
-                                                                d="M27.7371 0.655207C28.7745 14.36 39.64 25.2255 53.3448 26.2629C54.273 26.3175 54.273 27.6279 53.3448 27.7371C39.64 28.7745 28.7745 39.64 27.7371 53.3448C27.6825 54.273 26.3721 54.273 26.2629 53.3448C25.2255 39.64 14.36 28.7745 0.655207 27.7371C-0.218402 27.6825 -0.218402 26.3721 0.655207 26.2629C14.36 25.2255 25.2255 14.36 26.2629 0.655207C26.3721 -0.218402 27.6825 -0.218402 27.7371 0.655207Z"
-                                                                fill="currentColor"></path>
-                                                        </g>
-                                                    </g>
-                                                    <defs>
-                                                        <clipPath>
-                                                            <path fill="currentColor" d="M0 0H54V54H0z"></path>
-                                                        </clipPath>
-                                                    </defs>
-                                                </g>
-                                            </svg>
-                                            It
-                                        </div>
-                                        <p class="text-xs text-white/90 uppercase tracking-wide">Клінінгова компанія
-                                        </p>
-                                    </div>
-
-                                    {{-- Анімоване коло виклику --}}
-                                    <div class="relative my-auto">
-                                        <div class="absolute inset-5 rounded-full bg-white/10 animate-ping z-0"></div>
-
-                                        <div class="absolute z-10 size-30 lg:size-36 rounded-full bg-black"></div>
-                                        <div
-                                            class="relative z-10 size-30 lg:size-36 rounded-full bg-white/15 flex items-center justify-center border border-white/20 backdrop-blur-xl">
-                                            <span class="text-5xl lg:text-6xl font-black text-white/90">T</span>
-                                        </div>
-                                    </div>
-
-                                    {{-- Кнопка скидання (як на фото) --}}
-                                    <div class="w-full mt-auto">
-                                        <div class="flex items-end justify-around">
-
-                                            {{-- Клавіатура (або Повідомлення) --}}
-                                            <div class="flex flex-col items-center gap-3">
-                                                <div
-                                                    class="size-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 transition-colors">
-                                                    <x-lucide-hash class="size-5" />
-                                                </div>
-                                                <span
-                                                    class="text-[9px] text-white uppercase tracking-widest font-medium">
-                                                    Клавіші
-                                                </span>
-                                            </div>
-
-                                            {{-- Кнопка скидання (Центральна) --}}
-                                            <div class="flex flex-col items-center">
-                                                <div
-                                                    class="size-14 rounded-full bg-red-500 flex items-center justify-center shadow-[0_0_30px_rgba(239,68,68,0.5)]">
-                                                    <x-lucide-phone
-                                                        class="size-8 fill-white stroke-white rotate-135" />
-                                                </div>
-                                                <span
-                                                    class="text-[10px] text-white mt-3 uppercase tracking-wide font-bold">
-                                                    Скасувати</span>
-                                            </div>
-
-                                            {{-- Динамік --}}
-                                            <div class="flex flex-col items-center gap-3">
-                                                <div
-                                                    class="size-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 transition-colors">
-                                                    <x-lucide-volume-2 class="size-5" />
-                                                </div>
-                                                <span
-                                                    class="text-[9px] text-white uppercase tracking-widest font-medium">
-                                                    Динамік</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {{-- Dynamic Island --}}
-                                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-8 bg-black rounded-b-3xl">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- Права частина: Текст --}}
-                    <div class="lg:col-span-7 p-8 lg:p-20 lg:pl-0 text-white">
-                        <div class="max-w-xl text-center lg:text-left space-y-5">
-                            <div class="font-[Lora] italic text-3xl md:text-5xl font-black tracking-tight">
-                                Чистота в один клік!
-                            </div>
-
-                            <p class="text-white text-base md:text-lg leading-relaxed font-light lg:text-balance">
-                                Поки ви керуєте справами, ми створюємо ідеальну чистоту. TryIt — професійний клінінг
-                                для тих, хто цінує свій час та бездоганний результат.
-                            </p>
-
-                            <div class="font-display text-3xl text-slate-50 font-black">
-                                +380 (97) 877-866-7
-                            </div>
-
-                            <div class="text-white text-sm font-medium mb-2">
-                                Передзвонити вам? <br><span class="text-xs text-white/90">
-                                    Просто вкажіть свій номер.</span>
-                            </div>
-
-                            {{-- Кнопки маркетів --}}
-                            <livewire:callback />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section x-data="{ scroll: 0 }" x-init="window.addEventListener('scroll', () => { scroll = window.scrollY })"
-        class="relative overflow-hidden shadow-inner bg-cover bg-center bg-no-repeat bg-fixed"
-        :style="`background-image: url('{{ Vite::asset('resources/images/about-section-bg.jpg') }}');`">
-
-        <div class="absolute inset-0 bg-slate-900/80 z-0"></div>
-
-        <div class="max-w-5xl mx-auto py-20 px-5 relative z-20">
-            <div class="flex flex-col items-center">
-                <x-section.badge color="slate" class="mb-2.5">Про компанію</x-section.badge>
-                <x-section.title tag="div" color="white" size="lg" class="text-center">
-                    Чому обирають <span
-                        class="text-emerald-400 font-[Lora] text-5xl lg:text-7xl font-black italic">нас</span>?
-                </x-section.title>
-
-                <div class="max-w-3xl space-y-5 text-slate-50 leading-relaxed text-center text-balance mt-5">
-                    <p>
-                        Наша клінінгова компанія — це професійний сервіс, який допомагає підтримувати чистоту у вашому
-                        домі чи офісі. Ми використовуємо сучасні методи та відповідально ставимося до кожного
-                        замовлення.
-                    </p>
-                    <p>
-                        Від генерального прибирання до спеціалізованого догляду за меблями. Наша мета — зробити ваш
-                        простір ідеально чистим, де кожен вдих приносить задоволення.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-3 gap-5 mt-10">
-                    <div class="flex flex-col items-center text-center md:items-start md:text-left">
-                        <div class="font-display text-4xl lg:text-5xl font-black text-slate-50 mb-4">
-                            12+
-                        </div>
-                        <div class="font-display text-base lg:text-lg text-slate-50 uppercase font-semibold mb-2.5">
-                            років <br class="lg:hidden">досвіду
-                        </div>
-                        <p class="hidden lg:block text-slate-50/50 text-base leading-normal">
-                            Понад десятиліття допомагаємо підтримувати чистоту, відточуючи кожну деталь нашого сервісу.
-                        </p>
-                    </div>
-
-                    <div class="flex flex-col items-center text-center md:items-start md:text-left">
-                        <div class="font-display text-4xl lg:text-5xl font-black text-slate-50 mb-4">
-                            300+
-                        </div>
-                        <div class="font-display text-base lg:text-lg text-slate-50 uppercase font-semibold mb-2.5">
-                            задоволених <br class="lg:hidden">клієнтів
-                        </div>
-                        <p class="hidden lg:block text-slate-50/50 text-base leading-normal">
-                            Нам довіряють і рекомендують — більшість клієнтів, з задоволенням, повертаються до нас
-                            знову.
-                        </p>
-                    </div>
-
-                    <div class="flex flex-col items-center text-center md:items-start md:text-left">
-                        <div class="font-display text-4xl lg:text-5xl font-black text-slate-50 mb-4">
-                            100%
-                        </div>
-                        <div class="font-display text-base lg:text-lg text-slate-50 uppercase font-semibold mb-2.5">
-                            гарантія <br class="lg:hidden">якості
-                        </div>
-                        <p class="hidden lg:block text-slate-50/50 text-base leading-normal">
-                            Ми впевнені у нашому результаті: якщо вас щось не влаштує в роботі — ми безкоштовно
-                            виправимо.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="py-20 bg-white relative overflow-hidden">
         <div
             class="absolute top-1/2 left-0 w-full h-1 bg-linear-to-r from-transparent via-emerald-100 to-transparent -translate-y-1/2 hidden lg:block">
@@ -691,6 +478,78 @@ name('main');
         </div>
     </section>
 
+    <section x-data="{ scroll: 0 }" x-init="window.addEventListener('scroll', () => { scroll = window.scrollY })"
+        class="relative overflow-hidden shadow-inner bg-cover bg-center bg-no-repeat bg-fixed"
+        :style="`background-image: url('{{ Vite::asset('resources/images/about-section-bg.jpg') }}');`">
+
+        <div class="absolute inset-0 bg-slate-900/80 z-0"></div>
+
+        <div class="max-w-5xl mx-auto py-20 px-5 relative z-20">
+            <div class="flex flex-col items-center">
+                <x-section.badge color="slate" class="mb-2.5">Про компанію</x-section.badge>
+                <x-section.title tag="div" color="white" size="lg" class="text-center">
+                    Чому обирають <span
+                        class="text-emerald-400 font-[Lora] text-5xl lg:text-7xl font-black italic">нас</span>?
+                </x-section.title>
+
+                <div class="max-w-3xl space-y-5 text-slate-50 leading-relaxed text-center text-balance mt-5">
+                    <p>
+                        Наша клінінгова компанія — це професійний сервіс, який допомагає підтримувати чистоту у вашому
+                        домі чи офісі. Ми використовуємо сучасні методи та відповідально ставимося до кожного
+                        замовлення.
+                    </p>
+                    <p>
+                        Від генерального прибирання до спеціалізованого догляду за меблями. Наша мета — зробити ваш
+                        простір ідеально чистим, де кожен вдих приносить задоволення.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-3 gap-5 mt-10">
+                    <div class="flex flex-col items-center text-center md:items-start md:text-left">
+                        <div class="font-display text-4xl lg:text-5xl font-black text-slate-50 mb-4">
+                            12+
+                        </div>
+                        <div class="font-display text-base lg:text-lg text-slate-50 uppercase font-semibold mb-2.5">
+                            років <br class="lg:hidden">досвіду
+                        </div>
+                        <p class="hidden lg:block text-slate-50/50 text-base leading-normal">
+                            Понад десятиліття допомагаємо підтримувати чистоту, відточуючи кожну деталь нашого сервісу.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col items-center text-center md:items-start md:text-left">
+                        <div class="font-display text-4xl lg:text-5xl font-black text-slate-50 mb-4">
+                            300+
+                        </div>
+                        <div class="font-display text-base lg:text-lg text-slate-50 uppercase font-semibold mb-2.5">
+                            задоволених <br class="lg:hidden">клієнтів
+                        </div>
+                        <p class="hidden lg:block text-slate-50/50 text-base leading-normal">
+                            Нам довіряють і рекомендують — більшість клієнтів, з задоволенням, повертаються до нас
+                            знову.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col items-center text-center md:items-start md:text-left">
+                        <div class="font-display text-4xl lg:text-5xl font-black text-slate-50 mb-4">
+                            100%
+                        </div>
+                        <div class="font-display text-base lg:text-lg text-slate-50 uppercase font-semibold mb-2.5">
+                            гарантія <br class="lg:hidden">якості
+                        </div>
+                        <p class="hidden lg:block text-slate-50/50 text-base leading-normal">
+                            Ми впевнені у нашому результаті: якщо вас щось не влаштує в роботі — ми безкоштовно
+                            виправимо.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- === FEEDBACKS === --}}
+    <livewire:feedback-section />
+
     <section class="relative min-h-140 lg:min-h-150 flex items-center overflow-hidden bg-slate-900 px-6 py-20" x-data
         x-init="window.animateCta($el)">
         <!-- Фонове зображення з затемненням -->
@@ -768,10 +627,149 @@ name('main');
         </div>
     </section>
 
-    {{-- === FEEDBACKS === --}}
-    <livewire:feedback-section />
-
     <section class="py-20 relative overflow-hidden bg-slate-100" x-data="{ active: 1 }" x-init="window.animateFaq($el)">
+        <div class="max-w-6xl mx-auto px-5 mb-10 lg:mt-20 lg:mb-30">
+
+            {{-- Основний контейнер (Зелена плашка) --}}
+            <div class="relative bg-[#2D6A4F] block-typography rounded-4xl min-h-100 flex items-center">
+
+                <div class="grid lg:grid-cols-12 w-full">
+
+                    {{-- Ліва частина: Смартфон --}}
+                    <div class="lg:col-span-5 relative flex justify-center lg:block">
+                        <div
+                            class="lg:absolute mt-8 lg:mt-0 lg:left-17.5 lg:top-1/2 lg:-translate-y-1/2 z-30 w-72.5 md:w-82.5">
+
+                            {{-- Корпус смартфона --}}
+                            <div
+                                class="relative aspect-9/18 rounded-[3.8rem] border-12 border-black bg-[#151515] shadow-[0_60px_100px_-20px_rgba(0,0,0,0.6)] overflow-hidden">
+
+                                {{-- Екран активного виклику --}}
+                                <div
+                                    class="absolute inset-0 flex flex-col items-center justify-between py-20 px-6 bg-linearfaaA-to-b from-[#1a1a1a] to-black">
+
+                                    <div class="text-center space-y-3 mt-4 animate-pulse">
+                                        <p class="text-[10px] text-white uppercase tracking-[0.3em]">Йде виклик...</p>
+                                        <div
+                                            class="text-5xl font-semibold font-[Lora] text-orange-500 tracking-tighter flex">
+                                            Try
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54"
+                                                class="size-5 self-center ml-1.5 text-slate-100">
+                                                <g fill="none" class="nc-icon-wrapper">
+                                                    <g clip-path="url(#1751600403171-8248782_clip0_1948_4490)">
+                                                        <mask style="mask-type:luminance" maskUnits="userSpaceOnUse"
+                                                            x="0" y="0" width="54" height="54">
+                                                            <path d="M54 0H0V54H54V0Z" fill="#fff"></path>
+                                                        </mask>
+                                                        <g mask="url(#1751600403171-8248782_mask0_1948_4490)">
+                                                            <path
+                                                                d="M27.7371 0.655207C28.7745 14.36 39.64 25.2255 53.3448 26.2629C54.273 26.3175 54.273 27.6279 53.3448 27.7371C39.64 28.7745 28.7745 39.64 27.7371 53.3448C27.6825 54.273 26.3721 54.273 26.2629 53.3448C25.2255 39.64 14.36 28.7745 0.655207 27.7371C-0.218402 27.6825 -0.218402 26.3721 0.655207 26.2629C14.36 25.2255 25.2255 14.36 26.2629 0.655207C26.3721 -0.218402 27.6825 -0.218402 27.7371 0.655207Z"
+                                                                fill="currentColor"></path>
+                                                        </g>
+                                                    </g>
+                                                    <defs>
+                                                        <clipPath>
+                                                            <path fill="currentColor" d="M0 0H54V54H0z"></path>
+                                                        </clipPath>
+                                                    </defs>
+                                                </g>
+                                            </svg>
+                                            It
+                                        </div>
+                                        <p class="text-xs text-white/90 uppercase tracking-wide">
+                                            Клінінгова компанія
+                                        </p>
+                                    </div>
+
+                                    {{-- Анімоване коло виклику --}}
+                                    <div class="relative my-auto">
+                                        <div class="absolute inset-5 rounded-full bg-white/10 animate-ping z-0"></div>
+
+                                        <div class="absolute z-10 size-30 lg:size-36 rounded-full bg-black"></div>
+                                        <div
+                                            class="relative z-10 size-30 lg:size-36 rounded-full bg-white/15 flex items-center justify-center border border-white/20 backdrop-blur-xl">
+                                            <span class="text-5xl lg:text-6xl font-black text-white/90">T</span>
+                                        </div>
+                                    </div>
+
+                                    {{-- Кнопка скидання (як на фото) --}}
+                                    <div class="w-full mt-auto">
+                                        <div class="flex items-end justify-around">
+
+                                            {{-- Клавіатура (або Повідомлення) --}}
+                                            <div class="flex flex-col items-center gap-3">
+                                                <div
+                                                    class="size-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+                                                    <x-lucide-hash class="size-5" />
+                                                </div>
+                                                <span
+                                                    class="text-[9px] text-white uppercase tracking-widest font-medium">
+                                                    Клавіші
+                                                </span>
+                                            </div>
+
+                                            {{-- Кнопка скидання (Центральна) --}}
+                                            <div class="flex flex-col items-center">
+                                                <div
+                                                    class="size-14 rounded-full bg-red-500 flex items-center justify-center shadow-[0_0_30px_rgba(239,68,68,0.5)]">
+                                                    <x-lucide-phone
+                                                        class="size-8 fill-white stroke-white rotate-135" />
+                                                </div>
+                                                <span
+                                                    class="text-[10px] text-white mt-3 uppercase tracking-wide font-bold">
+                                                    Скасувати</span>
+                                            </div>
+
+                                            {{-- Динамік --}}
+                                            <div class="flex flex-col items-center gap-3">
+                                                <div
+                                                    class="size-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+                                                    <x-lucide-volume-2 class="size-5" />
+                                                </div>
+                                                <span
+                                                    class="text-[9px] text-white uppercase tracking-widest font-medium">
+                                                    Динамік</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- Dynamic Island --}}
+                                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-8 bg-black rounded-b-3xl">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Права частина: Текст --}}
+                    <div class="lg:col-span-7 p-8 lg:p-20 lg:pl-0 text-white">
+                        <div class="max-w-xl text-center lg:text-left space-y-5">
+                            <div class="font-[Lora] italic text-3xl md:text-5xl font-black tracking-tight">
+                                Чистота в один
+                                <span class="inline-block font-black rotate-10 origin-left">клік!</span>
+                            </div>
+
+                            <p class="text-white text-base md:text-lg leading-relaxed font-light lg:text-balance">
+                                Поки ви керуєте справами, ми створюємо ідеальну чистоту. TryIt — професійний клінінг
+                                для тих, хто цінує свій час та бездоганний результат.
+                            </p>
+
+                            <div class="font-display text-3xl text-slate-50 font-black">
+                                +380 (97) 877-866-7
+                            </div>
+
+                            <div class="text-white/90 text-sm font-medium mb-1">
+                                Передзвонити вам?
+                            </div>
+
+                            {{-- Кнопки маркетів --}}
+                            <livewire:callback />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="max-w-3xl relative z-10 mx-auto px-5">
             <div class="mb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between">
                 <div>
