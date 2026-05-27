@@ -94,7 +94,8 @@ new class extends Component {
                         alert('Помилка reCAPTCHA. Спробуйте ще раз.');
                     });
             }
-        }" @submit.prevent="submit()" x-on:submit-form.window="open && submit()" class="space-y-5">
+        }" @submit.prevent="submit()" x-on:submit-form.window="open && submit()"
+            class="space-y-5">
 
             <!-- ПОМИЛКА КАПЧІ (Якщо робот або збій верифікації) -->
             @error('recaptcha')
@@ -366,7 +367,7 @@ new class extends Component {
                     <input type="checkbox" wire:model="order.is_urgent" class="w-4 h-4 accent-orange-500" />
                     <div class="ml-3 flex items-center gap-2">
                         <x-lucide-zap class="w-5 h-5 text-orange-500" />
-                        <span class="text-sm font-medium text-slate-700">Терміне прибирання</span>
+                        <span class="text-sm font-medium text-slate-700">Термінове прибирання</span>
                     </div>
                 </label>
             </div>
