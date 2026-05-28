@@ -58,7 +58,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-BW8_4NzO.css",
+    "file": "assets/app-CG48NyEs.css",
     "name": "app",
     "names": [
       "app.css"
@@ -243,7 +243,7 @@
     "src": "resources/images/h1-cleaning-team.png"
   },
   "resources/images/h2-background.jpg": {
-    "file": "assets/h2-background04-C6HLSC8Z.jpg",
+    "file": "assets/h2-background-C6HLSC8Z.jpg",
     "src": "resources/images/h2-background.jpg"
   },
   "resources/images/h2-background01.jpg": {
@@ -251,7 +251,7 @@
     "src": "resources/images/h2-background01.jpg"
   },
   "resources/images/h2-background04.jpg": {
-    "file": "assets/h2-background04-C6HLSC8Z.jpg",
+    "file": "assets/h2-background-C6HLSC8Z.jpg",
     "src": "resources/images/h2-background.jpg"
   },
   "resources/images/h3-cleaning-01.jpg": {

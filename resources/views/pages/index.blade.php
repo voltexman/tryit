@@ -746,7 +746,9 @@ name('main');
                         <div class="max-w-xl text-center lg:text-left space-y-5">
                             <div class="font-[Lora] italic text-3xl md:text-5xl font-black tracking-tight">
                                 Чистота в один
-                                <span class="inline-block font-black rotate-10 origin-left">клік!</span>
+                                <span class="inline-block font-black rotate-10 origin-left">клік
+                                    <x-lucide-mouse-pointer-click class="inline-flex size-9 shrink-0" />
+                                </span>
                             </div>
 
                             <p class="text-white text-base md:text-lg leading-relaxed font-light lg:text-balance">
@@ -825,7 +827,7 @@ name('main');
     </section>
 
     {{-- === BLOG === --}}
-    <section class="py-24 bg-slate-200/60 text-white overflow-hidden relative">
+    <section class="py-10 lg:py-20 bg-slate-200/60 text-white overflow-hidden relative">
         <div class="absolute inset-0 z-0">
             <img src="{{ Vite::asset('resources/images/h2-background04.jpg') }}" alt=""
                 class="size-full object-cover opacity-25 grayscale" />

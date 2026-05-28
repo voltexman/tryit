@@ -14,6 +14,7 @@ enum ServiceEnum: string implements HasLabel
     case DRY_CLEANING = 'Хімчистка та професійний догляд';
     case OFFICE_CLEANING = 'Комплексне та підтримуюче прибирання офісу';
     case INDUSTRIAL_ALPINISM = 'Промисловий альпінізм';
+    case CUSTOM = 'Власна послуга';
 
     public function getLabel(): ?string
     {
@@ -38,8 +39,9 @@ enum ServiceEnum: string implements HasLabel
             self::POST_CONSTRUCTION_CLEANING => 'Будівництво чи ремонт позаду, а хаос залишився? Ми швидко та якісно приберемо будівельне сміття, пил та бруд. Генеральне прибирання — і об\'єкт готовий до введення в експлуатацію.',
             self::INDUSTRIAL_CLEANING => 'Спеціалізоване прибирання виробничих приміщень, цехів та складів. Ми застосовуємо промислове обладнання та екологічні засоби для найсумніших забруднень. Гарантуємо безпеку та чистоту.',
             self::DRY_CLEANING => 'Професійна хімчистка меблів, килимів та текстильних виробів. Видаляємо навіть складні плями та запахи без пошкодження матеріалу. Результат — як нові речі!',
-            self::OFFICE_CLEANING => 'Комплексне та підтримуюче прибирання офісів. Від щоденної прибиральниці до генерального прибирання — ми забезпечуємо професійний рівень чистоти для вашого робочого простору.',
+            self::OFFICE_CLEANING => 'Комплексне та підтримуюче прибирання офісів. Від щоденної прибиральниці до генерального прибирання — ми забезпечуємо професійний уровень чистоти для вашого робочого простору.',
             self::INDUSTRIAL_ALPINISM => 'Мийка фасадів, вікон та очищення висотних конструкцій за допомогою снаряження промислового альпінізму. Безпечно, якісно та в найскладніших місцях.',
+            self::CUSTOM => 'Опишіть вашу власну послугу, і ми розрахуємо вартість індивідуально.',
         };
     }
 
@@ -53,6 +55,7 @@ enum ServiceEnum: string implements HasLabel
             self::DRY_CLEANING => 'service-5.jpg',
             self::OFFICE_CLEANING => 'service-6.jpg',
             self::INDUSTRIAL_ALPINISM => 'service-7.jpg',
+            self::CUSTOM => 'service-1.jpg',
         };
     }
 
@@ -66,6 +69,7 @@ enum ServiceEnum: string implements HasLabel
             self::DRY_CLEANING => 'services.khimchystka',
             self::OFFICE_CLEANING => 'services.kompleksne-ta-pidtrymuiuche-prybyrannia-ofisu',
             self::INDUSTRIAL_ALPINISM => 'services.promyslovyi-alpinizm',
+            self::CUSTOM => 'gallery',
         };
     }
 

@@ -391,17 +391,27 @@
 
         window.executeRecaptcha = function(action) {
             return new Promise((resolve, reject) => {
-                if (typeof grecaptcha === 'undefined') {
-                    reject(new Error('reCAPTCHA is not loaded yet'));
-                    return;
-                }
-                grecaptcha.ready(() => {
-                    grecaptcha.execute(window.recaptchaSiteKey, {
-                            action: action
-                        })
-                        .then(resolve)
-                        .catch(reject);
-                });
+                let attempts = 0;
+                const checkAndExecute = () => {
+                    if (typeof grecaptcha !== 'undefined') {
+                        grecaptcha.ready(() => {
+                            grecaptcha.execute(window.recaptchaSiteKey, {
+                                    action: action
+                                })
+                                .then(resolve)
+                                .catch(err => {
+                                    console.error('grecaptcha.execute error:', err);
+                                    reject(err);
+                                });
+                        });
+                    } else if (attempts < 15) {
+                        attempts++;
+                        setTimeout(checkAndExecute, 200);
+                    } else {
+                        reject(new Error('reCAPTCHA is not loaded yet (timeout)'));
+                    }
+                };
+                checkAndExecute();
             });
         };
 

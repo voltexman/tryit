@@ -24,7 +24,8 @@ class OrdersTable
 
                 TextColumn::make('service')
                     ->badge()
-                    ->label('Послуга'),
+                    ->label('Послуга')
+                    ->description(fn ($record): ?string => $record->service === \App\Enums\ServiceEnum::CUSTOM ? ($record->options['custom_service'] ?? null) : null),
 
                 TextColumn::make('status')
                     ->badge()

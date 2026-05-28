@@ -1,5 +1,6 @@
 <?php
 
+use App\Rules\Recaptcha;
 use App\Notifications\OrderSubmitted;
 use Illuminate\Support\Facades\Notification;
 use App\Livewire\Forms\OrderForm;
@@ -22,9 +23,7 @@ new class extends Component {
 
     public function updatedImages()
     {
-        $this->validate([
-            'images.*' => 'image|max:5120',
-        ]);
+        $this->validate(['images.*' => 'image|max:5120']);
     }
 
     public function removeImage($index)
@@ -48,7 +47,7 @@ new class extends Component {
 
     public function save($recaptchaToken = null)
     {
-        validator(['recaptcha' => $recaptchaToken], ['recaptcha' => [new App\Rules\Recaptcha()]])->validate();
+        validator(['recaptcha' => $recaptchaToken], ['recaptcha' => [new Recaptcha()]])->validate();
 
         $order = $this->order->store($this->images);
 
@@ -151,6 +150,17 @@ new class extends Component {
                         @endforeach
                     </x-forms.select>
                     @error('order.service')
+                        <x-forms.error class="mt-2" :message="$message" />
+                    @enderror
+                </div>
+            @endif
+
+            @if ($order->service === \App\Enums\ServiceEnum::CUSTOM->value)
+                <div>
+                    <x-forms.input required wire:model.trim="order.options.custom_service" icon="sparkles"
+                        placeholder="Вкажіть назву власної послуги" wire:target="save" size="lg"
+                        wire:loading.attr="disabled" />
+                    @error('order.options.custom_service')
                         <x-forms.error class="mt-2" :message="$message" />
                     @enderror
                 </div>
@@ -350,20 +360,26 @@ new class extends Component {
 
             <!-- ТЕРМІНОВІСТЬ -->
             <div>
-                <label class="flex items-start p-4 rounded-xl border cursor-pointer"
-                    :class="$wire.order.is_urgent ?
+                <label
+                    class="flex items-center justify-between p-4 rounded-xl border cursor-pointer transition-all duration-200"
+                    x-bind:class="$wire.order.is_urgent ?
                         'border-orange-300 bg-orange-50 hover:bg-orange-100/70 ring-1 ring-orange-300' :
                         'border-slate-200 bg-slate-100 hover:bg-slate-200 hover:border-slate-300'">
-                    <input type="checkbox" wire:model.live="order.is_urgent"
-                        class="mt-1 size-5 accent-orange-500 rounded-md cursor-pointer" />
-                    <div class="ml-4 flex flex-col">
-                        <span class="text-sm font-semibold text-slate-600 flex items-center gap-1.5">
-                            Термінове прибирання
-                        </span>
-                        <span class="text-xs text-slate-400">
-                            Приїдемо до вас якнайшвидше!
-                        </span>
+                    <div class="flex items-center gap-3">
+                        <x-lucide-zap class="size-6 shrink-0 transition-colors"
+                            x-bind:class="$wire.order.is_urgent ? 'text-orange-500' : 'text-slate-400'" />
+                        <div class="flex flex-col">
+                            <span class="text-sm font-semibold text-slate-600 transition-colors"
+                                x-bind:class="$wire.order.is_urgent ? 'text-orange-900' : 'text-slate-600'">
+                                Термінове прибирання
+                            </span>
+                            <span class="text-xs text-slate-400">
+                                Приїдемо до вас якнайшвидше!
+                            </span>
+                        </div>
                     </div>
+                    <input type="checkbox" wire:model.live="order.is_urgent"
+                        class="size-5 accent-orange-500 rounded-md cursor-pointer shrink-0" />
                 </label>
             </div>
 

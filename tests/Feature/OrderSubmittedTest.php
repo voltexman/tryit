@@ -204,3 +204,28 @@ test('імейл та телеграм-нотифікації містять б�
     expect($text)->toContain('*Бажана дата прибирання:* 2026-06-01');
     expect($text)->not->toContain('Термінове прибирання:');
 });
+
+test('імейл та телеграм-нотифікації містять назву власної послуги, якщо обрано CUSTOM', function () {
+    $order = Order::factory()->create([
+        'name' => 'Олексій',
+        'contact' => '+380991234567',
+        'address' => 'вул. Хрещатик, 1',
+        'service' => ServiceEnum::CUSTOM,
+        'options' => [
+            'custom_service' => 'Миття даху будинку',
+        ],
+    ]);
+
+    $notification = new OrderSubmitted($order);
+
+    // 1. Mail message test
+    $mailMessage = $notification->toMail(new stdClass);
+    $renderedMail = implode("\n", $mailMessage->introLines);
+    expect($renderedMail)->toContain('**Послуга:** Власна послуга: Миття даху будинку');
+
+    // 2. Telegram message test
+    $telegramMessage = $notification->toTelegram(new stdClass);
+    $payload = $telegramMessage->toArray();
+    $text = $payload['text'] ?? $payload['caption'] ?? '';
+    expect($text)->toContain('- *Послуга:* Власна послуга: Миття даху будинку');
+});

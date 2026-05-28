@@ -26,6 +26,9 @@ class OrderSubmitted extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         $serviceName = $this->order->service?->value ?? 'Не вказано';
+        if ($this->order->service === \App\Enums\ServiceEnum::CUSTOM && ! empty($this->order->options['custom_service'])) {
+            $serviceName = "Власна послуга: {$this->order->options['custom_service']}";
+        }
 
         $message = (new MailMessage)
             ->subject("Нове замовлення послуги: {$serviceName}")
@@ -52,6 +55,9 @@ class OrderSubmitted extends Notification
     public function toTelegram(object $notifiable): TelegramMessage|TelegramFile|TelegramMediaGroup
     {
         $serviceName = $this->order->service?->value ?? 'Не вказано';
+        if ($this->order->service === \App\Enums\ServiceEnum::CUSTOM && ! empty($this->order->options['custom_service'])) {
+            $serviceName = "Власна послуга: {$this->order->options['custom_service']}";
+        }
 
         $lines = array_filter([
             '*Нове замовлення!*',

@@ -49,6 +49,16 @@ class OrderForm extends Form
     {
         $this->validate();
 
+        if ($this->service === \App\Enums\ServiceEnum::CUSTOM->value) {
+            $this->validate([
+                'options.custom_service' => 'required|string|min:3|max:255',
+            ], [
+                'options.custom_service.required' => 'Будь ласка, вкажіть назву власної послуги',
+                'options.custom_service.min' => 'Назва послуги занадто коротка (мінімум 3 символи)',
+                'options.custom_service.max' => 'Назва послуги занадто довга (максимум 255 символів)',
+            ]);
+        }
+
         $order = Order::create($this->all());
 
         foreach ($images as $image) {
