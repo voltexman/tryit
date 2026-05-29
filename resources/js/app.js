@@ -1,6 +1,9 @@
 import { initializeCarousel, initializeFeedbackCarousel, initializeGallery } from "./carousel";
 import { animate, stagger, set, splitText, createTimeline } from "animejs";
 import flatpickr from "flatpickr";
+import { Ukrainian } from "flatpickr/dist/l10n/uk.js";
+
+flatpickr.localize(Ukrainian);
 
 window.initializeCarousel = initializeCarousel;
 window.initializeFeedbackCarousel = initializeFeedbackCarousel;

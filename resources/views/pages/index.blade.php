@@ -12,6 +12,8 @@ name('main');
     <x-slot:meta_robots>index, follow</x-slot:meta_robots>
     <x-slot:meta_image>{{ Vite::asset('resources/images/header-bg-desktop.png') }}</x-slot:meta_image>
 
+    <livewire:order />
+
     <x-slot:header>
         <header class="relative h-dvh overflow-hidden bg-black text-white">
             <!-- Background image -->
@@ -119,21 +121,17 @@ name('main');
 
                     <!-- Buttons -->
                     <div class="mt-5 lg:mt-10 flex flex-wrap items-center gap-5 justify-center lg:justify-start">
-                        <livewire:order wire:key="order-hero">
-                            <livewire:slot name="trigger">
-                                <button x-on:click="open = true"
-                                    class="inline-flex font-[Oswald] h-14 text-lg items-center tracking-wide cursor-pointer justify-center group rounded-full bg-tryit-orange/40 hover:bg-tryit-orange/50 backdrop-blur-xs border border-orange-500/40 px-6 text-[#F5E9D3] font-semibold transition">
-                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
-                                        class="mr-1 size-6 group-hover:rotate-45 transition-transform"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M16 3 C16.8 8.5 18.5 11.2 21 13 C23.8 14.8 26.5 15.5 29 16 C26.5 16.5 23.8 17.2 21 19 C18.5 20.8 16.8 23.5 16 29 C15.2 23.5 13.5 20.8 11 19 C8.2 17.2 5.5 16.5 3 16 C5.5 15.5 8.2 14.8 11 13 C13.5 11.2 15.2 8.5 16 3Z"
-                                            fill="#F5E9D3" />
-                                    </svg>
-                                    Замовити послугу
-                                </button>
-                            </livewire:slot>
-                        </livewire:order>
+                        <button @click="$dispatch('open-order-offcanvas');"
+                            class="inline-flex font-[Oswald] h-14 text-lg items-center tracking-wide cursor-pointer justify-center group rounded-full bg-tryit-orange/40 hover:bg-tryit-orange/50 backdrop-blur-xs border border-orange-500/40 px-6 text-[#F5E9D3] font-semibold transition">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                class="mr-1 size-6 group-hover:rotate-45 transition-transform"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16 3 C16.8 8.5 18.5 11.2 21 13 C23.8 14.8 26.5 15.5 29 16 C26.5 16.5 23.8 17.2 21 19 C18.5 20.8 16.8 23.5 16 29 C15.2 23.5 13.5 20.8 11 19 C8.2 17.2 5.5 16.5 3 16 C5.5 15.5 8.2 14.8 11 13 C13.5 11.2 15.2 8.5 16 3Z"
+                                    fill="#F5E9D3" />
+                            </svg>
+                            Замовити послугу
+                        </button>
 
                         <a href="#services"
                             class="hidden lg:inline-flex group items-center gap-3 text-base text-tryit-cream transition hover:text-orange-500">
@@ -204,20 +202,16 @@ name('main');
                 </p>
 
                 <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-5">
-                    <livewire:order wire:key="order-cta">
-                        <livewire:slot name="trigger">
-                            <x-button size="lg" color="emerald" x-on:click="open = true" class="group">
-                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
-                                    class="mr-1 size-6 group-hover:rotate-45 transition-transform"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M16 3 C16.8 8.5 18.5 11.2 21 13 C23.8 14.8 26.5 15.5 29 16 C26.5 16.5 23.8 17.2 21 19 C18.5 20.8 16.8 23.5 16 29 C15.2 23.5 13.5 20.8 11 19 C8.2 17.2 5.5 16.5 3 16 C5.5 15.5 8.2 14.8 11 13 C13.5 11.2 15.2 8.5 16 3Z"
-                                        fill="#FFFFFF" />
-                                </svg>
-                                Замовити клінінг
-                            </x-button>
-                        </livewire:slot>
-                    </livewire:order>
+                    <x-button size="lg" color="emerald" class="group" @click="$dispatch('open-order-offcanvas');">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                            class="mr-1 size-6 group-hover:rotate-45 transition-transform"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16 3 C16.8 8.5 18.5 11.2 21 13 C23.8 14.8 26.5 15.5 29 16 C26.5 16.5 23.8 17.2 21 19 C18.5 20.8 16.8 23.5 16 29 C15.2 23.5 13.5 20.8 11 19 C8.2 17.2 5.5 16.5 3 16 C5.5 15.5 8.2 14.8 11 13 C13.5 11.2 15.2 8.5 16 3Z"
+                                fill="#FFFFFF" />
+                        </svg>
+                        Замовити клінінг
+                    </x-button>
                 </div>
             </div>
         </div>
@@ -464,8 +458,7 @@ name('main');
             </div>
 
             <div class="mt-10 lg:mt-20 flex justify-center">
-                <x-button size="lg"
-                    @click="Livewire.dispatch('setService', { service: '' }); $dispatch('open-order-offcanvas')">
+                <x-button size="lg" @click="$dispatch('setService', { service: '' });">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                         class="mr-1 size-6 fill-white group-hover:rotate-45 transition-transform"
                         xmlns="http://www.w3.org/2000/svg">
@@ -547,86 +540,6 @@ name('main');
         </div>
     </section>
 
-    {{-- === FEEDBACKS === --}}
-    <livewire:feedback-section />
-
-    <section class="relative min-h-140 lg:min-h-150 flex items-center overflow-hidden bg-slate-900 px-6 py-20" x-data
-        x-init="window.animateCta($el)">
-        <!-- Фонове зображення з затемненням -->
-        <div class="absolute inset-0 z-0">
-            <picture>
-                <source srcset="{{ Vite::asset('resources/images/gallery-section.webp') }}" type="image/webp">
-                <img src="{{ Vite::asset('resources/images/gallery-section.jpg') }}"
-                    class="size-full object-cover opacity-40" width="1920" height="1080" loading="lazy"
-                    alt="Gallery preview">
-            </picture>
-            <div
-                class="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-slate-900/80 via-slate-900/40 to-transparent">
-            </div>
-        </div>
-
-        <!-- Величезний фоновий текст (TryIt) -->
-        <div id="cta-logo-bg"
-            class="absolute bottom-[-1.3em] lg:bottom-[-4.2em] left-1/2 -translate-x-1/2 z-10 select-none pointer-events-none">
-            <img src="{{ Vite::asset('resources/images/logo.png') }}"
-                class="size-full scale-150 opacity-20 pointer-events-none z-30" alt="Decorative element">
-        </div>
-
-        <div class="max-w-6xl mx-auto relative z-20">
-            <div class="flex flex-col md:flex-row items-center gap-10">
-
-                <!-- Кнопка Play (Відео) -->
-                <div x-data="{ open: false }" class="relative" id="cta-play-wrapper">
-                    <button @click="open = true" aria-label="Відтворити відео"
-                        class="group relative size-32 bg-tryit-orange/20 rounded-full flex items-center justify-center backdrop-blur-md border border-white/30 transition-transform hover:scale-110">
-                        <!-- Анімовані хвилі -->
-                        <span class="absolute inset-0 rounded-full bg-tryit-orange animate-ping opacity-20"></span>
-
-                        <div id="cta-play-inner"
-                            class="size-20 bg-tryit-orange rounded-full flex items-center justify-center shadow-xl shadow-tryit-orange/40 group-hover:bg-tryit-orange/80 transition-colors">
-                            <x-lucide-play class="size-8 text-white fill-current ml-1" />
-                        </div>
-                    </button>
-
-                    <!-- Модалка для відео (спрощена) -->
-                    <template x-if="open">
-                        <div class="fixed inset-0 z-100 flex items-center justify-center bg-slate-900/95 p-4"
-                            @click.self="open = false">
-                            <button @click="open = false" aria-label="Закрити відео"
-                                class="absolute top-10 right-10 text-white/50 hover:text-white text-4xl">&times;</button>
-                            <div class="aspect-video w-full max-w-4xl bg-black shadow-2xl">
-                                <!-- Сюди вставити iframe відео -->
-                            </div>
-                        </div>
-                    </template>
-                </div>
-
-                <!-- Текстовий блок -->
-                <div class="max-w-3xl text-center md:text-left">
-                    <div id="cta-headline"
-                        class="font-[Oswald] text-5xl md:text-7xl drop-shadow-xl font-semibold text-white text-balance mb-5">
-                        Хочете побачити нас <span class="text-emerald-500 font-[Lora] font-black italic">у
-                            справі</span>? Наша робота
-                        <span class="text-emerald-500 font-[Lora] font-black italic">говорить</span> сама за себе!
-                    </div>
-
-                    <div id="cta-stars-block"
-                        class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-3">
-                        <div class="flex gap-1">
-                            @foreach (range(1, 5) as $i)
-                                <x-lucide-star class="size-4 text-tryit-orange fill-current" />
-                            @endforeach
-                        </div>
-                        <span class="text-slate-300 text-sm font-medium tracking-wide uppercase">
-                            <span class="font-black">5-ти</span> зірковий стандарт чистоти
-                        </span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
     <section class="py-20 relative overflow-hidden bg-slate-100" x-data="{ active: 1 }" x-init="window.animateFaq($el)">
         <div class="max-w-6xl mx-auto px-5 mb-10 lg:mt-20 lg:mb-30">
 
@@ -636,7 +549,7 @@ name('main');
                 <div class="grid lg:grid-cols-12 w-full">
 
                     {{-- Ліва частина: Смартфон --}}
-                    <div class="lg:col-span-5 relative flex justify-center lg:block">
+                    <div class="hidden lg:flex lg:col-span-5 relative justify-center">
                         <div
                             class="lg:absolute mt-8 lg:mt-0 lg:left-17.5 lg:top-1/2 lg:-translate-y-1/2 z-30 w-72.5 md:w-82.5">
 
@@ -744,7 +657,7 @@ name('main');
                     {{-- Права частина: Текст --}}
                     <div class="lg:col-span-7 p-8 lg:p-20 lg:pl-0 text-white">
                         <div class="max-w-xl text-center lg:text-left space-y-5">
-                            <div class="font-[Lora] italic text-3xl md:text-5xl font-black tracking-tight">
+                            <div class="font-[Lora] italic text-4xl md:text-5xl font-black tracking-tight">
                                 Чистота в один
                                 <span class="inline-block font-black rotate-10 origin-left">клік
                                     <x-lucide-mouse-pointer-click class="inline-flex size-9 shrink-0" />
@@ -822,6 +735,83 @@ name('main');
                         </div>
                     </div>
                 @endforeach
+            </div>
+        </div>
+    </section>
+
+    <section class="relative min-h-140 lg:min-h-150 flex items-center overflow-hidden bg-slate-900 px-6 py-20" x-data
+        x-init="window.animateCta($el)">
+        <!-- Фонове зображення з затемненням -->
+        <div class="absolute inset-0 z-0">
+            <picture>
+                <source srcset="{{ Vite::asset('resources/images/gallery-section.webp') }}" type="image/webp">
+                <img src="{{ Vite::asset('resources/images/gallery-section.jpg') }}"
+                    class="size-full object-cover opacity-40" width="1920" height="1080" loading="lazy"
+                    alt="Gallery preview">
+            </picture>
+            <div
+                class="absolute inset-0 bg-linear-to-t md:bg-linear-to-r from-slate-900/80 via-slate-900/40 to-transparent">
+            </div>
+        </div>
+
+        <!-- Величезний фоновий текст (TryIt) -->
+        <div id="cta-logo-bg"
+            class="absolute bottom-[-1.3em] lg:bottom-[-4.2em] left-1/2 -translate-x-1/2 z-10 select-none pointer-events-none">
+            <img src="{{ Vite::asset('resources/images/logo.png') }}"
+                class="size-full scale-150 opacity-20 pointer-events-none z-30" alt="Decorative element">
+        </div>
+
+        <div class="max-w-6xl mx-auto relative z-20">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+
+                <!-- Кнопка Play (Відео) -->
+                <div x-data="{ open: false }" class="relative" id="cta-play-wrapper">
+                    <button @click="open = true" aria-label="Відтворити відео"
+                        class="group relative size-32 bg-tryit-orange/20 rounded-full flex items-center justify-center backdrop-blur-md border border-white/30 transition-transform hover:scale-110">
+                        <!-- Анімовані хвилі -->
+                        <span class="absolute inset-0 rounded-full bg-tryit-orange animate-ping opacity-20"></span>
+
+                        <div id="cta-play-inner"
+                            class="size-20 bg-tryit-orange rounded-full flex items-center justify-center shadow-xl shadow-tryit-orange/40 group-hover:bg-tryit-orange/80 transition-colors">
+                            <x-lucide-play class="size-8 text-white fill-current ml-1" />
+                        </div>
+                    </button>
+
+                    <!-- Модалка для відео (спрощена) -->
+                    <template x-if="open">
+                        <div class="fixed inset-0 z-100 flex items-center justify-center bg-slate-900/95 p-4"
+                            @click.self="open = false">
+                            <button @click="open = false" aria-label="Закрити відео"
+                                class="absolute top-10 right-10 text-white/50 hover:text-white text-4xl">&times;</button>
+                            <div class="aspect-video w-full max-w-4xl bg-black shadow-2xl">
+                                <!-- Сюди вставити iframe відео -->
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Текстовий блок -->
+                <div class="max-w-3xl text-center md:text-left">
+                    <div id="cta-headline"
+                        class="font-[Oswald] text-5xl md:text-7xl drop-shadow-xl font-semibold text-white text-balance mb-5">
+                        Хочете побачити нас <span class="text-emerald-500 font-[Lora] font-black italic">у
+                            справі</span>? Наша робота
+                        <span class="text-emerald-500 font-[Lora] font-black italic">говорить</span> сама за себе!
+                    </div>
+
+                    <div id="cta-stars-block"
+                        class="flex flex-col md:flex-row items-center justify-center md:justify-start gap-3">
+                        <div class="flex gap-1">
+                            @foreach (range(1, 5) as $i)
+                                <x-lucide-star class="size-4 text-tryit-orange fill-current" />
+                            @endforeach
+                        </div>
+                        <span class="text-slate-300 text-sm font-medium tracking-wide uppercase">
+                            <span class="font-black">5-ти</span> зірковий стандарт чистоти
+                        </span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Rules\Recaptcha;
+use App\Enums\ServiceEnum;
 use App\Notifications\OrderSubmitted;
 use Illuminate\Support\Facades\Notification;
 use App\Livewire\Forms\OrderForm;
@@ -38,8 +39,11 @@ new class extends Component {
         }
     }
 
-    protected function resetForm(): void
+    public function resetForm(): void
     {
+        $this->resetErrorBag();
+        $this->resetValidation();
+
         $this->images = [];
 
         $this->order->reset();
@@ -140,22 +144,20 @@ new class extends Component {
             </div>
 
             <!-- ПОСЛУГА -->
-            @if (!$order->service)
-                <div>
-                    <x-forms.select required wire:model.live="order.service" icon="sparkles" placeholder="Оберіть послугу"
-                        size="lg">
-                        <option value="" disabled selected></option>
-                        @foreach (\App\Enums\ServiceEnum::cases() as $serviceCase)
-                            <option value="{{ $serviceCase->value }}">{{ $serviceCase->value }}</option>
-                        @endforeach
-                    </x-forms.select>
-                    @error('order.service')
-                        <x-forms.error class="mt-2" :message="$message" />
-                    @enderror
-                </div>
-            @endif
+            <div>
+                <x-forms.select required wire:model.live="order.service" icon="sparkles" placeholder="Оберіть послугу"
+                    size="lg">
+                    <option value="" disabled selected></option>
+                    @foreach (ServiceEnum::cases() as $serviceCase)
+                        <option value="{{ $serviceCase->value }}">{{ $serviceCase->value }}</option>
+                    @endforeach
+                </x-forms.select>
+                @error('order.service')
+                    <x-forms.error class="mt-2" :message="$message" />
+                @enderror
+            </div>
 
-            @if ($order->service === \App\Enums\ServiceEnum::CUSTOM->value)
+            @if ($order->service === ServiceEnum::CUSTOM->value)
                 <div>
                     <x-forms.input required wire:model.trim="order.options.custom_service" icon="sparkles"
                         placeholder="Вкажіть назву власної послуги" wire:target="save" size="lg"
@@ -369,11 +371,12 @@ new class extends Component {
                         <x-lucide-zap class="size-6 shrink-0 transition-colors"
                             x-bind:class="$wire.order.is_urgent ? 'text-orange-500' : 'text-slate-400'" />
                         <div class="flex flex-col">
-                            <span class="text-sm font-semibold text-slate-600 transition-colors"
+                            <span class="text-sm font-semibold transition-colors"
                                 x-bind:class="$wire.order.is_urgent ? 'text-orange-900' : 'text-slate-600'">
                                 Термінове прибирання
                             </span>
-                            <span class="text-xs text-slate-400">
+                            <span class="text-xs"
+                                x-bind:class="$wire.order.is_urgent ? 'text-orange-900/60' : 'text-slate-400'">
                                 Приїдемо до вас якнайшвидше!
                             </span>
                         </div>
@@ -390,6 +393,8 @@ new class extends Component {
                         let picker = window.flatpickr(this.$refs.datePicker, {
                             dateFormat: 'Y-m-d',
                             minDate: 'today',
+                            disableMobile: true,
+                            locale: 'uk',
                             defaultDate: $wire.order.options?.preferred_date || null,
                             onChange: (selectedDates, dateStr, instance) => {
                                 $wire.set('order.options.preferred_date', dateStr);
@@ -405,26 +410,28 @@ new class extends Component {
                         });
                     }
                 }" class="space-y-2">
-                    <label class="block text-sm font-medium text-slate-700">Бажана дата прибирання</label>
                     <div class="relative">
-                        <x-forms.input x-ref="datePicker" placeholder="Оберіть бажану дату" icon="calendar" readonly
-                            size="lg" />
+                        <x-forms.input x-ref="datePicker" placeholder="Оберіть бажану дату" icon="calendar"
+                            class="cursor-pointer" readonly size="lg" />
                     </div>
                 </div>
             </div>
 
             <!-- КНОПКИ ДІЇ -->
             <x-slot:footer>
-                <button type="button" @click="open = false"
-                    class="size-10 flex shrink-0 justify-center items-center bg-slate-200 border border-slate-300 rounded-full cursor-pointer hover:bg-slate-50 transition-colors">
-                    <x-lucide-x class="size-5 stroke-slate-600" />
+                <button type="button" wire:click="resetForm" wire:target="resetForm" wire:loading.attr="disabled"
+                    class="text-sm font-semibold gap-1.5 px-6 py-3.5 flex shrink-0 justify-center items-center bg-slate-200 border border-slate-300 rounded-full disabled:opacity-50 cursor-pointer hover:bg-slate-50 transition-colors">
+                    <x-lucide-x wire:loading.remove wire:target="resetForm" class="size-5 shrink-0 stroke-slate-600" />
+                    <x-lucide-loader-2 wire:target="resetForm" wire:loading class="size-4 animate-spin" />
+                    <span wire:target="resetForm" wire:loading.remove>Очистини</span>
+                    <span wire:target="resetForm" wire:loading>Очистка...</span>
                 </button>
                 <!-- КНОПКА ВІДПРАВКИ -->
                 <button type="button" @click="$dispatch('submit-form')" wire:target="save" wire:loading.attr="disabled"
-                    class="flex-1 w-full px-6 py-2.5 text-base bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-full cursor-pointer transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
+                    class="flex-1 w-full px-6 py-3.5 text-sm bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-full cursor-pointer transition-colors disabled:opacity-50 flex items-center justify-center gap-2">
                     <span wire:target="save" wire:loading.remove>Замовити</span>
                     <span wire:target="save" wire:loading>Відправка...</span>
-                    <x-lucide-loader-2 wire:target="save" wire:loading class="w-4 h-4 animate-spin" />
+                    <x-lucide-loader-2 wire:target="save" wire:loading class="size-4 animate-spin" />
                 </button>
             </x-slot>
         </form>

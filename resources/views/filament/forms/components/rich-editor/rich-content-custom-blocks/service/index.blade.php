@@ -33,11 +33,9 @@
                     <x-lucide-phone class="size-8 shrink-0 stroke-white!" />
                     <span>+380 (97) 877-86-67</span>
                 </a>
-                <a href="{{ $serviceUrl ?? '#' }}" class="shrink-0 no-underline">
-                    <button
-                        class="font-[Oswald] bg-white hover:bg-emerald-50 text-emerald-800 px-6 py-4 rounded-full font-black text-sm uppercase tracking-wide transition-all active:scale-95">
-                        {{ $actionLabel ?? 'Замовити послугу' }}
-                    </button>
+                <a href="{{ $serviceUrl ?? '#' }}"
+                    class="shrink-0 no-underline! w-fit font-[Oswald] bg-white hover:bg-emerald-50 text-emerald-800 px-6 py-4 rounded-full font-black text-sm uppercase tracking-wide transition-all active:scale-95 cursor-pointer">
+                    {{ $actionLabel ?? 'Замовити послугу' }}
                 </a>
             </div>
         </div>

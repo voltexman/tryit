@@ -251,7 +251,9 @@ new class extends Component {
                             mode: 'range',
                             dateFormat: 'Y-m-d',
                             defaultDate: [$wire.dateFrom, $wire.dateTo].filter(Boolean),
+                            disableMobile: true,
                             locale: {
+                                ...window.flatpickr.l10ns.uk,
                                 rangeSeparator: ' — '
                             },
                             onChange: (selectedDates, dateStr, instance) => {

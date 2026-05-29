@@ -2,26 +2,30 @@
 
 namespace App\Livewire\Forms;
 
+use Livewire\Form;
 use App\Models\Order;
 use Livewire\Attributes\Validate;
-use Livewire\Form;
+use Livewire\Attributes\Session;
 
 class OrderForm extends Form
 {
+    #[Session]
     #[Validate('required', message: 'Вкажіть як до Вас звертатись')]
     #[Validate('min:2', message: 'Занадто мало символів')]
     public string $name = '';
 
+    #[Session]
     #[Validate('required', message: 'Вкажіть будь-який контакт')]
     #[Validate('min:5', message: 'Занадто мало символів')]
     public string $contact = '';
 
-    #[Validate('required', message: 'Необхідно обрати послугу')]
-    public string $service = '';
-
+    #[Session]
     #[Validate('required', message: 'Вкажіть адресу')]
     #[Validate('min:5', message: 'Занадто коротка адреса')]
     public string $address = '';
+
+    #[Validate('required', message: 'Необхідно обрати послугу')]
+    public string $service = '';
 
     public ?int $square_area = null;
 

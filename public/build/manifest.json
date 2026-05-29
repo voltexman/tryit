@@ -58,7 +58,7 @@
     "isDynamicEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app-CG48NyEs.css",
+    "file": "assets/app-Cnst_8nF.css",
     "name": "app",
     "names": [
       "app.css"
@@ -507,7 +507,7 @@
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-3-before.jpg"
   },
   "resources/images/pisliabudivelne-prybyrannia/comparison-4-after.jpg": {
-    "file": "assets/comparison-4-after-BNiP3oMY.jpg",
+    "file": "assets/service-3-BNiP3oMY.jpg",
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-4-after.jpg"
   },
   "resources/images/pisliabudivelne-prybyrannia/comparison-4-before.jpg": {
@@ -563,7 +563,7 @@
     "src": "resources/images/service-3-old.jpg"
   },
   "resources/images/service-3.jpg": {
-    "file": "assets/comparison-4-after-BNiP3oMY.jpg",
+    "file": "assets/service-3-BNiP3oMY.jpg",
     "src": "resources/images/pisliabudivelne-prybyrannia/comparison-4-after.jpg"
   },
   "resources/images/service-4-old.jpg": {
@@ -603,7 +603,7 @@
     "src": "resources/images/terms-of-service.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-DCcJTUqd.js",
+    "file": "assets/app-CdFibbjV.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
